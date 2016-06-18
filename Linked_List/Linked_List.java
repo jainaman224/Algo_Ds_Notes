@@ -86,9 +86,10 @@ class Linked_List
 
         node temp = head, prev = null;
 
-        if(head == null)
+        if(head.next == null)
         {
             head = null;
+            temp.next = null;
             return ;
         }
 
@@ -152,6 +153,7 @@ class Linked_List
         if(Is_List_Empty())
         {
             System.out.println("List is empty");
+            return ;
         }
 
         node current = head;
