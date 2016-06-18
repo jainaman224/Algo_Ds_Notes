@@ -5,12 +5,15 @@ class Heap_Sort
     {
         int left = 2 * root + 1, largest;
         int right = left + 1, temp;
+
         if(left < size && array[left] > array[root])
             largest = left;
         else
             largest = root;
+
         if(right < size && array[right] > array[largest])
             largest = right;
+
         if(largest != root)
         {
             temp = array[root];
@@ -24,15 +27,14 @@ class Heap_Sort
     public static void Build_Heap(int[] array, int size)
     {
         for(int i = (size - 1) / 2; i >= 0; i--)
-        {
             Heapify(array, i, size);
-        }
     }
 
     public static void HeapSort(int array[], int size)
     {
         Build_Heap(array, size);
         int temp, i;
+
         for(i = size - 1; i > 0; i--)
         {
             temp = array[0];
@@ -46,9 +48,8 @@ class Heap_Sort
     public static void Print_Array(int[] array, int size)
     {
         for(int i = 0; i < size; i++)
-        {
             System.out.print(array[i] + " ");
-        }
+
         System.out.println();
     }
 

@@ -6,6 +6,7 @@ class Quick_Sort
         int pivot = array[left];
         int index = right;
         int temp;
+
         for(int j = right; j > left; j--)
         {
             if(array[j] > pivot)
@@ -16,6 +17,7 @@ class Quick_Sort
                 index--;
             }
         }
+
         array[left] = array[index];
         array[index] = pivot;
         return index;
@@ -42,9 +44,8 @@ class Quick_Sort
     public static void Print_Array(int[] array, int size)
     {
         for(int i = 0; i < size; i++)
-        {
             System.out.print(array[i] + " ");
-        }
+
         System.out.println();
     }
 

@@ -5,8 +5,10 @@ def Heapify(array, root, size):
         largest = left
     else:
         largest = root
+
     if right < size and array[right] > array[largest]:
         largest = right
+
     if largest != root:
         array[root], array[largest] = array[largest], array[root]
         Heapify(array, largest, size)
@@ -18,6 +20,7 @@ def Build_Heap(array):
 
 def Heap_Sort(array):
     Build_Heap(array)
+
     for i in range(len(array) - 1, 0, -1):
         array[0], array[i] = array[i], array[0]
         Heapify(array, 0, i)
@@ -26,6 +29,7 @@ def Heap_Sort(array):
 def Print_Array(array):
     for i in range(0, len(array)):
         print(array[i],end=" ")
+        
     print()
 
 array = [2, 4, 3, 1, 6, 8, 4]

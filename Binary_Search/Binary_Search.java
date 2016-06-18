@@ -4,9 +4,11 @@ class Binary_Search
     public static int BinarySearch(int[] array, int size, int desired)
     {
         int left = 0, right = size - 1, middle;
+
         while(left <= right)
         {
             middle = left + (right - left) / 2;
+
             if(array[middle] == desired)
                 return middle;
             else if(desired < array[middle])
@@ -14,6 +16,7 @@ class Binary_Search
             else if(desired > array[middle])
                 left = middle + 1;
         }
+        
         return -1;
     }
 

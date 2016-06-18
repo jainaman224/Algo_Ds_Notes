@@ -6,9 +6,11 @@ using namespace std;
 int Binary_Search(int array[], int size, int desired)
 {
     int left = 0, right = size - 1, middle;
+
     while(left<=right)
     {
         middle = left + (right - left) / 2;
+
         if(array[middle] == desired)
             return middle;
         else if(desired < array[middle])
@@ -16,6 +18,7 @@ int Binary_Search(int array[], int size, int desired)
         else if(desired > array[middle])
             left = middle + 1;
     }
+
     return -1;
 }
 
