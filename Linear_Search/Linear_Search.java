@@ -7,10 +7,9 @@ class Linear_Search
         {
             // return position if element is found
             if(array[i] == desired)
-            {
                 return i;
-            }
         }
+
         return -1;
     }
 

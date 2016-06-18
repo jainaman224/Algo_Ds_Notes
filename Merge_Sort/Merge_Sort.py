@@ -4,6 +4,7 @@ def conquer_merge(array, left, right, mid):
     i = left
     j = mid + 1
     k = left
+
     while i <= mid and j <= right:
         if array[i] <= array[j]:
             temp[k] = array[i]
@@ -11,6 +12,7 @@ def conquer_merge(array, left, right, mid):
         else:
             temp[k] = array[j]
             j += 1
+            
         k += 1
 
     while i <= mid:
@@ -32,6 +34,7 @@ def divide(array, left, right):
     if left < right:
         mid = left + (right - left) / 2;
         mid = int(mid)
+
         divide(array, left, mid)
         divide(array, mid + 1, right)
 
@@ -47,6 +50,7 @@ def Merge_Sort(array):
 def Print_Array(array):
     for i in range(0, len(array)):
         print(array[i],end=" ")
+
     print()
 
 array = [2, 4, 3, 1, 6, 8, 4]

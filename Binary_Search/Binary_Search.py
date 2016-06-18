@@ -2,15 +2,18 @@
 def Binary_Search(array, desired):
     left = 0
     right = len(array) - 1
+
     while left <= right:
         # return positon if found
         middle = left + (right - left) / 2;
+
         if(array[middle] == desired):
             return middle
         elif(desired < array[middle]):
             right = middle - 1
         elif(desired > array[middle]):
             left = middle + 1
+            
     return -1
 
 array = [1, 2, 3, 4, 5, 6, 7]

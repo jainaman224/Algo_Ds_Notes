@@ -6,6 +6,7 @@ class Merge_Sort
     public static void conquer_merge(int[] array, int left, int right, int mid)
     {
         int k = left, i, j;
+
         for(i = left, j = mid + 1; i <= mid && j <= right; k++)
         {
             if(array[i] <= array[j])
@@ -35,9 +36,7 @@ class Merge_Sort
         }
 
         for(i = left; i <= right; i++)
-        {
             array[i] = temp[i];
-        }
     }
 
     // Divide array into halves
@@ -65,9 +64,8 @@ class Merge_Sort
     public static void Print_Array(int[] array, int size)
     {
         for(int i = 0; i < size; i++)
-        {
             System.out.print(array[i] + " ");
-        }
+
         System.out.println();
     }
 

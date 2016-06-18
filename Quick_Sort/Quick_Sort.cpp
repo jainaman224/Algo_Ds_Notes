@@ -7,6 +7,7 @@ int Parition(int array[], int left, int right)
     int pivot = array[left];
     int index = right;
     int temp;
+
     for(int j = right; j > left; j--)
     {
         if(array[j] > pivot)
@@ -17,6 +18,7 @@ int Parition(int array[], int left, int right)
             index--;
         }
     }
+
     array[left] = array[index];
     array[index] = pivot;
     return index;
@@ -42,9 +44,8 @@ void Quick_Sort(int array[], int size)
 void Print_Array(int array[], int size)
 {
     for(int i = 0; i < size; i++)
-    {
         cout << array[i] << " ";
-    }
+
     cout << endl;
 }
 
