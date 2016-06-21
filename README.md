@@ -1,8 +1,8 @@
-# Welcome to Algorithm and Data Structures Notes
+# Welcome to Algorithm and Data Structures Notes :clipboard:
 
 Our open source community is focussed on understand concepts and whenever someone is trapped, they can see one way to code. So, we are making an repository having implementation in as many languages as we can.
 
-## Steps to follow
+## Steps to follow :scroll:
 
 ### 1. Fork it :fork_and_knife:
 
@@ -29,7 +29,7 @@ $ git clone https://github.com/Your_Username/Algo_Ds_Notes.git
 
 > This makes a local copy of repository in your machine.
 
-### 3. Set it up
+### 3. Set it up :arrow_up:
 
 Run the following commands to see that *your local copy* has a reference to *your forked remote repository* in Github :octocat:
 
@@ -57,7 +57,7 @@ upstream  https://github.com/jainaman224/Algo_Ds_Notes.git (fetch)
 upstream  https://github.com/jainaman224/Algo_Ds_Notes.git (push)
 ```
 
-### 4. **Sync it** :recycle:
+### 4. Sync it :recycle:
 
 Always keep your local copy of repository updated with the original repository.
 Before making any changes and/or in an appropriate interval, run the following commands *carefully* to update your local repository.
@@ -80,7 +80,7 @@ $ git push origin master
 
 Once you have completed these steps, you are ready to start contributing by checking our `Help Wanted` Issues and creating [pull requests](https://github.com/jainaman224/Algo_Ds_Notes/pulls).
 
-### 6. Create a new branch
+### 6. Create a new branch :bangbang:
 
 Whenever you are going to make contribution. Please create seperate branch using command and create your master branch clean (i.e. synced with remote branch)
 
@@ -122,10 +122,10 @@ $ git push -u origin Folder_Name
 Finally go to your repo in browser and click on compare and pull requests.
 Then add a title and Description to your pull request.
 
-## Help Contributing Guides
+## Help Contributing Guides :crown:
 
 We love to have new codes in different languages not implemnted yet or betterment in existing codes.
 
 First discuss with us by creating new issue.
 
-_**Happy Contributing**_ :smiley:
+:tada: :confetti_ball: :smiley: _**Happy Contributing**_ :smiley: :confetti_ball: :tada:
