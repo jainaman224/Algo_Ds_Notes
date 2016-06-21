@@ -1,4 +1,4 @@
-#BUBBLE SORT
+# BUBBLE SORT
 
 [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) is the simplest sorting algorithm that works by repeatedly swapping the
 adjacent elements if they are in wrong order. It makes multiple passes through a
@@ -6,7 +6,7 @@ adjacent elements if they are in wrong order. It makes multiple passes through a
  order. Each pass through the list places the next largest value in its proper
   place.
 
-##EXAMPLE
+## EXAMPLE
 
   Given below is an unsorted array. Bubble sort takes Ο(n2) time.
 
@@ -56,7 +56,7 @@ And when there's no swap required, bubble sorts learns that array is completely 
 
 ![image](http://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_11.jpg)
 
-##ALGORITHM
+## ALGORITHM
 
 We assume list is an array of n elements. We further assume that swap function, swaps the values of given array elements.
 
@@ -73,7 +73,7 @@ return list
 
 end BubbleSort
 ```
-##PSEUDOCODE
+## PSEUDOCODE
 
 We use one flag variable swapped which will help us to see if any swap is happened or not. If no swap is occurred, i.e. the array requires no more processing to be sorted, it will come out of the loop.
 
@@ -109,7 +109,7 @@ procedure bubbleSort( list : array of items )
 
 end procedure return list
 ```
-##COMPLEXITY
+## COMPLEXITY
 
 Bubble sort has **worst-case** and **average complexity** both О(n2), where n is the number of items being sorted.
 When the list is already sorted (**best-case**), the complexity of bubble sort is O(n).
