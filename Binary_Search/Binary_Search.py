@@ -13,7 +13,7 @@ def Binary_Search(array, desired):
             right = middle - 1
         elif(desired > array[middle]):
             left = middle + 1
-            
+
     return -1
 
 array = [1, 2, 3, 4, 5, 6, 7]

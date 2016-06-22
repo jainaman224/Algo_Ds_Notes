@@ -74,24 +74,25 @@ class BinarySearchTree:
 
 BST = BinarySearchTree()
 
-BST.Insert(5);
-BST.Insert(7);
-BST.Insert(9);
-BST.Insert(8);
-BST.Insert(6);
-BST.Insert(4);
+BST.Insert(5)
+BST.Insert(7)
+BST.Insert(9)
+BST.Insert(8)
+BST.Insert(6)
+BST.Insert(4)
 
-BST.Search(9);
-BST.Search(2);
+BST.Search(9)
+BST.Search(2)
 
-BST.Delete(7);
-BST.Delete(5);
-BST.Delete(4);
+BST.Delete(7)
+BST.Delete(5)
+BST.Delete(4)
 
-BST.Search(9);
-BST.Search(2);
-BST.Search(5);
-BST.Search(6);
+BST.Search(9)
+BST.Search(2)
+BST.Search(5)
+BST.Search(6)
+
 
 ''' Output
 

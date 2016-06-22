@@ -124,37 +124,37 @@ class Linked_List:
 LinkedList = Linked_List()
 
 for i in range(0, 5):
-    LinkedList.Insert_At_Beginning(i);
+    LinkedList.Insert_At_Beginning(i)
 
-LinkedList.Print_Linked_List();
+LinkedList.Print_Linked_List()
 
 for i in range(5, 10):
-    LinkedList.Insert_At_End(i);
+    LinkedList.Insert_At_End(i)
 
-LinkedList.Print_Linked_List();
+LinkedList.Print_Linked_List()
 
-LinkedList.Insert_After_Value(5, 9);
-LinkedList.Insert_After_Value(10, 9);
+LinkedList.Insert_After_Value(5, 9)
+LinkedList.Insert_After_Value(10, 9)
 
-LinkedList.Print_Linked_List();
-
-for i in range(0, 3):
-    LinkedList.Delete_At_End();
-
-LinkedList.Print_Linked_List();
+LinkedList.Print_Linked_List()
 
 for i in range(0, 3):
-    LinkedList.Delete_At_Beginning();
+    LinkedList.Delete_At_End()
 
-LinkedList.Print_Linked_List();
+LinkedList.Print_Linked_List()
 
-LinkedList.Delete_With_Value(1);
-LinkedList.Delete_With_Value(5);
+for i in range(0, 3):
+    LinkedList.Delete_At_Beginning()
 
-LinkedList.Print_Linked_List();
+LinkedList.Print_Linked_List()
 
-LinkedList.Search(6);
-LinkedList.Search(8);
+LinkedList.Delete_With_Value(1)
+LinkedList.Delete_With_Value(5)
+
+LinkedList.Print_Linked_List()
+
+LinkedList.Search(6)
+LinkedList.Search(8)
 
 
 '''
