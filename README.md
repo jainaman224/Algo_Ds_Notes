@@ -12,22 +12,22 @@ You can get your own fork/copy of [Algo_Ds_Notes](https://github.com/jainaman224
 
 ### 2. Clone it :busts_in_silhouette:
 
-Once you have forked the `Algo_Ds_Notes` repository in Github, Create a new folder first using om linux and Mac
-
-```sh
-# This will create a folder named Name
-$ mkdir Name
-```
-
-Move to this folder for all other commands.
-
-Now, You need to clone (download) it to local machine using
+You need to clone (download) it to local machine using
 
 ```sh
 $ git clone https://github.com/Your_Username/Algo_Ds_Notes.git
 ```
 
 > This makes a local copy of repository in your machine.
+
+Once you have cloned the `Algo_Ds_Notes` repository in Github, move to that folder first using om linux and Mac
+
+```sh
+# This will change directory to a folder Algo_Ds_Notes
+$ cd Algo_Ds_Notes
+```
+
+Move to this folder for all other commands.
 
 ### 3. Set it up :arrow_up:
 
