@@ -9,43 +9,43 @@ Hence, the magic of counting sort is its linear time complexity.
 
  Let us understand the algorithm with an example.
  
- 1.Consider a simple array of integers which are associated with some items (say.. some colors).
+ 1). Consider a simple array of integers which are associated with some items (say.. some colors).
 
-  ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
+   ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
   
-  The maximum element is 7. We need a count array of size 8 (maximum element +1) which will store the number of times a value has appeared in the input array.
+   The maximum element is 7. We need a count array of size 8 (maximum element +1) which will store the number of times a value has appeared in the input array.
   
    ![image](https://lh3.googleusercontent.com/-esQ7hwWVmfM/V2w2hvQGHPI/AAAAAAAAU_g/DLwJ6zFbphUsb2TCLd6kgHlYQWKoftATQCCo/s458/count_initialisation.png)
 
-  A Count array of size 8 is created and all of its elements are initialised to zero.
+   A Count array of size 8 is created and all of its elements are initialised to zero.
 
-2.Have a pass through the input array and increment the count in count array whenever associated value is encountered.
+ 2). Have a pass through the input array and increment the count in count array whenever associated value is encountered.
 
-  ![image](https://lh3.googleusercontent.com/-HlwxGsBT5yU/V2w2f6YlBvI/AAAAAAAAU_Y/lB7SQSfMv3QOIoYutdM-fqLhd8_p2df6ACCo/s452/count.png)
+   ![image](https://lh3.googleusercontent.com/-HlwxGsBT5yU/V2w2f6YlBvI/AAAAAAAAU_Y/lB7SQSfMv3QOIoYutdM-fqLhd8_p2df6ACCo/s452/count.png)
   
-3.Now The count array will be modified to store the deserving positions of the INPUT values instead of their counts.
+ 3). Now The count array will be modified to store the deserving positions of the INPUT values instead of their counts.
 
-  The modification is done in following way:
+   The modification is done in following way:
 
-  ![image](https://lh3.googleusercontent.com/-Nm22Ktsql5A/V2w2d0CDEeI/AAAAAAAAU_M/CeQ68a8AoZ0ZNVmGC_AGGER4QOqtri76gCCo/s450/position.png)
+   ![image](https://lh3.googleusercontent.com/-Nm22Ktsql5A/V2w2d0CDEeI/AAAAAAAAU_M/CeQ68a8AoZ0ZNVmGC_AGGER4QOqtri76gCCo/s450/position.png)
 
-4.The output array will have the size same as input array. Using position array, we can easily find the sorted output array.
+ 4). The output array will have the size same as input array. Using position array, we can easily find the sorted output array.
 
-  The position array along with the values associated is :
+   The position array along with the values associated is :
 
-  ![image](https://lh3.googleusercontent.com/-FQIzOuPH_VI/V2w2bcZQe-I/AAAAAAAAVAA/jWJ9uXNSX50V16NI1anbGinB8UjpR55IgCCo/s460/positionvalues.png)
+   ![image](https://lh3.googleusercontent.com/-FQIzOuPH_VI/V2w2bcZQe-I/AAAAAAAAVAA/jWJ9uXNSX50V16NI1anbGinB8UjpR55IgCCo/s460/positionvalues.png)
 
-  And Input array is:
+   And Input array is:
 
-  ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
+   ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
 
-  Now have a pass through the input array from right to left and put each element along with its color in its position in output array using position array and simultaneously decrement its position value by one in position array before moving to the next element.
+   Now have a pass through the input array from right to left and put each element along with its color in its position in output array using position array and simultaneously decrement its position value by one in position array before moving to the next element.
 
-  The first element in input array from right is 5 and its associated position in position array is 8. Hence, place 5 at 8th position in output array and simultaneously decrement the position value by one in position array. Now, value 5 will be described by position 7 in position array.
+   The first element in input array from right is 5 and its associated position in position array is 8. Hence, place 5 at 8th position in output array and simultaneously decrement the position value by one in position array. Now, value 5 will be described by position 7 in position array.
 
-  After passing through the whole Input Array, the output array will be:
+   After passing through the whole Input Array, the output array will be:
 
-  ![image](https://lh3.googleusercontent.com/-U67cnzyJV-M/V2w2Y5Nt0QI/AAAAAAAAVAA/vk1J2kPNFU8rYoar9mKBjuCOZYWvqhgLgCCo/s500/output_array.png)
+   ![image](https://lh3.googleusercontent.com/-U67cnzyJV-M/V2w2Y5Nt0QI/AAAAAAAAVAA/vk1J2kPNFU8rYoar9mKBjuCOZYWvqhgLgCCo/s500/output_array.png)
 
 ## Complexity
 
