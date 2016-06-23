@@ -10,11 +10,10 @@ Hence, the magic of counting sort is its linear time complexity.
  Let us understand the algorithm with an example.
 1. Consider a simple array of integers which are associated with some items (say.. some colors).
 
-      ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
+  ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
 
    The maximum element is 7. We need a count array of size 8 (maximum element +1) which will store the number of times a value has appeared in the input array.
-
-    ![image](https://lh3.googleusercontent.com/-esQ7hwWVmfM/V2w2hvQGHPI/AAAAAAAAU_g/DLwJ6zFbphUsb2TCLd6kgHlYQWKoftATQCCo/s458/count_initialisation.png)
+   ![image](https://lh3.googleusercontent.com/-esQ7hwWVmfM/V2w2hvQGHPI/AAAAAAAAU_g/DLwJ6zFbphUsb2TCLd6kgHlYQWKoftATQCCo/s458/count_initialisation.png)
 
   A Count array of size 8 is created and all of its elements are initialised to zero.
 
@@ -35,31 +34,26 @@ Hence, the magic of counting sort is its linear time complexity.
 
   And Input array is:
 
-      ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
+  ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
 
-      Now have a pass through the input array from right to left and put each element along with its color in its position in output array using position array and simultaneously decrement its position value by one in position array before moving to the next element.
+  Now have a pass through the input array from right to left and put each element along with its color in its position in output array using position array and simultaneously decrement its position value by one in position array before moving to the next element.
 
-      The first element in input array from right is 5 and its associated position in position array is 8. Hence, place 5 at 8th position in output array and simultaneously decrement the position value by one in position array. Now, value 5 will be described by position 7 in position array.
+  The first element in input array from right is 5 and its associated position in position array is 8. Hence, place 5 at 8th position in output array and simultaneously decrement the position value by one in position array. Now, value 5 will be described by position 7 in position array.
 
-      After passing through the whole Input Array, the output array will be:
+  After passing through the whole Input Array, the output array will be:
 
-      ![image](https://lh3.googleusercontent.com/-U67cnzyJV-M/V2w2Y5Nt0QI/AAAAAAAAVAA/vk1J2kPNFU8rYoar9mKBjuCOZYWvqhgLgCCo/s500/output_array.png)
-
-
-
-
+  ![image](https://lh3.googleusercontent.com/-U67cnzyJV-M/V2w2Y5Nt0QI/AAAAAAAAVAA/vk1J2kPNFU8rYoar9mKBjuCOZYWvqhgLgCCo/s500/output_array.png)
 
 ## Complexity
 
-  Counting Sort has linear time complexity.
+Counting Sort has linear time complexity.
 
-  Time Complexity: O(n+k) where n is the number of elements in input array and k is the range of input.
-1.
-When we actually started the algorithm, we had to look on our input array to set our count array size. So, the Complexity of this step is O(n).
+Time Complexity: O(n+k) where n is the number of elements in input array and k is the range of input.
+1. When we actually started the algorithm, we had to look on our input array to set our count array size. So, the Complexity of this step is O(n).
 
 2. The complexity to create and intialize the count array of size k is O(k).
 
-3.  First counting pass through the input array to estimate the count of appearance of each value will require O(n) time.
+3. First counting pass through the input array to estimate the count of appearance of each value will require O(n) time.
 
 4. While moving on from Count array to position array, An additional O(K) time is required.
 5. Populating the output array using position array will take O(n) time.
