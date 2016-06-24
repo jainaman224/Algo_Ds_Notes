@@ -52,6 +52,7 @@ Hence, the magic of counting sort is its linear time complexity.
 Counting Sort has linear time complexity.
 
 Time Complexity: O(n+k) where n is the number of elements in input array and k is the range of input.
+
 1. When we actually started the algorithm, we had to look on our input array to set our count array size. So, the Complexity of this step is O(n).
 
 2. The complexity to create and intialize the count array of size k is O(k).
@@ -59,6 +60,7 @@ Time Complexity: O(n+k) where n is the number of elements in input array and k i
 3. First counting pass through the input array to estimate the count of appearance of each value will require O(n) time.
 
 4. While moving on from Count array to position array, An additional O(K) time is required.
+
 5. Populating the output array using position array will take O(n) time.
 
 
