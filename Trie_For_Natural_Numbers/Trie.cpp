@@ -140,3 +140,13 @@ int main()
 
     return 0;
 }
+
+/* Output
+
+99 Found
+9999 Found
+5499 Found
+7676 Not Present
+99 Not Present
+
+*/

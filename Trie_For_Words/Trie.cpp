@@ -142,3 +142,13 @@ int main()
 
     return 0;
 }
+
+/* Output
+
+aman Found
+akshit Found
+akash Found
+swati Not Present
+aman Not Present
+
+*/
