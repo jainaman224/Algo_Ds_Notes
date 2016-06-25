@@ -5,16 +5,17 @@ using namespace std;
 // The main function that sort the given input
 void counting_sort(int input[] ,int k, int n)
 {
-  // The output will have sorted input array
-   int output[n];
-   //Create a count_array to store count of each individual input value
-   int count_array[k],i,j;
+ 
+   int output[n]; // The output will have sorted input array
+  
+   int count_array[k],i,j; //Create a count_array to store count of each individual input value
+   
    std::fill_n(count_array,k,0);//Initialize count_array elements as zero
 
-    //store count of each individual input value
+   
     for(i=0;i<n;i++)
     {
-        count_array[input[i]]++;
+        count_array[input[i]]++; //store count of each individual input value
     }
 
 
@@ -36,6 +37,7 @@ void counting_sort(int input[] ,int k, int n)
     //Copy the output array to input, so that input now contains sorted values
     for(i=0;i<n;i++)
         input[i]=output[i];
+        
 }
 
 
@@ -52,7 +54,7 @@ int main()
     for(i=0;i<n;i++)
     {
         cin>>input[i];
-        if (input[i] > k)//find the range of input values
+        if (input[i] > k)//find the range of input values to determine the size of count_array
         k = input[i];
     }
     k++; //k is the size of count_array
@@ -65,3 +67,5 @@ int main()
 
     return 0;
 }
+
+
