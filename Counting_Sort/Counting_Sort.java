@@ -1,5 +1,5 @@
 
-
+// Java implementation of Counting Sort
 public class Counting_Sort {
 
   // function that sort the given input
