@@ -1,46 +1,51 @@
+
+
 public class Counting_Sort {
 
-// function that sort the given input
-		void sort(int input[])
-		{
-				int n = input.length;
-				int output[] = new int[n]; // The output will have sorted input array
+  // function that sort the given input
+   void sort(int input[])
+   {
+	int n = input.length;
+	int output[] = new int[n]; // The output will have sorted input array
 
-				int max = input[0];
-				int min = input[0];
+	int max = input[0];
+	int min = input[0];
 
-				for (int i = 1; i < n; i++)
-				{
+	for (int i = 1; i < n; i++)
+	{
           	if ( input[i] > max)
-                	max = input[i]; //maximum value in array
+                max = input[i]; //maximum value in array
 
           	if (input[i] < min)
-                 	min = input[i]; //minimum value in array
-    	 	}
+                min = input[i]; //minimum value in array
+    	}
 
-    		int k = max - min + 1; //size of count array
-				int count[] = new int[k]; //create a Count array
+    	int k = max - min + 1; //size of count array
+	int count[] = new int[k]; //create a Count array
 
-				for(int i = 0; i < n; i++)
-						count[input[i] - min]++; //store count of each individual input value
-
-
-			//Change count_array so that count_array now contains actual
-		 // position of input values in output array
-				for(int i = 1; i < k; i++)
-						count[i] += count[i-1];
-
-	   //populate output array using count_array and input array
-				for(int i = n - 1; i >= 0; i--)
-    			{
-    				output[( count[input[i] - min]) - 1]=input[i];
-     				count[input[i]-min]--;
-					}
+	for(int i = 0; i < n; i++)
+		count[input[i] - min]++; //store count of each individual input value
 
 
-    		for(int i = 0; i < n; i++)
-    				input[i]=output[i];//Copy the output array to input, so that input now contains sorted values
-   	}
+	//Change count_array so that count_array now contains actual
+	// position of input values in output array
+	for(int i = 1; i < k; i++)
+		count[i] += count[i-1];
+
+       //populate output array using count_array and input array
+	for(int i = n - 1; i >= 0; i--)
+    	{
+    		 output[( count[input[i] - min]) - 1]=input[i];
+     		count[input[i]-min]--;
+	}
+
+
+    	for(int i = 0; i < n; i++)
+    		 input[i]=output[i];//Copy the output array to input, so that input now contains sorted values
+   
+   	
+   }
+   	
 
 
 // Driver program to test above function
@@ -58,7 +63,7 @@ public class Counting_Sort {
         for (int i=0; i<input.length; i++)
             System.out.print(input[i] + " ");
 
-				System.out.println();
+        System.out.println();
 
     }
 }
