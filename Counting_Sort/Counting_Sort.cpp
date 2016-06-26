@@ -57,6 +57,7 @@ int main()
 
     counting_sort(input, k, n);
     
+    cout << "Sorted Array : ";
     for(i = 0; i < n; i++)
         cout << input[i] << "  ";
 
@@ -66,6 +67,6 @@ int main()
 
 /* Output
 
-1  1  2  3  4  4  5  5  7
+Sorted Array : 1  1  2  3  4  4  5  5  7
 
 */
