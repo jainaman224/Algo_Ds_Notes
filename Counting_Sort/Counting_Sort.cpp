@@ -12,36 +12,34 @@ void counting_sort(int input[], int n)
    int min = input[0];
 
    for (int i = 1; i < n; i++)
-        {
-          	if ( input[i] > max)
-                max = input[i]; //maximum value in array
+   	{
+        	if ( input[i] > max)
+              	max = input[i]; //maximum value in array
 
-          	if (input[i] < min)
-                min = input[i]; //minimum value in array
-    	   }
+        	if (input[i] < min)
+              	min = input[i]; //minimum value in array
+   	}
 
    int k = max - min + 1; //size of count array
 
    int count_array[k]; //Create a count_array to store count of each individual input value
    fill_n(count_array, k, 0);//Initialize count_array elements as zero
 
+   for(int i = 0; i < n; i++)
+	count_array[input[i] - min]++; //store count of each individual input value
 
-	  for(int i = 0; i < n; i++)
-		   count_array[input[i] - min]++; //store count of each individual input value
-
-
-	//Change count_array so that count_array now contains actual
-	// position of input values in output array
-	for(int i = 1; i < k; i++)
-		   count_array[i] += count_array[i-1];
+//Change count_array so that count_array now contains actual
+// position of input values in output array
+   for(int i = 1; i < k; i++)
+        count_array[i] += count_array[i-1];
 
 
- //populate output array using count_array and input array
-	for(int i = n - 1; i >= 0; i--)
+    //populate output array using count_array and input array
+    for(int i = n - 1; i >= 0; i--)
     	{
-    		 output[( count_array[input[i] - min]) - 1]=input[i];
-     		 count_array[input[i]-min]--;
-     }
+    		output[( count_array[input[i] - min]) - 1]=input[i];
+     		count_array[input[i]-min]--;
+     	}
 
 
   for(int i = 0; i < n; i++)
