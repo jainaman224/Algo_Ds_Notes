@@ -13,7 +13,8 @@ TIME COMPLEXITY
 The Time Complexity is O(log min(a, b)).
 
 
-Generalizations
+GENERALISATIONS
+
 Although the Euclidean algorithm is used to find the greatest common divisor of two natural numbers (positive integers), it may be generalized to the real numbers, and to other mathematical objects, such as polynomials, quadratic integers and Hurwitz quaternions. In the latter cases, the Euclidean algorithm is used to demonstrate the crucial property of unique factorization, i.e., that such numbers can be factored uniquely into irreducible elements, the counterparts of prime numbers. Unique factorization is essential to many proofs of number theory.
 
 
