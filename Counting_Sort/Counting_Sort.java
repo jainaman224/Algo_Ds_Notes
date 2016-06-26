@@ -36,7 +36,7 @@ public class Counting_Sort {
 	for(int i = n - 1; i >= 0; i--)
     	{
     		 output[( count[input[i] - min]) - 1]=input[i];
-     		count[input[i]-min]--;
+     		 count[input[i]-min]--;
 	}
 
 
@@ -61,7 +61,7 @@ public class Counting_Sort {
         System.out.print("Sorted Array : ");
 
         for (int i=0; i<input.length; i++)
-            System.out.print(input[i] + " ");
+            System.out.print(input[i] + " ");//printing the sorted array
 
         System.out.println();
 
