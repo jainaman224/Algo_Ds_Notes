@@ -1,62 +1,64 @@
-#include <iostream>
+//C++ implementation of Counting Sort
 
+#include <iostream>
 using namespace std;
 
-// The main function that sort the given input
-void counting_sort(int input[], int k, int n)
+//function that sort the given input
+void counting_sort(int input[], int n)
 {
- 
+
    int output[n]; // The output will have sorted input array
-  
-   int count_array[k], i, j; //Create a count_array to store count of each individual input value
-   
+   int max = input[0];
+   int min = input[0];
+
+   for (int i = 1; i < n; i++)
+        {
+          	if ( input[i] > max)
+                max = input[i]; //maximum value in array
+
+          	if (input[i] < min)
+                min = input[i]; //minimum value in array
+    	   }
+
+   int k = max - min + 1; //size of count array
+
+   int count_array[k]; //Create a count_array to store count of each individual input value
    fill_n(count_array, k, 0);//Initialize count_array elements as zero
 
-   
-    for(i = 0; i < n; i++)
-    {
-        count_array[input[i]]++; //store count of each individual input value
-    }
+
+	  for(int i = 0; i < n; i++)
+		   count_array[input[i] - min]++; //store count of each individual input value
 
 
-    //Change count_array so that count_array now contains actual
-    // position of input values in output array
-    for(i = 1 ; i < k; i++)
-    {
-        count_array[i] += count_array[i-1];
-    }
+	//Change count_array so that count_array now contains actual
+	// position of input values in output array
+	for(int i = 1; i < k; i++)
+		   count_array[i] += count_array[i-1];
 
-    //populate output array using count_array and input array
-    for(i = n-1; i >= 0; i--)
-    {
-        output[(count_array[input[i]])-1] = input[i];
-        count_array[input[i]]--;
 
-    }
+ //populate output array using count_array and input array
+	for(int i = n - 1; i >= 0; i--)
+    	{
+    		 output[( count_array[input[i] - min]) - 1]=input[i];
+     		 count_array[input[i]-min]--;
+     }
 
-    //Copy the output array to input, so that input now contains sorted values
-    for(i = 0; i < n; i++)
-        input[i] = output[i];
-        
+
+  for(int i = 0; i < n; i++)
+    	input[i]=output[i];//Copy the output array to input, so that input now contains sorted values
+
 }
 
 
 // Driver program to test above function
 int main()
 {
-    int n = 9, i, k = 1;
-   
-    int input[] = {1, 5, 2, 7, 3, 4, 4, 1, 5};
-    
-    for(i = 0; i < n; i++)
-    {
-        if (input[i] > k)//find the range of input values to determine the size of count_array
-          k = input[i];
-    }
-    k++; //k is the size of count_array
+    int n = 9, i;
 
-    counting_sort(input, k, n);
-    
+    int input[] = {1, 5, 2, 7, 3, 4, 4, 1, 5};
+
+    counting_sort(input,n);
+
     cout << "Sorted Array : ";
     for(i = 0; i < n; i++)
         cout << input[i] << "  ";
