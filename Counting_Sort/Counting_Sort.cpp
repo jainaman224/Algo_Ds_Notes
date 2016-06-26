@@ -3,17 +3,17 @@
 using namespace std;
 
 // The main function that sort the given input
-void counting_sort(int input[] ,int k, int n)
+void counting_sort(int input[], int k, int n)
 {
  
    int output[n]; // The output will have sorted input array
   
-   int count_array[k],i,j; //Create a count_array to store count of each individual input value
+   int count_array[k], i, j; //Create a count_array to store count of each individual input value
    
-   std::fill_n(count_array,k,0);//Initialize count_array elements as zero
+   fill_n(count_array, k, 0);//Initialize count_array elements as zero
 
    
-    for(i=0;i<n;i++)
+    for(i = 0; i < n; i++)
     {
         count_array[input[i]]++; //store count of each individual input value
     }
@@ -21,22 +21,22 @@ void counting_sort(int input[] ,int k, int n)
 
     //Change count_array so that count_array now contains actual
     // position of input values in output array
-    for(i=1;i<k;i++)
+    for(i = 1 ; i < k; i++)
     {
-        count_array[i]+=count_array[i-1];
+        count_array[i] += count_array[i-1];
     }
 
     //populate output array using count_array and input array
-    for(i=n-1;i>=0;i--)
+    for(i = n-1; i >= 0; i--)
     {
-        output[(count_array[input[i]])-1]=input[i];
+        output[(count_array[input[i]])-1] = input[i];
         count_array[input[i]]--;
 
     }
 
     //Copy the output array to input, so that input now contains sorted values
-    for(i=0;i<n;i++)
-        input[i]=output[i];
+    for(i = 0; i < n; i++)
+        input[i] = output[i];
         
 }
 
@@ -44,28 +44,28 @@ void counting_sort(int input[] ,int k, int n)
 // Driver program to test above function
 int main()
 {
-    int n,i,k=0;
-    cout <<"Enter Input Array size"<< endl;
-    cin>>n;
-
-    int *input= new int[n];
-    cout<<"Enter Input Values"<<endl;
-
-    for(i=0;i<n;i++)
+    int n = 9, i, k = 1;
+   
+    int input[] = {1, 5, 2, 7, 3, 4, 4, 1, 5};
+    
+    for(i = 0; i < n; i++)
     {
-        cin>>input[i];
         if (input[i] > k)//find the range of input values to determine the size of count_array
-        k = input[i];
+          k = input[i];
     }
     k++; //k is the size of count_array
 
-    counting_sort(input,k,n);
-
-    cout<<"Output: ";
-    for(i=0;i<n;i++)
-        cout<<input[i]<<"  ";
+    counting_sort(input, k, n);
+    
+    for(i = 0; i < n; i++)
+        cout << input[i] << "  ";
 
     return 0;
 }
 
 
+/* Output
+
+1  1  2  3  4  4  5  5  7
+
+*/
