@@ -2,10 +2,12 @@
 
 [Counting Sort](https://en.wikipedia.org/wiki/Counting_sort) is one of those interesting Sorting methods that do not involve
 comparisons.
-When we talk about Sorting methods involving comparisons, we know one thing for sure that their time complexity is going to be
-O(nlogn) at least.
+When we talk about Comparision Based Sorting, we know one thing for sure that their time complexity is going to be
+O(n*logn) at least.
 
-Hence, the magic of counting sort is its linear time complexity.
+> It should be used when the range of numbers is less than or comparable to size of list to be sorted.
+
+Hence, the magic of counting sort is its linear time complexity O(n).
 
  Let us understand the algorithm with an example.
  
@@ -48,6 +50,8 @@ Hence, the magic of counting sort is its linear time complexity.
    ![image](https://lh3.googleusercontent.com/-U67cnzyJV-M/V2w2Y5Nt0QI/AAAAAAAAVAA/vk1J2kPNFU8rYoar9mKBjuCOZYWvqhgLgCCo/s500/output_array.png)
 
 ## Complexity
+
+Space Complexity: O(n+k)
 
 Counting Sort has linear time complexity.
 
