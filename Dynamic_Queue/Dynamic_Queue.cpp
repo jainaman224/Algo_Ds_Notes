@@ -52,7 +52,7 @@ void Enqueue(int data,Node **F,Node **L)
 {
     Node *temp=new Node;
     temp->info=data;
-    if(*L==NULL)
+    if(*L == NULL)
     {
         temp->link=NULL;
         *F=temp;
@@ -65,12 +65,12 @@ void Enqueue(int data,Node **F,Node **L)
 
 void Dequeue(Node **F,Node **L)
 {
-    if(*F==NULL)
+    if(*F == NULL)
     {
         cout<<"\nUnderflow...";
         return;
     }
-    else if(*F==*L)
+    else if(*F == *L)
     {
         *F=NULL;
         *L=NULL;
@@ -78,7 +78,7 @@ void Dequeue(Node **F,Node **L)
     }
     Node *temp=NULL;
     temp=*L;
-    while(temp->link!=(*F))
+    while(temp->link != (*F))
     {
         temp=temp->link;
     }
@@ -89,13 +89,13 @@ void Dequeue(Node **F,Node **L)
 void Display(Node *F,Node *L)
 {
     Node *temp=NULL;
-    if(L==NULL)
+    if(L == NULL)
    {
         cout<<"\nUnderflow";
         return ;
    }
     temp=L;
-    while(temp->link!=NULL)
+    while(temp->link != NULL)
     {
         cout<<temp->info<<"->";
         temp=temp->link;
