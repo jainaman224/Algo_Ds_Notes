@@ -1,4 +1,4 @@
-# Welcome to Algorithm and Data Structures Notes :clipboard:
+# Welcome to Algorithm and Data Structure Notes :clipboard:
 
 Our open source community is focussed on understand concepts and whenever someone is trapped, they can see one way to code. So, we are making an repository having implementation in as many languages as we can.
 
@@ -20,7 +20,7 @@ $ git clone https://github.com/Your_Username/Algo_Ds_Notes.git
 
 > This makes a local copy of repository in your machine.
 
-Once you have cloned the `Algo_Ds_Notes` repository in Github, move to that folder first using om linux and Mac
+Once you have cloned the `Algo_Ds_Notes` repository in Github, move to that folder first using change directory command on linux and Mac.
 
 ```sh
 # This will change directory to a folder Algo_Ds_Notes
@@ -82,14 +82,14 @@ Once you have completed these steps, you are ready to start contributing by chec
 
 ### 6. Create a new branch :bangbang:
 
-Whenever you are going to make contribution. Please create seperate branch using command and create your master branch clean (i.e. synced with remote branch)
+Whenever you are going to make contribution. Please create seperate branch using command and keep your `master` branch clean (i.e. synced with remote branch).
 
 ```sh
 # It will create a new branch with name Branch_Name and switch to branch Folder_Name
 $ git checkout -b Folder_Name
 ```
 
-Create a seperate branch for change in different folder and try to use same name of branch as of folder.
+Create a seperate branch for contibution and try to use same name of branch as of folder.
 
 To switch to desired branch
 
@@ -112,20 +112,20 @@ Type in a message relevant for the code reveiwer using
 $ git commit -m 'relevant message'
 ```
 
-Finally Push the work to your remote repository using
+Now, Push your awesome work to your remote repository using
 
 ```sh
 # To push your work to your remote repository
 $ git push -u origin Folder_Name
 ```
 
-Finally go to your repo in browser and click on compare and pull requests.
-Then add a title and Description to your pull request.
+Finally, go to your repository in browser and click on `compare and pull requests`.
+Then add a title and description to your pull request that explains your precious effort.
 
 ## Help Contributing Guides :crown:
 
-We love to have new codes in different languages not implemnted yet or betterment in existing codes.
+We love to have `articles` and `codes` in different languages and `betterment` of existing ones.
 
-First discuss with us by creating new issue.
+Please discuss it with us first by creating new issue.
 
 :tada: :confetti_ball: :smiley: _**Happy Contributing**_ :smiley: :confetti_ball: :tada:
