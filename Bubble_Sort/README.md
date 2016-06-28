@@ -54,22 +54,6 @@ And when there's no swapping required, bubble sorts learns that array is complet
 
 ![Bubble Sort](http://www.tutorialspoint.com/data_structures_algorithms/images/bubble_sort_11.jpg)
 
-## ALGORITHM
-
-We assume list is an array of n elements. We further assume that swap function, swaps the values of given array elements.
-
-```
-begin BubbleSort(list)
-
-  for all elements of list
-    if list[i] > list[i+1]
-      swap(list[i], list[i+1])
-    end if
-  end for
-
-end BubbleSort and return list
-```
-
 ## PSEUDOCODE
 
 We use one flag variable swapped which will help us to see if any swap is happened or not. If no swap is occurred, i.e. the array requires no more processing to be sorted, it will come out of the loop.
@@ -77,32 +61,31 @@ We use one flag variable swapped which will help us to see if any swap is happen
 Pseudocode of BubbleSort algorithm can be expressed as −
 
 ```
-procedure bubbleSort( list : array of items )
+procedure bubbleSort(list : array of items)
 
-  loop = list.count;
+    loop = list.count;
 
-  for i = 0 to loop-1 do:
-    swapped = false
+    for i = 0 to loop-1 do:
+        swapped = false
 
-    for j = 0 to loop-1 do:
+        for j = 0 to loop-1 do:
 
-      /* compare the adjacent elements */   
-      if list[j] > list[j+1] then
-        /* swap them */
-        swap( list[j], list[j+1] )		 
-        swapped = true
-      end if
+            /* compare the adjacent elements */
+            if list[j] > list[j+1] then
+                /* swap them */
+                swap(list[j], list[j+1])
+                swapped = true
+            end if
 
+        end for
+
+        /*if no number was swapped that means
+        array is sorted now, break the loop.*/
+
+        if(not swapped) then
+            break
+        end if
     end for
-
-    /*if no number was swapped that means
-    array is sorted now, break the loop.*/
-
-    if(not swapped) then
-      break
-    end if
-
-   end for
 
 end procedure and return list
 ```

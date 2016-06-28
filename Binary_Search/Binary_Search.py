@@ -5,7 +5,7 @@ def Binary_Search(array, desired):
 
     while left <= right:
         # Return positon if found
-        middle = left + int((right - left) / 2);
+        middle = left + int((right - left) / 2)
 
         if array[middle] == desired:
             return middle
