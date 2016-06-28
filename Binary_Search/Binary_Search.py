@@ -4,14 +4,14 @@ def Binary_Search(array, desired):
     right = len(array) - 1
 
     while left <= right:
-        # return positon if found
-        middle = left + (right - left) / 2;
+        # Return positon if found
+        middle = left + int((right - left) / 2);
 
-        if(array[middle] == desired):
+        if array[middle] == desired:
             return middle
-        elif(desired < array[middle]):
+        elif desired < array[middle]:
             right = middle - 1
-        elif(desired > array[middle]):
+        elif desired > array[middle]:
             left = middle + 1
 
     return -1
@@ -19,17 +19,20 @@ def Binary_Search(array, desired):
 array = [1, 2, 3, 4, 5, 6, 7]
 
 # Element to be searched is 4
-if(Binary_Search(array,4) != -1):
+if Binary_Search(array, 4) != -1:
     print("Found")
 else:
     print("Not Found")
 
 # Element to be searched is 9
-if(Binary_Search(array,9) != -1):
+if Binary_Search(array, 9) != -1:
     print("Found")
 else:
     print("Not Found")
 
-# Output
-# Found
-# Not Found
+''' Output
+
+Found
+Not Found
+
+'''
