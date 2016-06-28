@@ -9,8 +9,8 @@ def Bubble_Sort(array):
 # function to print array
 def Print_Array(array):
     for i in range(0, len(array)):
-        print(array[i],end=" ")
-    
+        print(array[i], end = " ")
+
     print()
 
 array = [2, 4, 3, 1, 6, 8, 4]

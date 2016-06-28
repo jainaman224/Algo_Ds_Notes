@@ -12,7 +12,7 @@ def Selection_Sort(array):
 # function to print array
 def Print_Array(array):
     for i in range(0, len(array)):
-        print(array[i],end=" ")
+        print(array[i], end = " ")
 
     print()
 
@@ -22,5 +22,8 @@ Selection_Sort(array)
 
 Print_Array(array)
 
-# Output
-# 1 2 3 4 4 6 8
+''' Output
+
+1 2 3 4 4 6 8
+
+'''
