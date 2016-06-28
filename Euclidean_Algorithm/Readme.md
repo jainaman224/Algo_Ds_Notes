@@ -14,7 +14,7 @@ It is named after the ancient Greek mathematician Euclid, who first described it
 
 
 
-##*WORKING*
+##**WORKING**
 The Euclidean algorithm is based on the principle that the greatest common divisor of two numbers does not change if the larger number is replaced by its difference with the smaller number. For example, 21 is the GCD of 252 and 105 (252 = 21 × 12 and 105 = 21 × 5), and the same number 21 is also the GCD of 105 and 147 = 252 − 105. Since this replacement reduces the larger of the two numbers, repeating this process gives successively smaller pairs of numbers until the two numbers become equal. When that occurs, they are the GCD of the original two numbers. By reversing the steps, the GCD can be expressed as a sum of the two original numbers each multiplied by a positive or negative integer, e.g., 21 = 5 × 105 + (−2) × 252.
 
 ![image](https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Euclid%27s_algorithm_Book_VII_Proposition_2_3.png/300px-Euclid%27s_algorithm_Book_VII_Proposition_2_3.png)
