@@ -10,13 +10,13 @@ O(n*logn) at least.
 Hence, the magic of counting sort is its linear time complexity O(n).
 
  Let us understand the algorithm with an example.
- 
+
  1). Consider a simple array of integers which are associated with some items (say.. some colors).
 
    ![image](https://lh3.googleusercontent.com/-UOjPbN6P2Tw/V2w2jaLmMzI/AAAAAAAAU_o/HDCLJMWbn-A4zLFu_1OSnaJt4xN0PVUJgCCo/s437/input%2Barray.png)
-  
+
    The maximum element is 7. We need a count array of size 8 (maximum element +1) which will store the number of times a value has appeared in the input array.
-  
+
    ![image](https://lh3.googleusercontent.com/-esQ7hwWVmfM/V2w2hvQGHPI/AAAAAAAAU_g/DLwJ6zFbphUsb2TCLd6kgHlYQWKoftATQCCo/s458/count_initialisation.png)
 
    A Count array of size 8 is created and all of its elements are initialised to zero.
@@ -24,7 +24,7 @@ Hence, the magic of counting sort is its linear time complexity O(n).
  2). Have a pass through the input array and increment the count in count array whenever associated value is encountered.
 
    ![image](https://lh3.googleusercontent.com/-HlwxGsBT5yU/V2w2f6YlBvI/AAAAAAAAU_Y/lB7SQSfMv3QOIoYutdM-fqLhd8_p2df6ACCo/s452/count.png)
-  
+
  3). Now The count array will be modified to store the deserving positions of the INPUT values instead of their counts.
 
    The modification is done in following way:
@@ -84,3 +84,14 @@ Let us understand this with the example shown above.
  Same is the case with the two fours (four with orange color appeared first in order than the four with black color).In Output array also, their appearance is same as the input array.
 
 This explains the stability of counting sort.
+
+## Implementation
+
+- [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Counting_Sort/Counting_Sort.cpp)
+> :rocket: [Compile Online](https://repl.it/C6jK) :rocket:
+
+- [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Counting_Sort/Counting_Sort.java)
+> :rocket: [Compile Online](https://repl.it/C6jF) :rocket:
+
+- [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Counting_Sort/Counting_Sort.py)
+> :rocket: [Compile Online](https://repl.it/C6jJ) :rocket:
