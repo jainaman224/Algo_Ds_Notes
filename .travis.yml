@@ -1,16 +1,17 @@
-language: python, cpp, java
+language: python
 
 python:
-  - "3.2"
-  - "3.3"
+  - "2.7"
   - "3.4"
-  - "3.5"
-  - "3.5-dev" # 3.5 development branch
-  - "nightly" # currently points to 3.6-dev
 
-jdk:
-  - oraclejdk8
-  - openjdk7
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
 
-# command to run tests
-script: nosetests
+install:
+  - sudo apt-get install -qq gcc-4.8 g++-4.8
+  - CC=g++-4.8 python setup.py install
+
+script:
+  - python setup.py test
+  - (cd src && CC=gcc-4.8 CXX=g++-4.8 make -f Makefile-custom test)
