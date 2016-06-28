@@ -16,7 +16,7 @@ class Binary_Search
             else if(desired > array[middle])
                 left = middle + 1;
         }
-        
+
         return -1;
     }
 
@@ -39,6 +39,9 @@ class Binary_Search
     }
 }
 
-// Output
-// Found
-// Not Found
+/* Output
+
+Found
+Not Found
+
+*/

@@ -42,6 +42,9 @@ int main()
     return 0;
 }
 
-// Output
-// Found
-// Not Found
+/* Output
+
+Found
+Not Found
+
+*/
