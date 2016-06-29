@@ -46,6 +46,9 @@ namespace ConsoleApplication3
                 Console.WriteLine("\nITEM FOUND AT LOCATION  :"+(result+1)); 
             Console.Read();
         }
+        
+        
+        ///BINARY SEARCH 
         public static int binarysearch(int[] a, int size, int item)
         {
             int start = 0, end = size - 1, mid;
