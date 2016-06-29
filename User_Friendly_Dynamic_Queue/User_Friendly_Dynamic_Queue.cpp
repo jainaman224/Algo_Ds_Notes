@@ -1,5 +1,5 @@
 // Dynamic Queue
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -19,7 +19,9 @@ int main()
     Last = NULL;
     int data;
     int ch;
-    do{
+    
+    do
+    {
         cout << "\n\tMENU";
         cout << "\n1.Enqueue";
         cout << "\n2.Dequeue";
@@ -40,18 +42,16 @@ int main()
         case 3:Display(First, Last);
                 break;
         }
-
     } while(ch >= 1 && ch <= 3);
-
-
+    
     return 0;
-
 }
 
 void Enqueue(int data, Node **F, Node **L)
 {
     Node *temp = new Node;
     temp -> info = data;
+    
     if(*L == NULL)
     {
         temp -> link = NULL;
@@ -76,8 +76,10 @@ void Dequeue(Node **F, Node **L)
         *L = NULL;
         return;
     }
+    
     Node *temp = NULL;
     temp = *L;
+    
     while(temp -> link != (*F))
         temp = temp -> link;
         
@@ -88,16 +90,20 @@ void Dequeue(Node **F, Node **L)
 void Display(Node *F, Node *L)
 {
     Node *temp = NULL;
+    
     if(L == NULL)
-   {
+    {
         cout << "\nUnderflow";
         return ;
-   }
+    }
+    
     temp = L;
+    
     while(temp -> link != NULL)
     {
         cout << temp -> info << "->";
         temp = temp -> link;
     }
+    
     cout << temp -> info << "->!!!";
 }
