@@ -97,7 +97,7 @@ int main()
     insert_at_head(1);	 // 1 5 7 9
     insert_at_head(2);   // 2 1 5 7 9
     insert_at_head(0);   // 0 2 1 5 7 9
-    delete_a_node(head->next);
+    delete_a_node(head -> next);
     print_forward();              // 0 1 5 7 9
     print_reverse();              // 9 7 5 1 0
     return 0;
