@@ -54,7 +54,7 @@ void KMPSearch(string pattern, string text)
 
         if(j == sizePattern)
         {
-            cout << "Pattern found at index " <<  i - j << endl;
+            cout << "Pattern found at " <<  i - j << endl;
             j = lps[j - 1];
         }
         else if (i < sizeText && pattern[j] != text[i])
@@ -71,14 +71,16 @@ void KMPSearch(string pattern, string text)
 
 int main()
 {
-    string text = "ABABDABACDABABCABAB";
-    string pattern = "ABABCABAB";
+    string text = "namanchamanbomanamansanam";
+    string pattern = "aman";
     KMPSearch(pattern, text);
     return 0;
 }
 
 /* Output
 
-Pattern found at index 10
+Pattern found at 1
+Pattern found at 7
+Pattern found at 16
 
 */
