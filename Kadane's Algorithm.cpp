@@ -6,14 +6,14 @@
 
 using namespace std;
 
-int kadane(int a[], int n) // function implementing Kadane's Algorithm (array contains at least one positive number)
+int kadane(int input[], int n) // function implementing Kadane's Algorithm (array contains at least one positive number)
 {
     int current_max = 0;
     int max_so_far = 0;
 
     for(int i = 0; i < n; i++)
     {
-        current_max = max(0, current_max+a[i]);
+        current_max = max(0, current_max + input[i]);
          max_so_far = max(max_so_far, current_max);
     }
 
