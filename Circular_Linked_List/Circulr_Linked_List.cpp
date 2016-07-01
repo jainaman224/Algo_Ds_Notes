@@ -1,15 +1,16 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
 
 struct node
 {
-int data;
-node*next;
+	int data;
+	node *next;
 };
-node*last;
+
+node *last;
 
 /**** Create Circular Link List ****/
-
 void create_node(int value)
 {
     node *temp;
@@ -28,39 +29,33 @@ void create_node(int value)
     }
 }
 
-
 /**** Insertion of element at a particular place ****/
-
 void Insertion(int value, int pos)
 {
     if (last == NULL)
-    {
         return;
-    }
+ 
     node *temp, *s;
     s = last->next;
-    for (int i = 1;i < pos;i++)
+    for (int i = 1; i < pos; i++)
     {
         s = s->next;
         if (s == last->next)
-        {
             return;
-        }
     }
     temp = new node;
     temp->next = s->next;
     temp->data = value;
     s->next = temp;
     
-    if (s == last)    //Element inserted at the end
+    if (s == last)    // Element inserted at the end
     { 
-        last=temp;
+        last = temp;
     }
 }
 
 
 /**** Deletion of element from the list ****/
-
 void Deletion(int value)
 {
     struct node *temp, *s;
@@ -82,8 +77,7 @@ void Deletion(int value)
     }
     while (s->next != last)
     {
-    
-        if (s->next->data == value)              //Deletion in between of list 
+        if (s->next->data == value)              // Deletion in between of list 
         {
             temp = s->next;
             s->next = temp->next;
@@ -93,20 +87,19 @@ void Deletion(int value)
         s = s->next;
     }
     
-    if (s->next->data == value)                 //Deletion of last element  
+    if (s->next->data == value)                 // Deletion of last element  
     {
         temp = s->next;
         s->next = last->next;
-        delete temp;		
+        delete temp;
         last = s;
         return;
     }
-    cout<<"Not found in the list"<<endl;
+    cout << "Not found in the list" << endl;
 }
  
  
-  /**** Search element in the list ****/
-
+/**** Search element in the list ****/
 void Search(int value)
 {
     node *s;
@@ -117,7 +110,7 @@ void Search(int value)
         position++;
         if (s->data == value)    
         {
-        	cout<<"Found at :"<<position<<endl;
+        	cout << "Found at :" << position << endl;
             return;
         }
         s = s->next;
@@ -125,48 +118,50 @@ void Search(int value)
     if (s->data == value)    
     {
         position++;
-		cout<<"Found at :"<<position<<endl;             
+		cout << "Found at :" << position << endl;             
         return;
     }
-    cout<<"Not found in the list"<<endl;
+    cout << "Not found in the list" << endl;
 }
  
- 
- /**** Print Circular Link List ****/
- 
+/**** Print Circular Link List ****/
 void Print()
 {
     node *s;
     if (last == NULL)
-    {
       return;       // Empty list
-    }
+
     s = last->next;
     
     while (s != last)
     {
-        cout<<s->data<<"->";
+        cout<<s->data<<" -> ";
         s = s->next;
     }
-    cout<<s->data<<endl;
+    cout << s->data << endl;
 }
 
 int main()
 {
-	create_node(5);  Print();     // 5
+	create_node(5);
+	Print();     // 5
  	
-	create_node(3);  Print();     // 5->3
+	create_node(3);
+	Print();     // 5 -> 3
     
-	create_node(9);  Print();     // 5->3->9
+	create_node(9);
+	Print();     // 5 -> 3 -> 9
     
-	Insertion(1,2);  Print();     //5->3->1->9
+	Insertion(1, 2);
+	Print();     // 5 -> 3 -> 1 -> 9
     
-	Search(1);                    //Found at 3                    
+	Search(1);                    // Found at 3                    
 	
-	Search(4);                    //Not found in the list
+	Search(4);                    // Not found in the list
 	
-	Deletion(1);     Print();     //5->3->9
+	Deletion(1);
+	Print();     // 5 -> 3 -> 9
 
-return 0;
+	return 0;
 }
 
