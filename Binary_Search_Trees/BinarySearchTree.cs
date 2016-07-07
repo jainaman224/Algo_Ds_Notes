@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
@@ -11,7 +7,6 @@ namespace BinarySearchTree
             public int data;
             public node left;
             public node right;
-
             public node(int d)
             {
                 data = d;
@@ -20,27 +15,23 @@ namespace BinarySearchTree
             }
         }
 
-
         class Program
         {
             node head;
-            
             public void Insert(int value)
             {
                 node temp = new node(value);
-
-                if (head == null)
+                if(head == null)
                     head = temp;
                 else
                 {
                     node current;
                     current = head;
-
                     while (current != null)
                     {
-                        if (value < current.data)
+                        if(value < current.data)
                         {
-                            if (current.left != null)
+                            if(current.left != null)
                                 current = current.left;
                             else
                             {
@@ -50,7 +41,7 @@ namespace BinarySearchTree
                         }
                         else
                         {
-                            if (current.right != null)
+                            if(current.right != null)
                                 current = current.right;
                             else
                             {
@@ -67,11 +58,11 @@ namespace BinarySearchTree
                 node current;
                 current = head;
 
-                while (current != null)
+                while(current != null)
                 {
-                    if (value < current.data)
+                    if(value < current.data)
                         current = current.left;
-                    else if (value > current.data)
+                    else if(value > current.data)
                         current = current.right;
                     else
                     {
@@ -85,7 +76,7 @@ namespace BinarySearchTree
 
             public int Min_Value(node head)
             {
-                while (head.left != null)
+                while(head.left != null)
                 {
                     head = head.left;
                 }
@@ -94,24 +85,23 @@ namespace BinarySearchTree
 
             public node Delete_Key(node head, int value)
             {
-                if (head == null)
+                if(head == null)
                     return head;
 
-                if (value < head.data)
+                if(value < head.data)
                     head.left = Delete_Key(head.left, value);
-                else if (value > head.data)
+                else if(value > head.data)
                     head.right = Delete_Key(head.right, value);
                 else
                 {
-                    if (head.left == null)
+                    if(head.left == null)
                         return head.right;
-                    else if (head.right == null)
+                    else if(head.right == null)
                         return head.left;
 
                     head.data = Min_Value(head.right);
                     head.right = Delete_Key(head.right, head.data);
                 }
-
                 return head;
             }
 
@@ -119,7 +109,6 @@ namespace BinarySearchTree
             {
                 head = Delete_Key(head, value);
             }
-
 
             static void Main(string[] args)
             {
@@ -143,8 +132,8 @@ namespace BinarySearchTree
                 x.Search(2);
                 x.Search(5);
                 x.Search(6);
+                Console.WriteLine();
                 Console.ReadLine();
-
             }
       }
 }

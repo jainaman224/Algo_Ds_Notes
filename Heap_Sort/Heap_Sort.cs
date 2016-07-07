@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Heap_Sort
 {
@@ -65,8 +61,11 @@ namespace Heap_Sort
             int[] array = {2, 4, 3, 1, 6, 8, 4};
             HeapSort(array, 7);
             Print_Array(array, 7);
+            Console.WriteLine();
             Console.ReadLine();
         }
     }
 }
 
+//output
+// 1 2 3 4 4 6 8
