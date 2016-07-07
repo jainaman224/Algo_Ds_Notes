@@ -34,13 +34,13 @@ public class kadane_Algorithm
 			}
 
 			else if (input[i] > largest_in_negative) // If all the elements are negative, find the largest in them
-			largest_in_negative = input[i];
+				largest_in_negative = input[i];
 		}
 
 		if (flag == 1) // Kadane's algo applicable
-		max_subarray_sum = kadane(input, n);
+			max_subarray_sum = kadane(input, n);
 		else
-		max_subarray_sum = largest_in_negative; // Kadane 's algo not applicable,
+			max_subarray_sum = largest_in_negative; // Kadane 's algo not applicable,
 	  // Hence the max_subarray_sum will be the largest number in array itself
 		System.out.println("Maximum Subarray Sum is " + max_subarray_sum);
 	}
