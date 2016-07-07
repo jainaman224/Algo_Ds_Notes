@@ -34,9 +34,9 @@ public class Interpolation_Search {
     int index = interpolation(a, n, search_item);
 
     if(index == -1)
-    System.out.println("Element not found");
+      System.out.println("Element not found");
     else
-    System.out.println("Found at position " + index);
+      System.out.println("Found at position " + index);
   }
 
 }
