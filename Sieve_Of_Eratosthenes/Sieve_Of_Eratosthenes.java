@@ -21,6 +21,7 @@ public class Sieve_of_Eratosthenes
 			System.out.print(i + "  "); // printing these prime location
 		}
 	}
+	
 	// Driver function to test above function
 	public static void main(String[] args) 
 	{
