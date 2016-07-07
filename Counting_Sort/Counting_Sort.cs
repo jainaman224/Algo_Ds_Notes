@@ -1,12 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Counting_Sort
 {
-
     class Program
     {
         public static void CountingSort(int[] input)
@@ -46,15 +41,12 @@ namespace Counting_Sort
             for(int i = 0; i < n; i++)
                 input[i] = output[i]; // Copy the output array to input, so that input now contains sorted values
         }
-
         // function for bubble sort
-
         // function ro print array
         public static void Print_Array(int[] array, int size)
         {
-            for (int i = 0; i < size; i++)
+            for(int i = 0; i < size; i++)
                 Console.Write(Convert.ToString(array[i]) + " ");
-
             Console.WriteLine();
         }
 
@@ -67,6 +59,7 @@ namespace Counting_Sort
             Console.WriteLine("Sorted Array : ");
             Print_Array(input,input.GetLength(0));
 
+            Console.WriteLine();
             Console.ReadLine();
         }
     }

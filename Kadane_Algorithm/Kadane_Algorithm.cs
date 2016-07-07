@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kadane_Algorithm
 {
@@ -10,14 +6,13 @@ namespace Kadane_Algorithm
     {
         public static int max(int a, int b)
         {
-            if (a > b)
+            if(a > b)
                 return a;
             else
                 return b;
         }
-
         // function implementing Kadane's Algorithm (array contains at least one positive number)
-        public static int kadane(int[] input, int size) 
+        public static int kadane(int[] input, int size)
         {
             int current_max = 0;
             int max_so_far = 0;
@@ -44,25 +39,22 @@ namespace Kadane_Algorithm
 
             for(int i = 0; i < size; i++) // scanning each element in array
             {
-
-            if (input[i] >= 0)// if any element is positive, kadane's algo can be applied
-            {
-                flag = 1;
-                break;
+                  if(input[i] >= 0)// if any element is positive, kadane's algo can be applied
+                  {
+                      flag = 1;
+                      break;
+                  }
+                  else if(input[i] > largest_in_negative) // if all the elements are negative, find the largest in them
+                      largest_in_negative = input[i];
             }
 
-            else if (input[i] > largest_in_negative) // if all the elements are negative, find the largest in them
-                largest_in_negative = input[i];
-
-            }
-
-            if (flag == 1)// kadane's algo applicable
+            if(flag == 1)// kadane's algo applicable
                 max_subarray_sum = kadane(input, size);
             else
                 max_subarray_sum = largest_in_negative;// kadane 's algo not applicable,
             //hence the max_subarray_sum will be the largest number in array itself
-
             Console.WriteLine("Maximum Subarray Sum is "+ Convert.ToString(max_subarray_sum));
+            Console.ReadLine();
         }
     }
 }
