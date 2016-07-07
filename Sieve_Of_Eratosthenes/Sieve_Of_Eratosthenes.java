@@ -3,9 +3,9 @@ public class Sieve_of_Eratosthenes
 {
 	public static void output(int n) 
 	{
-		boolean prime[] = new boolean[n+1]; // all the elements of array initialized as false by default
+		boolean prime[] = new boolean[n+1]; // All the elements of array initialized as false by default
 		
-		// if i is non-prime, change prime[i] to true
+		// If i is non-prime, change prime[i] to true
 		for(int p = 2; p*p <= n; p++)
 		{
 			if(!prime[p]) // If prime[p] is still false, then p is a prime
@@ -17,8 +17,8 @@ public class Sieve_of_Eratosthenes
 		// Print all prime numbers
 		for(int i = 2; i < prime.length; i++)
 		{
-			if(prime[i] == false) // finally, elements which are still false are those whose location is prime 
-			System.out.print(i + "  "); // printing these prime location
+			if(prime[i] == false) // Finally, elements which are still false are those whose location is prime 
+			System.out.print(i + "  "); // Printing these prime location
 		}
 	}
 	
