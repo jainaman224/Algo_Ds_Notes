@@ -27,17 +27,17 @@ public class kadane_Algorithm
 
 		for(int i = 0; i < n; i++) // Scanning each element in array
 		{
-			if (input[i] >= 0) // If any element is positive, kadane's algo can be applied
+			if(input[i] >= 0) // If any element is positive, kadane's algo can be applied
 			{
 				flag = 1;
 				break;
 			}
 
-			else if (input[i] > largest_in_negative) // If all the elements are negative, find the largest in them
+			else if(input[i] > largest_in_negative) // If all the elements are negative, find the largest in them
 				largest_in_negative = input[i];
 		}
 
-		if (flag == 1) // Kadane's algo applicable
+		if(flag == 1) // Kadane's algo applicable
 		     max_subarray_sum = kadane(input, n);
 		else
 		     max_subarray_sum = largest_in_negative; // Kadane 's algo not applicable,
