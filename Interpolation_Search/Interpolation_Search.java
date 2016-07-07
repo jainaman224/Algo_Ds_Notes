@@ -14,13 +14,13 @@ public class Interpolation_Search {
       pos = low + (rise / run) * x;
 
       if(a[pos] == search_item)
-      return pos;
+        return pos;
 
       else if(search_item < a[pos])
-      high = pos - 1;
+        high = pos - 1;
 
       else if(search_item > a[pos])
-      low = pos + 1;
+        low = pos + 1;
     }
     return -1;
   }
