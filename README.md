@@ -1,3 +1,5 @@
+[![Gitter](https://badges.gitter.im/jainaman224/Algo_Ds_Notes.svg)](https://gitter.im/jainaman224/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 # Welcome to Algorithm and Data Structure Notes :clipboard:
 
 Our open source community is focussed on understand concepts and whenever someone is trapped, they can see one way to code. So, we are making an repository having implementation in as many languages as we can.
