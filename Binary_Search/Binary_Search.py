@@ -30,6 +30,7 @@ if Binary_Search(array, 9) != -1:
 else:
     print("Not Found")
 
+
 ''' Output
 
 Found
