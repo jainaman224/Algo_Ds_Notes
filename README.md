@@ -1,4 +1,5 @@
-[![Gitter](https://badges.gitter.im/jainaman224/Algo_Ds_Notes.svg)](https://gitter.im/jainaman224/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/jainaman224/Algo_Ds_Notes.svg)](https://gitter.im/jainaman224/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![codecov](https://codecov.io/gh/jainaman224/Algo_Ds_Notes/branch/master/graph/badge.svg?token=r85XoiAyxx)](https://codecov.io/gh/jainaman224/Algo_Ds_Notes)
+
 
 # Welcome to Algorithm and Data Structure Notes :clipboard:
 
