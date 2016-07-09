@@ -6,7 +6,7 @@ namespace Interpolation_Search
     {
         public static int interpolation(int[] a, int n, int search_item) // Function implementing Interpolation_Search
         {
-            int high = n-1;
+            int high = n - 1;
             int low = 0;
             int pos;
 
@@ -44,7 +44,8 @@ namespace Interpolation_Search
     }
 }
 
-/*
-Output:
-Found at position7
+/* Output
+
+Found at position 7
+
 */

@@ -4,7 +4,7 @@ namespace Insertion_Sort
 {
     class Program
     {
-        // function for insertion sort
+        // Function for insertion sort
         public static void InsertionSort(int[] array, int size)
         {
             int temp, j;
@@ -22,7 +22,7 @@ namespace Insertion_Sort
             }
         }
 
-        // function to print array
+        // Function to print array
         public static void Print_Array(int[] array, int size)
         {
             for(int i = 0; i < size; i++)

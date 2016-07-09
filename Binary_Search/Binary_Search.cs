@@ -1,6 +1,6 @@
 using System;
 
-//The namespace refers to the project name you are working on.
+// The namespace refers to the project name you are working on.
 namespace BinarySearch
 {
     class Program
@@ -8,7 +8,7 @@ namespace BinarySearch
         public static int Binary_Search(int[] array, int size, int desired)
         {
             int left = 0, right = size - 1, middle;
-            while(left<=right)
+            while(left <= right)
             {
                 middle = left + (right - left) / 2;
                 if(array[middle] == desired)
@@ -28,19 +28,20 @@ namespace BinarySearch
                 Console.WriteLine("Found");
             else
                 Console.WriteLine("Not Found");
-            //Element 9 to be searched
+            // Element 9 to be searched
             if(Binary_Search(array, 7, 9) != -1)
                 Console.WriteLine("Found");
             else
                 Console.WriteLine("Not Found");
             Console.WriteLine();
-            Console.ReadLine(); //To hold output (optional)
+            Console.ReadLine(); // To hold output (optional)
         }
     }
 }
 
-/*
-output:
+/* Output
+
 Found
 Not Found
+
 */
