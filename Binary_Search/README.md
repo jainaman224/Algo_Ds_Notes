@@ -68,11 +68,17 @@ end procedure
 
 ## Implementation
 
+- [CoffeeScript Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.coffee)
+> :rocket: [Compile Online](https://repl.it/C9ze) :rocket:
+
 - [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.cpp)
 > :rocket: [Compile Online](https://repl.it/C6n3) :rocket:
 
 - [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.java)
 > :rocket: [Compile Online](https://repl.it/C6n1) :rocket:
+
+- [Php Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.php)
+> :rocket: [Compile Online](https://repl.it/C9zo) :rocket:
 
 - [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.py)
 > :rocket: [Compile Online](https://repl.it/C6nZ) :rocket:
