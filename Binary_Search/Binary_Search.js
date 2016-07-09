@@ -9,13 +9,13 @@ function Binary_Search(array , search_item)
     middle = ((left + right) >> 1);
 
     if(array[middle] == search_item)
-    return middle;
+      return middle;
 
     else if(search_item < array[middle])
-    right = middle - 1;
+      right = middle - 1;
 
     else if(search_item > array[middle])
-    left = middle + 1;
+      left = middle + 1;
   }
   return -1;
 }
@@ -27,9 +27,9 @@ var desired = 4;
 var index = Binary_Search(array, search_item);
 
 if(index !== -1)
-console.log("found at index " + index);
+  console.log("found at index " + index);
 else
-console.log("Not found");
+  console.log("Not found");
 
 
 
