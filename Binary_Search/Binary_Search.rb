@@ -1,5 +1,5 @@
 
-#Binary Search function
+# Binary Search function
 
 def binarySearch(array, searchVariable, size)
 
@@ -27,21 +27,21 @@ def binarySearch(array, searchVariable, size)
 
 end
 
-#Hard Coded array
-array = [1,2,3,4,5]
+# Hard Coded array
+array = [1, 2, 3, 4, 5]
 
-#Searching for 1 in the array
+# Searching for 1 in the array
 if binarySearch(array, 1, array.length()) != -1
   puts("Element found.")
 else
   puts("Element not found.")
 end
-#Gives Output Element found.
+# Gives Output Element found.
 
-#Searching for 0 in the array
+# Searching for 0 in the array
 if binarySearch(array, 0, array.length()) != -1
   puts("Element found.")
 else
   puts("Element not found.")
 end
-#Gives output Element not found.
+# Gives output Element not found.
