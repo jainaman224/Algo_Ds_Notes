@@ -22,11 +22,11 @@ def Quick(array, left, right):
 def Quick_Sort(array):
     Quick(array, 0, len(array) - 1)
 
-# function to print array
+# Function to print array
 def Print_Array(array):
     for i in range(0, len(array)):
-        print(array[i],end=" ")
-        
+        print(array[i], end = " ")
+
     print()
 
 array = [2, 4, 3, 1, 6, 8, 4]
@@ -35,5 +35,9 @@ Quick_Sort(array)
 
 Print_Array(array)
 
-# Output
-# 1 2 3 4 4 6 8
+
+''' Output
+
+1 2 3 4 4 6 8
+
+'''
