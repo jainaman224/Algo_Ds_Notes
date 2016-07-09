@@ -15,13 +15,13 @@ function Interpolation_Search(array , search_item)
     pos = low + Math.floor(rise / run) * x;
 
     if(array[pos] === search_item)
-    return pos;
+      return pos;
 
     else if(search_item < array[pos])
-    high = pos - 1;
+      high = pos - 1;
 
     else if(search_item > array[pos])
-    low = pos + 1;
+      low = pos + 1;
   }
 
   return -1;
@@ -35,9 +35,9 @@ var search_item = 5;
 var index = Interpolation_Search(array, search_item);
 
 if(index !== -1)
-console.log("found at index " + index);
+  console.log("found at index " + index);
 else
-console.log("Not found");
+  console.log("Not found");
 
 
 
