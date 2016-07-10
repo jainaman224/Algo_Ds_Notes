@@ -16,7 +16,7 @@ def inverse(a, m):
 
     return x1
 
-def findMinimumDividend(divisor, rem):
+def findMinimumDividend(divisor, remainder):
     product = 1
 
     for i in range(len(divisor)):
@@ -34,3 +34,9 @@ divisor = [3, 4, 5, 7, 11]
 remainder = [2, 3, 1, 4, 5]
 
 print("Minimum value of dividend is " + str(findMinimumDividend(divisor, remainder)))
+
+''' Output
+
+Minimum value of dividend is 4235
+
+'''
