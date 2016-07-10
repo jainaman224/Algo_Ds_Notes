@@ -1,5 +1,4 @@
 <?php
-
 // Function implementing Interpolation Search
 function Interpolation_Search($list, $search_item)
 {
@@ -12,11 +11,9 @@ function Interpolation_Search($list, $search_item)
 		$rise = $high - $low;
 		$run = $list[$high] - $list[$low];
 		$x = $search_item - $list[$low];
-		
 		$pos = $low + ($rise / $run) * $x;
-		
 		if($list[$pos] == $search_item)
-			return $pos;
+			return $pos+1;
 		else if($search_item < $list[$pos])
 			$high = $pos - 1;
 		else if($search_item > $list[$pos])
@@ -26,20 +23,16 @@ function Interpolation_Search($list, $search_item)
 }
 
 $list = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
 $search_item = 8;
+$position = Interpolation_Search($list, $search_item);
 
-$index = Interpolation_Search($list, $search_item);
-
-if($index == -1)
+if($position == -1)
 	echo "Element not found";
 else
-	echo "Element found at index $index";
-
+	echo "Element found at position $position";
+	
+	
 /*
-
-Output: Element found at index 7
-
+Output: Element found at position 8
 */
-
 ?>
