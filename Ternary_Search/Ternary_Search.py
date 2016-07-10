@@ -35,6 +35,7 @@ if(Ternary_Search(array, 0, 6, 9) != -1):
 else:
     print("Not Found")
 
+
 ''' Output
 
 Found
