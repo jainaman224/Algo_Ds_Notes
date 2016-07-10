@@ -1,4 +1,4 @@
-//C++ implementation of Counting Sort
+// C++ implementation of Counting Sort
 #include <iostream>
 
 using namespace std;
