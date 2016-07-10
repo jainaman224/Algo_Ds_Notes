@@ -9,33 +9,31 @@ namespace ConsoleApplication5
     class Program
     {
 
-
+    //Bubble Sort 
        static  void Bubble_Sort(int []array, int size)
-{
-    int temp;
-
-    for(int i = 0; i < size - 1; i++)
     {
-        for(int j = 0; j < size - i - 1; j++)
+        int temp;
+
+        for(int i = 0; i < size - 1; i++)
         {
-            // Do swapping
-            if(array[j] > array[j + 1])
-            {
-                temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
+            for(int j = 0; j < size - i - 1; j++)
+                {
+                    ///Do swapping
+                        if(array[j] > array[j + 1])
+                        {
+                                temp = array[j];
+                                array[j] = array[j + 1];
+                                array[j + 1] = temp;
+                            }
+                        }
+
         }
 
-
-
-    }
-
-    Console.WriteLine("SORTED ARRAY IS :");
-    for (int k = 0; k < size; k++)
+        Console.WriteLine("SORTED ARRAY IS :");
+        for (int k = 0; k < size; k++)
         Console.Write(array[k] + " ");
 
-}
+    }
         static void Main(string[] args)
         {
 
