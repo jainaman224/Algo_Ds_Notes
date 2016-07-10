@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-//Function 
+// Binary Search Function 
 
 int BinarySearch(int a[], int size, int item)
 {
@@ -19,6 +19,7 @@ int BinarySearch(int a[], int size, int item)
             }
             return -1;
 }
+//Main Function
 int  main()
 {
 	int arr[1000], size, find;
@@ -29,7 +30,8 @@ int  main()
 	cin>>arr[i];
 	cout << "Enter the value to be Searched";
 	cin>>find;
-	int ans = BinarySearch(arr, size, find);
+	//Function Calling 
+	int ans = BinarySearch(arr, size, find);		
 	
     if(ans != -1)
         cout << "Found at pos " <<ans+1<< endl;
