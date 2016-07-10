@@ -22,7 +22,7 @@ function Binary_Search(array , search_item)
 
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-var desired = 4;
+var search_item = 4;
 
 var index = Binary_Search(array, search_item);
 
