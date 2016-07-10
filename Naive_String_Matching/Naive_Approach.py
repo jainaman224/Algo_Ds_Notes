@@ -18,6 +18,7 @@ text = "namanchamanbomanamansanam"
 pattern = "aman"
 search(text, pattern)
 
+
 ''' Output
 
 Pattern found at 2
