@@ -1,4 +1,4 @@
-class Naive_Approach
+class Main
 {
     public static void search(String text, String pattern)
     {
@@ -14,7 +14,7 @@ class Naive_Approach
                     break;
 
             if(j == lengthPattern)
-               System.out.println("Pattern found at " + i);
+               System.out.println("Pattern found at " + (i + 1));
         }
     }
 
@@ -28,8 +28,8 @@ class Naive_Approach
 
 /* Output
 
-Pattern found at 1
-Pattern found at 7
-Pattern found at 16
+Pattern found at 2
+Pattern found at 8
+Pattern found at 17
 
 */

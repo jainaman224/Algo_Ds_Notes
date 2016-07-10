@@ -48,7 +48,7 @@ namespace Heap_Sort
             }
         }
 
-        // function ro print array
+        // Function ro print array
         public static void Print_Array(int[] array, int size)
         {
             for(int i = 0; i < size; i++)
@@ -67,5 +67,5 @@ namespace Heap_Sort
     }
 }
 
-//output
+// Output
 // 1 2 3 4 4 6 8

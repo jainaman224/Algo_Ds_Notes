@@ -15,7 +15,7 @@ namespace Extended_Euclidean_GCD
             int x1 = 0;
             int y1 = 0;
             int gcd = gcdFunction(b % a, a, x1, y1);
-            x = y1 - b / a * x1;
+            x = y1 - (b / a) * x1;
             y = x1;
             return gcd;
         }
@@ -34,5 +34,5 @@ namespace Extended_Euclidean_GCD
     }
 }
 
-//output
-//GCD of numbers 98 and 21 is 7
+// Output
+// GCD of numbers 98 and 21 is 7

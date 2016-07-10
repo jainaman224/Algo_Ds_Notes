@@ -16,7 +16,7 @@ void search(string text, string pattern)
                 break;
 
         if(j == lengthPattern)
-           cout << "Pattern found at " << i << endl;
+           cout << "Pattern found at " << i + 1 << endl;
     }
 }
 
@@ -30,8 +30,8 @@ int main()
 
 /* Output
 
-Pattern found at 1
-Pattern found at 7
-Pattern found at 16
+Pattern found at 2
+Pattern found at 8
+Pattern found at 17
 
 */

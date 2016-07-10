@@ -41,8 +41,8 @@ namespace Counting_Sort
             for(int i = 0; i < n; i++)
                 input[i] = output[i]; // Copy the output array to input, so that input now contains sorted values
         }
-        // function for bubble sort
-        // function ro print array
+        // Function for bubble sort
+        // Function ro print array
         public static void Print_Array(int[] array, int size)
         {
             for(int i = 0; i < size; i++)

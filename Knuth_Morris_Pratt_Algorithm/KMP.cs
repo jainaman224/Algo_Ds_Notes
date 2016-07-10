@@ -6,7 +6,7 @@ namespace KMP_matching
     {
         public static void calculateLps(string pattern, int[] lps)
         {
-            int length = 0;  // Length of the previous longest prefix suffix
+            int length = 0; // Length of the previous longest prefix suffix
             int i;
 
             lps[0] = 0;
