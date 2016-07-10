@@ -1,8 +1,11 @@
+# Function for selection sort
 Selection_Sort = (array) ->
-    for i in [0...array.length]
+    for i in [0...array.length - 1]
         min_index = i
+
         for j in [i + 1...array.length]
-            min_index = j if array[j] < array[min_index]
+            if array[j] < array[min_index]
+                min_index = j
 
         [array[i], array[min_index]] = [array[min_index], array[i]]
     array

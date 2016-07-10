@@ -1,4 +1,4 @@
-# function for selection sort
+# Function for selection sort
 def Selection_Sort(array):
     for i in range(0, len(array) - 1):
         min_index = i
@@ -9,7 +9,7 @@ def Selection_Sort(array):
 
         array[i], array[min_index] = array[min_index], array[i]
 
-# function to print array
+# Function to print array
 def Print_Array(array):
     for i in range(0, len(array)):
         print(array[i], end = " ")
@@ -21,6 +21,7 @@ array = [2, 4, 3, 1, 6, 8, 4]
 Selection_Sort(array)
 
 Print_Array(array)
+
 
 ''' Output
 
