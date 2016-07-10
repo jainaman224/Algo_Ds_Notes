@@ -6,7 +6,7 @@ Bubble_Sort = (list) ->
 
 array = [2, 4, 3, 1, 6, 8, 4]
 
-console.log Bubble_Sort(array)
+console.log Bubble_Sort array
 
 ### Output
 

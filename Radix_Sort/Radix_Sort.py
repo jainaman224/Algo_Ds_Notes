@@ -7,9 +7,9 @@ def Counting_Sort(array, exp):
         count[int(array[i] / exp) % 10] += 1
 
     for i in range(1, 10):
-        count[i] += count[i-1]
+        count[i] += count[i - 1]
 
-    for i in range(size-1, -1, -1):
+    for i in range(size - 1, -1, -1):
         output[count[int(array[i] / exp) % 10] - 1] = array[i]
         count[int(array[i] / exp) % 10] -= 1
 
