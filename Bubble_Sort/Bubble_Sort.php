@@ -19,7 +19,7 @@
     }
 
    for ( $k=0 ; $k<$size;$k++)   
-         echo $arr[$k];
+         echo "$arr[$k]";
 }
  //Bubble sort function calling 
  Bubble_Sort($arr, 5);
