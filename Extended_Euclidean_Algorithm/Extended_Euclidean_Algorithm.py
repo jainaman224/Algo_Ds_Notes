@@ -16,3 +16,10 @@ a = 98; b = 21
 x = 0; y = 0
 
 print("GCD of numbers " + str(a) + " and " + str(b) + " is " + str(gcdFunction(a, b, x, y)))
+
+
+''' Output
+
+GCD of numbers 98 and 21 is 7
+
+'''
