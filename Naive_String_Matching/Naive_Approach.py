@@ -12,7 +12,7 @@ def search(text, pattern):
             j += 1
 
         if j == lengthPattern:
-            print("Pattern found at " + str(i))
+            print("Pattern found at " + str(i + 1))
 
 text = "namanchamanbomanamansanam"
 pattern = "aman"
@@ -20,8 +20,8 @@ search(text, pattern)
 
 ''' Output
 
-Pattern found at 1
-Pattern found at 7
-Pattern found at 16
+Pattern found at 2
+Pattern found at 8
+Pattern found at 17
 
 '''

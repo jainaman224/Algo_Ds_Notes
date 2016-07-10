@@ -8,7 +8,7 @@ namespace Linear_Search
         {
             for (int i = 0; i < size; i++)
             {
-                // return position if element is found
+                // Return position if element is found
                 if (array[i] == desired)
                     return i;
             }
@@ -27,7 +27,7 @@ namespace Linear_Search
             else
                 Console.WriteLine("Not Found");
 
-        //Element 9 to be searched
+            // Element 9 to be searched
             if(LinearSearch(array, 7, 9) != -1)
                 Console.WriteLine("Found");
             else
@@ -37,8 +37,9 @@ namespace Linear_Search
     }
 }
 
-/*
-Output:
+/* Output
+
 Found
 Not Found
+
 */

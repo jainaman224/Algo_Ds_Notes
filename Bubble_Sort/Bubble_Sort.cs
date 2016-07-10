@@ -4,7 +4,7 @@ namespace Bubble_Sort
 {
     class Program
     {
-        // function for bubble sort
+        // Function for bubble sort
         public static void BubbleSort(int[] array, int size)
         {
             int temp;
@@ -24,7 +24,7 @@ namespace Bubble_Sort
 
         }
 
-        // function to print array
+        // Function to print array
         public static void Print_Array(int[] array, int size)
         {
             for(int i = 0; i < size; i++)

@@ -49,7 +49,7 @@ void search(string text, string pattern)
 
     for(int i = 0; i < size; i++)
         if(Z[i] == pattern.length())
-            cout << "Pattern found at " <<  i - pattern.length() - 1 << endl;
+            cout << "Pattern found at " <<  i - pattern.length() << endl;
 
     delete Z;
 }
@@ -65,8 +65,8 @@ int main()
 
 /* Output
 
-Pattern found at 1
-Pattern found at 7
-Pattern found at 16
+Pattern found at 2
+Pattern found at 8
+Pattern found at 17
 
 */
