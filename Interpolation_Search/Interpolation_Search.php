@@ -27,7 +27,7 @@ function Interpolation_Search($list, $search_item)
 
 $list = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-$search_item = 18;
+$search_item = 8;
 
 $index = Interpolation_Search($list, $search_item);
 
