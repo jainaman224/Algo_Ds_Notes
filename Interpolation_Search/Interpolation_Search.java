@@ -41,3 +41,9 @@ public class Interpolation_Search
     }
 
 }
+
+/*
+
+Output : Found at position 8
+
+*/
