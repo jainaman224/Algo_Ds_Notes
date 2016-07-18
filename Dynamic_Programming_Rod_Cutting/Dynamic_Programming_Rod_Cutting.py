@@ -16,3 +16,4 @@ def money (price, n):
 arr = [1, 5, 8, 9, 10, 17, 17, 20]
 size = len(arr)
 print("Maximum Money :" + str(money(arr, size)))
+#output Maximum Money :22
