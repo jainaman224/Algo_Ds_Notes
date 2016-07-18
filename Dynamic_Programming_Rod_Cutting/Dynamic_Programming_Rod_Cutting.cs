@@ -34,6 +34,7 @@ namespace Dynamic_Programming_Rod_Cutting
             int size = arr.Length;
             Console.Write("MAximum Cost : " + money(arr, size));
             Console.Read();
+            //output 22
 
         }
     }
