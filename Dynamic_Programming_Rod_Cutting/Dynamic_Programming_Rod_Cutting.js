@@ -22,5 +22,5 @@ function money (arr , size ) {
 var  arr = [1, 5, 8, 9, 10, 17, 17, 20];
 var size = arr.length;
 
-            console.log("MAximum Cost : " + money(arr, size));
-           
+            console.log("Maximum Cost : " + money(arr, size));
+//Output   Maximum Cost :22         
