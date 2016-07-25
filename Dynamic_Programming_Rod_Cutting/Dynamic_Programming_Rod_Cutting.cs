@@ -8,16 +8,14 @@ namespace Dynamic_Programming_Rod_Cutting
 {
     class Program
     {
-
-        private static int max(int a , int b )
+        private static int max(int a, int b )
         {
-
             return (a > b) ? a : b;
         }
-        private static int money( int []arr, int size)
+        private static int money(int[] arr, int size)
         {
-            if( size <= 0 )
-            return 0 ;
+            if(size <= 0)
+                return 0;
             else
             {
                 int max_val = Int32.MinValue;
@@ -25,17 +23,20 @@ namespace Dynamic_Programming_Rod_Cutting
                     max_val = max(max_val, arr[i] + money(arr, size - i - 1));
                 return max_val;
             }
-
-            
         }
         static void Main(string[] args)
         {
-            int [] arr = {1, 5, 8, 9, 10, 17, 17, 20};
+            int[] arr = {3, 5, 8, 9, 10, 17, 17, 20};
             int size = arr.Length;
-            Console.Write("MAximum Cost : " + money(arr, size));
+            Console.Write("Maximum Cost : " + money(arr, size));
             Console.Read();
-            //output 22
-
         }
     }
 }
+
+
+/* OUTPUT
+
+Maximum value is 24
+
+*/
