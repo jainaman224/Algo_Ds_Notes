@@ -34,6 +34,7 @@ void prim(int cost[n][n]) // Function performing prim's algorithm
                 cost[i][j] = INT_MAX; // Then, initialize them as INFINITE
 
     visited[0] = 1; // Including the first vertex in MST
+    
     for (int count = 0; count < n - 1; count++) 
     {
         minimum = INT_MAX; // Initializing minimum as INFINITE
