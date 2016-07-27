@@ -78,7 +78,6 @@ int main()
       (3)-------(4)
             9
 */
-
     int cost[n][n] = {
         { 0, 2, 0, 6, 0 },
         { 2, 0, 3, 8, 5 },
@@ -88,7 +87,6 @@ int main()
     };
 
     prim(cost); // Calling prim function
-
     return 0;
 }
 
@@ -99,5 +97,4 @@ Edge: 1-2 cost: 3
 Edge: 1-4 cost: 5
 Edge: 0-3 cost: 6
 Minimum Weight is 16
-
 */
