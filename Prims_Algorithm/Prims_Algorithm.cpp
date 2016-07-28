@@ -3,14 +3,14 @@
 
 #include <iostream>
 #include <climits>
-#define n 5
+#define n 6
 using namespace std;
 
 // Printing the MST
 void printMST(int a[n], int b[n], int weight[n])
 {
     int Minweight = 0; // Weight of Minimum spanning tree
-    for (int i = 0; i < n - 1; i++) 
+    for (int i = 0; i < n - 1; i++)
     {
         cout << "Edge: " << a[i] << "-" << b[i] << " "
              << "cost: " << weight[i] << endl;
@@ -21,7 +21,7 @@ void printMST(int a[n], int b[n], int weight[n])
 
 void prim(int cost[n][n]) // Function performing prim's algorithm
 {
-    int u, v, k = 0;
+    int u, v, k = 0, counti = 0;
     int visited[n] = { 0 }; // Array containing all the nodes, Initialize with zero as they are not included in MST
     int a[n]; // Array containing the first nodes of all the edges present in MST
     int b[n]; // Array containing the first nodes of all the edges present in MST
@@ -34,13 +34,13 @@ void prim(int cost[n][n]) // Function performing prim's algorithm
                 cost[i][j] = INT_MAX; // Then, initialize them as INFINITE
 
     visited[0] = 1; // Including the first vertex in MST
-    
-    for (int count = 0; count < n - 1; count++) 
+
+    while(counti < n-1)
     {
         minimum = INT_MAX; // Initializing minimum as INFINITE
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
         {
-            for (int j = 0; j < n; j++) 
+            for (int j = 0; j < n; j++)
             {
                 if (visited[i] != 0 && cost[i][j] < minimum) // If the first node is not in MST yet, traverse through all the edges connected through it
                 {
@@ -50,18 +50,20 @@ void prim(int cost[n][n]) // Function performing prim's algorithm
                 }
             }
         }
-        
+
         if (visited[u] == 0 || visited[v] == 0) // If the node is not yet included in MST, then include it in MST
         {
             a[k] = u; // Store first node in array
             b[k] = v; // Store second node in array
             weight[k] = cost[u][v]; // Store the determined edge's weight in array
+            counti++;
             k++;
             visited[v] = 1; // Vertex included in MST
         }
 
         cost[u][v] = cost[v][u] = INT_MAX; // Edges getting included in MST will be given the weight of INFINITE
     }
+   
     printMST(a, b, weight); // Printing the MST
 }
 
@@ -70,20 +72,33 @@ int main()
 {
 
 /* Let us create the following graph
-          2    3
-      (0)--(1)--(2)
-       |   / \   |
-      6| 8/   \5 |7
-       | /     \ |
-      (3)-------(4)
-            9
+
+     (1)____1___(2)
+    /  \       /  \
+   3    4     4    6
+  /      \   /      \
+ /        \ /        \
+(0)___5___(5)____5___(3)
+ \         |         /
+  \        |        /
+   \       |       /
+    \      2      /
+     6     |     8
+      \    |    /
+       \   |   /
+        \  |  /
+         \ | /
+          (4)
+
+
 */
     int cost[n][n] = {
-        { 0, 2, 0, 6, 0 },
-        { 2, 0, 3, 8, 5 },
-        { 0, 3, 0, 0, 7 },
-        { 6, 8, 0, 0, 9 },
-        { 0, 5, 7, 9, 0 },
+        { 0, 3, 0, 0, 6, 5 },
+        { 3, 0, 1, 0, 0, 4 },
+        { 0, 1, 0, 6, 0, 4 },
+        { 0, 0, 6, 0, 8, 5 },
+        { 6, 0, 0, 8, 0, 2 },
+        { 5, 4, 4, 5, 2, 0 }
     };
 
     prim(cost); // Calling prim function
@@ -92,9 +107,10 @@ int main()
 
 /*
 Output :
-Edge: 0-1 cost: 2
-Edge: 1-2 cost: 3
-Edge: 1-4 cost: 5
-Edge: 0-3 cost: 6
-Minimum Weight is 16
+Edge: 0-1 cost: 3
+Edge: 1-2 cost: 1
+Edge: 1-5 cost: 4
+Edge: 5-4 cost: 2
+Edge: 5-3 cost: 5
+Minimum Weight is 15
 */
