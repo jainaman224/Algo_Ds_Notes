@@ -1,59 +1,62 @@
 #include <iostream>
 #include <limits.h>
 #include <iomanip>
-#define INF INT_MAX
-#define V 4
+#define Infinity INT_MAX
+#define A 4
 using namespace std;
 
-void printSolution(int dist[V][V]);
+void FloydWarshall(int graph[A][A]);
 
-void floydWarshall(int graph[V][V])
-{ int dist[V][V],i,j,k;
-  for(i = 0;i < V;i++)
-    for(j = 0;j < V;j++)
-      dist[i][j]=graph[i][j];
+void output(int length[A][A]);
+
+
+void FloydWarshall(int graph[A][A])
+{ int length[A][A],x,y,z;
+  for(x = 0; x < A; x++)
+    for(y = 0; y < A; y++)
+      length[x][y] = graph[x][y];
       
       
-  for(k = 0;k < V;k++)
-    for(i = 0;i < V;i++)
-      for(j = 0;j < V;j++)
-       { if(dist[i][k] != INF &&
-            dist[k][j] != INF &&
-            dist[i][k] + dist[k][j] < dist[i][j])
-            dist[i][j] = dist[i][k] + dist[k][j];
+  for(z = 0; z < A; z++)
+    for(x = 0; x < A; x++)
+      for(y = 0; y < A; y++)
+       { if(length[x][z] != Infinity &&
+            length[z][y] != Infinity &&
+            length[x][z] + length[z][y] < length[x][y])
+            length[x][y] = length[x][z] + length[z][y];
        }
-  printSolution(dist);
+  output(length);
 } 
 
-void printSolution(int dist[V][V])
-{   cout<<"Following matrix shows the shortest distances between each pair of vertices\n";
-     for (int i = 0;i < V;i++)
-      {for (int j = 0;j < V;j++)
-        { if (dist[i][j] == INF)
-           cout<<setw(7)<<"INF";
+void output(int length[A][A])
+{   cout << "The matrix below shows the shortest distances between each pair of vertices\n";
+     for (int x = 0; x < A; x++)
+      {for (int y = 0; y < A; y++)
+        { if (length[x][y] == Infinity)
+           cout << setw(12) << "INFINITY";
           else
-           cout<<setw(7)<<dist[i][j];
+           cout << setw(12) << length[x][y];
         }
-       cout<<"\n";
+       cout << endl;
       } 
 }
 
 int main() {
-  int graph[V][V]={     {0,   5,  INF, 10},
-                        {INF, 0,   3, INF},
-                        {INF, INF, 0,   1},
-                        {INF, INF, INF, 0}
-                  };
-  floydWarshall(graph);                
+  int graph[A][A] = {     {0,        8,        Infinity, 15},
+                          {Infinity, 0,        7,        Infinity},
+                          {Infinity, Infinity, 0,        7},
+                          {Infinity, Infinity, Infinity, 0}
+                    };
+  FloydWarshall(graph);                
   return 0;
 }
 
 /* OUTPUT
 
-Following matrix shows the shortest distances between each pair of vertices
-      0      5      8      9
-    INF      0      3      4
-    INF    INF      0      1
-    INF    INF    INF      0
+The matrix below shows the shortest distances between each pair of vertices
+           0           8          15          15
+    INFINITY           0           7          14
+    INFINITY    INFINITY           0           7
+    INFINITY    INFINITY    INFINITY           0
 
 */
