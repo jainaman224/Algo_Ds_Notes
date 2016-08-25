@@ -1,4 +1,4 @@
-[![Gitter](https://badges.gitter.im/jainaman224/Algo_Ds_Notes.svg)](https://gitter.im/jainaman224/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![codecov](https://codecov.io/gh/jainaman224/Algo_Ds_Notes/branch/master/graph/badge.svg?token=r85XoiAyxx)](https://codecov.io/gh/jainaman224/Algo_Ds_Notes)
+[![Gitter](https://badges.gitter.im/Algo_Ds_Notes/Algo_Ds_Notes.svg)](https://gitter.im/Algo_Ds_Notes/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 
 # Welcome to Algorithm and Data Structure Notes :clipboard:
@@ -132,3 +132,29 @@ We love to have `articles` and `codes` in different languages and `betterment` o
 Please discuss it with us first by creating new issue.
 
 :tada: :confetti_ball: :smiley: _**Happy Contributing**_ :smiley: :confetti_ball: :tada:
+
+## Code Maintainers
+
+- CoffeeScript
+    - [jainaman224](https://github.com/jainaman224)
+- Cplusplus
+    - [AnkitaKhurana](https://github.com/AnkitaKhurana)
+    - [KavyaSharma](https://github.com/KavyaSharma)
+    - [nj4710](https://github.com/nj4710)
+    - [sidgorey](https://github.com/sidgorey)
+    - [uday1201](https://github.com/uday1201)
+- CSharp
+    - [AnkitaKhurana](https://github.com/AnkitaKhurana)
+    - [nihalC07](https://github.com/nihalC07)
+- Java
+    - [KavyaSharma](https://github.com/KavyaSharma)
+    - [nj4710](https://github.com/nj4710)
+- JavaScript
+    - [prakharcode](https://github.com/prakharcode)
+- Php
+    - [MehakJain96](https://github.com/MehakJain96)
+    - [nihalC07](https://github.com/nihalC07)
+- Python
+    - [jainaman224](https://github.com/jainaman224)
+- Ruby
+    - [tnarkiv](https://github.com/tnarkiv)
