@@ -3,7 +3,7 @@
 
 # Welcome to Algorithm and Data Structure Notes :clipboard:
 
-Our open source community is focussed on understand concepts and whenever someone is trapped, they can see one way to code. So, we are making an repository having implementation in as many languages as we can.
+Our open source community is focussed on understanding the concepts and while doing so, whenever someone gets trapped, they can see one way to code in any language they want. So, we are developing a repository having implementation in as many languages as we can.
 
 ## Steps to follow :scroll:
 
@@ -149,6 +149,7 @@ Please discuss it with us first by creating new issue.
 - Java
     - [KavyaSharma](https://github.com/KavyaSharma)
     - [nj4710](https://github.com/nj4710)
+    - [ayushin78](https://github.com/ayushin78)
 - JavaScript
     - [prakharcode](https://github.com/prakharcode)
 - Php
