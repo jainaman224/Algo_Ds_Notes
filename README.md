@@ -133,7 +133,7 @@ Please discuss it with us first by creating new issue.
 
 :tada: :confetti_ball: :smiley: _**Happy Contributing**_ :smiley: :confetti_ball: :tada:
 
-## Code Maintainers
+## Code Maintainers  :sunglasses:
 
 - CoffeeScript
     - [jainaman224](https://github.com/jainaman224)
