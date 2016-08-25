@@ -1,4 +1,4 @@
-[![Gitter](https://badges.gitter.im/jainaman224/Algo_Ds_Notes.svg)](https://gitter.im/jainaman224/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) 
+[![Gitter](https://badges.gitter.im/jainaman224/Algo_Ds_Notes.svg)](https://gitter.im/jainaman224/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 
 # Welcome to Algorithm and Data Structure Notes :clipboard:
@@ -141,6 +141,7 @@ Please discuss it with us first by creating new issue.
     - [AnkitaKhurana](https://github.com/AnkitaKhurana)
     - [KavyaSharma](https://github.com/KavyaSharma)
     - [nj4710](https://github.com/nj4710)
+    - [sidgorey](https://github.com/sidgorey)
     - [uday1201](https://github.com/uday1201)
 - CSharp
     - [AnkitaKhurana](https://github.com/AnkitaKhurana)
@@ -151,6 +152,7 @@ Please discuss it with us first by creating new issue.
 - JavaScript
     - [prakharcode](https://github.com/prakharcode)
 - Php
+    - [MehakJain96](https://github.com/MehakJain96)
     - [nihalC07](https://github.com/nihalC07)
 - Python
     - [jainaman224](https://github.com/jainaman224)
