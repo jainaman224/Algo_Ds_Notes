@@ -58,3 +58,11 @@ class Multi_Level
     	System.out.println("Grandson's age : " + obj.getage_GS());
     }
 }
+
+/* Output
+
+Father's age : 75
+Son's age : 45
+Grandson's age : 15
+
+*/

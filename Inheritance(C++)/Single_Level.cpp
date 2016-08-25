@@ -27,10 +27,8 @@ class Area : public Rectangle
 
 int main()
 {
-     cout << "Enter data for first rectangle to find area.\n";
-
      Area a;
-     cout << "Area = " << a.calc() << " square meter\n\n";
+     cout << "Area = " << a.calc() << " square meters" << endl;
 
      return 0;
 }
@@ -38,7 +36,6 @@ int main()
 
 /* OUTPUT
 
-Enter data for first rectangle to find area.
 Area = 30 square meter
 
 */
