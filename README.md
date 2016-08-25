@@ -158,3 +158,14 @@ Please discuss it with us first by creating new issue.
     - [jainaman224](https://github.com/jainaman224)
 - Ruby
     - [tnarkiv](https://github.com/tnarkiv)
+
+## References
+
+- Introduction To Algorithms By Thomas H. Cormen
+- Object Oriented Programming with C++ by E Balaguruswamy
+- Java: The Complete Reference By Herbert Schildt
+- Data Structures: A Pseudocode Approach with C by Richard F. Gilberg
+- Data Structures with C by Schaum Series
+- [GeeksforGeeks](http://www.geeksforgeeks.org)
+- [tutorialspoint](http://www.tutorialspoint.com)
+- [Wikipedia](https://en.wikipedia.org)
