@@ -152,21 +152,26 @@ Please discuss it with us first by creating new issue.
     - [ayushin78](https://github.com/ayushin78)
 - JavaScript
     - [prakharcode](https://github.com/prakharcode)
+- Markdown
+    - [swatinirwal](https://github.com/swatinirwal)
 - Php
     - [MehakJain96](https://github.com/MehakJain96)
     - [nihalC07](https://github.com/nihalC07)
+    - [swatinirwal](https://github.com/swatinirwal)
 - Python
     - [jainaman224](https://github.com/jainaman224)
 - Ruby
     - [tnarkiv](https://github.com/tnarkiv)
 
-## References
+## References :clipboard: :scroll:
 
-- Introduction To Algorithms By Thomas H. Cormen
-- Object Oriented Programming with C++ by E Balaguruswamy
-- Java: The Complete Reference By Herbert Schildt
-- Data Structures: A Pseudocode Approach with C by Richard F. Gilberg
-- Data Structures with C by Schaum Series
-- [GeeksforGeeks](http://www.geeksforgeeks.org)
-- [tutorialspoint](http://www.tutorialspoint.com)
-- [Wikipedia](https://en.wikipedia.org)
+- Books :book: :books:
+    - Introduction To Algorithms By Thomas H. Cormen
+    - Object Oriented Programming with C++ by E Balaguruswamy
+    - Java: The Complete Reference By Herbert Schildt
+    - Data Structures: A Pseudocode Approach with C by Richard F. Gilberg
+    - Data Structures with C by Schaum Series
+- Websites :computer:
+    - [GeeksforGeeks](http://www.geeksforgeeks.org)
+    - [tutorialspoint](http://www.tutorialspoint.com)
+    - [Wikipedia](https://en.wikipedia.org)
