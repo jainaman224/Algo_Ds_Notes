@@ -8,9 +8,14 @@ class Father
         int age;
 
     public:
-        void getage()
+        void setage()
         {
             age = 75;
+        }
+
+        int getage()
+        {
+            return age;
         }
 };
 
@@ -20,9 +25,14 @@ class Son : public Father // Son class inherited from Father
         int S_age;
 
     public:
-        void getage_S()
+        void setage_S()
         {
             S_age = 45;
+        }
+
+        int getage_S()
+        {
+            return S_age;
         }
 };
 
@@ -32,9 +42,14 @@ class GrandSon : public Son  // Grandson class inherited from Son
         int GS_age;
 
     public:
-        void getage_GS()
+        void setage_GS()
         {
             GS_age = 15;
+        }
+
+        int getage_GS()
+        {
+            return GS_age;
         }
 };
 
@@ -42,14 +57,14 @@ int main()
 {
 	GrandSon obj;
 
-	obj.getage();
-	obj.getage_S();
-	obj.getage_GS();
+	obj.setage();
+	obj.setage_S();
+	obj.setage_GS();
 
-	cout << "Father's age :" << obj.age;
-    cout << "\nSon's age :" << obj.S_age;
-	cout << "\nGrandson's age :" << obj.GS_age;
-    
+	cout << "Father's age : " << obj.getage() << endl;
+    cout << "Son's age : " << obj.getage_S() << endl;
+	cout << "Grandson's age : " << obj.getage_GS() << endl;
+
     return 0;
 }
 
