@@ -49,7 +49,7 @@ int main()
 	cout << "Father's age :" << obj.age;
     cout << "\nSon's age :" << obj.S_age;
 	cout << "\nGrandson's age :" << obj.GS_age;
-    
+
     return 0;
 }
 
