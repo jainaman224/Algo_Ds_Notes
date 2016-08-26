@@ -135,43 +135,62 @@ Please discuss it with us first by creating new issue.
 
 ## Code Maintainers  :sunglasses:
 
-- CoffeeScript
-    - [jainaman224](https://github.com/jainaman224)
-- Cplusplus
-    - [AnkitaKhurana](https://github.com/AnkitaKhurana)
-    - [KavyaSharma](https://github.com/KavyaSharma)
-    - [nj4710](https://github.com/nj4710)
-    - [sidgorey](https://github.com/sidgorey)
-    - [uday1201](https://github.com/uday1201)
-- CSharp
-    - [AnkitaKhurana](https://github.com/AnkitaKhurana)
-    - [nihalC07](https://github.com/nihalC07)
-- Java
-    - [KavyaSharma](https://github.com/KavyaSharma)
-    - [nj4710](https://github.com/nj4710)
-    - [ayushin78](https://github.com/ayushin78)
-- JavaScript
-    - [prakharcode](https://github.com/prakharcode)
-- Markdown
-    - [swatinirwal](https://github.com/swatinirwal)
-- Php
-    - [MehakJain96](https://github.com/MehakJain96)
-    - [nihalC07](https://github.com/nihalC07)
-    - [swatinirwal](https://github.com/swatinirwal)
-- Python
-    - [jainaman224](https://github.com/jainaman224)
-- Ruby
-    - [tnarkiv](https://github.com/tnarkiv)
+**CoffeeScript**
+
+| [jainaman224](https://github.com/jainaman224) |
+| --- |
+
+**Cplusplus**
+
+| [AnkitaKhurana](https://github.com/AnkitaKhurana) | [KavyaSharma](https://github.com/KavyaSharma) | [nj4710](https://github.com/nj4710)| [sidgorey](https://github.com/sidgorey) | [uday1201](https://github.com/uday1201) |
+| --- | --- | --- | --- | --- |
+
+**CSharp**
+
+| [AnkitaKhurana](https://github.com/AnkitaKhurana) | [nihalC07](https://github.com/nihalC07) |
+| --- | --- |
+
+**Java**
+
+| [KavyaSharma](https://github.com/KavyaSharma) | [nj4710](https://github.com/nj4710) | [ayushin78](https://github.com/ayushin78) |
+| --- | --- | --- |
+
+**JavaScript**
+
+| [prakharcode](https://github.com/prakharcode) |
+| --- |
+
+**Markdown**
+
+| [swatinirwal](https://github.com/swatinirwal) |
+| --- |
+
+**Php**
+
+| [MehakJain96](https://github.com/MehakJain96) | [nihalC07](https://github.com/nihalC07) | [swatinirwal](https://github.com/swatinirwal) |
+| --- | --- | --- |
+
+**Python**
+
+| [jainaman224](https://github.com/jainaman224) |
+| --- |
+
+**Ruby**
+
+| [tnarkiv](https://github.com/tnarkiv) |
+| --- |
 
 ## References :clipboard: :scroll:
 
 - Books :book: :books:
-    - Introduction To Algorithms By Thomas H. Cormen
-    - Object Oriented Programming with C++ by E Balaguruswamy
-    - Java: The Complete Reference By Herbert Schildt
-    - Data Structures: A Pseudocode Approach with C by Richard F. Gilberg
     - Data Structures with C by Schaum Series
+    - Data Structures: A Pseudocode Approach with C by Richard F. Gilberg
+    - Fundamentals Of Data Structures in C by Horowitz
+    - Introduction To Algorithms By Thomas H. Cormen
+    - Java: The Complete Reference By Herbert Schildt
+    - Object Oriented Programming with C++ by E Balaguruswamy
 - Websites :computer:
     - [GeeksforGeeks](http://www.geeksforgeeks.org)
     - [tutorialspoint](http://www.tutorialspoint.com)
     - [Wikipedia](https://en.wikipedia.org)
+    - [topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials)
