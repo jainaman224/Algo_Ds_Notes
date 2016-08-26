@@ -2,10 +2,10 @@
 
 | Name | Article | CoffeeScript | Cplusplus | CSharp | Java | JavaScript | Php | Python | Ruby |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Activity Selection | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
-| Binary Search | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
-| Binary Search Tree | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
-| Breadth First Search | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
+| [Activity Selection](https://github.com/jainaman224/Algo_Ds_Notes/tree/master/Activity_Selection) | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
+| [Binary Search](https://github.com/jainaman224/Algo_Ds_Notes/tree/master/Binary_Search) | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
+| [Binary Search Tree](https://github.com/jainaman224/Algo_Ds_Notes/tree/master/Binary_Search_Trees) | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
+| [Breadth First Search](https://github.com/jainaman224/Algo_Ds_Notes/tree/master/Bubble_Sort) | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
 | Bubble Sort | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
 | Chinese Remainder Theorem | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
 | Circular Linked List | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] | [x] |
