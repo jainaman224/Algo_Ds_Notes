@@ -1,7 +1,7 @@
 <?php
- 
- $arr = array(3, 1 ,6 , 9 , 3 );
- //Bubble sort function 
+
+ $arr = array(2, 4, 3, 1, 6, 8, 4);
+ //Bubble sort function
  function Bubble_Sort($arr, $size)
  {
  	for( $i = 0; $i < $size - 1; $i++)
@@ -18,9 +18,12 @@
         }
     }
 
-   for ( $k=0 ; $k<$size;$k++)   
-         echo "$arr[$k]";
+   for ( $k=0 ; $k<$size;$k++)
+         echo "$arr[$k] ";
 }
- //Bubble sort function calling 
- Bubble_Sort($arr, 5);
+ // Bubble sort function calling
+ Bubble_Sort($arr, 7);
+
+ // Output
+ // 1 2 3 4 4 6 8
  ?>
