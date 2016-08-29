@@ -19,7 +19,7 @@ def interpolation(array, search_item):
 
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 search_item = 8
-index = interpolation(a, search_item)
+index = interpolation(array, search_item)
 
 if index == -1:
     print("Element not found")
