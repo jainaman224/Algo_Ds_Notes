@@ -66,7 +66,7 @@ void KMPSearch(string pattern, string text)
         }
     }
 
-    delete lps;
+    delete[] lps;
 }
 
 int main()
