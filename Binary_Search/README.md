@@ -35,7 +35,7 @@ The pseudocode for binary search algorithm is as follows:
 Procedure binary_search
     A ← sorted array
     n ← size of array
-    x ← value ot be searched
+    x ← value to be searched
 
     Set lowerBound = 1
     Set upperBound = n
@@ -64,6 +64,7 @@ end procedure
 ## COMPLEXITY
 
 **Time complexity**  - О(log n), where n is the number of items being sorted.
+
 **Space complexity** - O(1), due to auxillary space only.
 
 ## Implementation
@@ -74,6 +75,9 @@ end procedure
 - [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.cpp)
 > :rocket: [Compile Online](https://repl.it/C6n3) :rocket:
 
+- [C# Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.cs)
+> :rocket: [Compile Online](https://repl.it/Cx3Q) :rocket:
+
 - [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.java)
 > :rocket: [Compile Online](https://repl.it/C6n1) :rocket:
 
@@ -82,3 +86,6 @@ end procedure
 
 - [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.py)
 > :rocket: [Compile Online](https://repl.it/C6nZ) :rocket:
+
+- [Ruby Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Binary_Search/Binary_Search.rb)
+> :rocket: [Compile Online](https://repl.it/Cx3T) :rocket:

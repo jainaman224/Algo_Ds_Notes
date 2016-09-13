@@ -68,7 +68,7 @@ procedure bubbleSort(list : array of items)
     for i = 0 to loop-1 do:
         swapped = false
 
-        for j = 0 to loop-1 do:
+        for j = 0 to loop-i-1 do:
 
             /* compare the adjacent elements */
             if list[j] > list[j+1] then
@@ -93,15 +93,28 @@ end procedure and return list
 ## COMPLEXITY
 
 **Time complexity**  - О(n^2), where n is the number of items being sorted.
+
 **Space complexity** - O(1), due to auxillary space only.
 
 ## Implementation
 
+- [CoffeeScript Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.coffee)
+> :rocket: [Compile Online](https://repl.it/Cx3l) :rocket:
+
 - [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.cpp)
 > :rocket: [Compile Online](https://repl.it/C4eS) :rocket:
 
+- [C# Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.cs)
+> :rocket: [Compile Online](https://repl.it/Cx3r) :rocket:
+
 - [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.java)
 > :rocket: [Compile Online](https://repl.it/C4eX) :rocket:
+
+- [JavaScript Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.js)
+> :rocket: [Compile Online](https://repl.it/Cx3t) :rocket:
+
+- [PHP Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.php)
+> :rocket: [Compile Online](https://repl.it/Cx4B) :rocket:
 
 - [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.py)
 > :rocket: [Compile Online](https://repl.it/C4eV) :rocket:

@@ -51,7 +51,7 @@ void search(string text, string pattern)
         if(Z[i] == pattern.length())
             cout << "Pattern found at " <<  i - pattern.length() << endl;
 
-    delete Z;
+    delete[] Z;
 }
 
 
