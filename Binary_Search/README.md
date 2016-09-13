@@ -35,7 +35,7 @@ The pseudocode for binary search algorithm is as follows:
 Procedure binary_search
     A ← sorted array
     n ← size of array
-    x ← value ot be searched
+    x ← value to be searched
 
     Set lowerBound = 1
     Set upperBound = n

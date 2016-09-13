@@ -68,7 +68,7 @@ procedure bubbleSort(list : array of items)
     for i = 0 to loop-1 do:
         swapped = false
 
-        for j = 0 to loop-1 do:
+        for j = 0 to loop-i-1 do:
 
             /* compare the adjacent elements */
             if list[j] > list[j+1] then
