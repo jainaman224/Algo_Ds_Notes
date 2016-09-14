@@ -10,7 +10,7 @@ In every iteration of selection sort, the minimum element (considering ascending
 
 ![Selection Sort](http://www.cs.rmit.edu.au/online/blackboard/chapter/05/documents/contribute/chapter/09/images/selection-sort.gif)
 
-## Algoruithm
+## Algorithm
 
 ```
 Step 1 − Set MIN to location 0
