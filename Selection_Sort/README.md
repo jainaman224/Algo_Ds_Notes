@@ -56,6 +56,17 @@ end procedure
 **Time complexity**  - О(n^2), where n is the number of items being sorted.
 **Space complexity** - O(1), due to auxillary space only.
 
+#### Stability
+
+The definition of stable is that the relative order of elements with the same value is maintained even after sorting.
+
+Selection Sort is `Not Stable` 
+
+For eg: when we sort `5 1 2 3 4 5 0` using `selection sort`, After first round 0 will be the minimum value and it will be swapped with the 5 in first position causing change in relative order of the 5's. 
+(`0 1 2 3 4 5 5`)
+
+As the relative order of elements having same value(5) is changed, we can clearly state that Selection Sort is not stable.
+
 ## Implementation
 
 - [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Selection_Sort/Selection_Sort.cpp)
