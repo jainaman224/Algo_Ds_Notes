@@ -33,7 +33,7 @@ class Linked_List
     public void Insert_At_End(int value)
     {
         node temp = new node(value), current = head;
-        temp.next = null;
+        // temp.next = null;
 
         if(Is_List_Empty())
         {
