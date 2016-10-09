@@ -45,7 +45,7 @@ graph.add_edge(5, 7)
 graph.add_edge(6, 2)
 graph.add_edge(7, 3)
 
-print "Bread First Traversal is:",
+print "Breadth First Traversal is:",
 graph.bfs(0)
 print ""
 
