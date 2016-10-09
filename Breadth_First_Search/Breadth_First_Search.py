@@ -3,7 +3,7 @@ from collections import deque
 class graph:
   def __init__(self, num_vertices):
     self.num_vertices = num_vertices
-    self.adj_list = [[]] * num_vertices
+    self.adj_list = [[] for _ in xrange(num_vertices)]
 
   def add_edge(self, source, destination):
     self.adj_list[source].append(destination)
@@ -50,4 +50,4 @@ graph.bfs(0)
 print ""
 
 # Expected Output
-# Breadth First Traversal is: 0 1 2 3 4 3 5 6 7
+# Breadth First Traversal is: 0 1 2 4 3 5 6 7
