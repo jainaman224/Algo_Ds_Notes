@@ -1,49 +1,48 @@
 #include <iostream>
 #include <climits>
+#include <vector>
+#include <set>
 
 using namespace std;
 
 const int numberVertex = 10;
 
-int minDistance(int distance[], bool ShortestPathTree[])
+void dijkstra(vector <pair<int, int> > Alist[numberVertex], int source)
 {
-    int min = INT_MAX, min_index;
-
-    for(int vertex = 0; vertex < numberVertex; vertex++)
-    {
-        if(ShortestPathTree[vertex] == false && distance[vertex] <= min)
-        {
-            min = distance[vertex];
-            min_index = vertex;
-        }
-    }
-
-    return min_index;
-}
-
-void dijkstra(int graph[numberVertex][numberVertex], int source)
-{
-    int distance[numberVertex];
+    int distance[numberVertex], numVisitedVertex, node;
     bool ShortestPathTree[numberVertex];
+    set <pair <int, int> > heap;
 
-    for(int i = 0; i < numberVertex; i++)
-    {
+    for(int i = 0; i < numberVertex; ++i)
         distance[i] = INT_MAX;
-        ShortestPathTree[i] = false;
-    }
-
+    
     distance[source] = 0;
 
-    for(int count = 0; count < numberVertex - 1; count++)
+    for(int i = 0; i < numberVertex; ++i)
+        heap.insert(make_pair(distance[i], i));
+
+    numVisitedVertex = 1;
+
+    while (numVisitedVertex < numberVertex)
     {
-        int u = minDistance(distance, ShortestPathTree);
+        int u = heap.begin()->second;
+        if (distance[u] == INT_MAX)
+            break;
 
-        ShortestPathTree[u] = true;
+        int numNeighbours = Alist[u].size();
+        for(int vertex = 0; vertex < numNeighbours; vertex++)
+        {
+            node = Alist[u][vertex].first;
+            if (distance[node] > distance[u] + Alist[u][vertex].second)
+            {
+                heap.erase(make_pair(distance[node], node));
+                distance[node] = distance[u] + Alist[u][vertex].second;
+                heap.insert(make_pair(distance[node], node));
+            }
+        }
+        heap.erase(heap.begin());
+        ++ numVisitedVertex;
 
-        for(int vertex = 0; vertex < numberVertex; vertex++)
-            if(ShortestPathTree[vertex] == 0 && graph[u][vertex] != 0 &&
-                distance[u] != INT_MAX && distance[u] + graph[u][vertex] < distance[vertex])
-                distance[vertex] = distance[u] + graph[u][vertex];
     }
 
     cout << "Distance from Source:" << endl;
@@ -65,7 +64,13 @@ int main()
                                              {0, 0, 2, 0, 0, 0, 6, 7, 0, 0},
                                              {10, 0, 0, 5, 0, 11, 15, 0, 0, 0}};
 
-    dijkstra(graph, 0);
+    vector <pair<int, int> > Alist[numberVertex];
+    for (int i = 0; i < numberVertex; ++i)
+        for (int j = 0; j < numberVertex; ++j)
+            if (graph[i][j])
+                Alist[i].push_back(make_pair(j, graph[i][j]));
+
+    dijkstra(Alist, 0);
 
     return 0;
 }
