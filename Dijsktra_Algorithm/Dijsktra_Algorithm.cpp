@@ -10,7 +10,6 @@ const int numberVertex = 10;
 void dijkstra(vector <pair<int, int> > Alist[numberVertex], int source)
 {
     int distance[numberVertex], numVisitedVertex, node;
-    bool ShortestPathTree[numberVertex];
     set <pair <int, int> > heap;
 
     for(int i = 0; i < numberVertex; ++i)
