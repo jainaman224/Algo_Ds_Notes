@@ -35,7 +35,7 @@ class BinaryTree
  
     void printInorder()
     {     
-    	printInorder(root);  
+        printInorder(root);  
     }
  
     public static void main(String[] args)
@@ -46,8 +46,18 @@ class BinaryTree
         tree.root.right = new Node(3);
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
+        tree.root.right.left = new Node(6);
+        tree.root.right.right = new Node(7);
+        tree.root.left.left.left = new Node(8);
+        tree.root.left.left.right = new Node(9);
  
         System.out.println("\nInorder traversal of binary tree is ");
         tree.printInorder();
     }
 }
+
+/*
+Output:
+Inorder traversal of binary tree is 
+8 4 9 2 5 1 6 3 7 
+*/
