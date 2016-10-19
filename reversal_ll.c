@@ -66,7 +66,6 @@ int main()
      push(2);
      push(3); 
      push(4);      
-     
      printList();    
      reverse();                      
      printf("\n Reversed Linked list \n");
