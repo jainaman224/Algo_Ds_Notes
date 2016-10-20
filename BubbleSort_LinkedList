@@ -52,27 +52,38 @@ void display()
     printf("\n");
 }    
 
+/* function to swap data of two nodes a and b*/
+void swap(node *a,node *b)
+{
+    int temp = a->data;
+    a->data = b->data;
+    b->data = temp;
+}
+
 /*Function to bubble sort*/
 void bubble()
 {
-	int temp;
+	int ctr,n=1;
 	node *t1,*t2;
 	t1=head;
-	while(t1->next!=NULL)
+	do
 	{
+		ctr=0;
 		t2=head;
 		while(t2->next!=NULL)
 		{
 			if(t2->data > t2->next->data)
 			{
-				temp=t2->data; 
-				t2->data=t2->next->data;
-				t2->next->data=temp;
+				swap(t2,t2->next);
+				ctr=1;
 			}
 			t2=t2->next;
 		}
 		t1=t1->next;
-	}
+		printf("After iteration %d : ",n);
+		display();
+		n++;
+	}while(t1->next!=NULL && ctr);
 }
 
 void main()
