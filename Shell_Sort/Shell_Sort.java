@@ -1,11 +1,11 @@
 /* Java implementation of Shell Sort*/
 
-public class shellSort 
+public class Shell_Sort
 {
     public void sort(int input[]) // Function implementing Insertion Sort
     {
           int n = input.length, temp, j;
-          for (int gap = n / 2; gap > 0; gap /= 2) 
+          for (int gap = n / 2; gap > 0; gap /= 2)
           {
               for (int i = gap; i < n; i++) // Gapped insertion sort
               {
@@ -13,13 +13,13 @@ public class shellSort
 
                   for (j = i; j >= gap && input[j - gap] > temp; j = j - gap)
                       input[j] = input[j - gap];
-                    
+
                   input[j] = temp;
               }
           }
     }
 
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         int input[] = {5, 6, 8, 4, 6, 5, 3, 3, 2, 7, 8, 45, 85, 96}; //Input array
 
@@ -37,6 +37,6 @@ public class shellSort
 
 /*
 
-Output : 2 3 3 4 5 5 6 6 7 8 8 45 85 96 
+Output : 2 3 3 4 5 5 6 6 7 8 8 45 85 96
 
 */
