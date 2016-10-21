@@ -154,7 +154,7 @@ Please discuss it with us first by creating new issue.
 
 **Java**
 
-| [KavyaSharma](https://github.com/KavyaSharma) | [nj4710](https://github.com/nj4710) | [ayushin78](https://github.com/ayushin78) |
+| [adishjain](https://github.com/adishjain) | [KavyaSharma](https://github.com/KavyaSharma) | [nj4710](https://github.com/nj4710) | [ayushin78](https://github.com/ayushin78) |
 | --- | --- | --- |
 
 **JavaScript**
