@@ -2,15 +2,19 @@
  * Created by jude on 21/10/16.
  */
 public class sleepSort {
-    private static int[] elements = {3, 6, 3, 9, 10, 8, 2};
 
-    public static void main(String[] args)
+
+    private static int[] elements = {3,6,3,9,10,8,2};
+
+     public static void main(String[] args)
     {
+
         sleepSortMethod(elements);
     }
 
     private static void sleepSortMethod(int[] elements) {
-        for(int element: elements)
+
+        for(int element:elements)
         {
             Thread thread = new Thread(new sleepSortThread(element));
             thread.start();
@@ -22,6 +26,7 @@ public class sleepSort {
         public sleepSortThread(int element) {
             this.element = element;
         }
+
 
         @Override
         public void run() {
@@ -35,8 +40,8 @@ public class sleepSort {
         }
     }
 }
-
-/* Output
+/*
+Output
         2
         3
         3
@@ -44,4 +49,5 @@ public class sleepSort {
         8
         9
         10
+
 */
