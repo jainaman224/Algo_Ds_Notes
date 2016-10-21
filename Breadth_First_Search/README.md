@@ -15,8 +15,8 @@ It employs the following rules.
 
 **Rule 3** − Repeat Rule 1 and Rule 2 until the queue is empty.
 
-| Day     | Meal    | Price |
+| Step     | Traversal    | Description |
 | --------|---------|-------|
-| Monday  | pasta   | $6    |
-| Tuesday | chicken | $8    |
-![Breadth First Traversal]()
+| 1.  | ![Breadth First Traversal](https://www.tutorialspoint.com/data_structures_algorithms/images/bfs_one.jpg)   | Initialize the queue.    |
+| 2. | ![Breadth First Traversal](https://www.tutorialspoint.com/data_structures_algorithms/images/bfs_two.jpg) | We start from visiting S (starting node), and mark it as visited.    |
+
