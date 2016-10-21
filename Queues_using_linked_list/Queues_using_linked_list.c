@@ -18,6 +18,7 @@ void empty();
 void display();
 void create();
 void queuesize();
+void initial_queue();
 
 int count = 0;
 
@@ -33,6 +34,8 @@ void main()
     printf("\n 6 - Display");
     printf("\n 7 - Queue size");
     create();
+    initial_queue();
+    initial_queue();
     while (1)
     {
         printf("\n Enter choice : ");
@@ -40,8 +43,7 @@ void main()
         switch (ch)
         {
             case 1:
-            printf("Enter data : ");
-            scanf("%d", &no);
+            no=9;
             enq(no);
             break;
             case 2:
@@ -78,6 +80,31 @@ void create()
     front = rear = NULL;
 }
 
+void initial_queue()
+{
+    int a[4]={2,3,4,5},i;
+    if (rear == NULL)
+    {
+        rear = (struct node *)malloc(1*sizeof(struct node));
+        rear->ptr = NULL;
+        rear->info = 1;
+        front = rear;
+        count++;
+    }
+    else
+    {
+        for(i=0;i<4;i++)
+        {
+            temp=(struct node *)malloc(1*sizeof(struct node));
+            rear->ptr = temp;
+            temp->info = a[i];
+            temp->ptr = NULL;
+            rear = temp;
+            count++;
+        }
+    }
+}
+
 /* Returns queue size */
 void queuesize()
 {
@@ -104,6 +131,7 @@ void enq(int data)
         rear = temp;
     }
     count++;
+    display();
 }
 
 /* Displaying the queue elements */
@@ -136,6 +164,7 @@ void deq()
         return;
     }
     else
+    {
         if (front1->ptr != NULL)
         {
             front1 = front1->ptr;
@@ -152,6 +181,8 @@ void deq()
         }
         count--;
     }
+    display();
+}
 
 /* Returns the front element of queue */
     int frontelement()
@@ -170,3 +201,32 @@ void deq()
     else
      printf("Queue not empty");
 }
+
+
+
+
+/*
+inital queue is : 1,2,3,4,5
+
+if ch=1, i.e. enqueue
+9 is enqueued
+output : 1 2 3 4 5 9
+
+if ch=2, i.e. dequeue
+output : 2 3 4 5
+
+if ch=3
+output : 1
+
+if ch=4
+output : Queue not empty
+
+if ch=5
+exit
+
+if ch=6
+output : 1 2 3 4 5
+
+if ch=7
+output : Queue size : 5
+*/
