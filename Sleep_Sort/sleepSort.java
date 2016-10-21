@@ -40,3 +40,13 @@ public class sleepSort {
         }
     }
 }
+/*
+Output
+        2
+        3
+        3
+        6
+        8
+        9
+        10
+*/
