@@ -4,14 +4,19 @@
 
 ## Example
 ![Breadth First Traversal](https://www.tutorialspoint.com/data_structures_algorithms/images/breadth_first_traversal.jpg)
+
 As in the example given above, BFS algorithm traverses from A to B to E to F first then to C and G lastly to D.
 
 It employs the following rules.
 
-Rule 1 − Visit the adjacent unvisited vertex. Mark it as visited. Display it. Insert it in a queue.
+**Rule 1** − Visit the adjacent unvisited vertex. Mark it as visited. Display it. Insert it in a queue.
 
-Rule 2 − If no adjacent vertex is found, remove the first vertex from the queue.
+**Rule 2** − If no adjacent vertex is found, remove the first vertex from the queue.
 
-Rule 3 − Repeat Rule 1 and Rule 2 until the queue is empty.
+**Rule 3** − Repeat Rule 1 and Rule 2 until the queue is empty.
 
-![Breadth First Traversal](https://www.tutorialspoint.com/data_structures_algorithms/images/bfs_five.jpg)
+| Day     | Meal    | Price |
+| --------|---------|-------|
+| Monday  | pasta   | $6    |
+| Tuesday | chicken | $8    |
+![Breadth First Traversal]()
