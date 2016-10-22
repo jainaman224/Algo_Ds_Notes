@@ -134,8 +134,6 @@ class Linked_List:
         def Count_Recursive(node):
             if node is None:
                 return 0
-            elif node.next is None:
-                return 1
             else:
                 return 1 + Count_Recursive(node.next)
 
