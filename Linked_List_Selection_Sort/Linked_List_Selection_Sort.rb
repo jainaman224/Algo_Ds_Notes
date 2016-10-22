@@ -60,12 +60,12 @@ class LinkedList
 
   def selectionSort
     beg = @top
-		min = @top
+    min = @top
 
     # Iterate through the list
-		while(beg.getNext != nil)
-			min = beg
-			curr = beg.getNext
+    while(beg.getNext != nil)
+	    min = beg
+	    curr = beg.getNext
 
 			while(curr != nil)
         # Check to see if its the smallest
