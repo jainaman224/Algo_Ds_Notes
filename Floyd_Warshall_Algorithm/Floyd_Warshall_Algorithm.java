@@ -43,7 +43,7 @@ public class Floyd_Warshall_Algorithm {
             {
                 if(graph[i][j] == Infinity)
                 {
-                    System.out.println("Infinity \t");
+                    System.out.println("INFINITY \t");
                 }
                 else
                 {
@@ -56,3 +56,13 @@ public class Floyd_Warshall_Algorithm {
 
 
 }
+
+/* OUTPUT
+
+The matrix below shows the shortest distances between each pair of vertices
+           0           8          15          15
+    INFINITY           0           7          14
+    INFINITY    INFINITY           0           7
+    INFINITY    INFINITY    INFINITY           0
+
+*/
