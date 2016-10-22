@@ -167,6 +167,40 @@ void Print_Linked_List()
     cout << current -> data << endl;
 }
 
+void Length_Iterative()
+{
+    int length = 0;
+
+    if(!Is_List_Empty())
+    {
+        length++;
+        node *current = head;
+        
+	while(current -> next != NULL)
+        {
+            length++;
+            current = current -> next;
+        }
+    }
+    
+    cout << "Length is " << length << " (Iterative)" << endl;
+}
+
+int Recursive_Count(node* current)
+{
+    if(current == NULL)
+        return 0;
+    else
+        return (1 + Recursive_Count(current -> next));
+}
+
+void Length_Recursive()
+{
+    int length = Recursive_Count(head);
+
+    cout << "Length is " << length << " (Recursive)" << endl;
+}
+
 int main()
 {
     int i;
@@ -204,6 +238,9 @@ int main()
     Search(6);
     Search(8);
 
+    Length_Iterative();
+    Length_Recursive();
+
     return 0;
 }
 
@@ -217,4 +254,6 @@ int main()
     0 -> 9 -> 6
     Element 6 is present in list
     Element 8 not found
+    Length is 3 (Iterative)
+    Length is 3 (Recursive)
 */
