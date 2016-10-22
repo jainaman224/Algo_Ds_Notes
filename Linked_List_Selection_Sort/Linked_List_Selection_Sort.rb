@@ -64,11 +64,11 @@ class LinkedList
 
     # Iterate through the list
     while(beg.getNext != nil)
-	    min = beg
-	    curr = beg.getNext
+			min = beg
+			curr = beg.getNext
 
 			while(curr != nil)
-        # Check to see if its the smallest
+				# Check to see if its the smallest
 				if(curr.getItem < min.getItem)
 					min = curr
 				end
@@ -76,7 +76,7 @@ class LinkedList
 				curr = curr.getNext
 			end
 
-      # Swap the values
+			# Swap the values
 			temp = beg.getItem
 			beg.setItem(min.getItem)
 			min.setItem(temp)
