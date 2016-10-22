@@ -121,3 +121,10 @@ class Ford_Fulkerson_Method {
   
 
 }
+/* Output
+
+The maximum possible flow is 23
+
+
+
+*/
