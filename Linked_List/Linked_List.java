@@ -189,10 +189,7 @@ class Linked_List
 	public int Count_Recursive(node currNode)
 	{
 		if (currNode == null)		
-			return 0;
-		// not necessary, but added to prevent another (unneeded) recursive call
-		else if (currNode.next == null)
-			return 1;
+			return 0;		
 		else		
 			return Count_Recursive(currNode.next) + 1;	
 	}
