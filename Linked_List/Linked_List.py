@@ -120,6 +120,28 @@ class Linked_List:
 
         print(current.data)
 
+    def Get_Length_Iterative(self):
+        current = self.head
+        length = 0
+
+        while current != None:
+            length += 1
+            current = current.next
+
+        return length
+
+    def Get_Length_Recursive(self):
+        def Count_Recursive(node):
+            if node is None:
+                return 0
+            elif node.next is None:
+                return 1
+            else:
+                return 1 + Count_Recursive(node.next)
+
+        return Count_Recursive(self.head)
+        
+
 
 LinkedList = Linked_List()
 
@@ -127,31 +149,37 @@ for i in range(0, 5):
     LinkedList.Insert_At_Beginning(i)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 for i in range(5, 10):
     LinkedList.Insert_At_End(i)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Recursive())
 
 LinkedList.Insert_After_Value(5, 9)
 LinkedList.Insert_After_Value(10, 9)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 for i in range(0, 3):
     LinkedList.Delete_At_End()
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Recursive())
 
 for i in range(0, 3):
     LinkedList.Delete_At_Beginning()
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 LinkedList.Delete_With_Value(1)
 LinkedList.Delete_With_Value(5)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Recursive())
 
 LinkedList.Search(6)
 LinkedList.Search(8)
