@@ -166,33 +166,33 @@ class Linked_List
 
         System.out.println(current.data);
     }
-	
-	public void Get_Length_Iterative()
-	{
-		int elementCounter = 0;
-		node current = head;
-		
-		while (current != null)
-		{		
-			elementCounter++;
-			current = current.next;
-		}
-	
-		System.out.println("Current Length: " + elementCounter);
-	}
-	
-	public void Get_Length_Recursive()
-	{
-		System.out.println("Current Length: " + Count_Recursive(head));						   
-	}
-	
-	public int Count_Recursive(node currNode)
-	{
-		if (currNode == null)		
-			return 0;		
-		else		
-			return Count_Recursive(currNode.next) + 1;	
-	}
+
+    public void Get_Length_Iterative()
+    {
+        int elementCounter = 0;
+        node current = head;
+
+        while (current != null)
+        {
+            elementCounter++;
+            current = current.next;
+        }
+
+        System.out.println("Current Length: " + elementCounter);
+    }
+
+    public void Get_Length_Recursive()
+    {
+        System.out.println("Current Length: " + Count_Recursive(head));
+    }
+
+    public int Count_Recursive(node currNode)
+    {
+        if (currNode == null)
+            return 0;
+        else
+            return Count_Recursive(currNode.next) + 1;
+    }
 
     public static void main(String[] args)
     {
@@ -203,40 +203,40 @@ class Linked_List
         for(i = 0; i < 5; i++)
             LinkedList.Insert_At_Beginning(i);
 
-		
-		
+        
+        
         LinkedList.Print_Linked_List();
-		LinkedList.Get_Length_Iterative();
+        LinkedList.Get_Length_Iterative();
 
         for(i = 5; i < 10; i++)
             LinkedList.Insert_At_End(i);
 
         LinkedList.Print_Linked_List();
-		LinkedList.Get_Length_Recursive();
-		
+        LinkedList.Get_Length_Recursive();
+        
         LinkedList.Insert_After_Value(5, 9);
         LinkedList.Insert_After_Value(10, 9);
 
         LinkedList.Print_Linked_List();
-		LinkedList.Get_Length_Iterative();
-		
+        LinkedList.Get_Length_Iterative();
+        
         for(i = 0; i < 3; i++)
             LinkedList.Delete_At_End();
 
         LinkedList.Print_Linked_List();
-		LinkedList.Get_Length_Recursive();
-		
+        LinkedList.Get_Length_Recursive();
+        
         for(i = 0; i < 3; i++)
             LinkedList.Delete_At_Beginning();
 
         LinkedList.Print_Linked_List();
-		LinkedList.Get_Length_Iterative();
+        LinkedList.Get_Length_Iterative();
 
         LinkedList.Delete_With_Value(1);
         LinkedList.Delete_With_Value(5);
 
         LinkedList.Print_Linked_List();
-		LinkedList.Get_Length_Recursive();
+        LinkedList.Get_Length_Recursive();
 
         LinkedList.Search(6);
         LinkedList.Search(8);
@@ -245,18 +245,18 @@ class Linked_List
 
 /*  Output
     4 -> 3 -> 2 -> 1 -> 0
-	Current Length: 5
+    Current Length: 5
     4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 6 -> 7 -> 8 -> 9
-	Current Length: 10
+    Current Length: 10
     Element 10 is not in list
     4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 9 -> 6 -> 7 -> 8 -> 9
-	Current Length: 11
+    Current Length: 11
     4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 9 -> 6
-	Current Length: 8
+    Current Length: 8
     1 -> 0 -> 5 -> 9 -> 6
-	Current Length: 5
+    Current Length: 5
     0 -> 9 -> 6
-	Current Length: 3
+    Current Length: 3
     Element 6 is present in list
     Element 8 not found
 */
