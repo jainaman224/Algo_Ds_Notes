@@ -19,16 +19,10 @@ def Binary_Search(array, desired):
 array = [1, 2, 3, 4, 5, 6, 7]
 
 # Element to be searched is 4
-if Binary_Search(array, 4) != -1:
-    print("Found")
-else:
-    print("Not Found")
+print ("Found") if Binary_Search(array, 4) != -1 else ("Not Found")
 
 # Element to be searched is 9
-if Binary_Search(array, 9) != -1:
-    print("Found")
-else:
-    print("Not Found")
+print ("Found") if Binary_Search(array, 9) != -1 else ("Not Found")
 
 
 ''' Output
