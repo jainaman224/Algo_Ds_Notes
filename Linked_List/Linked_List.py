@@ -144,6 +144,9 @@ class Linked_List:
 
 
 LinkedList = Linked_List()
+print("List Created!")
+LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 for i in range(0, 5):
     LinkedList.Insert_At_Beginning(i)
@@ -188,13 +191,22 @@ LinkedList.Search(8)
 '''
 Output
 
+List Created!
+List is Empty
+Current Length: 0
 4 -> 3 -> 2 -> 1 -> 0
+Current Length: 5
 4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 6 -> 7 -> 8 -> 9
+Current Length: 10
 Element 10 not in list
 4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 9 -> 6 -> 7 -> 8 -> 9
+Current Length: 11
 4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 9 -> 6
+Current Length: 8
 1 -> 0 -> 5 -> 9 -> 6
+Current Length: 5
 0 -> 9 -> 6
+Current Length: 3
 Element 6 is present in list
 Element 8 not found
 
