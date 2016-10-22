@@ -120,38 +120,67 @@ class Linked_List:
 
         print(current.data)
 
+    def Get_Length_Iterative(self):
+        current = self.head
+        length = 0
+
+        while current != None:
+            length += 1
+            current = current.next
+
+        return length
+
+    def Get_Length_Recursive(self):
+        def Count_Recursive(node):
+            if node is None:
+                return 0
+            else:
+                return 1 + Count_Recursive(node.next)
+
+        return Count_Recursive(self.head)
+        
+
 
 LinkedList = Linked_List()
+print("List Created!")
+LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 for i in range(0, 5):
     LinkedList.Insert_At_Beginning(i)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 for i in range(5, 10):
     LinkedList.Insert_At_End(i)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Recursive())
 
 LinkedList.Insert_After_Value(5, 9)
 LinkedList.Insert_After_Value(10, 9)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 for i in range(0, 3):
     LinkedList.Delete_At_End()
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Recursive())
 
 for i in range(0, 3):
     LinkedList.Delete_At_Beginning()
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Iterative())
 
 LinkedList.Delete_With_Value(1)
 LinkedList.Delete_With_Value(5)
 
 LinkedList.Print_Linked_List()
+print("Current Length:", LinkedList.Get_Length_Recursive())
 
 LinkedList.Search(6)
 LinkedList.Search(8)
@@ -160,13 +189,22 @@ LinkedList.Search(8)
 '''
 Output
 
+List Created!
+List is Empty
+Current Length: 0
 4 -> 3 -> 2 -> 1 -> 0
+Current Length: 5
 4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 6 -> 7 -> 8 -> 9
+Current Length: 10
 Element 10 not in list
 4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 9 -> 6 -> 7 -> 8 -> 9
+Current Length: 11
 4 -> 3 -> 2 -> 1 -> 0 -> 5 -> 9 -> 6
+Current Length: 8
 1 -> 0 -> 5 -> 9 -> 6
+Current Length: 5
 0 -> 9 -> 6
+Current Length: 3
 Element 6 is present in list
 Element 8 not found
 
