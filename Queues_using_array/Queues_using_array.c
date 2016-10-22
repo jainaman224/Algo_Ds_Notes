@@ -132,8 +132,5 @@ Queue is not empty
 
 if choice=5
 exit
-<<<<<<< HEAD
 */
-=======
-*/
->>>>>>> a793e42d04132cb92e504554c5355b4ae8c032a7
+
