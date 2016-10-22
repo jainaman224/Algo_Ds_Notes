@@ -173,10 +173,9 @@ void Length_Iterative()
 
     if(!Is_List_Empty())
     {
-        length++;
         node *current = head;
         
-	while(current -> next != NULL)
+	while(current!= NULL)
         {
             length++;
             current = current -> next;
