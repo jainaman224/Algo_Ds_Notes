@@ -81,8 +81,21 @@ int main(int argc, char const *argv[])
 		cout<<endl;
 	}
 
-
-
-
 	return 0;
 }
+
+
+/*Test Cases:
+input:
+5 6
+1 2 2
+2 5 5
+2 3 4
+1 4 1
+4 3 3
+3 5 1
+
+
+output:
+1 4 3 5
+*/
