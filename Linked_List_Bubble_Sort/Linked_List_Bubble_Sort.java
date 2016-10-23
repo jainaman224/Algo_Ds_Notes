@@ -1,13 +1,13 @@
 /*
  * Author: Jennifer Tran
- * Last Updated: 19/10/2016
+ * Last Updated: 21/10/2016
  *
  * NOTE: To make this code OOP friendly, place the Node and
  * LinkedList classes outside of the LinkedList_Bubble_Sort
  * class and remove the static.
  */
 
-public class LinkedList_Bubble_Sort
+public class Linked_List_Bubble_Sort
 {
   public static void main(String[] args)
   {

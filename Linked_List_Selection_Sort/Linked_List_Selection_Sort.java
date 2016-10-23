@@ -22,13 +22,13 @@ public class selection_sort {
 		{
 			min=beg;
 			node current=beg.next;
-			
+
 			while(current!=null)
 			{
 				if(current.data<min.data)
 				{
 					min=current;
-				}	
+				}
 				current=current.next;
 			}
 
@@ -36,7 +36,7 @@ public class selection_sort {
 			beg.data = min.data;
 			min.data = temp;
 
-			beg=beg.next;	
+			beg=beg.next;
 		}
 	}
 
@@ -94,6 +94,6 @@ public class selection_sort {
 /*
 Output:
 11 -> 5 -> 3 -> 6 -> 13 -> 10
-After selection sort : 
+After selection sort :
 3 -> 5 -> 6 -> 10 -> 11 -> 13
 */
