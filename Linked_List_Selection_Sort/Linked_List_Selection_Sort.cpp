@@ -86,3 +86,8 @@ int main()
 	display();
 	return 0;
 }
+
+/*Output:
+Before sorting: 1 8 5 4 9 2
+After sorting: 1 2 4 5 8 9
+*/
