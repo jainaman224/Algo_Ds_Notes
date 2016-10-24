@@ -1,138 +1,176 @@
 #include <iostream>
+#include <ios>
+#include <memory>
+#include <cassert>
 
-using namespace std;
+// A set implemented using a binary search tree.
+// A binary search tree is a binary tree where the children on one side of a node are smaller and on the other side are larger. This makes searching in the tree efficient since only one of the two subtrees must be traversed for any visited node. However when sorted values are inserted, the tree degenerates into a linked list.
+class int_set {
+public:
+	void insert( const int value ) {
+		_root = insert( std::move( _root ), value );
+	}
+	bool contains( const int value ) const {
+		return contains( _root, value );
+	}
+	void remove( const int value ) {
+		_root = remove( std::move( _root ), value );
+	}
+	void print() const {
+		print( 0, _root );
+	}
+private:
+	struct node;
+	using node_ptr = std::unique_ptr<node>;
+	struct node {
+		int data = 0;
+		node_ptr left;
+		node_ptr right;
+	};
 
-struct node
-{
-    int data;
-    node *left;
-    node *right;
-} *head = NULL;
+	static node_ptr insert( node_ptr root, const int value );
+	static bool contains( const node_ptr& root, const int value );
+	static bool left_of( const node_ptr& root, const int value ) {
+		return value < root->data;
+	}
+	static bool right_of( const node_ptr& root, const int value ) {
+		return value > root->data;
+	}
+	static int leftmost( const node_ptr& root );
+	static node_ptr remove( node_ptr root, const int value );
+	static void print( const int indentation, const node_ptr& root );
 
-void Insert(int value)
-{
-    node *temp = new node;
-    temp -> data = value;
+	node_ptr _root;
+};
 
-    if(head == NULL)
-        head = temp;
-    else
-    {
-        node *current = head;
 
-        while(current != NULL)
-        {
-            if(value < current -> data)
-            {
-                if(current -> left != NULL)
-                    current = current -> left;
-                else
-                {
-                    current -> left = temp;
-                    return ;
-                }
-            }
-            else
-            {
-                if(current -> right != NULL)
-                    current = current -> right;
-                else
-                {
-                    current -> right = temp;
-                    return ;
-                }
-            }
-        }
-    }
+
+int_set::node_ptr int_set::insert( int_set::node_ptr root, const int value ) {
+	if( root == nullptr ) {
+		auto newNode = std::make_unique<node>();
+		newNode->data = value;
+		return newNode;
+	}
+	if( left_of( root, value ) ) {
+		root->left = insert( std::move( root->left ), value );
+	} else if( right_of( root, value ) ) {
+		root->right = insert( std::move( root->right ), value );
+	}
+	return root;
 }
 
-void Search(int value)
-{
-    node *current = head;
-
-    while(current != NULL)
-    {
-        if(value < current -> data)
-            current = current -> left;
-        else if(value > current -> data)
-            current = current -> right;
-        else
-        {
-            cout << "Element " << value << " Found" << endl;
-            return ;
-        }
-    }
-
-    cout << "Element " << value << " not Found" << endl;
+bool int_set::contains( const int_set::node_ptr& root, const int value ) {
+	if( root == nullptr ) {
+		return false;
+	}
+	if( left_of(root, value ) ) {
+		return contains( root->left, value );
+	}
+	if( right_of( root, value ) ) {
+		return contains( root->right, value );
+	}
+	return true;
 }
 
-int Min_Value(node *head)
-{
-    while(head -> left != NULL)
-    {
-        head = head -> left;
-    }
-    return head -> data;
+
+int int_set::leftmost( const int_set::node_ptr& root ) {
+	assert( root != nullptr );
+	if( root->left != nullptr ) {
+		return leftmost( root->left );
+	}
+	return root->data;
 }
 
-node* Delete_Key(node *head, int value)
-{
-    if(head == NULL)
-        return head;
-
-    if(value < head -> data)
-        head -> left = Delete_Key(head -> left, value);
-    else if(value > head -> data)
-        head -> right = Delete_Key(head -> right, value);
-    else
-    {
-        if(head -> left == NULL)
-            return head -> right;
-        else if(head -> right == NULL)
-            return head -> left;
-
-        head -> data = Min_Value(head -> right);
-        head -> right = Delete_Key(head -> right, head -> data);
-    }
-
-    return head;
+int_set::node_ptr int_set::remove( int_set::node_ptr root, const int value ) {
+	if( root == nullptr ) {
+		return root;
+	}
+	if( left_of( root, value ) ) {
+		root->left = remove( std::move( root->left ), value );
+	} else if( right_of( root, value ) ) {
+		root->right = remove( std::move( root->right ), value );
+	} else {
+		// must remove this node. Easy if left or right are empty...
+		if( root->left == nullptr ) {
+			return std::move( root->right );
+		}
+		if( root->right == nullptr ) {
+			return std::move( root->left );
+		}
+		// otherwise store the leftmost value from the right subtree here.
+		root->data = leftmost( root->right );
+		root->right = remove( std::move( root->right ), root->data );
+	}
+	return root;
 }
 
-void Delete(int value)
-{
-    head = Delete_Key(head, value);
+void int_set::print( const int indentation, const int_set::node_ptr& root ) {
+	for( int i = 0; i < indentation; ++i ) {
+		std::cout << ' ';
+	}
+	if( root == nullptr ) {
+		std::cout << '*' << std::endl;
+		return;
+	}
+	std::cout << root->data << std::endl;
+	print( indentation + 1, root->left );
+	print( indentation + 1, root->right );
 }
 
-int main()
-{
-    Insert(5);
-    Insert(7);
-    Insert(9);
-    Insert(8);
-    Insert(6);
-    Insert(4);
+int main() {
+	int_set s;
+	s.insert( 5 );
+	s.insert( 7 );
+	s.insert( 9 );
+	s.insert( 8 );
+	s.insert( 6 );
+	s.insert( 4 );
 
-    Search(9);
-    Search(2);
+	s.print();
 
-    Delete(7);
-    Delete(5);
-    Delete(4);
+	std::cout << std::boolalpha; // print bools as true/false instead of 0/1
+	std::cout << "Contains 9: " << s.contains( 9 ) << std::endl;
+	std::cout << "Contains 2: " << s.contains( 2 ) << std::endl;
+	
+	s.remove( 7 );
+	s.remove( 5 );
+	s.remove( 4 );
 
-    Search(9);
-    Search(2);
-    Search(5);
-    Search(6);
-    return 0;
+	std::cout << "Contains 9: " << s.contains( 9 ) << std::endl;
+	std::cout << "Contains 2: " << s.contains( 2 ) << std::endl;
+	std::cout << "Contains 5: " << s.contains( 5 ) << std::endl;
+	std::cout << "Contains 6: " << s.contains( 6 ) << std::endl;
+
+	s.print();
+	return 0;
 }
 
 /* Output
 
-Element 9 Found
-Element 2 not Found
-Element 9 Found
-Element 2 not Found
-Element 5 not Found
-Element 6 Found
-
+5
+ 4
+  *
+  *
+ 7
+  6
+   *
+   *
+  9
+   8
+    *
+    *
+   *
+Contains 9: true
+Contains 2: false
+Contains 9: true
+Contains 2: false
+Contains 5: false
+Contains 6: true
+6
+ *
+ 8
+  *
+  9
+   *
+   *
 */
