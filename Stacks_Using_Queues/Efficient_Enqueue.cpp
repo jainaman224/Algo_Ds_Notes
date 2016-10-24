@@ -15,12 +15,6 @@ public:
     }
 
     // Removes the element on top of the stack.
-// 1) One by one dequeue everything except the last element from q1 and enqueue to q2.
-//   2) Dequeue the last item of q1, the dequeued item is result, store it.
-//   3) Swap the names of q1 and q2
-//   4) Return the item stored in step 2.
-// Swapping of names is done to avoid one more movement of all elements
-// from q2 to q1.
     int pop() {
         if (q1.empty()) {
             cout << "Stack is empty!";
