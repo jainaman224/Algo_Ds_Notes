@@ -2,70 +2,54 @@
 
 using namespace std;
 
-struct node
-{
+struct node {
     int data;
     node *next;
+    node(int value): data(value), next(NULL) {}
 } *head = NULL;
 
-bool Is_List_Empty()
-{
-    if(head == NULL)
-        return true;
-
-    return false;
+bool Is_List_Empty() {
+    return (head == NULL);
 }
 
-void Insert_At_Beginning(int value)
-{
-    node *temp = new node;
-    temp -> data = value;
+void Insert_At_Beginning(int value) {
+    node *temp = new node(value);
     temp -> next = head;
     head = temp;
 }
 
-void Insert_At_End(int value)
-{
-    node *temp = new node, *current = head;
-    temp -> data = value;
-    temp -> next = NULL;
-
-    if(Is_List_Empty())
-    {
+void Insert_At_End(int value) {
+    node *temp = new node(value);
+    if(Is_List_Empty()) {
         head = temp;
-        return ;
+        return;
     }
-
-    while(current -> next != NULL)
+    node  *current = head;
+    while(current -> next != NULL) {
         current = current -> next;
-
+    }
     current -> next = temp;
 }
 
-void Insert_After_Value(int desired, int value)
-{
-    node *current = head;
+void Insert_After_Value(int desired, int value) {
 
+    node *current = head;
     while(current != NULL && current -> data != desired)
         current = current -> next;
 
-    if(current == NULL)
+    if(current == NULL) {
         cout << "Element " << desired << " is not in list" << endl;
-    else
-    {
-        node *temp = new node;
-        temp -> data = value;
+    } else {
+        node *temp = new node(value);
         temp -> next = current -> next;
         current -> next = temp;
     }
 }
 
-void Delete_At_Beginning()
-{
+void Delete_At_Beginning() {
     if(Is_List_Empty())
         cout << "List is empty" << endl;
-    else
-    {
+    else {
         node *temp = head;
         head = head -> next;
         temp -> next = NULL;
@@ -73,144 +57,109 @@ void Delete_At_Beginning()
     }
 }
 
-void Delete_At_End()
-{
-    if(Is_List_Empty())
-    {
+void Delete_At_End() {
+    if(Is_List_Empty()) {
         cout << "List is empty" << endl;
-        return ;
+        return;
     }
 
-    node *temp = head, *prev;
-
-    if(head -> next == NULL)
-    {
+    if(head -> next == NULL) {
+        delete head;
         head = NULL;
-        delete temp;
-        return ;
+        return;
     }
 
-    while(temp -> next != NULL)
-    {
-        prev = temp;
+    node *temp = head;
+    while(temp -> next -> next != NULL) {
         temp = temp -> next;
     }
-
-    prev -> next = temp -> next;
+    delete temp -> next;
     temp -> next = NULL;
-    delete temp;
 }
 
-void Delete_With_Value(int desired)
-{
-    if(Is_List_Empty())
-    {
+void Delete_With_Value(int desired) {
+    if(Is_List_Empty()) {
         cout << "List is empty" << endl;
-        return ;
+        return;
     }
 
-    node *temp = head, *prev;
-
-    if(head -> data == desired)
-    {
+    node *temp = head, *prev = NULL;
+    if(head -> data == desired) {
         head = head -> next;
         temp -> next = NULL;
         delete temp;
-        return ;
+        return;
     }
 
-    while(temp != NULL && temp -> data != desired)
-    {
+    while(temp != NULL && temp -> data != desired) {
         prev = temp;
         temp = temp -> next;
     }
-
-    if(temp == NULL)
+    if(temp == NULL) {
         cout << "Element " << desired << " not in list" << endl;
-    else
-    {
+    } else {
         prev -> next = temp -> next;
         temp -> next = NULL;
         delete temp;
     }
 }
 
-void Search(int desired)
-{
+void Search(int desired) {
     node *temp = head;
-
-    while(temp != NULL && temp -> data != desired)
+    while(temp != NULL && temp -> data != desired) {
         temp = temp -> next;
-
-    if(temp == NULL)
+    }
+    if(temp == NULL) {
         cout << "Element " << desired << " not found" << endl;
-    else
+    } else {
         cout << "Element " << desired << " is present in list" << endl;
+    }
 }
 
-void Print_Linked_List()
-{
-    if(Is_List_Empty())
-    {
+void Print_Linked_List() {
+    if(Is_List_Empty()) {
         cout << "List is Empty" << endl;
-        return ;
+        return;
     }
 
     node *current = head;
-
-    while(current -> next != NULL)
-    {
-        cout << current -> data << " -> ";
+    while(current != NULL) {
+        cout << current -> data;
         current = current -> next;
+        if (current != NULL)
+            cout << " -> ";
     }
-
-    cout << current -> data << endl;
+    cout << endl;
 }
 
-void Length_Iterative()
-{
+void Length_Iterative() {
     int length = 0;
-
-    if(!Is_List_Empty())
-    {
-        length++;
-        node *current = head;
-        
-	while(current -> next != NULL)
-        {
-            length++;
-            current = current -> next;
-        }
+    node *temp = head;
+    while (temp) {
+        length += 1;
+        temp = temp -> next;
     }
-    
     cout << "Length is " << length << " (Iterative)" << endl;
 }
 
-int Recursive_Count(node* current)
-{
+int Recursive_Count(node* current) {
     if(current == NULL)
         return 0;
-    else
-        return (1 + Recursive_Count(current -> next));
+    return (1 + Recursive_Count(current -> next));
 }
 
-void Length_Recursive()
-{
+void Length_Recursive() {
     int length = Recursive_Count(head);
-
     cout << "Length is " << length << " (Recursive)" << endl;
 }
 
-int main()
-{
-    int i;
-
-    for(i = 0; i < 5; i++)
+int main() {
+    for(int i = 0; i < 5; i++)
         Insert_At_Beginning(i);
 
     Print_Linked_List();
 
-    for(i = 5; i < 10; i++)
+    for(int i = 5; i < 10; i++)
         Insert_At_End(i);
 
     Print_Linked_List();
@@ -220,12 +169,12 @@ int main()
 
     Print_Linked_List();
 
-    for(i = 0; i < 3; i++)
+    for(int i = 0; i < 3; i++)
         Delete_At_End();
 
     Print_Linked_List();
 
-    for(i = 0; i < 3; i++)
+    for(int i = 0; i < 3; i++)
         Delete_At_Beginning();
 
     Print_Linked_List();
