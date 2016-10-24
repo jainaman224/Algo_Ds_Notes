@@ -29,13 +29,17 @@ while head:
     print(head.data ,end=" ")
     head = head.next_node
 
-print("\nAfter Reverse", end=" ")
+print("\nAfter Reverse ", end=" ")
 head = n3  # the head of the nodes
 n = Node() # will contain reverse linked_list
 n = head.reverse_iterative(head)
 while n:
     print(n.data ,end=" ")
     n = n.next_node
+print("")
 
+# Output
+# Before Reverse 1 2 3 4
+# After Reverse  4 3 2 1 
 
             
