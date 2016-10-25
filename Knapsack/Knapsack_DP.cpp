@@ -39,6 +39,30 @@ int knapSack(int K, int wt[], int P[], int n)               // Returns the maxim
     return DP[n][K];
 }
 
+int knapSack_large(int K, int wt[], int P[], int n)
+{
+    int i, w;
+    int DP[2][K + 1];
+
+    for(i = 1; i <= K; i++)
+        DP[0][i] = 0;
+    DP[0][0] = 0;
+    DP[1][0] = 0;
+
+    for(i = 1; i <= n; i++)
+    {
+        for(w = 1; w <= K; w++)
+        {
+            if(wt[i - 1] <= w)
+                DP[i & 1][w] = max(P[i - 1] + DP[!(i & 1)][w - wt[i - 1]], DP[!(i & 1)][w]);
+            else
+                DP[i & 1][w] = DP[!(i & 1)][w];
+        }
+    }
+
+    return DP[n & 1][K];
+}
+
 int main()
 {
     int P[] = {11, 22, 33, 44, 55};
@@ -48,6 +72,7 @@ int main()
 
 	cout << knapSack(K, wt, P, n);
 
+        cout << endl << "Memory Optimised KnapSack " << knapSack_large(K, wt, P, n);
     return 0;
 }
 
