@@ -137,27 +137,30 @@ public class HeapPriorityQueue {
         return out.toString();
     }
 
+    /*
+     * Output is provided with the inline comments
+     */
     public static void main(String [] args) {
         String [] keys = new String[]{"p", "r", "i", "o"};
         HeapPriorityQueue h = new HeapPriorityQueue(keys);
-        System.out.println(h.toString());
+        System.out.println(h.toString()); // i o p r
         h.insert("q");
         h.insert("z");
         h.insert("b");
-        System.out.println(h.toString());
+        System.out.println(h.toString()); // b o i r q z p
         h.removeMin();
-        System.out.println(h.toString());
+        System.out.println(h.toString()); // i o p r q z
         h.removeMin();
-        System.out.println(h.toString());
-        System.out.println(h.min());
+        System.out.println(h.toString()); // o q p r z
+        System.out.println(h.min()); // o
         h.removeMin();
-        System.out.println(h.min());
+        System.out.println(h.min()); p
         h.removeMin();
         h.removeMin();
         assert(h.size() == 2);
         h.removeMin();
         h.removeMin();
-        System.out.println(h.isEmpty());
+        System.out.println(h.isEmpty()); // true
     }
 }
 
