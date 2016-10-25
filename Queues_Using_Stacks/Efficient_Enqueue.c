@@ -132,3 +132,11 @@ int main()
     
     return 0;
 }
+/* Output: [The first two elements would be dequeued]
+ * 10
+ * 20
+ * 30
+ * 40
+ * 50
+ * 60
+ */
