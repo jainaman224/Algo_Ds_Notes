@@ -1,74 +1,105 @@
-#include<stdio.h>
-#include<malloc.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-/* Link list node */
-typedef struct node
+struct node
 {
-    int data;
+    int num;
     struct node *next;
-}node;
+};
 
-node *head=NULL;
 
-/* Function to reverse the linked list */
-static void reverse()
+
+void create(struct node **);
+void reverse(struct node **);
+void release(struct node **);
+void display(struct node *);
+
+
+
+int main()
+{    struct node *p = NULL;
+    int n;
+    printf("Enter data\n");
+    create(&p);
+    printf("Displaying the nodes\n");
+    display(p);
+    printf("Reverse\n");
+    reverse(&p);
+    printf("Displaying the reversed list:\n");
+    display(p);
+    release(&p); 
+    return 0;
+}
+
+ 
+void create(struct node **head)
 {
-    node* prev   = NULL;
-    node* current = head;
-    node* next;
-    while (current != NULL)
+    int c, ch;
+    struct node *temp, *rear;
+ 
+    do
     {
-        next  = current->next;  
-        current->next = prev;   
-        prev = current;
-        current = next;
+        printf("Enter number: ");
+        scanf("%d", &c);
+        temp = (struct node *)malloc(sizeof(struct node));
+        temp->num = c;
+        temp->next = NULL;
+        if (*head == NULL)
+        {
+            *head = temp;
+        }
+        else
+        {
+            rear->next = temp;
+        }
+        rear = temp;
+        //printf("asdfghj");
+        printf("Do you wish to continue [1/0]: ");
+        scanf("%d", &ch);
+    } while (ch != 0);
+    printf("\n");
+}
+
+
+void reverse(struct node **head)
+{
+    struct node *p, *q, *r;
+    p = q = r = *head;
+    p = p->next->next;
+    q = q->next;
+    //printf("erty");
+    r->next = NULL;
+    q->next = r;
+    while (p != NULL)
+    {
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+        //printf("qwerty");
     }
-    head= prev;
+    *head = q;
 }
  
-/* Function to push a node */
-void push(int data)
+void display(struct node *p)
 {
-    node *temp,*newn;
-    newn=(node*)malloc(sizeof(node));
-	newn->data=data;
-	newn->next=NULL;
-	if(head==NULL)
-	{
-		head=newn;
-	}
-	else
-	{	
-		temp=head;
-		while(temp->next !=NULL)
-			temp=temp->next;
-		temp->next=newn;
-	}
- 
-}
- 
-/* Function to print linked list */
-void printList()
-{
-    struct node *temp = head;
-    while(temp != NULL)
+    while (p != NULL)
     {
-        printf("%d  ", temp->data);    
-        temp = temp->next;  
+        printf("%d\t", p->num);
+        p = p->next;
     }
     printf("\n");
-}    
+}
  
-int main()
+void release(struct node **head)
 {
-   
-     push(1);
-     push(2);
-     push(3); 
-     push(4);      
-     printList();    
-     reverse();                      
-     printf("\n Reversed Linked list \n");
-     printList();    
-     getchar();
+    struct node *temp = *head;
+    *head = (*head)->next;
+    while ((*head) != NULL)
+    {
+        free(temp);
+        //printf("yayyyyy");
+        temp = *head;
+        (*head) = (*head)->next;
+    }
 }
