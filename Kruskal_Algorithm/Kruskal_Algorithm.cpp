@@ -1,139 +1,167 @@
-// C++ implementation of Kruskal's Algorithm to find the Minimum Spanning tree for a weighted, connected and undirected graph.
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define maximun 10000000
 
-#include <iostream>
-#include <climits>
-#define n 6
-int parent[n]; // Parent array to hold the parent nodes of each node in the graph
-
-using namespace std;
-
-void printMST(int a[n], int b[n], int weight[n]) // Printing the MST
+struct eddges
 {
-    int Minweight = 0; // Weight of Minimum spanning tree
-    for (int i = 0; i < n - 1; i++)
-    {
-        cout << "Edge: " << a[i] << "-" << b[i] << " "
-             << "cost: " << weight[i] << endl;
-        Minweight += weight[i];
+    int my_source, my_destination, edge_weights;
+};
+struct MST
+{   int V, E;  
+    struct eddges* edge;
+};
+struct subset
+{   int parent;  int rank;
+};
+struct MST* forming_graph_MST(int V, int E)
+{
+    struct MST* graph = (struct MST*) malloc( sizeof(struct MST) );
+    graph->V = V;  graph->E = E;
+    graph->edge = (struct eddges*) malloc( graph->E * sizeof( struct eddges ) );
+    return graph;
+}
+
+void mg_sort(int arr[],int low,int mid,int high);
+void sort11_merge(int arr[],int low,int high);
+void mg_sort(int arr[],int low,int mid,int high)
+{    int i,m,k,l,temporary[maximun];
+
+    l=low; i=low;  m=mid+1;
+//printf("Booooo!!!!\n");
+    while((l<=mid)&&(m<=high))
+    {         if(arr[l]<=arr[m]){
+             temporary[i]=arr[l];
+
+             //printf("Booooo!!!!\n");
+             l++;
+}
+         else{  temporary[i]=arr[m];
+             m++;
+         }i++;
+         //printf("Booooo!!!!\n");
     }
-    cout << "Minimum Weight is " << Minweight << endl; // Printing the weight of MINIMUM SPANNING TREE
-}
-
-int findParent(int node) // Function to determine the parent node
-{
-    while(parent[node] >= 0)
-        node = parent[node];
-
-    return node;
-}
-
-/* "findParentPathCompression" is an alternative for "findParent" which is more efficient.
- * We use a technique called "path compression" here.
- * With path compression, we destroy the structure of the tree, and only focus on which group a node is in.
- */
-
-int findParentPathCompression(int node)
-{
-    if(node == parent[node]) return node;
-    return parent[node] = findParentPathCompression(parent[node]);
-}
-
-
-void kruskal(int cost[n][n]) // Function performing Kruskal's algorithm
-{
-    fill_n(parent, n, -1);
-    int u, v, k = 0, count = 0;
-    int firstNode, secondNode;
-    int a[n]; // Array containing the first nodes of all the edges present in MST
-    int b[n]; // Array containing the second nodes of all the edges present in MST
-    int weight[n]; // Array containing the weights of the edges present in MST
-    int minimum;
-
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++)
-            if (cost[i][j] == 0) //  If i and j nodes are not adjacent
-                cost[i][j] = INT_MAX; // Then, initialize their weight as INFINITE
-
-    while(count < n-1)
+    if(l>mid)
     {
-        minimum = INT_MAX; // Initializing minimum as INFINITE
-
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                if (cost[i][j] < minimum)
-                {
-                    minimum = cost[i][j]; // find the minimum cost edge
-                    firstNode = i; // First node of determined edge
-                    secondNode = j; // Second node of determined edge
-                }
-            }
-        }
-
-        u = findParent(firstNode); 
-        v = findParent(secondNode);
-
-
-        if (u != v) // If parents of both the nodes are different, no circuit is being formed
-        {
-            parent[v] = u;
-            a[k] = firstNode; // Store first node in array
-            b[k] = secondNode; // Store second node in array
-            weight[k] = cost[firstNode][secondNode]; // Store the determined edge's weight in array
-            count++;
-            k++;
-        }
-
-        cost[firstNode][secondNode] = cost[secondNode][firstNode] = INT_MAX; // Edges getting included in MST will be given the weight of INFINITE
+         for(k=m;k<=high;k++){
+            //printf("Booooo!!!!\n");
+             temporary[i]=arr[k];  i++;
+         }
     }
-
-    printMST(a, b, weight); // Printing the MST
+    else
+    {
+         for(k=l;k<=mid;k++){  temporary[i]=arr[k];
+             //printf("Booooo!!!!\n");
+             i++;
+    }
+    }
+    for(k=low;k<=high;k++)
+    {  arr[k]=temporary[k];
+        //printf("Booooo!!!!\n");
+    }
 }
-
-// Driver program to test above function
+void sort11_merge(int arr[],int low,int high)
+{
+    int mid;
+    if(low<high){
+         mid=(low+high)/2;
+         sort11_merge(arr,low,mid);
+         //printf("Booooo!!!!\n");
+         sort11_merge(arr,mid+1,high);
+         //printf("Booooo!!!!\n");
+         mg_sort(arr,low,mid,high);
+    }
+}
+int searching(struct subset subsets[], int i);
+void finding_union(struct subset subsets[], int x, int y);
+int HSS(const void* a, const void* b);
+int MST_algorithm(struct MST* graph)
+{
+    int v;
+    int V = graph->V;  struct eddges result[V];  
+    int e = 0;  int i = 0; 
+    //printf("Booooo!!!!\n");
+    qsort(graph->edge, graph->E, sizeof(graph->edge[0]), HSS);
+    struct subset *subsets = (struct subset*) malloc( V * sizeof(struct subset) );
+    //printf("Booooo!!!!\n");
+    for (v = 0; v < V; ++v)
+    { subsets[v].parent = v;subsets[v].rank = 0;
+    }
+    //printf("Booooo!!!!\n");
+    while (e < V - 1)
+    {         struct eddges next_edge = graph->edge[i++];   int x = searching(subsets, next_edge.my_source);
+        int y = searching(subsets, next_edge.my_destination);
+       if (x != y)
+        {   result[e++] = next_edge;  finding_union(subsets, x, y);
+            //printf("Booooo!!!!\n");
+        }      
+    }
+    int sum=0;
+    //printf("Booooo!!!!\n");
+    for (i = 0; i < e; ++i)
+        sum+=result[i].edge_weights; 
+        //printf("Booooo!!!!\n");                                                                              
+    return sum;
+}
 int main()
 {
+    int n,r1,r2,p,q,c;
+    scanf("%d %d %d", &n,&r1,&r2);
+    struct MST* graphtwo = forming_graph_MST(n, r1+r2);  struct MST* graphfour = forming_graph_MST(n, r2);
+    int i;
+    for(i=0;i<r1;i++)
+    {
+        //printf("Booooo!!!!\n");
+        scanf("%d %d %d", &p,&q,&c);
+        graphtwo->edge[i].my_source = p-1;   graphtwo->edge[i].my_destination = q-1;  graphtwo->edge[i].edge_weights = c;
+        //printf("Booooo!!!!\n");
 
-/* Let the given graph is :
+    }
+    int j;
+      for(j=0;j<r2;j++)
+    {
+        scanf("%d %d %d", &p,&q,&c);
+        graphtwo->edge[i+j].my_source = p-1;  graphtwo->edge[i+j].my_destination = q-1;  graphtwo->edge[i+j].edge_weights = c;
+        //printf("Booooo!!!!\n");
+        graphfour->edge[j].my_source = p-1; graphfour->edge[j].my_destination = q-1;
+        //printf("Booooo!!!!\n");
+        graphfour->edge[j].edge_weights = c;
+    }
+    int sum1=MST_algorithm(graphtwo);
+    //printf("Booooo!!!!\n");
+     int sum2=MST_algorithm(graphfour);
+     //printf("Booooo!!!!\n");
+     printf("%d %d\n", sum1,sum2);
 
-     (1)____1___(2)
-    /  \       /  \
-   3    4     4    6
-  /      \   /      \
- /        \ /        \
-(0)___5___(5)____5___(3)
- \         |         /
-  \        |        /
-   \       |       /
-    \      2      /
-     6     |     8
-      \    |    /
-       \   |   /
-        \  |  /
-         \ | /
-          (4)
-*/
-
-    int cost[n][n] = {
-        { 0, 3, 0, 0, 6, 5 },
-        { 3, 0, 1, 0, 0, 4 },
-        { 0, 1, 0, 6, 0, 4 },
-        { 0, 0, 6, 0, 8, 5 },
-        { 6, 0, 0, 8, 0, 2 },
-        { 5, 4, 4, 5, 2, 0 }
-    };
-
-    kruskal(cost);
     return 0;
 }
-
-/*
-Output :
- Edge: 0-1 cost: 3
- Edge: 1-2 cost: 1
- Edge: 1-5 cost: 4
- Edge: 5-4 cost: 2
- Edge: 5-3 cost: 5
- Minimum Weight is 15
-*/
+void finding_union(struct subset subsets[], int x, int y)
+{
+    int xroot = searching(subsets, x);    int yroot = searching(subsets, y);
+    if (subsets[xroot].rank < subsets[yroot].rank)
+        subsets[xroot].parent = yroot;
+    //printf("Booooo!!!!\n");
+    else if (subsets[xroot].rank > subsets[yroot].rank)
+        subsets[yroot].parent = xroot;
+    //printf("Booooo!!!!\n");
+   else
+    {
+        subsets[yroot].parent = xroot;        subsets[xroot].rank++;
+        //printf("Booooo!!!!\n");
+    }
+}
+int HSS(const void* a, const void* b)
+{
+    struct eddges* a1 = (struct eddges*)a;
+    //printf("Booooo!!!!\n");
+    struct eddges* b1 = (struct eddges*)b;
+    return a1->edge_weights > b1->edge_weights;
+    //printf("Booooo!!!!\n");
+}
+int searching(struct subset subsets[], int i)
+{
+    if (subsets[i].parent != i)
+        subsets[i].parent = searching(subsets, subsets[i].parent);
+    return subsets[i].parent;
+    //printf("Booooo!!!!\n");
+}
