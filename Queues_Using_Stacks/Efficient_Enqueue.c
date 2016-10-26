@@ -1,142 +1,94 @@
-/* Program to implement a queue using two stacks */
-// Courtesy: geeksforgeeks
-#include<stdio.h>
-#include<stdlib.h>
- 
-/* structure of a stack node */
-struct sNode
+#include <stdio.h>
+#include <stdlib.h>
+void push1(int);
+void push2(int);
+int pop1();
+int pop2();
+void ENQUEUE();
+void DEQUEUE();
+void Print_it();
+void faormation();
+int st1[100], st2[100];
+int top1 = -1, top2 = -1;
+int counter = 0;
+//printf("There you enter the main function");
+void main()
 {
-    int data;
-    struct sNode *next;
-};
- 
-/* Function to push an item to stack*/
-void push(struct sNode** top_ref, int new_data);
- 
-/* Function to pop an item from stack*/
-int pop(struct sNode** top_ref);
- 
-/* structure of queue having two stacks */
-struct queue
-{
-    struct sNode *stack1;
-    struct sNode *stack2;
-};
- 
-/* Function to enqueue an item to queue */
-void enQueue(struct queue *q, int x)
-{
-    push(&q->stack1, x);
-}
- 
-/* Function to dequeue an item from queue */
-int deQueue(struct queue *q)
-{
-    int x;
-    /* If both stacks are empty then error */
-    if(q->stack1 == NULL && q->stack2 == NULL)
-    {
-        printf("Q is empty");
-        getchar();
-        exit(0);
-    }
- 
-/* Move elements from satck1 to stack 2 only if
-stack2 is empty */
-if(q->stack2 == NULL)
-{
-    while(q->stack1 != NULL)
-    {
-        x = pop(&q->stack1);
-        push(&q->stack2, x);
-         
-    }
-}
- 
-x = pop(&q->stack2);
-return x;
-}
-
-int isEmpty(struct queue *q){
-    return (q->stack1 == NULL && q-> stack2 == NULL);
-}
-
-/* Function to push an item to stack*/
-void push(struct sNode** top_ref, int new_data)
-{
-    /* allocate node */
-    struct sNode* new_node =
-        (struct sNode*) malloc(sizeof(struct sNode));
-        if(new_node == NULL)
+    int ch;
+    printf("\n1 - ENQUEUE");
+    printf("\n2 - Dequeu");
+    printf("\n3 - Print_it");
+    printf("\n4 - Exit now");
+    faormation();
+    while (1)
+    { printf("\nEnter your choice please");
+        scanf("%d", &ch);
+        switch (ch)
+        //printf("There you enter the switch cases");
         {
-            printf("Stack overflow \n");
-            getchar();
-            exit(0);
-             
+        case 1:  ENQUEUE();  break;
+        case 2:  DEQUEUE();  break;
+        case 3:  Print_it(); break;
+        case 4:  exit(0);
+        default: printf("Oooopssss!!! Wrong choice");
+        //printf("There you exit");
         }
- 
-/* put in the data */
-new_node->data = new_data;
- 
-/* link the old list off the new node */
-new_node->next = (*top_ref);
- 
-/* move the head to point to the new node */
-(*top_ref) = new_node;
-}
- 
-/* Function to pop an item from stack*/
-int pop(struct sNode** top_ref)
-{
-    int res;
-    struct sNode *top;
-     
-    /*If stack is empty then error */
-    if(*top_ref == NULL)
-    {
-        printf("Stack overflow \n");
-        getchar();
-        exit(0);
-         
-    }
-    else
-    {
-        top = *top_ref;
-        res = top->data;
-        *top_ref = top->next;
-        free(top);
-        return res;
-         
     }
 }
-/* Driver function to test anove functions */
-int main()
+int pop1()
 {
-    struct queue *q = (struct queue*)malloc(sizeof(struct queue));
-    q->stack1 = NULL;
-    q->stack2 = NULL;
-    enQueue(q, 80);
-    enQueue(q, 100);
-    enQueue(q, 10);
-    enQueue(q, 20);
-    enQueue(q, 30);
-    deQueue(q);
-    enQueue(q, 40);
-    enQueue(q, 50);
-    deQueue(q);
-    enQueue(q, 60);
-     
-    /* Dequeue items */
-    while(!isEmpty(q))
-        printf("%d\n", deQueue(q));
-    
-    return 0;
+    //printf("There you enter the pop function");
+    return(st1[top1--]);
 }
-/* Output: [The first two elements would be dequeued]
- * 10
- * 20
- * 30
- * 40
- * 50
- * 60
- */
+void push1(int data)
+{
+    //printf("There you enter the pish1 function");
+    st1[++top1] = data;
+}
+void faormation()
+{
+    //printf("There you enter the formation function");
+    top1 = top2 = -1;
+}
+
+
+int pop2()
+{
+    //printf("There you enter the pop2 function");
+    return(st2[top2--]);
+}
+void DEQUEUE()
+{
+    //printf("There you enter the dequeue function");
+    int i;
+    for (i = 0;i <= counter;i++)
+    { push2(pop1());
+    }
+    pop2();
+    counter--;
+    for (i = 0;i <= counter;i++)
+    { push1(pop2());
+    }
+}
+void ENQUEUE()
+{
+    //printf("There you enter the enqueue function");
+    int data, i;
+    printf("Now you can enter data into queue");
+    scanf("%d", &data);
+    push1(data);  counter++;
+}
+void push2(int data)
+{
+    //printf("There you enter the push2 function");
+    st2[++top2] = data;
+} 
+
+void Print_it()
+{
+    //printf("There you enter the print function");
+    int i;
+    for (i = 0;i <= top1;i++)
+    {   printf(" %d ", st1[i]);
+    }
+}
