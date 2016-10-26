@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-const int MAX = 10000 + 10;
 
 struct Leftist {
   Leftist *left, *right;
@@ -13,7 +12,7 @@ struct Leftist {
     delete left;
     delete right;
   }
-}*root[MAX];
+};
 
 Leftist* merge(Leftist *x, Leftist *y) {
   if (x == NULL) return y;
