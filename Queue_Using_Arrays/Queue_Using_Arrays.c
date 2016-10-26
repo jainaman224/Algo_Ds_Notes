@@ -72,6 +72,6 @@ main()
             case 4: exit(1);
             default:
             printf("Invalid choice \n");
-        } 
+        }
     }
 } 
