@@ -1,89 +1,77 @@
-// C program for array implementation of queue
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-
-// A structure to represent a queue
-typedef struct Queue
-{
-	int front, rear, size;
-	unsigned capacity;
-	int* array;
-}Queue;
-
-
-Queue* createQueue(unsigned capacity)
-{
-	Queue* queue = (Queue*) malloc(sizeof(Queue));
-	queue->capacity = capacity;
-	queue->front = queue->size = 0; 
-	queue->rear = capacity - 1; // This is important, see the enqueue
-	queue->array = (int*) malloc(queue->capacity * sizeof(int));
-	return queue;
-}
-
  
-int isFull(Queue* queue)
-{ return (queue->size == queue->capacity); }
+    #define MAX 50
+    int queue_array[MAX];
+    int rear = - 1;
+    int front = - 1;
 
-int isEmpty(Queue* queue)
-{ return (queue->size == 0); }
 
-void enqueue(Queue* queue, int item)
+insert()
 {
-	if (isFull(queue))
-		return;
-	queue->rear = (queue->rear + 1)%queue->capacity;
-	queue->array[queue->rear] = item;
-	queue->size = queue->size + 1;
-	printf("%d enqueued to queue\n", item);
-}
-int dequeue(Queue* queue)
+    int add_item;
+    if (rear == MAX - 1)
+    printf("Overflow \n");
+    else
+    {
+        if (front == - 1)
+        front = 0;
+        printf("Insert in queue : ");
+        scanf("%d", &add_item);
+        rear = rear + 1;
+        queue_array[rear] = add_item;
+        //printf("sdfghj");
+    }
+} 
+ 
+delete()
 {
-	if (isEmpty(queue))
-		return INT_MIN;
-	int item = queue->array[queue->front];
-	queue->front = (queue->front + 1)%queue->capacity;
-	queue->size = queue->size - 1;
-	return item;
-}
+    if (front == - 1 || front > rear)
+    {
+        printf("Underflow \n");          return ;
+    }
+    else
+    {
+        printf("Element deleted: %d\n", queue_array[front]);
+        front = front + 1;
+        //printf("zxcvb");
+    }
+} 
 
-int front(Queue* queue)
+
+display()
 {
-	if (isEmpty(queue))
-		return INT_MIN;
-	return queue->array[queue->front];
-}
-int rear(Queue* queue)
+    int i;
+    if (front == - 1)
+        printf("Empty queue \n");
+    else
+    {
+        printf("Queue is : \n");
+        for (i = front; i <= rear; i++)
+            printf("%d ", queue_array[i]);
+        printf("\n");
+        //printf("qwerty");
+    }
+} 
+
+main()
 {
-	if (isEmpty(queue))
-		return INT_MIN;
-	return queue->array[queue->rear];
-}
-
-int main()
-{
-	 Queue* queue = createQueue(1000);
-
-	enqueue(queue, 5);
-	enqueue(queue, 7);
-	enqueue(queue, 23);
-	enqueue(queue, 67);
-
-	printf("%d dequeued from queue\n", dequeue(queue));
-
-	printf("Front item is %d\n", front(queue));
-	printf("Rear item is %d\n", rear(queue));
-
-	return 0;
-}
-//output
-/*
-5 enqueued to queue
-7 enqueued to queue
-23 enqueued to queue
-67 enqueued to queue
-5 dequeued from queue
-Front item is 7
-Rear item is 67
-*/
+    int choice;
+    while (1)
+    {
+        printf("1.Insert\n");
+        printf("2.Delete\n");
+        printf("3.Display\n");
+        printf("4.Quit \n");
+        printf("Enter choice : ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+            case 1: insert();  break;
+            case 2: delete();  break;
+            case 3: display(); break;
+            case 4: exit(1);
+            default:
+            printf("Invalid choice \n");
+        } 
+    }
+} 
