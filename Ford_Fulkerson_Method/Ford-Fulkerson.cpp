@@ -9,8 +9,8 @@
 #define oo 1000000000
 //Declarations
 
-int n;  // number of nodes
-int e;  // number of edges
+int n=6;;  // number of nodes
+int e=10;  // number of edges
 int capacity[MAX_NODES][MAX_NODES]; // capacity matrix
 int flow[MAX_NODES][MAX_NODES];     // flow matrix
 int color[MAX_NODES]; // needed for breadth-first search               
@@ -95,18 +95,22 @@ int max_flow (int source, int sink) {
 
 void read_input_file() {
     int a,b,c,i,j;
+    int ar[10]={0,0,1,2,3,1,2,4,3,4};
+    int br[10]={1,2,2,1,2,3,4,3,5,5};
+    int cr[10]={16,13,10,4,9,12,14,7,20,4};
     FILE* input = fopen("mf.in","r");
     // read number of nodes and edges
-    fscanf(input,"%d %d",&n,&e);
+    //fscanf(input,"%d %d",&n,&e);
     // initialize empty capacity matrix 
-    for (i=0; i<n; i++) {
-	for (j=0; j<n; j++) {
+    for (i=0; i<6; i++) {
+	for (j=0; j<6; j++) {
 	    capacity[i][j] = 0;
 	}
     }
     // read edge capacities
-    for (i=0; i<e; i++) {
-	fscanf(input,"%d %d %d",&a,&b,&c);
+    for (i=0; i<10; i++) {
+	//fscanf(input,"%d %d %d",&a,&b,&c);
+	a=ar[i];b=br[i];c=cr[i];
 	capacity[a][b] = c;
     }
     fclose(input);
