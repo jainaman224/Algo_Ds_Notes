@@ -1,41 +1,67 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct node
+struct node
 {
-	int data;
-	struct node *lptr,*rptr;
-}node;
+    int value;
+    node* left;
+    node* right;
+};
 
-node *newnode(int data)
+
+struct node* root;
+
+struct node* insert(struct node* r, int data);
+void inOrder(struct node* r);
+
+
+int main()
 {
-	node *newn;
-	newn=(node*)malloc(sizeof(node));
-	newn->data=data;
-	newn->lptr=NULL;
-	newn->rptr=NULL;
-	return newn;
+    root = NULL;
+    int n, v;
+
+    printf("How many data's do you want to insert ?\n");
+    scanf("%d", &n);
+
+    for(int i=0; i<n; i++){
+        printf("Data %d: ", i+1);
+        scanf("%d", &v);
+        root = insert(root, v);
+    }
+
+    printf("Inorder Traversal: ");
+    inOrder(root);
+    printf("\n");
+
+    
+    return 0;
 }
 
-/*Function for INORDER Transversal*/
-void inorder(node *root)
+struct node* insert(struct node* r, int data)
 {
-	if(root!=NULL)
-	{
-		inorder(root->lptr);
-		printf("%d ",root->data);
-		inorder(root->rptr);
-	}
+    if(r==NULL)
+    {
+        r = (struct node*) malloc(sizeof(struct node));
+        r->value = data;
+        r->left = NULL;
+        r->right = NULL;
+    }
+    else if(data < r->value){
+        r->left = insert(r->left, data);
+    }
+    else {
+        r->right = insert(r->right, data);
+    }
+    return r;
+
 }
 
-void main()
+void inOrder(struct node* r)
 {
-	node *root;
-	root=newnode(1);
-	root->lptr=newnode(2);
-	root->rptr=newnode(3);
-	root->lptr->lptr=newnode(4);
-	root->lptr->rptr=newnode(5);
-	
-	printf("In Order Transversal: ");
-	inorder(root);
+    if(r!=NULL){
+        inOrder(r->left);
+        printf("%d ", r->value);
+        inOrder(r->right);
+    }
 }
+
