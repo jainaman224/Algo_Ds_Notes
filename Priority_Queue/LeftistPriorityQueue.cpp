@@ -3,6 +3,7 @@
 
 struct Leftist {
   Leftist *left, *right;
+  // dis is the distance to the right-bottom side of the tree 
   int dis, value, size;
   Leftist(int val = 0) {
     left = NULL, right = NULL;
@@ -15,18 +16,29 @@ struct Leftist {
 };
 
 Leftist* merge(Leftist *x, Leftist *y) {
+  // if x or y is NULL, return the other tree to be the answer
   if (x == NULL) return y;
   if (y == NULL) return x;
+
   if (y->value < x->value) { // Use > here if you want a max priority queue
     std::swap(x, y);
   }
+
+  // We take x as new root, so add the size of y to x
   x->size += y->size;
+
+  // merge the origin right sub-tree of x with y to construct the new right sub-tree of x
   x->right = merge(x->right, y);
+
   if (x->left == NULL && x->right != NULL) {
+    // if x->left is NULL pointer, swap the sub-trees to make it leftist
     std::swap(x->left, x->right);
   } else if(x->right != NULL && x->left->dis < x->right->dis) {
+    // if the distance of left sub-tree is smaller, swap the sub-trees to make it leftist
     std::swap(x->left, x->right);
   }
+
+  // calculate the new distance
   if (x->right == NULL) {
     x->dis = 0;
   } else {
@@ -36,6 +48,7 @@ Leftist* merge(Leftist *x, Leftist *y) {
 }
 
 Leftist* delete_root(Leftist *T) {
+  //deleting root equals to make a new tree containing only left sub-tree and right sub-tree
   Leftist *my_left = T->left;
   Leftist *my_right = T->right;
   T->left = T->right = NULL;
@@ -57,6 +70,14 @@ int main() {
     std::cout << my_tree->value << std::endl;
     my_tree = delete_root(my_tree);
   }
+
+  /* the output should be
+   * 1
+   * 10
+   * 100
+   * 1266
+   * 10000
+   */
 
   return 0;
 }
