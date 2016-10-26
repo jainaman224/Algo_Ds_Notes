@@ -27,6 +27,17 @@ int findParent(int node) // Function to determine the parent node
     return node;
 }
 
+/* "findParentPathCompression" is an alternative for "findParent" which is more efficient.
+ * We use a technique called "path compression" here.
+ * With path compression, we destroy the structure of the tree, and only focus on which group a node is in.
+ */
+
+int findParentPathCompression(int node)
+{
+    if(node == parent[node]) return node;
+    return parent[node] = findParentPathCompression(parent[node]);
+}
+
 
 void kruskal(int cost[n][n]) // Function performing Kruskal's algorithm
 {
