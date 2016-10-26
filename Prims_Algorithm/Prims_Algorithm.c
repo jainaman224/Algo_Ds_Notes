@@ -1,9 +1,8 @@
-// C++ implementation of Prim's Algorithm to find the Minimum Spanning tree for a weighted, connected and undirected graph.
+// C implementation of Prim's Algorithm to find the Minimum Spanning tree for a weighted, connected and undirected graph.
 
-#include <iostream>
-#include <climits>
+#include <stdio.h>
+#include <limits.h>
 #define n 6
-using namespace std;
 
 // Printing the MST
 void printMST(int a[n], int b[n], int weight[n])
@@ -11,11 +10,11 @@ void printMST(int a[n], int b[n], int weight[n])
     int Minweight = 0; // Weight of Minimum spanning tree
     for (int i = 0; i < n - 1; i++)
     {
-        cout << "Edge: " << a[i] << "-" << b[i] << " "
-             << "cost: " << weight[i] << endl;
+        printf("Edge: %d- %d cost:%d\n", a[i],b[i],weight[i]);
         Minweight += weight[i];
     }
-    cout << "Minimum Weight is " << Minweight << endl; // Printing the weight of MINIMUM SPANNING TREE
+    //cout << "Minimum Weight is " << Minweight << endl; // Printing the weight of MINIMUM SPANNING TREE
+    printf("Minimum Weight is %d\n", Minweight);
 }
 
 void prim(int cost[n][n]) // Function performing prim's algorithm
