@@ -1,8 +1,7 @@
 // C implementation of Prim's Algorithm to find the Minimum Spanning tree for a weighted, connected and undirected graph.
-
 #include <stdio.h>
 #include <limits.h>
-#define n 6
+#define n 6 // size of n x n matrix
 
 // Printing the MST
 void printMST(int a[n], int b[n], int weight[n])
