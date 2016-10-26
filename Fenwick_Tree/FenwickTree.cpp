@@ -34,9 +34,16 @@ int main(){
   update(5, 1000);
   update(8, 10);
 
-  std::cout << query(3) << std::endl;
-  std::cout << query(5) << std::endl;
-  std::cout << query(9) << std::endl;
+  std::cout << query(1) << std::endl;  // 0
+  std::cout << query(2) << std::endl;  // 100
+  std::cout << query(3) << std::endl;  // 100
+  std::cout << query(4) << std::endl;  // 100
+  std::cout << query(5) << std::endl;  // 1100
+  std::cout << query(6) << std::endl;  // 1100
+  std::cout << query(7) << std::endl;  // 1100
+  std::cout << query(8) << std::endl;  // 1110
+  std::cout << query(9) << std::endl;  // 1110
+  std::cout << query(10) << std::endl; // 1110
 
   return 0;
 }
