@@ -1,61 +1,13 @@
-#include <stdio.h>
-#include <windows.h>
-#include <process.h>
-void routine(void *a)
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+ 
+int main(int c, char **v)
 {
-    int n = *(int *) a;
-    Sleep(n);
-    printf("%d ", n);
+        while (--c > 1 && !fork());
+        sleep(c = atoi(v[c]));
+        printf("%d\n", c);
+        wait(0);
+        return 0;
 }
-void sleepSort(int arr[], int n)
-{
-    int i;
-    HANDLE threads[n];
-    for (i = 0; i < n; i++)
-        threads[i] = (HANDLE)_beginthread(&routine, 0, &arr[i]);
-    WaitForMultipleObjects(n, threads, TRUE, INFINITE);
-    return;
-}
-int main()
-{
-    int arr[] = {12, 23, 42, 3};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    sleepSort (arr, n);
-
-    return(0);
-}
-//output
-/*
-3 12 23 42
-*/#include <stdio.h>
-#include <windows.h>
-#include <process.h>
-void routine(void *a)
-{
-    int n = *(int *) a;
-    Sleep(n);
-    printf("%d ", n);
-}
-void sleepSort(int arr[], int n)
-{
-    int i;
-    HANDLE threads[n];
-    for (i = 0; i < n; i++)
-        threads[i] = (HANDLE)_beginthread(&routine, 0, &arr[i]);
-    WaitForMultipleObjects(n, threads, TRUE, INFINITE);
-    return;
-}
-int main()
-{
-    int arr[] = {12, 23, 42, 3};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    sleepSort (arr, n);
-
-    return(0);
-}
-//output
-/*
-3 12 23 42
-*/
