@@ -6,9 +6,11 @@ using namespace std;
 void Bubble_Sort(int array[], int size)
 {
     int temp;
-
+	int flag=0;
+    //flag keeps track if any swap happened or not, if swap not happened then array is sorted and it will break out of the loop
+    // and will save time from running for loop unnecessarily
     for(int i = 0; i < size - 1; i++)
-    {
+    {	flag=0;
         for(int j = 0; j < size - i - 1; j++)
         {
             // Do swapping
@@ -17,8 +19,11 @@ void Bubble_Sort(int array[], int size)
                 temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
+                flag++;
             }
         }
+        if(flag==0)
+        break;
     }
 
 }
