@@ -1,20 +1,13 @@
 //Program for Binary Seach implemented in C
 #include<stdio.h>
 
-int main()
+void binary_search(int ele,int a[10],int array_size)
 {
-	int n,a[11],i,ele;
-	printf("\nEnter the number of elements you want to be in the array,should be less than or equal to 10\n");
-	scanf("%d",&n);
-	printf("\nStart entering the elements in increasing order,as binary search will only work if the elements are sorted\n");
-	for(i=0;i<n;i++)
-		scanf("%d",&a[i]);
-	printf("\nEnter the element that you want to be searched\n");
-	scanf("%d",&ele);
-	int mid,first,last,flag=0;
+	int mid,first,last,flag=0; // flag checks wether we found the element or not
 	first=0;
-	last=n-1;
-	while(first<last)
+	last=array_size-1;
+
+	while(first<=last)
 	{
 		mid=(first+last)/2;
 		if(a[mid]==ele)
@@ -27,8 +20,27 @@ int main()
 		else
 			first=mid+1;
 	}
+
+	//printf("%d %d",mid,flag);
 	if(flag==1)
-	printf("\nThe element %d was found at position %d",ele,mid+1);
+		printf("\nThe element %d was found at position %d\n",ele,mid+1);
 	else
-		printf("The element %d was not found in the array you entered",ele);
+		printf("\nThe element %d was not found in the array you entered\n",ele);
 }
+
+int main()
+{
+	int ele; //ele is the element we are searching for in the array
+	int a[10]={9,15,23,45,67,82,91}; // Inserted array to be sorted,
+	ele=67;                          // as then only binary search will be able to work
+	binary_search(ele,a,7);
+	ele=24;
+	binary_search(ele,a,7);
+	return 0;
+	
+}
+//OUTPUT:-
+//
+//The element 67 was found at position 5
+//
+//The element 24 was not found in the array you entered
