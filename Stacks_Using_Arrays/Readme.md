@@ -52,9 +52,12 @@ pop(stk):
 ```
 
 ## Complexity
-**Time complexity** - O(n), where n is the number of elements in the array.
+**Time complexity** 
 
-**Space complexity** - O(1).
+* Push : O(1)
+* Pop : O(1)
+
+**Space complexity** : O(n)
 
 ## Implementation
 * [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Stacks_Using_Arrays/Stacks.cpp)
