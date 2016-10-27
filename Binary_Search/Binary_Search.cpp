@@ -1,50 +1,42 @@
-#include <iostream>
-
-using namespace std;
-
-// Function for binary search
-int Binary_Search(int array[], int size, int desired)
-{
-    int left = 0, right = size - 1, middle;
-
-    while(left<=right)
-    {
-        middle = left + (right - left) / 2;
-
-        if(array[middle] == desired)
-            return middle;
-        else if(desired < array[middle])
-            right = middle - 1;
-        else if(desired > array[middle])
-            left = middle + 1;
-    }
-
-    return -1;
-}
-
-// Driver Function
+#include <stdio.h>
 int main()
-{
-    int array[] = {1, 2, 3, 4, 5, 6, 7};
-
-    // Element 4 to be searched
-    if(Binary_Search(array, 7, 4) != -1)
-        cout << "Found" << endl;
-    else
-        cout << "Not Found" << endl;
-
-    //Element 9 to be searched
-    if(Binary_Search(array, 7, 9) != -1)
-        cout << "Found" << endl;
-    else
-        cout << "Not Found" << endl;
-
-    return 0;
+{  
+   // printf("Booooooo!!!");
+ int c, first, last, middle, n, search, array[100];
+   printf("Enter number of elements\n");
+   // printf("Booooooo!!!");
+   scanf("%d",&n);
+   printf("Enter %d integers\n", n);
+   for (c = 0; c < n; c++)
+      // printf("Booooooo!!!");
+      scanf("%d",&array[c]);
+ 
+ // printf("Booooooo!!!");
+   printf("Enter value to find\n");
+   // printf("Booooooo!!!");
+   scanf("%d", &search);
+   first = 0;
+   last = n - 1;
+   middle = (first+last)/2;
+   while (first <= last) {
+      // printf("Booooooo!!!");
+      if (array[middle] < search)
+         first = middle + 1;    
+      else if (array[middle] == search)
+      // printf("Booooooo!!!"); {
+         printf("%d found at location %d.\n", search, middle+1);
+         break;
+      }
+      // printf("Booooooo!!!");
+      else
+         last = middle - 1;
+ 
+      middle = (first + last)/2;
+      // printf("Booooooo!!!");
+   }
+   if (first > last)
+      // printf("Booooooo!!!");
+      printf("Not found! %d is not present in the list.\n", search);
+ // printf("Booooooo!!!");
+   return 0;   
 }
-
-/* Output
-
-Found
-Not Found
-
-*/
