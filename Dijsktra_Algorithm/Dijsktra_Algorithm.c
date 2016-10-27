@@ -99,7 +99,6 @@ void extract_heap(int z){
 			a[k]=var;
 			k=2*k;
 
-//			printf("Inserted\n");
 		}
 		else{
 			var=a[2*k+1];
@@ -150,7 +149,8 @@ int main(){
 		scanf("%d%d%d",&x,&y,&w);
 		insert_edge(x,y,w);
 	}
-	print_table(n);
+// In case want to see how the adjecency table gets created uncomment the print_table function below.	
+//print_table(n);
 	insert_heap(n);
 	int src,dest;
 	scanf("%d",&src);
@@ -167,7 +167,7 @@ int main(){
 				v2=check_heap(var->val);
 				if(var->weight+table[v1].weight < v2){
 					update_heap(var->val,(var->weight+table[v1].weight));
-//					printf("updated=%d with %d\n",var->val,(var->weight+table[v1].weight));		
+
 				}
 			}
 			tmp2=tmp2->next;
@@ -175,7 +175,7 @@ int main(){
 	}
 	int q;
 	for(q=1;q<=n;q++){
-		printf("dist[%d]->%d\n",q,table[q].weight);
+		printf("%d to %d = %d\n",src ,q,table[q].weight);
 	}
 	return 0;
 }

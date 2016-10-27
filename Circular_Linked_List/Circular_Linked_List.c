@@ -7,6 +7,7 @@ struct circ{
 	buff *prev;
 	buff *next;
 };
+
 buff *head;
 buff *tail;
 
@@ -52,8 +53,8 @@ while(1){
 	scanf("%d",&x);
 	head=insert(head,x);
 	head=print(head);
-	printf("tyr-> %d\n",tail->next->val); //tail ke next ka element.
-	printf("try2-> %d\n",head->prev->val);//head ke prev ka element.
+	printf("head-> %d\n",tail->next->val); 
+	printf("tail-> %d\n",head->prev->val);
 }
 
 return 0;
