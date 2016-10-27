@@ -12,8 +12,8 @@ import java.lang.*;
         void dj_algo(int graph[][], int source)
         {
             int distance[] = new int[V];
-            // distance[i] contains shortest distance form source to vertex i
-            // sptIncluded[i] is true if shortest distance between source and i is finalized
+            
+           
             Boolean sptIncluded[] = new Boolean[V];
             // Initializing all distances as INFINITE and stpIncluded[] as false
             for (int i = 0; i < V; i++)
