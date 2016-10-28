@@ -96,7 +96,7 @@ end procedure and return list
 
 **Space complexity** - O(1), due to auxillary space only.
 
-## Implementation
+# Implementation
 
 - [CoffeeScript Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bubble_Sort/Bubble_Sort.coffee)
 > :rocket: [Compile Online](https://repl.it/Cx3l) :rocket:
