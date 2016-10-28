@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
 
 struct node* ptrarr[1000005];
 long long int vis[1000005];
@@ -114,9 +116,7 @@ long long int prims(long long int v){
         while(vis[poped.value]==1){
                 poped = pop();
         }
-//        printf("counter: %lld value: %lld weight: %lld res: %lld\n",counter,poped.value,poped.weight,res);
         res = res + poped.weight;
-  //      printf("%lld\n",res);
         counter++;
         vis[poped.value] = 1;
         prims(poped.value);
@@ -125,7 +125,8 @@ long long int prims(long long int v){
 int main(){
         long long int total,t,x,i,j,k,v,e,v1,v2,w;
 
-        scanf("%lld",&t);
+	t = 1;
+	srand(time(NULL));
 
         for(x=0;x<t;x++){
                 for(i=0;i<1000005;i++){
@@ -133,7 +134,9 @@ int main(){
                         vis[i] = 0;
                 }
 
-                scanf("%lld %lld",&v,&e);
+                v = 5;
+		e = 10;
+
                 heapsize = 0;
                 total = 0;
                 spanedge = v-1;
@@ -141,7 +144,9 @@ int main(){
                 counter = 0;
 
                 for(i=0;i<e;i++){
-                        scanf("%lld %lld %lld",&v1,&v2,&w);
+			v1 = (long long int) (rand() % v + 1);
+			v2 = (long long int) (rand() % v + 1);
+			w = (long long int) rand()%1000;
                         if(v1!=v2){
                                 adjinsert(&ptrarr[v1],v2,w);
                                 adjinsert(&ptrarr[v2],v1,w);
@@ -150,7 +155,7 @@ int main(){
                 }
 
                 vis[1] = 1;
-                printf("%lld\n",total - prims(1));
+                printf("Weight of minimum spanning tree : %lld\n", prims(1));
         }
 
 
