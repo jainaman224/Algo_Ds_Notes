@@ -195,4 +195,5 @@ Please discuss it with us first by creating new issue.
     - [GeeksforGeeks](http://www.geeksforgeeks.org)
     - [tutorialspoint](http://www.tutorialspoint.com)
     - [Wikipedia](https://en.wikipedia.org)
-    - [topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials)
+    - [topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials) 
+    - [hackerearth](https://www.hackerearth.com/notes)
