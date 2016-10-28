@@ -22,3 +22,8 @@ bubbleSort(array, array.length)
 puts("\nAfter sorting: ")
 
 print(array)
+
+#OUTPUT
+# [0, 9, 1, 4, 2]
+# After sorting:
+# [0, 1, 2, 4, 9]
