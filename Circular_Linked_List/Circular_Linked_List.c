@@ -50,12 +50,23 @@ int main(){
 //	scanf("%c",&c);
 //	if(c=='i'){
 while(1){
-	scanf("%d",&x);
-	head=insert(head,x);
+	// scanf("%d",&x);
+	head=insert(head,5);
+	head=insert(head,6);
+	head=insert(head,7);
+	head=insert(head,8);
+	head=insert(head,9);
+	head=insert(head,0);
+	head=insert(head,4);
+	
 	head=print(head);
 	printf("head-> %d\n",tail->next->val); 
 	printf("tail-> %d\n",head->prev->val);
+	break;
 }
-
 return 0;
 }
+
+//output: 5 6 7 8 9 0 3 4
+// head-> 5
+// tail-> 4

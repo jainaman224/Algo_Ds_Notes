@@ -41,12 +41,13 @@ int divide(int a[], int n)
 
 int main()
 {
-	int n,i,a[1000];
+	int n,i;
 
-		scanf("%d",&n);
-
-		for(i=0;i<n;i++)
-		scanf("%d",&a[i]);
+		//scanf("%d",&n);
+		n=7;
+		int a[7]={3, 1, 6, 2, 8, 7, 9};
+		// for(i=0;i<n;i++)
+		// scanf("%d",&a[i]);
 			
 		divide(a,n);
 
@@ -57,3 +58,6 @@ int main()
 		printf("\n");
 return 0;
 }
+
+// Output :
+// 1 2 3 6 7 8 9

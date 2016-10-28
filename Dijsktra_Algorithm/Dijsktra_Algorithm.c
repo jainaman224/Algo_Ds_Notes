@@ -138,22 +138,32 @@ int main(){
 	int v1,v2;
 	graph *tmp;
 	graph *var,*tmp2;
-	scanf("%d%d",&n,&m);
-	insert_vertex(n);
+	//scanf("%d%d",&n,&m);
+	n=4;
+	m=4;
+	insert_vertex(n); //  n=4 
 	int i,j,k,l;
 	heap_count=n;
 	for(i=1;i<=n;i++){
 		flag[i]=0;
 	}
-	for(i=0;i<m;i++){
-		scanf("%d%d%d",&x,&y,&w);
-		insert_edge(x,y,w);
-	}
+	// for(i=0;i<m;i++){
+	// 	scanf("%d%d%d",&x,&y,&w);
+	// 	insert_edge(x,y,w);
+	// }
+	 	
+	 	//Input:
+	 	insert_edge(1,2,24);
+	 	insert_edge(1,4,20);
+	 	insert_edge(3,1,3);
+	 	insert_edge(4,3,12);
+
 // In case want to see how the adjecency table gets created uncomment the print_table function below.	
 //print_table(n);
 	insert_heap(n);
 	int src,dest;
-	scanf("%d",&src);
+	// scanf("%d",&src);
+	src=1;
 	update_heap(src,0);
 	while(heap_count>0){
 		extract_heap(heap_count);
@@ -179,3 +189,8 @@ int main(){
 	}
 	return 0;
 }
+//Output:
+// 1 to 1 = 0
+// 1 to 2 = 24
+// 1 to 3 = 32
+// 1 to 4 = 20
