@@ -7,7 +7,7 @@ O(n*logn) at least.
 
 > It should be used when the range of numbers is less than or comparable to size of list to be sorted.
 
-Hence, the magic of counting sort is its linear time complexity O(n).
+Hence, the magic of counting sort lies in its linear time complexity O(n).
 
  Let us understand the algorithm with an example.
 
