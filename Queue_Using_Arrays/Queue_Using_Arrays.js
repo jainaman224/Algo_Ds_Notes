@@ -5,8 +5,8 @@ var size = 4;
 var queue = new Array(size);
 
 /**
- * Checks if the queue is empty.
- * @return {Bool} True if queue is empty.
+ * Checks is the queue is empty.
+ * @returns {Bool} True if the queue is empty.
  */
 function isEmpty() {
   if(front == -1 || front > rear)
@@ -17,7 +17,7 @@ function isEmpty() {
 
 /**
  * Adds an element to the queue.
- * @param {Numer} element - element to be added to the queue.
+ * @param {Object|String|Number} element - The element to be added to the queue.
  */
 function enqueue(element) {
   if (rear == size - 1)
@@ -33,7 +33,7 @@ function enqueue(element) {
 }
 
 /**
- * Removes element from the queue.
+ * Removes the element in position "front" from the queue.
  */
 function dequeue() {
   if(isEmpty())
@@ -54,7 +54,6 @@ function display() {
   }
 }
 
-// TESTING
 enqueue(23);
 enqueue(45);
 enqueue(65);
@@ -64,12 +63,12 @@ dequeue();
 dequeue();
 display();
 
-/*
-* Output:
-* 23 was enetered successfully.
-* 45 was enetered successfully.
-* 65 was enetered successfully.
-* 89 was enetered successfully.
+/**
+* OUTPUT:
+* 23 was entered successfully.
+* 45 was entered successfully.
+* 65 was entered successfully.
+* 89 was entered successfully.
 * Queue is full.
 * 23 has been removed.
 * 45 has been removed.
