@@ -5,7 +5,8 @@ void print_activities(int start[], int finish[], int n)
     printf("%s", "Following activities are selected");
     int i = 0;
     printf("\n%d  ", i);
-    for (int j = 1; j < n; j++)
+    int j;
+    for (j = 1; j < n; j++)
     {
         if (start[j] >= finish[i])
         {
