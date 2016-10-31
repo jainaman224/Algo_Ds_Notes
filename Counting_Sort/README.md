@@ -87,6 +87,9 @@ This explains the stability of counting sort.
 
 ## Implementation
 
+- [C Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Counting_Sort/Counting_Sort.c)
+> :rocket: [Compile Online](https://repl.it/EKfI/2) :rocket:
+
 - [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Counting_Sort/Counting_Sort.cpp)
 > :rocket: [Compile Online](https://repl.it/C6jK) :rocket:
 
