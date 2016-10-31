@@ -2,7 +2,7 @@
 
 Inheritance is where *derived class* inherits the members (variables and functions) of *base class*.
 
-The benefit of inheritance is that the derived class does not have to redeclare all the members which it inherits from the base class. Hence, reusability is achieved this makes code cleaner.
+The benefit of inheritance is that the derived class does not have to redeclare all the members which it inherits from the base class. Hence, reusability is achieved which makes the code cleaner.
 
 ## Types of Inheritance
 
