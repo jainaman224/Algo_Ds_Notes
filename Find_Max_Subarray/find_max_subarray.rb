@@ -1,10 +1,16 @@
 # Internal: Computes the sum of the left, right halves and their index where max is reached
 #
+# ARGS:
+# arr  - Array where the sub-array has to be found
+# low  - Index of the first element in arr
+# mid  - Index of the middle element in arr
+# high - Index of the last element in arr
+#
+# Return: Array (Triplet)
+#
 # Examples
 #   find_max_crossing_subarray([-2, -3, 4, -1, -2, 1, 5, -3], 0, 3, 7)
 #   => [2, 6, 7]
-#
-# Returns an Array.
 def find_max_crossing_subarray(arr, low, mid, high)
   sum = max_left = 0
   left_sum = -Float::INFINITY
