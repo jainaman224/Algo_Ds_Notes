@@ -38,7 +38,7 @@ void explore(int node,int vis[],struct node start[])
 }
 
 
-main()
+int main()
 {
     int no_of_vertices = 7,i,vis[8];
 
@@ -74,4 +74,9 @@ main()
         if(vis[i]==0)
             explore(i,vis,start);
     }
+
+    return 0;
+
+
+    // Output : 1 2 4 5 3 6 7
 }
