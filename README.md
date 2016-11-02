@@ -159,7 +159,7 @@ Please discuss it with us first by creating new issue.
 
 **Java**
 
-| [adishjain](https://github.com/adishjain) | [nj4710](https://github.com/nj4710) | [ayushin78](https://github.com/ayushin78) |
+| [adishjain](https://github.com/adishjain) | [ayushin78](https://github.com/ayushin78) | [nj4710](https://github.com/nj4710) |
 | --- | --- | --- |
 
 **JavaScript**
