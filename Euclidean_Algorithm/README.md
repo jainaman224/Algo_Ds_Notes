@@ -10,7 +10,7 @@
 
 ##**HISTORY**
 
-It is named after the ancient Greek mathematician Euclid, who first described it in Euclid's Elements . It is an example of an algorithm, a step-by-step procedure for performing a calculation according to well-defined rules, and is one of the oldest algorithms in common use. 
+It is named after the ancient Greek mathematician Euclid, who first described it in Euclid's Elements . It is an example of an algorithm, a step-by-step procedure for performing a calculation according to well-defined rules, and is one of the oldest algorithms in common use.
 
 
 
@@ -19,13 +19,13 @@ The Euclidean algorithm is based on the principle that the greatest common divis
 
 ![image](https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Euclid%27s_algorithm_Book_VII_Proposition_2_3.png/300px-Euclid%27s_algorithm_Book_VII_Proposition_2_3.png)
 
-Euclid's method for finding the greatest common divisor (GCD) of two starting lengths BA and DC, both defined to be multiples of a common "unit" length. The length DC being shorter, it is used to "measure" BA, but only once because remainder EA is less than DC. EA now measures (twice) the shorter length DC, with remainder FC shorter than EA. Then FC measures (three times) length EA. Because there is no remainder, the process ends with FC being the GCD. On the right Nicomachus' example with numbers 49 and 21 resulting in their GCD of 7 
+Euclid's method for finding the greatest common divisor (GCD) of two starting lengths BA and DC, both defined to be multiples of a common "unit" length. The length DC being shorter, it is used to "measure" BA, but only once because remainder EA is less than DC. EA now measures (twice) the shorter length DC, with remainder FC shorter than EA. Then FC measures (three times) length EA. Because there is no remainder, the process ends with FC being the GCD. On the right Nicomachus' example with numbers 49 and 21 resulting in their GCD of 7
 
 
 
 ##**APPLICATIONS**
 
-The Euclidean algorithm has many theoretical and practical applications. It is used for reducing fractions to their simplest form and for performing division in modular arithmetic. Computations using this algorithm form part of the cryptographic protocols that are used to secure internet communications, and in methods for breaking these cryptosystems by factoring large composite numbers. 
+The Euclidean algorithm has many theoretical and practical applications. It is used for reducing fractions to their simplest form and for performing division in modular arithmetic. Computations using this algorithm form part of the cryptographic protocols that are used to secure internet communications, and in methods for breaking these cryptosystems by factoring large composite numbers.
 
 
 
@@ -45,21 +45,17 @@ The Time Complexity is O(log min(a, b)).
 
                 The algorithm can be written in pseudo-code as follows
 
- 
+
                    Euclid(a,b) {
 
-                       while (b not 0) { 
-  
+                       while (b not 0) {
+
                            interchange(a,b)
-    
+
                            b := b mod a
-    
+
                            }
-  
+
                        return(a)
-  
+
                       }
-
-
-
-
