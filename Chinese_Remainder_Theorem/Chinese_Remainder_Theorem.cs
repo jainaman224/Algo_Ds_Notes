@@ -35,12 +35,12 @@ namespace Insertion_Sort
             int i, result, partialProduct;
             int len = divisor.GetLength(0);
 
-            for(i = 0; i < len; i++)
+            for (i = 0; i < len; i++)
                 product *= divisor[i];
 
             result = 0;
 
-            for(i = 0; i < len; i++)
+            for (i = 0; i < len; i++)
             {
                 partialProduct = product / divisor[i];
                 result += remainder[i] * inverse(partialProduct, divisor[i]) * partialProduct;

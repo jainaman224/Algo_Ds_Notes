@@ -25,12 +25,14 @@ int min(int num[], int rem[], int s)
   	while(true)
   	{
 		int i;
-     	for(i = 0; i < s; i++)
+     	for (i = 0; i < s; i++)
+		{
        		if(a%num[i] != rem[i])
         		break;
+		}
 
         // If all remainders matched, we found a
-       	if(i == s)
+       	if (i == s)
        		return a;
        	// Else try next number
        	a++;

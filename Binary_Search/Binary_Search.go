@@ -26,6 +26,7 @@ func BinarySearch(array []int, desired int) (index int) {
 	}
 	return
 }
+
 func main() {
 	array := []int{1, 2, 3, 4, 5, 6, 7}
 	index := BinarySearch(array, 4)

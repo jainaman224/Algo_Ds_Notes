@@ -4,12 +4,12 @@
  //Bubble sort function
  function Bubble_Sort($arr, $size)
  {
- 	for( $i = 0; $i < $size - 1; $i++)
+ 	for ( $i = 0; $i < $size - 1; $i++)
     {
-        for( $j = 0; $j < $size - $i - 1; $j++)
+        for ( $j = 0; $j < $size - $i - 1; $j++)
         {
             // Do swapp$ing
-            if($arr[$j] > $arr[$j + 1])
+            if ($arr[$j] > $arr[$j + 1])
             {
                 $temp = $arr[$j];
                 $arr[$j] = $arr[$j + 1];

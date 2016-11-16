@@ -3,7 +3,7 @@ def Bubble_Sort(array):
     for i in range(0, len(array) - 1):
         for j in range(0, len(array) - i - 1):
             # do swapping
-            if(array[j] > array[j + 1]):
+            if array[j] > array[j + 1]:
                 array[j], array[j + 1] = array[j + 1], array[j]
 
 # function to print array

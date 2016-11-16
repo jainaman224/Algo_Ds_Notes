@@ -5,16 +5,16 @@ using namespace std;
 // Function for bubble sort
 void Bubble_Sort(int array[], int size)
 {
-    int temp;
-	int flag=0;
-    //flag keeps track if any swap happened or not, if swap not happened then array is sorted and it will break out of the loop
+    int temp, flag;
+    // flag keeps track if any swap happened or not, if swap not happened then array is sorted and it will break out of the loop
     // and will save time from running for loop unnecessarily
-    for(int i = 0; i < size - 1; i++)
-    {	flag=0;
-        for(int j = 0; j < size - i - 1; j++)
+    for (int i = 0; i < size - 1; i++)
+    {
+        flag = 0;
+        for (int j = 0; j < size - i - 1; j++)
         {
             // Do swapping
-            if(array[j] > array[j + 1])
+            if (array[j] > array[j + 1])
             {
                 temp = array[j];
                 array[j] = array[j + 1];
@@ -22,8 +22,8 @@ void Bubble_Sort(int array[], int size)
                 flag++;
             }
         }
-        if(flag==0)
-        break;
+        if (!flag)
+            break;
     }
 
 }
@@ -31,7 +31,7 @@ void Bubble_Sort(int array[], int size)
 // Function to print elements of array
 void Print_Array(int array[], int size)
 {
-    for(int i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
         cout << array[i] << " ";
 
     cout << endl;

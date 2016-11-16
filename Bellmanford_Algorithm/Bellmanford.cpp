@@ -22,13 +22,10 @@ void bellmanford(int adjacency_matrix[vertices][vertices], int source)
         {
             for (int k = 0; k < vertices; k++)
             {
-                if (adjacency_matrix[j][k] != 0)
+                if (adjacency_matrix[j][k] != 0 && distance[j] + adjacency_matrix[j][k] < distance[k])
                 {
-                    if (distance[j] + adjacency_matrix[j][k] < distance[k])
-                    {
-                        distance[k] = distance[j] + adjacency_matrix[j][k];
-                        predecessor[k] = j;
-                    }
+                    distance[k] = distance[j] + adjacency_matrix[j][k];
+                    predecessor[k] = j;
                 }
             }
         }
@@ -50,9 +47,7 @@ void bellmanford(int adjacency_matrix[vertices][vertices], int source)
     cout << "Vertex\tDistance\tpredecessor\n";
 
     for (int i = 0; i < vertices; i++)
-    {
         cout << i << "\t" << distance[i] << "\t\t" << predecessor[i] << endl;
-    }
 }
 
 int main()

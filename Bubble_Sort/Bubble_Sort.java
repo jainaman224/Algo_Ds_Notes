@@ -5,11 +5,11 @@ class Bubble_Sort
     {
         int temp;
 
-        for(int i = 0; i < size - 1; i++)
+        for (int i = 0; i < size - 1; i++)
         {
-            for(int j = 0; j < size - i - 1; j++)
+            for (int j = 0; j < size - i - 1; j++)
             {
-                if(array[j] > array[j + 1])
+                if (array[j] > array[j + 1])
                 {
                     temp = array[j];
                     array[j] = array[j + 1];
@@ -17,13 +17,12 @@ class Bubble_Sort
                 }
             }
         }
-        
     }
 
     // function ro print array
     public static void Print_Array(int[] array, int size)
     {
-        for(int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++)
             System.out.print(array[i] + " ");
 
         System.out.println();

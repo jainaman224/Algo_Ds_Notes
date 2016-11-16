@@ -12,7 +12,6 @@ class graph:
     visited = [False] * self.num_vertices
 
     queue_vertex = deque([])
-
     visited[start] = True
     queue_vertex.append(start)
 

@@ -31,7 +31,7 @@ void Graph::bfs(int starting)
 {
     bool visited[numberVertex];
 
-    for(int i = 0; i < numberVertex; i++)
+    for (int i = 0; i < numberVertex; i++)
         visited[i] = false;
 
     queue <int> queue_vertex;
@@ -39,15 +39,13 @@ void Graph::bfs(int starting)
     visited[starting] = true;
     queue_vertex.push(starting);
 
-    vector <int> :: iterator it;
-
-    while(!queue_vertex.empty())
+    while (!queue_vertex.empty())
     {
         starting = queue_vertex.front();
         cout << starting << " ";
         queue_vertex.pop();
 
-        for(it = adjacency[starting].begin(); it != adjacency[starting].end(); ++it)
+        for (vector <int> :: iterator it = adjacency[starting].begin(); it != adjacency[starting].end(); ++it)
         {
             if(!visited[*it])
             {

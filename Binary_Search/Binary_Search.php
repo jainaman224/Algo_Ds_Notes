@@ -10,11 +10,11 @@ function binary_search($element_to_be_found, $list, $left, $right)
 
     $mid = ($right + $left) / 2;
 
-    if($list[$mid] == $element_to_be_found)
+    if ($list[$mid] == $element_to_be_found)
         return $mid + 1;
-    else if($list[$mid] > $element_to_be_found)
+    else if ($list[$mid] > $element_to_be_found)
         return binary_search($element_to_be_found,$list,$left,$mid-1);
-    else if($list[$mid] < $element_to_be_found)
+    else
         return binary_search($element_to_be_found,$list,$mid+1,$right);
 }
 
@@ -24,12 +24,11 @@ if($ans == -1)
     echo "Element not found";
 else
     echo "Element found at position $ans";
-    
+
 /*
 
 Output : Element found at position 3
-    
+
 */
 
 ?>
-    

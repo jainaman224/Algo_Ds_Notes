@@ -2,7 +2,7 @@
 
 void print_activities(int start[], int finish[], int n)
 {
-    printf("%s", "Following activities are selected");
+    printf("Following activities are selected");
     int i = 0;
     printf("\n%d  ", i);
     int j;

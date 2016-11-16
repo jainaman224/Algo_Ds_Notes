@@ -4,19 +4,20 @@ import java.io.*;
 
 class activity_selection
 {
-	static void activities(int start[], int finish[], int n)
+	public static void activities(int start[], int finish[], int n)
 	{
 		int i = 0, j;
 		System.out.print((i + 1) + " ");
-		for(j = 1; j < n; j++)
+		for (j = 1; j < n; j++)
 		{
-			if(start[j] >= finish[i])
+			if (start[j] >= finish[i])
 			{
 				System.out.print((j + 1) + " ");
 				i = j;
 			}
 		}
 	}
+
 	public static void main(String args[])
 	{
 		int start[] = {1, 3, 1, 5, 8, 6};
