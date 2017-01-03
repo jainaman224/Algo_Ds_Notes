@@ -7,6 +7,7 @@
 
 //Using a template allows us to only write the linked list once and then create different kinds of linked lists. That way we can distinguish between lists of integers and lists of strings and will never accidentally pass one when the other is required.
 template<typename T> // T is our placeholder name for the type of element in the linked list.
+
 class linked_list // "snake case" is what the standard library uses, so in the interest of consistency we will too.
 {
 	// Friend function for printing a linked_list. (Note that this is a free function (i.e. not attached to any class), not a member function, despite being declared here, due to the friend keyword.)

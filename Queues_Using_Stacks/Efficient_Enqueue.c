@@ -1,34 +1,34 @@
 /* Program to implement a queue using two stacks */
 // Courtesy: geeksforgeeks
-#include<stdio.h>
-#include<stdlib.h>
- 
+#include <stdio.h>
+#include <stdlib.h>
+
 /* structure of a stack node */
 struct sNode
 {
     int data;
     struct sNode *next;
 };
- 
+
 /* Function to push an item to stack*/
 void push(struct sNode** top_ref, int new_data);
- 
+
 /* Function to pop an item from stack*/
 int pop(struct sNode** top_ref);
- 
+
 /* structure of queue having two stacks */
 struct queue
 {
     struct sNode *stack1;
     struct sNode *stack2;
 };
- 
+
 /* Function to enqueue an item to queue */
 void enQueue(struct queue *q, int x)
 {
     push(&q->stack1, x);
 }
- 
+
 /* Function to dequeue an item from queue */
 int deQueue(struct queue *q)
 {
@@ -40,7 +40,7 @@ int deQueue(struct queue *q)
         getchar();
         exit(0);
     }
- 
+
 /* Move elements from satck1 to stack 2 only if
 stack2 is empty */
 if(q->stack2 == NULL)
@@ -49,10 +49,10 @@ if(q->stack2 == NULL)
     {
         x = pop(&q->stack1);
         push(&q->stack2, x);
-         
+
     }
 }
- 
+
 x = pop(&q->stack2);
 return x;
 }
@@ -72,32 +72,32 @@ void push(struct sNode** top_ref, int new_data)
             printf("Stack overflow \n");
             getchar();
             exit(0);
-             
+
         }
- 
+
 /* put in the data */
 new_node->data = new_data;
- 
+
 /* link the old list off the new node */
 new_node->next = (*top_ref);
- 
+
 /* move the head to point to the new node */
 (*top_ref) = new_node;
 }
- 
+
 /* Function to pop an item from stack*/
 int pop(struct sNode** top_ref)
 {
     int res;
     struct sNode *top;
-     
+
     /*If stack is empty then error */
     if(*top_ref == NULL)
     {
         printf("Stack overflow \n");
         getchar();
         exit(0);
-         
+
     }
     else
     {
@@ -106,7 +106,7 @@ int pop(struct sNode** top_ref)
         *top_ref = top->next;
         free(top);
         return res;
-         
+
     }
 }
 /* Driver function to test anove functions */
@@ -125,11 +125,11 @@ int main()
     enQueue(q, 50);
     deQueue(q);
     enQueue(q, 60);
-     
+
     /* Dequeue items */
     while(!isEmpty(q))
         printf("%d\n", deQueue(q));
-    
+
     return 0;
 }
 /* Output: [The first two elements would be dequeued]

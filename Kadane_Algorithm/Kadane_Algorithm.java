@@ -1,11 +1,11 @@
 
-public class kadane_Algorithm 
+public class kadane_Algorithm
 {
 	public static int kadane(int input[], int n) // Function implementing Kadane's Algorithm (array contains at least one positive number)
 	{
 		int current_max = 0;
 		int max_so_far = 0;
-		
+
 		for(int i = 0; i < n; i++)
 		{
 			current_max = Math.max(0, current_max + input[i]);
@@ -16,7 +16,7 @@ public class kadane_Algorithm
 	}
 
 
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		int n, max_subarray_sum;
 		int input[] = { -2, 1, -6, 4, -1, 2, 1, -5, 4 }; // Input array
@@ -44,11 +44,9 @@ public class kadane_Algorithm
 	  // Hence the max_subarray_sum will be the largest number in array itself
 		System.out.println("Maximum Subarray Sum is " + max_subarray_sum);
 	}
-	
+
 }
 
 /*
 output : Maximum Subarray Sum is 6
 */
-	
-

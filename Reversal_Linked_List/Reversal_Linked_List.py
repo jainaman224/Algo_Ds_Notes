@@ -4,7 +4,7 @@ class Node(object):
     def __init__(self, data=None, next_node=None):
         self.data =data
         self.next_node = next_node
-        
+
     def reverse_iterative(self,n):
         last = None
         current = n
@@ -36,6 +36,3 @@ n = head.reverse_iterative(head)
 while n:
     print(n.data ,end=" ")
     n = n.next_node
-
-
-            

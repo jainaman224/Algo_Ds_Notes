@@ -5,7 +5,7 @@ function Interpolation_Search($list, $search_item)
 	$low = 0;
 	$high = count($list) - 1;
 	$pos;
-	
+
 	while($low <= $high && $search_item >= $list[$low] && $search_item <= $list[$high])
 	{
 		$rise = $high - $low;
@@ -30,8 +30,8 @@ if($position == -1)
 	echo "Element not found";
 else
 	echo "Element found at position $position";
-	
-	
+
+
 /*
 Output: Element found at position 8
 */

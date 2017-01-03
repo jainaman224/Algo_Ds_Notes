@@ -63,7 +63,7 @@ void prim(int cost[n][n]) // Function performing prim's algorithm
 
         cost[u][v] = cost[v][u] = INT_MAX; // Edges getting included in MST will be given the weight of INFINITE
     }
-   
+
     printMST(a, b, weight); // Printing the MST
 }
 

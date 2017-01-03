@@ -48,8 +48,8 @@ void Quick_Sort_3way(int array[], int left, int right)
     for(int k = right - 1; k > q; k--, i++)
         swap(array[i], array[k]);
 
-    Quick_Sort(array, left, j);
-    Quick_Sort(array, i, right);
+    Quick_Sort_3way(array, left, j);
+    Quick_Sort_3way(array, i, right);
 }
 
 // Function to print elements of array
@@ -66,7 +66,7 @@ int main()
 {
     int array[] = {2, 4, 3, 1, 6, 8, 4};
     int size = sizeof(array) / sizeof(int);
-    Quick_Sort(array, 0, size - 1);
+    Quick_Sort_3way(array, 0, size - 1);
     Print_Array(array, size);
     return 0;
 }

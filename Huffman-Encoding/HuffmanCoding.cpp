@@ -5,16 +5,16 @@ using namespace std;
 
 struct MinHeapNode
 {
-    char data;  
-    unsigned freq;  
-    struct MinHeapNode *left, *right; 
+    char data;
+    unsigned freq;
+    struct MinHeapNode *left, *right;
 };
 
 struct MinHeap
 {
-    unsigned size;    
-    unsigned capacity;   
-    struct MinHeapNode **array; 
+    unsigned size;
+    unsigned capacity;
+    struct MinHeapNode **array;
 };
 
 struct MinHeapNode* newNode(char data, unsigned freq)
@@ -31,7 +31,7 @@ struct MinHeap* createMinHeap(unsigned capacity)
 {
     struct MinHeap* minHeap =
          (struct MinHeap*) malloc(sizeof(struct MinHeap));
-    minHeap->size = 0; 
+    minHeap->size = 0;
     minHeap->capacity = capacity;
     minHeap->array =
      (struct MinHeapNode**)malloc(minHeap->capacity * sizeof(struct MinHeapNode*));
@@ -174,7 +174,7 @@ int main()
     // freopen("out.txt","w",stdout);
     int t;
     scanf("%d",&t);
-    
+
     while(t--)
     {
         int n,i;
@@ -208,4 +208,3 @@ int main()
 // j: 10
 // a: 110
 // d: 111
-

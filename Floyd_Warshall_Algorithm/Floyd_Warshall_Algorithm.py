@@ -44,7 +44,7 @@ def main():
              [float('inf'), float('inf'), 0, 1],
              [float('inf'), float('inf'), float('inf'), 0]]
 
-    
+
     floyd = FloydWarshall(graph)
     floyd.run()
     floyd.print_distance()

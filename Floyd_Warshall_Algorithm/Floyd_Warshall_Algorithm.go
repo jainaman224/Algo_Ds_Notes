@@ -1,5 +1,5 @@
 package main
- 
+
 import (
     "fmt"
     "math"
@@ -31,7 +31,7 @@ func floyd_warshall(graph [][]float64) [][]float64 {
     }
     return dist
 }
- 
+
 func main() {
     graph := [][]float64{
         {0, 5, math.Inf(1), 10},

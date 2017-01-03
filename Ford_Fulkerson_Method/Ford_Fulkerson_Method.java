@@ -4,10 +4,10 @@ import java.util.LinkedList;
 
 
 class Ford_Fulkerson_Method {
-  
+
   //Number of vertices in graph
   static final int V = 6;
-  
+
   /* Returns true if there is a path from source 's' to sink
     't' in residual graph. Also fills parent[] to store the
     path */
@@ -118,7 +118,7 @@ class Ford_Fulkerson_Method {
                          m.fordFulkerson(graph, 0, 5));
 
   }
-  
+
 
 }
 /* Output

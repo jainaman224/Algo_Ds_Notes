@@ -1,6 +1,6 @@
 // Java Implementation of Interpolation Search
 
-public class Interpolation_Search 
+public class Interpolation_Search
 {
     public static int interpolation(int a[], int n, int search_item) // Function implementing Interpolation_Search
     {

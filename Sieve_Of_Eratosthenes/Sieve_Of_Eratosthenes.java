@@ -1,10 +1,10 @@
 
-public class Sieve_of_Eratosthenes 
+public class Sieve_of_Eratosthenes
 {
-	public static void output(int n) 
+	public static void output(int n)
 	{
 		boolean prime[] = new boolean[n+1]; // All the elements of array initialized as false by default
-		
+
 		// If i is non-prime, change prime[i] to true
 		for(int p = 2; p*p <= n; p++)
 		{
@@ -17,19 +17,19 @@ public class Sieve_of_Eratosthenes
 		// Print all prime numbers
 		for(int i = 2; i < prime.length; i++)
 		{
-			if(prime[i] == false) // Finally, elements which are still false are those whose location is prime 
+			if(prime[i] == false) // Finally, elements which are still false are those whose location is prime
 			System.out.print(i + "  "); // Printing these prime location
 		}
 	}
-	
+
 	// Driver function to test above function
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		int n = 30;
 		System.out.println("Following are the prime numbers smaller than or equal to " + n);
 		output(n);
 	}
-	
+
 }
 
 /*Output:

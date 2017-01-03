@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 int power(int a, unsigned int n, int p)
 {
     int res = 1;
     a = a % p;
-    
+
     while (n>0)
     {
         if (n & 1)
@@ -13,7 +14,7 @@ int power(int a, unsigned int n, int p)
         n = n>>1;
         a = (a*a) % p;
     }
-    
+
     return res;
 }
 
@@ -31,7 +32,7 @@ bool isPrime(unsigned int n, int k)
             return false;
         k--;
     }
-    
+
     return true;
 }
 

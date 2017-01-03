@@ -48,7 +48,7 @@ def display():
 	else:
 		temp = front
 		while (temp <= rear):
-			print queue[temp], 
+			print queue[temp],
 			temp += 1
 		print
 
@@ -65,7 +65,7 @@ while(1):
 	if ch == 1:
 		enqueue()
 	elif ch == 2:
-		dequeue() 
+		dequeue()
 	elif ch == 3:
 		display()
 	else:
@@ -82,7 +82,7 @@ dequeue()
 
 
 """
-Output 
+Output
 Item inserted successfully
 Item inserted successfully
 Item inserted successfully
@@ -91,5 +91,3 @@ Queue is Full
 Item deleted: 23
 Item deleted: 45
 """
-
-

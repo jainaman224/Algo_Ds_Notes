@@ -26,11 +26,11 @@ class List
         List();
         ~List();
         bool emptyList();
-        void insertSingle (T& x); 
-    	
+        void insertSingle (T& x);
+
         void insertOrdered(T& item, int (*cmp)(const T& t1, const T& t2));
         void deleteLast();
-    	
+
         friend std::ostream& operator<< (std::ostream& out, List<T>& list){
             Node *current= list.first;
             while(current != nullptr){
@@ -73,8 +73,8 @@ bool List<T>::emptyList() {
 template <class T>
 void List<T>::insertOrdered (T& x, int (*cmp)(const T& t1, const T& t2)) {
 
-    if(emptyList()){ 
-        insertSingle(x); 
+    if(emptyList()){
+        insertSingle(x);
         this->size++;
         return;
     }
@@ -115,7 +115,7 @@ void List<T>::insertOrdered (T& x, int (*cmp)(const T& t1, const T& t2)) {
 
 template <class T>
 void List<T>::deleteLast () {
-    if (emptyList()) 
+    if (emptyList())
         return;
 
     Node *current = this->last;
@@ -128,4 +128,3 @@ void List<T>::deleteLast () {
 }
 
 #endif // LIST_H
-

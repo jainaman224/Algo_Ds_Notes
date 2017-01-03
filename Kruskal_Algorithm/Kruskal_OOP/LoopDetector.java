@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class LoopDetector {
-    
+
     /*
         Máximo orden de ejecución: exploraGrafo O(numeroAristasSolucion)
         Contenedor que ocupa la mayor cantidad de memoria id_vecinos:

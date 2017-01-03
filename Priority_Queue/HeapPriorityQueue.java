@@ -11,14 +11,14 @@ public class HeapPriorityQueue {
         heap =  new String[initialCapacity + 1];
         size = 0;
     }
-    
+
     /**
      * Initializes an empty priority queue
      */
     public HeapPriorityQueue() {
         this(1);
     }
-    
+
     /**
      * Initializes a priority queue from the array of values
      *
@@ -29,10 +29,10 @@ public class HeapPriorityQueue {
         heap = new String[size + 1];
         // we do not use the 0 index with the heap
         System.arraycopy(vals, 0, heap, 1, size);
-        
+
         for(int x = size/2; x > 0; x--) {
             percolateDown(x);
-        } 
+        }
     }
 
     /**
@@ -45,7 +45,7 @@ public class HeapPriorityQueue {
     }
 
     /**
-     * Returns the number of elements in the priority queue 
+     * Returns the number of elements in the priority queue
      *
      * @return the number of elements in the priority queue
      */
@@ -75,14 +75,14 @@ public class HeapPriorityQueue {
         if(size == heap.length -1) {
             doubleSize();
         }
-        
+
         int pos = ++size;
         // percolate up
         for(; pos > 1 && element.compareTo(heap[pos/2]) < 0; pos = pos/2) {
             heap[pos] = heap[pos/2];
         }
         heap[pos] = element;
-    }    
+    }
 
     /**
      * Removes and returns the smallest element in the priority queue
@@ -93,8 +93,8 @@ public class HeapPriorityQueue {
     public String removeMin() throws NoSuchElementException {
         if(size == 0) {
             throw new NoSuchElementException("Priority Queue is empty!");
-        }    
-        
+        }
+
         String min = heap[1];
         heap[1] = heap[size--];
         percolateDown(1);
@@ -128,7 +128,7 @@ public class HeapPriorityQueue {
 
     @Override
     public String toString() {
-        StringBuilder out = new StringBuilder(); 
+        StringBuilder out = new StringBuilder();
         for(int x = 1; x <= size; ++x) {
             out.append(heap[x]).append(" ");
         }
@@ -163,4 +163,3 @@ public class HeapPriorityQueue {
         System.out.println(h.isEmpty()); // true
     }
 }
-

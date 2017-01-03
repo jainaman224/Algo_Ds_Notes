@@ -3,7 +3,7 @@ package kruskal;
 public class Kruskal {
 
     public static void main(String[] args) {
-        
+
         /* Let the given graph is :
      (1)____1___(2)
     /  \       /  \
@@ -22,14 +22,14 @@ public class Kruskal {
          \ | /
           (4)
 */
-        
+
         Vertice zero = new Vertice(0);
         Vertice one = new Vertice(1);
         Vertice two = new Vertice(2);
         Vertice three = new Vertice(3);
         Vertice four = new Vertice(4);
         Vertice five = new Vertice(5);
-        
+
         zero.link(one);
         zero.link(five);
         zero.link(four);
@@ -50,8 +50,8 @@ public class Kruskal {
         five.link(two);
         five.link(three);
         five.link(four);
-    
-        
+
+
         Arista a = new Arista(1, 2, 1);
         Arista b = new Arista(2, 3, 6);
         Arista c = new Arista(3, 4, 8);
@@ -62,7 +62,7 @@ public class Kruskal {
         Arista h = new Arista(5,3, 5);
         Arista i = new Arista(5,4,2);
         Arista j = new Arista(5,0,5);
-        
+
         VerticesSet vertSet = new VerticesSet();
         vertSet.addVertice(five);
         vertSet.addVertice(four);
@@ -70,7 +70,7 @@ public class Kruskal {
         vertSet.addVertice(two);
         vertSet.addVertice(one);
         vertSet.addVertice(zero);
-        
+
         AristContainer artContainer = new AristContainer();
         artContainer.add(a);
         artContainer.add(b);
@@ -82,15 +82,15 @@ public class Kruskal {
         artContainer.add(h);
         artContainer.add(i);
         artContainer.add(j);
-        
+
         Grafo graph = new Grafo(6);
-        
+
         graph.addAristsContainer(artContainer);
         graph.addVerticesSet(vertSet);
-        
-        
-        
-        
+
+
+
+
         //System.out.println(g.esConexo());
         if (graph.isConexo()) {
 

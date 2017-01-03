@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int search(int a[],int size, int elt)
 {
@@ -17,7 +17,7 @@ int main()
 	int arr[] = {23,43,2,67,90,2,6,19};
 	int pos;
 	//Search 6 in the list
-	pos = search(arr,8,6); 
+	pos = search(arr,8,6);
 	if (pos != -1)
 		printf("Number found at %d\n", pos);
 	else

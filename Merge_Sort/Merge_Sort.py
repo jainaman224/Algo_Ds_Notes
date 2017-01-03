@@ -12,7 +12,7 @@ def conquer_merge(array, left, right, mid):
         else:
             temp[k] = array[j]
             j += 1
-            
+
         k += 1
 
     while i <= mid:

@@ -23,14 +23,14 @@ void createll()
 	{
 			node *newn;
 			newn=(node*)malloc(sizeof(node)); //creates a new node in every iteration
-			
-		
+
+
 			scanf("%d",&newn->data);
 			newn->next = NULL;
 			if(head==NULL)
 			{
-				head=newn; 
-				tail=head; 
+				head=newn;
+				tail=head;
 			}
 			else
 			{
@@ -46,11 +46,11 @@ void display()
     struct node *temp = head;
     while(temp != NULL)
     {
-        printf("%d  ", temp->data);    
-        temp = temp->next;  
+        printf("%d  ", temp->data);
+        temp = temp->next;
     }
     printf("\n");
-}    
+}
 
 /* function to swap data of two nodes a and b*/
 void swap(node *a,node *b)

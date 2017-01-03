@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<malloc.h>
+#include <malloc.h>
 
 typedef struct node
 {
@@ -176,7 +176,7 @@ void Length_Iterative()
     {
         length++;
         node *current = head;
-        
+
 	while(current -> next != NULL)
         {
             length++;

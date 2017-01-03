@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 struct node* ptrarr[1000005];
 long long int vis[1000005];
 
@@ -119,11 +118,11 @@ long long int prims(long long int v){
         res = res + poped.weight;
         counter++;
         vis[poped.value] = 1;
-        prims(poped.value);
+        return prims(poped.value);
 }
 
 int main(){
-        long long int total,t,x,i,j,k,v,e,v1,v2,w;
+    long long int total,t,x,i,v,e,v1,v2,w;
 
 	t = 1;
 	srand(time(NULL));
@@ -161,5 +160,3 @@ int main(){
 
         return 0;
 }
-
-

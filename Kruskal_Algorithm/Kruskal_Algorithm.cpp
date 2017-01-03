@@ -71,7 +71,7 @@ void kruskal(int cost[n][n]) // Function performing Kruskal's algorithm
             }
         }
 
-        u = findParent(firstNode); 
+        u = findParent(firstNode);
         v = findParent(secondNode);
 
 

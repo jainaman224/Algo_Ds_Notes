@@ -3,7 +3,7 @@
 
 struct Leftist {
   Leftist *left, *right;
-  // dis is the distance to the right-bottom side of the tree 
+  // dis is the distance to the right-bottom side of the tree
   int dis, value, size;
   Leftist(int val = 0) {
     left = NULL, right = NULL;
@@ -57,11 +57,11 @@ Leftist* delete_root(Leftist *T) {
 }
 
 int main() {
-  
+
   Leftist *my_tree = new Leftist(10); // create a tree with root = 10
 
   // adding a node to a tree is the same as creating a new tree and merge them together
-  my_tree = merge(my_tree, new Leftist(100));   // push 100 
+  my_tree = merge(my_tree, new Leftist(100));   // push 100
   my_tree = merge(my_tree, new Leftist(10000)); // push 10000
   my_tree = merge(my_tree, new Leftist(1));     // push 1
   my_tree = merge(my_tree, new Leftist(1266));  // push 1266

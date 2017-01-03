@@ -8,8 +8,6 @@ namespace Selection_Sort
 {
     class Program
     {
-        
-        
             /// Function for selection sort
             static void Selection_Sort(int[] array, int size)
             {
@@ -28,7 +26,7 @@ namespace Selection_Sort
                     array[min_index] = temp;
                 }
             }
-        
+
         static void Main(string[] args)
         {
             int[] array = {2, 4, 3, 1, 6, 8, 4};

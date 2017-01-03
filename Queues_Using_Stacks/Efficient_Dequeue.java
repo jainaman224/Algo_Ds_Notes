@@ -3,19 +3,19 @@ import java.util.Stack;
 public class EfficientDequeue {
     Stack < Integer > primaryStack = new Stack < > ();
     Stack < Integer > secondaryStack = new Stack < > ();
-    public void enqueue(int element) 
+    public void enqueue(int element)
     {
-        while (!primaryStack.isEmpty()) 
+        while (!primaryStack.isEmpty())
         {
             secondaryStack.push(primaryStack.pop());
         }
         secondaryStack.push(element);
-        while (!secondaryStack.isEmpty()) 
+        while (!secondaryStack.isEmpty())
         {
             primaryStack.push(secondaryStack.pop());
         }
     }
-    public int dequeue() 
+    public int dequeue()
     {
         if(primaryStack.size()==0)
         {
@@ -24,22 +24,22 @@ public class EfficientDequeue {
         }
         return primaryStack.pop();
     }
-    public boolean isEmpty() 
+    public boolean isEmpty()
     {
         return primaryStack.empty();
     }
-    public int size() 
+    public int size()
     {
         return primaryStack.size();
     }
 
     public static void main(String args[]) {
         EfficientDequeue q1 = new EfficientDequeue();
-        for (int i = 0; i < 10; i++) 
+        for (int i = 0; i < 10; i++)
         {
             q1.enqueue(i);
         }
-        while (!q1.isEmpty()) 
+        while (!q1.isEmpty())
         {
             System.out.println(q1.dequeue());
         }

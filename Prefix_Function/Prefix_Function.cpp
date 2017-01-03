@@ -6,7 +6,7 @@ using namespace std;
 void search(string s, string t) {
 	string p = t + "$" + s;
 	int n = (int)p.size();
-	vector <int> pi(n + 1, 0);	
+	vector <int> pi(n + 1, 0);
 	for (int i = 1; i < n; ++i) {
 		int j = pi[i - 1];
 		while (j > 0 && p[i] != p[j])

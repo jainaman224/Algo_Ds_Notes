@@ -3,13 +3,15 @@
    C implementation of Insertion sort on  Linked List
 */
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 struct node {
     int val;
     struct node *next ;
     struct node *prev;
 };
+
 void insert_beg(struct node **head , int val) {
     struct node *nn =(struct node *)malloc(sizeof(struct node));
     nn->val = val;
@@ -22,6 +24,7 @@ void insert_beg(struct node **head , int val) {
     (*head)->prev = nn;
     *head = nn;
 }
+
 void insert_last(struct node **head , int val) {
     struct node *nn =(struct node *)malloc(sizeof(struct node ));
     nn->val = val;
@@ -43,6 +46,7 @@ void print(struct node *head) {
     }
      printf("%d\n",trav->val);
 }
+
 int size(struct node *head) {
     struct node *trav = head;
     int c = 0;
@@ -50,7 +54,7 @@ int size(struct node *head) {
         c++;
         trav = trav->next;
     }
-     return c;
+    return c;
 }
 
 void insertion_sort(struct node **head) {
@@ -85,11 +89,12 @@ void insertion_sort(struct node **head) {
         }
     }
 }
+
 int main()
 {
     struct node *head = NULL;
-    int n ,x, v;
-    scanf("%d",&n);
+    int n, v;
+    scanf("%d", &n);
     while(n--) {
         scanf("%d",&v);
         if(head == NULL) {

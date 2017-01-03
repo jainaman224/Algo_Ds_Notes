@@ -16,13 +16,13 @@ Queue* createQueue(unsigned capacity)
 {
 	Queue* queue = (Queue*) malloc(sizeof(Queue));
 	queue->capacity = capacity;
-	queue->front = queue->size = 0; 
+	queue->front = queue->size = 0;
 	queue->rear = capacity - 1; // This is important, see the enqueue
 	queue->array = (int*) malloc(queue->capacity * sizeof(int));
 	return queue;
 }
 
- 
+
 int isFull(Queue* queue)
 { return (queue->size == queue->capacity); }
 

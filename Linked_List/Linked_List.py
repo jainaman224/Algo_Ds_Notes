@@ -138,7 +138,7 @@ class Linked_List:
                 return 1 + Count_Recursive(node.next)
 
         return Count_Recursive(self.head)
-        
+
 
 
 LinkedList = Linked_List()

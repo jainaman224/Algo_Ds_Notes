@@ -12,7 +12,7 @@ def kadane(array)
       max_so_far = current_max
     end
   end
-  
+
   return max_so_far
 end
 

@@ -1,11 +1,11 @@
 // Function for Interpolation search
-function Interpolation_Search(array, search_item) 
+function Interpolation_Search(array, search_item)
 {
     var low = 0;
     var high = array.length - 1;
     var pos;
 
-    while (low <= high && search_item >= array[low] && search_item <= array[high]) 
+    while (low <= high && search_item >= array[low] && search_item <= array[high])
     {
         var rise = high - low;
         var run = array[high] - array[low];

@@ -10,7 +10,7 @@ int lowbit(int x) {
 }
 
 void update(int index, int value) {
-  // add "value" to the index-th element 
+  // add "value" to the index-th element
   for( ; index <= N ; index += lowbit(index)) {
     bit[index] += value;
   }
@@ -26,7 +26,7 @@ int query(int index) {
 }
 
 int main(){
-  
+
   N = 10;
 
   // WARNING: the index of the first element is 1

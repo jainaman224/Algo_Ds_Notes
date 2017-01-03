@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 //A structure having data and link representing a node in linked list
 typedef struct node
@@ -34,7 +34,7 @@ void enqueue(int elt)
 	if (front == NULL)
 	{
 		front = newNode;
-		rear = newNode; 
+		rear = newNode;
 	}
 	else
 	{
@@ -75,7 +75,7 @@ void display()
 
 
 int main()
-{	
+{
 	dequeue();
 	enqueue(15);
 	enqueue(49);
@@ -97,9 +97,9 @@ Queue is empty
 2 inserted in the queue
 97 inserted in the queue
 The queue is
-15	49	54	2	97	
+15	49	54	2	97
 Element deleted is 15
 Element deleted is 49
 The queue is
-54	2	97	
+54	2	97
 */

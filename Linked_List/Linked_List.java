@@ -203,8 +203,8 @@ class Linked_List
         for(i = 0; i < 5; i++)
             LinkedList.Insert_At_Beginning(i);
 
-        
-        
+
+
         LinkedList.Print_Linked_List();
         LinkedList.Get_Length_Iterative();
 
@@ -213,19 +213,19 @@ class Linked_List
 
         LinkedList.Print_Linked_List();
         LinkedList.Get_Length_Recursive();
-        
+
         LinkedList.Insert_After_Value(5, 9);
         LinkedList.Insert_After_Value(10, 9);
 
         LinkedList.Print_Linked_List();
         LinkedList.Get_Length_Iterative();
-        
+
         for(i = 0; i < 3; i++)
             LinkedList.Delete_At_End();
 
         LinkedList.Print_Linked_List();
         LinkedList.Get_Length_Recursive();
-        
+
         for(i = 0; i < 3; i++)
             LinkedList.Delete_At_Beginning();
 

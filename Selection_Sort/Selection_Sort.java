@@ -4,7 +4,7 @@ class Selection_Sort
     public static void SelectionSort(int[] array, int size)
     {
         int min_index, temp;
-        
+
         for(int i = 0; i < size - 1; i++)
         {
             min_index = i;

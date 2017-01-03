@@ -18,14 +18,14 @@ static void reverse()
     node* next;
     while (current != NULL)
     {
-        next  = current->next;  
-        current->next = prev;   
+        next  = current->next;
+        current->next = prev;
         prev = current;
         current = next;
     }
     head= prev;
 }
- 
+
 /* Function to push a node */
 void push(int data)
 {
@@ -38,37 +38,37 @@ void push(int data)
 		head=newn;
 	}
 	else
-	{	
+	{
 		temp=head;
 		while(temp->next !=NULL)
 			temp=temp->next;
 		temp->next=newn;
 	}
- 
+
 }
- 
+
 /* Function to print linked list */
 void printList()
 {
     struct node *temp = head;
     while(temp != NULL)
     {
-        printf("%d  ", temp->data);    
-        temp = temp->next;  
+        printf("%d  ", temp->data);
+        temp = temp->next;
     }
     printf("\n");
-}    
- 
+}
+
 int main()
 {
-   
+
      push(1);
      push(2);
-     push(3); 
-     push(4);      
-     printList();    
-     reverse();                      
+     push(3);
+     push(4);
+     printList();
+     reverse();
      printf("\n Reversed Linked list \n");
-     printList();    
+     printList();
      getchar();
 }

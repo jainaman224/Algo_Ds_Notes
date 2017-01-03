@@ -54,7 +54,7 @@ void Bubble_Sort(){
     while(curr->next != NULL){
       //compares curr and its next
       if (curr->data > curr->next->data){
-	
+
 	//swaps pointers for curr & curr->next
 	tmp = curr->next;
 	curr->next = curr->next->next;
@@ -64,11 +64,11 @@ void Bubble_Sort(){
 	if(curr ==head)
 	  head = trail = tmp;
 	else
-	  trail->next = tmp; 
-	
+	  trail->next = tmp;
+
 	curr = tmp;
       }
-      //advance pointers 
+      //advance pointers
       trail = curr;
       curr = curr->next;
     }
@@ -97,7 +97,7 @@ void Print_Linked_List()
 int main()
 {
     int i;
-    
+
     cout << "Before Bubble Sort ";
     for(i = 10; i > 5; --i)
       Insert_At_End(i);
@@ -106,7 +106,7 @@ int main()
     Bubble_Sort();
     cout << "After Bubble Sort  ";
     Print_Linked_List();
-    
+
     return 0;
 }
 

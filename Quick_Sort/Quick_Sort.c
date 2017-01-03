@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int partition (int arr[], int low, int high)
 {
     int pivot = arr[high];
@@ -25,28 +27,29 @@ void quickSort(int arr[], int low, int high)
         quickSort(arr, pi + 1, high);
     }
 }
+
 int main()
 {
     // freopen("in.txt","r",stdin);
     // freopen("out.txt","w",stdout);
     int t;
-    scanf("%d",&t);
-    
+    scanf("%d", &t);
+
     while(t--)
     {
-    int n,i;
-    scanf("%d",&n);
-    int arr[100];
-    for(i=0;i<n;i++)
-        scanf("%d",&arr[i]);
-    quickSort(arr, 0, n-1);
-    for(i=0;i<n;i++)
-        printf("%d ",arr[i]);
-    printf("\n");
-}
+        int n,i;
+        scanf("%d",&n);
+        int arr[100];
+        for(i=0;i<n;i++)
+            scanf("%d",&arr[i]);
+        quickSort(arr, 0, n-1);
+        for(i=0;i<n;i++)
+            printf("%d ",arr[i]);
+        printf("\n");
+    }
     return 0;
 }
-// sample input : 
+// sample input :
 // 2
 // 5
 // 1 5 8 32 46
@@ -54,5 +57,5 @@ int main()
 // 3 3 4 23 356 12 523 43 67 864
 
 // sample output :
-// 1 5 8 32 46 
-// 3 3 4 12 23 43 67 356 523 864 
+// 1 5 8 32 46
+// 3 3 4 12 23 43 67 356 523 864

@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "queue.h"
+#include "Queue.h"
 
 using namespace std;
 
