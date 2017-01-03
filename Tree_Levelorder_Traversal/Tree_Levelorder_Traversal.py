@@ -24,7 +24,7 @@ root.left.right = node(5)
 root.right.left = node(6)
 root.right.right = node(7)
 
-print("Level Order traversal of tree is ", end = "")
+print("Level Order traversal of tree is", end = " ")
 LevelOrder(root)
 
 ''' Output

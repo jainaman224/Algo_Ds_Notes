@@ -18,7 +18,7 @@ root.left.right = node(5)
 root.right.left = node(6)
 root.right.right = node(7)
 
-print("Pre Order traversal of tree is ", end = "")
+print("Pre Order traversal of tree is", end = " ")
 PreOrder(root)
 
 ''' Output

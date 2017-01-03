@@ -20,7 +20,7 @@ node *newNode(int data)
 }
 
 void PreOrder(node *root) {
-    if(root!=NULL){
+    if(root != NULL){
         cout << root->data << " ";
         PreOrder(root->left);
         PreOrder(root->right);

@@ -1,5 +1,5 @@
 # Stacks Using Array
-A Stack is an ADT (abstract data type) that serves as a collection of elements, with two principal operations: 
+A Stack is an ADT (abstract data type) that serves as a collection of elements, with two principal operations:
 
 * push, which adds an element to the collection, and
 
@@ -52,7 +52,7 @@ pop(stk):
 ```
 
 ## Complexity
-**Time complexity** 
+**Time complexity**
 
 * Push : O(1)
 * Pop : O(1)

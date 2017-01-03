@@ -23,7 +23,7 @@ int main() {
   for (const auto &i : x) {
     threads.push_back(std::thread(sortThread, i));
   }
-  
+
   for (auto it = threads.begin(); it != threads.end(); ++it) {
     it->join();
   }

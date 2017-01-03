@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct node
 {
@@ -9,33 +10,35 @@ typedef struct node
 node *newnode(int data)
 {
 	node *newn;
-	newn=(node*)malloc(sizeof(node));
-	newn->data=data;
-	newn->lptr=NULL;
-	newn->rptr=NULL;
+	newn = (node*)malloc(sizeof(node));
+	newn->data = data;
+	newn->lptr = NULL;
+	newn->rptr = NULL;
 	return newn;
 }
 
 /*Function for INORDER Transversal*/
 void inorder(node *root)
 {
-	if(root!=NULL)
+	if(root != NULL)
 	{
 		inorder(root->lptr);
-		printf("%d ",root->data);
+		printf("%d ", root->data);
 		inorder(root->rptr);
 	}
 }
 
-void main()
+int main()
 {
 	node *root;
-	root=newnode(1);
-	root->lptr=newnode(2);
-	root->rptr=newnode(3);
-	root->lptr->lptr=newnode(4);
-	root->lptr->rptr=newnode(5);
-	
+	root = newnode(1);
+	root->lptr = newnode(2);
+	root->rptr = newnode(3);
+	root->lptr->lptr = newnode(4);
+	root->lptr->rptr = newnode(5);
+
 	printf("In Order Transversal: ");
 	inorder(root);
+
+	return 0;
 }

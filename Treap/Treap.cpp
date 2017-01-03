@@ -1,6 +1,6 @@
 /**
 	Implementation of treap data structure
-	Insert function inserts item 
+	Insert function inserts item
 	Find returns true if searching item is in treap, else false
 
 	Time: O(log Size)
@@ -40,7 +40,7 @@ void split(pnode t, int x, pnode &a, pnode &b) {
 	} else {
 		split(t -> r, x - t -> x, t -> r, b);
 		a = t;
-	}	
+	}
 }
 
 bool find(pnode &t, int x) {
@@ -69,6 +69,7 @@ int main() {
 	for (int i = 0; i < toFind.size(); ++i)
 		cout << "Searching " << toFind[i] << " -> " << find(t, toFind[i]) << endl;
 }
+
 /* Output
 	Searching 1 -> true
 	Searching 2 -> true

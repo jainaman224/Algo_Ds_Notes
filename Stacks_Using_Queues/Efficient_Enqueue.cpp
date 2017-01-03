@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <queue>
-#include <limits.h>
+#include <climits>
 
 using namespace std;
 
@@ -60,16 +60,22 @@ public:
 
 int main() {
     Stack push_efficient;
+
     push_efficient.push(10);
     push_efficient.push(20);
     push_efficient.push(30);
     push_efficient.push(40);
     push_efficient.push(50);
+
     push_efficient.pop();
+
     push_efficient.push(60);
     push_efficient.push(70);
+
     push_efficient.pop();
+
     push_efficient.push(80);
     push_efficient.printStack();
+
     return 0;
 }

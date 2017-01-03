@@ -18,7 +18,7 @@ root.left.right = node(5)
 root.right.left = node(6)
 root.right.right = node(7)
 
-print("Post Order traversal of tree is ", end = "")
+print("Post Order traversal of tree is", end = " ")
 PostOrder(root)
 
 ''' Output

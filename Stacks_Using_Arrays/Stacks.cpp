@@ -48,7 +48,7 @@ public:
         else
         {
             cout << "Top of stack is : " << array[tos] << endl;
-            
+
             if(temp > -1)
                 cout << "Other : ";
 

@@ -20,7 +20,7 @@ node *newNode(int data)
 }
 
 void InOrder(node *root) {
-    if(root!=NULL){
+    if(root != NULL){
         InOrder(root->left);
         cout << root->data << " ";
         InOrder(root->right);

@@ -18,7 +18,7 @@ root.left.right = node(5)
 root.right.left = node(6)
 root.right.right = node(7)
 
-print("In Order traversal of tree is ", end = "")
+print("In Order traversal of tree is", end = " ")
 InOrder(root)
 
 ''' Output

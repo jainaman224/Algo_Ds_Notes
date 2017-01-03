@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <vector>
+
 using namespace std;
 
 class Graph {
@@ -45,7 +46,7 @@ void Graph::topologicalSort() {
 	}
 
 	while(!Stack.empty()) {
-		cout<<Stack.top()<<" ";
+		cout << Stack.top() << " ";
 		Stack.pop();
 	}
 }
@@ -59,8 +60,9 @@ int main() {
 	graph.addEdge(2, 3);
 	graph.addEdge(3, 1);
 
-	cout<<"Topological Sort: ";
+	cout << "Topological Sort: ";
 	graph.topologicalSort();
+
 	return 0;
 }
 

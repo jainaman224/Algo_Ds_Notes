@@ -49,17 +49,24 @@ public:
 
 int main() {
     Stack pop_efficient;
+
     pop_efficient.push(10);
     pop_efficient.push(20);
     pop_efficient.push(30);
     pop_efficient.push(40);
     pop_efficient.push(50);
+
     pop_efficient.pop();
+
     pop_efficient.push(60);
     pop_efficient.push(70);
+
     pop_efficient.pop();
+
     pop_efficient.push(80);
     pop_efficient.push(90);
+
     pop_efficient.printStack();
+
     return 0;
 }

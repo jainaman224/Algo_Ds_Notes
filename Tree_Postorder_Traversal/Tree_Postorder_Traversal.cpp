@@ -20,7 +20,7 @@ node *newNode(int data)
 }
 
 void PostOrder(node *root) {
-    if(root!=NULL){
+    if(root != NULL){
         PostOrder(root->left);
         PostOrder(root->right);
         cout << root->data << " ";
