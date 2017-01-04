@@ -1,23 +1,23 @@
 # function for bubble sort
-def Bubble_Sort(array):
-    for i in range(0, len(array) - 1):
-        for j in range(0, len(array) - i - 1):
+def Bubble_Sort(list):
+    for i in range(0, len(list) - 1):
+        for j in range(0, len(list) - i - 1):
             # do swapping
-            if array[j] > array[j + 1]:
-                array[j], array[j + 1] = array[j + 1], array[j]
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
 
-# function to print array
-def Print_Array(array):
-    for i in range(0, len(array)):
-        print(array[i], end = " ")
+# function to print list
+def Print_list(list):
+    for i in range(0, len(list)):
+        print(list[i], end = " ")
 
     print()
 
-array = [2, 4, 3, 1, 6, 8, 4]
+list = [2, 4, 3, 1, 6, 8, 4]
 
-Bubble_Sort(array)
+Bubble_Sort(list)
 
-Print_Array(array)
+Print_list(list)
 
 # Output
 # 1 2 3 4 4 6 8
