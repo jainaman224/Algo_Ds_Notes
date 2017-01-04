@@ -18,11 +18,11 @@ class SleepSortThread(threading.Thread):
         # Release lock
         _lk.release()
 
-def SleepSort(array):
+def SleepSort(list):
     ts = []
 
-    # Intialize a thread corresponding to each element in array
-    for i in array:
+    # Intialize a thread corresponding to each element in list
+    for i in list:
         t = SleepSortThread(i)
         ts.append(t)
 
