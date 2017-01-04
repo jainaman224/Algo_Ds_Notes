@@ -1,39 +1,39 @@
 # Conquer
-def Parition(array, left, right):
-    pivot = array[left]
+def Parition(list, left, right):
+    pivot = list[left]
     index = right
 
     for j in range(right, left - 1, -1):
-        if array[j] > pivot:
-            array[index], array[j] = array[j], array[index]
+        if list[j] > pivot:
+            list[index], list[j] = list[j], list[index]
             index -= 1
 
-    array[index], array[left] = array[left], array[index]
+    list[index], list[left] = list[left], list[index]
     return index
 
-# Divide array into halves
-def Quick(array, left, right):
+# Divide list into halves
+def Quick(list, left, right):
     if left < right:
-        pivot = Parition(array, left, right)
+        pivot = Parition(list, left, right)
 
-        Quick(array, left, pivot - 1)
-        Quick(array, pivot + 1, right)
+        Quick(list, left, pivot - 1)
+        Quick(list, pivot + 1, right)
 
-def Quick_Sort(array):
-    Quick(array, 0, len(array) - 1)
+def Quick_Sort(list):
+    Quick(list, 0, len(list) - 1)
 
-# Function to print array
-def Print_Array(array):
-    for i in range(0, len(array)):
-        print(array[i], end = " ")
+# Function to print list
+def Print_list(list):
+    for i in range(0, len(list)):
+        print(list[i], end = " ")
 
     print()
 
-array = [2, 4, 3, 1, 6, 8, 4]
+list = [2, 4, 3, 1, 6, 8, 4]
 
-Quick_Sort(array)
+Quick_Sort(list)
 
-Print_Array(array)
+Print_list(list)
 
 
 ''' Output
