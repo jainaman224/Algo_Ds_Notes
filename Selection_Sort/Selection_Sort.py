@@ -1,26 +1,26 @@
 # Function for selection sort
-def Selection_Sort(array):
-    for i in range(0, len(array) - 1):
+def Selection_Sort(list):
+    for i in range(0, len(list) - 1):
         min_index = i
 
-        for j in range(i + 1, len(array)):
-            if array[j] < array[min_index]:
+        for j in range(i + 1, len(list)):
+            if list[j] < list[min_index]:
                 min_index = j
 
-        array[i], array[min_index] = array[min_index], array[i]
+        list[i], list[min_index] = list[min_index], list[i]
 
-# Function to print array
-def Print_Array(array):
-    for i in range(0, len(array)):
-        print(array[i], end = " ")
+# Function to print list
+def Print_list(list):
+    for i in range(0, len(list)):
+        print(list[i], end = " ")
 
     print()
 
-array = [2, 4, 3, 1, 6, 8, 4]
+list = [2, 4, 3, 1, 6, 8, 4]
 
-Selection_Sort(array)
+Selection_Sort(list)
 
-Print_Array(array)
+Print_list(list)
 
 
 ''' Output

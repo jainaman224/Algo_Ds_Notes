@@ -1,27 +1,27 @@
 # function for insertion sort
-def Insertion_Sort(array):
-    for i in range(1, len(array)):
-        temp = array[i]
+def Insertion_Sort(list):
+    for i in range(1, len(list)):
+        temp = list[i]
         j = i - 1
 
-        while j >= 0 and array[j] > temp:
-            array[j + 1] = array[j]
+        while j >= 0 and list[j] > temp:
+            list[j + 1] = list[j]
             j -= 1
 
-        array[j + 1] = temp
+        list[j + 1] = temp
 
-# function to print array
-def Print_Array(array):
-    for i in range(0, len(array)):
-        print(array[i],end=" ")
+# function to print list
+def Print_list(list):
+    for i in range(0, len(list)):
+        print(list[i],end=" ")
 
     print()
 
-array = [2, 4, 3, 1, 6, 8, 4]
+list = [2, 4, 3, 1, 6, 8, 4]
 
-Insertion_Sort(array)
+Insertion_Sort(list)
 
-Print_Array(array)
+Print_list(list)
 
 # Output
 # 1 2 3 4 4 6 8

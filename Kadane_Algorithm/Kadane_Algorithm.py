@@ -25,15 +25,15 @@ for i in range(len(input)):
         largest_in_negative = input[i]
 
 if flag == 1:
-    max_subarray_sum = kadane(input)
+    max_sublist_sum = kadane(input)
 else:
-    max_subarray_sum = largest_in_negative
+    max_sublist_sum = largest_in_negative
 
-print("Maximum Subarray Sum is " + str(max_subarray_sum))
+print("Maximum Sublist Sum is " + str(max_sublist_sum))
 
 
 ''' Output
 
-Maximum Subarray Sum is 6
+Maximum Sublist Sum is 6
 
 '''

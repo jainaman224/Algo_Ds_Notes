@@ -1,63 +1,63 @@
 # Conquer
-def conquer_merge(array, left, right, mid):
-    #temp = [None] * len(array)
+def conquer_merge(list, left, right, mid):
+    #temp = [None] * len(list)
     i = left
     j = mid + 1
     k = left
 
     while i <= mid and j <= right:
-        if array[i] <= array[j]:
-            temp[k] = array[i]
+        if list[i] <= list[j]:
+            temp[k] = list[i]
             i += 1
         else:
-            temp[k] = array[j]
+            temp[k] = list[j]
             j += 1
 
         k += 1
 
     while i <= mid:
-        temp[k] = array[i]
+        temp[k] = list[i]
         i += 1
         k += 1
 
     while j <= right:
-        temp[k] = array[j]
+        temp[k] = list[j]
         j += 1
         k += 1
 
     while left <= right:
-        array[left] = temp[left]
+        list[left] = temp[left]
         left += 1
 
-# Divide array into halves
-def divide(array, left, right):
+# Divide list into halves
+def divide(list, left, right):
     if left < right:
         mid = left + (right - left) / 2;
         mid = int(mid)
 
-        divide(array, left, mid)
-        divide(array, mid + 1, right)
+        divide(list, left, mid)
+        divide(list, mid + 1, right)
 
-        conquer_merge(array, left, right, mid)
+        conquer_merge(list, left, right, mid)
 
-def Merge_Sort(array):
+def Merge_Sort(list):
     global temp
-    temp = [0] * len(array)
-    divide(array, 0, len(array) - 1)
+    temp = [0] * len(list)
+    divide(list, 0, len(list) - 1)
     del temp
 
-# function to print array
-def Print_Array(array):
-    for i in range(0, len(array)):
-        print(array[i],end=" ")
+# function to print list
+def Print_list(list):
+    for i in range(0, len(list)):
+        print(list[i],end=" ")
 
     print()
 
-array = [2, 4, 3, 1, 6, 8, 4]
+list = [2, 4, 3, 1, 6, 8, 4]
 
-Merge_Sort(array)
+Merge_Sort(list)
 
-Print_Array(array)
+Print_list(list)
 
 # Output
 # 1 2 3 4 4 6 8
