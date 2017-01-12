@@ -49,8 +49,6 @@ int main() {
   int numberOfElements=6;
   int arr[]={2,7,8,1,4,1};
   //call to shaker sort function
-  shakerSort(arr,numberOfElements);
+  shakerSort(arr,numberOfElements-1);
   return 0;
 }
-
-/*output 1 1 2 4 7 8*/
