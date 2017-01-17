@@ -85,6 +85,9 @@ Let us understand this with the example shown above.
 
 This explains the stability of counting sort.
 
+
+Submitted by : [Ayushi Negi](https://github.com/ayushin78)
+
 ## Implementation
 
 - [C Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Counting_Sort/Counting_Sort.c)
