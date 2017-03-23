@@ -1,5 +1,5 @@
 [![Gitter](https://badges.gitter.im/Algo_Ds_Notes/Algo_Ds_Notes.svg)](https://gitter.im/Algo_Ds_Notes/Algo_Ds_Notes?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-<a href='https://play.google.com/store/apps/details?id=com.algopack.scibots.algopack&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/ height="35"></a>
+<a href='https://play.google.com/store/apps/details?id=com.algopack.scibots.algopack&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="35"></a>
 
 
 ## Welcome to Algorithm and Data Structure Notes :clipboard:
