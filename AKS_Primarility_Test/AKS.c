@@ -1,5 +1,25 @@
 #include <stdio.h>
+/*
 
+Check if n is a perfect power: if n = ab for integers a > 1 and b > 1, output composite.
+
+
+Find the smallest r such that ordr(n) > (log2 n)2. (if r and n are not coprime, then skip this r)
+
+
+For all 2 ≤ a ≤ min(r, n−1), check that a does not divide n: If a|n for some 2 ≤ a ≤ min(r, n−1), output composite.
+
+
+If n ≤ r, output prime.
+
+
+For a = 2 to {\displaystyle \left\lfloor \scriptstyle {{\sqrt {\varphi (r)}}\log _{2}(n)}\right\rfloor } {\displaystyle \left\lfloor \scriptstyle {{\sqrt {\varphi (r)}}\log _{2}(n)}\right\rfloor } do
+	if (X+a)n≠ Xn+a (mod Xr − 1,n), output composite;
+
+
+Output prime.
+
+*/
 int isprm(long long n)
 {
 	long long i = 5, w = 2;
