@@ -39,8 +39,8 @@ int isprm(long long n)
 
 int main()
 {
-	int i;
-	for (i = 1; i <= 100000000; i++)
+	// Prints all prime less than 100000000
+	for (int i = 1; i <= 100000000; i++)
 	{
 		if(isprm(i) == 1)
 			printf("%d\n",i);
