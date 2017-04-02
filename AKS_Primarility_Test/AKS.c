@@ -13,7 +13,7 @@ For all 2 ≤ a ≤ min(r, n−1), check that a does not divide n: If a|n for so
 If n ≤ r, output prime.
 
 
-For a = 2 to {\displaystyle \left\lfloor \scriptstyle {{\sqrt {\varphi (r)}}\log _{2}(n)}\right\rfloor } {\displaystyle \left\lfloor \scriptstyle {{\sqrt {\varphi (r)}}\log _{2}(n)}\right\rfloor } do
+For a = 2 to sqrt(phi (r))*log(2)(n)  
 	if (X+a)n≠ Xn+a (mod Xr − 1,n), output composite;
 
 
