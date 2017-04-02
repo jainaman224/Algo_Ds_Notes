@@ -3,6 +3,8 @@ import java.util.Scanner;
 class AKS{
     public static void main(String[] args){
     
+        //Prints all the primes less than 100000000
+        
         for(int i=0;i<1000000;i++)
         {
             if(isprm(i))
