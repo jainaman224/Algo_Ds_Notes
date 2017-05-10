@@ -84,9 +84,9 @@ int main(int argc, char const *argv[])
 
 
             0
-		  4/ \ 8
-		  /   \
-		 1    7
+          4/ \ 8
+          /   \
+         1    7
 
 	*/
 
@@ -122,7 +122,7 @@ int main(int argc, char const *argv[])
                 5 		       12  		   1->2->5 
                 6 		       12  		   1->7->6 
                 7 		       11  		   1->7 
-                8 		       10          1->2->8
+                8 		       10  		   1->2->8
 	*/
 
 	return 0;
