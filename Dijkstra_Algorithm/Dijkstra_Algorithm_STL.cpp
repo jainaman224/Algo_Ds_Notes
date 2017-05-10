@@ -83,7 +83,7 @@ int main(int argc, char const *argv[])
 		and 8 is weight of vertex from 0 to 7
 
 
-			0
+            0
 		  4/ \ 8
 		  /   \
 		 1    7
@@ -117,12 +117,12 @@ int main(int argc, char const *argv[])
                 0 		       4  		   1->0 
                 1 		       0  		   1 
                 2 		       8  		   1->2 
-                3 		       15          1->2->3 
+                3 		       15  		   1->2->3 
                 4 		       22  		   1->2->5->4 
                 5 		       12  		   1->2->5 
                 6 		       12  		   1->7->6 
-                7 		       11          1->7 
-                8              10          1->2->8
+                7 		       11  		   1->7 
+                8 		       10          1->2->8
 	*/
 
 	return 0;
