@@ -14,6 +14,12 @@ struct Node
     enum type color;
 };
 
+/*
+    Using Queue for level order traversal.
+    functions pfront, isempty, dequeue, enqueue are part of Queue implementation.
+
+*/
+
 struct Queue
 {
     struct Node* data;
@@ -90,6 +96,21 @@ void levelorder(struct Node* root)
 
 void LeftRotate(struct Node** T,struct Node** x)
 {
+
+    /*
+        A left rotation looks like this.
+
+            x                               y
+          /   \                           /   \ 
+         t1    y                         x     z
+              /  \   ----->>>          /  \   /  \
+             t2   z                   t1  t2  t3  t4
+                 / \
+                t3  t4
+
+    */
+
+
     struct Node* y = (*x)->right;
     (*x)->right = y->left;
 
@@ -114,6 +135,19 @@ void LeftRotate(struct Node** T,struct Node** x)
 }
 void RightRotate(struct Node** T,struct Node** x)
 {
+    /*
+        A right rotation looks like this.
+
+            x                            y
+           / \                         /   \ 
+          y  t4                       z     x
+         / \      ------>>>          / \   / \
+        z  t3                       t1 t2 t3 t4
+       / \
+      t1  t2
+
+    */
+
     struct Node* y = (*x)->left;
     (*x)->left = y->right;
 
@@ -138,28 +172,46 @@ void RightRotate(struct Node** T,struct Node** x)
 
 void RB_insert_fixup(struct Node** T, struct Node** z)
 {
+    // Parent and grandparent of deleted node.
     struct Node* grandparent = NULL;
     struct Node* parentpt = NULL;
 
     while(((*z)!=*T)&& ((*z)->color!= BLACK) && ((*z)->parent->color == RED))
     {
+        /*
+            In above while loop we check:
+            1.if inserted node is root node.. Then we just have to color it black.
+            2.we have to continue with while loop if property 2 is violated
+            (ie red parent cannot have red child.)
+
+        */
         parentpt = (*z)->parent;
         grandparent = (*z)->parent->parent;
 
         if(parentpt == grandparent->left)
         {
+            // If Node is inserted at left sub tree of grandparent.
             struct Node* uncle = grandparent->right;
 
             if(uncle!=NULL && uncle->color == RED)
             {
+                /*
+                If uncle(other child node of parent node) is not NULL and is red.
+                1.color of grandparent is changed to Red.
+                2.color of grandparent is changed to Red.
+                3.uncle->color = BLACK;
+                */
+
                 grandparent->color = RED;
                 parentpt->color = BLACK;
                 uncle->color = BLACK;
                 *z = grandparent;
+                // We backtrack from z to grandparent.
             }
 
             else
             {
+                // If inserted node is right child of parent.
                 if((*z) == parentpt->right)
                 {
                     LeftRotate(T,&parentpt);
@@ -176,6 +228,8 @@ void RB_insert_fixup(struct Node** T, struct Node** z)
 
         else
         {
+            // This is just opposite of If statement.
+            // ie. when parentpt is right child of grand parent.
             struct Node* uncle = grandparent->left;
 
             if(uncle!=NULL && uncle->color == RED)
@@ -203,6 +257,7 @@ void RB_insert_fixup(struct Node** T, struct Node** z)
         }
     }
     (*T)->color = BLACK;
+    // Root node is colored black.
 
 }
 
@@ -238,6 +293,19 @@ struct Node* RB_insert(struct Node* T,int data)
     else
         y->right = z;
 
+    // Normal Binary Search Tree Insertion till here.
+
+    /*
+    RB_insert_fixup is used to maintain Red Black Tree property.
+    Properties
+    1).Root must be black
+    2).Red parent cannot have red children(a red parent have both its children Black)
+    3).Every Node is either red or black
+    4).Black height of every node is same 
+        ie. No of Black nodes from every leaf node to Root Node must be same.
+
+    */
+
     RB_insert_fixup(&T,&z);
 
     return T;
@@ -255,6 +323,7 @@ void preorder(struct Node* root)
 
 struct Node* Tree_minimum(struct Node* node)
 {
+    //This function is used to find successor of node which we are trying to delete.
     while(node->left!=NULL)
         node = node->left;
 
@@ -357,6 +426,10 @@ void RB_transplat(struct Node** T, struct Node** u,struct Node** v)
 
 struct Node* RB_delete(struct Node *T,struct Node* z)
 {
+    /*
+    visit http://www.geeksforgeeks.org/red-black-tree-set-3-delete-2/
+    For the explanation.
+    */
     struct Node *y = z;
     enum type yoc;
     yoc = z->color; // y's original color
@@ -449,9 +522,33 @@ int main()
 
     return 0;
 }
+
+
+/*
+                   2(b)
+                  /   \
+                 1(b)  5(r)
+                       /    \
+                     4(b)     7(b)
+                       /    /  \
+                      3(r) 6(r)  9(r)
+
+
+                After deleting 5
+
+                   2(b)
+                  /   \
+                 1(b)  6(r)
+                      /   \
+                     4(b) 7(1)
+                     /     \
+                    3(r)   9(r)
+
+*/
+
 /*
 
-OutPut :
+Output :
 
 Preorder - 2 1 5 4 3 7 6 9 
 Level order - 2 1 5 4 7 3 6 9 
@@ -461,4 +558,3 @@ Level order - 2 1 6 4 7 3 9
 
 
 */
-
