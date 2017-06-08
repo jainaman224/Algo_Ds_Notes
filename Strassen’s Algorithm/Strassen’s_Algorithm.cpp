@@ -446,9 +446,12 @@
 
     }
 
+
 /*
 
 Output:
+$ g++ StrassenMulitplication.cpp
+$ a.out
 
  
 A = {
@@ -471,4 +474,7 @@ C = {
 }
 
 
+
 */
+
+
