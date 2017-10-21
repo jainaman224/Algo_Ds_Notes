@@ -17,8 +17,12 @@ public class Queue_Using_Arrays {
 	
 	//Displaying the queue
 	public void print() {
-		for(int i=front; i<=rear;i++){
-			System.out.println(arr[i]+"\t");
+		if(front == -1)
+			System.out.println("Queue is Empty.");
+		else{
+			for(int i=front; i<=rear;i++){
+				System.out.println(arr[i]+"\t");
+			}
 		}
 	}
 	
@@ -50,7 +54,7 @@ public class Queue_Using_Arrays {
 			arr[rear]=item;
 		}
 		else{
-			System.out.println("Can't enqueue");
+			System.out.println("Can't enqueue " + item);
 		}
 	}
 	
@@ -64,13 +68,13 @@ public class Queue_Using_Arrays {
 		if(front!=rear && !IsEmpty()){
 			int temp = arr[front];
 			front++;
-			System.out.println(temp);
+			System.out.println("Dequeued Item: " + temp);
 		}
 		else if( front == rear && !IsEmpty()){
 			int temp = arr[front];
 			front = -1;
 			rear = -1;
-			System.out.println(temp);
+			System.out.println("Dequeued Item: " + temp);
 		}
 		else
 			System.out.println("Can't dequeue.");
