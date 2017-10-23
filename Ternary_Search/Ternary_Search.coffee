@@ -1,4 +1,4 @@
-# Function for Binary Search
+# Function for Ternary Search
 Ternary_Search = (array, left, right, desired) ->
     while left <= right
         # Return positon if found
