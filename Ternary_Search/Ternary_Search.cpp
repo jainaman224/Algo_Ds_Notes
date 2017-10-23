@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Function for Ternary Search
 int Ternary_Search(int array[], int left, int right, int desired)
 {
    if(right >= left)
