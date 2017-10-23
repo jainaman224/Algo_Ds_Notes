@@ -1,4 +1,4 @@
-# Function for Binary Search
+# Function for Ternary Search
 def Ternary_Search(list, left, right, desired):
     while left <= right:
         # Return positon if found
