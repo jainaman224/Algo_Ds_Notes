@@ -34,6 +34,10 @@ return -1
 
 	> :rocket: [Compile Online](https://repl.it/EC27/0) :rocket:
 
+* [JavaScript Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Linear_Search/Linear_Search.js)
+
+	> :rocket: [Compile Online](https://repl.it/repls/OliveBlissfulMerganser) :rocket:
+
 * [Php Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Linear_Search/Linear_Search.php)
 
 	> :rocket: [Compile Online](https://repl.it/EC26/0) :rocket:
