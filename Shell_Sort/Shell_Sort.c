@@ -1,3 +1,4 @@
+// C implementation of Shell Sort
 #include <stdio.h>
 
 void Shell_Sort(int array[], int size)
