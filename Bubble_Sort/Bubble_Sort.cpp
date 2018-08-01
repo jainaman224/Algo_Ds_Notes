@@ -6,9 +6,10 @@ using namespace std;
 void Bubble_Sort(int array[], int size)
 {
     int temp;
-    int flag=0;
+    int flag = 0;
     for(int i = 0; i < size - 1; i++)
-    {   flag=0;
+    {
+        flag = 0;
         for(int j = 0; j < size - i - 1; j++)
         {
             // Do swapping
@@ -17,11 +18,11 @@ void Bubble_Sort(int array[], int size)
                 temp = array[j];
                 array[j] = array[j + 1];
                 array[j + 1] = temp;
-                flag=1;
+                flag = 1;
             }
         }
-     if(flag==0)
-         break;
+        if(flag == 0)
+            break;
     }
 
 }
