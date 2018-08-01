@@ -5,6 +5,9 @@ function Node(data) {
 function Linked_List() {
 	this.length = 0;
 	this.head = null;
+	/*
+	* Adds Node at end of Linkedlist From given data
+	**/
 	this.add = function(data) {
 		var node = new Node(data),
 		current = this.head;
@@ -22,17 +25,21 @@ function Linked_List() {
 	}
 	
 }
-Linked_List.prototype.get = function(num) {
-	if(num > this.length)
+/**
+* Returns Node at given index
+*/
+Linked_List.prototype.get = function(index) {
+	if(index > this.length)
 		return "Node doesn't exist";
 	var current = this.head,
 	count = 0;
-	while(count < num-1) {
+	while (count < index - 1) {
 		current = current.next;
 		count++;
 	}
 	return current;
 }
+
 Linked_List.prototype.remove = function(pos) {
 	var current = this.head,
 	length = this.length,
@@ -55,8 +62,19 @@ Linked_List.prototype.remove = function(pos) {
 	current = null;
 	this.length--;
 	return this.head;
-
 }
+
+// For Printing Linkedlist
+Linked_List.prototype.toString = function () {
+    var currentNode =  this.head
+    let str = ""
+    while (currentNode) {
+        str += `👉 ${currentNode.data} `
+        currentNode = currentNode.next
+    }
+    return str
+}
+
 var ll = new Linked_List();
 ll.add(2);
 ll.add(3);
@@ -66,3 +84,5 @@ ll.add(6);
 //2->3->4->5->6
 ll.remove(2);
 //2->4->5->6
+ll.toString();
+//👉 2 👉 4 👉 5 👉 6
