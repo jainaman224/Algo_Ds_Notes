@@ -1,43 +1,38 @@
-# Conquer
-def Parition(list, left, right):
-    pivot = list[left]
-    index = right
+# Python program for implementation of QuickSort.
 
-    for j in range(right, left - 1, -1):
-        if list[j] > pivot:
-            list[index], list[j] = list[j], list[index]
-            index -= 1
+# The main function that implements QuickSort
+# This function takes the last element as the pivot, places
+# the pivot element at its correct position in sorted
+# array, and places all smaller (smaller than pivot)
+# to the left of the pivot and all greater elements to the right
+# of pivot
 
-    list[index], list[left] = list[left], list[index]
-    return index
+# array[] --&gt; Array to be sorted,
+# start  --&gt; Starting index,
+# end  --&gt; Ending index
 
-# Divide list into halves
-def Quick(list, left, right):
-    if left < right:
-        pivot = Parition(list, left, right)
+# Function to do Quicksort
+def quicksort(array,start=0,end=None):
+    if end is None:
+        end=len(array)-1
+    if end-start&lt;1:
+        return array
+    else:
+        current=start
+        pivot =end
+        while 1:
+            if current==pivot:
+                break
+            elif array[current]&gt;array[pivot]:
+                array[pivot],array[current],array[pivot-1]=array[current],array[pivot-1],array[pivot]
+                pivot-=1
+            else:
+                current+=1
+    quicksort(array,start,pivot-1)
+    quicksort(array,pivot+1,end)
+    return array
 
-        Quick(list, left, pivot - 1)
-        Quick(list, pivot + 1, right)
+# Driver code to test above
+arr = [10, 7, 8, 9, 1, 5]
+print (quicksort(arr))
 
-def Quick_Sort(list):
-    Quick(list, 0, len(list) - 1)
-
-# Function to print list
-def Print_list(list):
-    for i in range(0, len(list)):
-        print(list[i], end = " ")
-
-    print()
-
-list = [2, 4, 3, 1, 6, 8, 4]
-
-Quick_Sort(list)
-
-Print_list(list)
-
-
-''' Output
-
-1 2 3 4 4 6 8
-
-'''
