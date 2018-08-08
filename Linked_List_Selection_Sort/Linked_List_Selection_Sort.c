@@ -1,15 +1,15 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct node
 {
 	int value;
 	struct node *next;
-}node;
+} node;
 
 node *start, *temp;
 
-void insert(int val) //Function to insert value into linked list
+void insert(int val) // Function to insert value into linked list
 {
 	node *newNode;
 	newNode = (node *)malloc(sizeof(node));
@@ -30,16 +30,17 @@ void insert(int val) //Function to insert value into linked list
 	}
 }
 
-void display()//Function to display current linked list
+void display() // Function to display current linked list
 {
 	temp = start;
 	while (temp)
 	{
-		printf("%d\t",temp->value );
+		printf("%d\t", temp -> value );
 		temp = temp -> next;
 	}
 	printf("\n");
 }
+
 void selectionSort()//Function that operates selection sort on linked lists
 {
 	node *beg = start, *current;
@@ -84,7 +85,7 @@ int main()
 	return 0;
 }
 
-/*Output
+/* Output
 Before sorting : 4	6	19	2	10	3	
 After Sorting : 2	3	4	6	10	19
 */
