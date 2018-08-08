@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 enum Color {RED, BLACK};
+
 struct Node
 {
 	int data;
@@ -14,6 +17,7 @@ struct Node
 		left = right = parent = NULL;
 	}
 };
+
 class RBTree
 {
 	private:
@@ -29,6 +33,7 @@ class RBTree
 		void inorder();
 		void levelOrder();
 };
+
 void inorderHelper(Node *root)
 {
 	if (root == NULL)
