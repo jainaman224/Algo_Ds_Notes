@@ -1,48 +1,24 @@
-#include <iostream>
-#include <limits.h>
-#include <iomanip>
-
-#define Infinity INT_MAX
+#include<bits/stdc++.h>
 #define A 4
+int Infinity=1000000;
 
 using namespace std;
 
-void FloydWarshall(int graph[A][A]);
-
-void output(int length[A][A]);
+void output(int graph[A][A])
+{
+    cout<<"The matrix below shows the shortest distances between each pair of vertices\n";
+    for(int i=0; i<A; i++, cout<<endl)
+      for(int j=0; j<A; j++, cout<<"\t")
+        (graph[i][j]==Infinity)?cout<<"INFINITY":cout<<graph[i][j];
+}
 
 void FloydWarshall(int graph[A][A])
 {
-  int length[A][A],x,y,z;
-  for(x = 0; x < A; x++)
-    for(y = 0; y < A; y++)
-      length[x][y] = graph[x][y];
-
-  for(z = 0; z < A; z++)
-    for(x = 0; x < A; x++)
-      for(y = 0; y < A; y++)
-       { if(length[x][z] != Infinity &&
-            length[z][y] != Infinity &&
-            length[x][z] + length[z][y] < length[x][y])
-            length[x][y] = length[x][z] + length[z][y];
-       }
-  output(length);
-}
-
-void output(int length[A][A])
-{
-     cout << "The matrix below shows the shortest distances between each pair of vertices\n";
-     for (int x = 0; x < A; x++)
-      {
-        for (int y = 0; y < A; y++)
-        {
-          if (length[x][y] == Infinity)
-           cout << setw(12) << "INFINITY";
-          else
-           cout << setw(12) << length[x][y];
-        }
-       cout << endl;
-      }
+  for(int k=0; k<A; k++)
+    for(int i=0; i<A; i++)
+      for(int j=0; j<A; j++)
+        graph[i][j]=min(graph[i][j], graph[i][k]+graph[k][j]);
+    output(graph);
 }
 
 int main() {
@@ -56,11 +32,9 @@ int main() {
 }
 
 /* OUTPUT
-
 The matrix below shows the shortest distances between each pair of vertices
            0           8          15          15
     INFINITY           0           7          14
     INFINITY    INFINITY           0           7
     INFINITY    INFINITY    INFINITY           0
-
 */
