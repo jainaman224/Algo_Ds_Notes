@@ -78,6 +78,4 @@ Sum of two matrix is:
 1   4
 2  6
 
-
-
 */
