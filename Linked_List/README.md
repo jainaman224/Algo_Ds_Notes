@@ -8,8 +8,8 @@ Note: This article pertains information about singly linked list.
 
 ## Types of Linked List
 * Singly linked list
-* Circular linked list
-* Doubly linked list
+* [Circular linked list](https://github.com/jainaman224/Algo_Ds_Notes/tree/master/Circular_Linked_List)
+* [Doubly linked list](https://github.com/jainaman224/Algo_Ds_Notes/tree/master/Doubly_Linked_List)
 
 ![Linked List Picture](https://cdn-images-1.medium.com/max/2600/1*GOKmkucFHN_gmTMUtyC2sQ.png)
 
