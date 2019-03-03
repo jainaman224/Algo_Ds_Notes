@@ -23,6 +23,7 @@ Let us understand this algorithm with a example.
 The pseudocode for Depth First Search algorithm is as follows:
 
 ```
+Procedure depth_first_search
     DFS-iterative (G, s):                                   //Where G is graph and s is source vertex
       let S be stack
       S.push( s )            //Inserting s in stack 
@@ -31,7 +32,8 @@ The pseudocode for Depth First Search algorithm is as follows:
           //Pop a vertex from stack to visit next
           v  =  S.top( )
          S.pop( )
-         //Push all the neighbours of v in stack that are not visited   
+         //Push all the neighbour
+**Time complexity** - s of v in stack that are not visited   
         for all neighbours w of v in Graph G:
             if w is not visited :
                      S.push( w )         
@@ -43,8 +45,12 @@ The pseudocode for Depth First Search algorithm is as follows:
         for all neighbours w of s in Graph G:
             if w is not visited:
                 DFS-recursive(G, w)
-                ```
+                
+end procedure
+```
+
 ## COMPLEXITY
+
 **Time complexity** - O(V+E), where V and E are number of vertices and edges.
 
 ## IMPLEMENTATION
