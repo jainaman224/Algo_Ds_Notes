@@ -16,7 +16,7 @@ A Binary Search Tree (BST) is a tree in which all the nodes follow the followig 
 
 Following are the basic operations of a tree −
 
-#### 1. Search 
+### 1. Search 
  
  The search operation is performed as follows
 
@@ -30,7 +30,7 @@ Following are the basic operations of a tree −
 - If we reach to the node having the value equal to the search value then display "Element is found" and terminate the function.
 - If we reach to the leaf node and if it is also not matched with the search element, then display "Element is not found" and terminate the function.T
 
-#### 2. Insert 
+### 2. Insert 
 
 The insertion operation is performed as follows
 
@@ -42,7 +42,7 @@ The insertion operation is performed as follows
 - Repeat the above steps until we reach to the leaf node (i.e., reaches to NULL).
 - After reaching the leaf node, insert the newNode as left child if the newNode is smaller or equal to that leaf node or else insert it as right child.
 
-#### 3. Delete
+### 3. Delete
 
 **Case 1:**  Deleting a Leaf node (A node with no children)
 
@@ -65,7 +65,7 @@ The insertion operation is performed as follows
   - If it comes to case 2, then delete using case 2 logic.
   - Repeat the same process until the node is deleted from the tree.
   
-#### 4. Traversal
+### 4. Traversal
 
 There are mainly three types of tree traversals.
 
