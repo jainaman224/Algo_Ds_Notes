@@ -15,7 +15,8 @@ Let us understand this algorithm with a example.
 
 - Pick a starting node and push all its adjacent nodes into a stack.
 - Pop a node from stack to select the next node to visit and push all its adjacent nodes into a stack.
--Repeat this process until the stack is empty. However, ensure that the nodes that are visited are marked. This will prevent you from visiting the same node more than once. If you do not mark the nodes that are visited and you visit the same node more than once, you may end up in an infinite loop. 
+- Repeat this process until the stack is empty. 
+- However, ensure that the nodes that are visited are marked. This will prevent you from visiting the same node more than once. If you do not mark the nodes that are visited and you visit the same node more than once, you may end up in an infinite loop. 
 
 ## PSEUDOCODE
 
@@ -43,10 +44,10 @@ The pseudocode for Depth First Search algorithm is as follows:
             if w is not visited:
                 DFS-recursive(G, w)
                 ```
-##COMPLEXITY
+## COMPLEXITY
 **Time complexity** - O(V+E), where V and E are number of vertices and edges.
 
-##IMPLEMENTATION
+## IMPLEMENTATION
 
 - [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Depth_First_Search/Depth_First_Search.cpp)
 
