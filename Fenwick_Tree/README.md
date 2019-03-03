@@ -11,6 +11,7 @@ Let p(k) denote the largest power of two that divides k. We store a binary index
 <br>
 The following picture shows more clearly how each value in the binary indexed
 tree corresponds to a range in the original array:
+<br>
 ![](../Images/fenwick_tree1.png)
 <br>
 Using a binary indexed tree, any value of sumq(1,k) can be calculated in
