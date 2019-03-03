@@ -1,4 +1,4 @@
-# Binary Search Tree
+# Binary Search Trees
 
 A Binary Search Tree (BST) is a tree in which all the nodes follow the followig properties −
 
