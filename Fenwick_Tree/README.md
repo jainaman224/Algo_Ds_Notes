@@ -8,6 +8,15 @@ Let p(k) denote the largest power of two that divides k. We store a binary index
 **tree[k] = sum(k − p(k)+1,k),**
 <br>
 ![](../Images/fenwick_tree.png)
+<br>
+The following picture shows more clearly how each value in the binary indexed
+tree corresponds to a range in the original array:
+![](../Images/fenwick_tree1.png)
+<br>
+Using a binary indexed tree, any value of sumq(1,k) can be calculated in
+O(logn) time, because a range [1,k] can always be divided into O(logn) ranges
+whose sums are stored in the tree.
+
 
 
 
