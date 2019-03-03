@@ -6,7 +6,7 @@ sum array again in **O(n)** time. <br><br>
 Let p(k) denote the largest power of two that divides k. We store a binary indexed tree as an array tree such that <br>
 
 **tree[k] = sum(k − p(k)+1,k),**
-![](Images/fenwick_tree.png)
+![](../Images/fenwick_tree.png)
 
 
 
