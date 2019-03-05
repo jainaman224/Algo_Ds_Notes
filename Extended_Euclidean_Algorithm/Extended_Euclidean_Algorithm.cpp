@@ -1,12 +1,13 @@
 /* Extended Euclidean Algorithm 
   ==============================
-  GCD of two numbers is the largest number that divides both of them. A simple way to find GCD is to factorize both numbers and multiply common factors.
+  GCD of two numbers is the largest number that divides both of them.
+  A simple way to find GCD is to factorize both numbers and multiply
+  common factors.
   
      GCD(a,b) = ax + by
 
-  If we can find the value of  x and y then we can easily find the value of GCD(a,b) by replacing (x,y) with their respective values
-
-
+  If we can find the value of  x and y then we can easily find the 
+  value of GCD(a,b) by replacing (x,y) with their respective values.
 */
 
 #include <iostream>
