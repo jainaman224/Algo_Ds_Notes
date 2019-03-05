@@ -50,7 +50,7 @@ void modifyTree(Node *root, char arr[], int *index, int l)
 	modifyTree(root->left, arr, index, l+1);
 
 	// Update this node only if this is an odd level node
-	if (l%2 != 0)
+	if (l%2 == 0)
 	{
 		root->data = arr[*index];
 		(*index)++;
