@@ -47,8 +47,8 @@ int main()
 	int gcd = get<0>(t);
 	int x = get<1>(t);
 	int y = get<2>(t);
-  
-	/* 
+	
+  /* 
    Output
     10
   */
