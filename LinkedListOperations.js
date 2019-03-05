@@ -2,17 +2,17 @@ class linkedlist
 {
   constructor(value)
   {
-    this.head={ //defining a linked list(access) O(1)
+    this.head={                                     //defining a linked list(access) O(1)
       value:value,
       next:null
     }
     this.length=1;
     this.tail=this.head;
   }
-  append(value) //function to add a node at the end of a existing node O(1)
+  append(value)                                     //function to add a node at the end of a existing node O(1)
   {
     const newNode={
-      value:value,
+      value:value,                                   //defining new node to be inserted
       next:null
     };
   this.tail.next=newNode;
@@ -20,9 +20,9 @@ class linkedlist
   this.length++;
   return this;
   }
-  prepend(value) //adding a node to beginning of a linked list
+  prepend(value)                                   //adding a node to beginning of a linked list
   {
-    const newNode={
+    const newNode={                                //defining new node to be inserted
       value:value,
       next:null
     }
@@ -35,10 +35,10 @@ class linkedlist
   {
     if(index>=this.length)
     {
-      return this.append(value) //we can do anything in this step such as throwing error or any other althernative
+      return this.append(value)                     //we can do anything in this step such as throwing error or any other althernative
     }
     const newNode={
-      value:value,   //defining new node to be inserted
+      value:value,                                  //defining new node to be inserted
       next:null
     };
     const leader=this.traverseToIndex(index-1);
@@ -48,7 +48,7 @@ class linkedlist
     this.length++;
     return this.printlist;
   }
-  traverseToIndex(index)
+  traverseToIndex(index)                          //TRAVERSAL
   {
     let counter=0;
     let currentNode=this.head; 
@@ -68,7 +68,7 @@ class linkedlist
     this.length--;
     return this.printlist;
   }
-  printlist() //printing entire list in form of an array
+  printlist()                                               //printing entire list in the form of an array
   {
     const array=[];
     let currentNode=this.head;
@@ -84,7 +84,7 @@ const mylinkedlist=new linkedlist(10);
 mylinkedlist.append(20);
 mylinkedlist.append(30);
 mylinkedlist.prepend(5);
-mylinkedlist.insert(3,25);
+mylinkedlist.insert(3,25);                      //form:- insert(index,value)
 mylinkedlist.remove(3);
 //mylinkedlist.printlist();
 console.log(mylinkedlist);
