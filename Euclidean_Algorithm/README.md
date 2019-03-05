@@ -22,7 +22,37 @@ The Euclidean algorithm is based on the principle that the greatest common divis
 Euclid's method for finding the greatest common divisor (GCD) of two starting lengths BA and DC, both defined to be multiples of a common "unit" length. The length DC being shorter, it is used to "measure" BA, but only once because remainder EA is less than DC. EA now measures (twice) the shorter length DC, with remainder FC shorter than EA. Then FC measures (three times) length EA. Because there is no remainder, the process ends with FC being the GCD. On the right Nicomachus' example with numbers 49 and 21 resulting in their GCD of 7
 
 
+## Correctness-Proof
+First, notice that in each iteration of the Euclidean algorithm the second argument strictly decreases, therefore (since the arguments are always non-negative) the algorithm will always terminate.
 
+For the proof of correctness, we need to show that gcd(a,b)=gcd(b,a mod b)
+for all a≥0, b>0
+
+.
+
+We will show that the value on the left side of the equation divides the value on the right side and vice versa. Obviously, this would mean that the left and right sides are equal, which will prove Euclid's algorithm.
+
+Let d=gcd(a,b)
+. Then by definition (d ∣ a) and (d ∣ b)
+
+.
+
+Now let's represent the remainder of the division of a
+by b as follows:
+a mod b=a − b ⋅ ⌊ a / b ⌋
+
+From this it follows that d ∣ (a mod b)
+, which means we have the system of divisibilities:
+
+
+{d ∣ b,
+{d ∣ (amodb)
+
+Now we use the fact that for any three numbers p
+, q, r, if p∣q and p∣r then p∣gcd(q,r). In our case, we get:
+d=gcd(a,b)∣gcd(b,amodb)
+
+Thus we have shown that the left side of the original equation divides the right. The second half of the proof is similar.
 ## APPLICATIONS
 
 The Euclidean algorithm has many theoretical and practical applications. It is used for reducing fractions to their simplest form and for performing division in modular arithmetic. Computations using this algorithm form part of the cryptographic protocols that are used to secure internet communications, and in methods for breaking these cryptosystems by factoring large composite numbers.
