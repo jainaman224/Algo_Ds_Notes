@@ -13,7 +13,7 @@ def matrix_product(p):
  
     # m[i][j] is the minimum number of multiplications needed to compute the
     # product of matrices A(i), A(i+1), ..., A(j)
-    # s[i][j] is the matrix after which the product is split in the minimum
+    # s[i][j] is a matrix after which the product is split in the minimum
     # number of multiplications needed
     m = [[-1]*length for _ in range(length)]
     s = [[-1]*length for _ in range(length)]
