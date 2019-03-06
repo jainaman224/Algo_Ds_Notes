@@ -86,11 +86,27 @@ Deletion in AVL tree is similar to deletion in a binary tree with the additional
 There are 3 cases for deletion -
 
 * Case 1 : Node to be deleted is a leaf node
-    * This requires no changes to the tree and can be deleted right away
+    * Can be deleted right away  
+                    Delete 7 (and rebalance)
+                       15                     15
+                      /  \                   /  \
+                    6     50               5     50
+                   / \    /  \     ->     / \    / \
+                  4   7  23   71         4   6  23 71
+                   \        
+                    5     
+
 * Case 2 : Node to be deleted has only left or right sub tree
     * If sub tree is x-sub and the node to be deleted is x
     * Replace data of x with data of x-sub
     * Delete x-sub (now a leaf node)
+
+                    Delete 71 (and rebalance)
+                       15                     15
+                      /  \                   /  \
+                    5     71               5     23
+                   / \    /       ->      / \     
+                  4   6  23              4   6  
 
 * Case 3 : Node to be deleted has both left and right sub trees
     * Use Predecessoror / Successor to replace data and sub tree
@@ -98,9 +114,15 @@ There are 3 cases for deletion -
     * Predecessor is largest node in the left subtree
     * Find Successor of x - say z-scr which will have no left sub tree
     * Replace data of x with with data of z-scr
-    * Delete z-scr (If z-scr has a child then can case 2 to delete z-scr)
+    * Delete z-scr (If z-scr has a child then can use case 2 to delete z-scr)
 
-
-
+                    Delete 50 (and rebalance)
+                       15                     15
+                      /  \                   /  \
+                    5     50               5     71
+                   / \    /  \     ->     / \    / 
+                  4   6  23   71         4   6  23 
+                           
+ 
 ## See also
 [AVL tree on Wikipedia](https://en.wikipedia.org/wiki/AVL_tree)
