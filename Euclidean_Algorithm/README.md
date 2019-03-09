@@ -28,14 +28,11 @@ First, notice that in each iteration of the Euclidean algorithm the second argum
 For the proof of correctness, we need to show that gcd(a,b)=gcd(b,a mod b)
 for all a≥0, b>0
 
-.
-
 We will show that the value on the left side of the equation divides the value on the right side and vice versa. Obviously, this would mean that the left and right sides are equal, which will prove Euclid's algorithm.
 
 Let d=gcd(a,b)
 . Then by definition (d ∣ a) and (d ∣ b)
 
-.
 
 Now let's represent the remainder of the division of a
 by b as follows:
