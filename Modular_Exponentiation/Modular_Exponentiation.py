@@ -11,12 +11,11 @@ def exponentMod(A, B, C):
 
 	else: 
 		y = A % C
-		y = (y * exponentMod(A, B - 1,
-							C) % C) % C
+		y = (y * exponentMod(A, B - 1,C) % C) % C
 	return ((y + C) % C)
 
 # Driver Code
 A = 2
 B = 5
 C = 13
-print("Power is", exponentMod(A, B, C))
+print "Power is", exponentMod(A, B, C)
