@@ -1,4 +1,4 @@
-import os,sys
+import os, sys
 
 x=raw_input("Enter text\n")
 print
