@@ -1,4 +1,4 @@
-''' Activity Seection in Python '''
+''' Activity Selection in Python '''
 
 def activitySelection(s, f ): 
     n = len(f)
