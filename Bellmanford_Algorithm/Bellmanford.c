@@ -263,16 +263,19 @@ int main()
 
 }
 
-OUTPUT : 
+/*
+        OUTPUT : 
 
-Vertex   Distance from Source
-0 		 0
-1 		 3
-2 		 5
-3 		 7
-4 		 4
-5 		 10
-6 		 4
-7 		 2
-8 		 9
-9 		 6
+        Vertex   Distance from Source
+        0 		 0
+        1 		 3
+        2 		 5
+        3 		 7
+        4 		 4
+        5 		 10
+        6 		 4
+        7 		 2
+        8 		 9
+        9 		 6
+
+*/
