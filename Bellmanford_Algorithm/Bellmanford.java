@@ -10,8 +10,8 @@ class Graph
 		int src, dest, weight; 
 		Edge() { 
 			src = 0;
-      dest = 0;
-      weight = 0; 
+      			dest = 0;
+      			weight = 0; 
 		} 
 	}; 
 
@@ -68,7 +68,7 @@ class Graph
 	// A utility function used to print the solution 
 	void printArray(int dist[], int V) 
 	{ 
-		System.out.println("Vertex Distance from Source"); 
+		System.out.println("Vertex    Distance from Source"); 
 		for (int i=0; i<V; ++i) 
 			System.out.println(i+"\t\t"+dist[i]); 
 	} 
@@ -116,3 +116,13 @@ class Graph
 		graph.BellmanFord(graph, 0); 
 	} 
 } 
+
+/*  
+	OUTPUT :
+	Vertex   Distance from Source
+	0                0
+	1                -1
+	2                2
+	3                -2
+	4                1
+*/
