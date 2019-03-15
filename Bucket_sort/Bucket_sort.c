@@ -35,13 +35,13 @@ void sort(b *p,int n){
 		}
         	a[j+1]=key;
     	}
-   	 current=p;
-   	 i=0;
+   	current=p;
+	i=0;
     	while(current !=NULL){
         	current->value=a[i];
         	current=current->next;
         	i++;
-   	 }
+   	}
 }
 
 
@@ -58,26 +58,26 @@ void Bucket_sort(double a[],int n){
 		tail[i]=NULL;
 	}
 	for(i=0;i<n;i++){
-	    p=a[i]*10;
-	    count[p]+=1;
+		p=a[i]*10;
+		count[p]+=1;
 		if(head[p]==NULL){
-			head[p]=create_node(a[i]);
+	        	head[p]=create_node(a[i]);
 			tail[p]=head[p];						
 		}
 		else{
-		    tail[p]->next=create_node(a[i]);		//Add the inputs those are of same range into one bucket
+			tail[p]->next=create_node(a[i]);		//Add the inputs those are of same range into one bucket
 			tail[p]=tail[p]->next;
 		}
 	}
 	for(i=0;i<10;i++){
-	    if(head[i]!=NULL){
-	       	sort(head[i],count[i]);
-	        current=head[i];
-	        while(current!=NULL){
-	            printf("%lf\n",current->value);
-	            current=current->next;
-	        }
-	    }
+       		if(head[i]!=NULL){
+	        	sort(head[i],count[i]);
+	        	current=head[i];
+	        	while(current!=NULL){
+	      			printf("%lf\n",current->value);
+	        		current=current->next;
+	       		}
+	    	}
 	}
 	
 	
