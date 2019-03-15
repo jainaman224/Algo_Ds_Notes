@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 typedef struct bucket{
-    double value;					// structure for maintaining buckets
+	double value;					// structure for maintaining buckets
 	struct bucket *next;
 }b;
 
 b* create_node(double p){
-	b *x;
+    	b *x;
 	x=(b *)malloc(sizeof(b));		//create a new node for inserting new input into the bucket
 	x->value=p;
 	x->next=NULL;
@@ -15,33 +15,33 @@ b* create_node(double p){
 }
 	
 void sort(b *p,int n){
-    int i=0,j;
-    double *a,key;
-    b *current;
-    current=(b*)malloc(sizeof(b));
-    current=p;
-    a=(double *)malloc(n*sizeof(double));
-    while(current!=NULL){
-	    a[i]=current->value;
-        current=current->next;					//sorting the values in a bucket using insertion sort
-        i++;
-    }
-    for(i=1;i<n;i++){
-        key=a[i];
-        j=i-1;
-        while(j>=0 && a[j]>key){
-            a[j+1]=a[j];
-            j=j-1;
-        }
-        a[j+1]=key;
-    }
-    current=p;
-    i=0;
-    while(current !=NULL){
-        current->value=a[i];
-        current=current->next;
-        i++;
-    }
+    	int i=0,j;
+    	double *a,key;
+    	b *current;
+    	current=(b*)malloc(sizeof(b));
+    	current=p;
+    	a=(double *)malloc(n*sizeof(double));
+    	while(current!=NULL){
+		a[i]=current->value;
+        	current=current->next;					//sorting the values in a bucket using insertion sort
+       		i++;
+    	}
+	for(i=1;i<n;i++){
+        	key=a[i];
+        	j=i-1;
+        	while(j>=0 && a[j]>key){
+            		a[j+1]=a[j];
+            		j=j-1;
+		}
+        	a[j+1]=key;
+    	}
+   	 current=p;
+   	 i=0;
+    	while(current !=NULL){
+        	current->value=a[i];
+        	current=current->next;
+        	i++;
+   	 }
 }
 
 
@@ -71,7 +71,7 @@ void Bucket_sort(double a[],int n){
 	}
 	for(i=0;i<10;i++){
 	    if(head[i]!=NULL){
-	        sort(head[i],count[i]);
+	       	sort(head[i],count[i]);
 	        current=head[i];
 	        while(current!=NULL){
 	            printf("%lf\n",current->value);
