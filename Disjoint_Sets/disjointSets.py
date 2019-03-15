@@ -53,9 +53,10 @@ if(d_set.find(4)==d_set.find(6)):
     print("YES")
 else:
     print("NO")
-
+print("")
 # check if 1 and 4 are in the same set
 if(d_set.find(1)==d_set.find(4)):
     print("YES")
 else:
     print("NO")
+print("")
