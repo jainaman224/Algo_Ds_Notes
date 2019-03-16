@@ -49,8 +49,13 @@ class queue{
 }
 const myqueue=new queue();
 myqueue.enqueue(1);
-
+myqueue.enqueue(2);
+myqueue.enqueue(3);
+myqueue.enqueue(4);
 myqueue.peek();
 myqueue.dequeue();
 myqueue.dequeue();
+
+
+//Output :- node { value: 3, next: node { value: 4, next: null } }
 myqueue.dequeue();
