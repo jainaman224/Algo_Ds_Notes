@@ -1,22 +1,22 @@
 # Unbounded Knapsack Problem
 
-def UnboundedKnapsack(W,n,wt,val):
-    dp=[]
-    for i in range(W+1):
-        dp.append(0)
-    for i in range(0,W+1):
+def UnboundedKnapsack(Capacity,n,weight,value):
+    maxProfit=[]
+    for i in range(Capacity+1):
+        maxProfit.append(0)
+    for i in range(0,Capacity+1):
         for j in range(0,n):
-            if wt[j] <= i:
-                dp[i] = max(dp[i] , dp[i-wt[j]]+val[j])
-    return dp[W]
+            if weight[j] <= i:
+                maxProfit[i] = max(maxProfit[i] , maxProfit[i-weight[j]]+value[j])
+    return maxProfit[Capacity]
 
 # No. of items
 n = 4
 # Weights of all items
-wt = [5,10,8,15]
+weight = [5,10,8,15]
 # Values of all items
-val = [40,30,50,25]
+value = [40,30,50,25]
 # Capacity of Knapsack
-W = 120
+Capacity = 120
 
-print("The maximum value possible is ",UnboundedKnapsack(W,n,wt,val))
+print("The maximum value possible is ",UnboundedKnapsack(Capacity,n,weight,value))
