@@ -112,7 +112,6 @@ After insertion sort, the resultant list should be
     {
        node* head = NULL;
      
-       
         InsFront(&head, 6);
         InsFront(&head, 5);
         InsFront(&head, 9);
@@ -143,6 +142,4 @@ After insertion sort, the resultant list should be
     3-> 7-> 2-> 8-> 1-> 9-> 9-> 5-> 6-> NULL
     Sorted Linked list is:
     1-> 2-> 3-> 5-> 6-> 7-> 8-> 9-> 9-> NULL
-
-
 */
