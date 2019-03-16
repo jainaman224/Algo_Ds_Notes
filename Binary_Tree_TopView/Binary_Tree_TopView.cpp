@@ -3,12 +3,12 @@
 #include <map>
 using namespace std;
 
-// Structure of binary tree
+// Structure of binary tree leftSide , head , rightSide
 struct Node
 {
-    Node *left;
-    Node *right;
-    int hd;
+    Node *leftSide;
+    Node *rightSide;
+    int head;
     int data;
 };
 
@@ -16,7 +16,7 @@ struct Node
 Node *newNode(int key)
 {
     Node *node = new Node();
-    node->left = node->right = NULL;
+    node->leftSide = node->rightSide = NULL;
     node->data = key;
     return node;
 }
@@ -29,8 +29,8 @@ void topview(Node *root)
         return;
     queue<Node *> q;
     map<int, int> m;
-    int hd = 0;
-    root->hd = hd;
+    int head = 0;
+    root->head = head;
 
     // push node and horizontal distance to queue
     q.push(root);
@@ -39,22 +39,22 @@ void topview(Node *root)
 
     while (q.size())
     {
-        hd = root->hd;
+        head = root->head;
 
         // count function returns 1 if the container
         // contains an element whose key is equivalent
-        // to hd, or returns zero otherwise.
-        if (m.count(hd) == 0)
-            m[hd] = root->data;
-        if (root->left)
+        // to head, or returns zero otherwise.
+        if (m.count(head) == 0)
+            m[head] = root->data;
+        if (root->leftSide)
         {
-            root->left->hd = hd - 1;
-            q.push(root->left);
+            root->leftSide->head = head - 1;
+            q.push(root->leftSide);
         }
         if (root->right)
         {
-            root->right->hd = hd + 1;
-            q.push(root->right);
+            root->rightSide->head = head + 1;
+            q.push(root->rightSide);
         }
         q.pop();
         root = q.front();
@@ -70,11 +70,11 @@ void topview(Node *root)
 int main()
 {
     Node *root = newNode(1);
-    root->left = newNode(2);
-    root->right = newNode(3);
-    root->left->right = newNode(4);
-    root->left->right->right = newNode(5);
-    root->left->right->right->right = newNode(6);
+    root->leftSide = newNode(2);
+    root->rightSide = newNode(3);
+    root->leftSide->right = newNode(4);
+    root->leftSide->rightSide->rightSide = newNode(5);
+    root->leftSide->rightSide->rightSide->rightSide = newNode(6);
     cout << "Following are nodes in top view of Binary Tree\n";
     topview(root);
     return 0;
