@@ -14,12 +14,12 @@ class queue{
   }
   peek()
   {
-    return this.first; //simple see the first node
+    return this.first; //to simply see the first node
   }
   enqueue(value)
   {
     const newNode=new node(value);
-    if(this.length===0)
+    if(this.length===0)           //to add a node
     {
       this.first=newNode;
       this.last=newNode;
@@ -31,7 +31,7 @@ class queue{
     this.length++;
     return this;
   }
-  dequeue()
+  dequeue()               //to dequeue 
   {
     if(!this.first)
     {
@@ -58,3 +58,4 @@ myqueue.dequeue();
 myqueue.dequeue();
 
 //Output:-   node { value: 3, next: node { value: 4, next: null } }
+//           node with values 3 , 4 will be outputed as seen above 
