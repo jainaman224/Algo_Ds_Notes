@@ -38,7 +38,7 @@ int main()
 { 
     int values[]={10,20,30,40};
     int n=sizeof(values)/sizeof(values[0]);
-    for(int i=0;i<n;i++)
+    for(int i= n-1; i>=0 ;i--)
         insert(values[i]);
   
     // Creating a loop

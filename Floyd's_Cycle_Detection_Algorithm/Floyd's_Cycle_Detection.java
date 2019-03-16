@@ -43,7 +43,7 @@ class LinkedList
         LinkedList list = new LinkedList(); 
         int values[]={10,20,30,40};
         int n=values.length;
-        for(int i=0; i<n; i++)
+        for(int i= n-1; i>=0; i--)
             list.insert(values[i]);
 
         // Creating a loop

@@ -28,7 +28,8 @@ class LinkedList:
 # Driver Code
 mylist = LinkedList()
 values=[10, 20, 30, 40]
-for i in range(len(values)):
+n= len(values)
+for i in range(n-1,-1,-1):
     mylist.insert(values[i])
   
 # Creating a loop in Linked List
