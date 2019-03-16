@@ -1,17 +1,17 @@
 # Modular Exponentiation Problem
 
-def Modex(x,y,p):
-    if x == 0:
+def Modex(base,exponent,mod):
+    if base == 0:
         return 0
-    if y == 0:
+    if exponent == 0:
         return 1
-    if y%2 == 0:
-        ans = Modex(x,y/2,p)
-        return (ans*ans)%p
-    return ((x%p)*(Modex(x,y-1,p)))%p
+    if exponent%2 == 0:
+        ans = Modex(base,exponent/2,mod)
+        return (ans*ans)%mod
+    return ((base%mod)*(Modex(base,exponent-1,mod)))%mod
 
 
-x = 12
-y = 7
-p = 17
-print("(",x,"^",y,")%",p,"=",Modex(x,y,p))
+base = 12
+exponent = 7
+mod = 17
+print("(",base,"^",exponent,")%",mod,"=",Modex(base,exponent,mod))
