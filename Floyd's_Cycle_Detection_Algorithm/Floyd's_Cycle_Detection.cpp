@@ -23,7 +23,7 @@ bool detectCycle()
 { 
     Node *slow_ptr = head;
     Node *fast_ptr = head;   
-    while (slow_ptr!= NULL && fast_ptr!=NULL && fast_ptr->next != NULL) 
+    while (fast_ptr && fast_ptr->next) 
     { 
         slow_ptr = slow_ptr->next; 
         fast_ptr = fast_ptr->next->next; 
@@ -44,8 +44,8 @@ int main()
     // Creating a loop
     head->next->next->next->next = head->next;
     if(detectCycle())
-    cout<<"Cycle found"<<endl;
+		cout<<"Cycle found"<<endl;
     else
-    cout<<"No cycle found"<<endl;  
+		cout<<"No cycle found"<<endl;  
     return 0; 
 } 

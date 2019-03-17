@@ -18,7 +18,7 @@ class LinkedList:
     def detectCycle(self): 
         slow_ptr = self.head 
         fast_ptr = self.head 
-        while(slow_ptr and fast_ptr and fast_ptr.next): 
+        while(fast_ptr and fast_ptr.next): 
             slow_ptr = slow_ptr.next
             fast_ptr = fast_ptr.next.next
             if slow_ptr == fast_ptr: 

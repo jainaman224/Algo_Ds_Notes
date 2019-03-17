@@ -26,7 +26,7 @@ class LinkedList
     { 
         Node slow_ptr = head;
         Node fast_ptr = head; 
-        while (slow_ptr != null && fast_ptr != null && fast_ptr.next != null)
+        while (fast_ptr != null && fast_ptr.next)
         { 
             slow_ptr = slow_ptr.next; 
             fast_ptr = fast_ptr.next.next; 
@@ -49,8 +49,8 @@ class LinkedList
         // Creating a loop
         list.head.next.next.next.next = list.head.next; 
         if(list.detectCycle())
-        System.out.println("Cycle found");
+			System.out.println("Cycle found");
         else
-        System.out.println("No cycle found");
+			System.out.println("No cycle found");
     }
 }  
