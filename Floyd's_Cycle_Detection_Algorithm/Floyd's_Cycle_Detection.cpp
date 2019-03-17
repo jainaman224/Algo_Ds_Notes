@@ -44,8 +44,8 @@ int main()
     // Creating a loop
     head->next->next->next->next = head->next;
     if(detectCycle())
-		cout<<"Cycle found"<<endl;
+	cout<<"Cycle found"<<endl;
     else
-		cout<<"No cycle found"<<endl;  
+	cout<<"No cycle found"<<endl;  
     return 0; 
 } 
