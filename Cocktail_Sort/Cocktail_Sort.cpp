@@ -25,8 +25,6 @@ void CocktailSort(int a[], int n)
   
         if (!swapped) 
             break; 
-  
-        
         swapped = false; 
  
         --end; 
