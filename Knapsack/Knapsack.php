@@ -16,28 +16,28 @@ wt[]-Array of weights
 val[]-Array of values
 n-number of values 
 */
-function knapSack($mw, $wt, $val, $n) 
+function knapSack($maxweight, $weights, $values, $n) 
 { 
 	
-	$K = array(array()); 
+	$subset = array(array()); 
 	
 	for ($i = 0; $i <= $n; $i++) 
 	{ 
-		for ($j = 0; $j <= $mw; $j++) 
+		for ($j = 0; $j <= $maxweight; $j++) 
 		{ 
 			if ($i == 0 || $j == 0) 
-				$K[$i][$j] = 0; 
-			else if ($wt[$i - 1] <= $j) 
-					$K[$i][$j] = max($val[$i - 1] + 
-									$K[$i - 1][$j - 
-									$wt[$i - 1]], 
-									$K[$i - 1][$j]); 
+				$subset[$i][$j] = 0; 
+			else if ($weights[$i - 1] <= $j) 
+					$subset[$i][$j] = max($values[$i - 1] + 
+									$subset[$i - 1][$j - 
+									$weights[$i - 1]], 
+									$subset[$i - 1][$j]); 
 			else
 					$K[$i][$j] = $K[$i - 1][$j]; 
 		} 
 	} 
 	
-	return $K[$n][$mw]; 
+	return $K[$n][$maxweight]; 
 } 
 
 	// Driver Code 

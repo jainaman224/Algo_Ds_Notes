@@ -12,19 +12,19 @@ wt[]-Array of weights
 val[]-Array of values
 n-number of values 
 """ 
-def knapSack(mw, wt, val, n): 
-	K = [[0 for x in range(mw + 1)] for x in range(n + 1)] 
+def knapSack(maxweight, weights, values, n): 
+	subset = [[0 for x in range(maxweight + 1)] for x in range(n + 1)] 
 
 	for i in range(n + 1): 
-		for j in range(mw + 1): 
+		for j in range(maxweight + 1): 
 			if i == 0 or j == 0: 
-				K[i][j] = 0
-			elif wt[i-1] <= j: 
-				K[i][j] = max(val[i-1] + K[i-1][j-wt[i-1]], K[i-1][j]) 
+				subset[i][j] = 0
+			elif weights[i-1] <= j: 
+				subset[i][j] = max(values[i-1] + subset[i-1][j-weights[i-1]], subset[i-1][j]) 
 			else: 
-				K[i][j] = K[i-1][j] 
+				subset[i][j] = subset[i-1][j] 
 
-	return K[n][mw] 
+	return subset[n][maxweight] 
 
 # Test Case for the problem :
 # Alter the values to and weights to check the result
