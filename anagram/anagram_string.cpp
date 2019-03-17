@@ -1,44 +1,38 @@
-#include<iostream>
+#include <iostream>
 #include<string>
-#include<algorithm>
 
 using namespace std;
 
-bool isAnagram(string a,string b)
+int main()
 {
-	int n1,n2,i;
-	n1=a.length();
-	n2=b.length();
-	if(n1!=n2)
-		return false;
-	else
+	
+	string s1,s2;
+	int count2[256],count1[256],i,flag=0;//we are creating here two integer arrays two count occurrence of two char in string position wise because we have ascii values from 0-255 that is of size 265 
+
+	//taking input of both the strings
+	cin>>s1;
+	cin>>s2;
+	
+	for(i=0;s1[i]&&s2[i];i++)
 	{
-		sort(a.begin(),a.end());
-		sort(b.begin(),b.end());
-		for(i=0;i<n1;i++)
-		{
-			if(a[i]!=b[i])
-				return false;	
-		}
-		return true;	
+	    count1[s1[i]]++;
+	    count2[s2[i]]++;
+	    
+	    
+	}
+    if(s1[i]||s2[i])//means if any of the strings will have remaining character than or condition will be true and flag will be raised to 1;
+	    flag=1;
+	    
+	for(i=0;i<256;i++)
+	{
+	    if(count1[i]!=count2[i])
+	        flag=1;
 	}
 	
-}
-
-using namespace std;
-int main ()
-{
-	string a,b;
-	//taking input of the first string 
-	
-	cin>>a;
-		//taking input of the second string 
-		
-	cin>>b;
-	if(isAnagram(a,b))
-		cout<<"the string you entered is anagram"<<endl;
+	if(flag==0)
+	    cout<<"Given strings are anagrams "<<endl;
 	else
-		cout<<" the string you entered is not anagram"<<endl;
+	    cout<<"Given strings are not anagram"<<endl;
 	
 	return 0;
 }
