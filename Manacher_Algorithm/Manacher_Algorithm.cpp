@@ -12,7 +12,7 @@ int min(int a, int b)
 } 
 int main() 
 { 	
-	char text[100]; 
+    char text[100]; 
     cout<<"Enter the string:\n";
     cin>>text; 
     int N = strlen(text); 
@@ -20,42 +20,42 @@ int main()
     int L[N]; //array to store longest palindrome length
     L[0] = 0; 
     L[1] = 1; 
-    int C = 1; //centerPosition  
-    int R = 2; //centerRightPosition 
-    int i = 0; //currentRightPosition 
-    int j; //currentLeftPosition 
+    int center = 1; //centerPosition  
+    int right = 2; //centerRightPosition 
+    int currentright = 0; //currentRightPosition 
+    int currentleft; //currentLeftPosition 
     int plength = 0; //maximum length of palindrome
     int x = 0; //maxLPSCenterPosition
     int start = -1; 
     int end = -1; 
     int diff = -1; 
      
-    for (i = 2; i < N; i++)  
+    for (currentright = 2; currentright < N; currentright++)  
     { 
         
-        j  = 2*C-i; 
-        L[i] = 0; 
-        diff = R - i; 
+        currentleft  = 2*center-currentright; 
+        L[currentright] = 0; 
+        diff = right - currentright; 
         
         if (diff > 0) 
-            L[i] = min(L[j], diff); 
+            L[currentright] = min(L[currentleft], diff); 
   
         
-        while (((i + L[i]) < N && (i - L[i]) > 0) &&( ((i + L[i] + 1) % 2 == 0) ||(text[(i + L[i] + 1)/2] == text[(i - L[i] - 1)/2] ))) 
+        while (((currentright + L[currentright]) < N && (currentright - L[currentright]) > 0) &&( ((currentright + L[currentright] + 1) % 2 == 0) ||(text[(currentright + L[currentright] + 1)/2] == text[(currentright- L[currentright] - 1)/2] ))) 
         	{ 
-            	L[i]++; 
+            	L[currentright]++; 
         	} 
   
-        if(L[i] > plength)   
+        if(L[currentright] > plength)   
         { 
-            plength = L[i]; 
-            x = i; 
+            plength = L[currentright]; 
+            x = currentright; 
         } 
   
-        if (i + L[i] > R)  
+        if (currentright + L[currentright] > right)  
         { 
-            C = i; 
-            R = i + L[i]; 
+            center = currentright; 
+            right = currentright + L[currentright]; 
         } 
         
     } 
@@ -64,8 +64,8 @@ int main()
     end = start + plength - 1; 
     cout<<"LPS of string is : ";
     
-    for(i=start; i<=end; i++) 
-        cout<< text[i]; 
+    for(currentright=start; currentright<=end; currentright++) 
+        cout<< text[currentright]; 
     cout<<"\n"; 
     
   
