@@ -9,22 +9,22 @@ public class Cocktail_Sort {
         // a flag to check if in an iteration, any swaps were made
         // i.e. if the array was not already sorted
         boolean flag = true; 
-		while (flag) { 
+	while (flag) { 
 			
-            // resetting the flag
-			flag = false; 
+            	// resetting the flag
+		flag = false; 
 
-			// iterate through every element from left to right 
-			for (int i = s; i < l - 1; i++) { 
+		// iterate through every element from left to right 
+		for (int i = s; i < l - 1; i++) { 
 
-                // Move the bigger element to the right most position as in bubble sort
-				if (array[i] > array[i + 1]) { 
-					int t = array[i]; 
-					array[i] = array[i + 1]; 
-					array[i + 1] = t;
+                	// Move the bigger element to the right most position as in bubble sort
+			if (array[i] > array[i + 1]) { 
+				int t = array[i]; 
+				array[i] = array[i + 1]; 
+				array[i + 1] = t;
 
-                    // setting flag to true if even one element changed its order 
-					flag = true;             
+                   		 // setting flag to true if even one element changed its order 
+				flag = true;             
 				} 
 			} 
 
