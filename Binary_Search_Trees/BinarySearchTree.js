@@ -48,7 +48,7 @@ class myBST
     }
   }
 
-  lookup(value)     //the loopup function
+  lookup(value)     //the lookup function
   {
     if(!this.root)
     {
@@ -79,11 +79,6 @@ tree.insert(9);
 tree.insert(7);
 tree.lookup(10);
 //JSON.stringify(traverse(tree.root));
-
-
-
-
-
 
 function traverse(node) {
   const tree = { value: node.value };
