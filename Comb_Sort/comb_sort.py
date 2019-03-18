@@ -12,7 +12,7 @@ def combSort(arr, n):
     # Initialize gap value by array length
     gap = n 
     swapped = True
-    while gap != 1 or swapped == True: 
+    while gap > 1 or swapped == True: 
         # Update gap value
         gap = updateGap(gap) 
         swapped = False
