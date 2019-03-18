@@ -26,8 +26,8 @@ int main()
 /*
 output:
 base : 2
-exponent:10
-output :The result of given expression is1024
+exponent:4
+output :The result of given expression is1
 
 
 
