@@ -4,12 +4,12 @@
 using namespace std; 
  
 // A function to swap values  
-void swap(int *a, int *b)
+void swap(int &a, int &b)
 {
 	int temp;
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	temp = a;
+	a = b;
+	b = temp;
 }
  
 // A function implementing cocktail sort.
@@ -22,7 +22,7 @@ void cocktailSort(int a[], int n)
 		for(j = i+1; j < n; j++)
 		{
 			if(a[j] < a[j-1])
-				swap(&a[j], &a[j-1]);
+				swap(a[j], a[j-1]);
 		}
 	
 		n--;
@@ -31,7 +31,7 @@ void cocktailSort(int a[], int n)
 		for(k = n-1; k > i; k--)
 		{
 			if(a[k] < a[k-1])
-				swap(&a[k], &a[k-1]);
+				swap(a[k], a[k-1]);
 		}
 		
 		i++;
