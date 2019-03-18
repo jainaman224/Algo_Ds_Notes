@@ -40,3 +40,8 @@ int main()
   for (int i = 0; i < n; i++)
     cout << arr[i] << " ";
 }
+
+/* Output
+Array after sorting:
+-25 -10 0 15 20 30 50
+*/
