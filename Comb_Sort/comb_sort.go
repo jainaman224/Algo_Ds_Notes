@@ -43,3 +43,7 @@ func main() {
         fmt.Printf("%d ", arr[i])
     }
 }
+
+// Output
+// Array after sorting:
+// -25 -10 0 15 20 30 50
