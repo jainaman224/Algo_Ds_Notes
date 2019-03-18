@@ -11,11 +11,10 @@ struct Node
 struct Node *newNode(int data)
 {
     struct Node *node = (struct Node *)
-        malloc(sizeof(struct Node));
+    malloc(sizeof(struct Node));
     node->data = data;
     node->left = NULL;
     node->right = NULL;
-
     return (node);
 }
 
