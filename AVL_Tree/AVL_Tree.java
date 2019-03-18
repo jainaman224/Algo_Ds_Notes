@@ -2,8 +2,9 @@
 //AVL Tree implementaion in Java
 
 
-public class AVL_Tree {
-//Declaring Node class
+public class AVL_Tree
+{
+       //Declaring Node class
 	private class Node 
 	{
 		int data;
@@ -16,10 +17,9 @@ public class AVL_Tree {
 			this.height = 1;
 		}
 	}
+	
 	private Node root;
 	
-	
-   
 	public void insert(int num)
 	{
 		this.root = insert(this.root, num);
@@ -29,34 +29,35 @@ public class AVL_Tree {
 	//Display node Function
 	public void inOrder(Node node)
 	{ 
-        if (node != null) 
-        { 
-        	inOrder(node.left);
-            System.out.print(node.data + " "); 
-            inOrder(node.right); 
-        } 
-    } 
+                 if (node != null) 
+                 { 
+        	       inOrder(node.left);
+                      System.out.print(node.data + " "); 
+                      inOrder(node.right); 
+                 } 
+         } 
+	
 	//preorder traversal
 	public void preOrder(Node node) 
 	{ 
-        if (node != null) 
-        { 
-        	System.out.print(node.data + " ");
-        	preOrder(node.left); 
-            preOrder(node.right); 
-            
-        } 
-    } 
+                if (node != null) 
+                { 
+        	     System.out.print(node.data + " ");
+        	     preOrder(node.left); 
+                     preOrder(node.right);
+                 } 
+         } 
+	
 	//post order traversal
 	public void postOrder(Node node) 
 	{ 
-        if (node != null) 
-        { 
-        	postOrder(node.left); 
-            postOrder(node.right); 
-            System.out.print(node.data + " ");
+                if (node != null) 
+               { 
+        	    postOrder(node.left); 
+                    postOrder(node.right); 
+                   System.out.print(node.data + " ");
+                } 
         } 
-    } 
 	
 	
   
@@ -111,7 +112,7 @@ public class AVL_Tree {
 	}
 	
 
-//Finding height of the node
+        //Finding height of the node
 	private int height(Node num) 
 	{
 		if (num == null) 
@@ -121,7 +122,7 @@ public class AVL_Tree {
 
 		return num.height;
 	}
-//Balance Factor
+       //Balance Factor
 	private int balancefac(Node num)
 	{
 		if (num == null) 
@@ -131,7 +132,7 @@ public class AVL_Tree {
 
 		return height(num.left) - height(num.right);
 	}
-//performing right rotation
+       //performing right rotation
 	private Node rightRotate(Node node3)
 	{
 
