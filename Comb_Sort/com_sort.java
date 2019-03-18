@@ -17,7 +17,7 @@ class CombSort
         // initialize gap value to array length
         int gap = n;
         boolean swapped = true; 
-        while (gap != 1 || swapped == true) 
+        while (gap > 1 || swapped == true) 
         { 
             // Update gap value
             gap = updateGap(gap); 
