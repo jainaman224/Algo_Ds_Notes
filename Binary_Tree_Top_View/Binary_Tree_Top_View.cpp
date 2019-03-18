@@ -3,11 +3,11 @@
 #include <map>
 using namespace std;
 
-// Structure of binary tree leftSide , head , rightSide
+// Structure of binary tree left, head, right
 struct Node
 {
-    Node *leftSide;
-    Node *rightSide;
+    Node *left;
+    Node *right;
     int head;
     int data;
 };
@@ -16,7 +16,7 @@ struct Node
 Node *newNode(int key)
 {
     Node *node = new Node();
-    node->leftSide = node->rightSide = NULL;
+    node->left = node->right = NULL;
     node->data = key;
     return node;
 }
@@ -46,15 +46,15 @@ void topview(Node *root)
         // to head, or returns zero otherwise.
         if (m.count(head) == 0)
             m[head] = root->data;
-        if (root->leftSide)
+        if (root->left)
         {
-            root->leftSide->head = head - 1;
-            q.push(root->leftSide);
+            root->left->head = head - 1;
+            q.push(root->left);
         }
         if (root->right)
         {
-            root->rightSide->head = head + 1;
-            q.push(root->rightSide);
+            root->right->head = head + 1;
+            q.push(root->right);
         }
         q.pop();
         root = q.front();
@@ -70,11 +70,11 @@ void topview(Node *root)
 int main()
 {
     Node *root = newNode(1);
-    root->leftSide = newNode(2);
-    root->rightSide = newNode(3);
-    root->leftSide->right = newNode(4);
-    root->leftSide->rightSide->rightSide = newNode(5);
-    root->leftSide->rightSide->rightSide->rightSide = newNode(6);
+    root->left = newNode(2);
+    root->right = newNode(3);
+    root->left->right = newNode(4);
+    root->left->right->right = newNode(5);
+    root->left->right->right->right = newNode(6);
     cout << "Following are nodes in top view of Binary Tree\n";
     topview(root);
     return 0;
