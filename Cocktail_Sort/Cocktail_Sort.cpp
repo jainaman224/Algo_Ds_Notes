@@ -28,8 +28,7 @@ int main()
 				// Move the bigger element to the right most position as in bubble sort
 				if(a[j] < a[j-1])
 					{    
-					
-						temp=a[j];
+				    temp=a[j];
 						a[j]=a[j-1];
 						a[j-1]=temp;
 					}
