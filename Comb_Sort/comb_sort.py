@@ -26,3 +26,7 @@ combSort(arr, n)
 print ("Array after Sorting:") 
 for i in range(n): 
     print (arr[i],end=' ')
+
+# Output
+# Array after sorting:
+# -25 -10 0 15 20 30 50
