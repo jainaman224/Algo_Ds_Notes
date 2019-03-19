@@ -1,5 +1,6 @@
 //Z-algorithm implementation in C
 #include<stdio.h> 
+//String header
 #include<string.h>
 void main() {
 
