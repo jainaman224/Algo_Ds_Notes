@@ -4,16 +4,16 @@
 #include<bits/stdc++.h>
 using namespace std; 
 // EXAMPLE
-//Input:  keys[] = {10, 12, 20}, freq[] = {34, 8, 50}
+//Input:  keys[] = {10, 12, 34}, freq[] = {54, 10, 4}
 //There can be following possible BSTs
-//    10                12                 20         10              20
+//    10                12                 34         10              34
 //      \             /    \              /             \            /
-//      12          10     20           12               20         10  
+//      12          10     34           12               34         10  
 //        \                            /                 /           \
-//         20                        10                12             12  
+//         34                        10                12             12  
 //     I               II             III             IV             V
-//Among all possible BSTs, cost of the fifth BST is minimum.  
-//Cost of the fifth BST is 1*50 + 2*34 + 3*8 = 142
+//  
+//Cost of the optimal BST (1 BST) is  = 86
 
 
 int sum(int freq[], int i, int j) 
