@@ -18,58 +18,56 @@ using namespace std;
 
 int sum(int freq[], int i, int j) 
 { 
-    int s = 0; 
+    int count= 0; 
     for (int k = i; k <=j; k++) 
-       s += freq[k]; 
-    return s; 
+       count += freq[k]; 
+    return count; 
 } 
   
   
 
-int minCostBST(int keys[], int freq[], int n)
+int minCostBST(int keys[], int freq[], int size)
 {
-   int cost[n][n];
-   for (int i = 0; i < n; i++)    
+   int cost[size][size];
+   for (int i = 0; i < size; i++)    
       cost[i][i] = freq[i]; // freq is assigned to the diagonal elements of 2-D array cost.
 
-   for (int leng=2; leng<=n; leng++) 
+   for (int leng=2; leng<=size; leng++) 
     {
-        for (int i=0; i<=n-leng+1; i++) 
+        for (int i=0; i<=size-leng+1; i++) 
           {   
              int j = i+leng-1;
              cost[i][j] = INT_MAX;    
              // One by one consider all elements as root
-             for (int r=i; r<=j; r++) {
-             //comparing with the cost and update cost if needed
-             int c = ((r > i)?cost[i][r-1]:0)+((r < j)?cost[r+1][j]:0)+sum(freq, i, j);
-             if (c < cost[i][j])
-                cost[i][j] = c;
+             for (int r=i; r<=j; r++) 
+             {
+               //comparing with the cost and update cost if needed
+               int c = ((r > i)?cost[i][r-1]:0)+((r < j)?cost[r+1][j]:0)+sum(freq, i, j);
+               if (c < cost[i][j])
+                  cost[i][j] = c;
+             }
           }
-      }
-  }
-   return cost[0][n-1];
+     }
+   return cost[0][size-1];
 }
-
-
-  
 
 
 int main() 
 {   
-    int n,i;
+    int size,i;
     cout <<"Enter the numbers of keys ";
-    cin>>n;
-    int keys[n]; 
-    int freq[n];
+    cin>>size;
+    int keys[size]; 
+    int freq[size];
     cout<<"Enter the data elements ";
-    for ( i=0;i<n;i++)
+    for ( i=0;i<size;i++)
        cin>>keys[i];
     cout<<"Enter the frequencies ";
-    for (i=0;i<n;i++)
+    for (i=0;i<size;i++)
        cin>>freq[i];
     
     cout<<"Cost of Optimal Binary search tree is  ",  
-              cout<< minCostBST(keys, freq, n); 
+              cout<< minCostBST(keys, freq, size); 
     return 0; 
 }
 //INPUT:Enter the numbers of keys 3    
