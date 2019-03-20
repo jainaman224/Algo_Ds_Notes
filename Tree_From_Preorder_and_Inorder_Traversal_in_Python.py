@@ -6,31 +6,34 @@ class Node:
         self.data=None
         self.left=None
         self.right=None
-
+        
 #constructing a binary tree class
-
+        
 class BinaryTree:
-    def __init__(self,preorder,ion) :
-        self.root = constructPre(preorder, 0, len(preorder) - 1, ino, 0, len(ino) - 1)
-
+    def __init__(self,preorder,inorder) :
+        self.root = constructTree(preorder, 0, len(preorder) - 1, inorder, 0, len(inorder) - 1)
+        
 #function for constructing the tree from given inorder and preorder traversal
-
-def constructPre(pre,plo,phi,ino,ilo,ihi):
+        
+def constructTree(preorder,pre_start,pre_end,inorder,in_start,in_end):
     root=Node()
-    if (plo > phi or ilo > ihi):
+    if (pre_start > pre_end or in_start > in_end):
         return None
-    root.data = pre[plo]
+    root.data = preorder[pre_start]
     si=-1
-    for i in range(ilo,ihi+1):
-        if (ino[i] == pre[plo]):
+    for i in range(in_start,in_end+1):
+        if (inorder[i] == preorder[pre_start]):
             si = i
             break
-    nel = si - ilo
+    nel = si - in_start
     
     #constructing left subtree with help of recursion
     
-    root.left = constructPre(pre, plo + 1, plo + nel, ino, ilo, si - 1)
-    root.right = constructPre(pre, plo + nel + 1, phi, ino, si + 1, ihi)
+    root.left = constructTree(preorder, pre_start + 1, pre_start + nel, inorder, in_start, si - 1)
+
+    #constructing right subtree with help of recursion
+    
+    root.right = constructTree(preorder, pre_start + nel + 1, pre_end, inorder, si + 1, in_end)
     return root
 
 #function for displaying the tree
@@ -54,10 +57,10 @@ def display(node):
 
 #main function for test above functions
 
-pre = [20, 10, 5, 15, 30, 25, 35]
-ino = [5, 10, 15, 20, 25, 30, 35]
-bt=BinaryTree(pre, ino)
-display(bt.root)
+preorder = [20, 10, 5, 15, 30, 25, 35]
+inorder = [5, 10, 15, 20, 25, 30, 35]
+binaryTree=BinaryTree(preorder, inorder)
+display(binaryTree.root)
 
 #output
 #10 -> 20 <- 30
