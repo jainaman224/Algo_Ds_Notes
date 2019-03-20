@@ -100,3 +100,22 @@ class Main
 	} 
 } 
 
+
+
+/*------------------------------------------------------------------------------------------------------------------------------*/
+
+//RESULT
+
+Coloring of graph 1
+Vertex 0 --->  Color 0
+Vertex 1 --->  Color 1
+Vertex 2 --->  Color 2
+Vertex 3 --->  Color 0
+Vertex 4 --->  Color 1
+
+Coloring of graph 2
+Vertex 0 --->  Color 0
+Vertex 1 --->  Color 1
+Vertex 2 --->  Color 2
+Vertex 3 --->  Color 0
+Vertex 4 --->  Color 3
