@@ -28,7 +28,7 @@ void topview(Node *root)
     if (root == NULL)
         return;
     queue<Node *> q;
-    map<int, int> m;
+    map<int, int> mp;
     int head = 0;
     root->head = head;
 
@@ -44,8 +44,8 @@ void topview(Node *root)
         // count function returns 1 if the container
         // contains an element whose key is equivalent
         // to head, or returns zero otherwise.
-        if (m.count(head) == 0)
-            m[head] = root->data;
+        if (mp.count(head) == 0)
+            mp[head] = root->data;
         if (root->left)
         {
             root->left->head = head - 1;
