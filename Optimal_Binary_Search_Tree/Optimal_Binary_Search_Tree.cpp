@@ -15,7 +15,6 @@ using namespace std;
 //  
 //Cost of the optimal BST (1 BST) is  = 86
 
-
 int sum(int freq[], int i, int j) 
 { 
     int count= 0; 
@@ -23,8 +22,6 @@ int sum(int freq[], int i, int j)
        count += freq[k]; 
     return count; 
 } 
-  
-  
 
 int minCostBST(int keys[], int freq[], int size)
 {
@@ -50,7 +47,6 @@ int minCostBST(int keys[], int freq[], int size)
      }
    return cost[0][size-1];
 }
-
 
 int main() 
 {   
