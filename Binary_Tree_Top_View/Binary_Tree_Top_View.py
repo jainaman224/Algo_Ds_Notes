@@ -12,7 +12,7 @@ self.hd = 0
 def topview(root) :
 
 if(root == None) :
-return
+  return
 q = []
 m = dict()
 hd = 0
@@ -23,26 +23,26 @@ root.hd = hd
 q.append(root)
 
 while(len(q)) :
-root = q[0]
-hd = root.hd
+  root = q[0]
+  hd = root.hd
 
-# count function returns 1 if the
-# container contains an element
-# whose key is equivalent to hd,
-# or returns zero otherwise.
-if hd not in m:
-m[hd] = root.data
-if(root.left) :
-root.left.hd = hd – 1
-q.append(root.left)
+  # count function returns 1 if the
+  # container contains an element
+  # whose key is equivalent to hd,
+  # or returns zero otherwise.
+  if hd not in m:
+    m[hd] = root.data
+    if(root.left) :
+      root.left.hd = hd – 1
+      q.append(root.left)
 
-if(root.right):
-root.right.hd = hd + 1
-q.append(root.right)
+    if(root.right):
+      root.right.hd = hd + 1
+      q.append(root.right)
 
-q.pop(0)
+  q.pop(0)
 for i in sorted (m):
-print(m[i], end = “”)
+  print(m[i], end = “”)
 
 # Driver Code
 if __name__ == ‘__main__’:
