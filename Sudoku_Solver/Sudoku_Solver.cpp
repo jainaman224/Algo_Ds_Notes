@@ -52,12 +52,12 @@ bool solve_sudoku(int sudoku[][9],int row,int col)
         return false;
     }
     else
-        return solve_sudoku(sudoku,row,col+1);  
+        return solve_sudoku(sudoku,row,col+1);
 }
 
 bool can_solve(int sudoku[][9])
 {
-    return solve_sudoku(sudoku,0,0); 
+    return solve_sudoku(sudoku,0,0);
 }
 
 void print_sudoku(int sudoku[][9])
@@ -110,4 +110,5 @@ sample input :
 this code is written by raghav dalmia
 wwww.github.com/raghav-dalmia
 */
+
 

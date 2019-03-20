@@ -4,8 +4,8 @@ from math import floor
    c'th column of the given sudoku '''
 
 
-def is_possible(sudoku, row, col, num):
-    for i in range(0, 9):
+def is_possible(sudoku,row,col,num):
+    for i in range(0,9):
         # check whether number 'num' is present in the c'th cloumn
         if sudoku[i][col] == num:
             return False
