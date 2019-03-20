@@ -44,4 +44,3 @@ myQueue.dequeue();
 
 // OUTPUT:-
 // => CrazyQueue { first: [ 5, 4 ], last: [] }
-
