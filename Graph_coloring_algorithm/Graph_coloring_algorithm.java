@@ -1,4 +1,5 @@
 // A Java program to implement greedy algorithm for graph coloring 
+
 import java.io.*; 
 import java.util.*; 
 import java.util.LinkedList; 
