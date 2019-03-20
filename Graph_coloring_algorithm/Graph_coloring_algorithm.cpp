@@ -22,54 +22,54 @@ public:
 
 	// function for adding an edge to graph 
 	void addEdge(int a, int b){ 
-	adj[a].push_back(b); 
-	adj[b].push_back(a); // Note: the graph is undirected 
-}  
+		adj[a].push_back(b); 
+		adj[b].push_back(a); // Note: the graph is undirected 
+	}  
 
 	// Displays greedy coloring of the vertices 
 	void greedyColoring(){ 
-	int res[num_V]; 
+		int res[num_V]; 
 
-	// Assign the 1st color to 1st vertex 
-	res[0] = 0; 
+		// Assign the 1st color to 1st vertex 
+		res[0] = 0; 
 
-	// Initialize remaining num_V-1 vertices as unassigned 
-	for (int i = 1; i < num_V; i++) 
-		res[i] = -1;                // no color is assigned to u 
+		// Initialize remaining num_V-1 vertices as unassigned 
+		for (int i = 1; i < num_V; i++) 
+			res[i] = -1;                // no color is assigned to u 
 
-	//True value of available[clr] --> the color clr assigned to one of its adjacent vertices 
-	bool available[num_V]; 
-	for (int clr = 0; clr < num_V; clr++) 
-		available[clr] = false; 
+		//True value of available[clr] --> the color clr assigned to one of its adjacent vertices 
+		bool available[num_V]; 
+		for (int clr = 0; clr < num_V; clr++) 
+			available[clr] = false; 
 
-	// Assign colors to remaining num_V-1 vertices 
-	for (int k = 1; k < num_V; k++) 
-	{ 
-		// Process all adjacent vertices and flag their colors as unavailable 
-		list<int>::iterator i; 
-		for (i = adj[k].begin(); i != adj[k].end(); ++i) 
-			if (res[*i] != -1) 
-				available[res[*i]] = true; 
+		// Assign colors to remaining num_V-1 vertices 
+		for (int k = 1; k < num_V; k++) 
+		{ 
+			// Process all adjacent vertices and flag their colors as unavailable 
+			list<int>::iterator i; 
+			for (i = adj[k].begin(); i != adj[k].end(); ++i) 
+				if (res[*i] != -1) 
+					available[res[*i]] = true; 
 
-		// Find the first available color 
-		int clr; 
-		for (clr = 0; clr < num_V; clr++) 
-			if (available[clr] == false) 
-				break; 
+			// Find the first available color 
+			int clr; 
+			for (clr = 0; clr < num_V; clr++) 
+				if (available[clr] == false) 
+					break; 
 
-		res[k] = clr; // Assign the found color 
+			res[k] = clr; // Assign the found color 
 
-		// Reset the values back to false for the next iteration 
-		for (i = adj[k].begin(); i != adj[k].end(); ++i) 
-			if (res[*i] != -1) 
-				available[res[*i]] = false; 
-	} 
+			// Reset the values back to false for the next iteration 
+			for (i = adj[k].begin(); i != adj[k].end(); ++i) 
+				if (res[*i] != -1) 
+					available[res[*i]] = false; 
+		} 
 
-	// print the res
-	for (int k = 0;k < num_V; k++) 
-		cout << "Vertex " << k << " ---> Color "
-			<< res[k] << endl; 
-}
+		// print the res
+		for (int k = 0;k < num_V; k++) 
+			cout << "Vertex " << k << " ---> Color "
+				<< res[k] << endl; 
+	}
 }; 
 
 
@@ -98,3 +98,23 @@ int main()
 
 	return 0; 
 } 
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------------- */
+//RESULT 
+
+Coloring of graph 1
+Vertex 0 --->  Color 0
+Vertex 1 --->  Color 1
+Vertex 2 --->  Color 2
+Vertex 3 --->  Color 0
+Vertex 4 --->  Color 1
+
+Coloring of graph 2
+Vertex 0 --->  Color 0
+Vertex 1 --->  Color 1
+Vertex 2 --->  Color 2
+Vertex 3 --->  Color 0
+Vertex 4 --->  Color 3
