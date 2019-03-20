@@ -7,12 +7,12 @@ def LongestCommonSubsequence(arr1, arr2, size1, size2):
         for j in range(0,size2+1):
             if i == 0 or j == 0:
                 LCS[i][j] = 0
-			# when the last character of both subsequences match, increase length of lcs by 1
-			# LCS( {10,15,20,25} ,{10,15,23,25} )=1+ LCS( {10,15,20} ,{10,15,23} )
+	    # when the last character of both subsequences match, increase length of lcs by 1
+	    # LCS( {10,15,20,25} ,{10,15,23,25} )=1+ LCS( {10,15,20} ,{10,15,23} )
             elif arr1[i-1] == arr2[j-1]:
                 LCS[i][j] = LCS[i-1][j-1] + 1
-			# when the last character is not same, take maximum obtained by adding one character to one of the subsequences 
-			# LCS({10,15,20} ,{10,15,23})= max(LCS( {10,15,20} ,{10,15} ) ,LCS( {10,15} ,{10,15,23}) )
+	    # when the last character is not same, take maximum obtained by adding one character to one of the subsequences 
+	    # LCS({10,15,20} ,{10,15,23})= max(LCS( {10,15,20} ,{10,15} ) ,LCS( {10,15} ,{10,15,23}) )
             else:
                 LCS[i][j] = max(LCS[i-1][j], LCS[i][j-1])
    return LCS[size1][size2]
