@@ -1,4 +1,4 @@
-class CrazyQueue {
+class Queue {
   constructor() {
     this.first = [];
     this.last = [];
@@ -29,7 +29,7 @@ class CrazyQueue {
   }
 }
 
-const myQueue = new CrazyQueue();
+const myQueue = new Queue();
 myQueue.peek();
 myQueue.enqueue(1);
 myQueue.enqueue(2);
@@ -44,3 +44,4 @@ myQueue.dequeue();
 
 // OUTPUT:-
 // => CrazyQueue { first: [ 5, 4 ], last: [] }
+
