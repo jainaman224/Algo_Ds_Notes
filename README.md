@@ -197,6 +197,7 @@ Please discuss it with us first by creating new issue.
     - Introduction To Algorithms By Thomas H. Cormen
     - Java: The Complete Reference By Herbert Schildt
     - Object Oriented Programming with C++ by E Balaguruswamy
+    - Computer Oriented Numerical Methods By V. Rajaraman 
 - Websites :computer:
     - [GeeksforGeeks](http://www.geeksforgeeks.org)
     - [hackerearth](https://www.hackerearth.com/notes)
