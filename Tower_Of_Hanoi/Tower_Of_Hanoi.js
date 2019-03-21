@@ -8,7 +8,7 @@ function TowerOfHanoi(num, source, destination, auxillary){
 
     TowerOfHanoi(num-1, source, auxillary, destination);
     console.log(`Move disk ${num} from rod ${source} to ${destination}`);
-    TowerOfHanoi(num-1, auxillary, destination source);
+    TowerOfHanoi(num-1, auxillary, destination, source);
 }
 
 var input = 3;
