@@ -2,13 +2,11 @@
 
 public class BisectionMethod 
 {
-	
-	//value for accuracy of root. more smaller it is more accurate will be root.
+	//value for accuracy of root. more smaller it is more accurate will be root
 
 	static final float  err= 0.01f; 
 
-	// the equation whose roots are to be determined.
-	// in this case it is x^3-x^2+2
+	// the equation whose roots are to be determined. in this case it is x^3-x^2+2
     static double function(double x) 
     { 
         return x*x*x - x*x + 2; 
