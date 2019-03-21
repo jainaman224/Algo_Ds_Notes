@@ -1,24 +1,24 @@
 
 
-def Edit_Distance(first_str, second_str, m , n): 
+def Edit_Distance(first_str, second_str, size1 , size2): 
 
 	# If first string is empty, the only option is to insert all characters of second string into first 
-	if m == 0: 
-		return n 
+	if size1 == 0: 
+		return size2 
 
 	# If second string is empty, remove all characters of first string 
 	if n == 0: 
-		return m 
+		return size1 
 
 	# If last characters of two strings are same, nothing much to do.
-	if first_str[m-1] == second_str[n-1]: 
-		return Edit_Distance(first_str,second_str,m-1,n-1) 
+	if first_str[size1-1] == second_str[size2-1]: 
+		return Edit_Distance(first_str,second_str,size1-1,size2-1) 
 
 	# If last characters are not same, consider all three operations on last character of first string, recursively 
 	# compute minimum cost for all three operations and take minimum of three values. 
-	return 1 + min(Edit_Distance(first_str, second_str, m, n-1), # Insert 
-				Edit_Distance(first_str, second_str, m-1, n), # Remove 
-				Edit_Distance(first_str, second_str, m-1, n-1) # Replace 
+	return 1 + min(Edit_Distance(first_str, second_str, size1, size2-1), # Insert 
+				Edit_Distance(first_str, second_str, size1-1, size2), # Remove 
+				Edit_Distance(first_str, second_str, size1-1, size2-1) # Replace 
 				) 
 
 a = "kanchan"
