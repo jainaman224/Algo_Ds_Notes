@@ -2,7 +2,7 @@
 
 public class BisectionMethod {
 	
-    //value for accuracy of root. more smaller it is more accurate will be root.
+	//value for accuracy of root. more smaller it is more accurate will be root.
 	static final float  err= 0.01f; 
 	  
     // the equation whose roots are to be determined.
