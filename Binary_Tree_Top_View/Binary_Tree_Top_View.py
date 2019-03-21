@@ -1,55 +1,41 @@
-class newNode:
+# A binary tree node 
+class Node: 
 
-# Construct to create a newNode
-def __init__(self, key):
-  self.data = key
-  self.left = None
-  self.right = None
-  self.head = 0
+	# Constructor to create a new node 
+	def __init__(self, data): 
+		self.data = data 
+		self.left = None
+		self.right = None
 
-# function should print the topView
-# of the binary tree
-def topview(root) :
-  if(root == None) :
-    return
-  q = []
-  mp = dict()
-  head = 0
-  root.hd = head
 
-  # push node and horizontal
-  # distance to queue
-  q.append(root)
+# Recursive function pritn left view of a binary tree 
+def leftViewUtil(root, level, max_level): 
+	
+	# Base Case 
+	if root is None: 
+		return
 
-  while(len(q)) :
-    root = q[0]
-    head = root.head
+	# If this is the first node of its level 
+	if (max_level[0] < level): 
+		print "%d\t" %(root.data), 
+		max_level[0] = level 
 
-    # count function returns 1 if the
-    # container contains an element
-    # whose key is equivalent to hd,
-    # or returns zero otherwise.
-    if head not in mp:
-      m[hd] = root.data
-      if(root.left) :
-        root.left.head = head – 1
-        q.append(root.left)
+	# Recur for left and right subtree 
+	leftViewUtil(root.left, level+1, max_level) 
+	leftViewUtil(root.right, level+1, max_level) 
 
-      if(root.right):
-        root.right.hd = head + 1
-        q.append(root.right)
 
-    q.pop(0)
-  for i in sorted (mp):
-    print(mp[i], end = “”)
+# A wrapper over leftViewUtil() 
+def leftView(root): 
+	max_level = [0] 
+	leftViewUtil(root, 1, max_level) 
 
-# Driver Code
-if __name__ == ‘__main__’:
-  root = newNode(1)
-  root.left = newNode(2)
-  root.right = newNode(3)
-  root.left.right = newNode(4)
-  root.left.right.right = newNode(5)
-  root.left.right.right.right = newNode(6)
-  print(“Following are nodes in top”,“view of Binary Tree”)
-  topview(root)
+
+# Driver program to test above function 
+root = Node(12) 
+root.left = Node(10) 
+root.right = Node(20) 
+root.right.left = Node(25) 
+root.right.right = Node(40) 
+
+leftView(root) 
