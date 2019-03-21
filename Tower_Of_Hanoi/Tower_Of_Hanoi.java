@@ -46,3 +46,19 @@ public class Tower_Of_Hanoi {
     }
 
 }
+
+/*
+OUTPUT :
+
+    Enter Number of discs:
+    3
+    Move 1th disc from T1 to T2
+    Move 2th disc from T1 to T3
+    Move 1th disc from T2 to T3
+    Move 3th disc from T1 to T2
+    Move 1th disc from T3 to T1
+    Move 2th disc from T3 to T2
+    Move 1th disc from T1 to T2
+    7
+
+*/
