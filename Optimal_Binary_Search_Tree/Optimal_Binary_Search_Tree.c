@@ -61,7 +61,7 @@ int main()
     for (i=0;i<size;i++)
        scanf("%d",&freq[i]);
     
-    printf("Cost of Optimal Binary search tree is  %d ",minCostBST(keys, freq, size)),  
+    printf("Cost of Optimal Binary search tree is  %d ",minCostBST(keys, freq, size));  
                
     return 0; 
 }
