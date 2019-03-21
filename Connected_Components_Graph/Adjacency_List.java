@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class AdjacencyListGraph <T> {
+public class Adjacency_List<T> {
 
     private LinkedList<Vertex> vertices;
 
-    public AdjacencyListGraph() {
+    public Adjacency_List() {
         vertices = new LinkedList<>();
     }
 
@@ -117,7 +117,7 @@ public class AdjacencyListGraph <T> {
 
     public static void main(String[] args) {
 
-        AdjacencyListGraph<Character> graph = new AdjacencyListGraph<>();
+        Adjacency_List<Character> graph = new Adjacency_List<>();
 
         graph.addVertex('A');
         graph.addVertex('B');

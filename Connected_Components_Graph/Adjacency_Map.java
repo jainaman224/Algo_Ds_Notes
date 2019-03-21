@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class AdjacencyMapGraph {
+public class Adjacency_Map {
 
     private class Vertex{
         HashMap<String, Integer> nbrs = new HashMap<>();
@@ -10,7 +10,7 @@ public class AdjacencyMapGraph {
 
     HashMap<String, Vertex> vtces;
 
-    public AdjacencyMapGraph() {
+    public Adjacency_Map() {
         this.vtces = new HashMap<>();
     }
 
@@ -243,7 +243,7 @@ public class AdjacencyMapGraph {
 
     public static void main(String[] args) {
 
-        AdjacencyMapGraph graph = new AdjacencyMapGraph();
+        Adjacency_Map graph = new Adjacency_Map();
 
         graph.addVertex("A");
         graph.addVertex("B");
