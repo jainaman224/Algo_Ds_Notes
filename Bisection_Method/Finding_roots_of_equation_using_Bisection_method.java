@@ -1,6 +1,6 @@
 //java program to find roots of equation using bisection method
 
-public class pairsum {
+public class BisectionMethod {
 	
 	//value for accuracy of root. more smaller it is more accurate will be root.
 	
