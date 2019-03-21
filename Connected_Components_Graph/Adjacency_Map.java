@@ -269,7 +269,21 @@ public class Adjacency_Map {
         System.out.println(graph.gCC());
     }
 
-
 }
+
+/*
+OUTPUT :
+
+    A -> {B=3, D=2}
+    B -> {A=3, C=4}
+    C -> {B=4, D=4}
+    D -> {A=2, C=4, E=10}
+    E -> {D=10, F=9, G=8}
+    F -> {E=9, G=6}
+    G -> {E=8, F=6}
+    H -> {}
+    [[A, B, D, C, E, F, G], [H]]
+
+*/
 
 

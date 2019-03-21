@@ -132,8 +132,24 @@ public class Adjacency_List<T> {
         graph.addEdge('A', 'D');
         graph.addEdge('E', 'F');
 
+        graph.display();
+
         graph.connectedComponents();
 
     }
 
 }
+
+/*
+OUTPUT :
+
+    A -> B C D
+    B -> A
+    C -> A D
+    D -> C A
+    E -> F
+    F -> E
+    A B C D
+    E F
+
+*/
