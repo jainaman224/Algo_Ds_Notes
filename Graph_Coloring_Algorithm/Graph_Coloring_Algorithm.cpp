@@ -9,7 +9,7 @@ class Graph
 { 
 	int num_V; // No. of vertices 
 	list<int> *adj; // A dynamic array of adjacency lists 
-public: 
+      public: 
 	// Constructor 
 	Graph(int num_V) { 
 	    this->num_V = num_V; 
@@ -23,7 +23,7 @@ public:
 	// function for adding an edge to graph 
 	void addEdge(int a, int b){ 
 		adj[a].push_back(b); 
-		adj[b].push_back(a); // Note: the graph is undirected 
+		adj[b].push_back(a);		 // Note: the graph is undirected 
 	}  
 
 	// Displays greedy coloring of the vertices 
@@ -35,40 +35,45 @@ public:
 
 		// Initialize remaining num_V-1 vertices as unassigned 
 		for (int i = 1; i < num_V; i++) 
-			res[i] = -1;                // no color is assigned to u 
+			res[i] = -1;                // no color is assigned 
 
 		//True value of available[clr] --> the color clr assigned to one of its adjacent vertices 
 		bool available[num_V]; 
-		for (int clr = 0; clr < num_V; clr++) 
+		for (int clr = 0; clr < num_V; clr++) {
 			available[clr] = false; 
-
+		}
+		
 		// Assign colors to remaining num_V-1 vertices 
 		for (int k = 1; k < num_V; k++) 
 		{ 
 			// Process all adjacent vertices and flag their colors as unavailable 
 			list<int>::iterator i; 
-			for (i = adj[k].begin(); i != adj[k].end(); ++i) 
-				if (res[*i] != -1) 
+			for (i = adj[k].begin(); i != adj[k].end(); ++i) {
+				if (res[*i] != -1) {
 					available[res[*i]] = true; 
-
+				}
+			}
+			
 			// Find the first available color 
 			int clr; 
 			for (clr = 0; clr < num_V; clr++) 
-				if (available[clr] == false) 
+				if (available[clr] == false) {
 					break; 
-
+				}
+			
 			res[k] = clr; // Assign the found color 
 
 			// Reset the values back to false for the next iteration 
-			for (i = adj[k].begin(); i != adj[k].end(); ++i) 
-				if (res[*i] != -1) 
+			for (i = adj[k].begin(); i != adj[k].end(); ++i) {
+				if (res[*i] != -1) {
 					available[res[*i]] = false; 
+				}
+			}	
 		} 
 
 		// print the res
 		for (int k = 0;k < num_V; k++) 
-			cout << "Vertex " << k << " ---> Color "
-				<< res[k] << endl; 
+			cout << "Vertex " << k << " ---> Color " << res[k] << endl; 
 	}
 }; 
 
@@ -96,7 +101,7 @@ int main()
 	cout << "\nColoring of graph 2 \n"; 
 	g2.greedyColoring(); 
 
-	return 0; 
+   return 0; 
 } 
 
 
