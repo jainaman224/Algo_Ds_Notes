@@ -37,7 +37,7 @@ public class BisectionMethod
   
             // to check te side where root lies.
             else if (function(mid)*function(start) < 0) 
-                end = mid; 
+                end = mid;
             else
                 start = mid; 
         } 
