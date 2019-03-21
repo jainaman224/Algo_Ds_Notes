@@ -1,4 +1,5 @@
-#Fractional Knapsack problem is a variation of Knapsack problem where we can choose items by breaking them in fractions. The objective is to fill the knapsack with items to get maximum benefit without crossing the weight capacity of the knapsack.
+#Fractional Knapsack problem is a variation of Knapsack problem where we can choose items by breaking them in fractions.
+# The objective is to fill the knapsack with items to get maximum benefit without crossing the weight capacity of the knapsack.
 
 # Function to compute maximum profit obtainable
 def fractionalKnapsackProblem(arr, n, W):
