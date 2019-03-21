@@ -15,15 +15,16 @@ class Main
 	{ 
 		num_V = a; 
 		adj = new LinkedList[a]; 
-		for (int i=0; i<a; ++i) 
+		for (int i=0; i<a; ++i) {
 			adj[i] = new LinkedList(); 
+		}
 	} 
 
 	//Function to add an edge into the graph 
 	void addEdge(int a,int b) 
 	{ 
 		adj[a].add(b); 
-		adj[b].add(a); //Graph is undirected 
+		adj[b].add(a); 			//Graph is undirected 
 	} 
 
 	// Assigns colors (starting from 0) to all vertices and prints the assignment of colors 
@@ -51,15 +52,17 @@ class Main
 			while (it.hasNext()) 
 			{ 
 				int i = it.next(); 
-				if (res[i] != -1) 
+				if (res[i] != -1) {
 					available[res[i]] = false; 
+				}
 			} 
 
 			// Find the first available color 
 			int clr; 
 			for (clr = 0; clr < num_V; clr++){ 
-				if (available[clr]) 
+				if (available[clr]) {
 					break; 
+				}
 			} 
 
 			res[u] = clr; // Assign the found color 
@@ -69,9 +72,9 @@ class Main
 		} 
 
 		// print the result 
-		for (int u = 0; u < num_V; u++) 
-			System.out.println("Vertex " + u + " ---> Color "
-								+ res[u]); 
+		for (int u = 0; u < num_V; u++) {
+			System.out.println("Vertex " + u + " ---> Color " + res[u]); 
+		}
 	} 
 
 	// Main Function
