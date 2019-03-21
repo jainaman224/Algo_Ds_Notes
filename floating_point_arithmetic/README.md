@@ -1,6 +1,6 @@
 # Floating Point Arithmetic
 
-This repo contains implementation of algorithms from **Rajaraman V, “Computer Oriented Numerical Methods”, Pearson Education** for floating point arithmatic such a addition, multiplication, substrcation and devision.
+This repo contains implementation of algorithms from **Rajaraman V, “Computer Oriented Numerical Methods”, Pearson Education** for floating point arithmatic such a addition, multiplication, substrcation and division.
 
 ![alt text](https://github.com/p-rit/floating_point_arithmetic/blob/master/computer-oriented-numerical-methods-3-e-original-imaey8hzpz3z98rk.jpeg)
 
@@ -12,7 +12,6 @@ the operations are done with algorithms similar to those usedon sign magnitude i
   representation) 
   -- example, only add numbers of the same
   sign.  If the numbers are of opposite sign, must do subtraction.
-
 
 ADDITION
 
@@ -33,8 +32,6 @@ ADDITION
 	(presumes use of infinite precision, without regard for accuracy)
 
      third step:  normalize the result (already normalized!)
-
-
 
  example on fl pt. value given in binary:
 
@@ -88,8 +85,6 @@ ADDITION
 
    result is
 	 0 10000101 10010001000000000000000
-
-
 
 SUBTRACTION
 
@@ -103,7 +98,6 @@ SUBTRACTION
        change sign bit if order of operands is changed.
 
      don't forget to normalize number afterward.
-
 
 MULTIPLICATION
 
@@ -121,7 +115,6 @@ MULTIPLICATION
      -----------------
       1.50 x 10 ** 3
 
-
  example in binary:    use a mantissa that is only 4 bits so that
 		       I don't spend all day just doing the multiplication
 		       part.
@@ -130,7 +123,6 @@ MULTIPLICATION
      0 10000100 0100
    x 1 00111100 1100
    -----------------
-
 
    mantissa multiplication:           1.0100
     (don't forget hidden bit)	    x 1.1100
@@ -143,8 +135,6 @@ MULTIPLICATION
 				 ---------
 				1000110000
                       becomes   10.00110000
-
-
 
     add exponents:       always add true exponents
 			 (otherwise the bias gets added in twice)
@@ -154,14 +144,12 @@ MULTIPLICATION
    + 00111100
    ----------
 
-
    10000100         01111111  (switch the order of the subtraction,
  - 01111111       - 00111100   so that we can get a negative value)
  ----------       ----------
    00000101         01000011
    true exp         true exp
      is 5.           is -67
-
 
      add true exponents      5 + (-67) is -62.
 
@@ -187,8 +175,6 @@ MULTIPLICATION
 
      this is the value stored (not the hidden bit!):
      1 01000010  000110000
-
-
 
 DIVISION
 
@@ -234,11 +220,6 @@ DIVISION
 			  3 x .33333333 =  .99999999, not 1
 
     It is not always possible to get a perfectly accurate reciprocal.
-
-
-
-
-
 
 
 rounding
@@ -251,12 +232,6 @@ There are MANY ways of rounding.  They each have "correct" uses, and
 exist for different reasons.  The goal in a computation is to have the
 computer round such that the end result is as "correct" as possible.
 There are even arguments as to what is really correct.
-
-
-
- 
-
-
 
 
 overflow and underflow
