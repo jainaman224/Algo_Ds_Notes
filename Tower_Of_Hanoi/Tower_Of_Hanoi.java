@@ -5,7 +5,7 @@
 
 import java.util.Scanner;
 
-public class TowerOfHanoi {
+public class Tower_Of_Hanoi {
 
     public static void main(String args[]){
         Scanner input = new Scanner(System.in);
