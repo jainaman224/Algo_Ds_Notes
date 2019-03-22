@@ -26,6 +26,8 @@ public class GraphColoring
             display();
         }
     }
+
+
     /** function to assign colors recursively **/
     public void solve(int v) throws Exception
     {
@@ -45,6 +47,8 @@ public class GraphColoring
             }
         }    
     }
+
+
     /** function to check if it is valid to allot that color to vertex **/
     public boolean isPossible(int v, int c)
     {
@@ -53,6 +57,8 @@ public class GraphColoring
                 return false;
         return true;
     }
+
+
     /** display solution **/
     public void display()
     {
@@ -60,7 +66,9 @@ public class GraphColoring
         for (int i = 0; i < V; i++)
             System.out.print(color[i] +" ");
         System.out.println();
-    }    
+    } 
+
+       
     /** Main function **/
     public static void main (String[] args) 
     {
@@ -87,3 +95,4 @@ public class GraphColoring
  
     }
 }
+
