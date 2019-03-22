@@ -1,13 +1,11 @@
-// C++ program to find Minimum Spanning Tree 
-// of a graph using Reverse Delete Algorithm 
+// C++ program for Reverse Delete Algorithm to find MST
 #include<bits/stdc++.h> 
 using namespace std; 
 
 // Creating shortcut for an integer pair 
 typedef pair<int, int> iPair; 
 
-// Graph class represents a directed graph 
-// using adjacency list representation 
+// Graph class represents a directed graph using adjacency list representation 
 class Graph 
 { 
 	int V; // No. of vertices 
@@ -110,7 +108,7 @@ void Graph::reverseDeleteMST()
 	cout << "Total weight of MST is " << mst_wt; 
 } 
 
-// Driver code 
+// Main Function
 int main() 
 { 
 	// create the graph given in above fugure 
