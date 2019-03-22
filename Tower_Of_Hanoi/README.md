@@ -41,20 +41,14 @@ When _disk_ is 0, the smallest disk. In this case we don't need to worry about s
 
 > :rocket: [Compile Online](https://repl.it/@gauravburjwal/Tower-of-Hanoi-in-C) :rocket:
 
-
-
 *  [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Tower_Of_Hanoi/Tower_Of_Hanoi.cpp)
 
 > :rocket: [Compile Online](https://repl.it/@gauravburjwal/Tower-of-Hanoi-C) :rocket:
-
-  
-
+ 
 *  [JavaScript Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Tower_Of_Hanoi/Tower_Of_Hanoi.js)
 
 > :rocket: [Compile Online](https://repl.it/@gauravburjwal/Tower-of-Hanoi-JS) :rocket:
-
   
-
 *  [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Tower_Of_Hanoi/Tower_Of_Hanoi.py)
 
 > :rocket: [Compile Online](https://repl.it/@gauravburjwal/Tower-of-Hanoi-Python) :rocket:
