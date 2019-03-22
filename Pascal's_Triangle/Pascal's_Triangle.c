@@ -23,6 +23,7 @@ int main()
    }
    return 0;
 }
+
 //INPUT:Enter the numbers of rows 6
 //OUTPUT:
 //               1
