@@ -16,12 +16,12 @@ void pigeonholesort(int arr[], int size)
    int min = arr[0], max = arr[0]; 
    // Finding min value and max values in the array arr[]
    for (int i = 1; i < size; i++) 
-     { 
+   { 
         if (arr[i] < min) 
             min = arr[i]; 
         if (arr[i] > max) 
             max = arr[i]; 
-     } 
+   } 
    int range;
    range = max - min + 1;
    //Creating the holes
@@ -60,6 +60,7 @@ int main()
         cout<<arr[i]<<" "; 
    return 0; 
 } 
+
 //INPUT:Enter the size of the array 5
 //Enter the elements -10
 //5
