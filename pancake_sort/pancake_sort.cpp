@@ -71,10 +71,8 @@ int main()
 	for(i=0;i<size;i++)
 		cin>>a[i];
     
-  
-    pancakesort(a, size); 
-  
-    print(a, size); 
+    pancakesort(a, size);
+    print(a, size);
   
     return 0; 
 } 
