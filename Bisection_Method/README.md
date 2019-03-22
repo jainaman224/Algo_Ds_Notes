@@ -40,11 +40,14 @@ After cutting the interval in half, the root is contained in the right-half, so 
 
 ## Pseudocode
 
-Given: interval [a..b] such that: sign of f(a) ≠ sign of f(b)     
-repeat (until the interval [a..b] is "very small")
-   {
+
+    Given: interval [a..b] such that: sign of f(a) ≠ sign of f(b)     
+
+    repeat (until the interval [a..b] is "very small")
+   
+    {
            a+b
-      m = -----;      // m = midpoint of interval [a..b]
+        m = -----;      // m = midpoint of interval [a..b]
             2
 
       if ( sign of f(m) ≠ sign of f(b) )
@@ -55,9 +58,9 @@ repeat (until the interval [a..b] is "very small")
       {
          use interval [a..m]  in the next iteration (i.e.: replace b with m)
       }
-   }
+     }
 
-   Approximate root = (a+b)/2;    (any point between [a..b] will do because the interval [a..b] is very small)  
+    Approximate root = (a+b)/2;    (any point between [a..b] will do because the interval [a..b] is very small)  
 
 ## References
 * [Bisection Method](https://en.wikipedia.org/wiki/Bisection_method)
