@@ -1,24 +1,27 @@
 #include <stdio.h>
 
-int factorial(int n)
+int factorial(int no)
 {
-   int f;
-   for(f = 1; n > 1; n--)
-      f *= n;
-   return f;
+   int fact;
+   for(fact = 1; no > 1; no--)
+      fact *= no;
+   return fact;
 }
 
 int main() 
 {
-   int n, i, j;
+   int no, i, j;
    printf("Enter the numbers of rows ");
-   scanf("%d",&n);
-   for(i = 0; i < n; i++) 
+   scanf("%d",&no);
+   
+   for(i = 0; i < no; i++) 
    {
-      for(j = 0; j < n-i; j++)
+      for(j = 0; j < no-i; j++)
          printf("  ");
+      
       for(j = 0; j <= i; j++)
          printf(" %3d",factorial(i)/(factorial(j)*factorial(i-j)) );
+      
       printf("\n");
    }
    return 0;
