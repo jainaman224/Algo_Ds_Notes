@@ -1,34 +1,30 @@
 //Program to rotate array Arr[] of size n by d Elements
-#include <stdio.h> 
-  
-void leftRotatebyOne(int arr[], int n); 
-  
-void leftRotate(int arr[], int d, int n) 
-{ 
-    int i; 
-    for (i = 0; i < d; i++) 
-        leftRotatebyOne(arr, n); 
-} 
-  
-void leftRotatebyOne(int arr[], int n) 
-{ 
-    int temp = arr[0], i; 
-    for (i = 0; i < n - 1; i++) 
-        arr[i] = arr[i + 1]; 
-    arr[i] = temp; 
-} 
-  
-void printArray(int arr[], int n) 
-{ 
-    int i; 
-    for (i = 0; i < n; i++) 
-        printf("%d ", arr[i]); 
-} 
-  
-int main() 
-{ 
-    int arr[] = { 1, 2, 3, 4, 5, 6, 7 }; 
-    leftRotate(arr, 2, 7); 
-    printArray(arr, 7); 
-    return 0; 
-} 
+#include <stdio.h>
+
+void Rotate(int arr[], int r, int n)
+{
+	int temp[r];
+	for (int i = 0; i < r; i++)
+		temp[i] = arr[i];
+
+	for (int i = r; i < n; i++)
+		arr[i-r] = arr[i];
+
+	for (int i = n-r; i < n; i++)
+		arr[i] = temp[i-(n-r)];
+}
+
+int main()
+{
+	int arr[] = { 1, 2, 3, 4, 5 };
+	int r = 2;
+
+	int n = sizeof(arr)/sizeof(arr[0]);
+
+	Rotate(arr, r, n);
+
+	for (int i = 0; i < n; i++)
+		printf("%d ", arr[i]);
+
+	return 0;
+}
