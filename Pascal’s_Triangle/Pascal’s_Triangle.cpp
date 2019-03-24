@@ -5,20 +5,20 @@ using namespace std;
 int factorial(int no) 
 {
    int fact;
-   for(fact = 1; no > 1; no--)
-      fact *= no;
+   for(fact = 1; num > 1; num--)
+      fact *= num;
    return fact;
 }
 
 int main() 
 {
-   int no, i, j;
+   int num, i, j;
    cout<<"Enter the numbers of rows ";
-   cin>>no;
+   cin>>num;
    
-   for(i = 0; i < no; i++) 
+   for(i = 0; i < num; i++) 
    {
-      for(j = 0; j < no-i; j++)
+      for(j = 0; j < num-i; j++)
          cout<<"  ";
       
       for(j = 0; j <= i; j++)
