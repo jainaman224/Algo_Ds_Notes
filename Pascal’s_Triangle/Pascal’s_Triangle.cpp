@@ -2,7 +2,7 @@
 #include <bits/stdc++.h> 
 using namespace std; 
 
-int factorial(int no) 
+int factorial(int num) 
 {
    int fact;
    for(fact = 1; num > 1; num--)
