@@ -40,3 +40,11 @@ def N_queen(n):
 N_queen(N)
 for i in board:
     print (i)
+
+# Enter the number of queens                                                                                                     
+# 5                                                                                                                              
+# [1, 0, 0, 0, 0]                                                                                                                
+# [0, 0, 1, 0, 0]                                                                                                                
+# [0, 0, 0, 0, 1]                                                                                                                
+# [0, 1, 0, 0, 0]                                                                                                                
+# [0, 0, 0, 1, 0]

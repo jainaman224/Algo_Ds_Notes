@@ -81,3 +81,11 @@ class Queen
         
     }
 }
+
+// Enter the value of N for NxN chessboard
+// 5
+// 1       0       0       0       0                                                                                              
+// 0       0       1       0       0                                                                                              
+// 0       0       0       0       1                                                                                              
+// 0       1       0       0       0                                                                                              
+// 0       0       0       1       0
