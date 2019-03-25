@@ -44,13 +44,13 @@ public class PigeonholeSort{
         int[] test = {1,4,32,2};
         
         sort(test);
-        for(int i=0;i<a.length;i++)
+        for(int i=0;i<test.length;i++)
         System.out.print(test[i] + " ");
      }
 }
 
-
-    
+//input = 1,4,32,2
+// output = 1 2 4 32
 
             
         

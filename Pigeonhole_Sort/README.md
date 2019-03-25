@@ -8,7 +8,7 @@ Pigeonhole sorting is a sorting algorithm that is suitable for sorting lists of 
 * Going over the original array, put each value into the pigeonhole corresponding to its key, such that each pigeonhole eventually contains a list of all values with that key.
 * Iterate over the pigeonhole array in order, and put elements from non-empty pigeonholes back into the original array.
 
- ![](https://github.com/p-rit/Algo_Ds_Notes/blob/master/Pigeonhole_sort/images/Capture.PNG)
+ ![]( https://github.com/p-rit/Images/blob/master/Pigeonhole_sort_images/Capture.PNG )
 ## Pseudocode
 
 ```` find max and min from the array list

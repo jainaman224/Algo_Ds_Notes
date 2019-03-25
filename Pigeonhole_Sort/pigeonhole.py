@@ -21,5 +21,8 @@ def pigeon_hole(input):
     return input
     
 test = pigeon_hole([2,3,5,4])
-print(test) #[2,3,4,5]
+print(test) 
+
+#input = [2,3,5,4]
+#output = [2,3,4,5]
             
