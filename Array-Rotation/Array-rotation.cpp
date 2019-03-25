@@ -24,11 +24,11 @@ int main()
 { 
     int arr[] = { 1, 2, 3, 4, 5}; 
     int n = sizeof(arr) / sizeof(arr[0]); 
-  
-    Rotate(arr, 2, n);  
-    
-    /* sizeof operator in c++ gives the size of array in bytes
-       here this sizeof(arr) will give 28 as output(4*7) */
-  
+    Rotate(arr, 2, n);
     return 0; 
 } 
+/*
+Input array: {1, 2, 3, 4, 5}
+Expected Output
+3 4 5 1 2 
+*/
