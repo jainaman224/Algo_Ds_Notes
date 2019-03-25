@@ -35,25 +35,25 @@ public class RabinKarp
     /** pattern hash value **/    
     private long patHash;    
     /** pattern length **/
-    private int M;  
+    private int patlen;  
     /** Large prime **/         
-    private long Q; 
+    private long prime_large; 
     /** radix **/         
-    private int R;   
-    /** R^(M-1) % Q **/        
+    private int radix;   
+    /** radix^(M-1) % prime_large **/        
     private long RM;          
  
     /** Constructor **/
     public RabinKarp(String txt, String pat) 
     {
         this.pat = pat;      
-        R = 256;
+        radix = 256;
         M = pat.length();
-        Q = longRandomPrime();
-        /** precompute R^(M-1) % Q for use in removing leading digit **/
+        prime_large = longRandomPrime();
+        /** precompute radix^(M-1) % prime_large for use in removing leading digit **/
         RM = 1;
         for (int i = 1; i <= M-1; i++)
-           RM = (R * RM) % Q;
+           RM = (radix * RM) % prime_large;
         patHash = hash(pat, M);
         int pos = search(txt);
         if (pos == -1)
@@ -66,7 +66,7 @@ public class RabinKarp
     { 
         long h = 0; 
         for (int j = 0; j < M; j++) 
-            h = (R * h + key.charAt(j)) % Q; 
+            h = (radix * h + key.charAt(j)) % prime_large; 
         return h; 
     } 
     /** Funtion check **/
@@ -90,8 +90,8 @@ public class RabinKarp
         for (int i = M; i < N; i++) 
         {
             // Remove leading digit, add trailing digit, check for match. 
-            txtHash = (txtHash + Q - RM * txt.charAt(i - M) % Q) % Q; 
-            txtHash = (txtHash * R + txt.charAt(i)) % Q; 
+            txtHash = (txtHash + prime_large - RM * txt.charAt(i - M) % prime_large) % prime_large; 
+            txtHash = (txtHash * radix + txt.charAt(i)) % prime_large; 
             // match
             int offset = i - M + 1;
             if ((patHash == txtHash) && check(txt, offset))
@@ -116,6 +116,6 @@ public class RabinKarp
         System.out.println("\nEnter Pattern\n");
         String pattern = br.readLine();
         System.out.println("\nResults : \n");
-        RabinKarp rk = new RabinKarp(text, pattern);        
+        RabinKarp(text, pattern);        
     }
 }
