@@ -1,7 +1,8 @@
 
-public class Z_Algorithm{
+public class Z_Algorithm {
 
 	static void getZarr(String str, int Z[]){
+
 	    int n = str.length(), Left = 0, Right = 0, k;
 
 	    for(int i = 1; i < n; i++)
@@ -35,6 +36,7 @@ public class Z_Algorithm{
 	        }
 	    }
 	}
+
 	static void search(String text, String pattern){
 
 	    String concat = pattern + "$" + text;
@@ -52,6 +54,7 @@ public class Z_Algorithm{
 
 
 	}
+
 	public static void main(String args[]){
 
 		String text = "namanchamanbomanamansanam";
@@ -59,3 +62,13 @@ public class Z_Algorithm{
 		search(text, pattern);
 	}
 }
+/*
+Sample Input:
+	namanchamanbomanamansanam (text)
+	aman					  (pattern)
+
+Sample Output:
+	Pattern found at 2
+	Pattern found at 8
+	Pattern found at 17
+*/
