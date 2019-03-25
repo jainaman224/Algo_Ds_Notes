@@ -5,7 +5,7 @@
 
 import java.util.Scanner;
 
-public class EggDrop {
+public class Egg_Drop {
 
     public static void main(String[] args) {
 
@@ -18,11 +18,11 @@ public class EggDrop {
 
         int[][] mem = new int[egg + 1][floor + 1];
 
-        System.out.println(eggDropItrDP(egg,floor, mem));
+        System.out.println(eggDropIterativeDP(egg,floor, mem));
 
     }
 
-    public static int eggDropR(int egg, int floor){
+    public static int eggDropRecursive(int egg, int floor){
         if(floor == 0){
             return 0;
         }
@@ -33,7 +33,7 @@ public class EggDrop {
         int min = Integer.MAX_VALUE;
 
         for (int i = 1; i <= floor ; i++) {
-            int sol = Math.max(eggDropR(egg - 1, i - 1), eggDropR(egg, floor - i)) + 1;
+            int sol = Math.max(eggDropRecursive(egg - 1, i - 1), eggDropRecursive(egg, floor - i)) + 1;
 
             if(sol < min){
                 min = sol;
@@ -42,7 +42,7 @@ public class EggDrop {
         return min;
     }
 
-    public static int eggDropRDP(int egg, int floor, int[][] mem){
+    public static int eggDropRecursiveDP(int egg, int floor, int[][] mem){
         if(floor == 0){
             return 0;
         }
@@ -56,7 +56,7 @@ public class EggDrop {
         int min = Integer.MAX_VALUE;
 
         for (int i = 1; i <= floor ; i++) {
-            int sol = Math.max(eggDropRDP(egg - 1, i - 1, mem), eggDropRDP(egg, floor - i, mem)) + 1;
+            int sol = Math.max(eggDropRecursiveDP(egg - 1, i - 1, mem), eggDropRecursiveDP(egg, floor - i, mem)) + 1;
 
             if(sol < min){
                 min = sol;
@@ -66,7 +66,7 @@ public class EggDrop {
         return min;
     }
 
-    public static int eggDropItrDP(int eggs, int floors, int[][] mem){
+    public static int eggDropIterativeDP(int eggs, int floors, int[][] mem){
         for (int e = 1; e <= eggs ; e++) {
             for (int f = 0; f <= floors ; f++) {
 
