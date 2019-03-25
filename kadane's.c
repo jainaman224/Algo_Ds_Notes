@@ -5,8 +5,21 @@ int max(int ans,int sum)
 	return (ans>sum?ans:sum);
 	
 }
-//here ans holds the final largest sum of contiguous array
-//sum holds the sum the sum of contiguous array
+
+int max_sum_negative_array(int a[],int n)
+{//since in  an array containing only negative elments only no non neagative element maximum sum will be the smallest number
+	int ans=a[0],i;
+	
+	for(i=0;i<n;i++)
+	{
+		if(a[i]>ans)
+			ans=a[i];
+	}		
+	return ans;
+	
+	
+}
+	
 int max_sum(int a[],int n)
 {
 	int ans=0;
@@ -24,20 +37,45 @@ int max_sum(int a[],int n)
 	return ans;
 }
 int main()
-{//here variable i is for loop,k is a variable which will hold maximum sum of contuguous array returned 
-	int size,i,k;
-	scanf("%d",&size);
+{
+	int n,i,k,flag=0;
+	scanf("%d",&n);
 	int a[n];
 	for(i=0;i<n;i++)
 		scanf("%d",&a[i]);
-	k=max_sum(a,size);
-	printf("Maximum sum of sub-array %d",k);
+	for(i=0;i<n;i++)
+	{
+		if(a[i]>=0)
+		{
+			flag=1;
+			break;
+		}	
+	}
+	
+	
+	if(flag==1)
+	{
+		k=max_sum(a,n);
+		printf("Maximum sum of sub-array %d",k);	
+	}
+	else
+	{
+			k=max_sum_negative_array(a,n);
+		printf("Maximum sum of sub-array %d",k);
+		
+	}
 		
 	return 0;
 }
-/*input : 5
-	   4 -1 -2 5 -3
- output : 6
- */
-/* here largest contiguous array sum is =4+(-1)+(-2)+5=6
- */
+
+
+/*1.input :3
+	 -1 -2 -3
+   output :-1
+  2.input :3
+	 -1 2 3
+   output :5
+  3input :3
+	 -1 0 -3
+   output :0
+  */
