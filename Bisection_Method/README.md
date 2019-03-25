@@ -11,15 +11,15 @@ In mathematics, the bisection method is a root-finding method that applies to an
 ### Example:
 Suppose the interval [a..b] is as follows:
  
- ![](https://github.com/p-rit/Algo_Ds_Notes/blob/master/Bisection_Method/images/1.PNG)
+ ![](https://github.com/p-rit/Images/blob/master/Bisection_method_images/1.PNG )
 
 We cut the interval [a..b] in the middle: m = (a+b)/2
  
- ![](https://github.com/p-rit/Algo_Ds_Notes/blob/master/Bisection_Method/images/2.PNG)
+ ![](https://github.com/p-rit/Images/blob/master/Bisection_method_images/2.PNG )
 
 Because sign of f(m) ≠ sign of f(a) , we proceed with the search in the new interval [a..b]:
 
- ![](https://github.com/p-rit/Algo_Ds_Notes/blob/master/Bisection_Method/images/3.PNG)
+ ![](https://github.com/p-rit/Images/blob/master/Bisection_method_images/3.PNG )
 
 We can use this statement to change to the new interval:
 
@@ -32,11 +32,11 @@ Here is an example where you have to change the end point a:
 
 Initial interval [a..b]:
 
- ![](https://github.com/p-rit/Algo_Ds_Notes/blob/master/Bisection_Method/images/4.PNG)
+ ![](https://github.com/p-rit/Images/blob/master/Bisection_method_images/4.PNG )
  
 After cutting the interval in half, the root is contained in the right-half, so we have to change the end point a:
 
- ![](https://github.com/p-rit/Algo_Ds_Notes/blob/master/Bisection_Method/images/5.PNG)
+ ![](https://github.com/p-rit/Images/blob/master/Bisection_method_images/5.PNG )
 
 ## Pseudocode
 
