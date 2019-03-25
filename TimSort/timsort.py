@@ -88,4 +88,14 @@ if __name__ == "__main__":
 	print() 
 	
 
+'''
+OUTPUT
+----------------
+Unsorted Array :
+50 39 89 10 8 
+Sorted Array :
+8 10 39 50 89
+----------------
+'''
+# Happy Coding!
 
