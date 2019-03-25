@@ -40,7 +40,7 @@ public class RabinKarp
     private long prime_large; 
     /** radix **/         
     private int radix;   
-    /** radix^(M-1) % prime_large **/        
+    /** radix^(patlen-1) % prime_large **/        
     private long RM;          
  
     /** Constructor **/
@@ -48,13 +48,13 @@ public class RabinKarp
     {
         this.pat = pat;      
         radix = 256;
-        M = pat.length();
+        patlen = pat.length();
         prime_large = longRandomPrime();
-        /** precompute radix^(M-1) % prime_large for use in removing leading digit **/
+        /** precompute radix^(patlen-1) % prime_large for use in removing leading digit **/
         RM = 1;
-        for (int i = 1; i <= M-1; i++)
+        for (int i = 1; i <= patlen-1; i++)
            RM = (radix * RM) % prime_large;
-        patHash = hash(pat, M);
+        patHash = hash(pat, patlen);
         int pos = search(txt);
         if (pos == -1)
             System.out.println("\nNo Match\n");
@@ -62,17 +62,17 @@ public class RabinKarp
             System.out.println("Pattern found at position : "+ pos);
     } 
     /** Compute hash **/
-    private long hash(String key, int M)
+    private long hash(String key, int patlen)
     { 
         long h = 0; 
-        for (int j = 0; j < M; j++) 
+        for (int j = 0; j < patlen; j++) 
             h = (radix * h + key.charAt(j)) % prime_large; 
         return h; 
     } 
     /** Funtion check **/
     private boolean check(String txt, int i) 
     {
-        for (int j = 0; j < M; j++) 
+        for (int j = 0; j < patlen; j++) 
             if (pat.charAt(j) != txt.charAt(i + j)) 
                 return false; 
         return true;
@@ -80,20 +80,20 @@ public class RabinKarp
     /** Funtion to check for exact match**/
     private int search(String txt) 
     {
-        int N = txt.length(); 
-        if (N < M) return N;
-        long txtHash = hash(txt, M); 
+        int txtlen = txt.length(); 
+        if (txtlen < patlen) return txtlen;
+        long txtHash = hash(txt, patlen); 
         /** check for match at start **/
         if ((patHash == txtHash) && check(txt, 0))
             return 0;
         /** check for hash match. if hash match then check for exact match**/
-        for (int i = M; i < N; i++) 
+        for (int i = patlen; i < txtlen; i++) 
         {
             // Remove leading digit, add trailing digit, check for match. 
-            txtHash = (txtHash + prime_large - RM * txt.charAt(i - M) % prime_large) % prime_large; 
+            txtHash = (txtHash + prime_large - RM * txt.charAt(i - patlen) % prime_large) % prime_large; 
             txtHash = (txtHash * radix + txt.charAt(i)) % prime_large; 
             // match
-            int offset = i - M + 1;
+            int offset = i - patlen + 1;
             if ((patHash == txtHash) && check(txt, offset))
                 return offset;
         }
@@ -116,6 +116,6 @@ public class RabinKarp
         System.out.println("\nEnter Pattern\n");
         String pattern = br.readLine();
         System.out.println("\nResults : \n");
-        RabinKarp(text, pattern);        
+        RabinKarp rk = new RabinKarp(text, pattern);        
     }
 }
