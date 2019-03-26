@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void add_digit_dp()
+{
+	unsigned long long int a,b,z,count=0,i,j,copy;
+	while(1)
+	{
+		cout<<"enter two numbers";
+		cin>>a>>b;
+		if(a<0 || b<0 || a>10000000000 || b>10000000000)
+			cout<<"please enter the two numbers in the range 0-10000000000";
+		else
+			break;
+    }
+	
+	//checking which number is bigger if user fails to give smaller number before bigger number	
+	if(a<b)
+	{
+		i=a;
+	    j=b;
+	}
+	else
+	{
+		i=b;
+		j=a;
+	}
+	
+	while(i<=j)
+	{
+		copy=i;
+		z=0;
+		//extracting digits of the number and checking number of non-zero digits
+		while(copy!=0)
+		{
+			
+			if((copy%10))
+				z++;
+			copy=copy/10;		
+		}
+		if(z<=7)
+		{
+			count++;
+		}
+		i++;
+    }
+    cout<<"total count="<<count;
+	
+}
+
+int main()
+{
+// this function is used to find number of integers with maximum 7 non zero digits in the range provided 
+	add_digit_dp();
+}
