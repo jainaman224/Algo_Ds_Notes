@@ -8,18 +8,18 @@ using namespace std;
 // MERGE SORT FUNCTION : 
 void merge(int array[], int left, int mid, int right) 
 {  
-	int LeftLength = mid - left + 1, RightLength = right - mid; 
-	int Left[LeftLength], Right[RightLength]; 
-	for (int i = 0; i < LeftLength; i++) 
+	int leftLength = mid - left + 1, rightLength = right - mid; 
+	int Left[leftLength], Right[rightLength]; 
+	for (int i = 0; i < leftLength; i++) 
 		Left[i] = array[left + i]; 
-	for (int i = 0; i < RightLength; i++) 
+	for (int i = 0; i < rightLength; i++) 
 		Right[i] = array[mid + 1 + i]; 
 
 	int i = 0; 
 	int j = 0; 
 	int k = left; 
 
-	while (i < LeftLength && j < RightLength) 
+	while (i < leftLength && j < rightLength) 
 	{ 
 		if (Left[i] <= Right[j]) 
 		{ 
@@ -33,13 +33,13 @@ void merge(int array[], int left, int mid, int right)
 		} 
 		k++; 
 	} 
-	while (i < LeftLength) 
+	while (i < leftLength) 
 	{ 
 		array[k] = Left[i]; 
 		k++; 
 		i++; 
 	}  
-	while (j < RightLength) 
+	while (j < rightLength) 
 	{ 
 		array[k] = Right[j]; 
 		k++; 
