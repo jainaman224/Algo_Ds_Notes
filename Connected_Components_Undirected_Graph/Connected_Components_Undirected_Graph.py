@@ -1,9 +1,7 @@
 
 class Graph:
-
 	# class init function 
 	def __init__(self,nodes):
-
 		self.Nodes = nodes
 		self.adj = [[] for i in range(nodes)]
 
@@ -23,11 +21,8 @@ class Graph:
 
 			if not visited[ self.adj[vertex][i] ]:
 				self.DFS(self.adj[vertex][i], visited)
-
-
 	# function to find number of connected Components in graph
 	def connectedComponents(self):
-		
 		connected_components = 1
 		visited = [False for i in range(self.Nodes)]
 
@@ -39,8 +34,6 @@ class Graph:
 				self.DFS(vertex, visited)
 				print()
 				connected_components += 1
-				
-
 def main():
 	# create a graph with 6 nodes vertices numbered from 
 	# 0 to 5
@@ -51,7 +44,6 @@ def main():
 
 	nodes = 6
 	graph = Graph(nodes)
-
 	graph.addEdge(0,2)
 	graph.addEdge(3,0)
 	graph.addEdge(1,4)
@@ -60,10 +52,8 @@ def main():
 	graph.connectedComponents()
 
 if __name__ == "__main__":
-
 	main()
-
-
+	
 '''
 
 Output:
