@@ -9,7 +9,8 @@ Pigeonhole sorting is a sorting algorithm that is suitable for sorting lists of 
 * Iterate over the pigeonhole array in order, and put elements from non-empty pigeonholes back into the original array.
 
  ![]( https://github.com/p-rit/Images/blob/master/Pigeonhole_sort_images/Capture.PNG )
-## Pseudocode
+
+ ## Pseudocode
 
 ```` find max and min from the array list
      holeRange := max – min +1
