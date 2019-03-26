@@ -45,8 +45,9 @@ int main(){
 	for finding the sum of numbers in a given range 
 	Indexing : 0 based in array
 	*/
-	int n = 10; //number of elements 
+	
 	int a[]={2,3,4,6,8,9,1,-1,0,3};  //elements
+	int n = sizeof(a)/sizeof(a[0]); //number of elements 
 	int *blocks=formBlocks(a,n);
 	//queries
 	cout<<query(0,2,blocks,a,n)<<endl; //find sum from index 0 to index 2
