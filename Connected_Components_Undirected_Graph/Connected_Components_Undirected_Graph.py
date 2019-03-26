@@ -33,7 +33,7 @@ class Graph:
 
 		for vertex in range(self.Nodes):
 			# if vertex is not visited perform DFS
-			# if vertex s
+			# if vertex is already visited, then it must be part of already visited connected component
 			if visited[vertex] == False:
 				print("Connected Commponent:",connected_components)
 				self.DFS(vertex, visited)
