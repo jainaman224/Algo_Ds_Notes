@@ -9,7 +9,6 @@ void combSort(int arr[], int n)
 	{
 		// updating gap value by using shrink factor as 1.3
 		gap = (gap * 10) / 13;
-    
 		// if Gap is less than 1, take gap as 1
 		if(gap<1)
 			gap= 1;
