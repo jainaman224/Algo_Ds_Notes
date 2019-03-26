@@ -21,6 +21,7 @@ class Graph:
 
 			if not visited[ self.adj[vertex][i] ]:
 				self.DFS(self.adj[vertex][i], visited)
+				
 	# function to find number of connected Components in graph
 	def connectedComponents(self):
 		connected_components = 1
@@ -34,6 +35,7 @@ class Graph:
 				self.DFS(vertex, visited)
 				print()
 				connected_components += 1
+				
 def main():
 	# create a graph with 6 nodes vertices numbered from 
 	# 0 to 5
