@@ -1,81 +1,82 @@
     class queueElement 
     {
-      constructor(element,priority)
-      {
+        constructor(element,priority)
+        {
         this.element=element;
         this.prioriry=priority;
-      }
+        }
     }
     
-    class PriorityQueue {
-      constructor()
-      {
+    class PriorityQueue 
+    {
+        constructor()
+        {
         this.items=[];
-      }
+        }
     
-    //to add an element to the queue
-      enqueue(element,priority)
-      {
+        //to add an element to the queue
+        enqueue(element,priority)
+        {
         var newQueueElement=new queueElement(element,priority);
         var isPresent=false;
         for (let i = 0; i < this.items.length; i++) { 
             if (this.items[i].priority > newQueueElement.priority) { 
                 this.items.splice(i, 0, newQueueElement); 
                 isPresent = true; 
-                break; 
-            } 
+                break;
+            }
         }
-          if (!isPresent) { 
-            this.items.push(newQueueElement); 
-          } 
-      }
+            if (!isPresent) { 
+            this.items.push(newQueueElement);
+            }
+        }
     
-    //to remove element form a queue
-      dequeue() 
-      {
-        if (this.isEmpty()) 
-      {
-            return "Underflow"; 
-      }
-        return this.items.shift(); 
-      }
-    
-    //the front function
-    //returns the highest priority elemnt of queue
-      front() 
-      { 
+        //to remove element form a queue
+        dequeue() 
+        {
         if (this.isEmpty()) 
         {
-              return "Empty Queue"; 
+            return "Underflow"; 
+        }
+        return this.items.shift(); 
+        }
+    
+        //the front function
+        //returns the highest priority elemnt of queue
+        front() 
+        { 
+        if (this.isEmpty()) 
+        {
+            return "Empty Queue"; 
         }
         return this.items[0]; 
-      } 
-    //the rear function
-    // returns the lowest priorty element of the queue 
-      rear() 
-      {  
+        } 
+        //the rear function
+        // returns the lowest priorty element of the queue 
+        rear() 
+        {  
         if (this.isEmpty()) 
-      {
+        {
             return "Empty Queue"; 
-      }
+        }
         return this.items[this.items.length - 1]; 
-      }
-    // isEmpty function 
-      isEmpty() 
-      { 
+        }
+        // isEmpty function 
+        isEmpty() 
+        { 
         return this.items.length == 0; //true if queue is empty
-      } 
-    // printQueue function 
+        } 
+        // printQueue function 
     
-      printPriorityQueue() 
-      { 
+        printPriorityQueue() 
+        { 
         var string = ""; 
         for (var i = 0; i < this.items.length; i++) 
             string += this.items[i].element + " "; 
         return string; 
-      } 
+        }
     }
-    
+
     var newPriorityQueue = new PriorityQueue();
     newPriorityQueue.enqueue("1", 1);
     newPriorityQueue.enqueue("2", 2);
