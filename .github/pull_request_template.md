@@ -2,7 +2,7 @@ Fixes # <!-- Add the issue number that is fixed by this PR (In the form Fixes #4
 
 #### Checklist:
 - [ ] 4 space indentation.
-- [ ] Coding convetions are followed.
+- [ ] Coding conventions are followed.
 - [ ] Sample Input / Output.
 - [ ] Logic Documentation (Comments).
 - [ ] File names are correct.
