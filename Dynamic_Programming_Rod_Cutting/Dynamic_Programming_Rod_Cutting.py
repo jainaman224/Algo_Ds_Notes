@@ -44,4 +44,8 @@ print("Maximum Money : " + str(money(arr, size)))
 
 # Output
 
+<<<<<<< HEAD
 # Maximum Money : 24
+=======
+# Maximum Money : 24
+>>>>>>> 178cbae9c8c7565ddbcfda39cd69422482d415f2

@@ -31,6 +31,7 @@ Moreover, we will need our array of prices. The first value (for index=0) should
 profit a rod of no length. You can set the rest to any value you want, in any order. Ascending order makes 
 intuitive sense; as the length increases so does the price. You don’t have to follow intuition though; 
 be a rebel! (although another order might produce weird or trivial results)
+<<<<<<< HEAD
 <br><br>
 Lastly, we need to print the solution. For that, we call the function SellRod(n).
 
@@ -72,3 +73,6 @@ def SellRod(n,prices):
         solutions[n] = maxProfit
         return maxProfit
 ```
+=======
+
+>>>>>>> 178cbae9c8c7565ddbcfda39cd69422482d415f2
