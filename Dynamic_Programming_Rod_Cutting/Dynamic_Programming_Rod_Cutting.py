@@ -1,68 +1,47 @@
-'''Function to calculate maximum profit'''
-def SellRod(n,prices):
-    if(n == 1):
-         #base case
-         return prices[1]
+INT_MIN = -32767
 
-    #The profit if you sell the rod as is  
-    noCut = prices[n]
-    
-    #The prices for the different cutting options, set to -1.
-    yesCut = [-1 for x in range(n)]
 
-    for i in range(1, n):
-        if(solutions[i] == -1):
-        
-          '''We haven't calulated solution for length i yet.
-             We know we sell the part of length i,
-             so we get prices[i].
-             We just need to know how to sell rod of length n-i.'''
-            yesCut[i] = prices[i] + SellRod(n-i)
-            
-        else:
-        
-         '''We have calculated solution for length i.
-            We add the two prices.'''
-            yesCut[i] = prices[i] + solutions[n-i]
-        
-     '''We need to find the highest price in order
-        to sell more efficiently.
-        We have to choose between noCut and
-        the prices in yesCut.'''
-        
-        maxProfit = noCut #Initialize max to noCut
-        for i in range(n):
-            if(yesCut[i] > maxProfit):
-                maxProfit = yesCut[i]
-        
-        solutions[n] = maxProfit
-        return maxProfit
 
-    
-'''Driver Program to test the above function
-   
-   Input
-   
-        n : size of price array - 1
-   prices : Price array
-   
-   
-   Output
-      return : maximum profit    '''
+# Function for money calculation
 
-n = 8
-prices = [1, 5, 8, 9, 10, 17, 17, 20] 
-solutions = [-1 for x in range(size+1)]
-print("Maximum profit is", SellRod(size-1,))
+def money(price, n):
 
-'''Output
-  Maximum profit is 30 '''
+    val = [0 for x in range(n+1)]
 
-      
-      
-      
-   
-   
-   
-    
-    
+    val[0] = 0
+
+
+
+    for i in range(1, n+1):
+
+        max_val = INT_MIN
+
+        for j in range(i):
+
+             max_val = max(max_val, price[j] + val[i-j-1])
+
+        val[i] = max_val
+
+
+
+    return val[n]
+
+
+
+# Testing the function
+
+arr = [3, 5, 8, 9, 10, 17, 17, 20]
+
+size = len(arr)
+
+
+
+print("Maximum Money : " + str(money(arr, size)))
+
+
+
+
+
+# Output
+
+# Maximum Money : 24
