@@ -77,8 +77,7 @@ class Queen
             for(j=0;j<N;j++)
                 System.out.print(board[i][j]+"\t");
             System.out.print("\n");
-        }
-        
+        }       
     }
 }
 

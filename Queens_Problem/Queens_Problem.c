@@ -84,7 +84,6 @@ int main()
             printf("%d\t",board[i][j]);
         printf("\n");
     }
-
 }
 
 // Enter the value of N for NxN chessboard
