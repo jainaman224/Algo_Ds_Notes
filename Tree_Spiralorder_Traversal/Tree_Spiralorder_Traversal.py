@@ -1,5 +1,5 @@
 '''
- Spiral Order Traversal of a tree is level order traversal where levels are explored in zig-zag manner i.e. all nodes present at level 1 should be printed first from left to right, followed by nodes of level 2 right to left, followed by nodes of level 3 from left to right and so on.
+Spiral Order Traversal of a tree is level order traversal where levels are explored in zig-zag manner i.e. all nodes present at level 1 should be printed first from left to right, followed by nodes of level 2 right to left, followed by nodes of level 3 from left to right and so on.
 '''
 
 import queue
@@ -55,13 +55,13 @@ def SpiralOrderTraversal(root):
     # Iterate over the map keys i.e 0, 1, 2, 3
     level = 0
     for key, value in enumerate(sorted(mp)):
-		# when level is even, print elements of vector from left to right
+	# when level is even, print elements of vector from left to right
         if level%2==0:
             for i in mp[value]: 
                 print(i,end=" ")
             print()
         else:
-		# when level is odd, print elements of vector in from right to left
+	# when level is odd, print elements of vector in from right to left
             for i in range(len(mp[value])-1, -1, -1): 
                 print(mp[value][i],end=" ")
             print()
@@ -69,17 +69,7 @@ def SpiralOrderTraversal(root):
         level =  level + 1
         
 # Driver Function
-'''
-Contructing Binary Tree as:
-            1
-         /     \
-        2       3
-      /   \   /   \
-    4      5 6     7
-         /   \
-        /      \
-       8        9
-'''
+# Creating and Inserting nodes in Binary Tree
 root = Node(1)
 root.left = Node(2)
 root.right = Node(3)
@@ -93,6 +83,15 @@ root.left.right.right = Node(9)
 SpiralOrderTraversal(root)
 
 '''
+Input Graph:
+            1
+         /     \
+        2       3
+      /   \   /   \
+    4      5 6     7
+         /   \
+        /      \
+       8        9
 Output:
 Spiral Order Traversal of Tree: 
 1 
