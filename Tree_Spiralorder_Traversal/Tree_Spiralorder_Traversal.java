@@ -1,5 +1,4 @@
-/* Spiral Order Traversal of a tree is level order traversal where levels are explored in zig-zag manner i.e. all nodes present at level 1 should be printed first from left to right, followed by nodes of level 2 right to left, followed by nodes of level 3 from left to right and so on.
-*/
+/* Spiral Order Traversal of a tree is level order traversal where levels are explored in zig-zag manner i.e. all nodes present at level 1 should be printed first from left to right, followed by nodes of level 2 right to left, followed by nodes of level 3 from left to right and so on. */
 
 import java.util.*;
 
@@ -79,7 +78,7 @@ class Tree_Spiralorder_Traversal
         for (Map.Entry<Integer, ArrayList<Integer> > entry : mp.entrySet())
         {
             row = entry.getValue();
-			// when level is even, print elements of vector from left to right
+	    // when level is even, print elements of vector from left to right
             if(level%2 == 0)
             {
                 for (int i = 0; i < row.size(); i++)
@@ -88,7 +87,7 @@ class Tree_Spiralorder_Traversal
             }
             else
             {
-				 // when level is odd, print elements of vector in from right to left
+	     // when level is odd, print elements of vector in from right to left
                 for (int i = row.size()-1; i >= 0; i--)
                     System.out.print(row.get(i)+" ");
                 System.out.println();  
@@ -101,16 +100,7 @@ class Tree_Spiralorder_Traversal
     // Driver Function
     public static void main(String args[]) 
     {
-        /* Contructing Binary Tree as:
-                1
-             /     \
-            2       3
-          /   \   /   \
-        4      5 6     7
-             /   \
-            /     \
-           8        9
-        */
+        // Creating and Inserting nodes in Binary Tree
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
@@ -127,7 +117,17 @@ class Tree_Spiralorder_Traversal
     }
 }
 
-/*  Output:
+/*  Input Graph:
+                1
+             /     \
+            2       3
+          /   \   /   \
+        4      5 6     7
+             /   \
+            /     \
+           8        9
+    
+    Output:
     Spiral Order Traversal of Tree: 
     1 
     3 2 
