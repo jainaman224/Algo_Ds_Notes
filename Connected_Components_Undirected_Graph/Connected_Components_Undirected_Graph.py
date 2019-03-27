@@ -1,12 +1,13 @@
 
 class Graph:
-	# class init function 
-	def __init__(self,nodes):
-		self.Nodes = nodes
-		self.adj = [[] for i in range(nodes)]
+	
+    # class init function 
+    def __init__(self,nodes):
+        self.Nodes = nodes
+        self.adj = [[] for i in range(nodes)]
 
-	# function to add Edge in the graph
-	def addEdge(self, u, v):
+    # function to add Edge in the graph
+    def addEdge(self, u, v):
 		# as it is a undirected graph
 		self.adj[u].append(v)
 		self.adj[v].append(u)
@@ -18,7 +19,6 @@ class Graph:
 		print(vertex,end=" ")
 
 		for i in range(len(self.adj[vertex])):
-
 			if not visited[ self.adj[vertex][i] ]:
 				self.DFS(self.adj[vertex][i], visited)
 				
@@ -37,20 +37,19 @@ class Graph:
 				connected_components += 1
 				
 def main():
-	# create a graph with 6 nodes vertices numbered from 
-	# 0 to 5
+    # create a graph with 6 nodes vertices numbered from 
+    # 0 to 5
 	# 	
 	# 	0---3  1--4
 	# 	|	   |
 	# 	2 	   5
 
-	nodes = 6
+    nodes = 6
 	graph = Graph(nodes)
 	graph.addEdge(0,2)
 	graph.addEdge(3,0)
 	graph.addEdge(1,4)
 	graph.addEdge(5,1)
-
 	graph.connectedComponents()
 
 if __name__ == "__main__":
