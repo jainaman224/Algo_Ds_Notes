@@ -6,6 +6,11 @@
 int main()
 {
     int r, c, a[100][100], b[100][100], sum[100][100], i, j;
+    
+    /* a[100][100], b[100][100] denotes 1st matrix & 2nd matrix
+       respectively which we want to add and sum[100][100]
+       is 3rd matrix which is the addition of both the matrix 
+       1st and 2nd */
 
     printf("Enter number of rows (between 1 and 100)");
     scanf("%d",&r);
