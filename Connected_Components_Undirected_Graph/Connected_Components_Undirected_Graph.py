@@ -49,8 +49,7 @@ def main():
     graph.addEdge(0,2)
     graph.addEdge(3,0)
     graph.addEdge(1,4)
-	graph.addEdge(5,1)
-
+    graph.addEdge(5,1)
     graph.connectedComponents()
 
 if __name__ == "__main__":
