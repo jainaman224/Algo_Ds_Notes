@@ -1,5 +1,6 @@
 import java.io.*; 
 import java.util.*; 
+
 public class CycleSort   
 {  
 static void sort(int a[], int n)  
@@ -38,6 +39,7 @@ for (start = 0; start &lt;= n - 2; start++) {
 }  
 
 }
+
 public static void main(String[] args)
 {
 int a[] = { 12, 2, 1, 9, -4, 2, 4, 4};
@@ -48,3 +50,4 @@ for (i = 0; i < n; i++)
 System.out.println(a[i]);
 }
 }
+

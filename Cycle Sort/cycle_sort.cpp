@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<iostream>
 using namespace std;
+
 void sort(int a[], int n)  
 {  
     int writes = 0,start,element,pos,temp,i;
@@ -70,3 +71,4 @@ a[6] :4
 a[7] :4                                                                                                                 
 After sort, array :                                                                                                     
 -4 1 2 2 4 4 9 12 
+
