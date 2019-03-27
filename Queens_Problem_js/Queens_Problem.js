@@ -1,4 +1,4 @@
-/* N-Queen's Problem
+/* Queens_Problem_js
 * Language: JavaScript
 */
 
