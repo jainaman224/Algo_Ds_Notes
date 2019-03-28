@@ -4,9 +4,9 @@
 
 #include <stdio.h>
  
-int main () {
- 
-	static int ma[10][10],mb[10][10];
+int main () 
+{
+    static int ma[10][10],mb[10][10];
  
 	int i,j,k,a,m,n;
  
@@ -119,9 +119,6 @@ int main () {
 	}
  
 }
- 
-/*End of main() */
-
 /*
 Input:
 Enter the order of the matrix
