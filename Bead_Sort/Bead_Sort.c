@@ -15,7 +15,7 @@ void bead_sort(int *a, int len)
     /* mark the beads */
     for (i = 0; i < len; i++)
         for (j = 0; j < a[i]; j++)
-			BEAD(i, j) = 1;
+            BEAD(i, j) = 1;
  
     for (j = 0; j < max; j++) {
         /* count how many beads are on each post */
@@ -28,8 +28,8 @@ void bead_sort(int *a, int len)
     }
  
     for (i = 0; i < len; i++) {
-		for (j = 0; j < max && BEAD(i, j); j++);
-		a[i] = j;
+        for (j = 0; j < max && BEAD(i, j); j++);
+        a[i] = j;
     }
     free(beads);
 }
@@ -42,7 +42,7 @@ int main()
     bead_sort(x, len);
     printf("The sorted array is:\n");
     for (i = 0; i < len; i++)
-		printf("%d\n", x[i]); 
+        printf("%d\n", x[i]); 
     return 0;
 }
 
