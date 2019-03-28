@@ -3,11 +3,11 @@
 //uses 1-based indexing for vertices
 #include<stdio.h>
 #include<stdlib.h>
-
+#define MAX 1000
 //inititation of data structures
-int queue[1000];//the queue array
-int graph[1000][1000];//the graph 2-D array
-int state[1000]; //array that stores 1 for visited nodes(black), 0 for unvisited nodes(white)
+int queue[MAX];//the queue array
+int graph[MAX][MAX];//the graph 2-D array
+int state[MAX]; //array that stores 1 for visited nodes(black), 0 for unvisited nodes(white)
 
 int n; //no of vertices in the graph 
 
