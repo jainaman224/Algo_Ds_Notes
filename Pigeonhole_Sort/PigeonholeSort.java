@@ -1,26 +1,27 @@
 public class PigeonholeSort{
-         // Method for getting the maximum value
-         public static int getMax(int[] inputArray){ 
-                  int maxValue = inputArray[0]; 
-                  for(int i=1;i < inputArray.length;i++){ 
-                        if(inputArray[i] > maxValue){ 
-                            maxValue = inputArray[i]; 
+    // Method for getting the maximum value
+    public static int getMax(int[] inputArray){ 
+                int maxValue = inputArray[0]; 
+                for(int i=1;i < inputArray.length;i++){ 
+                    if(inputArray[i] > maxValue){ 
+                         maxValue = inputArray[i]; 
                    } 
               } 
-                 return maxValue; 
+                return maxValue; 
           }
  
-      // Method for getting the minimum value
-      public static int getMin(int[] inputArray){ 
+    // Method for getting the minimum value
+    public static int getMin(int[] inputArray){ 
               int minValue = inputArray[0]; 
               for(int i=1;i<inputArray.length;i++){ 
                   if(inputArray[i] < minValue){ 
                       minValue = inputArray[i]; 
                       } 
                 } 
-                return minValue; 
+              return minValue; 
            } 
-        public static void sort(int[] input)
+    
+    public static void sort(int[] input)
         {
             //calculate size for array( no of pigeon holes)
             int max_no = getMax(input);
@@ -39,13 +40,14 @@ public class PigeonholeSort{
                 input[index++] = j + min_no; 
          }
      
-     public static void main(String []args){
-        System.out.println("Hello World");
-        int[] test = {1,4,32,2};
-        
-        sort(test);
-        for(int i=0;i<test.length;i++)
-        System.out.print(test[i] + " ");
+    public static void main(String []args)
+      {
+             System.out.println("Hello World");
+             int[] test = {1,4,32,2};
+
+             sort(test);
+             for(int i=0;i<test.length;i++)
+             System.out.print(test[i] + " ");
      }
 }
 //input = 1,4,32,2
