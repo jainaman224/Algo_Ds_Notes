@@ -29,3 +29,5 @@ int main()
 		printf ("%d ",prefixsum[i]);
 	printf("\n");
 }
+/* OUTPUT
+1 3 6 10 15 */
