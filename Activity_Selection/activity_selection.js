@@ -6,17 +6,17 @@ at a time." The Activity Selection problem follows a Greedy approach.
 // Function to compute the activities to be chosen
 var activitySelection = function(start, finish, length) 
 {
-  i = 0;
-  console.log( i + " ");
-   // if start time of current activity j is greater than or equal to previous activity chosen, select activity j
-  for(var j = 1; j < length; j++) 
-  {
-    if(start[j] >= finish[i]) 
-	{
-      console.log( j + " ");
-      i = j;
+    i = 0;
+    console.log( i + " ");
+    // if start time of current activity j is greater than or equal to previous activity chosen, select activity j
+    for (var j = 1; j < length; j++) 
+    {
+        if (start[j] >= finish[i]) 
+        {
+            console.log( j + " ");
+            i = j;
+        }
     }
-  }
 }
 
 // The array of n elements where start[i] denotes starting time of ith activity	
