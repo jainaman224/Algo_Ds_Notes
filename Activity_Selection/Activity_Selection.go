@@ -1,35 +1,49 @@
+/*
+The problem statement for Activity Selection is that "Given a set of n activities with their start and finish times, we need to select maximum number of non-conflicting activities that can be performed by a single person, given that the person can handle only one activity
+at a time." The Activity Selection problem follows a Greedy approach.
+*/
+
 package main
 
 import (
-	"fmt"
-	"strconv"
+    "fmt"
 )
 
-// this algorithm is from wikipage(https://en.wikipedia.org/wiki/Activity_selection_problem)
-func activitySelection(startTime []int, finishTime []int) {
-	// second step is to print first activity from sorted activity
-	fmt.Println("activity 1")
-	// do following in sorted activities:
-	// If the start time of this activity is greater than the finish time of previously
-	// selected activity then select this activity and print it
-	preSelected := 0
-	for i := 1; i < len(finishTime); i++ {
-		if startTime[i] > finishTime[preSelected] {
-			fmt.Println("activity", strconv.Itoa(i + 1))
-			preSelected = i
-		}
-	}
+// Function to compute the activities to be chosen
+func activitySelection(start []int, finish []int, size int) {
+    // second step is to print first activity from sorted activity
+    i := 0
+    fmt.Println("Following activities are selected: ")
+    fmt.Printf("%d ", i)
+    // do following in sorted activities:
+    // If the start time of this activity is greater than the finish time of previously
+    // selected activity then select this activity and print it
+    for j := 1; j < size; j++ {
+        if start[j] >= finish[i] {
+            fmt.Printf("%d ", j)
+            i = j
+        }
+    }
 }
 
+// Driver function
 func main() {
-	// first step is to sort activities by finish time, in order to save time,
-	// we use an sorted finishTime  array
-	startTime := []int{1, 3, 1, 5, 8, 6}
-	finishTime := []int{2, 6, 6, 7, 10, 8}
-	activitySelection(startTime, finishTime)
+    // The array of n elements where start[i] denotes starting time of ith activity    
+    start := []int{1, 3, 1, 5, 6, 8}
+    // The array of n elements where finish[i] denotes finish time of ith activity    
+    finish := []int{2, 6, 6, 7, 8, 10}
+    size := len(finish)
+    activitySelection(start, finish, size)
 }
 
-// Output
-// activity 1
-// activity 2
-// activity 5
+/*
+Input:
+Start
+1 3 1 5 6 8
+Finish
+2 6 6 7 8 10
+
+Output:
+Following activities are selected
+ 0 1 4 5
+*/
