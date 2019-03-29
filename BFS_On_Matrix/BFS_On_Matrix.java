@@ -19,7 +19,7 @@ class Node
     }
 };
 
-class Matrix_Shortest_Path
+class BFS_On_Matrix
 {
     private static final int INF = 10000;
     // Function to compute minimum distance between source and destination using BFS
@@ -140,7 +140,7 @@ class Matrix_Shortest_Path
                         {1, 1, 0, 0, 1} };
     
         // Call to function to compute distance between source and destination
-        Matrix_Shortest_Path obj = new Matrix_Shortest_Path();
+        BFS_On_Matrix obj = new BFS_On_Matrix();
         int answer = obj.findDistance(row, col, mat);
 
         // When source and destination are unreachable
