@@ -6,7 +6,8 @@
  
 int main () 
 {
-    static int ma[10][10],mb[10][10];
+    
+	static int ma[10][10],mb[10][10];
  
 	int i,j,k,a,m,n;
  
