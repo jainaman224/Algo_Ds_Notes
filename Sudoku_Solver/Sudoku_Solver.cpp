@@ -62,32 +62,34 @@ bool can_solve(int sudoku[][9])
 
 void print_sudoku(int sudoku[][9])
 {
-	cout<<"solved sudoku is : "<<endl;
-	for(int i=0;i<9;i++)
+    cout<<"solved sudoku is : "<<endl;
+    for(int i=0;i<9;i++)
+    {
+	for(int j=0;j<9;j++)
 	{
-		for(int j=0;j<9;j++)
-			cout<<sudoku[i][j]<<" ";
-		cout<<endl;
+	    cout<<sudoku[i][j]<<" ";
 	}
+	cout<<endl;
+    }
     return;
 }
 
 int main()
 {
-	int sudoku[9][9];
-	cout<<"Provide the sudoku \n\'0\' represents blank space "<<endl;
-	for(int i=0;i<9;i++)
-	{
-		for(int j=0;j<9;j++)
+    int sudoku[9][9];
+    cout<<"Provide the sudoku \n\'0\' represents blank space "<<endl;
+    for(int i=0;i<9;i++)
+    {
+	for(int j=0;j<9;j++)
         {
-			cin>>sudoku[i][j];
+	    cin>>sudoku[i][j];
         }
-	}
+    }
     if(can_solve(sudoku))
         print_sudoku(sudoku);
     else
         cout<<"Can't solve this sudoku \n";
-	return 0;
+    return 0;
 }
 
 /*
@@ -108,3 +110,4 @@ sample input :
 this code is written by raghav dalmia
 wwww.github.com/raghav-dalmia
 */
+
