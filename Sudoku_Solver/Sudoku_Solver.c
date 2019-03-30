@@ -64,15 +64,15 @@ bool can_solve(int board[][9])
 void print_sudoku(int sudoku[][9])
 {
     int i,j;
-	printf("solved sudoku is : \n");
-	for(i=0;i<9;i++)
+    printf("solved sudoku is : \n");
+    for(i=0;i<9;i++)
+    {
+        for(j=0;j<9;j++)
 	{
-	    for(j=0;j<9;j++)
-		{
-            printf("%d ", sudoku[i][j]);
-		}
-		printf("\n");
+	    printf("%d ", sudoku[i][j]);
 	}
+	printf("\n");
+    }
     return;
 }
 
