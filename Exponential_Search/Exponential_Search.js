@@ -1,5 +1,4 @@
 
-  
 // A recursive binary search function. 
 function binSearch(arr, left, right, x) 
 { 
@@ -38,17 +37,17 @@ function exponentialSearch(arr, size, x)
     return binSearch(arr, i/2, min(i, size), x); 
 } 
   
-// Driver code 
+// Sample Input 
 a = [2, 3, 14, 20, 40]; 
+x = 10;
+
+// Driver Code
 n = sizeof(arr)/ sizeof(arr[0]); 
-x = 10; 
 result = exponentialSearch(arr, n, x); (result == -1)? printf("Element is not present in array") : printf("index %d", result); 
 
 
 
-/* OUTPUT :
-
-index 3
-
+/* Sample Output :
+   index 3
 */
 
