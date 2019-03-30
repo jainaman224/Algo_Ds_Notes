@@ -25,12 +25,14 @@ func main() {
 		fmt.Println("Not possible")
 	}
 }
-//checking if there is a queen in row or column
+//checks whether this cell can be attacked by other queens or not
 func isAttacked(board *[][]int, x, y, boardSize int) bool {
 	for i := 0; i < boardSize; i++ {
+		//checking if there is a queen in row
 		if (*board)[x][i] == 1 {
 			return true
 		}
+		//checking if there is a queen in column
 		if (*board)[i][y] == 1 {
 			return true
 		}
