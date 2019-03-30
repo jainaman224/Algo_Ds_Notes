@@ -16,15 +16,24 @@ Graph and a source vertex src
 Shortest distance to all vertices from src. If there is a negative weight cycle, then shortest distances are not calculated, negative weight cycle is reported.
 
 #### Following are the detailed steps.
-* This step initializes distances from source to all vertices as infinite and distance to source itself as 0. Create an array dist[] of size |V| with all values as infinite except dist[src] where src is source vertex.
+
+* This step initializes distances from source to all vertices as infinite and distance to source itself as 0. 
+Create an array dist[] of size |V| with all values as infinite except dist[src] where src is source vertex.
 
 * This step calculates shortest distances. Do following |V|-1 times where |V| is the number of vertices in given graph.
-…..a) Do following for each edge u-v
-………………If dist[v] > dist[u] + weight of edge uv, then update dist[v]
-………………….dist[v] = dist[u] + weight of edge uv
+  
+  a) Do following for each edge u-v
+  
+      If dist[v] > dist[u] + weight of edge uv, then update dist[v]
+  
+      dist[v] = dist[u] + weight of edge uv
 
 * This step reports if there is a negative weight cycle in graph. Do following for each edge u-v
-……If dist[v] > dist[u] + weight of edge uv, then “Graph contains negative weight cycle”
+    
+       If dist[v] > dist[u] + weight of edge uv, 
+      
+      then “Graph contains negative weight cycle”
+
 The idea of step 3 is, step 2 guarantees shortest distances if graph doesn’t contain negative weight cycle. If we iterate through all edges one more time and get a shorter path for any vertex, then there is a negative weight cycle
 
 ## Pseudocode
