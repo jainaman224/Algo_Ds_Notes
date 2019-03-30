@@ -13,7 +13,7 @@ func main() {
 		board[i] = make([]int, boardSize)
 	}
 
-	if PlaceQueen(&board, boardSize) {
+	if placeQueen(&board, boardSize) {
 		for i := 0; i < boardSize; i++ {
 			for j := 0; j < boardSize; j++ {
 				fmt.Printf("%d ", board[i][j])
@@ -45,7 +45,7 @@ func isAttacked(board *[][]int, x, y, boardSize int) bool {
 }
 
 // PlaceQueen place queens on the board and will return true if it is possible to place all the queens else false
-func PlaceQueen(board *[][]int, boardSize int) bool {
+func placeQueen(board *[][]int, boardSize int) bool {
 	if boardSize == 0 {
 		return true
 	}
@@ -53,7 +53,7 @@ func PlaceQueen(board *[][]int, boardSize int) bool {
 		for j := 0; j < len(*board); j++ {
 			if !(isAttacked(board, i, j, len(*board))) {
 				(*board)[i][j] = 1
-				if PlaceQueen(board, boardSize-1) {
+				if placeQueen(board, boardSize-1) {
 					return true
 				}
 				(*board)[i][j] = 0
@@ -62,3 +62,13 @@ func PlaceQueen(board *[][]int, boardSize int) bool {
 	}
 	return false
 }
+
+//OUTPUT
+//1 0 0 0 0 0 0 0
+// 0 0 0 0 1 0 0 0
+// 0 0 0 0 0 0 0 1
+// 0 0 0 0 0 1 0 0
+// 0 0 1 0 0 0 0 0
+// 0 0 0 0 0 0 1 0
+// 0 1 0 0 0 0 0 0
+// 0 0 0 1 0 0 0 0
