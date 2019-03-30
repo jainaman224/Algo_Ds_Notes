@@ -47,8 +47,4 @@ else:
 
 
 # OUTPUT :
-
 ##  index 3
-
-
-  
