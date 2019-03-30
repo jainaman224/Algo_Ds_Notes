@@ -12,19 +12,19 @@ Pigeonhole sorting is a sorting algorithm that is suitable for sorting lists of 
 
  ## Pseudocode
 
-```` find max and min from the array list
+    find max and min from the array list
      holeRange := max – min +1
-   define holeRange number of Lists
+    define holeRange number of Lists
 
-   for i := 0 to n-1 do
+    for i := 0 to n-1 do
       hole[array[i]-min].append(array[i])
    
-   count := 0
-   for j := 0 to holeRange-1 do
+    count := 0
+    for j := 0 to holeRange-1 do
       while hole[j] is not empty do
          array[count] := get first node of hole[j] and delete it
          count := count +1  
-````
+
 ## Time complexity
 
 It requires O(n + Range) time where n is number of elements in input array and ‘Range’ is number of possible values in array.
