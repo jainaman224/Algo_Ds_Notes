@@ -5,17 +5,17 @@
 /*To check if the queen is under attack, sideways or diagonally*/
 const underAttack = (board, row, col) => {
 
-//Checks the left side of the board
+    //Checks the left side of the board
     for(let j = 0; j < col; j++){
         if(board[row][j])
             return true;
     }
-//Checks the diagonals in the upper part of left side
+    //Checks the diagonals in the upper part of left side
     for(let i = row, j = col; i >= 0 && j >= 0; i--, j--){
         if(board[i][j])
             return true;
     }
- //Checks the diagonals n the lower part of the left side
+    //Checks the diagonals n the lower part of the left side
     for(let i = row, j = col; i < board[0].length && j >= 0; i++, j--){
         if(board[i][j])
             return true;
