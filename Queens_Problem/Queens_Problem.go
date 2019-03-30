@@ -25,7 +25,7 @@ func main() {
 		fmt.Println("Not possible")
 	}
 }
-
+//checking if there is a queen in row or column
 func isAttacked(board *[][]int, x, y, boardSize int) bool {
 	for i := 0; i < boardSize; i++ {
 		if (*board)[x][i] == 1 {
@@ -34,6 +34,7 @@ func isAttacked(board *[][]int, x, y, boardSize int) bool {
 		if (*board)[i][y] == 1 {
 			return true
 		}
+		//checking for diagonals
 		for j := 0; j < boardSize; j++ {
 			if (i-j == x-y) || (i+j == x+y) {
 				if (*board)[i][j] == 1 {
