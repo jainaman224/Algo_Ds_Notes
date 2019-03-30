@@ -30,6 +30,6 @@ public class Solution {
 }
 /*
 Input : array = {3,2,4,6,7}
-Output: The prefix array is: 
+Output: The prefix sum array is: 
         3 5 9 15 22 
 */

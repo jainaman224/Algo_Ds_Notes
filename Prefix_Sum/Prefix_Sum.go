@@ -22,15 +22,14 @@ func prefix_sum(array []int, length int){
         fmt.Print(prefix_array[i]," ")
     }
 }
-/*
-Input : array = {3,2,4,6,7}
-Output: The prefix sum array is: 
-        3 5 9 15 22 
-*/
 
 func main() {
     var length = 5
     var array = []int{3,2,4,6,7}
     prefix_sum(array, length)
 }
-
+/*
+Input : array = {3,2,4,6,7}
+Output: The prefix sum array is: 
+        3 5 9 15 22 
+*/
