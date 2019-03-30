@@ -8,13 +8,6 @@
 
 */
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-import java.awt.Point;
-
 public class Solution {
     /*
     The idea is to iterate over all the characters of the string and checking in 
@@ -74,7 +67,7 @@ public class Solution {
     }
 }
 /*
-Input : starting_player = 0,
-        piles = {3,4,1,7,6}
-Output: Player 0 will win.
+    Input : str = "algorithmhtirrithm"
+    Output: The longest palindromic substring is: mhtirrithm
+    Verification : algorith[mhtirrithm] this is a substring with length 10 and also a palindrome.
 */
