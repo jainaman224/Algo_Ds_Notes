@@ -5,7 +5,8 @@ package main
 import "fmt"
 
 func main() {
-	boardSize := 8 // size of chess board (8 x 8)
+	var boardSize int
+  	fmt.Scan(&boardSize)
 
 	// make board
 	board := make([][]int, boardSize)
