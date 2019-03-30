@@ -33,19 +33,19 @@ function NQueens(board, col){
     for(let i = 0; i < board.length; i++){
         if(!underAttack(board, i, col)){
 
-        //Placing the queens in the correct position
-        board[i][col] = 'Q';
+    //Placing the queens in the correct position
+    board[i][col] = 'Q';
 
-        //Recursive call to place rest of the queens
-        if(NQueens(board, col + 1)){
-            return true;
-        }
-
-        //Backtracking
-        board[i][col] = 0;
+    //Recursive call to place rest of the queens
+    if(NQueens(board, col + 1)){
+        return true;
     }
-}
-return false;
+
+    //Backtracking
+    board[i][col] = 0;
+        }
+    }
+    return false;
 }
 
 //To place queens in the correct positions
