@@ -8,6 +8,8 @@ void main()
 	int gdriver=DETECT,gmode,errorcode;
 	initgraph(&gdriver,&gmode,"");
 
+	//x1 and y1 are initial coordinates of line
+	//x2 and y2 are final coordinates of line
 	float x1,x2,y1,y2;
 
         cout<<"Enter the starting coordinates of line = ";
@@ -39,4 +41,6 @@ void main()
 	closegraph();
 
 }
+
+//Sample output - https://ibb.co/3mqM8MK
 
