@@ -30,6 +30,7 @@ bool is_possible(int sudoku[][9],int row,int col,int num)
     }
     return true;
 }
+
 bool solve_sudoku(int sudoku[][9],int row,int col)
 {
     int i;
@@ -54,6 +55,7 @@ bool solve_sudoku(int sudoku[][9],int row,int col)
     else
         return solve_sudoku(sudoku,row,col+1);
 }
+
 bool can_solve(int board[][9])
 {
     return solve_sudoku(board,0,0); 
@@ -73,7 +75,6 @@ void print_sudoku(int sudoku[][9])
 	}
     return;
 }
-
 
 void main()
 {
@@ -112,6 +113,7 @@ sample input :
 this code is written by raghav dalmia
 wwww.github.com/raghav-dalmia
 */
+
 
 
 
