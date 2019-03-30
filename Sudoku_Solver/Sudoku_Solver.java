@@ -1,5 +1,4 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
 
@@ -75,13 +74,13 @@ public class Main {
 
     public static void main(String[] args) {
         int [][]sudoku = new int[9][9];
-        col_num_of_boxanner col_num_of_box = new col_num_of_boxanner(System.in);
+        scanner sc = new scanner(System.in);
         System.out.print("Provide the sudoku \n\'0\' represents blank space \n");
         for(int i=0;i<9;i++)
         {
             for (int j=0;j<9;j++)
             {
-                int temp_num = col_num_of_box.nextInt();
+                int temp_num = sc.nextInt();
                 sudoku[i][j] = temp_num;
             }
         }
@@ -110,3 +109,5 @@ sample input :
 this code is written by raghav dalmia
 wwww.github.com/raghav-dalmia
 */
+
+
