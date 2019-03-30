@@ -39,7 +39,8 @@ class exponentialSearch {
 
     // Driver code 
     public static void Main() 
-    { 
+    { 	  
+	 // Sample Input
          int []input = {2, 3, 14, 20, 40}; 
          int n = input.Length; 
          int x = 20; 
@@ -52,9 +53,7 @@ class exponentialSearch {
 } 
 
 
-/* OUTPUT :
-
+/* Sample Output :
     index 3
-
 */
 
