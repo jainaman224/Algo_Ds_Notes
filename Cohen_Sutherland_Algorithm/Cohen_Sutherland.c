@@ -194,4 +194,3 @@ Point resetendpt(Point p1, Point p2)
 
 // Output after line clipping:
 // https://drive.google.com/file/d/1IcQmUDupNMYwKcInY33IefuGn0Snei63/view?usp=sharing
-
