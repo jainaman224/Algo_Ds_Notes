@@ -31,48 +31,4 @@ Moreover, we will need our array of prices. The first value (for index=0) should
 profit a rod of no length. You can set the rest to any value you want, in any order. Ascending order makes 
 intuitive sense; as the length increases so does the price. You don’t have to follow intuition though; 
 be a rebel! (although another order might produce weird or trivial results)
-<<<<<<< HEAD
-<br><br>
-Lastly, we need to print the solution. For that, we call the function SellRod(n).
 
-```
-def SellRod(n,prices):
-    if(n == 1):
-         #base case
-         return prices[1]
-
-    #The profit if you sell the rod as is  
-    noCut = prices[n]
-    #The prices for the different cutting options, set to -1.
-    yesCut = [-1 for x in range(n)]
-
-    for i in range(1, n):
-        if(solutions[i] == -1):
-        
-          '''We haven't calulated solution for length i yet.
-             We know we sell the part of length i,
-             so we get prices[i].
-             We just need to know how to sell rod of length n-i.'''
-            yesCut[i] = prices[i] + SellRod(n-i)
-        else:
-        
-         '''We have calculated solution for length i.
-            We add the two prices.'''
-            yesCut[i] = prices[i] + solutions[n-i]
-        
-     '''We need to find the highest price in order
-        to sell more efficiently.
-        We have to choose between noCut and
-        the prices in yesCut.'''
-        
-        maxProfit = noCut #Initialize max to noCut
-        for i in range(n):
-            if(yesCut[i] > maxProfit):
-                maxProfit = yesCut[i]
-        
-        solutions[n] = maxProfit
-        return maxProfit
-```
-=======
-
->>>>>>> 178cbae9c8c7565ddbcfda39cd69422482d415f2
