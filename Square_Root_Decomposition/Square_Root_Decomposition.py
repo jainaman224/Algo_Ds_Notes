@@ -39,10 +39,18 @@ a=[2,3,4,6,8,9,1,-1,0,3]
 blocks=formBlocks(a)
 #queries
 print(query(0,2,blocks,a))	#find sum from index 0 to index 2
+#expected output : 9
+
 print(query(3,7,blocks,a))	#find sum from index 3 to index 7
+#expected output : 23
+
 print(query(1,4,blocks,a))	#find sum from index 1 to index 4
+#expected output : 21
+
 #update 
 update(3,1,blocks,a)		#update the value at index 3 with value of 1
+
 #verify if the update was success
 print(query(1,4,blocks,a))
+#expected output : 18
 
