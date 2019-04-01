@@ -14,3 +14,8 @@ def print_activities(start , finish , n)
   end
 end
 print_activities(start, finish , n)
+=begin
+input = [1,3,1,5,8,6]
+Following activities are selected
+0 1 4
+=end
