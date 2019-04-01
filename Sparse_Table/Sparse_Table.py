@@ -52,17 +52,11 @@ Sample Input:
     Enter the number of elements:
     9
     Enter the elements:
-    1
+    1 2 3 4 5 6 7 8 9
+    Enter the query start 
     2
-    3
-    4
-    5
-    6
+    Enter the query end 
     7
-    8
-    9
-    Enter the query start: 2
-    Enter the query end: 7
 
 Sample Output:
     The element is: 3
