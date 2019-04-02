@@ -25,7 +25,7 @@ def shaker_sort(input, length)
     print(input[i].to_s + " ")
   end
 end
-input = [2,7,8,1,4,1]
+input = [2,7,8,1,4,1,3,5,6,9,9,111,222,33,55,45]
 length = input.length()
 shaker_sort(input,length)
 
