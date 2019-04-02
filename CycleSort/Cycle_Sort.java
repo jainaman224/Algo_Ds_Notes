@@ -41,11 +41,11 @@ public class CycleSort
                 pos += 1;
             // put the element to it's right position
             if (pos != start) {
-            temp = element;
-            element = a[pos];
-            a[pos] = temp;
-            writes++;
-          }
+                temp = element;
+                element = a[pos];
+                a[pos] = temp;
+                writes++;
+            }
            // Rotate rest of the cycle  
             while (pos != start) 
             {
@@ -58,10 +58,10 @@ public class CycleSort
                     pos += 1;
                 // put the item to it's right position 
                 if (element != a[pos]) {
-                temp = element;
-                element = a[pos];
-                a[pos] = temp;
-                writes++;
+                    temp = element;
+                    element = a[pos];
+                    a[pos] = temp;
+                    writes++;
                 }
             }
         }
