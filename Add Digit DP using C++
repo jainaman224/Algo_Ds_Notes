@@ -1,56 +1,73 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+const int D = 20; 
+  
+// dp states - position, count, tight
+int dp[D][D][2]; 
+  
 
-using namespace std;
-
-void add_digit_dp()
-{
-	unsigned long long int a,b,z,count=0,i,j,copy;
-	while(1)
-	{
-		cout<<"enter two numbers";
-		cin>>a>>b;
-		if(a<0 || b<0 || a>10000000000 || b>10000000000)
-			cout<<"please enter the two numbers in the range 0-10000000000";
-		else
-			break;
-    }
-	
-	//checking which number is bigger if user fails to give smaller number before bigger number	
-	if(a<b)
-	{
-		i=a;
-	    j=b;
-	}
-	else
-	{
-		i=b;
-		j=a;
-	}
-	
-	while(i<=j)
-	{
-		copy=i;
-		z=0;
-		//extracting digits of the number and checking number of non-zero digits
-		while(copy!=0)
-		{
-			
-			if((copy%10))
-				z++;
-			copy=copy/10;		
-		}
-		if(z<=7)
-		{
-			count++;
-		}
-		i++;
-    }
-    cout<<"total count="<<count;
-	
-}
-
-int main()
-{
-// this function is used to find number of integers with maximum 7 non zero digits in the range provided 
-	add_digit_dp();
-}
+// This function returns the count of required numbers from 0 to num 
+int countt(int pos, int count, int tight,vector<int> num) 
+{ 
+    // Last position 
+    if (pos == num.size()) 
+	{ 
+        if (count<=7) 
+            return 1; 
+        return 0; 
+    } 
+  
+    // If this result is already computed simply return it 
+    if (dp[pos][count][tight]!= -1) 
+        return dp[pos][count][tight]; 
+  
+    int ans = 0; 
+  
+    /* Maximum limit upto which we can place digit. If tight is 1, means number has 
+    	already become smaller so we can place any digit, otherwise num[pos] */
+    int limit = (tight ? 9 : num[pos]); 
+  
+    for (int dig = 0; dig <= limit; dig++) 
+	{ 
+        int currCnt = count; 
+        if (dig!=0) 
+		{ 
+            currCnt++; 
+        } 
+  
+        int currTight = tight; 
+  
+        // At this position, number becomes smaller 
+        if (dig < num[pos]) 
+            currTight = 1; 
+  
+        // Next recursive call 
+        ans += countt(pos + 1, currCnt,currTight, num); 
+    } 
+    return dp[pos][count][tight]= ans; 
+} 
+  
+// Function to convert x into its digit vector and uses count() function to return the required count 
+int solve(int x) 
+{ 
+    vector<int> num; 
+    while (x) { 
+        num.push_back(x % 10); 
+        x /= 10; 
+    } 
+    reverse(num.begin(), num.end()); 
+  
+    // Initializing dp 
+    memset(dp, -1, sizeof(dp)); 
+    return countt(0, 0, 0, num); 
+} 
+  
+int main() 
+{ 
+    int L,R;
+	cout<<"enter two numbers in range 1 to 10000000000:";
+	cin>>L>>R;
+    cout << solve(R) - solve(L - 1) << endl; 
+    return 0; 
+} 
