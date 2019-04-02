@@ -51,13 +51,13 @@ public class RedBlackTree{
         */
         /*
         Example of Right Rotation:
-            x                            y
-           / \                         /   \ 
-          y  t4                       z     x
-         / \      ------>>>          / \   / \
-        z  t3                       t1 t2 t3 t4
-       / \
-      t1  t2
+                x                            y
+               / \                         /   \ 
+              y  t4                       z     x
+             / \      ------>>>          / \   / \
+            z  t3                       t1 t2 t3 t4
+           / \
+          t1  t2
         */
         
         Node parent = root.parent;
@@ -109,14 +109,17 @@ public class RedBlackTree{
     public boolean isLeftChild(Node root)
     {
         Node parent= root.parent;
-        if(parent !=null){
-        if(parent.left==root){
-            return true;
+        if(parent !=null)
+        {
+            if(parent.left==root)
+            {
+                return true;
+            }
         }
-       }
         else
         {
-            return false;}
+            return false;
+        }
         return false;
     }
     public Node insert(Node root, int data)
@@ -129,12 +132,15 @@ public class RedBlackTree{
 
         // root == null means tree is empty and root.isNull signifies we have reached a null black node
         if(root == null || root.isNull)
-        {   //is parent!=null signifies we are inserting node in a non-empty tree.
+        {   
+            //is parent!=null signifies we are inserting node in a non-empty tree.
             //Thus the default color of node will be RED otherwise it will be BLACK.
-            if(parent!=null){
+            if(parent!=null)
+            {
                 return createNode(data,RED,parent);
             }
-            else{
+            else
+            {
                 return createNode(data,BLACK,null);
             }
         }
@@ -173,7 +179,8 @@ public class RedBlackTree{
         }
         //isLeft is true that means the parent of the node is the left child of its parent.
         if(isLeft)
-        {   //RED-RED CONFLICT
+        {   
+            //RED-RED CONFLICT
             Node sibling = findSiblingNode(root);
             if(root.color==RED && root.left.color==RED)
             {   
@@ -253,9 +260,12 @@ public class RedBlackTree{
         {
             return null;
         }
-        if(isLeftChild(root)) {
+        if(isLeftChild(root)) 
+        {
             return parent.right.isNull ? null : parent.right;
-        } else {
+        } 
+        else 
+        {
             return parent.left.isNull ? null : parent.left;
         }
     }
@@ -266,9 +276,7 @@ public class RedBlackTree{
             return; 
         
         printInOrder(root.left); 
-  
         System.out.print(root.data +(root.color == BLACK ? "B" : "R")+" "); 
-  
         printInOrder(root.right); 
     }
 
@@ -302,8 +310,22 @@ public class RedBlackTree{
         root = redBlackTree.insert(root, 18);
         
         redBlackTree.displayRedBlackTree(root,0);
+        /* 10 is the root node
+        OUTPUT:
+                                                                            76 R
+                                                55 B
+                                                                    50 R
+                            28 R
+                                                                    25 R
+                                                18 B
+                                                                    15 R
+        10 B
+                            5 B
+        */
         System.out.println("Inorder traversal:");
         redBlackTree.printInOrder(root);
+        /* Inorder traversal:
+           5B 10B 15R 18B 25R 28R 50R 55B 76R */
         System.out.println();
     }
 }
