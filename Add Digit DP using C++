@@ -25,7 +25,7 @@ int countt(int pos, int count, int tight,vector<int> num)
     int ans = 0; 
   
     /* Maximum limit upto which we can place digit. If tight is 1, means number has 
-    	already become smaller so we can place any digit, otherwise num[pos] */
+       already become smaller so we can place any digit, otherwise num[pos] */
     int limit = (tight ? 9 : num[pos]); 
   
     for (int dig = 0; dig <= limit; dig++) 
