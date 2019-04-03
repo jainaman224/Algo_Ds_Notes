@@ -74,19 +74,19 @@ However, in some scenarios, the number of iterations can be much lower. For cert
 
 ## Implementation
 - [C Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bellmanford_Algorithm/Bellmanford.c)
-> :rocket: [Compile Online](https://repl.it/EKfI) :rocket:
+> :rocket: [Compile Online](https://repl.it/repls/UntrueMediumLoop) :rocket:
 
 - [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bellmanford_Algorithm/Bellmanford.cpp)
-> :rocket: [Compile Online](https://repl.it/C4eS) :rocket:
+> :rocket: [Compile Online](https://repl.it/repls/AccomplishedLightpinkMapping) :rocket:
 
 - [C# Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bellmanford_Algorithm/Bellmanford.cs)
-> :rocket: [Compile Online](https://repl.it/Cx3r) :rocket:
+> :rocket: [Compile Online](https://repl.it/repls/BrilliantFabulousBytecode) :rocket:
 
 - [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bellmanford_Algorithm/Bellmanford.java)
-> :rocket: [Compile Online](https://repl.it/C4eX) :rocket:
+> :rocket: [Compile Online](https://repl.it/repls/DefenselessSpotlessFibonacci) :rocket:
 
 - [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Bellmanford_Algorithm/Bellmanford.py)
-> :rocket: [Compile Online](https://repl.it/C4eV) :rocket:
+> :rocket: [Compile Online](https://repl.it/repls/MortifiedBothKnowledge) :rocket:
 
 ## References
 * [geeksforgeeks](https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/)
