@@ -67,15 +67,16 @@ void merge_sort(int a[], int left, int right)
     } 
 } 
   
-
-
 int min_diff(int a[],int num_packets,int num_children)
 {
     int i,j,diff=0,required_diff,first=0,last=0;
+    if(num_children==0||num_packets==0)
+        return 0;
+    if(num_children>num_packets)
+        return -1;
     merge_sort(a,0,num_packets);
     required_diff=a[num_packets-1]+1;//
-
-     merge_sort(a,0,num_packets);
+    merge_sort(a,0,num_packets);
 
     for(i=0;i+num_children-1<num_packets;i++)
     {
@@ -85,13 +86,9 @@ int min_diff(int a[],int num_packets,int num_children)
             required_diff=diff;
             first=i;
             last=i+num_children-1;
-
         }
-
     }
-
     return required_diff;
-
 }
 
 int main()
@@ -100,11 +97,12 @@ int main()
     scanf("%d",&num_children);//size of group in which chocolates  needs to be distributed
     scanf("%d",&num_packets);//size of array
     int a[num_packets];
-   
     for(i=0;i<num_packets;i++)
         scanf("%d",&a[i]);//taking input for the quantity of chocolate contained in each packet
-    printf("The minimum difference of chocolates distibuted between children who got maximum and minimum is %d",min_diff(a,num_packets,num_children)) ;
-
+    if(min_diff(a,num_packets,num_children)>=0)
+         printf("The minimum difference of chocolates distributed between children who got maximum and minimum is %d",min_diff(a,num_packets,num_children)) ;
+    else
+         printf("As the number of students is less than number of packets hence no minimum difference is valid or is -1");
     return 0;
 }
 /*
@@ -113,7 +111,7 @@ int main()
     8
     3 4 1 9 56 7 9 12
 output:
-    6
+    The minimum difference of chocolates distributed between children who got maximum and minimum is 6
 
 
 */
