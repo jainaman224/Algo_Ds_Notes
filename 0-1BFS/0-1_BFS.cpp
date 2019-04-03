@@ -10,22 +10,22 @@ using namespace std;
 
 int dist[V];  // array to store the shortest distances
 // the graph stores vectors of int pairs such that graph[node].first = destination node & graph[node].second = edge weight
-vector < pair <int,int> > graph[V];
+vector < pair <int , int> > graph[V];
 deque <int> Q; // keeps track of edges during BFS
 
 //FUNCTIONS: 
 
-int distbfs(int i,int v) // returns the new distance to the destination node
+int distbfs(int i, int v) // returns the new distance to the destination node
 {
-	return dist[v] + graph[v][i].second;
+    return dist[v] + graph[v][i].second;
 }
 
 /* To print shortest distance from given source (here, 0) to 
  every other node */
 void zeroOneBFS(int source,int n) 
 { 
-	// Marking distances of all nodes from the source except itself as infinity  
-	int i=0;
+        // Marking distances of all nodes from the source except itself as infinity  
+	int i = 0;
 	while (i < n) 
 	{
 		if (i == source)
@@ -43,7 +43,7 @@ void zeroOneBFS(int source,int n)
 		int v = Q.front(); 
 		Q.pop_front(); 
 
-		for (int i=0; i<graph[v].size(); i++) 
+		for (int i = 0; i < graph[v].size(); i++) 
 		{ 
 			// checks for the shortest distance to the nodes
 			if (dist[graph[v][i].first] > distbfs(i,v)) 
@@ -62,7 +62,7 @@ void zeroOneBFS(int source,int n)
 	} 
 
 	// printing the dist array that stores the shortest distances 
-	for (int i=0; i<n; i++) 
+	for (int i = 0; i < n; i++) 
 		cout << dist[i] << endl; 
 } 
 
