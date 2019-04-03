@@ -8,14 +8,14 @@
 
 using namespace std; 
 
-int dist[V];  //array to store the shortest distances
-//the graph stores vectors of int pairs such that graph[node].first = destination node & graph[node].second = edge weight
+int dist[V];  // array to store the shortest distances
+// the graph stores vectors of int pairs such that graph[node].first = destination node & graph[node].second = edge weight
 vector < pair <int,int> > graph[V];
 deque <int> Q; // keeps track of edges during BFS
 
 //FUNCTIONS: 
 
-int distbfs(int i,int v)//returns the new distance to the destination node
+int distbfs(int i,int v) // returns the new distance to the destination node
 {
 	return dist[v] + graph[v][i].second;
 }
@@ -30,11 +30,11 @@ void zeroOneBFS(int source,int n)
 	{
 		if (i == source)
 			{
-				dist[i] = 0;//distance of source from itself is 0
+				dist[i] = 0; // distance of source from itself is 0
 				Q.push_back(i); 
 			}
 		else
-			dist[i] = INT_MAX;//other vertices
+			dist[i] = INT_MAX; // other vertices
 		i++;
 	}
 
@@ -96,7 +96,7 @@ int main()
 	int n = 9; // no of vertices
 	int e = 13; // no of edges
 	create_graph();
-	int source = 0; //start BFS from 0 
+	int source = 0; // start BFS from 0 
 	zeroOneBFS(source,n); 
 } 
 /*OUTPUT:
