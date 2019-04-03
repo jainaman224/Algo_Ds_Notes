@@ -69,11 +69,32 @@ public class CycleSort
     
     public static void main (String[]args)
     {
-        int a[] = { 12, 2, 1, 9, -4, 2, 4, 4 };
-        int n = a.length, i;
+       int n;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for(int i = 0; i < n; i++)
+            a[i] = s.nextInt();
         sort (a, n);
         System.out.println ("After sort, array : ");
-        for (i = 0; i < n; i++)
-        System.out.println (a[i]);
+        for (int j = 0; j < n; j++)
+            System.out.println (a[j]);
     }
 }
+
+/*Output:
+Enter no. of elements you want in array:5                                                                                 
+Enter all the elements:                                                                                                   
+12                                                                                                                        
+45                                                                                                                        
+-7                                                                                                                        
+0                                                                                                                         
+10                                                                                                                        
+After sort, array :                                                                                                       
+-7                                                                                                                        
+0                                                                                                                         
+10                                                                                                                        
+12                                                                                                                        
+45 */
