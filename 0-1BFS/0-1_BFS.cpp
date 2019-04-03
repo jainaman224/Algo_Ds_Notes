@@ -34,7 +34,7 @@ void zeroOneBFS(int source,int n)
 				Q.push_back(i); 
 			}
 		else
-			dist[i] = INT_MAX;
+			dist[i] = INT_MAX;//other vertices
 		i++;
 	}
 
