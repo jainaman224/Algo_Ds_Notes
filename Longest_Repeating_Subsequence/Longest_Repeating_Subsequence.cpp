@@ -6,7 +6,7 @@ int LongestRepeatingSubsequence(string str){
     int length;
     length = str.length();
 
-    //Initialize all dp elements with 0
+    // Initialize all dp elements with 0
     vector<vector<int>> dp(length+1, vector<int>(length+1, 0));
 
     for (int i=1; i<=length; i++) {
