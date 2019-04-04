@@ -1,37 +1,31 @@
 #include<stdio.h>
-#include<iostream.h>
-#include<conio.h>
 #include<stdlib.h>
 #include<graphics.h>
+
 void main()
 {
+    float x1, x2, y1, y2, dx, dy, steps, xi, yi, i;
+    //xi=x increment, yi=y increment
     int gdriver = DETECT, gmode, errorcode;
-    initgraph(&gdriver, &gmode,"");
+    initgraph(&gdriver, &gmode, "");
 
-    //x1 and y1 are initial coordinates of line
-    //x2 and y2 are final coordinates of line
-    float x1, x2, y1, y2;
+    printf("Enter the starting co-ordinates of line.");
+    scanf("%f%f%", &x1, &y1);
+    printf("Enter the ending co-ordinates of line.");
+    scanf("%f%f", &x2, &y2);
 
-    cout<<"Enter the starting coordinates of line = ";
-    cin>>x1>>y1;
-    cout<<"Enter the ending co-ordinates of line = ";
-    cin>>x2>>y2;
+    dx = x2 - x1;
+    dy = y2 - y1;
 
-    float dx = x2 - x1;
-    float dy = y2 - y1;
-
-    float steps;
     if(abs(dx)>abs(dy))
 	steps = abs(dx);
     else
 	steps = abs(dy);
 
-    float xi,yi;
-    //xi=x increment, yi=y increment
     xi = dx / steps;
     yi = dy / steps;
 
-    for(int i=1;i<steps;i++)
+    for(i=1;i<steps;i++)
     {
         putpixel(x1,y1,15);
         x1 = x1 + xi ;
