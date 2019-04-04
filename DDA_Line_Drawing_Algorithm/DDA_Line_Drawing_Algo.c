@@ -25,9 +25,9 @@ void main()
     xi = dx / steps;
     yi = dy / steps;
 
-    for(i=1;i<steps;i++)
+    for(i=1; i<steps; i++)
     {
-        putpixel(x1,y1,15);
+        putpixel(x1, y1, 15);
         x1 = x1 + xi ;
         y1 = y1 + yi;
     }
