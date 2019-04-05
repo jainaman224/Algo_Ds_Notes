@@ -57,7 +57,7 @@ void merge_sort(int a[], int left, int right)
     { 
         // Same as (l+r)/2, but avoids overflow for 
         // large l and h 
-        int m = left+(right-left)/2; 
+        int m = left + (right-left) / 2; 
   
         // Sort first and second halves 
         merge_sort(a, left, m); 
@@ -67,25 +67,25 @@ void merge_sort(int a[], int left, int right)
     } 
 } 
   
-int min_diff(int a[],int num_packets,int num_children)
+int min_diff(int a[], int num_packets, int num_children)
 {
-    int i,j,diff=0,required_diff,first=0,last=0;
-    if (num_children==0||num_packets==0)
+    int i ,j ,diff = 0 ,required_diff ,first = 0 ,last = 0;
+    if( num_children == 0 || num_packets == 0 )
         return 0;
-    if (num_children>num_packets)
+    if(num_children > num_packets)
         return -1;
-    merge_sort(a,0,num_packets);
-    required_diff=a[num_packets-1]+1;//
-    merge_sort(a,0,num_packets);
+    merge_sort(a ,0 ,num_packets);
+    required_diff = a[num_packets - 1 ] + 1;
+    merge_sort(a, 0 , num_packets);
 
-    for (i=0;i+num_children-1<num_packets;i++)
+    for(i = 0 ; i + num_children - 1 < num_packets; i++)
     {
-        diff=a[i+num_children-1]-a[i];
-        if(diff<required_diff)
+        diff = a[i + num_children - 1] - a[i];
+        if(diff < required_diff)
         {
-            required_diff=diff;
-            first=i;
-            last=i+num_children-1;
+            required_diff = diff;
+            first = i;
+            last = i + num_children - 1;
         }
     }
     return required_diff;
@@ -93,14 +93,14 @@ int min_diff(int a[],int num_packets,int num_children)
 
 int main()
 {
-    int num_packets,num_children,i,j,k;
-    scanf("%d",&num_children);//size of group in which chocolates  needs to be distributed
-    scanf("%d",&num_packets);//size of array
+    int num_packets,num_children, i, j, k;
+    scanf("%d",&num_children); //size of group in which chocolates  needs to be distributed
+    scanf("%d",&num_packets); //size of array
     int a[num_packets];
-    for (i=0;i<num_packets;i++)
+    for (i = 0 ; i < num_packets ; i++)
         scanf("%d",&a[i]);//taking input for the quantity of chocolate contained in each packet
-    if (min_diff(a,num_packets,num_children)>=0)
-         printf("The minimum difference of chocolates distributed between children who got maximum and minimum is %d",min_diff(a,num_packets,num_children)) ;
+    if (min_diff(a,num_packets,num_children) >= 0)
+         printf("The minimum difference of chocolates distributed between children who got maximum and minimum is %d" ,min_diff(a ,num_packets ,num_children)) ;
     else
          printf("As the number of students is less than number of packets hence no minimum difference is valid or is -1");
     return 0;
