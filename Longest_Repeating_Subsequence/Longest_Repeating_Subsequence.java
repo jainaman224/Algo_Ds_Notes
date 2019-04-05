@@ -1,6 +1,6 @@
 public class Longest_Repeating_Subsequence {
     
-    static int LongestRepeatingSubsequence(String str){ 
+    static int LongestRepeatingSubsequence(String str) { 
         int length;
         length = str.length();
 
@@ -14,7 +14,7 @@ public class Longest_Repeating_Subsequence {
                 // then dp of present state is dp of previous state plus 1
                 if(i != j && str.charAt(i-1) == str.charAt(j-1))
                     dp[i][j] = dp[i-1][j-1] + 1;
-                else{
+                else {
 
                     // Else maximum of just vertically above or horizontally left element
                     dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
@@ -26,12 +26,13 @@ public class Longest_Repeating_Subsequence {
         return dp[length][length];
     }
 
-    public static void main(String args[]){ 
+    public static void main(String args[]) { 
         String str = "AlgoDsNoteDs";
         int length = LongestRepeatingSubsequence(str);
         System.out.println("String: " + str);
         System.out.println("Length of longest repeating subsequence: " + length);
     }
+
 }
 
 /*

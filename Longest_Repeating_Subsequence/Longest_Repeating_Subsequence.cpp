@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int LongestRepeatingSubsequence(string str){ 
+int LongestRepeatingSubsequence(string str) { 
     int length;
     length = str.length();
 
@@ -16,7 +16,7 @@ int LongestRepeatingSubsequence(string str){
             // then dp of present state is dp of previous state plus 1
             if(i != j && str[i-1] == str[j-1])
                 dp[i][j] = dp[i-1][j-1] + 1;
-            else{
+            else {
 
                 // else maximum of just vertically above or horizontally left element
                 dp[i][j] = max(dp[i-1][j], dp[i][j-1]);              
