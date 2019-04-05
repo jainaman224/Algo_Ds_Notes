@@ -106,8 +106,8 @@ class circular_doubly_linked_list:
                 if current_node.next == self.head:
                     break
             current_node = current_node.next
-    # Insert before a specific node in the circular doubly linked list
 
+    # Insert before a specific node in the circular doubly linked list
     def insert_before_node(self, beforekey, key):
         current_node = self.head
         while current_node:
@@ -300,3 +300,10 @@ if __name__ == "__main__":
     cir_dbl_list.delete(88)
     print('\nNo change - When trying to delete non existing key--->\n',
           cir_dbl_list.pretty_print())
+
+    '''
+    Sample Input : array = { 48, 27, 41, 33, 29, 56 }
+
+    Sample Output : -(48)--(27)--(41)--(33)--(29)--(56)-
+
+    '''
