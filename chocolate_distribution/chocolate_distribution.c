@@ -1,14 +1,14 @@
 #include<stdio.h>
-void merge_array(int a[], int l, int m, int r) 
+void merge_array (int a[], int l, int m, int r) 
 { 
     int i, j, k; 
     int n1 = m - l + 1; 
     int n2 =  r - m; 
   
-    //array creation
+    // array creation
     int L[n1], R[n2]; 
   
-    /* Copy data to temp arrays L[] and R[] */
+    // Copy data to temp arrays L[] and R[] 
     for (i = 0; i < n1; i++) 
         L[i] = a[l + i]; 
     for (j = 0; j < n2; j++) 
@@ -33,7 +33,7 @@ void merge_array(int a[], int l, int m, int r)
         k++; 
     } 
   
-    /* Copy the remaining elements of L[], if there are any */
+    // Copy the remaining elements of L[], if there are any 
     while (i < n1) 
     { 
         a[k] = L[i]; 
@@ -41,7 +41,7 @@ void merge_array(int a[], int l, int m, int r)
         k++; 
     } 
   
-    /* Copy the remaining elements of R[], if there  are any */
+    // Copy the remaining elements of R[], if there  are any 
     while (j < n2) 
     { 
         a[k] = R[j]; 
@@ -50,7 +50,7 @@ void merge_array(int a[], int l, int m, int r)
     } 
 } 
   
-/* l is for left index and r is right index of the sub-array of arr to be sorted */
+// l is for left index and r is right index of the sub-array of arr to be sorted 
 void merge_sort(int a[], int left, int right) 
 { 
     if (left < right) 
@@ -70,15 +70,15 @@ void merge_sort(int a[], int left, int right)
 int min_diff(int a[],int num_packets,int num_children)
 {
     int i,j,diff=0,required_diff,first=0,last=0;
-    if(num_children==0||num_packets==0)
+    if (num_children==0||num_packets==0)
         return 0;
-    if(num_children>num_packets)
+    if (num_children>num_packets)
         return -1;
     merge_sort(a,0,num_packets);
     required_diff=a[num_packets-1]+1;//
     merge_sort(a,0,num_packets);
 
-    for(i=0;i+num_children-1<num_packets;i++)
+    for (i=0;i+num_children-1<num_packets;i++)
     {
         diff=a[i+num_children-1]-a[i];
         if(diff<required_diff)
@@ -97,9 +97,9 @@ int main()
     scanf("%d",&num_children);//size of group in which chocolates  needs to be distributed
     scanf("%d",&num_packets);//size of array
     int a[num_packets];
-    for(i=0;i<num_packets;i++)
+    for (i=0;i<num_packets;i++)
         scanf("%d",&a[i]);//taking input for the quantity of chocolate contained in each packet
-    if(min_diff(a,num_packets,num_children)>=0)
+    if (min_diff(a,num_packets,num_children)>=0)
          printf("The minimum difference of chocolates distributed between children who got maximum and minimum is %d",min_diff(a,num_packets,num_children)) ;
     else
          printf("As the number of students is less than number of packets hence no minimum difference is valid or is -1");
