@@ -52,7 +52,7 @@ int main(){
     int input_arr[]={1,10,3,4,5,8,7,9,2};
     int n=sizeof(input_arr)/sizeof(input_arr[0]);
     cout<<inversions_count(input_arr,n)<<endl;
-	return 0;
+    return 0;
 }
 /*
 Expected output:
