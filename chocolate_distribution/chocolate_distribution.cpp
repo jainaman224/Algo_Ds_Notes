@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int min_diff(int a[],int num_packets,int num_children)
+int min_diff(int a[], int num_packets, int num_children)
 {
-    if ( num_children == 0 || num_packets == 0 )
+    if (num_children == 0 || num_packets == 0)
         return 0;
     if (num_children > num_packets)
         return -1;
