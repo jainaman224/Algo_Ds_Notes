@@ -33,7 +33,7 @@ int main()
     int a[num_packets];
     for (i=0; i < num_packets; i++)
         cin>>a[i]; // taking input for the quantity of chocolate contained in each packet
-    if (min_diff(a,num_packets,num_children) >= 0)
+    if (min_diff(a, num_packets, num_children) >= 0)
          cout<<"The minimum difference of chocolates distibuted between children who got maximum and minimum is "<< min_diff(a , num_packets ,num_children);
     else
         cout<<"As the number of students is less than number of packets hence no minimum difference is valid or is -1";
