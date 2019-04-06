@@ -67,26 +67,26 @@ def CohenSutherlandClipping(x1, y1, x2, y2):
 #  x = x1 + (1 / slope) * (y - y1)
 
             if point_out & top:
-# If line crosses ymin
-# point is above the clip rectangle
+    # If line crosses ymin
+    # point is above the clip rectangle
                 x = x1 + (x2 - x1) * (ymax - y1) / (y2 - y1)
                 y = ymax
 
             elif point_out & bottom:
-# If line crosses ymin
-# point is below the clip rectangle
+    # If line crosses ymin
+    # point is below the clip rectangle
                 x = x1 + (x2 - x1) * (ymin - y1) / (y2 - y1)
                 y = ymin
 
             elif point_out & right:
-# If line crosses xmax
-# point is to the right of the clip rectangle
+    # If line crosses xmax
+    # point is to the right of the clip rectangle
                 y = y1 + (y2 - y1) * (xmax - x1) / (x2 - x1)
                 x = xmax
 
             elif point_out & left:
-# If line crosses xmin
-# point is to the left of the clip rectangle
+    # If line crosses xmin
+    # point is to the left of the clip rectangle
                 y = y1 + (y2 - y1) * (xmin - x1) / (x2 - x1)
                 x = xmin
 
