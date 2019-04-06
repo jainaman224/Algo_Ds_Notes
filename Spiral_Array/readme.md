@@ -19,3 +19,19 @@ Step-7 : Traverse the leftmost row of array from bottom.
 Step-8 : Increment the left variable.
 ```
 
+## Sample I/O
+
+### INPUT
+
+```
+3 3
+1 2 3
+4 5 6
+7 8 9
+```
+
+### OUTPUT
+
+```
+1 2 3 6 9 8 7 4 5
+```
