@@ -1,9 +1,6 @@
-matrix:
-  include:
-    - os: linux
-      sudo: required
-      language: C
-        before_install:
-          - sudo apt install gcc
-          - sudo apt install build-essential
-        script: gcc main.c
+before_install:
+- sudo apt install gcc
+- sudo apt install build-essential
+
+language: C
+script: gcc main.c
