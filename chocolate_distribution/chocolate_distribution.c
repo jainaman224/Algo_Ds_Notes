@@ -93,7 +93,7 @@ int min_diff(int a[], int num_packets, int num_children)
 
 int main()
 {
-    int num_packets,num_children, i, j, k;
+    int num_packets, num_children, i, j, k;
     scanf("%d",&num_children); //size of group in which chocolates  needs to be distributed
     scanf("%d",&num_packets); //size of array
     int a[num_packets];
@@ -106,11 +106,11 @@ int main()
     return 0;
 }
 
-//  input:
-//     5
-//     8
-//     3 4 1 9 56 7 9 12
+// input:
+// 5
+// 8
+// 3 4 1 9 56 7 9 12
 // output:
-//     The minimum difference of chocolates distributed between children who got maximum and minimum is 6
+// The minimum difference of chocolates distributed between children who got maximum and minimum is 6
 
 
