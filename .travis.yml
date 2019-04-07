@@ -1,4 +1,5 @@
 before_install:
+- sudo apt-get -qq update
 - sudo apt install gcc
 - sudo apt install build-essential
 
