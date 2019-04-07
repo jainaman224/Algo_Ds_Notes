@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 int partition (int arr[], int low, int high)
 {
@@ -11,13 +9,18 @@ int partition (int arr[], int low, int high)
         if (arr[j] <= pivot)
         {
             i++;
-            swap(arr[i], arr[j]);
+            swap(&arr[i],&arr[j]);
         }
     }
-    swap(arr[i + 1], arr[high]);
+    swap(&arr[i + 1],&arr[high]);
     return (i + 1);
 }
-
+void swap(int *a,int *b)
+{
+   int temp=*a;
+   *a=*b;
+   *b=temp;
+}
 void quickSort(int arr[], int low, int high)
 {
     if (low < high)
@@ -30,19 +33,21 @@ void quickSort(int arr[], int low, int high)
 
 int main()
 {
-    // freopen("in.txt","r",stdin);
-    // freopen("out.txt","w",stdout);
     int t;
+    printf("Enter Number of times you want to sort:\n");
     scanf("%d", &t);
 
     while(t--)
     {
         int n,i;
+        printf("Enter the Size of the Array:\n");
         scanf("%d",&n);
-        int arr[100];
+        int arr[n];
+        printf("Enter Array:\n");
         for(i=0;i<n;i++)
             scanf("%d",&arr[i]);
         quickSort(arr, 0, n-1);
+        printf("Sorted Array:\n");
         for(i=0;i<n;i++)
             printf("%d ",arr[i]);
         printf("\n");
