@@ -15,6 +15,7 @@ int partition (int arr[], int low, int high)
     swap(&arr[i + 1],&arr[high]);
     return (i + 1);
 }
+//Swapping the value in the array 
 void swap(int *a,int *b)
 {
    int temp=*a;
@@ -54,13 +55,18 @@ int main()
     }
     return 0;
 }
-// sample input :
-// 2
-// 5
-// 1 5 8 32 46
-// 10
-// 3 3 4 23 356 12 523 43 67 864
-
-// sample output :
-// 1 5 8 32 46
-// 3 3 4 12 23 43 67 356 523 864
+/*
+Enter Number of times you want to sort:
+1
+Enter the Size of the Array:
+6
+Enter Array:
+4
+8
+5
+9
+2
+6
+Sorted Array:
+2 4 5 6 8 9 
+*/
