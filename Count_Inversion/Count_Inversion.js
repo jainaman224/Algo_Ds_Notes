@@ -1,6 +1,5 @@
 function countInversions(arr) {
     let c = 0;
-
     function merge(left, right) {
         var result = [];
         var llen = left.length;
@@ -10,17 +9,13 @@ function countInversions(arr) {
         while (l < llen && r < rlen) {
             if (left[l] <= right[r]) {
                 result.push(left[l++])
-                
-                
             } else  {
                 result.push(right[r++]);
                 c = c + llen - l;
             }
-
         }
         return result.concat(left.slice(l), right.slice(r));
     }
-
     function mergesort(arr) {
         var len = arr.length;
         if (len < 2) {
@@ -32,7 +27,6 @@ function countInversions(arr) {
         //console.log(left);
         //console.log(right);
         return merge(mergesort(left), mergesort(right));
-
     }
     //var a = [2, 4, 1];
     /*for (var i = 0; i < 10; i++) {
@@ -41,5 +35,13 @@ function countInversions(arr) {
     //console.log(a);
     mergesort(arr);
     return c;
-
 }
+var arr = [2, 4, 1]
+console.log(countInversions(arr));
+/*
+Input:
+2 4 1
+
+Output:
+2
+*/
