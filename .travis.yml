@@ -1,35 +1,31 @@
+#travis configuration for coverage testing
 language: c
-os:
-  - linux
-#  - osx
+
+#sudo: false # only for faster builds
+
+install:
+- cd ${TRAVIS_BUILD_DIR}
+# install latest LCOV (1.9 was failing for me) [1]
+
+- wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.11.orig.tar.gz
+- tar xf lcov_1.11.orig.tar.gz
+- sudo make -C lcov-1.11/ install
+
+# install lcov to coveralls conversion + upload tool
+- gem install coveralls-lcov
+
+
+before_script: 
+- cd ${TRAVIS_BUILD_DIR}
+- lcov --directory . --zerocounters
+
+# Compiler selection
 compiler:
+  - clang
   - gcc
-# - clang
-sudo: required
-script:
-  - touch configure.ac aclocal.m4 configure Makefile.am Makefile.in config.h.in
-  - ./reconf
-  - ./configure --with-oracle-import=runtime --with-oracle-charset=ansi
-  - make
-  - sudo make install
-  - sudo make uninstall
-  - make clean
-  - ./reconf
-  - ./configure --with-oracle-import=runtime --with-oracle-charset=wide
-  - make
-  - sudo make install
-  - sudo make uninstall
-env:
-  global:
-   - secure: "Dzf9H8XITHJMMP7I7Rir6O5Z6SNR1fgylcyOP4Gk8PdfS7iTIhhN7ILgWC/frLoqljmPYWTpltSGr21xA4gL7dqVZOmXZA8fqnxYLOuGvovl2B5Qd5sWRlVhPMtIfm9bKk86WYwmVeE1zR2KY0WItvsZCd4g8RcRsu+buf8N4fzzKGxiG1v/hdCx7dYbRP50j7Iuxhwz7541PI9Yaye09PfukKre3bTaW3JwgK5RdF844i5R1TA0LReeWWQDPUinMjesPvcxW4s+OrY6DlTTIqqInjCuPlp5c4oN95nJZ2/9ApDL3k+pKy12GtwxDMd36tt7jY/e9JNrkM/DWlLlSee69R7tuBWleN/Bs5toCmDHzNGp4Sg95klJHhOR2zB1GYrqm2QvKBCTETwXt8mWBIqYn6+4NrIDbe9bB5IUtqNHEZlJCo3fBSIzJ0j9kMj0q0rdsMMNjoJXQBySECR1w2JLTOxbPzj2wT+9dLJWGeGKJPwRApQDr7+RGsKAjh8Ap7GCweU9ZnkmfAty6MNBNLUTY2mzK2EaZQ4f7AQUSjxaYIFTUzGn2qSLf5vsfr0RNn9ZhL9Jr+4Vjksrf7iwmboSzHhVRMsNbUrewQGKllz4YmLbSDULVdEPj/omLO95YIqMn3TBCRf57KSYxCWCnqYfI7utozfGeej9aD0PAYk="
 
 
-addons:
-  coverity_scan:
-    project:
-      name: "vrogier/ocilib"
-      description: "Build submitted via Travis CI"
-    notification_email: vince.rogier@gmail.com
-    build_command_prepend: "touch configure.ac aclocal.m4 configure Makefile.am Makefile.in config.h.in; ./configure --with-oracle-import=runtime CFLAGS='-g -O2 -std=gnu99'"
-    build_command:   "make"
-branch_pattern: master
+# Build steps
+script: 
+  - cd ${TRAVIS_BUILD_DIR}
+- make && ./test-library.out
