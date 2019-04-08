@@ -1,4 +1,6 @@
+# Import graphics library
 from graphics import *
+
 import time
  
 def BresenhamLine(xa,ya,xb,yb):
@@ -11,7 +13,7 @@ def BresenhamLine(xa,ya,xb,yb):
     x, y = xa, ya  
  
     # creating the window
-    win = GraphWin('Brasenham Line', 600, 480)
+    win = GraphWin('Bresenham Line', 600, 480)
     
     # checking the slope if slope > 1 
     # then interchange the role of x and y
@@ -55,3 +57,9 @@ def main():
         
 if __name__ == "__main__":
     main() # Driver Function 
+
+# Input -     Enter Start X: 100
+#             Enter Start Y: 100
+#             Enter End X: 300
+#             Enter End Y: 300
+# Sample output - https://ibb.co/4fzGM6W */

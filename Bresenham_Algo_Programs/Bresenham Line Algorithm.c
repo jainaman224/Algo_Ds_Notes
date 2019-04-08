@@ -12,10 +12,10 @@ int main()
 
 	initgraph(&gd, &gm, "C:\\Turboc3\\bGI");
 
-	printf("Enter the values for xa, ya"); 
+	printf("Enter the Co-ordinates of starting point of line:"); 
     scanf("%d %d", &xa, &ya); //Taking coordinates from User
 
-    printf("Enter the values for xb, yb"); 
+    printf("Enter the Co-ordinates of end point of line:"); 
     scanf("%d %d" , &xb, &yb); //Taking coordinates from User
 
     dx = abs(xa - xb);
@@ -49,3 +49,5 @@ int main()
     getch();
     return 0;
 }
+
+/* output - https://ibb.co/df9st7H */
