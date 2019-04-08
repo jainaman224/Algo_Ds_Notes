@@ -6,4 +6,4 @@ before_install:
   - sudo apt install build-essential
 
 script: 
-  - make
+  - gcc main.c
