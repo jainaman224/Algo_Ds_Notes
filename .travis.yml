@@ -1,7 +1,9 @@
-before_install:
-- sudo apt-get -qq update
-- sudo apt install gcc
-- sudo apt install build-essential
+Language: C
 
-language: C
-script: gcc main.c
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt install gcc
+  - sudo apt install build-essential
+
+script: 
+  - ./configure && make
