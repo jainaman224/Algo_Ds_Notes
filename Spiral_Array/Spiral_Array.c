@@ -19,17 +19,17 @@ int main()
     count = m * n;        //no. of elements
     dir = 1;
 
-    for(i=0; i<m; i++)	// Taking Inputs
+    for (i=0; i<m; i++)	// Taking Inputs
     {
-        for(j=0; j<n; j++)	
+        for (j=0; j<n; j++)	
             scanf("%d", &arr[i][j]);
     }
 
-    while(left <= right && top <= bottom && count > 0)
+    while (left <= right && top <= bottom && count > 0)
     {
-        if(dir == 1)		//left to right
+        if (dir == 1)		//left to right
         {
-            for(i = left; i <= right; i++)
+            for (i = left; i <= right; i++)
             {
                 printf("%d  ", arr[top][i]);	//Printing the topmost untraversed row  
                 count--;
@@ -37,9 +37,9 @@ int main()
             dir++;
             top++;
         }
-        if(dir == 2)		//top to bottom
+        if (dir == 2)		//top to bottom
         {
-            for(i = top; i <= bottom; i++)
+            for (i = top; i <= bottom; i++)
             {
                 printf("%d  ", arr[i][right]);	//Printing the rightmost untraversed column
                 count--; 
@@ -47,9 +47,9 @@ int main()
             dir++;
             right--;
         }
-        if(dir == 3)		//left to right
+        if (dir == 3)		//left to right
         {
-            for(i = right; i >= left; i--)
+            for (i = right; i >= left; i--)
             {
                 printf("%d  ", arr[bottom][i]);	//Printing the bottommost untraversed column
                 count--;
@@ -57,9 +57,9 @@ int main()
             dir++;
             bottom--;
         }
-        if(dir == 4)		//bottom to top
+        if (dir == 4)		//bottom to top
         {
-            for(i = bottom; i >= top; i--)
+            for (i = bottom; i >= top; i--)
             {
                 printf("%d  ", arr[i][left]);	//Printing the leftmost untraversed column
                 count--;
