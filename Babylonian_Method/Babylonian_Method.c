@@ -26,8 +26,7 @@ int main()
     int num ;
     printf("Enter a number :\n");
     scanf("%d",&num); 
-    printf("Square root of %d is %f", num, squareRoot(num)); 
-    
+    printf("Square root of %d is %f", num, squareRoot(num));     
 }
 
 /*Enter a number :
