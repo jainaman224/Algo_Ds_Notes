@@ -36,13 +36,13 @@ class KMP
         }
     }
 
-    void computeLPSArray(String pat, int M, int lps[])
+    void computeLPSArray(String pat, int M, int lps[]) // length of the previous longest prefix suffix
     {
         int len = 0;
         int i = 1;
-        lps[0] = 0;
+        lps[0] = 0; //lps[0] is always 0
 
-        while(i<M)
+        while(i<M) //calculate lps[i] for i=1 to M-1
         {
             if(pat.charAt(i) == pat.charAt(len))
             {
@@ -63,6 +63,7 @@ class KMP
         }
     }
 
+    //Driver program to test above function
     public static void main(String args[])
     {
         String txt = "namanchamanbomanamansanam";
@@ -70,3 +71,11 @@ class KMP
         new KMP().KMPSearch(pat, txt);
     }
 }
+
+/* Output
+
+Pattern found at 1
+Pattern found at 7
+Pattern found at 16
+
+*/
