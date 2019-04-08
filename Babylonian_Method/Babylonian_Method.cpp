@@ -10,8 +10,7 @@
 using namespace std;   
 
 float squareRoot(float num) 
-{ 
-   
+{    
     float number = num; 
     float guess = 1; 
     float accuracy = 0.000001; /* it decides the accuracy level*/
@@ -28,8 +27,7 @@ int main()
     int num ;
     cout << "Enter a number :\n" ;
     cin >> num; 
-    cout << "Square root of " << num << " is " << squareRoot(num); 
-    
+    cout << "Square root of " << num << " is " << squareRoot(num);     
 }
 
 /*Enter a number :
