@@ -1,9 +1,17 @@
-Language: C
+language: c
 
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt install gcc
-  - sudo apt install build-essential
+  - wget http://downloads.sourceforge.net/project/cunit/CUnit/2.1-2/CUnit-2.1-2-src.tar.bz2
+  - tar -xvjpf CUnit-2.1-2-src.tar.bz2
+  - cd CUnit-2.1-2
+  - ./configure --prefix=$TRAVIS_BUILD_DIR
+  - make
+  - make install
+  - export C_INCLUDE_PATH=$TRAVIS_BUILD_DIR/include:$C_INCLUDE_PATH
+  - export LIBRARY_PATH=$TRAVIS_BUILD_DIR/lib:$LIBRARY_PATH
+  - export LD_LIBRARY_PATH=$TRAVIS_BUILD_DIR/lib:$LD_LIBRARY_PATH
+  - cd ..
+  - cd c
 
-script: 
-  - gcc main.c
+script:
+- make test
