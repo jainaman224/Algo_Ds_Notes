@@ -45,20 +45,20 @@ void zeroOneBFS(int source,int n)
 
 	for (int i = 0; i < graph[v].size(); i++) 
 	{ 
-		// checks for the shortest distance to the nodes
-		if (dist[graph[v][i].first] > distbfs(i, v)) 
-		{ 
-			dist[graph[v][i].first] = distbfs(i, v); 
+	    // checks for the shortest distance to the nodes
+	    if (dist[graph[v][i].first] > distbfs(i, v)) 
+	    { 
+		dist[graph[v][i].first] = distbfs(i, v); 
 
-			/* Put destination vertex connected by 0 edge to front and vertex connected by 1 
-			 edge to back so that vertices are processed 
-			 in ascending order of weights. */
-			if (graph[v][i].second == 0) 
-				Q.push_front(graph[v][i].first); 
-			else
-				Q.push_back(graph[v][i].first); 
-		} 
-	} 
+		/* Put destination vertex connected by 0 edge to front and vertex connected by 1 
+		edge to back so that vertices are processed 
+		in ascending order of weights. */
+		if (graph[v][i].second == 0) 
+			Q.push_front(graph[v][i].first); 
+		else
+			Q.push_back(graph[v][i].first); 
+	    } 
+        } 
     } 
 
     // printing the dist array that stores the shortest distances 
