@@ -80,7 +80,7 @@ heapSort(arr, n) {
 
 **Time complexity**  - О(nlogn), where n is the number of elements in an array. 
 
-**Space complexity**  - О(1), since heap is built in place. 
+**Space complexity**  - О(1), since heap is built and sorted in place. 
 
 ## See Also 
 
