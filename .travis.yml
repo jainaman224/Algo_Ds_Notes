@@ -1,0 +1,33 @@
+matrix:
+  include:
+    
+    
+    # C Language-------------------------------------------------------------------------------------
+    
+    language: c
+    # Compiler selection
+    compiler: gcc
+
+    before_install:
+    - sudo apt-get -qq update
+    - sudo apt-get install gcc
+    - sudo apt-get install build-essential
+    - sudo apt-get install -y libjson0 libjson0-dev
+
+    script: gcc main.c $(pkg-config --libs --cflags libcurl) -lssl -lcrypto -l json-c -std=gnu11
+    
+      
+    # Python Language-------------------------------------------------------------------------------  
+    
+    language: python
+    python:
+      - "2.7"
+      - "3.2"
+      - "3.3"
+      - "3.4"
+      - "nightly"
+    # command to install dependencies
+    install:
+      - "pip install -r requirements.txt"
+    # command to run tests
+script: python3 main.py
