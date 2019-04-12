@@ -42,3 +42,7 @@ egg=int(input("Enter the number of eggs: "))
 floor=int(input("Enter the number of floors: "))
 mem=[[0 for i in range(0,floor+2)] for j in range(0,egg+2)]
 print(eggDropIterativeDP(egg,floor,mem))
+#Sample Output
+#Enter the number of eggs: 5
+#Enter the number of floors: 100
+#7
