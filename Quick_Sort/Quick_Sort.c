@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+//Swapping the value in the array 
+void swap(int *a,int *b)
+{
+   int temp= *a;
+   *a = *b;
+   *b = temp;
+}
 int partition (int arr[], int low, int high)
 {
     //Taking the last value of array as pivot.
@@ -16,13 +23,7 @@ int partition (int arr[], int low, int high)
     swap(&arr[i + 1], &arr[high]);
     return (i + 1);
 }
-//Swapping the value in the array 
-void swap(int *a,int *b)
-{
-   int temp= *a;
-   *a = *b;
-   *b = temp;
-}
+
 void quickSort(int arr[], int low, int high)
 {
     if (low < high)
