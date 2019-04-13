@@ -49,4 +49,6 @@ for i in range(0,n):
 """
 Output:
 
+After sort :
+1 2 3 4 8 9 10 10
 """
