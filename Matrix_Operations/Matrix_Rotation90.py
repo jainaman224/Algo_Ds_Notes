@@ -1,4 +1,3 @@
-
 N = 3
 
 # A function to rotate N x N matrix by 90 degrees in anti-clockwise direction 
@@ -17,8 +16,7 @@ def Rotate(Matrix):
 
             Matrix[N-1-x][N-1-y] = Matrix[N-1-y][x] 
             Matrix[N-1-y][x] = t 
-    
-
+            
 # Sample Input
 Matrix = [ [1, 2, 3], [5, 6, 7], [9, 10, 11 ] ] 
 
@@ -30,7 +28,6 @@ for i in range(0, N):
         print (Matrix[i][j]) 
 
     print ("") 
-
 
 '''
     Sample output :
@@ -46,8 +43,4 @@ for i in range(0, N):
     1
     5
     9
-
-
 '''
-
-
