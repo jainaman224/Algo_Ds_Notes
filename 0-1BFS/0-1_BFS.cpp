@@ -66,14 +66,14 @@ void zeroOneBFS(int source, int n)
 	    cout << dist[i] << endl; 
 } 
 
-//function to add edges to the graph
+// function to add edges to the graph
 void addEdge(int u, int v, int wt) 
 { 
     graph[u].push_back( make_pair(v, wt)); 
     graph[v].push_back( make_pair(u, wt)); 
 }
 
-//to initialise the graph
+// to initialise the graph
 void create_graph()
 {
     addEdge(0, 1, 0); 
