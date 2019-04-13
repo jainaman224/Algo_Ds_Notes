@@ -11,7 +11,6 @@ void Rotate(int matrix[][N])
             int t = matrix[x][i];
             matrix[x][i] = matrix[i][N-1-x]; 
             matrix[i][N-1-x] = matrix[N-1-x][N-1-i]; 
-
             matrix[N-1-x][N-1-i] = matrix[N-1-i][x];  
             matrix[N-1-i][x] = t; 
         } 
@@ -28,7 +27,6 @@ int main()
         {5, 6, 7}, 
         {9, 10, 11}
     }; 
-
     Rotate(matrix); 
 
     for (int i = 0; i < N; i++) 
@@ -39,7 +37,6 @@ int main()
         cout << endl; 
     } 
     cout << endl;
-
     return 0; 
 } 
 
