@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h> 
 #define N 3
 using namespace std; 
@@ -49,6 +48,3 @@ int main()
    2	6	10	
    1	5	9	 
 */
-
-
-
