@@ -1,5 +1,6 @@
 function countInversions(arr) {
     let c = 0;
+    
     function merge(left, right) {
         var result = [];
         var llen = left.length;
@@ -16,6 +17,7 @@ function countInversions(arr) {
         }
         return result.concat(left.slice(l), right.slice(r));
     }
+    
     function mergesort(arr) {
         var len = arr.length;
         if (len < 2) {
@@ -36,8 +38,10 @@ function countInversions(arr) {
     mergesort(arr);
     return c;
 }
+
 var arr = [2, 4, 1]
 console.log(countInversions(arr));
+
 /*
 Input:
 2 4 1
