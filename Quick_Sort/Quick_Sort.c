@@ -2,6 +2,7 @@
 
 int partition (int arr[], int low, int high)
 {
+    //Taking the last value of array as pivot.
     int pivot = arr[high];
     int i = (low - 1);
     for (int j = low; j <= high- 1 ; j++)
@@ -26,6 +27,7 @@ void quickSort(int arr[], int low, int high)
 {
     if (low < high)
     {
+        //Partitioning the array.
         int pi = partition(arr, low, high);
         quickSort(arr, low, pi - 1);
         quickSort(arr, pi + 1, high);
@@ -35,6 +37,7 @@ void quickSort(int arr[], int low, int high)
 int main()
 {
     int t;
+    //Testcase
     printf("Enter Number of times you want to sort:\n");
     scanf("%d", &t);
 
