@@ -10,10 +10,8 @@ def Rotate(Matrix):
         for y in range(x, N-x-1): 
         
             t = Matrix[x][y] 
-
             Matrix[x][y] = Matrix[y][N-1-x] 
             Matrix[y][N-1-x] = Matrix[N-1-x][N-1-y] 
-
             Matrix[N-1-x][N-1-y] = Matrix[N-1-y][x] 
             Matrix[N-1-y][x] = t 
             
@@ -23,7 +21,7 @@ Matrix = [ [1, 2, 3], [5, 6, 7], [9, 10, 11 ] ]
 Rotate(Matrix) 
 
 for i in range(0, N): 
-        
+    
     for j in range(0, N): 
         print (Matrix[i][j]) 
 
