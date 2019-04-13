@@ -28,7 +28,6 @@ class matrixRotation
             {5, 6, 7}, 
             {9, 10, 11} 
         }; 
-  
         Rotate(matrix, N); 
   
         // Print rotated matrix 
