@@ -1,4 +1,3 @@
-
 import java.io.*; 
 
 class matrixRotation
@@ -30,7 +29,6 @@ class matrixRotation
         {9, 10, 11} 
     }; 
   
-  
     Rotate(matrix, N); 
   
     // Print rotated matrix 
@@ -48,9 +46,6 @@ class matrixRotation
 /* Sample Output:
 
     3 7 11
-   2 6 10
-   1 5 9
-
+    2 6 10
+    1 5 9
 */
-
-
