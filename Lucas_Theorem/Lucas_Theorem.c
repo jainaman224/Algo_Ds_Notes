@@ -3,6 +3,8 @@
 
 # include <stdio.h>
 # include <string.h>   
+# include <stdlib.h>
+# define MIN(a,b) (((a)<(b))?(a):(b))
 
 int nCrModpDP (int n, int r, int p) ;
 int nCrModpLucas (int n, int r, int p) ;
@@ -17,7 +19,7 @@ int main()
     printf ( "Enter the value of p: " ) ;
     scanf ( "%d" , &p ) ;
     
-    printf ( "Value of nCr mod %d is %d " , p , nCrModpLucas(n, r, p)); 
+    printf("Value of nCr mod %d is %d " , p , nCrModpLucas(n, r, p)); 
     return 0; 
 }
 
@@ -31,10 +33,8 @@ int nCrModpDP (int n, int r, int p)
     // One by constructs remaining rows of Pascal Triangle  
     for (int i = 1; i <= n; i++) 
     { 
-        int x = i ;
-        if ( i > r )
-            x = r ;
-        for (int j = x; j > 0; j--)   
+        
+        for (int j = MIN(i,r); j > 0; j--)   
             // nCj = (n-1)Cj + (n-1)C(j-1); 
             C[j] = (C[j] + C[j-1])%p; 
     } 
@@ -42,11 +42,12 @@ int nCrModpDP (int n, int r, int p)
 }   
 
 int nCrModpLucas(int n, int r, int p) 
-{    
-    if ( r == 0 ) 
-        return 1;    
-    int ni = n % p, ri = r % p;    
-    return (nCrModpLucas(n/p, r/p, p) * nCrModpDP(ni, ri, p)) % p; // Last digits of n ,r and Remaining digits 
+{ 
+   
+   if (r==0) 
+       return 1;    
+   int ni = n % p, ri = r % p;    
+   return (nCrModpLucas(n/p, r/p, p) * nCrModpDP(ni, ri, p)) % p; // Last digits of n ,r and Remaining digits 
 } 
 
 /*Enter the value of n (in nCr) : 10
