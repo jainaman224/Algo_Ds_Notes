@@ -33,10 +33,10 @@ the above partially sorted array is sorted based on `[7, 6, 3, 8, 4, 7, 4, 6]` u
 The array becomes : `[326, 435, 453, 608, 690, 704, 751, 835]` which is now sorted .
 
 # Example 2
-[Radix Sort Process example 2](https://gfycat.com/questionablehauntingflatfish)
+![Radix Sort Process example 2](https://gfycat.com/questionablehauntingflatfish.gif)
 
 # Example 3
-[Radix sort Process example 3](https://www.cs.usfca.edu/~galles/visualization/RadixSort.html)
+![Radix sort Process example 3](https://www.cs.usfca.edu/~galles/visualization/RadixSort.html)
 
 # Complexity Analysis
 Best case time complexity : `Ω(nk)`
