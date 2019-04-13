@@ -10,7 +10,7 @@ Radix sort was developed to **sort large integers**. It considers integer as a s
       1. Do following for each digit i where i varies from least significant digit to most significant digit.
               Sort input array using Counting Sort (or any stable sort) according to the i'th digit.
 
-# Example
+# Example 1
 Assume the input array is:
 `[326, 453, 608, 835, 751, 435, 704, 690]`
 
@@ -31,6 +31,12 @@ Finally, we sort according to **hundred's place**(most significant digit) :
 the above partially sorted array is sorted based on `[7, 6, 3, 8, 4, 7, 4, 6]` using Counting Sort
 
 The array becomes : `[326, 435, 453, 608, 690, 704, 751, 835]` which is now sorted .
+
+# Example 2
+[Radix Sort Process example 2](https://gfycat.com/questionablehauntingflatfish)
+
+# Example 3
+[Radix sort Process example 3](https://www.cs.usfca.edu/~galles/visualization/RadixSort.html)
 
 # Complexity Analysis
 Best case time complexity : `Ω(nk)`
