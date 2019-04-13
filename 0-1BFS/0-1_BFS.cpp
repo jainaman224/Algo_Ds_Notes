@@ -22,7 +22,7 @@ int distbfs(int i, int v) // returns the new distance to the destination node
 
 /* To print shortest distance from given source (here, 0) to 
  every other node */
-void zeroOneBFS(int source,int n) 
+void zeroOneBFS(int source, int n) 
 { 
     // Marking distances of all nodes from the source except itself as infinity  
     int i = 0;
