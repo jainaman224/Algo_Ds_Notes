@@ -86,3 +86,8 @@ for(var s in solutions) {
   if(!solutions[s]) continue;
   console.log(" -> " + s + ": [" + solutions[s].join(", ") + "]   (dist:" + solutions[s].dist + ")");
 }
+//Output:
+// 1 to 1 = 0
+// 1 to 2 = 24
+// 1 to 3 = 32
+// 1 to 4 = 20
