@@ -1,13 +1,13 @@
 //Program to rotate array Arr[] of size n by d Elements
 function Array_Rotation(arr, r, n) {
-    var temp1 = [];
-    var temp2 = [];
-    temp1 = arr.slice(r, n);
+    var right_sub_array = [];
+    var left_sub_array = [];
+    right_sub_array = arr.slice(r, n);
     //console.log(temp1);
-    temp2 = arr.slice(0, r);
+    left_sub_array = arr.slice(0, r);
     //console.log(temp2);
     var result = []
-    return (result.concat(temp1, temp2));
+    return (result.concat(right_sub_array, left_sub_array));
 }
 
 var arr = [1, 2, 3, 4, 5, 6, 7];
