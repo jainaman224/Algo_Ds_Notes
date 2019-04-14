@@ -7,17 +7,17 @@ Prefix sum equals to the sum of all element from start to the current element of
 */
 
 function prefixSum(array) {
-	const prefix_array = [];
-	let sum = 0;
-	/*
+    const prefix_array = [];
+    let sum = 0;
+    /*
     We maintain a prefix array where prefix_array[i] = prefix_array[i - 1] + array[i].
     As, prefix sum of element i = prefix sum of element i - 1 + element i.
     */
-	for (const i in array) {
-		sum = sum + array[i];
-		prefix_array.push(sum);
+    for (const i in array) {
+        sum = sum + array[i];
+	prefix_array.push(sum);
 	}
-	return prefix_array;
+    return prefix_array;
 }
 
 const array = [3, 2, 4, 6, 7];
