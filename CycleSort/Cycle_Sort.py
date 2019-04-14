@@ -3,7 +3,7 @@ def cycleSort(array, size):
         key = array[start]
         location = start
         for i in range(start+1, n): #Count smaller element in the right side of key
-            if(array[i] < key):
+            if array[i] < key:
                 location += 1
         
         if location == start: #Ignore lower part and go for next iteration
@@ -30,11 +30,11 @@ def cycleSort(array, size):
 #Main program
 a = [23, 63, 98, 74, 20, 14, 36, 45, 99, 78, 98]
 n = len(a)
-cycleSort(a,n)
+cycleSort(a, n)
 
 print("After sort : ")
-for i in range(0,n):
-    print(a[i], end=" ")
+for i in range(0, n):
+    print(a[i], end = " ")
 
 """
 Output:
