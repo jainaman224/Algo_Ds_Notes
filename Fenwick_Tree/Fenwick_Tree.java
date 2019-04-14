@@ -13,9 +13,9 @@ class FenwickTree {
     static int ft[] = new int[10000];
 
     // Sum operation
-    static int sum(int index){
+    static int sum(int index) {
         /*
-	Argument
+	    Argument
         index  : Index upto which you want to find prefix sum
         Initialize the result "s" then increment the value of 
         index "index".
@@ -25,56 +25,57 @@ class FenwickTree {
         array elements are stored in ft[]. 
         */ 
         
-        // Init sum to zero
-	int s = 0;
-	index = index + 1;
-	while(index > 0) {
+        // Initialize sum variable to zero
+	    int s = 0;
+	    index = index + 1;
+	    while(index > 0) {
             
             // Adding tree node to sum
-	    s += ft[index];
-	    index -= index & (-index);
-	}
-	return s;
+	        s += ft[index];
+	        index -= index & (-index);
+	    }
+
+	    return s;
     }
 
     // Update operation
-    static void update(int size, int index, int val){
+    static void update(int size, int index, int val) {
         /*  
-	Arguments
+	    Arguments
         index : Index of ft to be updated
         size  : Length of the original array
         val   : Add val to the index "index"
         Traverse all ancestors and add 'val'.
         Add 'val' to current node of Fenwick Tree. 
         Update index to that of parent in update.  
-	*/ 	
+	    */ 	
 
         index += 1;
-	while(index <= size) {
+	    while(index <= size) {
 
-	// Update Fenwick Tree by incrementing index by val
-	ft[index] += val;
+	        // Update Fenwick Tree by incrementing index by val
+	        ft[index] += val;
 
-	// Update parent index
-	index += index & (-index);
+	        // Update parent index
+	        index += index & (-index);
         }
     }
 
     // Build Fenwick Tree 
     static void build(int arr[], int size) {
         /*
-	Argument
-	arr : The original array
+	    Argument
+	    arr : The original array
         size : The length of the given array
         This function will construct the Fenwick Tree 
         from the given array of length "size"
-	*/	
+	    */	
 
         for(int i=0; i<size; i++) {
 
             // Constructing Fenwick Tree by update operation 
-	    update(size, i, arr[i]);
-	}
+	        update(size, i, arr[i]);
+	    }
     }
 
     public static void main(String args[]) {
@@ -94,27 +95,27 @@ class FenwickTree {
         12
         33
         43 
-	*/	
+	    */	
         
         // arr is given array
         int arr[] ={2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9};
 
         // Building Fenwick Tree
-	build(arr, 12);
+	    build(arr, 12);
 
         // Print sum from index = 0 to index = 5
-	System.out.println(sum(5));
+	    System.out.println(sum(5));
 
         // Increment arr[4] by 16
-	update(12, 4, 16);
+	    update(12, 4, 16);
        
         // Print sum fron index = 2 to index = 7
         System.out.println(sum(7) - sum(2));
 
         // Increment arr[5] by 10
-	update(12, 5, 10);
+	    update(12, 5, 10);
 
         // Print sum from index = 2 to index = 7
-	System.out.println(sum(7) - sum(2));
+	    System.out.println(sum(7) - sum(2));
     }
 }

@@ -20,7 +20,7 @@ function sum(ft, index) {
     array elements are stored in ft[]. 
     */ 
     
-    // Init sum variable
+    // Initialize sum variable to 0
     var s = 0;
 
     // Increment index
@@ -30,7 +30,7 @@ function sum(ft, index) {
         // Adding tree node to sum
         s += ft[index];
 
-	// Update tree node	
+	    // Update tree node	
         index -= index & (-index);
     }
     
@@ -55,10 +55,10 @@ function update(ft, size, index, val) {
     while(index <= size) {
 
         // Update tree node value	
-	ft[index] += val;
+	    ft[index] += val;
 
-	// Update node index	
-	index += index & (-index);
+	    // Update node index	
+	    index += index & (-index);
     }
 }
 
@@ -83,6 +83,7 @@ function construct(arr, size) {
         // Update operation
         Update(ft, size, i, arr[i]);
     }
+    
     // Return Fenwick Tree array
     return ft;
 }
