@@ -1,46 +1,36 @@
-def cycleSort(array):
-    writes = 0
-
-    for start in range(0, len(array)-1): #Loop through array to find cycles to rotate
-        item = array[start]
-
-        #find position to put the item
-        pos = start
-        for i in range(start+1, len(array)):
-            if array[i] < item:
-                pos += 1
+def cycleSort(array, size):
+    for start in range(0,n-1): #Put array element in the correct place
+        key = array[start]
+        location = start
+        for i in range(start+1, n): #Count smaller element in the right side of key
+            if(array[i] < key):
+                location += 1
         
-        #If item is already there, this is not a cycle
-        if pos == start:
+        if location == start: #Ignore lower part and go for next iteration
             continue
         
-        #Else, put the item there on the right after any duplicates
-        while item == array[pos]:
-            pos += 1
-        array[pos], item = item, array[pos]
-        writes += 1
+        while key == array[location]: #If same data is found, increase location by 1
+            location += 1
+        
+        if location != start:
+            array[location], key = key, array[location]
+        
+        while location != start:
+            location = start
+            for i in range(start+1, n): #Location to put element
+                if array[i] < key:
+                    location += 1
+            
+            while key == array[location]: #If same data is found, increase location
+                location += 1
+            
+            if key != array[location]:
+                array[location], key = key, array[location]
 
-        #Rotate the rest of the cycle
-        while pos != start:
-
-            #find position to put the item
-            pos = start
-            for i in range(start+1, len(array)):
-                if array[i] < item:
-                    pos += 1
-         
-            #Put the item there on the right after any duplicates
-            while item == array[pos]:
-                pos += 1
-            array[pos], item = item, array[pos]
-            writes += 1
-
-    return writes
-
-#Main Code
-a = [1, 8, 3, 9, 10, 10, 2, 4]
+#Main program
+a = [23, 63, 98, 74, 20, 14, 36, 45, 99, 78, 98]
 n = len(a)
-cycleSort(a)
+cycleSort(a,n)
 
 print("After sort : ")
 for i in range(0,n):
@@ -50,5 +40,5 @@ for i in range(0,n):
 Output:
 
 After sort :
-1 2 3 4 8 9 10 10
+14 20 23 36 45 63 74 98 98 99
 """
