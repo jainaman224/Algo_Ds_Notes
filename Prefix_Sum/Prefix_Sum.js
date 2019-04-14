@@ -11,7 +11,7 @@ function prefixSum(array) {
 	let sum = 0;
 	/*
     We maintain a prefix array where prefix_array[i] = prefix_array[i - 1] + array[i].
-        As, prefix sum of element i = prefix sum of element i - 1 + element i.
+    As, prefix sum of element i = prefix sum of element i - 1 + element i.
     */
 	for (const i in array) {
 		sum = sum + array[i];
