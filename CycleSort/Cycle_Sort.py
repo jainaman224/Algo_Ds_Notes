@@ -1,5 +1,5 @@
 def cycleSort(array, size):
-    for start in range(0,n-1): #Put array element in the correct place
+    for start in range(0, n-1): #Put array element in the correct place
         key = array[start]
         location = start
         for i in range(start+1, n): #Count smaller element in the right side of key
