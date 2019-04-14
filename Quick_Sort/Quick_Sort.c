@@ -12,7 +12,7 @@ int partition (int arr[], int low, int high)
     //Taking the last value of array as pivot.
     int pivot = arr[high];
     int i = (low - 1);
-    for (int j = low; j <= high- 1 ; j++)
+    for (int j = low ; j <= high - 1 ; j++)
     {
         if (arr[j] <= pivot)
         {
@@ -49,11 +49,11 @@ int main()
         scanf("%d", &n);
         int arr[n];
         printf("Enter Array:\n");
-        for(i=0; i<n ; i++)
+        for(i = 0; i < n ; i++)
             scanf("%d", &arr[i]);
         quickSort(arr, 0, n-1) ;
         printf("Sorted Array:\n");
-        for(i=0 ; i<n ; i++)
+        for(i = 0 ; i< n ; i++)
             printf("%d ", arr[i]);
         printf("\n");
     }
