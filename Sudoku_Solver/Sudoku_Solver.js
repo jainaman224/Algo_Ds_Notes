@@ -11,9 +11,9 @@ const matrix = [
 ];
 
 const solve = matrix => {
-	const check = nextIndex(matrix);
+    const check = nextIndex(matrix);
 	if (check) {
-		const row = check[0];
+        const row = check[0];
 		const col = check[1];
 		for (let i = 1; i <= 9; ++i) {
 			if (isValid(matrix, row, col, i)) {
