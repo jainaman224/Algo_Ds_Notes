@@ -9,13 +9,13 @@ int N_queen(int n);
 
 int main()
 {
-    cout << "Enter the value of N for NxN chessboard : ";
+    cout << "Enter the value of N for NxN chessboard: ";
     cin >> N;
 
     int row, col;
     if ( N <= 3)
     {   
-        cout<< "The Queens cant be placed in the chessboard because queens attack can each other \n" ;
+        cout<< "The Queens cant be placed in the chessboard because queens can attack each other \n" ;
         exit(0);
     }    
     N_queen(N);
@@ -69,7 +69,7 @@ int N_queen(int n)
             if((is_safe(row,col)) && (board[row][col]!=1))
             {
                 board[row][col] = 1;
-                //recursion;wether we can put the next queen with this arrangment or not
+                //recursion ; whether we can put the next queen with this arrangement or not
                 if(N_queen( n-1 ) == 1)
                 {
                     return 1;
