@@ -38,7 +38,6 @@ def dijkstra(graph, source)
     end
 end
 
-
 # creating 10x10 weight matrix for graph
 graph = [[0, 14, 0, 7, 0, 0, 0, 8, 0, 10],
         [14, 0, 8, 0, 0, 0, 0, 11, 0, 0],
@@ -69,3 +68,4 @@ dijkstra(graph, 0);
     9		10
 
 =end
+
