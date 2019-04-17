@@ -1,38 +1,40 @@
-
 class Graph
     attr_accessor :num_verticies
 
+    # Constructor to initialise graph
     def initialize(num_verticies)
         @num_verticies = num_verticies
         @adj_list = Array.new(num_verticies) {|i| Array.new}
     end
 
+    # method for adding edges to graph
     def add_edge(source, destination)
         @adj_list[source].push(destination)
     end
 
+    # depth first search
     def dfs(start)
+        # initialization array for marking visited vertices
         used_verticies = Array.new(num_verticies, false)
 
+        # calling recursive DFS from 'start' vertex
         private_dfs(start, used_verticies)
-        
     end
 
     private
 
+    # recursive DFS
     def private_dfs(vertex, used_verticies)
         print vertex, ' '
         used_verticies[vertex] = true
 
+        # going to adjacent vetrices if they are not visited
         @adj_list[vertex].each { |adj_vertex| 
             if used_verticies[adj_vertex] == false
             then private_dfs(adj_vertex, used_verticies)
-            end
-            
+            end            
         }
-
     end
-
 end 
 
 def test1
@@ -83,6 +85,7 @@ def test2
     # Depth First Traversal is: 0 1 3 4 2 5 6
 end
 
+#testing the program
 test1()
 test2()
 
