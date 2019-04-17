@@ -3,19 +3,26 @@ LONG_INT_MAX = 1 << 64 - 1
 def dijkstra(graph, source)
     number_vertex = graph.length
 
+    # array that will store cost to vertices from source vertex
     distance = Array.new(number_vertex, LONG_INT_MAX)
+
+    # array that shows vertices that are included in the shortest path tree
     shortest_path_tree = Array.new(number_vertex, false)
     distance[source] = 0
 
     for i in 0..number_vertex-1
+        
+        # finding vertex with shortest path from source vertex that is not shortest path tree
         pivot = -1
         for j in 0..number_vertex-1
             if shortest_path_tree[j] == false and (pivot == -1 or distance[j] < distance[pivot]) then
                 pivot = j
             end
         end
+        # include found vertex to the shortes path tree
         shortest_path_tree[pivot] = true
 
+        # updating the weights of all adjacent vertices with 'pivot' vertex 
         for vertex in 0..number_vertex-1
             if shortest_path_tree[vertex] == false && graph[pivot][vertex] != 0 &&
                 distance[pivot] + graph[pivot][vertex] < distance[vertex] then
