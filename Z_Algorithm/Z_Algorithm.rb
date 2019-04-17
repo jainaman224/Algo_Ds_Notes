@@ -4,6 +4,7 @@ def getZarr(str, z_arr)
     right = 0
 
     for i in 1..n
+        # index 'i' beyond what was already processed. l and r will be updated
         if i > right
             left = i
             right = i
@@ -14,9 +15,12 @@ def getZarr(str, z_arr)
 
             z_arr[i] = right - left
             right -= 1
+
+        # index 'i' inside range[l, r], we can use processed values
         else
             k = i - left
 
+            # previous value will be used if it does not exceed the 'r'
             if z_arr[k] < right - i + 1
                 z_arr[i] = z_arr[k]
             else
@@ -39,8 +43,10 @@ def search(text, pattern)
     size = concat.length
     z_arr = Array.new(size, 0)
 
+    # fills z_arr with proper values using the Z-Algorithm
     getZarr(concat, z_arr)
 
+    # print all indices where pattern was found
     for i in 0..size-1
         if z_arr[i] == pattern.length
             print "Pattern found at %d\n" % [i - pattern.length]
