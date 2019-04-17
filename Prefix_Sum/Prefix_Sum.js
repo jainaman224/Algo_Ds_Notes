@@ -15,8 +15,8 @@ function prefixSum(array) {
     */
     for (const i in array) {
         sum = sum + array[i];
-	prefix_array.push(sum);
-	}
+        prefix_array.push(sum);
+    }
     return prefix_array;
 }
 
