@@ -5,21 +5,24 @@ using namespace std;
 char stack[20];
 int top = -1;
 
+//Pop the top value from the stack.
 char pop()
 {
-    return stack[top--];//Pop the top value from the stack.
+    return stack[top--];
 }
 
+//Push it onto the stack.
 void push(char ch)
 {
-    stack[++top] = ch;//Push it onto the stack.
+    stack[++top] = ch;
 }
 
-int operand(char x)//Checking if it is operator or letter
+//Checking if it is operator or letter
+bool operand(char x)
 {
     if(x == '+' || x == '-' || x == '*'|| x == '/')
-        return 1;
-    return 0;
+        return true;
+    return false;
 }
 
 void postfix_to_infix(char postfix[])
@@ -34,12 +37,15 @@ void postfix_to_infix(char postfix[])
         // If the character is not an operand.
         if(!operand(postfix[count]))
         {
-            push(postfix[count]); //If the character is letter , push it in the stack
+            //If the character is letter , push it in the stack
+            push(postfix[count]); 
         }
         else
         {
-            element = pop(); //pop the element present in the stack
-            operators = postfix[count]; //character is assigned to operator
+            //pop the element present in the stack
+            element = pop(); 
+            //character is assigned to operator
+            operators = postfix[count]; 
             cout << operators << element ;
         }
     }    
