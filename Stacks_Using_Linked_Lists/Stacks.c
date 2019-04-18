@@ -33,4 +33,44 @@ void POP(struct stack *s)
 	 }
 }
 
+void main()
+{
+	struct stack *s;
+	s=&Stack;
+	Stack.top=-1;
+	int c,value,k,n;
+	printf("\nEnter the number of elements");
+	scanf("%d",&n);
+	do
+	   {
+		printf("\nWhich operation to perform 1.PUSH 2.POP");
+		printf("\nEnter choice");
+		scanf("%d",&c);
+		  if(c==1)
+		    {
+ 			 printf("\nEnter value to push ");
+		         scanf("%d",&value);
+			 PUSH(s,value,n);
+		    }
+		  else if(c==2)
+		    {
+ 			POP(s);
+		    }
+          	  else
+		    {break;
+ 		    }
+		printf("\nDo u want to continue(1/0)");
+		scanf("%d",&k);
+	  }while(k!=0);
+     if(Stack.top==-1)
+       {printf("\nStack is empty");
+       }
+     else
+      {printf("\nThe current stack is ");
+      for(int i=0;i<=Stack.top;i++)
+      printf("%d\t",s->data[i]);
+	}
+printf("\n");
+}
+
 
