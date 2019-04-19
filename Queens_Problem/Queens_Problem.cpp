@@ -69,8 +69,8 @@ int N_queen(int n)
             if((is_safe(row,col)) && (board[row][col]!=1))
             {
                 board[row][col] = 1;
-                //recursion ; whether we can put the next queen with this arrangement or not
-                if(N_queen( n-1 ) == 1)
+                //recursion; whether we can put the next queen with this arrangement or not
+                if(N_queen(n - 1) == 1)
                 {
                     return 1;
                 }
