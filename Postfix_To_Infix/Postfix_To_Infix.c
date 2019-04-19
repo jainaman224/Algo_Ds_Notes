@@ -49,8 +49,7 @@ void postfix_to_infix(char postfix[])
             operator = postfix[count];
             printf(" %c %c", operator, element);            
         }
-    }
-    
+    }    
 }
 
 int main()
