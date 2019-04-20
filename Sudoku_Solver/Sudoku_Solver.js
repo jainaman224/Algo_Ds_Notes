@@ -74,7 +74,7 @@ if (solve(matrix)) {
     console.log(`sorry i can't solve`);
 }
 //output
-/* tested from leetcode https://leetcode.com/problems/sudoku-solver/#
+/*
 [ [ 5, 3, 4, 6, 7, 8, 9, 1, 2 ],
   [ 6, 7, 2, 1, 9, 5, 3, 4, 8 ],
   [ 1, 9, 8, 3, 4, 2, 5, 6, 7 ],
