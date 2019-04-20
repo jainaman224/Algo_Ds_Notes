@@ -10,25 +10,25 @@ int data[100];
 /*Function to push element to stack */
 void PUSH(struct stack *s,int value,int n)
 {
-    if(s->top==n-1)
+    if(s->top == n-1)
     {
     printf("\nStack is full");
     }
     else 
     {s->top++;
-     s->data[s->top]=value;
+     s->data[s->top] = value;
     }
 }
 
 /*Function to pop element from stack */
 void POP(struct stack *s)
 {
-    if(s->top==-1)
+    if(s->top == -1)
     printf("\nThe stack is empty");
     else
     {
     int value;
-    value=s->data[s->top];
+    value = s->data[s->top];
     printf("\nThe poped value is %d",value);
     s->top--;
     }
@@ -38,8 +38,8 @@ void main()
 {
     struct stack *s;
     s=&Stack;
-    Stack.top=-1;
-    int c,value,k,n;
+    Stack.top = -1;
+    int c, value, k, n;
     printf("\nEnter the number of elements");
     scanf("%d",&n);
     do
@@ -47,13 +47,13 @@ void main()
     printf("\nWhich operation to perform 1.PUSH 2.POP");	 /* Menu Driven Programming */
     printf("\nEnter choice");
     scanf("%d",&c);
-    if(c==1)
+    if(c == 1)
     {
      printf("\nEnter value to push ");
      scanf("%d",&value);
      PUSH(s,value,n);
     }
-    else if(c==2)
+    else if(c == 2)
     {
  	POP(s);
     }
@@ -62,15 +62,15 @@ void main()
     }
     printf("\nDo u want to continue(1/0)");
     scanf("%d",&k);
-    }while(k!=0);
+    }while(k != 0);
 	
-    if(Stack.top==-1)
+    if(Stack.top == -1)
     {printf("\nStack is empty");
     }
     else
     {
     printf("\nThe current stack is ");
-    for(int i=0;i<=Stack.top;i++)
+    for(int i = 0; i <= Stack.top; i++)
     printf("%d\t",s->data[i]);
     }
 printf("\n");
