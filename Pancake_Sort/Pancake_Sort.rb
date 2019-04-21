@@ -8,6 +8,7 @@ def max_index(arr , n)
     end
     return mi+1
 end
+
 #Function to flip the give array
 def flip(arr , m)
     start = 0
@@ -21,6 +22,7 @@ def flip(arr , m)
     end
     return arr
 end
+
 # Function to sort the given input
 def pancake_sort(arr , len)
     n = len
@@ -40,10 +42,13 @@ def pancake_sort(arr , len)
         print(perm_arr[i].to_s + " ")
     end
 end
+
 input = [2,7,8,1,4,1]
 len = input.length()
+
 # Driver program
 pancake_sort(input , len)
+
 =begin
 input = [2,7,8,1,4,1]
 output = 1 1 2 4 7 8
