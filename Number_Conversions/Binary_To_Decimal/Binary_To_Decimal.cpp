@@ -28,5 +28,5 @@ int main()
     cout << binaryToDecimal(num) << endl; 
 }
 
-//OUTPUT for 101011101
+//OUTPUT for  101011101
 //349
