@@ -29,15 +29,15 @@ int min_diff(int a[], int num_packets, int num_children)
 int main()
 {
     int num_packets, num_children, i, j, k;
-    cin >> num_children;  //size of group in which chocolates  needs to be distributed
-    cin >> num_packets;  //size of array
+    cin>>num_children;  //size of group in which chocolates  needs to be distributed
+    cin>>num_packets;  //size of array
     int a[num_packets];
     for (i = 0; i < num_packets; i++)
-        cin >> a[i];  //taking input for the quantity of chocolate contained in each packet
+        cin>>a[i];  //taking input for the quantity of chocolate contained in each packet
     if (min_diff(a, num_packets, num_children) >= 0)
-         cout << "The minimum difference of chocolates distibuted between children who got maximum and minimum is "<< min_diff(a, num_packets, num_children);
+         cout<<"The minimum difference of chocolates distibuted between children who got maximum and minimum is "<< min_diff(a, num_packets, num_children);
     else
-        cout << "As the number of students is less than number of packets hence no minimum difference is valid or is -1";
+        cout<<"As the number of students is less than number of packets hence no minimum difference is valid or is -1";
     return 0;
 }
 
