@@ -1,4 +1,3 @@
-
 Chocolate distribution problem states that -
 
 There exist M chocolate packets each packet can have variable number of chocolates. There are N students. 
