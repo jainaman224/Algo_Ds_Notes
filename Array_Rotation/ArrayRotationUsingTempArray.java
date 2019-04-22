@@ -43,3 +43,9 @@ public class ArrayRotationUsingTempArray
         System.out.println(Arrays.toString(arr));
     }
 }
+
+/*  Sample Input - 
+   [1,2,3,4,5,6,7]
+ Sample Output - 
+  [3,4,5,6,7,1,2]
+*/
