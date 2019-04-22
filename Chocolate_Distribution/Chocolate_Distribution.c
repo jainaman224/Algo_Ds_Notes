@@ -1,4 +1,4 @@
-//Chocolate Distribution problem 
+// Chocolate Distribution problem 
 #include <stdio.h>
 
 void merge_array(int a[], int l, int m, int r) 
