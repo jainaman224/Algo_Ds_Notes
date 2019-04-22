@@ -7,6 +7,7 @@ int top;
 int data[100];
 }Stack; 
 
+int count=0;
 /*Function to push element to stack */
 void PUSH(struct stack *s,int value,int n)
 {
@@ -19,6 +20,7 @@ void PUSH(struct stack *s,int value,int n)
         s->top++;
         s->data[s->top] = value;
     }
+    count++;	
 }
 
 /*Function to pop element from stack */
@@ -33,7 +35,46 @@ void POP(struct stack *s)
         printf("\nThe poped value is %d",value);
         s->top--;
     }
+    count--;
 }
+
+/* function to check if the stack is empty or not */
+int isEmpty() 
+{ 
+    return s->top == NULL; 
+} 
+  
+/* function to return top element in a stack */ 
+int peek() 
+{ 
+    //check for empty stack 
+    if (!isEmpty(s->top)) 
+        return s->data[s->top]; 
+    else
+        exit(EXIT_FAILURE); 
+} 
+
+/* Function to print stack */
+void PrintStack()
+{
+    if(Stack.top == -1)
+    {
+        printf("\nStack is empty");
+    }
+    else
+    {
+        printf("\nThe current stack is ");
+        for(int i = 0; i <= Stack.top; i++)
+        printf("%d\t",s->data[i]);
+    }
+}
+
+/*Function to print size of stack */
+void size()
+{
+    printf("\nSize of stack is %d",count);
+}  
+
 /* Main function */
 void main()
 {
@@ -45,7 +86,7 @@ void main()
     scanf("%d",&n);
     do
     {
-        printf("\nWhich operation to perform 1.PUSH 2.POP");	 /* Menu Driven Programming */
+        printf("\nWhich operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size");	 /* Menu Driven Programming */
         printf("\nEnter choice");
         scanf("%d",&c);
         if(c == 1)
@@ -53,29 +94,45 @@ void main()
             printf("\nEnter value to push ");
             scanf("%d",&value);
             PUSH(s,value,n);
+	    break;
         }
         else if(c == 2)
         {
  	    POP(s);
-        }
-        else
-        {
 	    break;
         }
+        else if(c == 3)
+        {
+	    if(!isEmpty())
+	        printf("\nStack is not empty");
+            else
+		printf("\nStack is empty");
+	    break;
+	}
+	else if(c == 4)
+	{
+            printf("\nThe topmost element is ");
+	    peek();
+	    break;
+	}
+	else if(c == 5)
+	{
+	    PrintStack();
+	    break;
+	}
+	else if(c == 6)
+	{
+	    size();
+	    break;
+	}
+	else
+	{
+            break;
+	}
         printf("\nDo u want to continue(1/0)");
         scanf("%d",&k);
     }while(k != 0);
 	
-    if(Stack.top == -1)
-    {
-	printf("\nStack is empty");
-    }
-    else
-    {
-        printf("\nThe current stack is ");
-        for(int i = 0; i <= Stack.top; i++)
-        printf("%d\t",s->data[i]);
-    }
     printf("\n");
 }
 
@@ -83,14 +140,16 @@ void main()
 Sample output:
 
 Enter the number of elements 4
-Which operation to perform 1.PUSH 2.POP
+Which operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size
 Enter choice 1
 Enter the value to push 3
 Do u want to continue(1/0) 1
-Which operation to perform 1.PUSH 2.POP
+Which operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size
 Enter choice 2
 The popped value is 3
-Do u want to continue(1/0) 0
+Do u want to continue(1/0) 1
+Which operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size
+Enter choice 5
 Stack is empty
 
 */
