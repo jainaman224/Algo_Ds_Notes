@@ -19,7 +19,7 @@ void reverseArray(int array[], int i)
 int Max(int array[], int n) 
 { 
     int max = 0, i; 
-    for ( i = 0; i < n; i++) 
+    for (i = 0; i < n; i++) 
         if (array[i] > array[max]) 
             max = i; 
     return max; 
@@ -44,7 +44,7 @@ int pancakeSort(int array[], int n)
 int main() 
 { 
     int n;
-    cout << "Enter the number of elements : " ;
+    cout << "Enter the number of elements : ";
     cin >> n;
     int array[n];
     cout << "Enter the elements : \n";
