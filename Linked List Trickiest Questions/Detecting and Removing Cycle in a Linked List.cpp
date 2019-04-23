@@ -51,7 +51,6 @@ void rem (node * slow, node * head)
 //detecting cycle in the linked list
 int detect (node * ptr) 
 {
-
     node *slow = ptr;
     node *fast = ptr;
     while (slow && fast && fast->next)
@@ -84,7 +83,6 @@ int main ()
     }
     else
         cout << "No cycle is present within the loop\n";
-
     return 0;
 }
 
