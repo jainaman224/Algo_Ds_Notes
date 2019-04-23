@@ -1,5 +1,7 @@
 # COCKTAIL SORT
+
 Cocktail Sort is a variation of Bubble sort. The Bubble sort algorithm always traverses elements from left and moves the largest element to its correct position in first iteration and second largest in second iteration and so on. Cocktail Sort traverses through a given array in both directions alternatively.
+
 ## EXAMPLE
 
 Given below is an unsorted array [1,2,6,4,3,7,5,8]. Cocktail Sort take O(n^2) time.
@@ -17,6 +19,7 @@ Doing backward iteration and swapping 5 with elements bigger than it, if a small
 Continues till a sorted array is obtained.
 
 ## PSEUDOCODE
+
 <p> We will keep a swap variable to see if the swap has happened or not. If no swap happens then no more processing on the array is required and it comes out of the loop.
 During forward iteration we will swap if the selected element is greater than the next element and during the backward iteration we will swap if the selected element is smaller than the next element in iteration.
 
