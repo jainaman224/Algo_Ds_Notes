@@ -17,7 +17,7 @@ void push(int value)
 void pop()
 {
     if(top == -1)
-        printf(" Stack Underflow \n ");
+        printf("Stack Underflow \n ");
     else
         --top;
 }  
@@ -27,7 +27,7 @@ int peek(int stack[])
 {
     if(top == -1)
     {
-        printf("\n STACK IS EMPTY");
+        printf("\nSTACK IS EMPTY");
         return -1;
     }
     else
@@ -42,10 +42,10 @@ void print()
     printf("Top of stack is: %d \n", peek(stack));
         
     if(temp > -1);
-        printf( "Other: ");
+        printf("Other: ");
     while(temp > -1)
-        printf( "%d", stack[temp--]);
-    printf( "\n" );
+        printf("%d", stack[temp--]);
+    printf("\n");
 }
 
 int main() 
