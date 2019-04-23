@@ -106,7 +106,7 @@ void main()
 	    if(!isEmpty(s))
 	        printf("\nStack is not empty");
             else
-		printf("\nStack is empty");
+	        printf("\nStack is empty");
 	    break;
 	}
 	else if(c == 4)
