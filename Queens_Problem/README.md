@@ -2,6 +2,7 @@
 The N Queens Problem is one of the most common examples of **backtracking**. The problem is to arrange N queens on an NxN chessboard such that no queen can strike down any other queen. A queen can attack horizontally, vertically, or diagonally.
 
 <img src="https://www.dl.dropboxusercontent.com/s/ba1ld9w66wr0qap/final.png" width="300">
+
 ## Algorithm
 The idea is to place queens one by one in different columns, starting from the leftmost column. When we place a queen in a column, we check for clashes with already placed queens. In the current column, if we find a row for which there is no clash, we mark this row and column as part of the solution. If we do not find such a row due to clashes then we backtrack and return false.
 - Start in the leftmost column
@@ -11,7 +12,6 @@ The idea is to place queens one by one in different columns, starting from the l
     - If placing the queen in [row, column] leads to a solution then return true.
     - If placing queen doesn't lead to a solution then you mark this [row, column] (Backtrack) and go to step (a) to try other rows.
 - If all rows have been tried and nothing worked, return false to trigger backtracking.
-
 
 ## Pseudocode
 ```
@@ -56,6 +56,9 @@ And now we will place the third queen again in a safe position until we find a s
 We will continue this process and finally, we will get the solution as shown below.
 
 <img src="https://www.dl.dropboxusercontent.com/s/ba1ld9w66wr0qap/final.png" width="200">
+
+## Time Complexity
+For function T(n) = n*T(n-1) + O(n<sup>2</sup>) which translates to O(N!). So the average time complexity is **O(N!)**
 
 ## Implementation
 
