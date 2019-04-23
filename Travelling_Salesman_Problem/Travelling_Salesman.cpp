@@ -7,31 +7,31 @@ void takeInput()
 {
     int i, j;
  
-	cout<< "Enter the number of villages: ";
-	cin>> n;
+	cout << "Enter the number of villages: ";
+	cin >> n;
  	
  	//Enter distance between cities
-	cout<< "\n Enter the Cost Matrix \n";
+	cout << "\n Enter the Cost Matrix \n";
  
-	for (i=0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		cout<< "\n Enter Elements of Row " << i+1 <<"\n";
+		cout << "\n Enter Elements of Row " << i+1 << "\n";
  
-		for (j=0; j < n; j++)
-			cin>> ary[i][j];
+		for (j = 0; j < n; j++)
+			cin >> ary[i][j];
  
 		completed[i] = 0;
 	}
  	
  	//Display matrix of distance between cities
-	cout<< "\n\n The cost list is:";
+	cout << "\n\n The cost list is:";
  
-	for (i=0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		cout<< "\n";
+		cout << "\n";
  
-		for (j=0; j < n; j++)
-			cout<< "\t" << ary[i][j];
+		for (j = 0; j < n; j++)
+			cout << "\t" << ary[i][j];
 	}
 }
 
@@ -41,9 +41,9 @@ int least(int c)
 	int i, nc = 999;
 	int min = 999, kmin;
   
-	for (i=0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		if ((ary[c][i]!=0) && (completed[i] == 0))
+		if ((ary[c][i] != 0) && (completed[i] == 0))
 			if (ary[c][i] + ary[i][c] < min)
 			{
 				min = ary[i][0] + ary[c][i];
@@ -65,13 +65,13 @@ void mincost(int city)
  
 	completed[city] = 1;
  
-	cout<< city+1 << "--->";
+	cout << city + 1 << "--->";
 	ncity = least(city);
  
 	if (ncity == 999)
 	{
 		ncity = 0;
-		cout<< ncity+1;
+		cout << ncity + 1;
 		cost += ary[city][ncity];
  
 		return;
@@ -85,10 +85,10 @@ int main()
 {
 	takeInput();
  
-	cout<< "\n\n The Path is: \n";
+	cout << "\n\n The Path is: \n";
 	mincost(0); //passing 0 because starting vertex
  
-	cout<< "\n\n Minimum cost is "<< cost;
+	cout << "\n\n Minimum cost is " << cost;
  
 	return 0;
 }
