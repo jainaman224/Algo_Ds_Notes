@@ -5,13 +5,13 @@ using namespace std;
 
 //Function for checking whether the number is hamming number or not
 bool is_hamming (int n) {
-	if (n == 1)
+    if (n == 1)
     {
         return true;
     }
-	if (n%2==0 || n%3==0 || n%5==0) {
-		for (int i = 2; i*i < n; ++i) {
-			if (n%i == 0) {
+    if (n%2==0 || n%3==0 || n%5==0) {
+	   for (int i = 2; i*i < n; ++i) {
+	    if (n%i == 0) {
 				if (i%2 != 0 and i%3!=0 and i%5!=0) 
                     return false;
 			}
