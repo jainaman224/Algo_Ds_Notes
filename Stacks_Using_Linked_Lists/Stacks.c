@@ -3,8 +3,8 @@
 #include<stdio.h>
 struct stack
 {
-int top;
-int data[100];
+    int top;
+    int data[100];
 }Stack; 
 
 int count=0;
@@ -51,7 +51,7 @@ int peek(struct stack *s)
     if (!isEmpty(s->top)) 
         return s->data[s->top]; 
     else
-        exit(EXIT_FAILURE); 
+        exit(1); 
 } 
 
 /* Function to print stack */
