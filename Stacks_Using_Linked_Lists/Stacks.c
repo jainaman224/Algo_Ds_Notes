@@ -1,4 +1,4 @@
-/* C program to implement stack using linked list*/
+// C program to implement stack using linked list
 
 #include<stdio.h>
 struct stack
@@ -7,33 +7,34 @@ struct stack
     int data[100];
 } Stack; 
 
-int count=0;
-/*Function to push element to stack */
+int count = 0;
+
+// Function to push element to stack
 void PUSH(struct stack *s,int value,int n)
 {
-    if (s->top == n-1)
+    if (s -> top == n-1)
     {
         printf("\nStack is full");
     }
     else 
     {
-        s->top++;
-        s->data[s->top] = value;
+        s -> top++;
+        s -> data[s -> top] = value;
     }
     count++;	
 }
 
-/*Function to pop element from stack */
+// Function to pop element from stack 
 void POP(struct stack *s)
 {
-    if (s->top == -1)
+    if (s -> top == -1)
         printf("\nThe stack is empty");
     else
     {
         int value;
-        value = s->data[s->top];
+        value = s -> data[s -> top];
         printf("\nThe poped value is %d",value);
-        s->top--;
+        s -> top--;
     }
     count--;
 }
@@ -41,15 +42,15 @@ void POP(struct stack *s)
 /* function to check if the stack is empty or not */
 int isEmpty(struct stack *s) 
 { 
-    return s->top == NULL; 
+    return s -> top == NULL; 
 } 
   
 /* function to return top element in a stack */ 
 int peek(struct stack *s) 
 { 
     //check for empty stack 
-    if (!isEmpty(s->top)) 
-        return s->data[s->top]; 
+    if (!isEmpty(s -> top)) 
+        return s -> data[s -> top]; 
     else
         exit(1); 
 } 
@@ -65,7 +66,7 @@ void PrintStack(struct stack *s)
     {
         printf("\nThe current stack is ");
         for (int i = 0; i <= Stack.top; i++)
-        printf("%d\t",s->data[i]);
+        printf("%d\t",s -> data[i]);
     }
 }
 
@@ -103,7 +104,7 @@ void main()
         }
         else if (c == 3)
         {
-	    if(!isEmpty(s))
+	    if (!isEmpty(s))
 	        printf("\nStack is not empty");
             else
 	        printf("\nStack is empty");
