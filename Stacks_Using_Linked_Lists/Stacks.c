@@ -5,13 +5,13 @@ struct stack
 {
     int top;
     int data[100];
-}Stack; 
+} Stack; 
 
 int count=0;
 /*Function to push element to stack */
 void PUSH(struct stack *s,int value,int n)
 {
-    if(s->top == n-1)
+    if (s->top == n-1)
     {
         printf("\nStack is full");
     }
@@ -26,7 +26,7 @@ void PUSH(struct stack *s,int value,int n)
 /*Function to pop element from stack */
 void POP(struct stack *s)
 {
-    if(s->top == -1)
+    if (s->top == -1)
         printf("\nThe stack is empty");
     else
     {
@@ -57,14 +57,14 @@ int peek(struct stack *s)
 /* Function to print stack */
 void PrintStack(struct stack *s)
 {
-    if(Stack.top == -1)
+    if (Stack.top == -1)
     {
         printf("\nStack is empty");
     }
     else
     {
         printf("\nThe current stack is ");
-        for(int i = 0; i <= Stack.top; i++)
+        for (int i = 0; i <= Stack.top; i++)
         printf("%d\t",s->data[i]);
     }
 }
@@ -89,49 +89,49 @@ void main()
         printf("\nWhich operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size");	 /* Menu Driven Programming */
         printf("\nEnter choice");
         scanf("%d",&c);
-        if(c == 1)
+        if (c == 1)
         {
             printf("\nEnter value to push ");
             scanf("%d",&value);
             PUSH(s,value,n);
 	    break;
         }
-        else if(c == 2)
+        else if (c == 2)
         {
  	    POP(s);
 	    break;
         }
-        else if(c == 3)
+        else if (c == 3)
         {
 	    if(!isEmpty(s))
 	        printf("\nStack is not empty");
             else
 	        printf("\nStack is empty");
 	    break;
-	}
-	else if(c == 4)
-	{
+        }
+	else if (c == 4)
+        {
             printf("\nThe topmost element is ");
 	    peek(s);
 	    break;
-	}
-	else if(c == 5)
-	{
+        }
+	else if (c == 5)
+        {
 	    PrintStack(s);
 	    break;
-	}
-	else if(c == 6)
-	{
+        }
+	else if (c == 6)
+        {
 	    size(s);
 	    break;
-	}
+        }
 	else
-	{
+        {
             break;
-	}
+        }
         printf("\nDo u want to continue(1/0)");
         scanf("%d",&k);
-    }while(k != 0);
+    } while (k != 0);
 	
     printf("\n");
 }
