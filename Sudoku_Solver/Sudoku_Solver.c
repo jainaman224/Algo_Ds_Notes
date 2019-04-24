@@ -58,7 +58,7 @@ bool solve_sudoku(int sudoku[][9],int row,int col)
 
 bool can_solve(int board[][9])
 {
-    return solve_sudoku(board,0,0); 
+    return solve_sudoku(board,0,0);
 }
 
 void print_sudoku(int sudoku[][9])
@@ -113,8 +113,4 @@ sample input :
 this code is written by raghav dalmia
 wwww.github.com/raghav-dalmia
 */
-
-
-
-
 
