@@ -6,15 +6,15 @@ Cocktail Sort is a variation of Bubble sort. The Bubble sort algorithm always tr
 
 Given below is an unsorted array [1,2,6,4,3,7,5,8]. Cocktail Sort take O(n^2) time.
 
-![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gif1.gif)
+![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gifs/gif1.gif)
 
 1 and 2 have element bigger than them next to them hence starting with six and swapping positions with the elements smaller than 6 until found an element bigger than 6, then taking that and doing the same procedure like with 7 in first forward iteration in above gif.
 
-![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gif2.gif)
+![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gifs/gif2.gif)
 
 Doing backward iteration and swapping 5 with elements bigger than it, if a smaller element is found then we take that and do the same for it also.
 
-![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gif3.gif)
+![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gifs/gif3.gif)
 
 Continues till a sorted array is obtained.
 
