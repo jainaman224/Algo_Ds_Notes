@@ -47,18 +47,18 @@ def partition(board, k, Sum, n, m) :
         if painters(board, n, mid) < k :
             high = mid
         else :
-            low = mid+1
+            low = mid + 1
     return low;
 
 n = 5 # The number of boards.
-board = [2,5,6,3,4]  # Length of boards.
+board = [2, 5, 6, 3, 4]  # Length of boards.
 k = 4   # The number of painters.
 Sum = 0
 m = 0
 for i in range(0, n) :
     Sum += board[i];
     m = max(m, board[i])
-print(" Minimum time to paint all the boards is : ",partition(board, k, Sum, n, m));
+print(" Minimum time to paint all the boards is : ", partition(board, k, Sum, n, m));
 
 '''
     Input : no. of boards = 5

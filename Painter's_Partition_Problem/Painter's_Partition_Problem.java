@@ -20,7 +20,7 @@ public class Painter {
     public static int painters(int board[], int n, int mid) {
         int painter = 0;
         int time = 0;
-        for(int i=0; i<n; i++) {
+        for(int i = 0; i < n; i++) {
             time += board[i];
             if(time > mid) {
                 time = board[i];
@@ -54,7 +54,7 @@ public class Painter {
                 high = mid;
             }
             else {
-                low = mid+1;
+                low = mid + 1;
             }
         }
         return low;
@@ -62,15 +62,15 @@ public class Painter {
 
     public static void main(String[] args){
         int n = 5; // The number of boards.
-        int[] board = {2,5,6,3,4};  // Length of boards.
+        int[] board = {2, 5, 6, 3, 4};  // Length of boards.
         int k = 4;   // The number of painters.
         int sum = 0;
         int m = 0;
-        for(int i=0; i<n; i++) {
+        for(int i = 0; i < n; i++) {
             sum += board[i];
             m = Math.max(m, board[i]);
         }
-        System.out.print(" Minimum time to paint all the boards is : "+partition(board, k, sum, n, m));
+        System.out.print(" Minimum time to paint all the boards is: " + partition(board, k, sum, n, m));
     }
 
     /*

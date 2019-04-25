@@ -20,7 +20,7 @@ using namespace std;
 lint painters(lint board[], lint n, lint mid) {
     lint painter = 0;
     lint time = 0;
-    for(lint i=0; i<n; i++) {
+    for(lint i = 0; i < n; i++) {
         time += board[i];
         if(time > mid) {
             time = board[i];
@@ -62,20 +62,20 @@ lint partition(lint board[], lint k, lint sum, lint n, lint m) {
 
 int main(){
     lint n; // Enter the number of boards.
-    cin>>n;
+    cin >> n;
     lint board[n];  // Length of boards.
-    for(lint i=0; i<n; i++){
-        cin>>board[i]; 
+    for(lint i = 0; i < n; i++){
+        cin >> board[i]; 
     }
     lint k;
-    cin>>k;    // Enter the number of painters.
+    cin >> k;    // Enter the number of painters.
     lint sum = 0;
     lint m = 0;
-    for(lint i=0; i<n; i++) {
+    for(lint i = 0; i < n; i++) {
         sum += board[i];
         m = max(m, board[i]);
     }
-    cout<<" Minimum time to paint all the boards is : "<<partition(board, k, sum, n, m);
+    cout << " Minimum time to paint all the boards is: " << partition(board, k, sum, n, m);
 }
 
 /*
