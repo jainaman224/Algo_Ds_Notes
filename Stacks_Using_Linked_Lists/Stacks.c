@@ -133,7 +133,6 @@ void main()
         printf("\nDo u want to continue(1/0)");
         scanf("%d",&k);
     } while (k != 0);
-	
     printf("\n");
 }
 
