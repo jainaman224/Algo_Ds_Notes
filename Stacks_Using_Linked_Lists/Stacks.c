@@ -39,13 +39,13 @@ void POP(struct stack *s)
     count--;
 }
 
-/* function to check if the stack is empty or not */
+// function to check if the stack is empty or not
 int isEmpty(struct stack *s) 
 { 
     return s -> top == NULL; 
 } 
   
-/* function to return top element in a stack */ 
+// function to return top element in a stack 
 int peek(struct stack *s) 
 { 
     //check for empty stack 
@@ -55,7 +55,7 @@ int peek(struct stack *s)
         exit(1); 
 } 
 
-/* Function to print stack */
+// Function to print stack 
 void PrintStack(struct stack *s)
 {
     if (Stack.top == -1)
@@ -70,7 +70,7 @@ void PrintStack(struct stack *s)
     }
 }
 
-/*Function to print size of stack */
+// Function to print size of stack
 void size(struct stack *s)
 {
     printf("\nSize of stack is %d",count);
@@ -95,38 +95,38 @@ void main()
             printf("\nEnter value to push ");
             scanf("%d",&value);
             PUSH(s,value,n);
-	    break;
+            break;
         }
         else if (c == 2)
         {
- 	    POP(s);
-	    break;
+            POP(s);
+            break;
         }
         else if (c == 3)
         {
-	    if (!isEmpty(s))
-	        printf("\nStack is not empty");
+            if (!isEmpty(s))
+                printf("\nStack is not empty");
             else
-	        printf("\nStack is empty");
-	    break;
+                printf("\nStack is empty");
+            break;
         }
-	else if (c == 4)
+        else if (c == 4)
         {
             printf("\nThe topmost element is ");
-	    peek(s);
-	    break;
+            peek(s);
+            break;
         }
-	else if (c == 5)
+        else if (c == 5)
         {
-	    PrintStack(s);
-	    break;
+            PrintStack(s);
+            break;
         }
-	else if (c == 6)
+        else if (c == 6)
         {
-	    size(s);
-	    break;
+            size(s);
+            break;
         }
-	else
+        else
         {
             break;
         }
