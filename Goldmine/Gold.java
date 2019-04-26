@@ -13,7 +13,7 @@ import java.util.*;
 class Hello
 { 
     static final int MAX = 100;
-    static int getMaxGold(int gold[][],int m, int n){ 
+    static int getMaxGold(int gold[][], int m, int n){ 
         int goldTable[][] = new int[m][n]; 
         for(int[] rows:goldTable) 
             Arrays.fill(rows, 0); 
@@ -23,7 +23,7 @@ class Hello
             { 
                 int right = (col == n-1) ? 0 : goldTable[row][col+1];
                 int right_up = (row == 0 ||col == n-1) ? 0 :goldTable[row-1][col+1];
-                int right_down = (row == m-1|| col == n-1) ? 0 :goldTable[row+1][col+1]; 
+                int right_down = (row == m-1|| col == n-1) ? 0 :goldTable[row+1][col+1];
                 goldTable[row][col] = gold[row][col]+ Math.max(right, Math.max(right_up,right_down)); 
             } 
         } 
