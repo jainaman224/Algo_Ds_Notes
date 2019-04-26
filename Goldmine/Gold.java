@@ -1,10 +1,10 @@
 // Girlscript Summer Of Code
-// goldmine problem  in java
+// Goldmine problem  in java
 
 //Given a gold mine of a*b dimensions.
 //Each field in this mine contains a positive integer which is the amount of gold in tons. 
 //Initially the miner is at first column but can be at any row.
-//He can move only (right->,right up /,right down) that is from a given cell,
+//He can move only (right->,right up /,right down) that is from a given gourabk121-patch-1cell,
 //the miner can move to the cell diagonally up towards the right or right or diagonally down towards the right.
 //Find out maximum amount of gold he can collect.
 
