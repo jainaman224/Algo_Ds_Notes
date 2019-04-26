@@ -1,11 +1,14 @@
+### Introduction:
 The Haversine formulae is one among the most important and useful formula. 
-It is used to calculate the shortest distance between two points on a sphere using their latitudes and longitudes measured along the surface. This way is used in tracking the various objects on earth and majorly used for navigation. The haversine can be expressed in trignometric function as:
+It is used to calculate the shortest distance between two points on a sphere using their latitudes and longitudes measured along the surface. This way is used in tracking the various objects on earth and majorly used for navigation. These function names have a simple naming pattern and in this example, the "Ha" in "Haversine" stands for "half versed sine" where haversin(θ) = versin(θ)/2.
+
+ The haversine can be expressed in trignometric function as:
                 
-                    haversine(θ)=sin^2(θ/2)
+                            haversine(θ)=sin^2(θ/2)
 
 The haversine of the central angle which is (d/r) is calculated through the formulae:
 
-     (d/r)=haversine(Φ2-Φ1) + cos(Φ1)cos(Φ2)haversine(λ2-λ1)
+           (d/r)=haversine(Φ2-Φ1) + cos(Φ1)cos(Φ2)haversine(λ2-λ1)
 where,
 
 	r=radius of the earth i.e. 6400Km
@@ -14,13 +17,18 @@ where,
 	θ1,θ2=Latitude of the two points
 Through the above formula we can evaluate the value of d.
 
-Implementation:
+### Algorithm
+1. Get the values of latitude and longitude of two points and the 'r' is constant(already known).
+1. The angles must always be in radians.
+1. Putting the values in the formula will directly give the value of the 'd'. 
+
+### Implementation:
 Usage of the formula was done for the distance between Big Ben, London and Statue of Liberty and was calculated to be 5574.8 km.
  
-Limitation:
+### Limitation:
 The formula is applicable to only exact spherical bodies. Hence, the estimated value is not exact as the formula assumes the Earth's surface to be sphere but the fact is earth is not a perfect sphere it is obalate spheroid.
 
-
+### Example:
 // Java program for the haversine formula 
 
 public class Haversine { 
@@ -58,3 +66,11 @@ static double haversine(double lat1, double lon1,
 }
 
 // Output: 5574.840 km
+
+### Time complexity
+Best and Average case time complexity: O(n^2)
+
+### References:
+-community.esri.com
+-Geeks for geeks
+
