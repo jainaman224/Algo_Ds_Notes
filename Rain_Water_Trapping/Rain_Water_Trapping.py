@@ -1,4 +1,4 @@
- #Rain_Water_Trapping 
+# Rain_Water_Trapping 
 def trappedWater(a, size) : 
   
     # left[i] stores height of tallest bar to the to left of it including itself
@@ -32,5 +32,5 @@ a = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 size = len(a) 
 print("Maximum water that can be accumulated is ", trappedWater(a, size)) 
   
-# output :Maximum water that can be accumulated is 6
+# output: Maximum water that can be accumulated is 6
 
