@@ -76,7 +76,7 @@ void size(struct stack *s)
     printf("\nSize of stack is %d",count);
 }  
 
-/* Main function */
+// Main function
 void main()
 {
     struct stack *s;
