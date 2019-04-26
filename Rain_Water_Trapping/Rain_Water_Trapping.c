@@ -1,4 +1,4 @@
-//Rain_Water_Trapping
+// Rain_Water_Trapping
 #include <stdio.h> 
 
 using namespace std;
@@ -12,7 +12,7 @@ int min(int a, int b)
 // function to calculate max
 int max(int a, int b)
 {
-    return a > b ? a :b;
+    return a > b ? a : b;
 }
 
 int Find_Water(int a[], int size) 
