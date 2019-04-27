@@ -40,22 +40,21 @@ f(x0) = a0 + x0(a1 + x0(a2 + x0(a3 + x0(a4 + a5x0))))*/
 double e(int x,int n)
 {
 
-    static double s;
-    if(n==0)
+    static double s; //declare static variable
+    if(n==0)//base case
     {
 
         return s;
     }
-    s=1+x*(s/n);
-    return e(x,n-1);
+    s=1+x*(s/n); //General formula comes from Horner rule
+    return e(x,n-1);//Recursive case.
 }
 int main()
 {
     int x,n;
     scanf("%d%d",&x,&n);
-    printf("%lf \n",e(x,n));
+    printf("%lf \n",e(x,n)); //e^n
 }
-/*Input:-2 10
-  Output:-
-7.388713
+/*Input:-  2 10
+  Output:- 7.388713
 */
