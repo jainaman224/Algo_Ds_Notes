@@ -14,7 +14,7 @@ public class ArrayRotationUsingTempArray
         //copy the first d elements to temp array
         for (int i = 0; i < d; i++)
         {
-            temp[i]=arr[i];
+            temp[i] = arr[i];
         }
         
         //left moves the rest of the elements in original array by d elements
@@ -27,13 +27,11 @@ public class ArrayRotationUsingTempArray
         for (int i = 0; i < d; i++)
         {
             arr[i+n-d] = temp[i];
-        }
-        
+        } 
     }
      
     public static void main(String[] args) 
     {
-        
         int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7};
         int d = 2;
         System.out.println("Initial Input Array");
