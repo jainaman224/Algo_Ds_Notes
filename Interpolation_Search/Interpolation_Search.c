@@ -1,7 +1,6 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
-int interpolation (int arr[100], int n, int val)
+int interpolation (int arr[6], int n, int val)
 {
     //Starting and ending index of the array
     int high, low;
@@ -23,45 +22,44 @@ int interpolation (int arr[100], int n, int val)
 
         int x, pos;
         x = val - arr[low];
-        
         //Probing the position with keeping 
-        // uniform distribution in mind. 
+        // uniform distribution in mind.
+        
+       
         if (run != 0) 
-            pos = low + (x * rise) / run ;
+            pos = low + (x * rise)/run ;
         else
             pos = low + (x * rise);
-
+       
         if (arr[pos] == val)
             return pos;
-            
-        // If x is smaller, x is in the lower part
+        //// If x is smaller, x is in the lower part
         else if (val < arr[pos])
             high = pos - 1;
-            
         //If x is larger, x is in upper part 
         else
             low = pos + 1;
-    }    
+    }
+    
     return -1;
 }
 
 int main()
 {
     int n;
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
     int arr[n];
-    cout << "Enter the sorted array: ";
+    printf("Enter the sorted array: ");
     for(int i = 0; i < n; i++)
-        cin >> arr[i];
-        
+        scanf("%d", &arr[i]);
     int val;
-    cout << "Enter the value to be searched: ";
-    cin >> val;
+    printf("Enter the value to be searched: ");
+    scanf("%d", &val);
 
     int index;   
     index = interpolation(arr, n, val);
-    cout << "The element is present at index: " << index;
+    printf("The element is present at index: %d", index);
     return 0;
 }
 
