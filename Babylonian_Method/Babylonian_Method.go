@@ -26,7 +26,7 @@ func squareRoot(num float64) float64{
 
 func main(){
     var num float64 = 2
-    fmt.Print("Square root of " + strconv.Itoa(int(num)) + " is " +  fmt.Sprintf("%f",squareRoot(num)))
+    fmt.Print("Square root of " + strconv.Itoa(int(num)) + " is " +  fmt.Sprintf("%f", squareRoot(num)))
 }
 
 /*Enter a number :
