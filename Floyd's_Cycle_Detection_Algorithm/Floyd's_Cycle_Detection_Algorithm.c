@@ -42,11 +42,11 @@ int main()
 {
     int n;
     printf("Enter the size of Linked list: \n");
-    scanf("%d",&n);
+    scanf("%d", &n);
     int linkedList[n];
     for(int i = 0; i < n; i++)
     {
-        scanf("%d",&linkedList[i]);
+        scanf("%d", &linkedList[i]);
         head = inserting_a_new_node(linkedList[i]);
     }
 
