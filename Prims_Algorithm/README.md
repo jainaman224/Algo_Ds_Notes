@@ -55,3 +55,18 @@ Prims(G, v, e, s) {
 
 - [Prim's Algorithm](https://www.geeksforgeeks.org/prims-minimum-spanning-tree-mst-greedy-algo-5/)
 - [Prim's Algorithm Visualization](https://www.cs.usfca.edu/~galles/visualization/Prim.html)
+
+
+## Implementation
+
+- [C Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Prims_Algorithm/Prims_Algorithm.c)
+> :rocket: [Compile Online](https://repl.it/repls/LargeAngelicTrace) :rocket:
+
+- [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Prims_Algorithm/Prims_Algorithm.cpp)
+> :rocket: [Compile Online](https://repl.it/repls/MortifiedHilariousPixels) :rocket:
+
+- [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Prims_Algorithm/Prims_Algorithm.java)
+> :rocket: [Compile Online](https://repl.it/repls/HoneydewInfiniteTechnician) :rocket:
+
+- [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Prims_Algorithm/Prims_Algorithm.py)
+> :rocket: [Compile Online](https://repl.it/repls/FrontArtisticWebmaster) :rocket:
