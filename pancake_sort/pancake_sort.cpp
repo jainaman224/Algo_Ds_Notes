@@ -1,78 +1,73 @@
-
-#include <stdlib.h> 
-#include <iostream>
-
-using namespace std; 
-void reverse(int a[], int i) ;
-int max(int a[], int n);
-void print(int a[], int n) ;
-int pancakesort(int *a, int size);
+# include <iostream>
+# include <conio.h>
+using namespace std;
   
-//function to perform reversing or flipping of array
-void reverse(int a[], int i) 
+// Reverses the array 
+void reverseArray(int array[], int i) 
 { 
-    int temp, s1 = 0; 
-    while (s1 < i) 
+    int temp, start = 0; 
+    for (start = 0; start < i; start++)
     { 
-        temp = a[s1]; 
-        a[s1] = a[i]; 
-        a[i] = temp; 
-        s1++; 
+        temp = array[start]; 
+        array[start] = array[i]; 
+        array[i] = temp; 
         i--; 
     } 
 } 
   
-// Returns index of the  max element in the given portion of array
- 
-int max(int a[], int n) 
+// Returns index of the maximum element  
+int Max(int array[], int n) 
 { 
-int j, i; 
-for (j = 0, i = 0; i < n; ++i) 
-    if (a[i] > a[j]) 
-            j = i; 
-return j; 
-} 
-  
-//pancake sort function 
-int pancakesort(int *a, int size) 
+    int max = 0, i; 
+    for (i = 0; i < n; i++) 
+        if (array[i] > array[max]) 
+            max = i; 
+    return max; 
+}  
+
+int pancakeSort(int array[], int n) 
 { 
-    int i,pos;
-    for ( i = size; i > 1; --i) 
+    for (int end = n; end > 1; end--) 
     { 
-       
-         pos = max(a, i);//pos holds the index of element in the array 
-  
+        int max = Max(array, end);  
         
-        if (pos != i-1) //to replace max element at the end of array if it's not at the end
+        if (max != end-1) 
         { 
-            
-            reverse(a, pos); 
-  
-            //reversing current array to move maximum number to end
-            reverse(a, i-1); 
+            //reverse the array from index 0 till the max index
+            reverseArray(array, max);  
+            //reverse the array from index 0 till the length of the array
+            reverseArray(array, end-1); 
         } 
     } 
 } 
-  
-//  function to print the sorted array 
- 
-void print(int a[], int n) 
-{ 
-    for (int i = 0; i < n; ++i) 
-         cout<<a[i]<<"  "; 
-} 
-  
-
+   
 int main() 
 { 
-	int size,i;
-	cin>>size;
-    int a[size] ;
-	for(i=0;i<size;i++)
-		cin>>a[i];
-    
-    pancakesort(a, size);
-    print(a, size);
+    int n;
+    cout << "Enter the number of elements : ";
+    cin >> n;
+    int array[n];
+    cout << "Enter the elements : \n";
+    for (int i = 0; i < n; i++)
+        cin >> array[i];
+  
+    pancakeSort(array, n); 
+  
+    cout << "Sorted Array \n"; 
+    for (int i = 0; i < n; ++i) 
+        cout << array[i] << " ";  
   
     return 0; 
-} 
+}
+
+/*
+Enter the number of elements : 5
+Enter the elements :
+9
+2
+7
+4
+8
+Sorted Array
+2 4 7 8 9
+*/
