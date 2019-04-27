@@ -12,7 +12,7 @@ typedef struct node
 
 node *head = NULL;
 
- // Inserting a new node into the Linked List
+// Inserting a new node into the Linked List
 node* inserting_a_new_node(int data)
 {
     node* temp;
@@ -23,11 +23,11 @@ node* inserting_a_new_node(int data)
     return head;
 }
 
- // Detect if a cycle is found
+// Detect if a cycle is found
 int CycleDetection(node* head)
 {
     node *pointer_fast = head, *pointer_slow = head;
-    while ( pointer_fast && pointer_fast->next && pointer_slow )
+    while (pointer_fast && pointer_fast->next && pointer_slow)
     {
         pointer_slow = pointer_slow->next;
         pointer_fast = pointer_fast->next->next;
@@ -66,8 +66,4 @@ int main()
   Output:
   Enter the size of Linked list: 
   Cycle is found!
-*/  
-
-   
-   
-  
+*/
