@@ -4,9 +4,9 @@
 #define vertices 5 
 
 // Check if the vertex can be added at index in the Hamiltonian Cycle
-bool isPathSafe(int v, bool graph[vertices][vertices], int path[], int position) 
+bool isPathSafe(int v, int graph[vertices][vertices], int path[], int index) 
 { 
-    if (graph[path[position - 1]][v] == 0) 
+    if (graph[path[index - 1]][v] == 0) 
         return false; 
 
     for (int i = 0; i < position; i++) 
@@ -16,7 +16,7 @@ bool isPathSafe(int v, bool graph[vertices][vertices], int path[], int position)
 } 
 
 // A recursive function to solve hamiltonian cycle problem
-bool helper(bool graph[vertices][vertices], int path[], int index) 
+bool helper(int graph[vertices][vertices], int path[], int index) 
 { 
     if (index == vertices) 
     { 
@@ -42,7 +42,7 @@ bool helper(bool graph[vertices][vertices], int path[], int index)
 } 
 
  // Solving the Hamiltonian Cycle problem using Backtracking. 
-bool Hamiltonian_Cycle(bool graph[vertices][vertices]) 
+bool Hamiltonian_Cycle(int graph[vertices][vertices]) 
 { 
     int *path = new int[vertices]; 
 
@@ -68,11 +68,11 @@ bool Hamiltonian_Cycle(bool graph[vertices][vertices])
 // sample input
 int main() 
 { 
-    bool graph[vertices][vertices] = {{0, 1, 0, 1, 0}, 
-                         {1, 0, 1, 1, 1}, 
-                         {0, 1, 0, 0, 1}, 
-                         {1, 1, 0, 0, 1}, 
-                         {0, 1, 1, 1, 0}, 
+    int graph[vertices][vertices] = {{1, 1, 1, 1, 1}, 
+                         {1, 1, 1, 1, 1}, 
+                         {1, 1, 1, 1, 1}, 
+                         {1, 1, 1, 1, 1}, 
+                         {1, 1, 1, 1, 1}, 
                         }; 
 
     Hamiltonian_Cycle(graph); 
@@ -81,4 +81,4 @@ int main()
 }
 
 // Sample Output
-//  0  1  2  4  3  0
+// 0  1  2  3  4  0 
