@@ -33,17 +33,17 @@ string infix_to_postfix(string input)
 {
     string output = ""; // store postfix expression of given infix expression
     stack<char> optr; // stack that stores all operators
-    int i=0;
-    while(input[i]!='\0')
+    int i = 0;
+    while(input[i] != '\0')
     {
 	if(input[i] == '(') // if next char of input string is '(' 
 	    optr.push('('); // push '(' in stack
 	else if(input[i] == ')') // if next char of string is ')'
 	{
 	    char temp = optr.top();
-    	    while(temp!='(')
+    	    while(temp != '(')
 	    {
-		output+=temp; // append all operator in output that presents in the pranthesis
+		output += temp; // append all operator in output that presents in the pranthesis
 		optr.pop();
 		temp = optr.top();
 	    }
@@ -52,9 +52,9 @@ string infix_to_postfix(string input)
 	else
 	{
 	    int precedence_of_curr_char = precedence_of_operator(input[i]); // get precedence of next char of string
-	    if(precedence_of_curr_char!=0) // if next char is an operator
+	    if(precedence_of_curr_char != 0) // if next char is an operator
 	    {
-		if(optr.size()==0) // if size of stack is zero
+		if(optr.size() == 0) // if size of stack is zero
 		    optr.push(input[i]); // push this operator in the stack
 		else if(optr.top() == '(') // if previous char in stack in opening parenthesis
 		    optr.push(input[i]); // then also push this operator in the stack
@@ -65,11 +65,11 @@ string infix_to_postfix(string input)
 		    optr.push(input[i]);
 		    else
 		    {
-			while(optr.size()!=0)
+			while(optr.size() != 0)
 		        {
-			    if(optr.top()=='(')
+			    if(optr.top() == '(')
 				break;
-			    output+=optr.top(); // append all operator in output string that presents in the stack or in parenthesis
+			    output += optr.top(); // append all operator in output string that presents in the stack or in parenthesis
 			    optr.pop();
 			}
 			optr.push(input[i]);
@@ -78,16 +78,16 @@ string infix_to_postfix(string input)
 	    }
 	    else // if next character of input string is an operand
 	    {
-		output+=input[i]; // append that operand in the output string
+		output += input[i]; // append that operand in the output string
 	    }
 	}
 	i++; // increase the index of string
     }
     // if we had traversed through complete string
     // then append all operator in output string that presents in the stack 
-    while(optr.size()!=0)
+    while(optr.size() != 0)
     {
-	output+=optr.top();
+	output += optr.top();
 	optr.pop();
     }
     return output;
@@ -96,9 +96,9 @@ string infix_to_postfix(string input)
 int main()
 {
     string input;
-    getline(cin,input);
+    getline(cin, input);
     string output = infix_to_postfix(input);
-    cout<<output<<endl;
+    cout << output << endl;
     return 0;
 }
 
