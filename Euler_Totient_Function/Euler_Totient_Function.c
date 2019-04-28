@@ -13,7 +13,7 @@ ll gcd(ll a, ll b)
 ll EulerTotient_Brute(ll num)
 {
     ll answer = 1;
-    for(ll i = 2; i<num; i++)
+    for(ll i = 2; i < num; i++)
     {
         if(gcd(i, num) == 1)
             answer++;
@@ -24,7 +24,7 @@ ll EulerTotient_Brute(ll num)
 // Euler Totient Function using Euler product Formula E(n) = (1- 1/p1)*(1 - 1/p2).. where p1, p2 are prime factors of n.
 ll EulerTotient_ProductForm(ll num)
 {
-    int answer = num;
+    ll answer = num;
     // Finding the prime factors and applying the Euler Product Formula
     for (ll i = 2; i * i <= num; i++)
     {
@@ -49,8 +49,8 @@ int main()
     scanf("%lld", &num);
     printf("Euler totient function value is: %lld", EulerTotient_ProductForm(num));
     return 0;
-
 }
+
 /*
   Input:
   10
