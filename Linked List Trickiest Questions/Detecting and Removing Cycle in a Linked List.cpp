@@ -1,3 +1,15 @@
+/*
+Technique used:
+
+This method of detecting cycle is dependent upon Floyd's Cycle Detection Algorithm.
+In Floyd's Cycle Detection Algorithm, we take two pointers : fast and slow.
+The algorithm comes to an end when both of these pointers meet at a common point.
+Then, we store the address of the common point in a pointer variable (temp here).
+We start form the head of the linked list, and check each node if it is reachable
+from temp. That particular node, if found, is the starting node of the linked list.
+We assign a pointer to the previous one of this node.
+*/
+
 #include<iostream>
 using namespace std;
 
