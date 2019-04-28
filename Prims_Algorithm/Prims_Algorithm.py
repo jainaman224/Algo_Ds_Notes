@@ -55,7 +55,7 @@ graph = {
         }
 
 pred = prim(graph, 0)
-for v in pred: print "%s: %s" % (v, pred[v])
+for v in pred: print (v, pred[v])
 
 # Output format:
 # 0: -1
