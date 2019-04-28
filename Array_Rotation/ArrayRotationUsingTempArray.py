@@ -1,21 +1,21 @@
-#function to left rotate the array by d elements
+# function to left rotate the array by d elements
 def rotate(arr, n, d):
     
-    #it brings down d to the minimum number of rotations we need to make in case d > n
+    # it brings down d to the minimum number of rotations we need to make in case d > n
     d = d % n
     
-    #initialize temp array of size d
+    # initialize temp array of size d
     temp = [0] * d
     
-    #copy the first d elements to temp array
+    # copy the first d elements to temp array
     for i in range(d): 
         temp[i] = arr[i]
     
-    #left moves the rest of the elements in original array by d elements
+    # left moves the rest of the elements in original array by d elements
     for i in range(n-d): 
         arr[i] = arr[i+d]
     
-    #assigns the remaining elements from temp array to original array
+    # assigns the remaining elements from temp array to original array
     for i in range(d): 
         arr[i+n-d] = temp[i]
     
