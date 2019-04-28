@@ -1,5 +1,4 @@
 #include<iostream>
-#include<conio.h>
 using namespace std;
 
 struct node
@@ -11,10 +10,10 @@ struct node
 //creating a new node
 node *create (int x) 
 {
-    node *p = new node;
-    p->info = x;
-    p->next = NULL;
-    return p;
+    node *ptr = new node;
+    ptr->info = x;
+    ptr->next = NULL;
+    return ptr;
 }
 
 //printing the linked list
@@ -29,15 +28,15 @@ void print (node * ptr)
 }
 
 //removing the cycle from the linked list
-void rem (node * slow, node * head) 
+void rem (node * slow_ptr, node * head) 
 {
     node *ptr;
     node *temp;
     ptr = head;
     while (1)
     {
-        temp = slow;
-        while (temp->next != slow && temp->next != ptr)
+        temp = slow_ptr;
+        while (temp->next != slow_ptr && temp->next != ptr)
             {
                 temp = temp->next;
             }
@@ -51,16 +50,16 @@ void rem (node * slow, node * head)
 //detecting cycle in the linked list
 int detect (node * ptr) 
 {
-    node *slow = ptr;
-    node *fast = ptr;
-    while (slow && fast && fast->next)
+    node *slow_ptr = ptr;
+    node *fast_ptr = ptr;
+    while (slow_ptr && fast_ptr && fast_ptr->next)
     {
-        slow = slow->next;
-        fast = fast->next->next;
-        if (slow == fast)
+        slow_ptr = slow_ptr->next;
+        fast_ptr = fast_ptr->next->next;
+        if (slow_ptr == fast_ptr)
         {
             //remove function called
-            rem (slow, ptr); 
+            rem (slow_ptr, ptr); 
             return 1;
         }
     }
