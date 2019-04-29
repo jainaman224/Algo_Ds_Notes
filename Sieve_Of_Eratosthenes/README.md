@@ -1,8 +1,6 @@
 # Sieve of Eratosthenes
 
-In mathematics, the Sieve of Eratosthenes is a simple, ancient algorithm for finding all prime numbers up to any given limit.
-
-It does so by iteratively marking as composite (i.e., not prime) the multiples of each prime, starting with the first prime number, 2. The multiples of a given prime are generated as a sequence of numbers starting from that prime, with constant difference between them that is equal to that prime. This is the sieve's key distinction from using trial division to sequentially test each candidate number for divisibility by each prime.
+Sieve of Eratosthenes, systematic procedure for finding prime numbers that begins by arranging all of the natural numbers (1, 2, 3, …) in numerical order. After striking out the number 1, simply strike out every second number following the number 2, every third number following the number 3, and continue in this manner to strike out every nth number following the number n. The numbers that remain are prime. The procedure is named for the Greek astronomer Eratosthenes of Cyrene (c. 276–194 BC).
 
 One of a number of prime number sieves, it is one of the most efficient ways to find all of the smaller primes. It may be used to find primes in arithmetic progressions.
 
@@ -10,15 +8,14 @@ One of a number of prime number sieves, it is one of the most efficient ways to 
 ## Algorithm
 To find all the prime numbers less than or equal to a given integer n by Eratosthenes' method:
 
-- Create a list of consecutive integers from 2 through n: (2, 3, 4, ..., n).
-- Initially, let p equal 2, the smallest prime number.
-- Enumerate the multiples of p by counting in increments of p from 2p to n, and mark them in the list (these will be 2p, 3p, 4p, ...; the p itself should not be marked).
-- Find the first number greater than p in the list that is not marked. If there was no such number, stop. Otherwise, let p now equal this new number (which is the next prime), and repeat from step 3.
-- When the algorithm terminates, the numbers remaining not marked in the list are all the primes below n.
-
+- Initially, we take all numbers between 2 and n. Then, We mark all proper multiples of 2 (as 2 is the smallest prime number) as composite. 
+- Then we find the next number that hasn't been marked as composite, in our case it is 3 (as 3 is the next prime number), and we mark all proper multiples of 3 as composite. 
+- The next unmarked number is 5, which is the next prime number, and we mark all proper multiples of it.
+- And we continue this procedure until we processed all numbers in the row.
+- Since we iterate over the prime numbers in order, we already marked all numbers, who are divisible by at least one of the prime numbers, as divisible. Hence if we reach a number and it is not marked, then it isn't divisible by any smaller prime number and therefore has to be prime.
 
 ## Illustration for above algorithim
-![GIF](https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif)
+![GIF](https://camo.githubusercontent.com/7fc5b65934c2498fd50d20d8d8873f38802647c5/687474703a2f2f692e67697068792e636f6d2f336f3757544467625a50465847754d5151552e676966)
 
 
 ## Pseudocode
