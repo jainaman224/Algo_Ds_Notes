@@ -1,4 +1,4 @@
- /* Given a graph where every edge has weight as either 0 or 1. 
+/* Given a graph where every edge has weight as either 0 or 1. 
  A source vertex is also given in the graph. 
  Find the shortest path from source vertex to every other vertex.
  Complexity O(V+E) */
@@ -28,36 +28,36 @@ void zeroOneBFS(int source, int n)
     int i = 0;
     while (i < n) 
     {
-	if (i == source)
-	{
-		dist[i] = 0; // distance of source from itself is 0
-		Q.push_back(i); 
-	}
-	else
-		dist[i] = INT_MAX; // other vertices
-	i++;
+	    if (i == source)
+	    {
+		    dist[i] = 0; // distance of source from itself is 0
+		    Q.push_back(i); 
+	    }
+	    else
+		    dist[i] = INT_MAX; // other vertices
+	    i++;
     }
 
     while (!Q.empty()) 
     { 
-	int v = Q.front(); 
-	Q.pop_front(); 
+	    int v = Q.front(); 
+	    Q.pop_front(); 
 
-	for (int i = 0; i < graph[v].size(); i++) 
-	{ 
-	    // checks for the shortest distance to the nodes
-	    if (dist[graph[v][i].first] > distbfs(i, v)) 
+	    for (int i = 0; i < graph[v].size(); i++) 
 	    { 
-		dist[graph[v][i].first] = distbfs(i, v); 
+	    // checks for the shortest distance to the nodes
+	        if (dist[graph[v][i].first] > distbfs(i, v)) 
+	        { 
+		    dist[graph[v][i].first] = distbfs(i, v); 
 
-		/* Put destination vertex connected by 0 edge to front and vertex connected by 1 
-		edge to back so that vertices are processed 
-		in ascending order of weights. */
-		if (graph[v][i].second == 0) 
-			Q.push_front(graph[v][i].first); 
-		else
-			Q.push_back(graph[v][i].first); 
-	    } 
+		    /* Put destination vertex connected by 0 edge to front and vertex connected by 1 
+		    edge to back so that vertices are processed 
+		    in ascending order of weights. */
+		    if (graph[v][i].second == 0) 
+			    Q.push_front(graph[v][i].first); 
+		    else
+			    Q.push_back(graph[v][i].first); 
+	        } 
         } 
     } 
 
@@ -68,7 +68,7 @@ void zeroOneBFS(int source, int n)
 
 // function to add edges to the graph
 void addEdge(int u, int v, int wt) 
-{ 
+{
     graph[u].push_back( make_pair(v, wt)); 
     graph[v].push_back( make_pair(u, wt)); 
 }
@@ -110,4 +110,3 @@ int main()
 1
 2
 */
-
