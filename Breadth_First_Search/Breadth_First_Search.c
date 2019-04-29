@@ -29,9 +29,9 @@ void BFS(int node);
 /*Runs BFS on every vertex of the graph that hasn't been visited(marked black or 1) yet */
 void BFS_run()	
 {
-	for (int i = 0; i < n; i++) // initialising state of each vertex as 0(white)
+    for (int i = 0; i < n; i++) // initialising state of each vertex as 0(white)
 		state[i] = 0;
-	int v;
+    int v;
 	for (int i = 0; i < n; i++)
 	{
 		if (state[i] != 1)
@@ -103,8 +103,8 @@ int dequeue(int n)
 /*Returns the element at front of the queue*/
 int front1()
 {
-	if (isempty()){
-		printf("Empty queue!!\n");}
+	if ( isempty() ){
+		printf( "Empty queue!!\n" );}
 	else
 		return queue[front];
 }
@@ -119,31 +119,27 @@ int isempty()
 		return 0;
 }
 
+void matrix_initiator(int origin, int destin)
+{
+	// assigns vertices and edges 
+	graph[origin - 1][ destin - 1] = 1;
+}
 /*Function to initiate the graph from edges input by user*/
 void graph_initiator()
 {
-	n=0;
-	printf("Enter number of vertices : \n");
-	scanf("%d",&n);
-	int e;
-	printf("Enter number of edges:\n");
-	scanf("%d",&e);
-
-	//inputs the edges from start to finish nodes
-	printf("Enter start and finish vertex for each edge:\n");
- 	for (int i = 0; i < n; i++)//initialise whole graph matrix with 0s
+	n = 4;
+	int e = 6;
+ 	for (int i = 0; i < n; i++) //initialise whole graph matrix with 0s
  	{
  		for (int j = 0;j < n; j++)
- 			graph[i][j]=0;
+ 			graph[i][j] = 0;
  	}
-
-	for (int i = 1; i <= e; i++)
-	{
-		int origin,destin;
-		scanf("%d %d",&origin,&destin);
-		//sets 1 for every column in the row of the origin where an edge to destination exists
-		graph[origin - 1][destin - 1] = 1;
-	}
+    matrix_initiator(1 , 2);
+    matrix_initiator(1 , 3);
+    matrix_initiator(2 , 3);
+    matrix_initiator(3 , 4);
+    matrix_initiator(3 , 1);
+    matrix_initiator(4 , 4);
 }
 int main()
 {
@@ -151,3 +147,8 @@ int main()
 	BFS_run();
 	printf("\n");
 }
+/*OUTPUT
+1 2 3 4 
+*/
+
+
