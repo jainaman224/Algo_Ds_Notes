@@ -37,23 +37,21 @@ f(x0) = a0 + x0(a1 + x0(a2 + x0(a3 + x0(a4 + a5x0))))*/
 
 
 #include<stdio.h>
-double e(int x,int n)
+double e(int x, int n)
 {
-
-    static double s;
-    if(n==0)
+    static double s; //declare static variable
+    if(n == 0)   //Base case
     {
-
-        return s;
+      return s;
     }
-    s=1+x*(s/n);
-    return e(x,n-1);
+    s = 1 + x * (s / n); //formula of horner's rule
+    return e(x, n-1); //recursive case
 }
 int main()
 {
-    int x,n;
-    scanf("%d%d",&x,&n);
-    printf("%lf \n",e(x,n));
+    int x, n;
+    scanf("%d%d", &x, &n);
+    printf("%lf \n", e(x, n)); //x^n
 }
 /*Input:-2 10
   Output:-
