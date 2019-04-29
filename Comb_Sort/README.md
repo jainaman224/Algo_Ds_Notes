@@ -1,11 +1,11 @@
-
+### Comb Sort
 
 ![Comb_sort_demo](https://user-images.githubusercontent.com/28682701/56884536-c1704380-6a87-11e9-9cf9-fb8cba477a53.gif)
 
-Comb sort is an improvement of the bubble sort algoritham.In the comb sort,the items are sorted in a specific gap. 
+Comb sort is an improvement of the bubble sort algorithm.In the comb sort,the items are sorted in a specific gap. 
 After completing each phase,the gap decreased.
 
-With compared to the bubble sort this sorting algoritham remove the worst-case scenario and improved on the time complexity of Bubble sort.
+With compared to the bubble sort this sorting algorithm remove the worst-case scenario and improved on the time complexity of Bubble sort.
 
 
 
@@ -62,11 +62,47 @@ New Gap Value = 2/1.3 = 1
 
 ![Screenshot (44)](https://user-images.githubusercontent.com/28682701/56884136-76a1fc00-6a86-11e9-9c5a-176c1af7f025.png)
 
-***Algoritham***
+***Algorithm***
 
 1. Calculate the Gap value.
-2. Iterating and swapping.
+2. Iterate over dataset and compare each element with the gap element then move to swapping.  
 3. if the gap value has reached one then terminating the loop.
+
+***Pseudocode***
+
+function comboSort( array : list of sortable items)
+
+    length = length(array)
+    gap = length / 1.3
+    
+    loop while(gap >= 1)
+    
+        for i=0 to i <= n-1 do 
+            
+            if (i+gap > n-1)
+                continue
+            end if
+            
+            if (array[i] > array[i+gap])
+                swap(array,i,i+gap)
+            end if
+            
+        end for
+        
+       gap /= 1.3
+    end loop
+ 
+ end function
+ 
+ function swap(a : list of sortable items,input x, input y)
+ 
+    temp = a[x]
+    a[x] = a[y]
+    a[y] = temp
+    
+ end function
+ 
+            
 
 ***Example code***
 
