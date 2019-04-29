@@ -5,8 +5,8 @@
 #include<stdlib.h>
 
 //inititation of data structures
-int queue[1000];//the queue array
-int graph[1000][1000];//the graph 2-D array
+int queue[1000]; //the queue array
+int graph[1000][1000]; //the graph 2-D array
 int state[1000]; //array that stores 1 for visited nodes(black), 0 for unvisited nodes(white)
 
 int n; //no of vertices in the graph 
@@ -56,7 +56,7 @@ void BFS(int node)
 		dequeue(n);
 		for (int i = 0; i < n; i++)
 		{
-			if (graph[val][i] == 1)// checks for existence of edge between two nodes
+			if (graph[val][i] == 1) // checks for existence of edge between two nodes
 			{ 
 				if (state[graph[val][i]] != 1) // checks for neighbours of node to perform BFS on
 				{
@@ -150,5 +150,6 @@ int main()
 /*OUTPUT
 1 2 3 4 
 */
+
 
 
