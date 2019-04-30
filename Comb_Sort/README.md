@@ -17,9 +17,9 @@ Unsorted List
 
 ![Screenshot (35)](https://user-images.githubusercontent.com/28682701/56882906-b666e480-6a82-11e9-94f4-b3446f13ebf6.png)
 
--Iteration 1
+- Iteration 1
 
-Gap=8 (number of elements in the array/ 1.3)
+Gap = 8 (number of elements in the array/ 1.3)
 
 ![Screenshot (36)](https://user-images.githubusercontent.com/28682701/56883448-56713d80-6a84-11e9-97ad-32337c030b64.png)
 
@@ -27,14 +27,14 @@ Gap=8 (number of elements in the array/ 1.3)
 The distance of 8 from the first element 5 to the next element, leads to the element of 2.These numbers are not in the right order,so they have to swap.Then the second element compared with the last element,they are not in the order so again swap is required.
 
 
--Iteration 2
+- Iteration 2
 
 New Gap Value = 8/1.3 = 6
 
 ![Screenshot (38)](https://user-images.githubusercontent.com/28682701/56883662-fcbd4300-6a84-11e9-9a56-74f90a468644.png)
 
 
--Iteration 3
+- Iteration 3
 
 New Gap Value = 6/1.3 = 4
 
@@ -42,7 +42,7 @@ New Gap Value = 6/1.3 = 4
 
 
 
--Iteration 4
+- Iteration 4
 
 
 New Gap Value = 4/1.3 = 3
@@ -50,13 +50,13 @@ New Gap Value = 4/1.3 = 3
 ![Screenshot (42)](https://user-images.githubusercontent.com/28682701/56883861-8f5de200-6a85-11e9-8ffe-f2b730804a00.png)
 
 
--Iteration 5
+- Iteration 5
 
 New Gap value = 3/1.3 = 2
 
 ![Screenshot (43)](https://user-images.githubusercontent.com/28682701/56883958-de0b7c00-6a85-11e9-8d56-2497dbe4b89c.png)
 
--Iteration 6
+- Iteration 6
 
 New Gap Value = 2/1.3 = 1
 
@@ -77,14 +77,14 @@ function comboSort( array : list of sortable items)
     
     loop while(gap >= 1)
     
-        for i=0 to i <= n-1 do 
+        for i = 0 to i <= n-1 do 
             
-            if (i+gap > n-1)
+            if ( i + gap > n-1 )
                 continue
             end if
             
-            if (array[i] > array[i+gap])
-                swap(array,i,i+gap)
+            if ( array[i] > array[i+gap] )
+                swap( array, i , i+gap )
             end if
             
         end for
@@ -103,62 +103,6 @@ function comboSort( array : list of sortable items)
  end function
  
             
-
-***Example code***
-
-#include <stdio.h><br />
-void comboSort(int a[],int n);<br />
-void swap(int b[],int x,int y,int num);<br />
-void print(int x[],int y);<br />
-int main()<br />
-{<br />
-    int number;<br />
-    scanf("%d",&number);<br />
-    int array[number];
-    
-    for(int i=0;i<number;i++){
-        scanf("%d",&array[i]);
-    }
-    
-    comboSort(array,number);
-    return 0;
-}
-
-void comboSort(int a[],int n){
-    
-    int gap=n,i;
-    gap /= 1.3;
-    
-    while(gap >= 1){
-       
-       for(int i=0;i<n-1;i++){
-            
-            if(i+gap > n-1){
-                continue;
-            }
-            if(a[i]> a[i+gap]){
-              swap (a,i,i+gap,n);   
-            }
-        }
-        
-        gap /=1.3;
-    }
-  print(a,n);<br />
-}
-
-void swap (int b[],int x,int y,int num){
-    
-    int temp = b[x];
-    b[x] = b[y];
-    b[y] = temp;
-}
-
-void print(int x[],int y){
-    
-    for(int i=0;i<y;i++){
-        printf("%d ",x[i]);
-    }
-}
 
 ***Time complexity***
 
