@@ -1,5 +1,5 @@
 //Function For Linear Search
-fun Linear_Search(list: List<Int>, Num: Int):Int{
+fun Linear_Search(list: List<Int>, Num: Int):Int {
     //If number not found than return -1 otherwise return postion of that number.
     var foundAt:Int = -1
     for(number in 0 until list.size) {
