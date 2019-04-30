@@ -16,7 +16,6 @@ fun main(args:Array<String>) {
     val position: Int
     //Let 45 to be searched
     position = Linear_Search(list, 45)
-
     if(position == -1){
       println("Number Not Found")
     }
@@ -33,6 +32,7 @@ fun main(args:Array<String>) {
         println("Number Found at position ${position1 + 1}")
     }
 }
+
 //Output:-
 // Number Found at position 4
 // Number Not Found
