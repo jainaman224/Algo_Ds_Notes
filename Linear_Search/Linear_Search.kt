@@ -17,7 +17,7 @@ fun main(args:Array<String>) {
     //Let 45 to be searched
     position = Linear_Search(list, 45)
     if(position == -1) {
-      println("Number Not Found")
+        println("Number Not Found")
     }
     else {
         println("Number Found at position ${position + 1}")
