@@ -15,9 +15,12 @@ fun Insertion_sort(list: MutableList<Int>): List<Int> {
     return list
 }
 //Driver function for Insertion sort
-fun main() {
+fun main(args: Array<String>) {
     val list = mutableListOf(4, 67, 89, 2, 45, 102)
     println("Unsorted List: $list")
     val sortedlist = Insertion_sort(list)
     println("Sorted List: $sortedlist")
 }
+
+//Input: Unsorted: [4, 67, 89, 2, 45, 102]
+//Output: Sorted: [2, 4, 25, 67, 89, 102]
