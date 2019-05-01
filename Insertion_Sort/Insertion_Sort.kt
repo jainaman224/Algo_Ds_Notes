@@ -1,8 +1,8 @@
 //Function for sorting an list using Insertion Sort
 fun Insertion_sort(list: MutableList<Int>): List<Int> {
     for(i in 0 until list.size) {
-            var key = list[i]
-            var j = i - 1
+        var key = list[i]
+        var j = i - 1
         /*Move elements of arr[0..i-1], that are
           greater than key, to one position ahead
           of their current position*/
