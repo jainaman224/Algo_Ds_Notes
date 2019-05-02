@@ -74,3 +74,5 @@ int main()
 	search(pat, txt, q); 
 	return 0; 
 }
+/* Output
+Pattern found at index 25*/
