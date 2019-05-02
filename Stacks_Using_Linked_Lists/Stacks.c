@@ -10,7 +10,7 @@ struct stack
 int count = 0;
 
 // Function to push element to stack
-void PUSH(struct stack *s,int value,int n)
+void push(struct stack *s,int value,int n)
 {
     if (s -> top == n-1)
     {
@@ -25,7 +25,7 @@ void PUSH(struct stack *s,int value,int n)
 }
 
 // Function to pop element from stack 
-void POP(struct stack *s)
+void pop(struct stack *s)
 {
     if (s -> top == -1)
         printf("\nThe stack is empty");
@@ -56,7 +56,7 @@ int peek(struct stack *s)
 } 
 
 // Function to print stack 
-void PrintStack(struct stack *s)
+void printStack(struct stack *s)
 {
     if (Stack.top == -1)
     {
@@ -87,20 +87,18 @@ void main()
     scanf("%d",&n);
     do
     {
-        printf("\nWhich operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size");	 /* Menu Driven Programming */
+        printf("\nWhich operation to perform \n 1.Push \n 2.Pop \n 3.Check empty or not \n 4.Print top element \n 5.Display stack \n 6.Size");	 // Menu Driven Programming
         printf("\nEnter choice");
         scanf("%d",&c);
         if (c == 1)
         {
             printf("\nEnter value to push ");
             scanf("%d",&value);
-            PUSH(s,value,n);
-            break;
+            push(s,value,n);
         }
         else if (c == 2)
         {
-            POP(s);
-            break;
+            pop(s);
         }
         else if (c == 3)
         {
@@ -108,27 +106,19 @@ void main()
                 printf("\nStack is not empty");
             else
                 printf("\nStack is empty");
-            break;
         }
         else if (c == 4)
         {
             printf("\nThe topmost element is ");
             peek(s);
-            break;
         }
         else if (c == 5)
         {
-            PrintStack(s);
-            break;
+            printStack(s);
         }
         else if (c == 6)
         {
             size(s);
-            break;
-        }
-        else
-        {
-            break;
         }
         printf("\nDo u want to continue(1/0)");
         scanf("%d",&k);
@@ -140,7 +130,13 @@ void main()
 Sample output:
 
 Enter the number of elements 4
-Which operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size
+Which operation to perform 
+1.Push
+2.Pop 
+3.Check empty or not 
+4.Print top element 
+5.Display stack 
+6.Size
 Enter choice 1
 Enter the value to push 3
 Do u want to continue(1/0) 1
