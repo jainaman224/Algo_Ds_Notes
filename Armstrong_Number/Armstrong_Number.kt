@@ -14,7 +14,7 @@ fun armstrong(Num: Int, digits: Int):Int {
     var sum = 0
     var num = Num
     while(num > 0) {
-        var digit =  num%10
+        var digit =  num % 10
         var power = powerCalculator(digit, digits)
         sum += power
         num /= 10
