@@ -21,7 +21,7 @@ public class bresenhamLine extends java.applet.Applet implements MouseListener, 
         height = getSize().height;
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
-        }
+    }
 
     // draw a line from point xa,ya into xb,yb
     public void bresenham_line(int xa, int ya, int xb, int yb) 
@@ -50,17 +50,15 @@ public class bresenhamLine extends java.applet.Applet implements MouseListener, 
         Dy = Math.abs(2 * (yb - ya));
         int prirastokDy = ((yb - ya) > 0) ? 1 : -1;
         // draw line
-        for (int i = 0; i <= xb - xa; i++) 
-        {
+        for (int i = 0; i <= xb - xa; i++) {
             setpix(x, y);
             x++;
             sum -= Dy;
-            if (sum<0) {
+            if (sum < 0) {
                 y += prirastokDy;
                 sum += Dx;
             }
         }
-
     }
 
     public void bresteepline(int xc, int yc, int xd, int yd) {   
@@ -76,8 +74,7 @@ public class bresenhamLine extends java.applet.Applet implements MouseListener, 
         Dx = 2 * (xd - xc),
         Dy = Math.abs(2 * (yd - yc));
         int prirastokDy = ((yd - yc) > 0) ? 1 : -1;
-        for (int i = 0; i <= xd - xc; i++) 
-        {
+        for (int i = 0; i <= xd - xc; i++) {
             setpix(y, x);
             x++;
             sum -= Dy;
@@ -86,7 +83,6 @@ public class bresenhamLine extends java.applet.Applet implements MouseListener, 
                 sum += Dx;
             }
         }
-
     }
 
     public void setpix(int x, int y) {

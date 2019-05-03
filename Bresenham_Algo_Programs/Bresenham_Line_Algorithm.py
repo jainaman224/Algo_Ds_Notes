@@ -62,11 +62,10 @@ def main():
 if __name__ == "__main__":
     main()  
     
-
 """ Input -     Enter Start X : 100
                 Enter Start Y : 100
                 Enter End X   : 300
                 Enter End Y   : 300
 
-    Sample output - https://ibb.co/4fzGM6W */
+    Output - https://ibb.co/4fzGM6W */
 """
