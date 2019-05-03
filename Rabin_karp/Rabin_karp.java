@@ -66,3 +66,8 @@ public class Main
         search(pat, txt, q); 
     } 
 }
+
+/*
+Sample input "ALGONOTES ARE HERE" and pattern to be matched is "HERE"
+Sample output "Pattern found at index 15"
+*/
