@@ -4,20 +4,11 @@ Cocktail Sort is a variation of Bubble sort. The Bubble sort algorithm always tr
 
 ## EXAMPLE
 
-Given below is an unsorted array [1,2,6,4,3,7,5,8]. Cocktail Sort take O(n^2) time.
+Given below is an unsorted array [11,33,88,66,22,44,55,99]. Cocktail Sort take O(n^2) time.
 
-![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gifs/gif1.gif)
+![Cocktail_Sort](https://www.researchgate.net/profile/Ashraf_Maghari/publication/314753240/figure/fig1/AS:669485262454802@1536629133857/cocktail-sort.ppm)
 
-1 and 2 have element bigger than them next to them hence starting with six and swapping positions with the elements smaller than 6 until found an element bigger than 6, then taking that and doing the same procedure like with 7 in first forward iteration in above gif.
-
-![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gifs/gif2.gif)
-
-Doing backward iteration and swapping 5 with elements bigger than it, if a smaller element is found then we take that and do the same for it also.
-
-![Cocktail_Sort](https://github.com/archi14/Algo_Ds_Notes/blob/Cocktail_Sort/Cocktail_Sort/gifs/gif3.gif)
-
-Continues till a sorted array is obtained.
-
+Alternate forward and backward iteration is done, In forward iteration bigger element is moved forward like 99 in first iteration and in backward smaller iteration is moved forward like the element 11 in second iteration and this process continues till a sorted array is obtained.
 ## PSEUDOCODE
 
 <p> We will keep a swap variable to see if the swap has happened or not. If no swap happens then no more processing on the array is required and it comes out of the loop.
