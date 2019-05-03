@@ -1,5 +1,4 @@
 // C program to implement stack using linked list
-
 #include<stdio.h>
 struct stack
 {
@@ -10,7 +9,7 @@ struct stack
 int count = 0;
 
 // Function to push element to stack
-void push(struct stack *s,int value,int n)
+void push(struct stack *s, int value, int n)
 {
     if (s -> top == n-1)
     {
@@ -33,7 +32,7 @@ void pop(struct stack *s)
     {
         int value;
         value = s -> data[s -> top];
-        printf("\nThe poped value is %d",value);
+        printf("\nThe poped value is %d", value);
         s -> top--;
     }
     count--;
@@ -66,14 +65,14 @@ void printStack(struct stack *s)
     {
         printf("\nThe current stack is ");
         for (int i = 0; i <= Stack.top; i++)
-        printf("%d\t",s -> data[i]);
+        printf("%d\t", s -> data[i]);
     }
 }
 
 // Function to print size of stack
 void size(struct stack *s)
 {
-    printf("\nSize of stack is %d",count);
+    printf("\nSize of stack is %d", count);
 }  
 
 // Main function
@@ -84,17 +83,18 @@ void main()
     Stack.top = -1;
     int c, value, k, n;
     printf("\nEnter the number of elements");
-    scanf("%d",&n);
+    scanf("%d", &n);
     do
     {
-        printf("\nWhich operation to perform \n 1.Push \n 2.Pop \n 3.Check empty or not \n 4.Print top element \n 5.Display stack \n 6.Size");	 // Menu Driven Programming
+        printf("\nWhich operation to perform \n 1.Push \n 2.Pop \n 3.Check empty or not);
+        printf("\n 4.Print top element \n 5.Display stack \n 6.Size");	 // Menu Driven Programming
         printf("\nEnter choice");
-        scanf("%d",&c);
+        scanf("%d", &c);
         if (c == 1)
         {
             printf("\nEnter value to push ");
-            scanf("%d",&value);
-            push(s,value,n);
+            scanf("%d", &value);
+            push(s, value, n);
         }
         else if (c == 2)
         {
@@ -121,7 +121,7 @@ void main()
             size(s);
         }
         printf("\nDo u want to continue(1/0)");
-        scanf("%d",&k);
+        scanf("%d", &k);
     } while (k != 0);
     printf("\n");
 }
