@@ -58,11 +58,24 @@ void Print_Array(int array[], int size)
 
 int main()
 {
-    int array[] = {10, 2, 4, 3, 1, 6, 8, 5};
-    Heap_Sort(array, 7);
-    Print_Array(array, 7);
+    int n, i;
+    printf("Enter number of elements in your array: ");
+    scanf("%d", &n);
+    int array[n];
+    printf("Enter your array: ");
+    for (i = 0; i < n; i++)
+        scanf("%d", &array[i]);
+    Heap_Sort(array, n);
+    Print_Array(array, n);
     return 0;
 }
 
-// Output
-// 1 2 3 4 5 6 8 10
+/*Enter number of elements in your array: 7
+Enter your array: 10
+2
+4
+3
+1
+6
+8
+1 2 3 4 6 8 10*/

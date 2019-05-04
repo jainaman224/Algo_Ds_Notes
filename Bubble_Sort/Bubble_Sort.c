@@ -36,11 +36,26 @@ void Print_Array(int array[], int size)
 // Driver Function
 int main()
 {
-    int array[] = {2, 4, 3, 1, 6, 8, 4};
-    Bubble_Sort(array, 7);
-    Print_Array(array, 7);
+    int n;
+    printf("Enter number of elements in your array: ");
+    scanf("%d", &n);
+    int array[n];
+    printf("Enter your array: ");
+    for (int i = 0; i < n; i++)
+        scanf("%d", &array[i]);
+    Bubble_Sort(array, n);
+    Print_Array(array, n);
     return 0;
 }
 
-// Output
-// 1 2 3 4 4 6 8
+/* INPUT: 
+Enter number of elements in your array: 7
+Enter your array: 9
+8
+7
+2
+6
+3
+5
+OUTPUT:
+2 3 5 6 7 8 9 */
