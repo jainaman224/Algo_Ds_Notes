@@ -65,7 +65,7 @@ void printStack(struct stack *s)
     {
         printf("\nThe current stack is\n");
         for (int i = 0; i <= Stack.top; i++)
-        printf("%d\n", s -> data[i]);
+        printf("%d\t", s -> data[i]);
     }
 }
 
