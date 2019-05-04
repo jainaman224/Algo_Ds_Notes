@@ -63,9 +63,9 @@ void printStack(struct stack *s)
     }
     else
     {
-        printf("\nThe current stack is ");
+        printf("\nThe current stack is\n");
         for (int i = 0; i <= Stack.top; i++)
-        printf("%d\t", s -> data[i]);
+        printf("%d\n", s -> data[i]);
     }
 }
 
@@ -86,7 +86,7 @@ void main()
     scanf("%d", &n);
     do
     {
-        printf("\nWhich operation to perform \n 1.Push \n 2.Pop \n 3.Check empty or not);
+        printf("\nWhich operation to perform \n 1.Push \n 2.Pop \n 3.Check empty or not");
         printf("\n 4.Print top element \n 5.Display stack \n 6.Size");	 // Menu Driven Programming
         printf("\nEnter choice");
         scanf("%d", &c);
@@ -140,11 +140,23 @@ Which operation to perform
 Enter choice 1
 Enter the value to push 3
 Do u want to continue(1/0) 1
-Which operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size
+Which operation to perform 
+1.Push
+2.Pop
+3.Check empty or not 
+4.Print top element 
+5.Display stack 
+6.Size
 Enter choice 2
 The popped value is 3
 Do u want to continue(1/0) 1
-Which operation to perform 1.PUSH 2.POP 3.Check empty or not 4.Print top element 5.Display stack 6.Size
+Which operation to perform 
+1.Push
+2.Pop
+3.Check empty or not  
+4.Print top element 
+5.Display stack 
+6.Size
 Enter choice 5
 Stack is empty
 
