@@ -1,10 +1,10 @@
 public class Main  
-{ 
+{
     // d is the number of characters in the input alphabet 
     public final static int d = 256; 
       
-      static void search(String pat, String txt, int q) 
-    { 
+    static void search(String pat, String txt, int q) 
+    {
         int M = pat.length(); 
         int N = txt.length(); 
         int i, j; 
@@ -13,20 +13,19 @@ public class Main
         int h = 1; 
       
         // The value of h would be "pow(d, M-1)%q" 
-        for (i = 0; i < M-1; i++) 
-            h = (h*d)%q; 
+        for (i = 0; i < M - 1; i++) 
+            h = (h * d) % q; 
       
         // Calculate the hash value of pattern and first 
         for (i = 0; i < M; i++) 
         { 
-            p = (d*p + pat.charAt(i))%q; 
-            t = (d*t + txt.charAt(i))%q; 
+            p = (d * p + pat.charAt(i)) % q; 
+            t = (d * t + txt.charAt(i)) % q; 
         } 
       
         // Slide the pattern over text one by one 
         for (i = 0; i <= N - M; i++) 
-        { 
-      
+        {
             // Check the hash values of current window of text 
             // and pattern. If the hash values match then only 
             // check for characters on by one 
@@ -35,7 +34,7 @@ public class Main
                 /* Check for characters one by one */
                 for (j = 0; j < M; j++) 
                 { 
-                    if (txt.charAt(i+j) != pat.charAt(j)) 
+                    if (txt.charAt(i + j) != pat.charAt(j)) 
                         break; 
                 } 
       
@@ -46,14 +45,14 @@ public class Main
       
             // Calculate hash value for next window of text: Remove 
             // leading digit, add trailing digit 
-            if ( i < N-M ) 
+            if ( i < N - M ) 
             { 
-                t = (d*(t - txt.charAt(i)*h) + txt.charAt(i+M))%q; 
+                t = (d * (t - txt.charAt(i) * h) + txt.charAt(i + M)) % q; 
       
                 // We might get negative value of t, converting it 
                 // to positive 
-                if (t < 0) 
-                t = (t + q); 
+                if (t < 0)
+                    t = (t + q); 
             } 
         } 
     } 
