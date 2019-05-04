@@ -1,7 +1,7 @@
 fun main() {
     //Let's take a number 36
     var num = 76
-    var sqre = num*num
+    var sqre = num * num
     var count = 0
     //Comparing Number and It's Square
     while(num > 0) {
