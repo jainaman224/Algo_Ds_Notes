@@ -1,4 +1,5 @@
-/*The Rabin–Karp algorithm is a string-searching algorithm that uses hashing to find any one of a set of pattern strings in a text.*/
+/*The Rabin–Karp algorithm is a string-searching algorithm that uses
+hashing to find any one of a set of pattern strings in a text.*/
 public class Main  
 {
     // d is the number of characters in the input alphabet 
