@@ -74,8 +74,13 @@ void insertionSort(int array[], int left, int right)
       
 int main()  
 {  
-    int array[] = {50, 39, 89, 10, 8};  
-    int n = sizeof(array)/sizeof(array[0]);  
+    int n;
+    printf("Enter number of elements in your array: ");
+    scanf("%d", &n);    
+    int array[n]; 
+    printf("Enter your array: ");
+    for (int i = 0; i < n; i++)
+        scanf("%d", &array[i]);
     printf("Unsorted Array : \n");  
     for (int i = 0; i < n; i++)  
         printf("%d  ", array[i]);  
@@ -104,6 +109,13 @@ int main()
 }  
 
 /*
+INPUT:
+Enter number of elements in your array: 5
+Enter your array: 50
+39
+89
+10
+8
 OUTPUT
 ----------------
 Unsorted Array :
