@@ -1,7 +1,9 @@
 //Function for Bubble Sort
 fun bubbleSort(list: MutableList<Int>):List<Int> {
-    // flag keeps track if any swap happened or not, if swap not happened then array is sorted and it will break out of the loop
-    // and will save time from running for loop unnecessarily
+    /* flag keeps track if any swap happened or not,
+     if swap not happened then array is sorted and it will break
+      out of the loop and will save time from
+      running for loop unnecessarily.*/
     var flag: Int = 0
     for(i in 0 until (list.size - 1)) {
         for (j in 0 until (list.size - i - 1)) {
