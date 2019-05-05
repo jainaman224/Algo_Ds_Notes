@@ -8,7 +8,7 @@ fun bubbleSort(list: MutableList<Int>):List<Int> {
             if(list[j] > list[j + 1]) {
                 var tmp = list[j + 1]
                 list[j + 1] = list[j]
-                list[j]  = tmp
+                list[j] = tmp
                 flag++
             }
         }
@@ -27,4 +27,4 @@ fun main(args:Array<String>) {
 }
 
 // Input: Unsorted: [90, 5, 25, 19, 2, 1]
-//Output: Sorted: [1, 2, 5, 19, 25, 90]
+// Output: Sorted: [1, 2, 5, 19, 25, 90]
