@@ -19,7 +19,7 @@ fun bubbleSort(list: MutableList<Int>):List<Int> {
 }
 
 //Driver Function for Bubble Sort
-fun main(args:Array<String>){
+fun main(args:Array<String>) {
     val numbers = mutableListOf(9, 5, 25, 9, 2, 1)
     println("Unsorted: $numbers")
     val sortedlist = bubbleSort(numbers)
