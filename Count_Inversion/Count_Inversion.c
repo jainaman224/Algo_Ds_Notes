@@ -8,9 +8,9 @@ int merge(int array[], int aux[], int low, int mid, int high)
     int x = low, y = mid, z = low, count = 0;
 
     // checking till left and right half of merge sort
-    while((x <= mid-1) && (y <= high)) 
+    while ((x <= mid-1) && (y <= high)) 
     {
-        if(array[x] <= array[y]) 
+        if (array[x] <= array[y]) 
         {
             aux[z++] = array[x++];
         }
@@ -22,17 +22,18 @@ int merge(int array[], int aux[], int low, int mid, int high)
     }
 
     // Copy remaining elements
-    while(x <= mid-1)
+    while (x <= mid-1)
     {
         aux[z++] = array[x++];
     }
-    while(y <= high) 
+    
+    while (y <= high) 
     {
         aux[z++] = array[y++];
     }
 
     // Sorting the original array with the help of aux array
-    for(int i = low; i <= high; i++)
+    for (int i = low; i <= high; i++)
     {
         array[i] = aux[i];
     }
@@ -43,7 +44,7 @@ int merge(int array[], int aux[], int low, int mid, int high)
 int mergeSort(int array[], int aux[], int low, int high) 
 {
     int count = 0;
-    if(high > low)
+    if (high > low)
     {
         int mid = (low + high) / 2;
 
@@ -68,7 +69,7 @@ int main()
 {       
     int array[] = {1, 2, 7, 6, 8, 9, 1, 2};
     int n = sizeof(array) / sizeof(array[0]);
-    printf("%d", inversions_count(array, n));
+    printf ("%d", inversions_count(array, n));
     return 0;
 }
 
