@@ -2,13 +2,13 @@
 fun binarySearch(list: List<Int>, left: Int, right: Int, num: Int):Int {
     if (list.size >= 1) {
         var mid = (left + (right -1)) / 2
-        if(list[mid] == num) {
+        if (list[mid] == num) {
             return mid
         }
-        if(list[mid] > num) {
+        if (list[mid] > num) {
             return binarySearch(list, 1, mid - 1, num)
         }
-        if(list[mid] < num) {
+        if (list[mid] < num) {
             return binarySearch(list, mid +1, right, num)
         }
     }
