@@ -17,7 +17,7 @@ fun main() {
     // Printing Prime Numbers In the range of (1 to given Number)
     for (primes in 2 until num) {
         if (prime[primes]) {
-            print(" $primes")
+            print("$primes ")
         }
     }
 }
