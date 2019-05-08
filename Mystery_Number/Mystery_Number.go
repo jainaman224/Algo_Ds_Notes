@@ -35,7 +35,8 @@ func solve(num int) int {
 }
 
 func main() {
-    var num = 22
+    var num int
+    fmt.Scan(&num)
     var ans = solve(num)
     if (ans == 1) {
         fmt.Print("It is a mystery number")
