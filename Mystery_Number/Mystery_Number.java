@@ -5,6 +5,8 @@
     where those two numbers are reverse of each other.
 */
 
+import java.util.Scanner;
+
 public class Mystery {
 
     /*  Approach : We iterate over from 1 to n/2, to get all the pairs of number, that
@@ -31,7 +33,9 @@ public class Mystery {
     }
 
     public static void main(String args[]) {
-        int num = 22;
+        int num;
+        Scanner s = new Scanner(System.in);
+        num = s.nextInt();
         int ans = solve(num);
         if (ans == 1) {
             System.out.println("It is a mystery number");

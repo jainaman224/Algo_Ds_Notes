@@ -34,7 +34,8 @@ int solve(int num) {
 }
 
 int main() {
-    int num = 22;
+    int num;
+    scanf("%d", &num);
     int ans = solve(num);
     if (ans == 1) {
         printf("It is a mystery number");
