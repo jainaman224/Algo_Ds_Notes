@@ -1,6 +1,6 @@
 import java.util.Scanner
 
-//Recursive Function for euclidean
+// Recursive Function for euclidean
 fun euclidean(num1: Int, num2: Int):Int {
     var Num1 = num1
     var Num2 = num2
@@ -11,7 +11,7 @@ fun euclidean(num1: Int, num2: Int):Int {
         return euclidean(Num2 % Num1, Num1)
 }
 
-//Driver Function
+// Driver Function
 fun main() {
     val scanner = Scanner(System.`in`)
     println("Please Enter Two Integers.")
