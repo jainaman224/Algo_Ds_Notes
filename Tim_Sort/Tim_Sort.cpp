@@ -66,8 +66,15 @@ void insertionSort(int array[], int left, int right)
 
 int main() 
 { 
-    int array[] = {50, 39, 89, 10, 8}; 
-    int n = sizeof(array)/sizeof(array[0]); 
+    int n;
+    cout << "Enter number of elements in your array: ";
+    cin  >> n;
+    int array[n];
+    cout << "Enter your array: ";
+    for(i = 0; i < n; i++)
+    {
+        cin  >> array[i];
+    }
     printf("Unsorted Array :\n"); 
     for (int i = 0; i < n; i++) 
 	printf("%d ", array[i]); 
@@ -97,7 +104,15 @@ int main()
 
     return 0; 
 } 
+
 /*
+INPUT:
+Enter number of elements in your array: 5
+Enter your array: 50
+39
+89
+10
+8
 OUTPUT
 ----------------
 Unsorted Array :
