@@ -46,8 +46,12 @@ void solve(int a[], int n) {
 }
 
 int main() {
-    int num = 10;
-    int arr[] = {1, 14, 2, 1, 7, 11, 16, 18, 4, 6};
+    int num;
+    cin >> num;
+    int arr[num];
+    for (int i = 0; i < num; i++) {
+        cin >> arr[i];
+    }
     solve(arr, num);
     return 0;
 }
