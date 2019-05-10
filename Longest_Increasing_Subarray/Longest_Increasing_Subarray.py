@@ -37,8 +37,10 @@ def solve(a, n):
     for i in range(max_index, mx + max_index):
         print(a[i], end = " ")
 
-num = 10
-arr = [1, 14, 2, 1, 7, 11, 16, 18, 4, 6]
+num = int(input())
+arr = []
+for i in range(0, num):
+    arr = arr.append(int(input))
 solve(arr, num)
 
 '''
