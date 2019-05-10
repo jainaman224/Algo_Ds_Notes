@@ -17,6 +17,8 @@
                to be lesser than the previous element.
 */
 
+import java.util.Scanner;
+
 public class Longest_Increasing_Subarray {
     public static int mx = 0;
     public static int ln = 1;
@@ -44,8 +46,13 @@ public class Longest_Increasing_Subarray {
     }
 
     public static void main(String args[]) {
-        int num = 10;
-        int arr[] = {1, 14, 2, 1, 7, 11, 16, 18, 4, 6};
+        int num;
+        Scanner s = new Scanner(System.in);
+        num = s.nextInt();
+        int arr[] = new int[num];
+        for (int i = 0; i < num; i++) {
+            a[i] = s.nextInt();
+        }
         solve(arr, num);
     }
 }

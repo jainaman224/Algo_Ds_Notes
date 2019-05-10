@@ -49,8 +49,14 @@ func solve(a []int, n int) {
 }
 
 func main() {
-    var num = 10
-    var arr = []int{1, 14, 2, 1, 7, 11, 16, 18, 4, 6}
+    var num int
+    fmt.Scan(&num)
+    var arr = []int{}
+    for i := 0; i < num; i++ {
+        var x int
+        fmt.Scan(&x)
+        arr = append(arr, x)
+    }
     solve(arr, num)
 }
 
