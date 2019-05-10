@@ -40,15 +40,22 @@ func Insertion_Sort(array[] int, size int) []int {
 
 // Driver Function
 func main() {
-    // Input array
-    array := []int{2, 4, 3, 1, 6, 8, 4}
-    fmt.Println(Insertion_Sort(array, 7))
+    var num int
+    fmt.Scan(&num)
+    array := []int{}
+    for i := 0; i < num; i++ {
+        var x int
+        fmt.Scan(&x)
+        array = append(array, x)
+    }
+    fmt.Println(Insertion_Sort(array, num))
 }
 
-/* 
-    Input
-    [ 2 4 3 1 6 8 4 ]
+/*
+Input :
+num = 6
+array = [1, 6, 3, 3, 5, 2]
 
-    Output
-    [ 1 2 3 4 4 6 8 ]
+Output :
+[1, 2, 3, 3, 5, 6]
 */
