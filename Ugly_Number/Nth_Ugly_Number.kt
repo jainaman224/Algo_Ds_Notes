@@ -1,6 +1,6 @@
 import java.util.*
 
-//Checking whether number is Ugly Number or not
+// Checking whether number is Ugly Number or not
 fun UglyNum(number: Int):Int {
     var x = 0
     var number = number
