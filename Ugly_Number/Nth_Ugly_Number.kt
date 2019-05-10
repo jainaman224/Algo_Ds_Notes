@@ -19,7 +19,7 @@ fun UglyNum(number: Int):Int {
            break
        }
    }
-    return x
+   return x
 }
 
 // Finding Nth Ugly Number
@@ -33,10 +33,10 @@ fun NthUglyNum(num: Int):Int {
             count += 1
         }
         else {
-            count = count
+            continue
         }
     }
-  return checkNum
+    return checkNum
 }
 
 // Driver function for Ugly Number
