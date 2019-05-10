@@ -30,11 +30,11 @@ void BFS(int node);
 void BFS_run()	
 {
     for (int i = 0; i < n; i++) // initialising state of each vertex as 0(white)
-		state[i] = 0;
+        state[i] = 0;
     int v;
 	for (int i = 0; i < n; i++)
 	{
-		if (state[i] != 1)
+        if (state[i] != 1)
 		    BFS(i);
 	}
 }
@@ -47,7 +47,7 @@ void BFS_run()
  */
 void BFS(int node)
 {
-	enqueue(node);
+    enqueue(node);
 	state[node] = 1;
 	while (!isempty())
 	{
@@ -56,7 +56,7 @@ void BFS(int node)
 		dequeue(n);
 		for (int i = 0; i < n; i++)
 		{
-			if (graph[val][i] == 1) // checks for existence of edge between two nodes
+		    if (graph[val][i] == 1) // checks for existence of edge between two nodes
 			{ 
 				if (state[graph[val][i]] != 1) // checks for neighbours of node to perform BFS on
 				{
