@@ -5,6 +5,7 @@
     Prefix sum equals to the sum of all element from start to the current element of the array.
 
 */
+
 package main
 import "fmt"
 
@@ -24,8 +25,14 @@ func prefix_sum(array []int, length int){
 }
 
 func main() {
-    var length = 5
-    var array = []int{3,2,4,6,7}
+    var length int
+    fmt.Scan(&length)
+    var array = []int{}
+    for i := 0; i < length; i++ {
+        var x int
+        fmt.Scan(&x)
+        array = append(array, x)
+    }
     prefix_sum(array, length)
 }
 /*
