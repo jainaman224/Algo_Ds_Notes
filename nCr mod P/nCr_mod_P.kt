@@ -10,6 +10,7 @@ fun nCr(n: Int, r: Int, mod: Int):Int {
     for (i in 1 until r+1) {
         pascal[i] = 0
     }
+
     // We use the known formula nCr = (n-1)C(r) + (n-1)C(r-1) for computing the values.
     for (i in 1 until n+1) {
         var k: Int
@@ -26,7 +27,6 @@ fun nCr(n: Int, r: Int, mod: Int):Int {
     return pascal[r]
 }
 
-// Driver Function for nCr
 fun main() {
     val scanner = Scanner(System.`in`)
     println("Please Enter Three Integers.")
@@ -38,10 +38,10 @@ fun main() {
         println("n can never be less than r.")
     }
     else {
-        println("The value of nCr($n,$r)%$mod = $ans")
+        println("The value of nCr($n,$r) % $mod = $ans")
     }
 }
 
 // Input:- Please Enter Three Integers.
 //         7 5 6
-// Output:- The value of nCr(7,5)%6 = 3
+// Output:- The value of nCr(7,5) % 6 = 3
