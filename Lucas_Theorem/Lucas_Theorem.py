@@ -17,9 +17,9 @@ def nCrModpLucas(n,r,p):
     return (nCrModpLucas(n/p, r/p, p) * nCrModpDP(ni, ri, p))%p
 
 def main():
-    n = 1000
-    r = 900
-    p = 13
+    n = int(input())
+    r = int(input())
+    p = int(input())
     print("Value of nCr % p is",nCrModpLucas(n,r,p))
 
 if __name__ == '__main__':
@@ -27,6 +27,10 @@ if __name__ == '__main__':
 
 '''     
 	INPUT - OUTPUT
-     sample input=13
-     output=value of nCr %p is 8 
+     sample input
+	     n = 1000
+	     r = 900
+	     p = 13
+     output
+     	value of nCr % p is 8 
 '''

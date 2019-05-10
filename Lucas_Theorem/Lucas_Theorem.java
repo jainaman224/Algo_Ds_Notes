@@ -1,3 +1,4 @@
+import java.util.*;
 public class Lucas_Theorem {
 
     static int nCrModpDP (int n, int r, int p)
@@ -10,7 +11,7 @@ public class Lucas_Theorem {
             for(int j=Math.min(i,r); j>0; j--)
                 C[j] = (C[j] + C[j-1]) % p;
         }
-        
+
         return C[r];
     }
 
@@ -29,11 +30,19 @@ public class Lucas_Theorem {
     public static void main (String args[]) 
     {
         int n,r,p;
-        n = 1000;r=900;p=13;
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        r = sc.nextInt();
+        p = sc.nextInt();
+        
         System.out.println("Value of nCr % p is " + nCrModpLucas(n,r,p));
     }
 }
 /*      INPUT - OUTPUT
-     sample input=13
-     output=value of nCr %p is 8  */
-     
+     sample input
+	     n = 1000
+	     r = 900
+	     p = 13
+     output
+     	value of nCr %p is 8 
+*/
