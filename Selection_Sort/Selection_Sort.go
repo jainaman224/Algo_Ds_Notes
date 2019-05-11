@@ -34,8 +34,15 @@ func Selection_Sort(array[] int, size int) []int {
 
 // Driver Function
 func main() {
-    array := []int{2, 4, 3, 1, 6, 8, 4}
-    fmt.Println(Selection_Sort(array, 7))
+    var num int
+    fmt.Scan(&num)
+    array := []int{}
+    for i := 0; i < num; i++ {
+        var x int
+        fmt.Scan(&x)
+        array = append(array, x)
+    }
+    fmt.Println(Selection_Sort(array, num))
 }
 
 /* 

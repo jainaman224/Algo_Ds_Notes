@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Selection_Sort
 {
     // function for selection sort
@@ -30,9 +32,15 @@ class Selection_Sort
 
     public static void main(String[] args)
     {
-        int[] array = {2, 4, 3, 1, 6, 8, 4};
-        SelectionSort(array, 7);
-        Print_Array(array, 7);
+        Scanner s = new Scanner(System.in);
+        int num;
+        num = s.nextInt();
+        int array[] = new int[num];
+        for(int i = 0; i < num; i++) {
+            array[i] = s.nextInt();
+        }
+        SelectionSort(array, num);
+        Print_Array(array, num);
     }
 }
 
