@@ -11,6 +11,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// To find sum of the arithmetic progression
+int SumOfAP (int a, int d, int n) 
+{ 
+    int sum = 0; 
+    for (int i = 0; i < n; i++) 
+    { 
+        sum = sum + a; 
+        a = a + d; 
+    } 
+    return sum; 
+}
+
 int main() {
     cout << "Enter the First Term of A.P.";
     int a;
@@ -22,6 +34,7 @@ int main() {
     int n;
     cin >> n;
     cout << "The term at index " << n << " is " << (a + (n - 1) * d);
+    cout << "\nSum is: " << SumOfAP(a, d, n);
 }
 
 /*
@@ -29,5 +42,6 @@ int main() {
             d = 2
             n = 7
     OUTPUT : The term at index 7 is 17
+             Sum is: 77
     VERIFICATION : The A.P. would be 5,7,9,11,13,15,17...
 */
