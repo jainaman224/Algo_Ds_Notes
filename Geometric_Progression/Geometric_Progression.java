@@ -12,6 +12,15 @@ import java.util.Scanner;
 import java.lang.Math;
 
 class Geometric_Progression {
+    static int sumOfGP(int a, int r, int n) { 
+        int sum = 0; 
+        for (int i = 0; i < n; i++) 
+        { 
+            sum = sum + a; 
+            a = a * r; 
+        } 
+        return sum; 
+    }      
     
     public static void main(String args[]) {
         System.out.print("Enter the First Term of G.P.");
@@ -25,6 +34,7 @@ class Geometric_Progression {
         int n;
         n = s.nextInt();
         System.out.print("The term at index " + n + " is " + (a * Math.pow(r, n - 1)));
+        System.out.print("Sum is: " + sumOfGP(a, r, n));
     }
 }
 
@@ -33,5 +43,6 @@ class Geometric_Progression {
             r = 2
             n = 7
     OUTPUT : The term at index 7 is 320
+             Sum is: 635
     VERIFICATION : The G.P. would be 5,10,20,40,80,160,320...
 */

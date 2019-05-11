@@ -11,6 +11,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int sumOfGP (int a, int r, int n) 
+{ 
+    int sum = 0; 
+    for (int i = 0; i < n; i++) 
+    { 
+        sum = sum + a; 
+        a = a * r; 
+    } 
+    return sum; 
+}
+
 int main() {
     cout << "Enter the First Term of G.P.";
     int a;
@@ -22,6 +33,7 @@ int main() {
     int n;
     cin >> n;
     cout << "The term at index " << n << " is " << (a * pow(r, n - 1));
+    cout << "\nSum is: " << sumOfGP(a, r, n);
 }
 
 /*
@@ -29,5 +41,6 @@ int main() {
             r = 2
             n = 7
     OUTPUT : The term at index 7 is 320
+             Sum is: 635
     VERIFICATION : The G.P. would be 5,10,20,40,80,160,320...
 */
