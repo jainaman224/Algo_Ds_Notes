@@ -3,11 +3,12 @@
 //uses 1-based indexing for vertices
 #include<stdio.h>
 #include<stdlib.h>
+#define MAX 1000
 
 //inititation of data structures
-int queue[1000]; //the queue array
-int graph[1000][1000]; //the graph 2-D array
-int state[1000]; //array that stores 1 for visited nodes(black), 0 for unvisited nodes(white)
+int queue[MAX]; //the queue array
+int graph[MAX][MAX]; //the graph 2-D array
+int state[MAX]; //array that stores 1 for visited nodes(black), 0 for unvisited nodes(white)
 
 int n; //no of vertices in the graph 
 
@@ -82,8 +83,10 @@ int enqueue(int e)
     rear = rear + 1;
     queue[rear] = e ;	
 }
+
 /*Function to delete elements from the front of the queue and return them.
- Returns queue underflow while trying to dequeue from an empty queue */
+ Returns queue underflow while trying to dequeue from an empty queue 
+ */
 int dequeue(int n)
 {
     int elmnt;
@@ -121,6 +124,7 @@ void matrix_initiator(int origin, int destin)
     // assigns vertices and edges 
     graph[origin - 1][ destin - 1] = 1;
 }
+
 /*Function to initiate the graph from edges input by user*/
 void graph_initiator()
 {
@@ -139,16 +143,15 @@ void graph_initiator()
     matrix_initiator(3 , 1);
     matrix_initiator(4 , 4);
 }
+
+//main function
 int main()
 {
     graph_initiator();
     BFS_run();
     printf("\n");
 }
+
 /*OUTPUT
 1 2 3 4 
 */
-
-
-
-
