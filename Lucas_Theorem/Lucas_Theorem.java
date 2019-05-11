@@ -20,7 +20,7 @@ public class Lucas_Theorem {
     {
         if (r == 0)
             return 1;
-        int ni,ri;
+        int ni, ri;
 
         ni = n % p;
         ri = r % p;
@@ -30,7 +30,7 @@ public class Lucas_Theorem {
 
     public static void main (String args[]) 
     {
-        int n,r,p;
+        int n, r, p;
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         r = sc.nextInt();
