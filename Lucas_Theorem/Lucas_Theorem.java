@@ -9,8 +9,8 @@ public class Lucas_Theorem {
 
         for (int i = 1; i <= n; i++)
         {
-            for(int j = Math.min(i, r); j > 0; j--)
-                C[j] = (C[j] + C[j-1]) % p;
+            for (int j = Math.min(i, r); j > 0; j--)
+                C[j] = (C[j] + C[j - 1]) % p;
         }
 
         return C[r];
