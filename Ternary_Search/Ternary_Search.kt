@@ -34,7 +34,7 @@ fun main() {
     val size = scanner.nextInt()
     val array = IntArray(size)
     println("Enter entries in Array")
-    for(i in 0 until size){
+    for(i in 0 until size) {
         array[i] = scanner.nextInt()
     }
     print("Number to be searched in array : ")
