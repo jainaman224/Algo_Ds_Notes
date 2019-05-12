@@ -1,8 +1,8 @@
 // Function for Naive_String_Matching
 fun match(text: String, pattern: String) {
-    for(i in 0 until (text.length - pattern.length + 1)) {
-        for(j in 0 until pattern.length) {
-            if(text[i + j] != pattern[j]) {
+    for (i in 0 until (text.length - pattern.length + 1)) {
+        for (j in 0 until pattern.length) {
+            if (text[i + j] != pattern[j]) {
                 break
             }
             if (j + 1 == pattern.length) {
