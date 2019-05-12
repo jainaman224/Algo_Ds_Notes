@@ -69,32 +69,57 @@ def BottomView(root):
         print(mp[value], end = " ")
 
 # Driver Code
+m = {}
+# Input number of edges
+n = int(input())
+root = None
+
+''' 
+    Input Format :
+    3
+    1 2 L
+    1 3 R
+    2 4 L
+    This means there are 3 edges
+    2 is the left child of 1,
+    3 is the right child of 1,
+    4 is the left child of 2.
 '''
-Contructing Binary Tree as:
-            1
-         /     \
-        2       3
-      /   \   /   \
-    4      5 6     7
-         /   \
-        /      \
-       8        9
-'''
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
-root.right.left = Node(6)
-root.right.right = Node(7)
-root.left.right.left = Node(8)
-root.left.right.right = Node(9)
+
+for i in range(0, n):
+    node1, node2, direction = input().split(' ')
+    node1 = int(node1)
+    node2 = int(node2)
+         
+    if node1 not in m:
+        parent = Node(node1)
+        m[node1] = parent
+        if root == None:  
+            root = parent
+    else:
+        parent = m[node1]
+    child = Node(node2)
+    if direction == 'L':
+        parent.left = child
+    else:
+        parent.right = child
+    m[node2]  = child
 
 # call to BottomView function
 BottomView(root)
 
 '''
     Input:
+    8
+    1 2 L 
+    1 3 R
+    2 4 L 
+    2 5 R
+    3 6 L
+    3 7 R
+    5 8 L
+    6 9 R
+    
             1
          /     \
         2       3
