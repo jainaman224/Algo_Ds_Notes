@@ -5,7 +5,8 @@
   3. Do following until desired approximation is achieved.
       a) Get the next approximation for root using average of x and y
       b) Set y = n/x */
-      
+
+import java.util.Scanner;
 class Babylonian{
     public static double squareRoot(double num) {    
         double number = num; 
@@ -21,7 +22,8 @@ class Babylonian{
   
     public static void main(String args[]) 
     { 
-        int num = 2;
+        Scanner sc = new Scanner(System.in);  
+        int num = sc.nextInt();
         System.out.printf("Square root of " + num + " is %.6f" , squareRoot(num));    
     }
 }

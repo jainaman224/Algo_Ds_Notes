@@ -25,10 +25,11 @@ func squareRoot(num float64) float64{
 } 
 
 func main(){
-    var num float64 = 2
+    var num float64 
+    fmt.Scan(&num)
     fmt.Print("Square root of " + strconv.Itoa(int(num)) + " is " +  fmt.Sprintf("%f", squareRoot(num)))
 }
 
-/*Enter a number :
-2
+/*
+num = 2
 Square root of 2 is 1.414214 */
