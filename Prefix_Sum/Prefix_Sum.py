@@ -17,8 +17,10 @@ def prefix_sum(array, length):
     for i in range(0,length):
         print(prefix_array[i], end=' ')
 
-array = [3,2,4,6,7]
-length = 5
+length = int(input())
+array = []
+for i in range(0, length):
+    array.append(int(input()))
 prefix_sum(array, length)
 '''
 Input : array = {3,2,4,6,7}

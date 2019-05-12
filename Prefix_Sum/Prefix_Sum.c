@@ -22,8 +22,12 @@ void calculate_prefix_sum (int arr[], int n)
 //main function
 int main()
 {
-    int arr[] = { 1, 2, 3, 4, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
     calculate_prefix_sum(arr, n);
     for (int i = 0; i < n; i++)
 	printf ("%d ",prefixsum[i]);

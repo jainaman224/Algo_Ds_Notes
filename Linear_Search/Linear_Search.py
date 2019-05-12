@@ -1,5 +1,5 @@
 # Function for Linear Search
-def Linear_Search(list, desired):
+def linearSearch(list, desired):
     for i in range(0, len(list)):
         # return positon if found
         if(list[i] == desired):
@@ -7,20 +7,23 @@ def Linear_Search(list, desired):
 
     return -1
 
-list = [2, 4, 6, 7, 3, 1, 5]
-
-# Element to be searched is 4
-if(Linear_Search(list,4) != -1):
+num = int(input())
+list = []
+for i in range(0, num):
+    list.append(int(input()))
+desired = int(input())
+if(linearSearch(list,desired) != -1):
     print("Found")
 else:
-    print("Not Found")
+    print("Number not found")
 
-# Element to be searched is 9
-if(Linear_Search(list,9) != -1):
-    print("Found")
-else:
-    print("Not Found")
 
-# Output
-# Found
-# Not Found
+'''
+Input :
+num = 5
+arr = [1,4,5,6,3]
+desired = 3
+
+Output :
+Number not found
+'''

@@ -5,6 +5,9 @@
     Prefix sum equals to the sum of all element from start to the current element of the array.
 
 */
+
+import java.util.Scanner;
+
 public class Solution {
 
     public static void prefix_sum(int[] array,int length){
@@ -23,8 +26,13 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int array[] = {3,2,4,6,7};
-        int length = 5;
+        int length;
+        Scanner s = new Scanner(System.in);
+        length = s.nextInt();
+        int array[] = new int[num];
+        for (int i = 0; i < num; i++) {
+            a[i] = s.nextInt();
+        }
         prefix_sum(array, length);
     }
 }
