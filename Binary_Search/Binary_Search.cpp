@@ -102,4 +102,16 @@ Found
 6
 6
 0
+
+Input:
+num = 5
+array = {1, 3, 5, 7, 9}
+desired  = 2
+
+Output:
+Not Found
+2
+3
+3
+0
 */
