@@ -36,11 +36,17 @@ Unsorted List
 **Algoritham** 
 
 1.Compare the first element with the last element and second element with the second last element and so on.
-2.It the element are not in correct order swap.
+2.If the element are not in the correct order swap.
 3.Split the array in two parts and recurse until there is only one single element in the array.
 
 **Pseudocode**
 
+
+
+**Time complexity**
+
+Best Case complexity =  O(n log n)
+Worst case complexity =  O(n log n log n)
 
 
 
