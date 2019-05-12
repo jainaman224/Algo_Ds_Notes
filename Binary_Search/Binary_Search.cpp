@@ -3,7 +3,7 @@
 using namespace std;
 
 // Function for binary search
-int Binary_Search(int array[], int size, int desired)
+int binarySearch(int array[], int size, int desired)
 {
     int left = 0, right = size - 1, middle;
 
@@ -25,7 +25,7 @@ int Binary_Search(int array[], int size, int desired)
 
 // Function for lower bound:
 // finds the position of the lowest number greater than or equal to desired
-int Lower_Bound(int array[], int size, int desired)
+int lowerBound(int array[], int size, int desired)
 {
     int left = -1, right = size, middle;
     while (right - left > 1)
@@ -43,7 +43,7 @@ int Lower_Bound(int array[], int size, int desired)
 
 // Function for upper bound:
 // finds the position of the lowest number strictly greater than desired
-int Upper_Bound(int array[], int size, int desired)
+int upperBound(int array[], int size, int desired)
 {
     int left = -1, right = size, middle;
     while (right - left > 1)
@@ -62,42 +62,44 @@ int Upper_Bound(int array[], int size, int desired)
 // Driver Function
 int main()
 {
-    int array[] = {1, 2, 3, 4, 5, 5, 7};
-
-    // Element 4 to be searched
-    if (Binary_Search(array, 7, 4) != -1)
-        cout << "Found" << endl;
-    else
-        cout << "Not Found" << endl;
-
-    //Element 9 to be searched
-    if (Binary_Search(array, 7, 9) != -1)
+    int num;
+    scanf("%d", &num);
+    int array[num];
+    for (int i = 0; i < num; i++) {
+        scanf("%d", &array[i]);
+    }
+    int desired;
+    scanf("%d", &desired);
+    if (binarySearch(array, num, desired) != -1)
         cout << "Found" << endl;
     else
         cout << "Not Found" << endl;
 
     // Element greater than or equal than 5
-    cout << Lower_Bound(array, 7, 5) << endl;
+    cout << lowerBound(array, num, 5) << endl;
 
     // Element greater than or equal than 6
-    cout << Lower_Bound(array, 7, 6) << endl;
+    cout << lowerBound(array, num, 6) << endl;
 
     // Element greater than 5
-    cout << Upper_Bound(array, 7, 5) << endl;
+    cout << upperBound(array, num, 5) << endl;
 
     // Element greater than 0
-    cout << Upper_Bound(array, 7, 0) << endl;
+    cout << upperBound(array, num, 0) << endl;
 
     return 0;
 }
 
-/* Output
+/* 
+Input :
+num = 7
+array = {1, 2, 3, 4, 5, 6, 7}
+desired = 4
 
+Output:
 Found
-Not Found
 4
 6
 6
 0
-
 */
