@@ -44,9 +44,15 @@ func solve(no_of_process int, burst_time []int) {
 }
 
 func main() {
-    var no_of_process int = 3
-    var burst_time []int = []int{5, 7, 3}
-    solve(no_of_process, burst_time)
+    var no_of_process int
+	fmt.Scan(&no_of_process)
+	burst_time := []int{}
+	for i := 0; i < no_of_process; i++ {
+		var x int
+		fmt.Scan(&x)
+		burst_time = append(burst_time, x)
+	}
+	solve(no_of_process, burst_time)
 }
 
 /*

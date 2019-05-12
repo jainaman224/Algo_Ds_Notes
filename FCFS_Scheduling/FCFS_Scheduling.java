@@ -14,6 +14,9 @@
         Given the Burst time, We need to find Waiting time and Turnaround time of each process.
 */
 
+import java.util.Scanner;
+import java.util.*;
+
 class FCFS {
 	
     public static void solve(int no_of_process, int burst_time[]) {
@@ -39,11 +42,15 @@ class FCFS {
     }
 
     public static void main(String args[]) {
-        int no_of_process = 3;
-        int burst_time[] = {5, 7, 3};
+	Scanner sc = new Scanner(System.in);
+        int no_of_process = sc.nextInt();
+        int burst_time[] = new int[no_of_process];
+	for(int i = 0; i < no_of_process; i++)
+        {
+            burst_time[i] = sc.nextInt();
+        }
         solve(no_of_process, burst_time);
     }
-
 }
 
 /*
