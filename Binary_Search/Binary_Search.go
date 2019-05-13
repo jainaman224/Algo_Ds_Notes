@@ -55,4 +55,12 @@ array = {1, 2, 3, 4, 5, 6, 7}
 desired = 4
 
 Output = Found
+
+Input:
+num = 5
+array = {1, 3, 5, 7, 9}
+desired  = 2
+
+Output:
+Not Found
 */

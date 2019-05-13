@@ -47,4 +47,12 @@ array = {1, 4, 5, 6}
 
 Output:
 1
+
+Input:
+num = 5
+array = {1, 3, 5, 7, 9}
+desired = 2
+
+Output:
+-1
 */
