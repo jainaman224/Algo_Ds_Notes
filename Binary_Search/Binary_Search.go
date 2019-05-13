@@ -54,7 +54,8 @@ num = 7
 array = {1, 2, 3, 4, 5, 6, 7}
 desired = 4
 
-Output = Found
+Output:
+Found
 
 Input:
 num = 5
