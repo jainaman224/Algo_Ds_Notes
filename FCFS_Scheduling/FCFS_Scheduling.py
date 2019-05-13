@@ -32,8 +32,11 @@ def solve(no_of_process, burst_time) :
         print("Process " , i + 1 , " -->  (B.T) : " , burst_time[i] , " (W.T.) : " , 
 		wait_time[i] , " (T.A.T) : " , turnaround_time[i])
 
-no_of_process = 3
-burst_time = [5, 7, 3]
+no_of_process = int(input())
+burst_time = []
+for i in range(no_of_process):
+    x = int(input())
+    burst_time.append(x) 
 solve(no_of_process, burst_time)
 
 '''
