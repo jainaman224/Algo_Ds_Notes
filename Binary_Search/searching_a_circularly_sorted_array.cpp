@@ -28,7 +28,31 @@ int searchCircular(int arr[], int len, int num)
 
 int main()
 {
-    int arr[] = {8, 9, 10, 11, 12, 2, 3, 4, 5, 6, 7}; // array must contain distinct elements for this to work
-    cout << endl << searchCircular(arr, 11, 9);
+    int num;
+    cin >> num;
+    int arr[num]; // array must contain distinct elements for this to work
+    for (int i = 0; i < num; i++) {
+        cin >> arr[i];
+    } 
+    int desired;
+    cin >> desired;
+    cout << searchCircular(arr, num, desired); // Returns the index of element
     return 0;
 }
+
+/*
+Input : 
+num = 4
+array = {1, 4, 5, 6}
+
+Output:
+1
+
+Input:
+num = 5
+array = {1, 3, 5, 7, 9}
+desired = 2
+
+Output:
+-1
+*/
