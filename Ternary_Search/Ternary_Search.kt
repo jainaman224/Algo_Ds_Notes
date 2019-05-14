@@ -1,7 +1,7 @@
 import java.util.*
 
-//Function for Ternary Search
-fun ternarySearch(array: IntArray, num: Int, left: Int, right: Int):Int {
+// Function for Ternary Search
+fun ternarySearch(array: IntArray, num: Int, left: Int, right: Int): Int {
     if (right >= 1) {
 
         // Calculating Mid values 1 and 2
