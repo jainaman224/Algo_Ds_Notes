@@ -16,7 +16,7 @@ import "fmt"
 
 // Function to calculate the number of ways of making
 // the desired change using the given coins
-func CoinChange(coins[] int, m int, value int) int {
+func coinChange(coins[] int, m int, value int) int {
     dp := make([]int , value + 1) 
 
     // Base case when value is 0
@@ -40,22 +40,29 @@ func CoinChange(coins[] int, m int, value int) int {
 } 
 
 // Driver Function
-func main() { 
-    // Array contaning coins available
-    coins := []int{1, 2, 3}
-    m := len(coins)
-    value := 5
-    // Call to CoinChange function
-    fmt.Println("Number of ways to make the required change: ")
-    fmt.Println(CoinChange(coins, m, value))
+func main() {  
+    var m int
+    fmt.Println("Enter number of coins");
+    fmt.Scanf("%d", &m)
+    coins := make([]int , m + 1)
+    fmt.Println("Enter denominations of coins");
+    for i := 0; i < m; i++ {
+        fmt.Scanf("%d", &coins[i])
+    }
+    var value int
+    fmt.Println("Enter value")
+    fmt.Scanf("%d", &value)
+    fmt.Println("Number of ways to make the required change:")
+    fmt.Println(coinChange(coins, m, value))
 } 
 
 /*
-    Input:
-    N = 5
-    coins = {1, 2, 3}
+Input:
+m = 3
+coins = {1, 2, 3}
+value = 5
 
-    Output:
-    Number of ways to make the required change: 
-    5
+Output:
+Number of ways to make the required change:
+5
 */
