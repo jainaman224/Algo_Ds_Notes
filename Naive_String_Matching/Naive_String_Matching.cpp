@@ -9,9 +9,7 @@ void search(string text, string pattern)
 
     for(int i = 0; i <= lengthText - lengthPattern; i++)
     {
-        int j;
-
-        for(j = 0; j < lengthPattern; j++)
+        for(int j = 0; j < lengthPattern; j++)
             if(text[i + j] != pattern[j])
                 break;
 
@@ -22,16 +20,20 @@ void search(string text, string pattern)
 
 int main()
 {
-   string text = "namanchamanbomanamansanam";
-   string pattern = "aman";
-   search(text, pattern);
-   return 0;
+    cout << "Enter text" << endl;
+    cin >> text;
+    cout << "Enter pattern" << endl;
+    search(text, pattern);
+    return 0;
 }
 
-/* Output
+/* 
+Input:
+text = "namanchamanbomanamansanam"
+pattern = "aman"
 
+Output:
 Pattern found at 2
 Pattern found at 8
 Pattern found at 17
-
 */

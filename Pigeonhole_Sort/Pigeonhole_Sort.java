@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PigeonholeSort {
     // Method for getting the maximum value
     public static int getMax(int[] inputArray) {
@@ -39,19 +41,24 @@ public class PigeonholeSort {
                 input[index++] = j + min_no;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello World");
-        int[] test = {
-            1,
-            4,
-            32,
-            2
-        };
-
-        sort(test);
-        for (int i = 0; i < test.length; i++)
-            System.out.print(test[i] + " ");
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter size of array");
+        int n = sc.nextInt();  
+        System.out.println("Enter elements of array");
+        for(int i = 0; i < n; i++)
+            coins[i] = sc.nextInt();
+        sort(array);
+        for(int i = 0; i < n; i++)
+             System.out.println(array[i] + " ");
     }
 }
-//input = 1,4,32,2
-// output = 1 2 4 32
+
+/*
+Input:
+array = [1, 4, 32, 2]
+
+Output 
+array = [1, 2, 4, 32]
+*/

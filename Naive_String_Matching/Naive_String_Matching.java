@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Main
 {
     public static void search(String text, String pattern)
@@ -20,16 +22,22 @@ class Main
 
     public static void main(String[] args)
     {
-       String text = "namanchamanbomanamansanam";
-       String pattern = "aman";
-       search(text, pattern);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter text");
+        String text = sc.nextLine();
+        System.out.println("Enter pattern");
+        String pattern = sc.nextLine();
+        search(text, pattern);
     }
 }
 
-/* Output
+/* 
+Input:
+text = "namanchamanbomanamansanam"
+pattern = "aman"
 
+Output:
 Pattern found at 2
 Pattern found at 8
 Pattern found at 17
-
 */
