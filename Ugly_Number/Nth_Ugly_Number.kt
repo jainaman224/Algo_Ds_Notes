@@ -1,7 +1,7 @@
 import java.util.*
 
 // Checking whether number is Ugly Number or not
-fun UglyNum(number: Int):Int {
+fun UglyNum(number: Int): Int {
     var x = 0
     var number = number
    while (number != 1) {
@@ -23,7 +23,7 @@ fun UglyNum(number: Int):Int {
 }
 
 // Finding Nth Ugly Number
-fun NthUglyNum(num: Int):Int {
+fun NthUglyNum(num: Int): Int {
     var checkNum = 0
     var count = 0
     while (count < num ) {
