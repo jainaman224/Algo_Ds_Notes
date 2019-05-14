@@ -4,17 +4,20 @@
     of a given word which is a palindrome.
     A palindrome is a string that is same when read from any side.
 */
-public class Solution {
+import java.util.*;
+
+public class Longest_Palindromic_Subsequence {
     
     /*
         Printing Longest Palindromic Subsequence
     */
+
     public static String print_lps(int[][] lps_dp, int len, String str, String rev) {
         int row = len, col = len;
         String ans = "";
         for (;row > 0 && col > 0;) {
-            if (str.charAt(row-1) == rev.charAt(col-1)) {
-                ans = str.charAt(row-1) + ans;
+            if (str.charAt(row - 1) == rev.charAt(col - 1)) {
+                ans = str.charAt(row - 1) + ans;
                 row--;
                 col--;
             } 
@@ -43,10 +46,10 @@ public class Solution {
         String rev = "";
         int len = str.length();
         // Stroring the reverse of the string.
-        for (int i = len-1; i >= 0; i--){
+        for (int i = len - 1; i >= 0; i--){
             rev = rev + str.charAt(i);
         }
-        int lps_dp[][] = new int[len+1][len+1];
+        int lps_dp[][] = new int[len + 1][len + 1];
         for (int i = 0; i <= len; i++) {
             for (int j = 0; j <= len; j++) {
                 if (i == 0 || j == 0) {
@@ -66,27 +69,30 @@ public class Solution {
                             maximum of lps found between (s[0....i-1] and r[0....j]) and 
                             (s[0...i] and r[0...j-1]).
                         */
-                        if(lps_dp[i][j-1] >= lps_dp[i-1][j]){
-                            ans = lps_dp[i][j-1];
+                        if(lps_dp[i][j - 1] >= lps_dp[i - 1][j]){
+                            ans = lps_dp[i][j - 1];
                         }
                         else{
-                            ans = lps_dp[i-1][j];
+                            ans = lps_dp[i - 1][j];
                         }
                         lps_dp[i][j] = ans;
                     }
                 }
             }
         }
-        System.out.println("The longest palindromic subsequence is of length : "+lps_dp[len][len]);
-        System.out.print("The longest palindromic subsequence is : "+print_lps(lps_dp,len,str,rev));
+        System.out.println("The longest palindromic subsequence is of length : " + lps_dp[len][len]);
+        System.out.println("The longest palindromic subsequence is : " + print_lps(lps_dp, len, str, rev));
 
     }
 
     public static void main(String[] args) {
-        String str = "DATASTRUCTURES";
+        String str;
+        Scanner sc = new Scanner(System.in);
+        str = sc.nextLine();
         lps(str);
     }
 }
+
 /*
 Input : DATASTRUCTURES
 Output : The longest palindromic subsequence is of length : 7
@@ -109,6 +115,5 @@ U 0 1 1 2 3 4 4 5 5 5 5 5 5 5 5
 R 0 1 1 2 3 4 4 5 6 6 6 6 6 6 6
 E 0 1 2 2 3 4 4 5 6 6 6 6 6 6 6
 S 0 1 2 2 3 4 4 5 6 6 7 7 7 7 7
-    And the longest palindromic subsequence of the string is : SRUTURS (length =
-7)
+    And the longest palindromic subsequence of the string is : SRUTURS (length = 7)
 */

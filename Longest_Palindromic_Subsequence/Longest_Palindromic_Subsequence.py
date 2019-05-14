@@ -8,20 +8,21 @@
 '''
     Printing Longest Palindromic Subsequence
 '''
+
 def print_lps(lps_dp, length, st, rev):
     row = length
     col = length
     ans = ""
     while (row > 0 and col > 0):
-        if (st[row-1] == rev[col-1]):
-            ans = st[row-1] + ans
-            row = row-1
-            col = col-1
+        if (st[row - 1] == rev[col - 1]):
+            ans = st[row - 1] + ans
+            row = row - 1
+            col = col - 1
         else:
             if (lps_dp[row - 1][col] > lps_dp[row][col - 1]):
-                row = row-1
+                row = row - 1
             else:
-                col = col-1
+                col = col - 1
     return ans
     
 '''
@@ -33,15 +34,16 @@ def print_lps(lps_dp, length, st, rev):
     S[0...i] and R[0..j]. Hence M[n][n] will compute the longest common
     subsequence of S[0..n] and R[0..n], which is the required answer.
 '''    
+
 def lps(st): 
     rev = st
     length = len(st)
     # Stroring the reverse of the string.
     rev = rev[::-1]
     lps_dp = []
-    for i in range(0, length+1):
+    for i in range(0, length + 1):
         temp = []
-        for j in range(0, length+1):
+        for j in range(0, length + 1):
             if ( i == 0 or j == 0 ):
                 temp.append(0)  
             else :
@@ -58,17 +60,21 @@ def lps(st):
                         maximum of lps found between (s[0....i-1] and r[0....j]) and 
                         (s[0...i] and r[0...j-1]).
                     '''
-                    if ( temp[j-1] >= lps_dp[i-1][j] ):
-                        ans = temp[j-1]
+                    if ( temp[j - 1] >= lps_dp[i - 1][j] ):
+                        ans = temp[j - 1]
                     else:
-                        ans = lps_dp[i-1][j]
+                        ans = lps_dp[i - 1][j]
                     temp.append(ans)
         lps_dp.append(temp)
     print("The longest palindromic subsequence is of length : ",lps_dp[length][length])
-    print("The longest palindromic subsequence is : ",print_lps(lps_dp,length,st,rev))
+    print("The longest palindromic subsequence is : ",print_lps(lps_dp, length, st, rev))
 
-st = "DATASTRUCTURES"
-lps(st)
+def main():
+    st = input()
+    lps(st)
+
+if __name__ == '__main__':
+    main()
 
 '''
 Input : DATASTRUCTURES
@@ -92,6 +98,5 @@ U 0 1 1 2 3 4 4 5 5 5 5 5 5 5 5
 R 0 1 1 2 3 4 4 5 6 6 6 6 6 6 6
 E 0 1 2 2 3 4 4 5 6 6 6 6 6 6 6
 S 0 1 2 2 3 4 4 5 6 6 7 7 7 7 7
-    And the longest palindromic subsequence of the string is : SRUTURS (length =
-7)
+    And the longest palindromic subsequence of the string is : SRUTURS (length = 7)
 '''

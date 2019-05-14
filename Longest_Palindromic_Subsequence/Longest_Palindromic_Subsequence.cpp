@@ -4,6 +4,7 @@
     of a given word which is a palindrome.
     A palindrome is a string that is same when read from any side.
 */
+
 #include <bits/stdc++.h>
 using namespace std;
 #define lint long long int
@@ -11,6 +12,7 @@ using namespace std;
 /*
     Printing Longest Palindromic Subsequence
 */
+
 string print_lps(vector<vector<lint> > lps_dp, lint len, string str, string rev) {
     lint row = len, col = len;
     string ans = "";
@@ -43,54 +45,56 @@ string print_lps(vector<vector<lint> > lps_dp, lint len, string str, string rev)
 */
 
 void lps(string str) {
-	string rev = str;
-	int len = str.length();
-  // Stroring the reverse of the string.
-	reverse(rev.begin(), rev.end());
-	vector<vector<int> > lps_dp;
-	for (int i = 0; i <= len; i++) {
-		vector<int> temp;
-		for (int j = 0; j <= len; j++) {
-			if (i == 0 || j == 0) {
-			        temp.push_back(0);    
-			}
-			else {
-				if (str[i - 1] == rev[j - 1]) {
-					/*
-						When we find a match between s[i] and r[j], the lps count would be
-						one more than the lps between s[0...i-1] and r[0...j-1].
-					*/
-					temp.push_back( (lps_dp[i - 1][j - 1] + 1) );
-				} 
-				else {
-					int ans = 0;
-					/*
-						If no match found between s[i] and r[j], the lps count would be 
-						maximum of lps found between (s[0....i-1] and r[0....j]) and 
-						(s[0...i] and r[0...j-1]).
-					*/
-					if (temp[j-1] >= lps_dp[i-1][j]) {
-						ans = temp[j-1];
-					}
-					else {
-						ans = lps_dp[i-1][j];
-					}
-					temp.push_back(ans);
-				}
-			}
-		}
-		lps_dp.push_back(temp);
-	}
-	cout << "The longest palindromic subsequence is of length : " << lps_dp[len][len];
+    string rev = str;
+    int len = str.length();
+    // Stroring the reverse of the string.
+    reverse(rev.begin(), rev.end());
+    vector<vector<int> > lps_dp;
+    for (int i = 0; i <= len; i++) {
+        vector<int> temp;
+        for (int j = 0; j <= len; j++) {
+            if (i == 0 || j == 0) {
+                    temp.push_back(0);    
+            }
+            else {
+                if (str[i - 1] == rev[j - 1]) {
+                    /*
+                        When we find a match between s[i] and r[j], the lps count would be
+                        one more than the lps between s[0...i-1] and r[0...j-1].
+                    */
+                    temp.push_back( (lps_dp[i - 1][j - 1] + 1) );
+                } 
+                else {
+                    int ans = 0;
+                    /*
+                        If no match found between s[i] and r[j], the lps count would be 
+                        maximum of lps found between (s[0....i-1] and r[0....j]) and 
+                        (s[0...i] and r[0...j-1]).
+                    */
+                    if (temp[j-1] >= lps_dp[i-1][j]) {
+                        ans = temp[j-1];
+                    }
+                    else {
+                        ans = lps_dp[i-1][j];
+                    }
+                    temp.push_back(ans);
+                }
+            }
+        }
+        lps_dp.push_back(temp);
+    }
+    cout << "The longest palindromic subsequence is of length : " << lps_dp[len][len] << "\n";
 }
 
 
 
 int main() {
-    string str = "DATASTRUCTURES";
+    string str;
+    cin >> str;
     lps(str);
     return 0;
 }
+
 /*
 Input : DATASTRUCTURES
 Output : The longest palindromic subsequence is of length : 7
@@ -113,6 +117,5 @@ U 0 1 1 2 3 4 4 5 5 5 5 5 5 5 5
 R 0 1 1 2 3 4 4 5 6 6 6 6 6 6 6
 E 0 1 2 2 3 4 4 5 6 6 6 6 6 6 6
 S 0 1 2 2 3 4 4 5 6 6 7 7 7 7 7
-    And the longest palindromic subsequence of the string is : SRUTURS (length =
-7)
+    And the longest palindromic subsequence of the string is : SRUTURS (length = 7)
 */

@@ -60,25 +60,43 @@ class Graph
             }
         }
     }
+}
 
+public class Breadth_First_Search {
 
     public static void main(String args[])
     {
-        Graph g = new Graph(4);
+        int nodes;
+        Scanner sc = new Scanner(System.in);
+        nodes = sc.nextInt();
+        Graph g = new Graph(nodes);
 
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 3);
-        g.addEdge(3, 3);
+        int edges = sc.nextInt();
+        int u, v;
+        for (int i = 0; i < edges; i++)
+        {
+            u = sc.nextInt();
+            v = sc.nextInt();
+            g.addEdge(u, v);
+        }
 
         System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
         g.BFS(2);
     }
 }
 
+/*
+INPUT
+4
+6
+0 1
+0 2
+1 2
+2 0
+2 3
+3 3
 
-// OUTPUT
-// Following is Breadth First Traversal (starting from vertex 2)
-// 2 0 3 1
+OUTPUT
+  Following is Breadth First Traversal (starting from vertex 2)
+  2 0 3 1
+*/

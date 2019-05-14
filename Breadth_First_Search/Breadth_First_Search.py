@@ -1,6 +1,6 @@
 from collections import deque
 
-class graph:
+class Graph:
   def __init__(self, num_vertices):
     self.num_vertices = num_vertices
     self.adj_list = [[] for _ in xrange(num_vertices)]
@@ -25,28 +25,45 @@ class graph:
           queue_vertex.append(vertex)
 
 
-# Create a graph with 8 vertices
-graph = graph(8)
+def main():
+    # Create a graph with 8 vertices
+    nodes = int(input())
+    graph = Graph(nodes)
 
-# Create arcs
-graph.add_edge(0, 1)
-graph.add_edge(0, 2)
-graph.add_edge(1, 2)
-graph.add_edge(1, 4)
-graph.add_edge(2, 0)
-graph.add_edge(2, 3)
-graph.add_edge(3, 3)
-graph.add_edge(3, 6)
-graph.add_edge(4, 0)
-graph.add_edge(4, 5)
-graph.add_edge(5, 6)
-graph.add_edge(5, 7)
-graph.add_edge(6, 2)
-graph.add_edge(7, 3)
+    # Create arcs
+    edges = int(input())
 
-print "Breadth First Traversal is:",
-graph.bfs(0)
-print ""
+    for i in range(edges):
+        u, v = map(int, raw_input().split())
+        graph.add_edge(u, v)
 
-# Expected Output
-# Breadth First Traversal is: 0 1 2 4 3 5 6 7
+    print "Breadth First Traversal is:",
+    graph.bfs(0)
+    print ""
+
+if __name__ == '__main__':
+  main()
+
+"""
+Input:
+8
+14
+0 1
+0 2
+1 2
+1 4
+2 0
+2 3
+3 3
+3 6
+4 0
+4 5
+5 6
+5 7
+6 2
+7 3
+
+Output:
+
+Breadth First Traversal is : 0 1 2 4 3 5 6 7
+"""

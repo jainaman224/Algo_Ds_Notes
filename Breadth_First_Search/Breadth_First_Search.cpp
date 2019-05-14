@@ -58,24 +58,20 @@ void Graph::bfs(int starting)
 
 int main()
 {
-    // Number of vertices is 8
-    Graph graph(8);
+    // Number of vertices
+    int n;
+    cin >> n;
+    Graph graph(n);
 
+    int edges;
+    cin >> edges;
     // Create edges between vertices
-    graph.addEdge(0, 1);
-    graph.addEdge(0, 2);
-    graph.addEdge(1, 2);
-    graph.addEdge(1, 4);
-    graph.addEdge(2, 0);
-    graph.addEdge(2, 3);
-    graph.addEdge(3, 3);
-    graph.addEdge(3, 6);
-    graph.addEdge(4, 0);
-    graph.addEdge(4, 5);
-    graph.addEdge(5, 6);
-    graph.addEdge(5, 7);
-    graph.addEdge(6, 2);
-    graph.addEdge(7, 3);
+    int u, v;
+    for (int i = 0; i < edges; i++)
+    {
+        cin >> u >> v;
+        graph.addEdge(u, v);
+    }
 
     cout << "Breadth First Traversal is : ";
     graph.bfs(0);
@@ -84,7 +80,26 @@ int main()
 }
 
 
-/* Output
+/* 
+Input:
+8
+14
+0 1
+0 2
+1 2
+1 4
+2 0
+2 3
+3 3
+3 6
+4 0
+4 5
+5 6
+5 7
+6 2
+7 3
+
+Output:
 
 Breadth First Traversal is : 0 1 2 4 3 5 6 7
 
