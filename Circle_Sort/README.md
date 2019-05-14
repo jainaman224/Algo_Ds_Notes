@@ -1,12 +1,9 @@
 ### Circle Sort 
 
-Circle sort can be done by drawing concentric circle on an array of integers.In the Circle sort
-the first element comapred with the last element and the second element comapred with the second last element and so on.
-If the elements are found in the wrong oder then they are swapped. This proces goes on a recursively in which the 
-array is divided into sub-arrays and repeat the above proces untill we get pairs of sorted elements.
+Circle sort can be done by drawing concentric circle on an array of integers. In the Circle sort the first element compared with the last element and the second element compared with the second last element and so on. If the elements are found in the wrong order, then they are swapped. This process goes on a recursively in which the  array is divided into sub-arrays and repeat the above process until we get pairs of sorted elements. 
 
-
-**Example**
+ 
+ **Example**
 
 Let's arrange the numbers in ascending order using circle sort.
 
@@ -16,7 +13,7 @@ Unsorted List
 
 -Iteration 1
 
- comapre,swap and divide the array
+ compare,swap and divide the array
 
 ![Screenshot (51)](https://user-images.githubusercontent.com/28682701/57585795-a3d0be80-750a-11e9-8db5-8369d9678538.png)
 
@@ -33,7 +30,7 @@ Unsorted List
 ![Screenshot (54)](https://user-images.githubusercontent.com/28682701/57585886-a2ec5c80-750b-11e9-8b47-53a60440b2dc.png)
 
 
-**Algoritham** 
+**Algorithm** 
 
 1.Compare the first element with the last element and second element with the second last element and so on.<br />
 2.If the element are not in the correct order swap.<br />
@@ -41,8 +38,38 @@ Unsorted List
 
 **Pseudocode**
 
-
-
+function boolean circleSort(a: array of items,int low,int high)<br />
+ 
+  boolean swap = false <br />
+  
+  int l = low,h = high<br />
+  
+  while(l<h)<br />
+    if a[l] > a[h]<br />
+      swap ( a[l] , a[h] )<br />
+      swap = true<br />
+      <br />
+   end if<br />
+   
+   l++<br />
+   h--<br />
+   
+  end while<br />
+  
+  if l == hi<br />
+    if( a[l] > a[h+1] )<br />
+      swap ( a[l], a[h+1] )<br />
+      swap=true<br />
+    end if <br />
+    
+  int mid=(high-low)/2<br />
+  bool firstArray=circleSort(a, low, low+mid)<br />
+  bool secondArray=circleSort(a, low+mid+1, high)<br />
+  
+  return swap || firstArray || secondArray<br />
+  
+ end function
+ 
 **Time complexity**
 
 Best Case complexity =  O(n log n)<br />
