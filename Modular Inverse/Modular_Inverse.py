@@ -11,29 +11,29 @@
 '''
 import math
 
-def modex(base,exponent,mod):
+def modex(base, exponent, mod):
     if base == 0:                       # As, 0^x = 0, return 0;
         return 0
     if exponent == 0:
         return 1                        # As, x^0 = 1, return 1.
-    if exponent%2 == 0:
-        ans = modex(base,exponent/2,mod)    # We use the concept of (a^x)=((a^(x/2))*(a^(x/2)) when x is even, to reduce computation time effectively.
-        return (ans*ans)%mod
-    return ((base%mod)*(modex(base,exponent-1,mod)))%mod # In case of Odd exponent, we just decrement it by 1, so that it becomes even.
+    if exponent % 2 == 0:
+        ans = modex(base, exponent / 2, mod)    # We use the concept of (a^x)=((a^(x/2))*(a^(x/2)) when x is even, to reduce computation time effectively.
+        return (ans * ans) % mod
+    return ((base % mod) * (modex(base, exponent - 1, mod))) % mod # In case of Odd exponent, we just decrement it by 1, so that it becomes even.
 
 
-def modInverse(base,mod):
-    if math.gcd(base,mod) != 1: # When gcd of the number and mod is not 1, The modular inverse doesn't exist.
+def modInverse(base, mod):
+    if math.gcd(base, mod) != 1: # When gcd of the number and mod is not 1, The modular inverse doesn't exist.
         return -1
-    return modex(base,mod-2,mod)   # modular inverse of base under mod = base^(mod-2)%mod.
+    return modex(base, mod - 2, mod)   # modular inverse of base under mod = base^(mod-2)%mod.
 
-base = 10
-mod = 7
-ans = modInverse(10,7)
+base = int(input())
+mod = int(input())
+ans = modInverse(base, mod)
 if ans == -1:
-    print("Modular Inverse of "+str(base)+" under "+str(mod)+" does not exist")
+    print("Modular Inverse of " + str(base) + " under " + str(mod) + " does not exist")
 else:
-    print("Modular Inverse of "+str(base)+" under "+str(mod)+" is "+str(ans))
+    print("Modular Inverse of " + str(base) + " under " + str(mod) + " is " + str(ans))
 
 '''
 Input :  base = 10, mod = 7.
