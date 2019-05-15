@@ -88,26 +88,47 @@ void BottomView(Node *root)
 // Driver Function
 int main() 
 {
-    /* Contructing Binary Tree as:
-            1
-         /     \
-        2       3
-      /   \   /   \
-    4      5 6     7
-         /   \
-        /      \
-       8        9
+    map<int, Node *> m;
+    // Input number of edges
+    int n;
+    cin >> n;
+    Node *root = NULL;
+    
+    /* 
+        Input Format:
+            Input:
+                    3
+                    1 2 L
+                    1 3 R
+                    2 4 L
+                    This means there are 3 edges
+                    2 is the left child of 1,
+                    3 is the right child of 1,
+                    4 is the left child of 2.
     */
-    Node *root = new Node(1);
-    root -> left = new Node(2);
-    root -> right = new Node(3);
-    root -> left -> left = new Node(4);
-    root -> left -> right = new Node(5);
-    root -> right -> left = new Node(6);
-    root -> right -> right = new Node(7);
-    root -> left -> right -> left = new Node(8);
-    root -> left -> right -> right = new Node(9);
-
+    for (int i = 0; i < n; i++) 
+    {
+        int node1, node2;
+        char direction;
+        cin >> node1 >> node2 >> direction;
+        Node *parent, *child;
+        if (m.find(node1) == m.end())
+        {
+            parent = new Node(node1);
+            m[node1] = parent;
+            if (root == NULL)
+                root = parent;
+        }
+        else
+            parent = m[node1];
+        child = new Node(node2);
+        if (direction == 'L')
+            parent -> left = child;
+        else
+            parent -> right = child;
+        m[node2] = child;
+    }
+    
     // call to BottomView function
     BottomView(root);
     return 0;
@@ -115,6 +136,15 @@ int main()
 
 /*
     Input:
+    8
+    1 2 L
+    1 3 R
+    2 4 L
+    2 5 R
+    3 6 L
+    3 7 R
+    5 8 L
+    6 9 R
             1
          /     \
         2       3
