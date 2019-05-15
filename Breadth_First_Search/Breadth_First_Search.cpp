@@ -73,7 +73,7 @@ int main()
         graph.addEdge(u, v);
     }
 
-    cout << "Breadth First Traversal is : ";
+    cout << "Breadth First Traversal is: ";
     graph.bfs(0);
 
     return 0;

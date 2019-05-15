@@ -80,7 +80,7 @@ public class Breadth_First_Search {
             g.addEdge(u, v);
         }
 
-        System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+        System.out.println("Following is Breadth First Traversal (starting from vertex 2)");
         g.BFS(2);
     }
 }

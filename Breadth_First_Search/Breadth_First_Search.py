@@ -1,28 +1,28 @@
 from collections import deque
 
 class Graph:
-  def __init__(self, num_vertices):
-    self.num_vertices = num_vertices
-    self.adj_list = [[] for _ in xrange(num_vertices)]
+    def __init__(self, num_vertices):
+        self.num_vertices = num_vertices
+        self.adj_list = [[] for _ in xrange(num_vertices)]
 
-  def add_edge(self, source, destination):
-    self.adj_list[source].append(destination)
+    def addEdge(self, source, destination):
+        self.adj_list[source].append(destination)
 
-  def bfs(self, start):
-    visited = [False] * self.num_vertices
+    def bfs(self, start):
+        visited = [False] * self.num_vertices
 
-    queue_vertex = deque([])
-    visited[start] = True
-    queue_vertex.append(start)
+        queue_vertex = deque([])
+        visited[start] = True
+        queue_vertex.append(start)
 
-    while len(queue_vertex) != 0:
-      current = queue_vertex.popleft()
-      print current,
+        while len(queue_vertex) != 0:
+            current = queue_vertex.popleft()
+            print current,
 
-      for vertex in self.adj_list[current]:
-        if (not visited[vertex]):
-          visited[vertex] = True
-          queue_vertex.append(vertex)
+            for vertex in self.adj_list[current]:
+                if (not visited[vertex]):
+                    visited[vertex] = True
+                    queue_vertex.append(vertex)
 
 
 def main():
@@ -35,14 +35,14 @@ def main():
 
     for i in range(edges):
         u, v = map(int, raw_input().split())
-        graph.add_edge(u, v)
+        graph.addEdge(u, v)
 
     print "Breadth First Traversal is:",
     graph.bfs(0)
     print ""
 
 if __name__ == '__main__':
-  main()
+    main()
 
 """
 Input:
