@@ -83,7 +83,7 @@ void lps(string str) {
         }
         lps_dp.push_back(temp);
     }
-    cout << "The longest palindromic subsequence is of length : " << lps_dp[len][len] << "\n";
+    cout << "The longest palindromic subsequence is of length: " << lps_dp[len][len] << "\n";
 }
 
 
