@@ -6,7 +6,7 @@ Circle sort can be done by drawing concentric circle on an array of integers. In
 
 Let's arrange the numbers in ascending order using circle sort.
 
-Unsorted List
+-Unsorted List
 
 ![Screenshot (56)](https://user-images.githubusercontent.com/28682701/57585928-260db280-750c-11e9-84e7-dd6e9f5784eb.png)
 
