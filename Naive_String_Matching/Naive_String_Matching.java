@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Main
+class Naive_String_Matching
 {
     public static void search(String text, String pattern)
     {
@@ -27,7 +27,8 @@ class Main
         String text = sc.nextLine();
         System.out.println("Enter pattern");
         String pattern = sc.nextLine();
-        search(text, pattern);
+        Naive_String_Matching obj = new Naive_String_Matching();
+        obj.search(text, pattern);
     }
 }
 

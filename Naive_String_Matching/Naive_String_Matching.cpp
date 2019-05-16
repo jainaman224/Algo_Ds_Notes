@@ -6,10 +6,11 @@ void search(string text, string pattern)
 {
     int lengthText = text.length();
     int lengthPattern = pattern.length();
+    int j;
 
     for(int i = 0; i <= lengthText - lengthPattern; i++)
     {
-        for(int j = 0; j < lengthPattern; j++)
+        for(j = 0; j < lengthPattern; j++)
             if(text[i + j] != pattern[j])
                 break;
 
@@ -20,9 +21,11 @@ void search(string text, string pattern)
 
 int main()
 {
+    string text, pattern;
     cout << "Enter text" << endl;
     cin >> text;
     cout << "Enter pattern" << endl;
+    cin >> pattern;
     search(text, pattern);
     return 0;
 }

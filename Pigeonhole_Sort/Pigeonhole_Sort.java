@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PigeonholeSort {
+class Pigeonhole_Sort {
     // Method for getting the maximum value
     public static int getMax(int[] inputArray) {
         int maxValue = inputArray[0];
@@ -46,9 +46,10 @@ public class PigeonholeSort {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array");
         int n = sc.nextInt();  
+        int[] array = new int[n];
         System.out.println("Enter elements of array");
         for(int i = 0; i < n; i++)
-            coins[i] = sc.nextInt();
+            array[i] = sc.nextInt();
         sort(array);
         for(int i = 0; i < n; i++)
              System.out.println(array[i] + " ");
@@ -57,6 +58,7 @@ public class PigeonholeSort {
 
 /*
 Input:
+n = 4
 array = [1, 4, 32, 2]
 
 Output 
