@@ -1,33 +1,44 @@
 # Function for Binary Search
-def Binary_Search(list, desired):
+def binarySearch(array, desired):
     left = 0
-    right = len(list) - 1
+    right = len(array) - 1
 
     while left <= right:
         # Return positon if found
         middle = left + int((right - left) / 2)
 
-        if list[middle] == desired:
+        if array[middle] == desired:
             return middle
-        elif desired < list[middle]:
+        elif desired < array[middle]:
             right = middle - 1
-        elif desired > list[middle]:
+        elif desired > array[middle]:
             left = middle + 1
 
     return -1
 
-list = [1, 2, 3, 4, 5, 6, 7]
+num = int(input())
+array = []
+for i in range(0, num):
+    array.append(int(input()))
 
-# Element to be searched is 4
-print ("Found") if Binary_Search(list, 4) != -1 else ("Not Found")
+desired = int(input())
 
-# Element to be searched is 9
-print ("Found") if Binary_Search(list, 9) != -1 else ("Not Found")
+print ("Found") if binarySearch(array, desired) != -1 else ("Not Found")
 
+'''
+Input:
+num = 7
+array = {1, 2, 3, 4, 5, 6, 7}
+desired = 4
 
-''' Output
-
+Output:
 Found
-Not Found
 
+Input:
+num = 5
+array = {1, 3, 5, 7, 9}
+desired = 2
+
+Output:
+Not Found
 '''
