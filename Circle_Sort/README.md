@@ -36,37 +36,38 @@ Let's arrange the numbers in ascending order using circle sort.
 
 **Pseudocode**
 ```
-   function boolean circleSort(a: array of items, int low, int high)<br />
-  
-     boolean swap = false <br />
+ function boolean circleSort( a : array of items, int low, int high )<br />
+
+    boolean swap = false <br />
     
-     int l = low, h = high<br />
+    int l = low, h = high<br />
    
-     while(l<h)<br />
-      if a[l] > a[h]<br />
-        swap ( a[l], a[h] )<br />
-        swap = true<br />
-        <br />
-      end if<br />
+    while ( l < h )<br />
+      		
+        if ( a[l] > a[h] )<br />
+            swap ( a[l], a[h] )<br />
+            swap = true<br />
+            <br />
+        end if<br />
     
-      l++<br />
-      h--<br />
+        l++<br />
+        h--<br />
     
-     end while<br />
+    end while<br />
    
-     if l == hi<br />
-      if( a[l] > a[h+1] )<br />
-       swap ( a[l], a[h+1] )<br />
-       swap=true<br />
+    if ( l == hi )<br />
+      if( a[l] > a[h + 1] )<br />
+       swap ( a[l], a[h + 1] )<br />
+       swap = true<br />
       end if <br />
      
-     int mid = (high-low)/2<br />
-     bool firstArray=circleSort(a, low, low+mid)<br />
-     bool secondArray=circleSort(a, low+mid+1, high)<br />
+      int mid = ( high - low ) / 2<br />
+      bool firstArray = circleSort( a, low, low + mid ) <br />
+      bool secondArray = circleSort( a, low + mid + 1, high )<br />
    
-     return swap || firstArray || secondArray<br />
-   
-   end function
+      return swap || firstArray || secondArray<br />
+    
+ end function
 ```  
 **Time complexity**
 
