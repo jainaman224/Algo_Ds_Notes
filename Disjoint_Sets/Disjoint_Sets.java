@@ -27,7 +27,7 @@ public class Disjoint_Sets {
 		
 		if (parent_a != parent_b) {
 			if (size[parent_a] < size[parent_b]) {
-				//swap a and b
+				// swap a and b
 				int temp = a;
 				a = b;
 				b = temp;
