@@ -36,13 +36,13 @@ def subsetSum(arr, size, sum):
                 ''' when the value of current element is less than 
                 the sum j, we have two options, either take it and 
                 include the element in answer or leave it and take
-                the previous best given by dp[i - 1][j] '''
+                the previous best given by dp[i - 1][j].
+                when the value of sum j is less than the element
+                i, we cannot include this element and hence take the
+                previous best '''
                 if arr[i - 1] <= j:
                     dp[i][j] = dp[i - 1][j] or dp[i - 1][j - arr[i - 1]];
                 else:
-                    ''' when the value of sum j is less than the element
-                    i, we cannot include this element and hence take the
-                    previous best'''
                     dp[i][j] = dp[i - 1][j]
                     
     ''' The last entry in table gives the answer
@@ -51,9 +51,12 @@ def subsetSum(arr, size, sum):
     return dp[size][sum]
 
 # Driver Code
-arr = [ 2, 3, 5, 1, 6, 8, 7 ]
-size = len(arr)
-sum = 12
+print("Enter size of array")
+size = int(input())
+print("Enter elements of array")
+arr = [int(x) for x in input().split(' ')]
+print("Enter sum")
+sum = int(input())
 
 # Call to SubsetSum function
 ans = subsetSum(arr, size, sum)
@@ -72,4 +75,12 @@ else:
 
     Output:
     Subset with given sum present
+
+    Input:
+    size = 4
+    arr = {2, 3, 5, 1}
+    sum = 12
+
+    Output:
+    No subset adds upto the given sum
 '''
