@@ -47,9 +47,8 @@ function boolean circleSort( a : array of items, int low, int high )
         if ( a[l] > a[h] )
             swap ( a[l], a[h] )
             swap = true
-            
         end if
-    
+
         l++
         h--
     
