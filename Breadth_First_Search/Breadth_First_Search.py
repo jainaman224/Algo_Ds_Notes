@@ -65,5 +65,5 @@ Input:
 
 Output:
 
-Breadth First Traversal is : 0 1 2 4 3 5 6 7
+Breadth First Traversal is: 0 1 2 4 3 5 6 7
 """

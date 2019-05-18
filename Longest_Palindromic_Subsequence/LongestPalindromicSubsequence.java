@@ -6,7 +6,7 @@
 */
 import java.util.*;
 
-public class Longest_Palindromic_Subsequence {
+public class LongestPalindromicSubsequence {
     
     /*
         Printing Longest Palindromic Subsequence
@@ -15,7 +15,7 @@ public class Longest_Palindromic_Subsequence {
     public static String printLps(int[][] lpsDp, int len, String str, String rev) {
         int row = len, col = len;
         String ans = "";
-        for (;row > 0 && col > 0;) {
+        for ( ; row > 0 && col > 0; ) {
             if (str.charAt(row - 1) == rev.charAt(col - 1)) {
                 ans = str.charAt(row - 1) + ans;
                 row--;
@@ -94,11 +94,11 @@ public class Longest_Palindromic_Subsequence {
 }
 
 /*
-Input : DATASTRUCTURES
-Output : The longest palindromic subsequence is of length : 7
+Input: DATASTRUCTURES
+Output: The longest palindromic subsequence is of length: 7
          The longest palindromic subsequence is SRUTURS
-Verification :
-The concerned 2D matrix formed is :
+Verification:
+The concerned 2D matrix formed is:
     S E R U T C U R T S A T A D
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 D 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
@@ -115,5 +115,5 @@ U 0 1 1 2 3 4 4 5 5 5 5 5 5 5 5
 R 0 1 1 2 3 4 4 5 6 6 6 6 6 6 6
 E 0 1 2 2 3 4 4 5 6 6 6 6 6 6 6
 S 0 1 2 2 3 4 4 5 6 6 7 7 7 7 7
-    And the longest palindromic subsequence of the string is : SRUTURS (length = 7)
+    And the longest palindromic subsequence of the string is: SRUTURS (length = 7)
 */

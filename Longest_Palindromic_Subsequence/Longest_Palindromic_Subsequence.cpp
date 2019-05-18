@@ -96,11 +96,11 @@ int main() {
 }
 
 /*
-Input : DATASTRUCTURES
-Output : The longest palindromic subsequence is of length : 7
+Input: DATASTRUCTURES
+Output: The longest palindromic subsequence is of length: 7
          The longest palindromic subsequence is SRUTURS
-Verification :
-The concerned 2D matrix formed is :
+Verification:
+The concerned 2D matrix formed is:
     S E R U T C U R T S A T A D
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 D 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
@@ -117,5 +117,5 @@ U 0 1 1 2 3 4 4 5 5 5 5 5 5 5 5
 R 0 1 1 2 3 4 4 5 6 6 6 6 6 6 6
 E 0 1 2 2 3 4 4 5 6 6 6 6 6 6 6
 S 0 1 2 2 3 4 4 5 6 6 7 7 7 7 7
-    And the longest palindromic subsequence of the string is : SRUTURS (length = 7)
+    And the longest palindromic subsequence of the string is: SRUTURS (length = 7)
 */

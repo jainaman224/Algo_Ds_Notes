@@ -46,7 +46,7 @@ def lps(st):
         for j in range(0, length + 1):
             if ( i == 0 or j == 0 ):
                 temp.append(0)  
-            else :
+            else:
                 if ( st[i - 1] == rev[j - 1] ):
                     '''
                         When we find a match between s[i] and r[j], the lps count would be
@@ -66,8 +66,8 @@ def lps(st):
                         ans = lpsDp[i - 1][j]
                     temp.append(ans)
         lpsDp.append(temp)
-    print("The longest palindromic subsequence is of length: ",lpsDp[length][length])
-    print("The longest palindromic subsequence is: ",printLps(lpsDp, length, st, rev))
+    print("The longest palindromic subsequence is of length: ", lpsDp[length][length])
+    print("The longest palindromic subsequence is: ", printLps(lpsDp, length, st, rev))
 
 def main():
     st = input()
@@ -77,11 +77,11 @@ if __name__ == '__main__':
     main()
 
 '''
-Input : DATASTRUCTURES
-Output : The longest palindromic subsequence is of length : 7
+Input: DATASTRUCTURES
+Output: The longest palindromic subsequence is of length: 7
          The longest palindromic subsequence is SRUTURS
-Verification :
-The concerned 2D matrix formed is :
+Verification:
+The concerned 2D matrix formed is:
     S E R U T C U R T S A T A D
   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 D 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
@@ -98,5 +98,5 @@ U 0 1 1 2 3 4 4 5 5 5 5 5 5 5 5
 R 0 1 1 2 3 4 4 5 6 6 6 6 6 6 6
 E 0 1 2 2 3 4 4 5 6 6 6 6 6 6 6
 S 0 1 2 2 3 4 4 5 6 6 7 7 7 7 7
-    And the longest palindromic subsequence of the string is : SRUTURS (length = 7)
+    And the longest palindromic subsequence of the string is: SRUTURS (length = 7)
 '''
