@@ -36,38 +36,39 @@ Let's arrange the numbers in ascending order using circle sort.
 
 **Pseudocode**
 ```
- function boolean circleSort( a : array of items, int low, int high )<br />
+function boolean circleSort( a : array of items, int low, int high )
 
-    boolean swap = false <br />
+    boolean swap = false 
     
-    int l = low, h = high<br />
+    int l = low, h = high
    
-    while ( l < h )<br />
+    while ( l < h )
       		
-        if ( a[l] > a[h] )<br />
-            swap ( a[l], a[h] )<br />
-            swap = true<br />
-            <br />
-        end if<br />
+        if ( a[l] > a[h] )
+            swap ( a[l], a[h] )
+            swap = true
+            
+        end if
     
-        l++<br />
-        h--<br />
+        l++
+        h--
     
-    end while<br />
+    end while
    
-    if ( l == hi )<br />
-      if( a[l] > a[h + 1] )<br />
-       swap ( a[l], a[h + 1] )<br />
-       swap = true<br />
-      end if <br />
+    if ( l == hi )
+        if( a[l] > a[h + 1] )
+            swap ( a[l], a[h + 1] )
+            swap = true
+        end if 
+    end if
      
-      int mid = ( high - low ) / 2<br />
-      bool firstArray = circleSort( a, low, low + mid ) <br />
-      bool secondArray = circleSort( a, low + mid + 1, high )<br />
+    int mid = ( high - low ) / 2
+    bool firstArray = circleSort( a, low, low + mid )
+    bool secondArray = circleSort( a, low + mid + 1, high )
    
-      return swap || firstArray || secondArray<br />
+    return swap || firstArray || secondArray
     
- end function
+end function
 ```  
 **Time complexity**
 
