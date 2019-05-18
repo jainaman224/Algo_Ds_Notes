@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 class node {
     int data;
     node next;
@@ -10,7 +9,6 @@ class node {
         this.next = next;
     }
 }
-
 
 class cirLinkedList {
     node head;
@@ -119,7 +117,6 @@ class cirLinkedList {
     }
 }
 
-
 public class Circular_Linked_List {
     public static void main(String[] args) {
         cirLinkedList cll=new cirLinkedList();
@@ -132,19 +129,19 @@ public class Circular_Linked_List {
         	n--;
         	int t = input.nextInt();
         	if (t == 1) {
-        		cll.append(input.nextInt());
+        	    cll.append(input.nextInt());
         	}
         	if (t == 2) {
-        		cll.prepend(input.nextInt());
+        	    cll.prepend(input.nextInt());
         	}
-        	if ( t == 3) {
-        		cll.insert_after_val(input.nextInt(), input.nextInt());
+        	if (t == 3) {
+        	    cll.insert_after_val(input.nextInt(), input.nextInt());
         	}
         	if  (t == 4) {
-        		cll.deleteHead();
+        	    cll.deleteHead();
         	}
         	if (t == 5) {
-        		cll.displayList();
+        	    cll.displayList();
         	}
         }
     }
