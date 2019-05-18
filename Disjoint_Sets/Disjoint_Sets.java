@@ -6,7 +6,7 @@ public class Disjoint_Sets {
     
     // function that initially defines the parent of all element as itself.
     static void makeSet(int n) {
-        for (int i = 0; i < n+1; i++) {
+        for (int i = 0; i < n + 1; i++) {
             parent[i] = i;
             size[i] = 1;
         }
@@ -26,6 +26,7 @@ public class Disjoint_Sets {
         
         if (parent_a != parent_b) {
             if (size[parent_a] < size[parent_b]) {
+                
                 // swap a and b
                 int temp = a;
                 a = b;
@@ -40,18 +41,19 @@ public class Disjoint_Sets {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number of nodes and number of edges");
         int n = input.nextInt();
-        int e=input.nextInt();
-        parent = new int[n+1];
-        size = new int[n+1];
+        int e = input.nextInt();
+        parent = new int[n + 1];
+        size = new int[n + 1];
         System.out.println("Enter e edges");
-        
-        makeSet(n);     // make set with n nodes (1,2,...,n)
+
+        // make set with n nodes (1,2,...,n)
+        makeSet(n);     
         for (int i = 0; i < e; i++) {
-            int a=input.nextInt();
-            int b=input.nextInt();
+            int a = input.nextInt();
+            int b = input.nextInt();
             union(a, b);
         }
-        for (int i = 1; i < n+1; i++) {
+        for (int i = 1; i < n + 1; i++) {
             System.out.println(find(i));
         }
     }
