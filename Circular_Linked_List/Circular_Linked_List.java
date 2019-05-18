@@ -119,30 +119,30 @@ class cirLinkedList {
 
 public class Circular_Linked_List {
     public static void main(String[] args) {
-        cirLinkedList cll=new cirLinkedList();
+        cirLinkedList cll = new cirLinkedList();
         Scanner input = new Scanner(System.in);
         System.out.println("Number of operations: ");
         int n = input.nextInt();
        
         // perform n operations
         while (n > 0) {
-        	n--;
-        	int t = input.nextInt();
-        	if (t == 1) {
-        	    cll.append(input.nextInt());
-        	}
-        	if (t == 2) {
-        	    cll.prepend(input.nextInt());
-        	}
-        	if (t == 3) {
-        	    cll.insert_after_val(input.nextInt(), input.nextInt());
-        	}
-        	if  (t == 4) {
-        	    cll.deleteHead();
-        	}
-        	if (t == 5) {
-        	    cll.displayList();
-        	}
+            n--;
+            int t = input.nextInt();
+            if (t == 1) {
+                cll.append(input.nextInt());
+            }
+            if (t == 2) {
+                cll.prepend(input.nextInt());
+            }
+            if (t == 3) {
+                cll.insert_after_val(input.nextInt(), input.nextInt());
+            }
+            if  (t == 4) {
+                cll.deleteHead();
+            }
+            if (t == 5) {
+                cll.displayList();
+            }
         }
     }
 }
