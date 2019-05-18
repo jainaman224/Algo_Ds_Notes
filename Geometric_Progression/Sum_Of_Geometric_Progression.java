@@ -1,0 +1,42 @@
+/*
+        SUM OF GEOMETRIC PROGRESSION
+
+        Any sequence of elements where the quotient between any two
+        consecutive elements is equal is termed to be in G.P.
+        The nth term of an G.P. is defined as (a * r^(n-1))
+        where a is the first element of the G.P.
+        r is the common ratio of the G.P.
+        n is the number of term.
+
+        The Sum of G.P. is defined as a * (r^n - 1) / (r - 1)
+*/
+
+import java.util.Scanner;
+import java.lang.Math;
+
+class Solution {
+    
+    public static void main(String args[]) {
+        System.out.print("Enter the First Term of G.P.");
+        int a;
+        Scanner s = new Scanner(System.in);
+        a = s.nextInt();
+        System.out.print("Enter the common ratio");
+        int r;
+        r = s.nextInt();
+        System.out.print("Enter N (The total number of terms)");
+        int n;
+        n = s.nextInt();
+        System.out.print("The sum of first " + n + " terms of G.P. is " + 
+        (int)(a * (Math.pow(r, n) - 1) / (r - 1)));
+    }
+}
+
+/*
+    INPUT : a = 5
+            r = 2
+            n = 7
+    OUTPUT : The sum of first 7 terms of G.P. is 635
+    VERIFICATION : The 7 terms of G.P. would be 5,10,20,40,80,160,320
+                   Sum = 635
+*/
