@@ -1,8 +1,8 @@
 /*
-Sum of cubes of first N natural numbers can be calculated using the following equation
+    Sum of cubes of first N natural numbers can be calculated using the following equation
 
-Sum = (N*(N+1)/2)^2
-i.e 1^3 + 2^3 + 3^3 + 4^3 + ..... + N^3
+    Sum = (N*(N+1)/2)^2
+    i.e 1^3 + 2^3 + 3^3 + 4^3 + ..... + N^3
 
 */
 
