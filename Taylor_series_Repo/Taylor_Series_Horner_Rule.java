@@ -1,8 +1,10 @@
 // Taylor series using Horner Rule in Java
 
 import java.util.Scanner;
+
 public class Test {
     static double s; // Declare static variable
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
