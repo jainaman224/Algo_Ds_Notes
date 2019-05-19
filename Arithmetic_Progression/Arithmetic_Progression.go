@@ -13,6 +13,15 @@ import (
     "fmt"
 )
 
+func SumOfAP(a int, d int, n int) int {
+    var sum = 0
+    for i := 0; i < n; i++ { 
+        sum = sum + a
+        a = a + d
+    } 
+    return sum    
+}
+
 func main() {
     fmt.Print("Enter the First Term of A.P.")
     var a int
@@ -24,6 +33,7 @@ func main() {
     var n int
     fmt.Scan(&n)
     fmt.Print("The term at index ", n , " is ", (a + (n - 1) * d))
+    fmt.Print("Sum is: ", SumOfAP(a, d, n))
 }
 
 /*
@@ -31,5 +41,6 @@ func main() {
             d = 2
             n = 7
     OUTPUT : The term at index 7 is 17
+             Sum is: 77
     VERIFICATION : The A.P. would be 5,7,9,11,13,15,17...
 */

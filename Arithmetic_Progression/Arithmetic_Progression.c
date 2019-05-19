@@ -10,6 +10,18 @@
 
 #include<stdio.h>
 
+// To find sum of the arithmetic progression
+int SumOfAP(int a, int d, int n) 
+{ 
+    int sum = 0; 
+    for (int i = 0; i < n; i++) 
+    { 
+        sum = sum + a; 
+        a = a + d; 
+    } 
+    return sum; 
+}
+
 int main() {
     printf("Enter the First Term of A.P.");
     int a;
@@ -21,6 +33,7 @@ int main() {
     int n;
     scanf("%d", &n);
     printf("The term at index %d is %d ", n, (a + (n - 1) * d));
+    printf("\nSum is: %d", SumOfAP(a, d, n));
 }
 
 /*
@@ -28,5 +41,6 @@ int main() {
             d = 2
             n = 7
     OUTPUT : The term at index 7 is 17
+             Sum is: 77
     VERIFICATION : The A.P. would be 5,7,9,11,13,15,17...
 */

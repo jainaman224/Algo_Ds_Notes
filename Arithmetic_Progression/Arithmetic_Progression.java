@@ -10,7 +10,16 @@
 
 import java.util.Scanner;
 
-class Arithmetic_Progression {
+class Arithmetic_Progression {    
+    static int SumOfAP(int a, int d, int n) { 
+        int sum = 0; 
+        for (int i = 0; i < n; i++) 
+        { 
+            sum = sum + a; 
+            a = a + d; 
+        } 
+        return sum; 
+    } 
     
     public static void main(String args[]) {
         System.out.print("Enter the First Term of A.P.");
@@ -24,6 +33,7 @@ class Arithmetic_Progression {
         int n;
         n = s.nextInt();
         System.out.print("The term at index " + n + " is " + (a + (n - 1) * d));
+        System.out.print("Sum is: " + SumOfAP(a, d, n));
     }
 }
 
@@ -32,5 +42,6 @@ class Arithmetic_Progression {
             d = 2
             n = 7
     OUTPUT : The term at index 7 is 17
+             Sum is: 77
     VERIFICATION : The A.P. would be 5,7,9,11,13,15,17...
 */
