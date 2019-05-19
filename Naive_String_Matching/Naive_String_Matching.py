@@ -14,15 +14,17 @@ def search(text, pattern):
         if j == lengthPattern:
             print("Pattern found at " + str(i + 1))
 
-text = "namanchamanbomanamansanam"
-pattern = "aman"
+text = input()
+pattern = input()
 search(text, pattern)
 
+'''
+Input:
+text = "namanchamanbomanamansanam"
+pattern = "aman"
 
-''' Output
-
+Output:
 Pattern found at 2
 Pattern found at 8
 Pattern found at 17
-
 '''
