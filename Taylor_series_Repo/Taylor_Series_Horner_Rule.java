@@ -10,7 +10,7 @@ public class Test {
         int x = sc.nextInt();
         int num = sc.nextInt();
         double result = exponential(x, num);
-        System.out.println(+result);
+        System.out.println(result);
     }
 
     // Declare the function for finding exponential
