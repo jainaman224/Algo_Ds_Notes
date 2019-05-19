@@ -6,6 +6,8 @@
     the sum 14 by taking the elements 1, 7 and 6 
 */
 
+import java.util.Scanner;
+
 class Subset_Sum
 {
     // Function to compute whether a subset of array
@@ -22,9 +24,9 @@ class Subset_Sum
         step, we have the option of either including the element in
         the subset to form the given sum, or we exclude it and keep
         the previous set chosen in our answer */
-        for(int i = 0; i <= size; i++)
+        for (int i = 0; i <= size; i++)
         {
-            for(int j = 0; j <= sum; j++)
+            for (int j = 0; j <= sum; j++)
             {
                 // We cannot form a sum j by taking no elements
                 if (i == 0)
@@ -40,13 +42,12 @@ class Subset_Sum
                     /* when the value of current element is less than the
                     sum j, we have two options, either take it and include
                     the element in answer or leave it and take the previous
-                    best given by dp[i-1][j] */
+                    best given by dp[i-1][j]. When the value of sum j is 
+                    less than the element i, we cannot include this element
+                    and hence take the previous best */
                     if (arr[i - 1] <= j)
                         dp[i][j] = dp[i - 1][j] || dp[i - 1][j - arr[i - 1]];
                     else
-                        /* when the value of sum j is less than the element i,
-                        we cannot include this element and hence take the
-			previous best*/
                         dp[i][j] = dp[i - 1][j];
                 }
             }
@@ -61,9 +62,17 @@ class Subset_Sum
     // Driver function
     public static void main(String args[])
     {
-        int arr[] = { 2, 3, 5, 1, 6, 8, 7 };
-        int size = arr.length;
-        int sum = 12;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter size of array");
+        int size = sc.nextInt();
+        
+        int arr[] = new int[size + 2];
+        System.out.println("Enter elements of array");
+        for (int i = 0; i < size; i++)
+            arr[i] = sc.nextInt();        
+
+        System.out.println("Enter sum");
+        int sum = sc.nextInt();
 
         // Call to SubsetSum function
         Subset_Sum obj = new Subset_Sum();
@@ -71,18 +80,27 @@ class Subset_Sum
 
         // if ans evaluates to false, no such subset present
         // if ans evaluates to true , subset with given sum present
-        if ( !ans )
-            System.out.println( "No subset adds upto the given sum" );
+        if (ans == false)
+            System.out.println("No subset adds upto the given sum");
         else
-            System.out.println( "Subset with given sum present" );
+            System.out.println("Subset with given sum present");
     }
 }
 
 /* 
     Input:
-    arr = { 2, 3, 5, 1, 6, 8, 7 }
+    size = 7
+    arr = {2, 3, 5, 1, 6, 8, 7}
     sum = 12
 
     Output:
     Subset with given sum present
+
+    Input:
+    size = 4
+    arr = {2, 3, 5, 1}
+    sum = 12
+
+    Output:
+    No subset adds upto the given sum
 */

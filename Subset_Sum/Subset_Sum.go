@@ -7,7 +7,6 @@
 */
 
 package main
-
 import "fmt"
 
 // Function to compute whether a subset of array exists
@@ -69,16 +68,26 @@ func subsetSum(arr[] int, size int, sum int) bool {
 
 // Driver function
 func main() {
-    arr := []int{ 2, 3, 5, 1, 6, 8, 7 }
-    size := len(arr)
-    sum := 12
+    var size int
+    fmt.Println("Enter size of array")
+    fmt.Scanf("%d", &size)
+
+    fmt.Println("Enter elements of array")
+    arr := make([]int, size)
+    for i := 0; i < size; i++ {
+    fmt.Scanf("%d", &arr[i])
+    }
+
+    var sum int
+    fmt.Println("Enter sum")
+    fmt.Scanf("%d", &sum)
 
     // Call to SubsetSum function
     ans := subsetSum(arr, size, sum)
 
     // if ans evaluates to false, no such subset present
     // if ans evaluates to true , subset with given sum present
-    if (ans == false) {
+    if ans == false {
         fmt.Println("No subset adds upto the given sum")
     } else {
         fmt.Println("Subset with given sum present")
@@ -87,9 +96,18 @@ func main() {
 
 /*
     Input:
+    size = 7
     arr = {2, 3, 5, 1, 6, 8, 7}
     sum = 12
 
     Output:
     Subset with given sum present
+
+    Input:
+    size = 4
+    arr = {2, 3, 5, 1}
+    sum = 12
+
+    Output:
+    No subset adds upto the given sum
 */
