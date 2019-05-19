@@ -3,7 +3,7 @@
 #include <math.h>
 
 //Function for checking whether the number is hamming number or not
-int is_hamming (int n) {
+int is_hamming(int n) {
     if (n == 1)
     {
         return 1;
@@ -15,7 +15,7 @@ int is_hamming (int n) {
 		    return 0;
 	    }
 	    if (n % (n / i) == 0) {
-		if ((n / i) % 2 != 0 && (n / i) % 3 !=0 && (n / i) % 5 != 0) 
+		if ((n / i) % 2 != 0 && (n / i) % 3 != 0 && (n / i) % 5 != 0) 
                     return 0;
 	    }
 	}
