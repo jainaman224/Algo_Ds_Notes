@@ -10,17 +10,17 @@ bool is_hamming (int n) {
         return true;
     }
     if (n % 2 == 0 || n % 3 == 0 || n % 5 == 0) {
-	   for (int i = 2; i*i < n; ++i) {
-	    if (n % i == 0) {
-	        if (i % 2 != 0 and i % 3 != 0 and i % 5 != 0) 
+        for (int i = 2; i*i < n; ++i) {
+            if (n % i == 0) {
+                if (i % 2 != 0 and i % 3 != 0 and i % 5 != 0)
                     return false;
-	    }
-	    if (n % (n / i) == 0) {
-		if ((n / i) % 2 != 0 and (n / i) % 3 != 0 and (n / i) % 5 != 0) 
+            }
+            if (n % (n / i) == 0) {
+                if ((n / i) % 2 != 0 and (n / i) % 3 != 0 and (n / i) % 5 != 0)
                     return false;
-	    }
+            }
         }
-    	return true;		
+        return true;
     }
     return false;
 }
@@ -33,7 +33,7 @@ int main () {
     bool first = true;
     while (count < n) {
         if (is_hamming(i)) {
-            if (!first) 
+            if (!first)
                 cout << " ";
             cout << i;
             ++count;
