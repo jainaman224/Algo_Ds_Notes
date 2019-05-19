@@ -21,7 +21,7 @@ int main ()
     int x, num;
     cin >> x >> num;
     double result = exponential (x, num);
-    cout << result << endl; //x^num
+    cout << result << endl; // x^num
 }
 
 /* Input:- 2 10
