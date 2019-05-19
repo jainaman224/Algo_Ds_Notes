@@ -14,6 +14,7 @@ double exponential (int x, int num)
     s = 1 + x * (s / num); // formula of horner's rule
     return exponential (x, num - 1); // recursive case
 }
+
 // main method
 int main ()
 {
