@@ -10,9 +10,8 @@ optimally and the player, who is unable to make a move in the last is
 declared a loser, We need to find out the winner of the game.
 */
 
-#include <bits/stdc++.h>
-using namespace std;
-#define lint long long int
+package main
+import "fmt"
 
 /*
 Nim sum : XOR sum of no. of stones in all piles.
@@ -34,34 +33,35 @@ some stones from a zero-nim sum piles, the nim sum wouldn't remain 0 and
 hence, it would be a winning position for the second player.
 */
 
-lint calculateWinner(lint starting_player, lint piles[], lint no_of_piles){
-    lint nim_sum = 0;
-    for (lint i = 0; i < no_of_piles; i++){
-        nim_sum = nim_sum ^ piles[i];
+func calculateWinner(starting_player int, piles[] int, no_of_piles int) int {
+    var nim_sum int
+    for i := 0; i < no_of_piles; i++ {
+        nim_sum = nim_sum ^ piles[i]
     }
     // If nim sum is non-zero, starting player wins.
-    if (nim_sum){
-        return starting_player; 
+    if nim_sum > 0 {
+        return starting_player
     }
     // If nim sum is zero, the second player wins.
-    return (starting_player + 1) % 2; 
+    return (starting_player + 1) % 2
 }
 
-int main()
-{
-    lint starting_player;
-    cout<<"Enter starting player:"<<endl;
-    cin>>starting_player;
-    lint no_of_piles;
-    cout<<"Enter number of piles:"<<endl;
-    cin>>no_of_piles;
-    cout<<"Enter number of stones in each pile:"<<endl;
-    lint piles[no_of_piles];
-    for (int i = 0; i < no_of_piles; i++)
-        cin>>piles[i];
-    lint ans = calculateWinner(starting_player, piles, no_of_piles);
-    cout<<"Player "<<ans<<" will win.";
+func main() {
+    var starting_player int
+    fmt.Printf("Enter starting player:\n")
+    fmt.Scanf("%d", &starting_player)
+    var no_of_piles int;
+    fmt.Printf("Enter number of piles:\n")
+    fmt.Scanf("%d", &no_of_piles)
+    fmt.Printf("Enter number of stones in each pile:\n")
+    piles := make([]int, no_of_piles)
+    for i := 0; i < no_of_piles; i++ {
+        fmt.Scanf("%d", &piles[i])
+    }
+    ans := calculateWinner(starting_player, piles, no_of_piles)
+    fmt.Printf("Player %d will win.", ans)
 }
+
 /*
 Input : starting_player = 0
         number_of_piles = 5

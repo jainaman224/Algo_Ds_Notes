@@ -10,8 +10,7 @@ optimally and the player, who is unable to make a move in the last is
 declared a loser, We need to find out the winner of the game.
 */
 
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
 #define lint long long int
 
 /*
@@ -36,7 +35,8 @@ hence, it would be a winning position for the second player.
 
 lint calculateWinner(lint starting_player, lint piles[], lint no_of_piles){
     lint nim_sum = 0;
-    for (lint i = 0; i < no_of_piles; i++){
+    lint i;
+    for (i = 0; i < no_of_piles; i++){
         nim_sum = nim_sum ^ piles[i];
     }
     // If nim sum is non-zero, starting player wins.
@@ -50,18 +50,19 @@ lint calculateWinner(lint starting_player, lint piles[], lint no_of_piles){
 int main()
 {
     lint starting_player;
-    cout<<"Enter starting player:"<<endl;
-    cin>>starting_player;
+    printf("Enter starting player:\n");
+    scanf("%lld", &starting_player);
     lint no_of_piles;
-    cout<<"Enter number of piles:"<<endl;
-    cin>>no_of_piles;
-    cout<<"Enter number of stones in each pile:"<<endl;
-    lint piles[no_of_piles];
-    for (int i = 0; i < no_of_piles; i++)
-        cin>>piles[i];
+    printf("Enter number of piles:\n");
+    scanf("%lld", &no_of_piles);
+    printf("Enter number of stones in each pile:\n");
+    lint piles[no_of_piles], i;
+    for (i = 0; i < no_of_piles; i++)
+        scanf("%lld", &piles[i]);
     lint ans = calculateWinner(starting_player, piles, no_of_piles);
-    cout<<"Player "<<ans<<" will win.";
+    printf("Player %lld will win.", ans);
 }
+
 /*
 Input : starting_player = 0
         number_of_piles = 5
