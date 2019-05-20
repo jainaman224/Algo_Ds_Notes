@@ -6,13 +6,13 @@
 
 */
 
-var number = window.prompt("Enter the number:","");
+var number = window.prompt("Enter the number:", "");
 var n = parseInt(number);
 var res = sumOfCubes(n);
-window.alert("Sum of cubes of first "+n+" natural numbers is "+res);
+window.alert("Sum of cubes of first " + n + " natural numbers is " + res);
 function sumOfCubes(n)
 {
-    var sum = Math.pow((n*(n+1)/2),2);
+    var sum = Math.pow((n * (n + 1) / 2), 2);
     return sum;
 }
 
