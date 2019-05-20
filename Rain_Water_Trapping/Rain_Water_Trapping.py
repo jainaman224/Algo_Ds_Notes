@@ -27,10 +27,28 @@ def trappedWater(a, size) :
   
     return waterVolume 
     
-# main program   
-a = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1] 
-size = len(a) 
-print("Maximum water that can be accumulated is ", trappedWater(a, size)) 
+# main program
+arr =[]
+n = int(input())                    #input the number of towers
+for i in range(n):
+    arr.append(int(input()))        #storing length of each tower in array
+
+print("Maximum water that can be accumulated is ", trappedWater(arr, len(arr))) 
   
-# output: Maximum water that can be accumulated is 6
+#Input:
+#12
+#0
+#1
+#0
+#2
+#1
+#0
+#1
+#3
+#2
+#1
+#2
+#1
+#Output:
+#The maximum water trapped is 6
 
