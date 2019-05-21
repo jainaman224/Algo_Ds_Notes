@@ -26,7 +26,7 @@ q = int(input())
 n = p * q
 
 # eulers toitent function
-phi = (p -1) * (q-1)
+phi = (p - 1) * (q - 1)
 
 # (n,e) forms our public key, 1 < e < phi
 e = 2
@@ -36,17 +36,17 @@ while e < phi:
     e += 1
 
 # calculating CRT exponents dP, dQ and qInv to make calculations shorter and faster
-dP = findInv(e, p-1, n)
-dQ = findInv(e, q-1, n)
+dP = findInv(e, p - 1, n)
+dQ = findInv(e, q - 1, n)
 qInv = findInv(q, p, n)
 
 # printing cipher text 
 c = pow(m, e) % n
-print("Cipher = ",c)
+print("Cipher = ", c)
 
 # printing original message
-m1 = pow(c,dP) % p
-m2 = pow(c,dQ) % q
+m1 = pow(c, dP) % p
+m2 = pow(c, dQ) % q
 h = (qInv * (m1 + p - m2)) % p
 message = m2 + (h * q)
 print("Original message = ", message)
