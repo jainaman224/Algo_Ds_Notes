@@ -7,19 +7,19 @@ int LongestRepeatingSubsequence(string str) {
     length = str.length();
 
     // Initialize all dp elements with 0
-    vector<vector<int>> dp(length+1, vector<int>(length+1, 0));
+    vector< vector<int> > dp(length + 1, vector<int>(length + 1, 0));
 
-    for (int i=1; i<=length; i++) {
-        for (int j=1; j<=length; j++) {
+    for (int i = 1; i <= length; i++) {
+        for (int j = 1; j <= length; j++) {
 
             // If two characters are same(different position)  
             // then dp of present state is dp of previous state plus 1
-            if(i != j && str[i-1] == str[j-1])
-                dp[i][j] = dp[i-1][j-1] + 1;
+            if(i != j && str[i - 1] == str[j - 1])
+                dp[i][j] = dp[i - 1][j - 1] + 1;
             else {
 
                 // else maximum of just vertically above or horizontally left element
-                dp[i][j] = max(dp[i-1][j], dp[i][j-1]);              
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);              
             }
         }
     }
@@ -30,13 +30,17 @@ int LongestRepeatingSubsequence(string str) {
 
 int main()
 {     
-    string str = "AlgoDsNoteDs";
+    string str;
+    cin >> str;
     int length = LongestRepeatingSubsequence(str);
     cout << "String: " << str << "\n";
     cout << "Length of the longest repeating subsequence is: " << length << "\n";
 }
 
 /*
+Sample Input:
+    AlgoDsNoteDs
+    
 Sample Output:
     String: AlgoDsNotesDs
     Length of longest repeating subsequence is: 3
