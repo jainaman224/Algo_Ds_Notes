@@ -1,6 +1,6 @@
 //Program for finding first n hamming numbers for user input of n
-#include <iostream>
-#include <cmath>
+#include<iostream>
+#include<cmath>
 using namespace std;
 
 //Function for checking whether the number is hamming number or not
@@ -27,15 +27,15 @@ bool is_hamming (int n) {
 //If hamming number is found in above function then it is printed in the main function for the given range
 int main () {
     int n;
-    cin >> n;           //user input
+    cin>>n;           //user input
     int count = 0;
     int i = 1;
     bool first = true;
     while (count < n) {
         if (is_hamming(i)) {
             if (!first)
-                cout << " ";
-            cout << i;
+                cout<<" ";
+            cout<<i;
             ++count;
             first = false;
         }
