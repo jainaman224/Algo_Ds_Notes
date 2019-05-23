@@ -21,13 +21,13 @@ int checkLeapYear(int year)
 
 int main()
 {
-    int year1 , year2;
+    int year1, year2;
     printf("Enter the first year:\n");
     scanf("%d", &year1);
     printf("Enter the second year year:\n");
     scanf("%d", &year2);
     printf("The leap years between %d and %d are: \n", year1, year2);
-    for(int i = year1; i <= year2; i++)
+    for (int i = year1; i <= year2; i++)
     {
         if (checkLeapYear(i))
             printf("%d\n", i);
