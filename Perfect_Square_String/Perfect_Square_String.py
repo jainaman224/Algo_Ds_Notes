@@ -21,7 +21,7 @@ def perfectSquareString(string):
     return squareRoot - math.floor(squareRoot))
   
 # Driver code 
-string = input(); 
+string = input()
   
 if (perfectSquareString(string) == 0): 
     print("YES")
