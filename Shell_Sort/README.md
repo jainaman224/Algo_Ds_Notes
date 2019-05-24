@@ -43,31 +43,30 @@ Step 3 − Repeat until complete list is sorted <br />
 ```
 function shellSort( array : list of sortable items)
 
-length = length(array)
-gap = length / 2
+    length = length(array)
+    gap = length / 2
 
-loop while(gap >= 1)
+    loop while(gap >= 1)
   
-  for i = 0 to i <= length-1 do 
-    if ( i + gap > length-1 )
-      continue
-    end if
+    for i = 0 to i <= length-1 do 
+        if ( i + gap > length-1 )
+            continue
+        end if
         
-    if ( array[i] > array[i+gap] )
-      swap( array, i , i+gap )
-    end if
-        
-  end for
+        if ( array[i] > array[i+gap] )
+            swap( array, i , i+gap )
+        end if
+    end for
     
-  gap /= 2
-end loop
+    gap /= 2
+    end loop
 end function
 
 function swap(a : list of sortable items,input x, input y)
 
-temp = a[x]
-a[x] = a[y]
-a[y] = temp
+    temp = a[x]
+    a[x] = a[y]
+    a[y] = temp
 end function
 ```
 ## Time complexity
