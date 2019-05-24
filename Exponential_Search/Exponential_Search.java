@@ -1,4 +1,3 @@
-
 import java.util.*; 
 
 class Exponential_Search 
@@ -22,16 +21,28 @@ class Exponential_Search
     // Driver code 
     public static void main(String args[]) 
     { 
-	// Sample Input
-        int arr[] = {2, 3, 14, 20, 40}; 
-	int x = 20; 
+	
+	int n;
+	Scanner s = new Scanner(System.in);
+	n = s.nextInt();
+        int arr[] = new int[n];
+	for (int i = 0; i < n; i++)
+        {
+            a[i] = s.nextInt();
+        }
+	int x = s.nextInt();
 	int result = expoSearch(arr, arr.length, x); 
 		
 	System.out.println((result < 0) ? "Element is not present in array" : "index " + result); 
      } 
 } 
 
-/* Sample Output : 
-    index 3
+/* 
+INPUT:
+n = 5
+arr[] = {2, 3, 14, 20, 40}
+x = 20
+OUPUT:
+index 3
 */
 

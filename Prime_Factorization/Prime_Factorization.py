@@ -17,22 +17,22 @@ import math
 '''
 def prime_factorize(num):
     prime_factors = []  # To maintain the prime factors of the given number.
-    while(not (num%2)):
+    while (not (num % 2)):
         prime_factors.append(2)
-        num/=2
-    for i in range(3,int(math.sqrt(num))+1):
-        while(not (num%i)):
+        num /= 2
+    for i in range(3, int(math.sqrt(num)) + 1):
+        while (not (num % i)):
             prime_factors.append(i)
-            num/=i
-    if num>2:
+            num /= i
+    if num > 2 :
         prime_factors.append(num)
     # Printing the prime factors.
-    for i in range(0,len(prime_factors)):
-        print(prime_factors[i],end='')
-        if not (i == len(prime_factors)-1):
-            print(" * ",end='')
-num = 100
-print(num," = ",end='')
+    for i in range(0, len(prime_factors)):
+        print(prime_factors[i], end = '')
+        if not (i == len(prime_factors) - 1):
+            print(" * ", end = '')
+num = int(input())
+print(num, " = ", end = '')
 prime_factorize(num)
 
 

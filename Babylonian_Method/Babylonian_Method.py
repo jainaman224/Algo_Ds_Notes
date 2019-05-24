@@ -18,7 +18,8 @@ def square_root(number):
     return num
 
 #To check if function is working
-n = 3
+n = int(input())
 print("Square root of", n, "is", round(square_root(n), 6)) 
 
+#Input: n = 2
 #Output :- Square root of 3 is 1.732051
