@@ -1,5 +1,3 @@
-package heap;
-
 import java.util.Scanner;
 
 public class Binary_Heap {
@@ -58,8 +56,7 @@ public class Binary_Heap {
         heap[size] = 0;
         size--;
         heapify(0);
-        return min;
-        
+        return min;    
     }
     
     // insert to the heap
@@ -104,11 +101,9 @@ public class Binary_Heap {
             }
             if (op == 3) {
                 printHeap();
-            }
-            
+            }    
         }
     }
-
 }
 
 /*
@@ -138,5 +133,4 @@ public class Binary_Heap {
  * 5 9
  * 1 5 9 6
  * 5 9 6
-
 */
