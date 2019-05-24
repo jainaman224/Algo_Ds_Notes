@@ -39,13 +39,21 @@ def search(text, pattern):
         if Z[i] == len(pattern):
             print("Pattern found at " + str(i - len(pattern)))
 
-text = "namanchamanbomanamansanam"
-pattern = "aman"
+def main():
+    text = input()
+    pattern = input()
 
-search(text, pattern)
+    search(text, pattern)
 
-''' Output
+if __name__ == '__main__':
+    main()
+    
+'''
+Input:
+    namanchamanbomanamansanam
+    aman
 
+Output:
 Pattern found at 2
 Pattern found at 8
 Pattern found at 17
