@@ -1,0 +1,548 @@
+// A* Algorithm in C++ programming Language
+
+#include< bits/stdc++.h > 
+using namespace std ; 
+
+#define Row 18                  // Row = 18 , constant term for the whole program
+#define Column 20               // Column = 20 , constant term for the whole program
+
+// Creating a shortcut for int , int pair type 
+typedef pair< int ,  int > Pair ; 
+
+// Creating a shortcut for pair< int ,  pair< int ,  int > > type 
+typedef pair< double ,  pair< int ,  int > > pPair ; 
+
+// A structure to hold the neccesary parameters 
+struct Cell 
+{ 
+	// Row and Column index of its parent 
+	// Note that 0 <= i <= Row-1 && 0 <= j <= Column-1 
+	int parent_i ,  parent_j ; 
+	double f ,  g ,  h ; 
+} ; 
+
+// A Utility Function to check whether given Cell ( ROWS ,  COLS ) is a valid Cell or not. 
+
+bool isValid( int ROWS ,  int COLS ) 
+{ 
+	// Returns true if ROWS number and COLSumn number is in range 
+	return ( ROWS  >= 0 ) && ( ROWS <  Row ) && 
+		( COLS  >= 0 ) && ( COLS <  Column ) ; 
+} 
+
+// A Utility Function to check whether the given Cell is blocked or not 
+
+bool isUnBlocked( int grid[][Column] ,  int ROWS ,  int COLS ) 
+{ 
+	// Returns true if the Cell is not blocked else false 
+
+	if ( grid[ROWS][COLS] == 1 ) 
+		return ( true ) ; 
+	else
+		return ( false ) ; 
+} 
+
+// A Utility Function to check whether destinationination Cell has been reached or not 
+bool isDestination( int ROWS ,  int COLS ,  Pair destination ) 
+{ 
+	if ( ROWS == destination.first && COLS == destination.second ) 
+		return ( true ) ; 
+	else
+		return ( false ) ; 
+} 
+
+// A Utility Function to calculate the 'h' heuristics. 
+
+double calculateHValue( int ROWS ,  int COLS ,  Pair destination ) 
+{ 
+	// Return using the distance formula 
+
+	return ( ( double )sqrt ( ( ROWS-destination.first )*( ROWS-destination.first ) 
+						+ ( COLS-destination.second )*( COLS-destination.second ) ) ) ; 
+} 
+
+// A Utility Function to trace the path from the source to destinationination 
+
+void tracePath( Cell Cell_Details[][Column] ,  Pair destination ) 
+{ 
+	printf ( "\nThe Path is " ) ; 
+	int ROWS = destination.first ; 
+	int COLS = destination.second ; 
+
+	stack< Pair > Path ; 
+
+	while ( !( Cell_Details[ROWS][COLS].parent_i == ROWS 
+			&& Cell_Details[ROWS][COLS].parent_j == COLS  ) ) 
+	{ 
+		Path.push ( make_pair ( ROWS ,  COLS ) ) ; 
+		int temp_ROWS = Cell_Details[ROWS][COLS].parent_i ; 
+		int temp_COLS = Cell_Details[ROWS][COLS].parent_j ; 
+		ROWS = temp_ROWS ; 
+		COLS = temp_COLS ; 
+	} 
+
+	Path.push ( make_pair ( ROWS ,  COLS ) ) ; 
+	while ( !Path.empty(  ) ) 
+	{ 
+		pair< int , int > p = Path.top(  ) ; 
+		Path.pop(  ) ; 
+		printf( "- > ( %d , %d ) " , p.first , p.second ) ; 
+	} 
+
+	return ; 
+} 
+
+// A Function to find the shortest path between a given source Cell to a destinationination Cell according to A* Search Algorithm 
+
+void aStarSearch( int grid[][Column] ,  Pair source ,  Pair destination ) 
+{ 
+	// If the source is out of range 
+
+	if ( isValid ( source.first ,  source.second ) == false ) 
+	{ 
+		printf ( "Source is invalid\n" ) ; 
+		return ; 
+	} 
+
+	// If the destinationination is out of range 
+
+	if ( isValid ( destination.first ,  destination.second ) == false ) 
+	{ 
+		printf ( "Destination is invalid\n" ) ; 
+		return ; 
+	} 
+
+	// Either the source or the destinationination is blocked 
+
+	if ( isUnBlocked( grid ,  source.first ,  source.second ) == false || isUnBlocked( grid ,  destination.first ,  destination.second ) == false ) 
+	{ 
+		printf ( "Source or the destinationination is blocked\n" ) ; 
+		return ; 
+	} 
+
+	// If the destinationination Cell is the same as source Cell 
+
+	if ( isDestination( source.first ,  source.second ,  destination ) == true ) 
+	{ 
+		printf ( "We are already at the destinationination\n" ) ; 
+		return ; 
+	} 
+
+	// Create a closed list and initialise it to false which means that no Cell has been included yet 
+
+	bool closedList[Row][Column] ; 
+	memset( closedList ,  false ,  sizeof ( closedList ) ) ; 
+
+	// Declare a 2D array of structure to hold the details of that Cell 
+	Cell Cell_Details[Row][Column] ; 
+
+	int i ,  j ; 
+
+	for ( i=0 ; i < Row ; i++ ) 
+	{ 
+		for ( j=0 ; j< Column ; j++ ) 
+		{ 
+			Cell_Details[i][j].f = FLT_MAX ; 
+			Cell_Details[i][j].g = FLT_MAX ; 
+			Cell_Details[i][j].h = FLT_MAX ; 
+			Cell_Details[i][j].parent_i = -1 ; 
+			Cell_Details[i][j].parent_j = -1 ; 
+		} 
+	} 
+
+	// Initialising the parameters of the starting node 
+
+	i = source.first ,  j = source.second ; 
+	Cell_Details[i][j].f = 0.0 ; 
+	Cell_Details[i][j].g = 0.0 ; 
+	Cell_Details[i][j].h = 0.0 ; 
+	Cell_Details[i][j].parent_i = i ; 
+	Cell_Details[i][j].parent_j = j ; 
+
+	set< pPair > openList ; 
+	openList.insert( make_pair ( 0.0 ,  make_pair ( i ,  j ) ) ) ; 
+	bool foundDest = false ; 
+
+	while ( !openList.empty(  ) ) 
+	{ 
+		pPair p = *openList.begin(  ) ; 
+
+		openList.erase( openList.begin(  ) ) ; 
+
+		// Add this vertex to the closed list 
+		i = p.second.first ; 
+		j = p.second.second ; 
+		closedList[i][j] = true ; 
+	
+	//Generatin all the 8 successors of the cell
+
+		// To store the 'g' ,  'h' and 'f' of the 8 successors 
+		double gNew ,  hNew ,  fNew ; 
+
+		//----------- 1st Successor ( North ) ------------ 
+
+		// Only process this Cell if this is a valid one 
+		if ( isValid( i-1 ,  j ) == true ) 
+		{ 
+			// If the destinationination Cell is the same as the current successor 
+
+			if ( isDestination( i-1 ,  j ,  destination ) == true ) 
+			{ 
+				// Set the Parent of the destinationination Cell 
+
+				Cell_Details[i-1][j].parent_i = i ; 
+				Cell_Details[i-1][j].parent_j = j ; 
+				printf ( "The destinationination Cell is found\n" ) ; 
+				tracePath ( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+
+			// If the successor is already on the closed list or if it is blocked ,  then ignore it. 
+	
+			else if ( closedList[i-1][j] == false && 
+					isUnBlocked( grid ,  i-1 ,  j ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.0 ; 
+				hNew = calculateHValue ( i-1 ,  j ,  destination ) ; 
+				fNew = gNew + hNew ; 
+
+				
+				if ( Cell_Details[i-1][j].f == FLT_MAX || 
+						Cell_Details[i-1][j].f  > fNew ) 
+				{ 
+					openList.insert(  make_pair( fNew ,  
+											make_pair( i-1 ,  j ) ) ) ; 
+
+					// Update the details of this Cell 
+					Cell_Details[i-1][j].f = fNew ; 
+					Cell_Details[i-1][j].g = gNew ; 
+					Cell_Details[i-1][j].h = hNew ; 
+					Cell_Details[i-1][j].parent_i = i ; 
+					Cell_Details[i-1][j].parent_j = j ; 
+				} 
+			} 
+		} 
+
+		//----------- 2nd Successor ( South ) ------------ 
+
+		// Process this cell only if it a valid one
+
+		if ( isValid( i+1 ,  j ) == true ) 
+		{ 
+			// If the destinationination Cell is the same as the current successor 
+
+			if ( isDestination( i+1 ,  j ,  destination ) == true ) 
+			{ 
+				
+				Cell_Details[i+1][j].parent_i = i ; 
+				Cell_Details[i+1][j].parent_j = j ; 
+				printf( "The destinationination Cell is found\n" ) ; 
+				tracePath( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+			// If the successor is already on the closed list or if it is blocked ,  then ignore it. 
+			
+			else if ( closedList[i+1][j] == false && 
+					isUnBlocked( grid ,  i+1 ,  j ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.0 ; 
+				hNew = calculateHValue( i+1 ,  j ,  destination ) ; 
+				fNew = gNew + hNew ; 
+
+				
+				if ( Cell_Details[i+1][j].f == FLT_MAX || 
+						Cell_Details[i+1][j].f  > fNew ) 
+				{ 
+					openList.insert(  make_pair ( fNew ,  make_pair ( i+1 ,  j ) ) ) ; 
+					// Update the details of this Cell 
+					Cell_Details[i+1][j].f = fNew ; 
+					Cell_Details[i+1][j].g = gNew ; 
+					Cell_Details[i+1][j].h = hNew ; 
+					Cell_Details[i+1][j].parent_i = i ; 
+					Cell_Details[i+1][j].parent_j = j ; 
+				} 
+			} 
+		} 
+
+		//----------- 3rd Successor ( East ) ------------ 
+
+		// Only process this Cell if this is a valid one 
+		if ( isValid ( i ,  j+1 ) == true ) 
+		{ 
+			// If the destinationination Cell is the same as the current successor 
+			if ( isDestination( i ,  j+1 ,  destination ) == true ) 
+			{ 
+				// Set the Parent of the destinationination Cell 
+				Cell_Details[i][j+1].parent_i = i ; 
+				Cell_Details[i][j+1].parent_j = j ; 
+				printf( "The destinationination Cell is found\n" ) ; 
+				tracePath( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+
+			else if ( closedList[i][j+1] == false && 
+					isUnBlocked ( grid ,  i ,  j+1 ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.0 ; 
+				hNew = calculateHValue ( i ,  j+1 ,  destination ) ; 
+				fNew = gNew + hNew ; 
+
+				
+				if ( Cell_Details[i][j+1].f == FLT_MAX || 
+						Cell_Details[i][j+1].f  > fNew ) 
+				{ 
+					openList.insert(  make_pair( fNew ,  
+										make_pair ( i ,  j+1 ) ) ) ; 
+
+					// Update the details of this Cell 
+					Cell_Details[i][j+1].f = fNew ; 
+					Cell_Details[i][j+1].g = gNew ; 
+					Cell_Details[i][j+1].h = hNew ; 
+					Cell_Details[i][j+1].parent_i = i ; 
+					Cell_Details[i][j+1].parent_j = j ; 
+				} 
+			} 
+		} 
+
+		//----------- 4th Successor ( West ) ------------ 
+
+		// Only process this Cell if this is a valid one 
+		if ( isValid( i ,  j-1 ) == true ) 
+		{ 
+			
+			if ( isDestination( i ,  j-1 ,  destination ) == true ) 
+			{ 
+				
+				Cell_Details[i][j-1].parent_i = i ; 
+				Cell_Details[i][j-1].parent_j = j ; 
+				printf( "The destinationination Cell is found\n" ) ; 
+				tracePath( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+	
+			else if ( closedList[i][j-1] == false && 
+					isUnBlocked( grid ,  i ,  j-1 ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.0 ; 
+				hNew = calculateHValue( i ,  j-1 ,  destination ) ; 
+				fNew = gNew + hNew ; 
+
+				
+				if ( Cell_Details[i][j-1].f == FLT_MAX || 
+						Cell_Details[i][j-1].f  > fNew ) 
+				{ 
+					openList.insert(  make_pair ( fNew ,  
+										make_pair ( i ,  j-1 ) ) ) ; 
+
+					// Update the details of this Cell 
+					Cell_Details[i][j-1].f = fNew ; 
+					Cell_Details[i][j-1].g = gNew ; 
+					Cell_Details[i][j-1].h = hNew ; 
+					Cell_Details[i][j-1].parent_i = i ; 
+					Cell_Details[i][j-1].parent_j = j ; 
+				} 
+			} 
+		} 
+
+		//----------- 5th Successor ( North-East ) ------------ 
+
+		// Only process this Cell if this is a valid one 
+		if ( isValid( i-1 ,  j+1 ) == true ) 
+		{ 
+			
+			if ( isDestination( i-1 ,  j+1 ,  destination ) == true ) 
+			{ 
+				// Set the Parent of the destinationination Cell 
+				Cell_Details[i-1][j+1].parent_i = i ; 
+				Cell_Details[i-1][j+1].parent_j = j ; 
+				printf ( "The destinationination Cell is found\n" ) ; 
+				tracePath ( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+			
+			else if ( closedList[i-1][j+1] == false && 
+					isUnBlocked( grid ,  i-1 ,  j+1 ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.414 ; 
+				hNew = calculateHValue( i-1 ,  j+1 ,  destination ) ; 
+				fNew = gNew + hNew ; 
+
+				
+				if ( Cell_Details[i-1][j+1].f == FLT_MAX || 
+						Cell_Details[i-1][j+1].f  > fNew ) 
+				{ 
+					openList.insert(  make_pair ( fNew ,  
+									make_pair( i-1 ,  j+1 ) ) ) ; 
+
+					// Update the details of this Cell 
+					Cell_Details[i-1][j+1].f = fNew ; 
+					Cell_Details[i-1][j+1].g = gNew ; 
+					Cell_Details[i-1][j+1].h = hNew ; 
+					Cell_Details[i-1][j+1].parent_i = i ; 
+					Cell_Details[i-1][j+1].parent_j = j ; 
+				} 
+			} 
+		} 
+
+		//----------- 6th Successor ( North-West ) ------------ 
+
+		// Only process this Cell if this is a valid one 
+		if ( isValid ( i-1 ,  j-1 ) == true ) 
+		{ 
+			
+			if ( isDestination ( i-1 ,  j-1 ,  destination ) == true ) 
+			{ 
+				
+				Cell_Details[i-1][j-1].parent_i = i ; 
+				Cell_Details[i-1][j-1].parent_j = j ; 
+				printf ( "The destinationination Cell is found\n" ) ; 
+				tracePath ( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+
+			
+			else if ( closedList[i-1][j-1] == false && 
+					isUnBlocked( grid ,  i-1 ,  j-1 ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.414 ; 
+				hNew = calculateHValue( i-1 ,  j-1 ,  destination ) ; 
+				fNew = gNew + hNew ; 
+
+				
+				if ( Cell_Details[i-1][j-1].f == FLT_MAX || 
+						Cell_Details[i-1][j-1].f  > fNew ) 
+				{ 
+					openList.insert(  make_pair ( fNew ,  make_pair ( i-1 ,  j-1 ) ) ) ; 
+					// Update the details of this Cell 
+					Cell_Details[i-1][j-1].f = fNew ; 
+					Cell_Details[i-1][j-1].g = gNew ; 
+					Cell_Details[i-1][j-1].h = hNew ; 
+					Cell_Details[i-1][j-1].parent_i = i ; 
+					Cell_Details[i-1][j-1].parent_j = j ; 
+				} 
+			} 
+		} 
+
+		//----------- 7th Successor ( South-East ) ------------ 
+
+		// Only process this Cell if this is a valid one 
+		if ( isValid( i+1 ,  j+1 ) == true ) 
+		{ 
+			
+			if ( isDestination( i+1 ,  j+1 ,  destination ) == true ) 
+			{ 
+				
+				Cell_Details[i+1][j+1].parent_i = i ; 
+				Cell_Details[i+1][j+1].parent_j = j ; 
+				printf ( "The destinationination Cell is found\n" ) ; 
+				tracePath ( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+			
+			else if ( closedList[i+1][j+1] == false && 
+					isUnBlocked( grid ,  i+1 ,  j+1 ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.414 ; 
+				hNew = calculateHValue( i+1 ,  j+1 ,  destination ) ; 
+				fNew = gNew + hNew ; 
+				
+				if ( Cell_Details[i+1][j+1].f == FLT_MAX || 
+						Cell_Details[i+1][j+1].f  > fNew ) 
+				{ 
+					openList.insert( make_pair( fNew ,  make_pair ( i+1 ,  j+1 ) ) ) ; 
+
+					// Update the details of this Cell 
+					Cell_Details[i+1][j+1].f = fNew ; 
+					Cell_Details[i+1][j+1].g = gNew ; 
+					Cell_Details[i+1][j+1].h = hNew ; 
+					Cell_Details[i+1][j+1].parent_i = i ; 
+					Cell_Details[i+1][j+1].parent_j = j ; 
+				} 
+			} 
+		} 
+
+		//----------- 8th Successor ( South-West ) ------------ 
+
+		// Only process this Cell if this is a valid one 
+		if ( isValid ( i+1 ,  j-1 ) == true ) 
+		{ 
+			
+			if ( isDestination( i+1 ,  j-1 ,  destination ) == true ) 
+			{ 
+				
+				Cell_Details[i+1][j-1].parent_i = i ; 
+				Cell_Details[i+1][j-1].parent_j = j ; 
+				printf( "The destinationination Cell is found\n" ) ; 
+				tracePath( Cell_Details ,  destination ) ; 
+				foundDest = true ; 
+				return ; 
+			} 
+
+			
+			else if ( closedList[i+1][j-1] == false && 
+					isUnBlocked( grid ,  i+1 ,  j-1 ) == true ) 
+			{ 
+				gNew = Cell_Details[i][j].g + 1.414 ; 
+				hNew = calculateHValue( i+1 ,  j-1 ,  destination ) ; 
+				fNew = gNew + hNew ; 
+
+				
+				if ( Cell_Details[i+1][j-1].f == FLT_MAX || 
+						Cell_Details[i+1][j-1].f  > fNew ) 
+				{ 
+					openList.insert( make_pair( fNew ,  
+										make_pair( i+1 ,  j-1 ) ) ) ; 
+
+					// Update the details of this Cell 
+					Cell_Details[i+1][j-1].f = fNew ; 
+					Cell_Details[i+1][j-1].g = gNew ; 
+					Cell_Details[i+1][j-1].h = hNew ; 
+					Cell_Details[i+1][j-1].parent_i = i ; 
+					Cell_Details[i+1][j-1].parent_j = j ; 
+				} 
+			} 
+		} 
+	} 
+
+	
+	if ( foundDest == false ) 
+		printf( "Failed to find the Destination Cell\n" ) ; 
+
+	return ; 
+} 
+
+
+// Driver program to test above function 
+int main(  ) 
+{ 
+	
+	int grid[Row][Column] = 
+	{ 
+		{ 1 ,  0 ,  1 ,  1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 } ,  
+		{ 1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 ,  0 ,  1 ,  1 } ,  
+		{ 1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  0 ,  1 ,  0 ,  1 } ,  
+		{ 0 ,  0 ,  1 ,  0 ,  1 ,  0 ,  0 ,  0 ,  0 ,  1 } ,  
+		{ 1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 ,  0 ,  1 ,  0 } ,  
+		{ 1 ,  0 ,  1 ,  1 ,  1 ,  1 ,  0 ,  1 ,  0 ,  0 } ,  
+		{ 1 ,  0 ,  0 ,  0 ,  0 ,  1 ,  0 ,  0 ,  0 ,  1 } ,  
+		{ 1 ,  0 ,  1 ,  1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 } ,  
+		{ 1 ,  1 ,  1 ,  0 ,  0 ,  0 ,  1 ,  0 ,  0 ,  1 } 
+	} ; 
+
+	// Source is the left-most bottom-most corner 
+	Pair source = make_pair( 8 ,  0 ) ; 
+
+	// Destination is the left-most top-most corner 
+	Pair destination = make_pair( 0 ,  0 ) ; 
+
+	aStarSearch( grid ,  source ,  destination ) ; 
+
+	return( 0 ) ; 
+}
