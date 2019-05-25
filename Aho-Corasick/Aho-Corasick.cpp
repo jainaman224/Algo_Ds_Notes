@@ -19,14 +19,12 @@ int buildMachine(const vector<string> &words, char lowestChar = 'a', char highes
         int currentState = 0;
         for (int j = 0; j < keyword.size(); j++)
         {
-		
 			int c = keyword[j] - lowestChar;
             if (g[currentState][c] == -1)
             { 	// Allocate a new node
                 g[currentState][c] = states++;
             }
-            currentState = g[currentState][c];
-			
+            currentState = g[currentState][c];	
         }
         out[currentState] |= (1 << i); // There's a match of keywords[i] at node currentState.	
     }
@@ -58,6 +56,7 @@ int buildMachine(const vector<string> &words, char lowestChar = 'a', char highes
         {
             if (g[state][c] != -1)
             {  
+				int failure = fail[state];
 				int failure = fail[state];
                 while (g[failure][c] == -1)
                 {
