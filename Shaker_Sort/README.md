@@ -99,11 +99,8 @@ function CocktailSort(int a[], int n)
 
 end function
 ```
+
 ## Time complexity
 
 Best Case complexity = O(n)<br />
 Worst case complexity = O(n*n)
-
-
-
-
