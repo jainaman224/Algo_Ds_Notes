@@ -3,9 +3,6 @@
 #include< bits/stdc++.h > 
 using namespace std ; 
 
-#define Row 18                  // Row = 18 , constant term for the whole program
-#define Column 20               // Column = 20 , constant term for the whole program
-
 // Creating a shortcut for int , int pair type 
 typedef pair< int ,  int > Pair ; 
 
@@ -522,25 +519,24 @@ void aStarSearch( int grid[][Column] ,  Pair source ,  Pair destination )
 // Driver program to test above function 
 int main(  ) 
 { 
-	
-	int grid[Row][Column] = 
-	{ 
-		{ 1 ,  0 ,  1 ,  1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 } ,  
-		{ 1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 ,  0 ,  1 ,  1 } ,  
-		{ 1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  0 ,  1 ,  0 ,  1 } ,  
-		{ 0 ,  0 ,  1 ,  0 ,  1 ,  0 ,  0 ,  0 ,  0 ,  1 } ,  
-		{ 1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 ,  0 ,  1 ,  0 } ,  
-		{ 1 ,  0 ,  1 ,  1 ,  1 ,  1 ,  0 ,  1 ,  0 ,  0 } ,  
-		{ 1 ,  0 ,  0 ,  0 ,  0 ,  1 ,  0 ,  0 ,  0 ,  1 } ,  
-		{ 1 ,  0 ,  1 ,  1 ,  1 ,  1 ,  0 ,  1 ,  1 ,  1 } ,  
-		{ 1 ,  1 ,  1 ,  0 ,  0 ,  0 ,  1 ,  0 ,  0 ,  1 } 
-	} ; 
-
+	//Dynamic input 
+	int Row,Column;
+	cin>>Row>>Column;
+	int grid[Row][Column];
+	for(int x = 0 ; x < Row; x++){
+	for(int y = 0 ; y < Column; y++){
+		cin>>grid[x][y];
+	}
+	}	
+	int SRCx,SRCy;
+	cin>>SRCx>>SRCy;
 	// Source is the left-most bottom-most corner 
-	Pair source = make_pair( 8 ,  0 ) ; 
-
+	Pair source = make_pair( SRCx ,  SRCy ) ; 
+	
+	int DESTx,DESTy;
+	cin>>DESTx>>DESTy;
 	// Destination is the left-most top-most corner 
-	Pair destination = make_pair( 0 ,  0 ) ; 
+	Pair destination = make_pair( DESTx , DESTy ) ; 
 
 	aStarSearch( grid ,  source ,  destination ) ; 
 
