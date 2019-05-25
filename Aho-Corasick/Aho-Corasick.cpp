@@ -14,15 +14,15 @@ int buildMachine(const vector<string> &words, char lowestChar = 'a', char highes
     int states = 1; // Initially, we just have the 0 state
 
     for (int i = 0; i < words.size(); i++)
-    {
+    {   
         const string &keyword = words[i];
         int currentState = 0;
         for (int j = 0; j < keyword.size(); j++)
-        {
-			int c = keyword[j] - lowestChar;
+        {   
+	    int c = keyword[j] - lowestChar;
             if (g[currentState][c] == -1)
             { 	// Allocate a new node
-                g[currentState][c] = states++;
+            	g[currentState][c] = states++;
             }
             currentState = g[currentState][c];	
         }
@@ -30,9 +30,9 @@ int buildMachine(const vector<string> &words, char lowestChar = 'a', char highes
     }
     // State 0 should have an outgoing edge for all characters.
     for (int c = 0; c < MAXCHAR; c++)
-    {
+    {		
         if (g[0][c] == -1)
-        {	
+        {				
             g[0][c] = 0;	
         }	
     }
@@ -50,14 +50,14 @@ int buildMachine(const vector<string> &words, char lowestChar = 'a', char highes
 
     while (q.size())
     {        
-		int state = q.front();
+	int state = q.front();
         q.pop();
         for (int c = 0; c <= highestChar - lowestChar; c++)
         {
             if (g[state][c] != -1)
             {  
-				int failure = fail[state];
-				int failure = fail[state];
+		int failure = fail[state];
+		int failure = fail[state];
                 while (g[failure][c] == -1)
                 {
                     failure = fail[failure];
@@ -77,22 +77,23 @@ int findNextState(int currentState, char nextInput, char lowestChar = 'a')
     int answer = currentState;
     int c = nextInput - lowestChar;
     while (g[answer][c] == -1)
-	{
-		answer = fail[answer];
-	}
+    {
+       answer = fail[answer];
+    }
     return g[answer][c];
 }
 
-int main(){
+int main()
+{	
     vector<string> keywords;
-	cout<<"Enter the number of keywords you want to enter";
-	int n;
-	for(int i = 0; i < n; i++)
-	{
-		string temp;
-		cin >> temp;
-		keywords.push_back(temp);
-	}	
+    cout<<"Enter the number of keywords you want to enter";
+    int n;
+    for(int i = 0; i < n; i++)
+    {
+	string temp;
+	cin >> temp;
+	keywords.push_back(temp);
+    }	
 	cout << "Enter text";
 	string text;
 	cin >> text;
@@ -102,9 +103,9 @@ int main(){
     {
         currentState = findNextState(currentState, text[i], 'a');
         if (out[currentState] == 0)
-		{
-			continue; // Nothing new, moving on to the next character.
-		}
+	{
+	    continue; // Nothing new, moving on to the next character.
+	}
         for (int j = 0; j < keywords.size(); j++)
         {
             if (out[currentState] & (1 << j))
