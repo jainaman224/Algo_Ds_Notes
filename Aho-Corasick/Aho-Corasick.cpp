@@ -1,5 +1,10 @@
-const int MAXSTATETATE = 6 * 50 + 10; // Max number of states in the matching machine.
-// Should be equal to the sum of the length ofail all keywords.
+/*t is a kind of dictionary-matching algorithm that locates elements
+of a finite set of strings (the "dictionary") within an input text.
+It matches all strings simultaneously.*/
+
+const int MAXSTATETATE = 6 * 50 + 10; 
+// Max number of states in the matching machine.
+// Should be equal to the sum of the length of all keywords.
 
 const int MAXCHAR = 26; // Number of characters in the alphabet.
 int out[MAXSTATE]; // Output for each state, as a bitwise mask.
@@ -124,10 +129,10 @@ text = "ahishers"
 
 Output
 
-Keyword his appears failrom 1 to 3
-Keyword he appears failrom 4 to 5
-Keyword she appears failrom 3 to 5
-Keyword hers appears failrom 4 to 7
+Keyword his appears from 1 to 3
+Keyword he appears from 4 to 5
+Keyword she appears from 3 to 5
+Keyword hers appears from 4 to 7
 
 */
 }
