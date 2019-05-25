@@ -1,4 +1,4 @@
-/*t is a kind of dictionary-matching algorithm that locates elements
+/*It is a kind of dictionary-matching algorithm that locates elements
 of a finite set of strings (the "dictionary") within an input text.
 It matches all strings simultaneously.*/
 
@@ -99,9 +99,9 @@ int main()
 	cin >> temp;
 	keywords.push_back(temp);
     }	
-	cout << "Enter text";
-	string text;
-	cin >> text;
+    cout << "Enter text";
+    string text;
+    cin >> text;
     buildMachine(keywords, 'a', 'z');
     int currentState = 0;
     for (int i = 0; i < text.size(); i++)
