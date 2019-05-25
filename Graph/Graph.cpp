@@ -20,7 +20,7 @@ class Graph{
     void showConnections(){
         for(int i=0; i<numberOfNodes;i++)
         {
-            cout<<i<< "-->";
+            cout<<i<< "--> ";
             for(int j=0;j<adjacencyList[i].size();j++)
             {
                 cout<<adjacencyList[i][j]<<" ";
