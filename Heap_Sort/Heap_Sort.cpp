@@ -48,18 +48,33 @@ void Heap_Sort(int array[], int size)
 void Print_Array(int array[], int size)
 {
     for(int i = 0; i < size; i++)
-        cout << array[i] << " ";
+        cout<<array[i] << " ";
 
-    cout << endl;
+    cout<<endl;
 }
 
 int main()
 {
-    int array[] = {2, 4, 3, 1, 6, 8, 4};
-    Heap_Sort(array, 7);
-    Print_Array(array, 7);
+    int n, i;
+    cout<<"Enter number of elements in your array: ";
+    cin>>n;
+    int array[n];
+    cout<<"Enter your array: ";
+    for (i = 0; i < n; i++)
+    {
+        cin>>array[i];
+    }
+    Heap_Sort(array, n);
+    Print_Array(array, n);
     return 0;
 }
 
-// Output
-// 1 2 3 4 4 6 8
+/*Enter number of elements in your array: 7
+Enter your array: 2
+4
+3
+1
+6
+8
+4
+1 2 3 4 4 6 8*/
