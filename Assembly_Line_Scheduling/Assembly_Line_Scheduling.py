@@ -122,7 +122,7 @@ if __name__ == "__main__":
     # inA, inB Time required to enter Assembly line                                                            Here, inA = inTime[0], inB = inTime[1]  
     # outA, outB Time required to exit from Assembly line                                                      Here, outA = outTime[0], outB = outTime[1]
 
-    nodes = int(input("Enter the no. of nodes on Assembly line : "));
+    nodes = int(input("Enter the no. of nodes on Assembly line : "))
     
     line = []
     inTime = []
@@ -149,7 +149,7 @@ if __name__ == "__main__":
     for lineN in range(ASSEMBLY_LINES):
         tmp = []
         for nThNode in range(nodes):
-            if (nThNode==0):
+            if (nThNode == 0):
                 tmp.append(0)
                 print()
             else:
