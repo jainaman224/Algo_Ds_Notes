@@ -61,13 +61,13 @@ def assemblyLineScheduling(line, transactionTime, inTime, outTime):
         # for Line_1
         tempS = line1[n_node] + line[0][n_node]
         tempC = line2[n_node] + transactionTime[1][n_node] + line[0][n_node]
-        temp  = min(tempS, tempC)
+        temp = min(tempS, tempC)
         line1.append(temp)
 
         # for Line_2
         tempS = line2[n_node] + line[1][n_node]
         tempC = line1[n_node] + transactionTime[0][n_node] + line[1][n_node]
-        temp  = min(tempS, tempC)
+        temp = min(tempS, tempC)
         line2.append(temp)
 
     # Adding Out time for respective line
@@ -81,20 +81,20 @@ def assemblyLineScheduling(line, transactionTime, inTime, outTime):
 
     path = []
 
-    for i in range(noOfNodes+1, -1, -1):
-        if(i == noOfNodes+1):
-            path.insert(-1, 'Out' + pathC + '(' + str(outTime[int(pathC)-1]) + ')')
-        elif(i==0):
-            path.insert(0, 'In' + pathC + '(' + str(inTime[int(pathC)-1]) + ')')
+    for i in range(noOfNodes + 1, -1, -1):
+        if (i == noOfNodes+1):
+            path.insert(-1, 'Out' + pathC + '(' + str(outTime[int(pathC) - 1]) + ')')
+        elif (i == 0):
+            path.insert(0, 'In' + pathC + '(' + str(inTime[int(pathC) - 1]) + ')')
         else:
-            path.insert(0, 'Node' + pathC + '(' + str(line[int(pathC)-1][i-1]) + ')')
-            if(pathC == '1'):
-                val = line1[i] - line1[i-1]
-                if(val != line[int(pathC)-1][i-1]):
+            path.insert(0, 'Node' + pathC + '(' + str(line[int(pathC) - 1][i - 1]) + ')')
+            if (pathC == '1'):
+                val = line1[i] - line1[i - 1]
+                if (val != line[int(pathC) - 1][i - 1]):
                     pathC = '2'
             else:
-                val = line2[i] - line2[i-1]
-                if(val != line[int(pathC)-1][i-1]):
+                val = line2[i] - line2[i - 1]
+                if (val != line[int(pathC) - 1][i - 1]):
                     pathC = '1'
 
     # Finding minimum cost and return
@@ -131,32 +131,32 @@ if __name__ == "__main__":
 
     print("\n-- In Time --")
     for lineN in range(ASSEMBLY_LINES):
-        inTime.append(int(input("For Line"+str(lineN+1)+": ")))
+        inTime.append(int(input("For Line" + str(lineN + 1) + ": ")))
     
     print("\n-- Out Time --")
     for lineN in range(ASSEMBLY_LINES):
-        outTime.append(int(input("For Line"+str(lineN+1)+": ")))
+        outTime.append(int(input("For Line" + str(lineN + 1) + ": ")))
     
     print("\n-- Time required at each node --")
     for lineN in range(ASSEMBLY_LINES):
-        print("\nFor Assembly Line",lineN+1)
+        print("\nFor Assembly Line", lineN + 1)
         tmp = []
         for nThNode in range(nodes):
-            tmp.append(int(input("Node"+str(nThNode)+": ")))
+            tmp.append(int(input("Node" + str(nThNode) + ": ")))
         line.append(tmp)
     
     print("\n-- Transaction Time --")
     for lineN in range(ASSEMBLY_LINES):
         tmp = []
         for nThNode in range(nodes):
-            if(nThNode==0):
+            if (nThNode==0):
                 tmp.append(0)
                 print()
             else:
-                if(lineN == 0):
-                    tmp.append(int(input("Node"+str(lineN+1)+"("+str(line[lineN][nThNode-1])+") to Node"+str(lineN+2)+"("+str(line[lineN+1][nThNode])+") : ")))
+                if (lineN == 0):
+                    tmp.append(int(input("Node" + str(lineN + 1) + "(" + str(line[lineN][nThNode - 1]) + ") to Node" + str(lineN + 2) + "(" +str(line[lineN + 1][nThNode]) + ") : ")))
                 else:
-                    tmp.append(int(input("Node"+str(lineN+1)+"("+str(line[lineN][nThNode-1])+") to Node"+str(lineN)+"("+str(line[lineN-1][nThNode])+") : ")))
+                    tmp.append(int(input("Node" + str(lineN + 1) + "(" + str(line[lineN][nThNode - 1]) + ") to Node" + str(lineN) + "(" + str(line[lineN - 1][nThNode]) + ") : ")))
         transactionTime.append(tmp)
 
     path, val = assemblyLineScheduling(line, transactionTime, inTime, outTime)

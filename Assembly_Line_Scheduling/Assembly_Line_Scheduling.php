@@ -57,7 +57,7 @@
         $line1[1] = ($inTime[0] + $line[0][0]);
         $line2[1] = ($inTime[1] + $line[1][0]);
         
-        for($nNode = 1; $nNode < $noOfNodes; $nNode++)
+        for ($nNode = 1; $nNode < $noOfNodes; $nNode++)
         {
             # tempS -> node selected on same line
             # tempC -> node selected on different line
@@ -66,21 +66,21 @@
             # for Line_1 
             $tempS = $line1[$nNode] + $line[0][$nNode];
             $tempC = $line2[$nNode] + $transactionTime[1][$nNode] + $line[0][$nNode];
-            $temp  = min($tempS, $tempC);
-            $line1[$nNode+1] = $temp;
+            $temp = min($tempS, $tempC);
+            $line1[$nNode + 1] = $temp;
             
-            # for Line_2line_1
+            # for Line_2
             $tempS = $line2[$nNode] + $line[1][$nNode];
             $tempC = $line1[$nNode] + $transactionTime[0][$nNode] + $line[1][$nNode];
-            $temp  = min($tempS, $tempC);
-            $line2[$nNode+1] = $temp;
+            $temp = min($tempS, $tempC);
+            $line2[$nNode + 1] = $temp;
         }	
 
         # Adding Out time for respective line
-        $line1[sizeof($line1)] = ($line1[sizeof($line1)-1] + $outTime[0]);
-        $line2[sizeof($line2)] = ($line2[sizeof($line2)-1] + $outTime[1]);
+        $line1[sizeof($line1)] = ($line1[sizeof($line1) - 1] + $outTime[0]);
+        $line2[sizeof($line2)] = ($line2[sizeof($line2) - 1] + $outTime[1]);
 
-        if ( min($line1[sizeof($line1)-1], $line2[sizeof($line2)-1]) == $line1[sizeof($line1)-1] )
+        if (min($line1[sizeof($line1) - 1], $line2[sizeof($line2) - 1]) == $line1[sizeof($line1) - 1])
         {
             $pathC = '1';
         }
@@ -91,31 +91,31 @@
             
         $path = array();
 
-        for($i = $noOfNodes+1; $i >= 0; $i--)
+        for ($i = $noOfNodes + 1; $i >= 0; $i--)
         {
             if ($i == $noOfNodes+1)
             {
-                array_splice( $path, sizeof($path), 0, 'Out'.$pathC.'('.$outTime[(int)$pathC-1].')');
+                array_splice( $path, sizeof($path), 0, 'Out'.$pathC.'('.$outTime[(int)$pathC - 1].')');
             }
             elseif ($i == 0)
             {
-                array_splice( $path, 0, 0, 'In'.$pathC.'('.$inTime[(int)$pathC-1].')');
+                array_splice( $path, 0, 0, 'In'.$pathC.'('.$inTime[(int)$pathC - 1].')');
             }
             else
             {
-                array_splice( $path, 0, 0, 'Node'.$pathC.'('.$line[(int)$pathC-1][$i-1].')');
+                array_splice( $path, 0, 0, 'Node'.$pathC.'('.$line[(int)$pathC - 1][$i - 1].')');
                 if ($pathC == '1')
                 {
-                    $val = $line1[$i] - $line1[$i-1];
-                    if($val != $line[(int)$pathC-1][$i-1])
+                    $val = $line1[$i] - $line1[$i - 1];
+                    if ($val != $line[(int)$pathC - 1][$i - 1])
                     {
                         $pathC = '2';
                     }
                 }
                 else
                 {
-                    $val = $line2[$i] - $line2[$i-1];
-                    if($val != $line[(int)$pathC-1][$i-1])
+                    $val = $line2[$i] - $line2[$i - 1];
+                    if ($val != $line[(int)$pathC - 1][$i - 1])
                     {
                         $pathC = '1';
                     }
@@ -125,13 +125,13 @@
         }
 
         # Finding minimum cost and return 
-        if ( min($line1[sizeof($line1)-1], $line2[sizeof($line2)-1]) == $line1[sizeof($line1)-1] )
+        if (min($line1[sizeof($line1) - 1], $line2[sizeof($line2) - 1]) == $line1[sizeof($line1) - 1])
         {
-            return [$path, $line1[sizeof($line1)-1]];
+            return [$path, $line1[sizeof($line1) - 1]];
         }
         else
         {
-            return [$path, $line2[sizeof($line2)-1]];
+            return [$path, $line2[sizeof($line2) - 1]];
         }
     }
 
@@ -157,30 +157,30 @@
     $outTime = array();
     $transactionTime = array();
 
-    $fr=fopen("php://stdin","r");                       // open our file pointer to read from stdin
+    $fr = fopen("php://stdin","r");                       // open our file pointer to read from stdin
 
     echo "Enter the no. of nodes on Assembly line : ";
     $nodes = rtrim(fgets($fr,128));                    
     
     echo "\n-- In Time --".PHP_EOL;
-    for($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
+    for ($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
     {
-        echo "For Line".($lineN+1).": ";
+        echo "For Line".($lineN + 1).": ";
         $inTime[$lineN] = rtrim(fgets($fr,128));
     }
     
     echo "\n-- Out Time --".PHP_EOL;
-    for($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
+    for ($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
     {
-        echo "For Line".($lineN+1).": ";
+        echo "For Line".($lineN + 1).": ";
         $outTime[$lineN] = rtrim(fgets($fr,128));
     }
 
     echo "\n-- Time required at each node --".PHP_EOL;
-    for($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
+    for ($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
     {
-        echo "\nFor Assembly Line".($lineN+1).": ".PHP_EOL;
-        for($nThNode = 0; $nThNode < $nodes; $nThNode++)
+        echo "\nFor Assembly Line".($lineN + 1).": ".PHP_EOL;
+        for ($nThNode = 0; $nThNode < $nodes; $nThNode++)
         {
             echo "Node".$nThNode.": ";
             $line[$lineN][$nThNode] = rtrim(fgets($fr,128));
@@ -188,25 +188,25 @@
     }
 
     echo "\n-- Transaction Time --".PHP_EOL;
-    for($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
+    for ($lineN = 0; $lineN < $ASSEMBLY_LINES; $lineN++)
     {
-        for($nThNode = 0; $nThNode < $nodes; $nThNode++)
+        for ($nThNode = 0; $nThNode < $nodes; $nThNode++)
         {
-            if($nThNode==0)
+            if ($nThNode == 0)
             {
                 $transactionTime[$lineN][$nThNode] = 0;
                 echo "\n";    
             }
             else
             {
-                if($lineN==0)
+                if ($lineN == 0)
                 {
-                    echo "Node".($lineN+1)."(".($line[$lineN][$nThNode-1]).") to Node".($lineN+2)."(".($line[$lineN+1][$nThNode]).") : ";
+                    echo "Node".($lineN + 1)."(".($line[$lineN][$nThNode - 1]).") to Node".($lineN + 2)."(".($line[$lineN + 1][$nThNode]).") : ";
                     $transactionTime[$lineN][$nThNode] = rtrim(fgets($fr,128));
                 }   
                 else
                 {
-                    echo "Node".($lineN+1)."(".($line[$lineN][$nThNode-1]).") to Node".($lineN)."(".($line[$lineN-1][$nThNode]).") : ";
+                    echo "Node".($lineN + 1)."(".($line[$lineN][$nThNode - 1]).") to Node".($lineN)."(".($line[$lineN - 1][$nThNode]).") : ";
                     $transactionTime[$lineN][$nThNode] = rtrim(fgets($fr,128));
                 }
             }
