@@ -16,7 +16,7 @@ int nCr(int n, int r, int mod) {
         return -1;
     }
     // We create a pascal triangle.
-    int Pascal[r+1];
+    int Pascal[r + 1];
     Pascal[0] = 1;
     for (int i = 1; i <= r; i++) {
         Pascal[i] = 0;
