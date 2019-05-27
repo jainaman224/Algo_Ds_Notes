@@ -16,7 +16,7 @@ import (
     "fmt"
 )
 
-func count(number int) int{
+func count(number int) int {
     var dearrangement []int
     dearrangement = append(dearrangement, 1)
     dearrangement = append(dearrangement, 0)
