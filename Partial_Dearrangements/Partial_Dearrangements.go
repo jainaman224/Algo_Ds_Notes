@@ -15,7 +15,7 @@ import (
 
 var mod int = 1000000007
 
-func nCr(n int, r int, mod int) int{
+func nCr(n int, r int, mod int) int {
     if (n < r) {
         return -1
     }
