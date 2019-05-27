@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Josephus_Problem
 {
     public static int Josephus(int n, int m) {
-        // base case when only 1 person left return 0 assuming people numbered from 0 to n -1 
+    // base case when only 1 person left return 0 assuming people numbered from 0 to n -1 
 	if (n == 1) {
 	    return 0;
 	}
