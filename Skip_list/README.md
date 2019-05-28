@@ -100,8 +100,6 @@ if x -> key = searchKey then
 | Insertion  | O(logn)	    | O(n)       |
 | Deletion	 | O(logn)	    | O(n)       |
 
-
-
 **Space Complexity : O(N log N)**
 
 A skip list is built in layers. The bottom layer is an ordinary ordered linked list. Each higher layer acts as an "express lane" for the lists below, where an element in layer i appears in layer i+1 with some fixed probability p (two commonly used values for p are 1/2 or 1/4). On average, each element appears in 1/(1-p) lists, and the tallest element (usually a special head element at the front of the skip list) in all the lists. The skip list contains log1/pn lists.

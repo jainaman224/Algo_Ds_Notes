@@ -1,12 +1,12 @@
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <cstring>
+#include<iostream>
+#include<cstdlib>
+#include<cmath>
+#include<cstring>
 #define MAX_LEVEL 6
 const float P = 0.5;
 using namespace std;
 
-//Skip Node Declaration
+// Skip Node Declaration
 struct snode
 {
     int value;
@@ -14,7 +14,7 @@ struct snode
     snode (int level, int &value)
     {
         forw = new snode * [level + 1];
-        memset (forw, 0, sizeof(snode*) * (level + 1));
+        memset(forw, 0, sizeof(snode*) * (level + 1));
         this -> value = value; 
     }
     ~snode()
@@ -23,8 +23,7 @@ struct snode
     } 
 };
 
-
-//Skip List Declaration
+// Skip List Declaration
  struct skiplist
 {
     snode *header;
@@ -45,12 +44,12 @@ struct snode
     void delete_element(int &);        
 };
 
-//Main: Contains Menu
+// Main: Contains Menu
  int main() 
 {
     skiplist ss;
     int choice, n;
-    while (1)
+    while(1)
     {
         cout << endl << "-----------------------" << endl;
         cout << endl << "Operations on Skip list" << endl;
@@ -65,7 +64,6 @@ struct snode
         
         switch (choice)
         {
-        
         case 1:
              cout << "Enter the element to be inserted: ";
              cin >> n;
@@ -111,14 +109,13 @@ struct snode
     return 0;
 }
  
-
-//Random Value Generator
+// Random Value Generator
 float frand() 
 {
     return (float) rand() / RAND_MAX;
 }
  
-//Random Level Generator
+// Random Level Generator
 int random_level() 
 {
     static bool first = true;
@@ -131,7 +128,7 @@ int random_level()
     return lvl < MAX_LEVEL ? lvl : MAX_LEVEL;
 }
  
-//Insert Element in Skip List
+// Insert Element in Skip List
 void skiplist::insert_element(int &value) 
 {
     snode *x = header;	
@@ -139,7 +136,7 @@ void skiplist::insert_element(int &value)
     memset(update, 0, sizeof(snode*) * (MAX_LEVEL + 1));
     for (int i = level; i >= 0; i--) 
     {
-        while (x -> forw[i] != NULL && x -> forw[i] -> value < value) 
+        while(x -> forw[i] != NULL && x -> forw[i] -> value < value) 
         {
             x = x -> forw[i];
         }
@@ -166,15 +163,15 @@ void skiplist::insert_element(int &value)
     }
 }
  
-//Delete Element from Skip List
+// Delete Element from Skip List
 void skiplist::delete_element(int &value) 
 {
     snode *x = header;	
     snode *update[MAX_LEVEL + 1];
-    memset (update, 0, sizeof(snode*) * (MAX_LEVEL + 1));
+    memset(update, 0, sizeof(snode*) * (MAX_LEVEL + 1));
     for (int i = level; i >= 0; i--) 
     {
-        while (x -> forw[i] != NULL && x -> forw[i] -> value < value)
+        while(x -> forw[i] != NULL && x -> forw[i] -> value < value)
         {
             x = x -> forw[i];
         }
@@ -190,18 +187,18 @@ void skiplist::delete_element(int &value)
             update[i] -> forw[i] = x -> forw[i];
         }
         delete x;
-        while (level > 0 && header -> forw[level] == NULL) 
+        while(level > 0 && header -> forw[level] == NULL) 
         {
             level--;
         }
     }
 }
  
-//Display Elements of Skip List
+// Display Elements of Skip List
 void skiplist::display() 
 {
     const snode *x = header -> forw[0];
-    while (x != NULL) 
+    while(x != NULL) 
     {
         cout << x -> value;
         x = x -> forw[0];
@@ -211,13 +208,13 @@ void skiplist::display()
     cout << endl;
 }
  
-//Search Elemets in Skip List
+// Search Elemets in Skip List
 bool skiplist::contains(int &s_value) 
 {
     snode *x = header;
     for (int i = level; i >= 0; i--) 
     {
-        while (x -> forw[i] != NULL && x -> forw[i] -> value < s_value)
+        while(x -> forw[i] != NULL && x -> forw[i] -> value < s_value)
         {
             x = x -> forw[i];
         }
