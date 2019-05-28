@@ -13,10 +13,10 @@ import java.util.Scanner;
 
 class Solution {
 
-    public static int Celebrity (int Person[][], int n) {
+    public static int Celebrity(int Person[][], int n) {
         int start = 0;
         int end = n - 1;
-        while (true) {
+        while(true) {
             if (start == end) {
                 break;
             }

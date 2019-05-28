@@ -9,10 +9,10 @@ There will be a matrix input, such that M[i][j] = 1, if ith person
 knows jth person, else 0.
 '''
 
-def Celebrity (Person, n):
+def Celebrity(Person, n):
     start = 0
     end = n - 1
-    while (True):
+    while(True):
         if (start == end):
             break
         if (Person[start][end] == 1):

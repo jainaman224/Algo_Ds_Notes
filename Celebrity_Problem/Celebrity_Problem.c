@@ -11,10 +11,10 @@ knows jth person, else 0.
 
 #include<stdio.h>
 
-int Celebrity (int Person[][100], int n) {
+int Celebrity(int Person[][100], int n) {
     int start = 0;
     int end = n - 1;
-    while (1) {
+    while(1) {
         if (start == end) {
             break;
         }

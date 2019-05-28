@@ -12,10 +12,10 @@ knows jth person, else 0.
 #include<bits/stdc++.h>
 using namespace std;
 
-int Celebrity (int Person[][100], int n) {
+int Celebrity(int Person[][100], int n) {
     int start = 0;
     int end = n - 1;
-    while (true) {
+    while(true) {
         if (start == end) {
             break;
         }
