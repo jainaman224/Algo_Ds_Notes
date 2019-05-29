@@ -15,9 +15,7 @@ struct Point
     int x;
     int y;
     int z;
-
     Point() : x(-1), y(-1), z(-1) {}
-
     Point(int a, int b, int c) : x(a), y(b), z(c) {}
 };
 
@@ -103,7 +101,7 @@ public:
         }
         if (children[pos] -> point == nullptr)
         {
-           // if region node
+            // if region node
             children[pos] -> insert(x, y, z);
             return;
         }
@@ -121,42 +119,42 @@ public:
                 z_ = children[pos] -> point -> z;
             delete children[pos];
             children[pos] = nullptr;
-            if(pos == TLF)
+            if (pos == TLF)
             {
                 children[pos] = new Octree(top_left_front -> x, top_left_front -> y, top_left_front -> z,
                                         midx, midy, midz);
             }
-            else if(pos == TRF)
+            else if (pos == TRF)
             {
                 children[pos] = new Octree(midx + 1, top_left_front -> y, top_left_front -> z,
                                         bottom_right_back -> x, midy, midz);
             }
-            else if(pos == BRF)
+            else if (pos == BRF)
             {
                 children[pos] = new Octree(midx + 1, midy + 1, top_left_front -> z,
                                         bottom_right_back -> x, bottom_right_back -> y, midz);
             }
-            else if(pos == BLF)
+            else if (pos == BLF)
             {
                 children[pos] = new Octree(top_left_front -> x, midy + 1, top_left_front -> z,
                                         midx, bottom_right_back -> y, midz);
             }
-            else if(pos == TLB)
+            else if (pos == TLB)
             {
                 children[pos] = new Octree(top_left_front -> x, top_left_front -> y, midz + 1,
                                         midx, midy, bottom_right_back -> z);
             }
-            else if(pos == TRB)
+            else if (pos == TRB)
             {
                 children[pos] = new Octree(midx + 1, top_left_front -> y, midz + 1,
                                         bottom_right_back -> x, midy, bottom_right_back -> z);
             }
-            else if(pos == BRB)
+            else if (pos == BRB)
             {
                 children[pos] = new Octree(midx + 1, midy + 1, midz + 1,
                                         bottom_right_back -> x, bottom_right_back -> y, bottom_right_back -> z);
             }
-            else if(pos == BLB)
+            else if (pos == BLB)
             {
                 children[pos] = new Octree(top_left_front -> x, midy + 1, midz + 1,
                                         midx, bottom_right_back -> y, bottom_right_back -> z);
