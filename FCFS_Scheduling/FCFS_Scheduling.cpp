@@ -40,8 +40,11 @@ void solve(lint no_of_process, lint burst_time[]) {
 }
 
 int main() {
-    lint no_of_process = 3;
-    lint burst_time[] = {5, 7, 3};
+    lint no_of_process;
+    cin >> no_of_process;
+    lint burst_time[no_of_process];
+    for (int i = 0; i < no_of_process; i++)
+         cin >> burst_time[i];
     solve(no_of_process, burst_time);
 }
 

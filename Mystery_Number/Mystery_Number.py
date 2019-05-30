@@ -23,7 +23,7 @@ def solve(num):
             return 1
     return 0
 
-num = 22
+num = int(input())
 ans = solve(num)
 if (ans == 1):
     print("It is a mystery number")

@@ -36,15 +36,23 @@ def exponentialSearch(arr, n, x):
       
   
 # Driver Code 
-input = [2, 3, 14, 20, 40] 
-n = len(input) 
-x = 20
-final = exponentialSearch(input, n, x) 
+n = int(input())
+arr = []
+for i in range(n):
+    x = int(input())
+    arr.append(x) 
+x = int(input())       
+final = exponentialSearch(arr, n, x) 
 if final == -1: 
-    print "Element not found in thye array"
+    print ("Element not found in thye array")
 else: 
-    print "index %d" %(final) 
+    print ("index %d" %(final)) 
 
-
-# OUTPUT :
-##  index 3
+'''
+INPUT:
+n = 5
+arr[] = {2, 3, 14, 20, 40}
+x = 20
+OUPUT:
+index 3
+'''

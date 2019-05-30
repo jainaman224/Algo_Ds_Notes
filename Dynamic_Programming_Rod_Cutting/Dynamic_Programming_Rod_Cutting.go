@@ -41,16 +41,22 @@ func Rod_Cutting(cost[] int, size int) int {
 // Driver function
 func main() {
     // Array contaning profits of elements of length index
-    arr := []int{3, 5, 8, 9, 10, 17, 17, 20}
-    size := len(arr)
+    var size int
+    fmt.Scan(&size)
+    arr := []int{}
+    for i := 0; i < size; i++ {
+        var x int
+        fmt.Scan(&x)
+        arr = append(arr, x)
+    }
     fmt.Println("Maximum value obtained is:")
     fmt.Println(Rod_Cutting(arr, size))
 }
 
 /* 
-    Input:
-    {3, 5, 8, 9, 10, 17, 17, 20}
-
-    Output:
-    Maximum value is: 24
+INPUT: 
+size = 8
+arr = {3, 5, 8, 9, 10, 17, 17, 20}
+OUTPUT:
+Maximum value is 24
 */

@@ -6,6 +6,7 @@
 */
 
 import java.util.*;
+import java.util.Scanner;
 
 // Node of Binary Tree storing data, level,
 // left and right child information
@@ -92,26 +93,44 @@ class Binary_Tree_Left_View
     // Driver Function
     public static void main(String args[]) 
     {
-        /* Contructing Binary Tree as:
-                1
-             /     \
-            2       3
-          /   \   /   \
-        4      5 6     7
-             /   \
-            /     \
-           8        9
-        */
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
-        root.left.right = new Node(5);
-        root.right.left = new Node(6);
-        root.right.right = new Node(7);
-        root.left.right.left = new Node(8);
-        root.left.right.right = new Node(9);
+        Scanner sc = new Scanner(System.in);
+        HashMap<Integer, Node> m = new HashMap<Integer, Node>();
 
+        // Input number of edges
+        int n = sc.nextInt();
+        Node root = null;
+
+        /* 
+            Input Format:
+            3
+            1 2 L
+            1 3 R
+            2 4 L
+            This means there are 3 edges
+            2 is the left child of 1,
+            3 is the right child of 1,
+            4 is the left child of 2.
+        */
+        for (int i = 0; i < n; i++)
+        {
+            int node1 = sc.nextInt();
+            int node2 = sc.nextInt();
+            char direction = sc.next().charAt(0);
+            Node parent = m.get(node1);
+            if (parent == null)
+            {
+                parent = new Node(node1);
+                m.put(node1, parent);
+                if(root == null)
+                    root = parent;
+            }
+            Node child = new Node(node2);
+            if (direction == 'L')
+                parent.left = child;
+            else
+                parent.right = child;
+            m.put(node2, child);
+        }
         // call to leftView function
         Binary_Tree_Left_View obj = new Binary_Tree_Left_View();
         obj.leftView(root);
@@ -120,6 +139,16 @@ class Binary_Tree_Left_View
 
 /*
     Input:
+    8
+    1 2 L 
+    1 3 R
+    2 4 L 
+    2 5 R
+    3 6 L
+    3 7 R
+    5 8 L
+    6 9 R
+    
             1
          /     \
         2       3

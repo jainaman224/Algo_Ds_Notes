@@ -12,7 +12,14 @@ using namespace std;
  int main()
 {
     ios::sync_with_stdio(false);
-    vector<int> arr{10, 22, 9, 33, 21, 50, 41, 60};
+    int n;
+    cin >> n;
+    vector<int> arr;
+    for (int i = 0; i < n; i++) {
+        int c;
+        cin >> c.
+        arr.push_back(c);
+    }
     vector<int> v=prefix_sum(arr);
     cout<<"The prefix sum array for the given array is :\n";
     for(auto x:v)

@@ -5,7 +5,7 @@
     i.e. denote a number as a product of different prime factors.
 
 */
-
+    
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -26,31 +26,33 @@ public class Solution {
 
     public static void prime_factorize(long num){
         List<Long> prime_factors = new ArrayList<Long>(); // To maintain the prime factors of the given number.
-        while(num%2 == 0){
+        while (num % 2 == 0) {
             prime_factors.add((long)2);
-            num/=2;
+            num /= 2;
         }
-        for(long i=3;i*i<=num;i+=2){
-            while(num%i == 0){
+        for (long i = 3; i * i <= num; i += 2) {
+            while(num % i == 0){
                 prime_factors.add(i);
-                num/=i;
+                num /= i;
             }
         }
-        if(num>2){
+        if (num > 2) {
             prime_factors.add(num);
         }
         // Printing the prime factors.
-        for(int i=0;i<prime_factors.size();i++){
+        for (int i = 0; i < prime_factors.size(); i++) {
             System.out.print(prime_factors.get(i));
-            if(i != prime_factors.size()-1){
+            if (i != prime_factors.size() - 1) {
                 System.out.print(" * ");
             }
         }
     }
 
     public static void main(String[] args) {
-        long num = 100;
-        System.out.print(num+" = ");
+        long num ;
+        Scanner s = new Scanner(System.in);
+	    num = s.nextLong();
+        System.out.print(num + " = ");
         prime_factorize(num);
     }
 }

@@ -33,11 +33,22 @@ void Print_Array(int array[], int size)
 // Driver Function
 int main()
 {
-    int array[] = {2, 4, 3, 1, 6, 8, 4};
-    Insertion_Sort(array, 7);
-    Print_Array(array, 7);
+    int num;
+    scanf("%d", &num);
+    int array[num];
+    for (int i = 0; i < num; i++) {
+        scanf("%d", &array[i]);
+    }
+    Insertion_Sort(array, num);
+    Print_Array(array, num);
     return 0;
 }
 
-// Output
-// 1 2 3 4 4 6 8
+/*
+Input :
+num = 6
+array = [1, 6, 3, 3, 5, 2]
+
+Output :
+[1, 2, 3, 3, 5, 6]
+*/

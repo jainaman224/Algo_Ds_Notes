@@ -21,23 +21,23 @@ using namespace std;
 
 void prime_factorize(lint num){
     vector<lint> prime_factors; // To maintain the prime factors of the given number.
-    while(!(num%2)){
+    while (!(num % 2)) {
         prime_factors.push_back(2);
-        num/=2;
+        num /= 2;
     }
-    for(lint i=3;i*i<=num;i+=2){
-        while(!(num%i)){
+    for (lint i = 3; i * i <= num; i += 2) {
+        while (!(num % i)) {
             prime_factors.push_back(i);
-            num/=i;
+            num /= i;
         }
     }
-    if(num>2){
+    if (num > 2) {
         prime_factors.push_back(num);
     }
     // Printing the prime factors.
-    for(lint i=0;i<prime_factors.size();i++){
+    for (lint i = 0; i < prime_factors.size(); i++) {
         cout<<prime_factors[i];
-        if(i != prime_factors.size()-1){
+        if (i != prime_factors.size() - 1) {
             cout<<" * ";
         }
     }
@@ -45,7 +45,8 @@ void prime_factorize(lint num){
 
 int main()
 {
-    lint num = 100;
+    lint num;
+    cin>>num
     cout<<num<<" = ";
     prime_factorize(num);
 }

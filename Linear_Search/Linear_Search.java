@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 class Linear_Search
 {
     // Function for linear search
-    public static int LinearSearch(int[] array, int size, int desired)
+    public static int linearSearch(int[] array, int size, int desired)
     {
         for(int i = 0; i < size; i++)
         {
@@ -16,22 +18,27 @@ class Linear_Search
     // Driver Function
     public static void main(String[] args)
     {
-        int[] array = {2, 4, 6, 7, 3, 1, 5};
-
-        // Element 4 to be searched
-        if(LinearSearch(array, 7, 4) != -1)
+        int num;
+        Scanner s = new Scanner(System.in);
+        num = s.nextInt();
+        int array[] = new int[num];
+        for (int i = 0; i < num; i++) {
+            array[i] = s.nextInt();
+        }
+        int desired = s.nextInt();
+        if(linearSearch(array, num, desired) != -1)
             System.out.println("Found");
         else
-            System.out.println("Not Found");
-
-        //Element 9 to be searched
-        if(LinearSearch(array, 7, 9) != -1)
-            System.out.println("Found");
-        else
-            System.out.println("Not Found");
+            System.out.println("Number not found");
     }
 }
 
-// Output
-// Found
-// Not Found
+/*
+Input :
+num = 5
+arr = [1,4,5,6,3]
+desired = 3
+
+Output :
+Number not found
+*/

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Insertion_Sort
 {
     // function for insertion sort
@@ -32,11 +34,23 @@ class Insertion_Sort
 
     public static void main(String[] args)
     {
-        int[] array = {2, 4, 3, 1, 6, 8, 4};
-        InsertionSort(array, 7);
-        Print_Array(array, 7);
+        int num;
+        Scanner s = new Scanner(System.in);
+        num = s.nextInt();
+        int array[] = new int[num];
+        for (int i = 0; i < num; i++) {
+            array[i] = s.nextInt();
+        }
+        InsertionSort(array, num);
+        Print_Array(array, num);
     }
 }
 
-// Output
-// 1 2 3 4 4 6 8
+/*
+Input :
+num = 6
+array = [1, 6, 3, 3, 5, 2]
+
+Output :
+[1, 2, 3, 3, 5, 6]
+*/
