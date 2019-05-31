@@ -1,8 +1,8 @@
-//Program for finding first n hamming numbers for user input of n
+// Program for finding first n hamming numbers for user input of n
 #include<stdio.h>
 #include<math.h>
 
-//Function for checking whether the number is hamming number or not
+// Function for checking whether the number is hamming number or not
 int is_hamming(int n) {
     if (n == 1)
     {
