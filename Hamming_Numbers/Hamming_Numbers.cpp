@@ -1,9 +1,9 @@
-//Program for finding first n hamming numbers for user input of n
+// Program for finding first n hamming numbers for user input of n
 #include<iostream>
 #include<cmath>
 using namespace std;
 
-//Function for checking whether the number is hamming number or not
+// Function for checking whether the number is hamming number or not
 bool is_hamming (int n) {
     if (n == 1)
     {
@@ -24,7 +24,7 @@ bool is_hamming (int n) {
     }
     return false;
 }
-//If hamming number is found in above function then it is printed in the main function for the given range
+// If hamming number is found in above function then it is printed in the main function for the given range
 int main () {
     int n;
     cin>>n;           //user input
@@ -43,6 +43,6 @@ int main () {
     }
 }
 
-//OUTPUT
-//For input 20
-//1 2 3 4 5 6 8 9 10 12 15 16 18 20 24 25 27 30 32 36
+// OUTPUT
+// For input 20
+// 1 2 3 4 5 6 8 9 10 12 15 16 18 20 24 25 27 30 32 36
