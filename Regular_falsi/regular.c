@@ -7,7 +7,7 @@
 //to the outcome. This is sometimes also referred to as "guess and check".
 //Versions of the method predate the advent of algebra and the use of equations.
 
-#include <stdio.h>
+#include<stdio.h>
 #include<math.h>
 
 float f (float x)
