@@ -7,18 +7,18 @@ void main(){
     printf("Enter the array size ");
     scanf("%d", &n);
     printf("Enter the array elements\n");
-    for(i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         scanf("%d", &a[i]);
     }
     printf("Even numbers are\n");
     for(i = 0; i < n ; i++) {
-        if(a[i] % 2 == 0) {
+        if (a[i] % 2 == 0) {
             printf("%d\t", a[i]);
         }
     }
     printf("\nOdd numbers are\n");
-    for(i = 0; i < n; i++) {
-        if(a[i] %2 != 0) {
+    for (i = 0; i < n; i++) {
+        if (a[i] %2 != 0) {
             printf("%d\t", a[i]);
         }
     }
