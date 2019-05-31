@@ -1,5 +1,5 @@
 /* Girlscript Summer Of Code
- Regular falsi in c
+Regula Falsi Method in c
 In mathematics, the false position method or regula falsi is a very old method for solving an equation in one unknown,
 that, in modified form, is still in use. In simple terms, the method is the trial and
 error technique of using test ("false") values for the variable and then adjusting the test value according
