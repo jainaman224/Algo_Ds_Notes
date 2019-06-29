@@ -1,0 +1,19 @@
+For sorting the array there must be an n arrays which cantain the boolean values equal to the element in array
+
+here n indicates the cardinality of the array
+ 
+and for time complexcity
+
+ time a cardinality * max(array) 
+
+for sorting of 10 elements
+
+ time a 10 * 10   
+ 
+for sorting of 1000 elements
+ 
+ time a 1000 * 1000
+
+
+from above examples we can conclude that the time complexcity of the Bead Sort is Binary
+from above one can say that complecity is O(n^2).
