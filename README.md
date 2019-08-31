@@ -201,6 +201,6 @@ Please discuss it with us first by creating new issue.
 - Websites :computer:
     - [GeeksforGeeks](http://www.geeksforgeeks.org)
     - [hackerearth](https://www.hackerearth.com/notes)
-    - [topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials)
+    - [topcoder](https://www.topcoder.com/community/competitive-programming/tutorials/)
     - [tutorialspoint](http://www.tutorialspoint.com)
     - [Wikipedia](https://en.wikipedia.org)
