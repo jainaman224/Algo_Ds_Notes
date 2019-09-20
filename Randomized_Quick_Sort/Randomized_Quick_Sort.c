@@ -79,11 +79,26 @@ void printArray(int arr[], int size)
 // Driver program to test above functions 
 int main() 
 { 
-	int arr[] = { 10, 7, 8, 9, 1, 5 }; 
-	int n = sizeof(arr) / sizeof(arr[0]); 
+	int i,n;
+	printf("Enter the size of array:");
+	scanf("%d",&n);
+	int arr[n];
+	printf("Enter Array element:\n");
+	for(i = 0; i<n; i++)
+		scanf("%d",&arr[i]);
 	quickSort(arr, 0, n - 1); 
 	printf("Sorted array: \n"); 
 	printArray(arr, n); 
 	return 0; 
 } 
-
+/*
+Enter the size of array:5
+Enter Array element:
+10
+4
+3
+8
+6
+Sorted array: 
+3 4 6 8 10 
+*/
