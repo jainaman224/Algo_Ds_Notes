@@ -63,7 +63,11 @@ int main()
     return 0;
 }
 
-/* Output
+/* 
+Input:
+    namanchamanbomanamansanam
+    aman          
+Output:
 
 Pattern found at 2
 Pattern found at 8

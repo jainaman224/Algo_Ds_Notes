@@ -50,22 +50,35 @@ void counting_sort(int input[], int n)
 // Driver program to test above function
 int main()
 {
-    int n = 9, i;
+    int n, i;
+    cout<<"Enter number of elements in your array: ";
+    cin>>n;
 
-    int input[] = {1, 5, 2, 7, 3, 4, 4, 1, 5};
+    int input[n];
+    cout<<"Enter your array: ";
+    for (i = 0; i < n; i++)
+    {
+        cin>>input[i];
+    }
 
     counting_sort(input, n);
 
-    cout << "Sorted Array : ";
-    for(i = 0; i < n; i++)
-        cout << input[i] << "  ";
+    cout<<"Sorted Array : ";
+    for (i = 0; i < n; i++)
+        cout<<input[i]<<"  ";
 
     return 0;
 }
 
-
-/* Output
-
-Sorted Array : 1  1  2  3  4  4  5  5  7
-
+/* Enter number of elements in your array: 9
+Enter your array: 1
+5
+2
+7
+3
+4
+4
+1
+5
+Sorted Array : 1 1 2 3 4 4 5 5 7
 */

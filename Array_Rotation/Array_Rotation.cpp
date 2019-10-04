@@ -22,13 +22,29 @@ void Rotate(int arr[], int d, int n)
 
 int main() 
 { 
-    int arr[] = { 1, 2, 3, 4, 5}; 
-    int n = sizeof(arr) / sizeof(arr[0]); 
-    Rotate(arr, 2, n);
+    int n, r;
+    cout << "Enter number of elements in your array: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter your array: ";
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+    cout << "Enter the value for rotation cycle: ";
+	cin >> r;
+    
+    Rotate(arr, r, n);
     return 0; 
 } 
+
 /*
-Input array: {1, 2, 3, 4, 5}
-Expected Output
-3 4 5 1 2 
+INPUT:
+Enter number of elements in your array: 5
+Enter your array: 1
+2
+3
+4
+5
+Enter the value for rotation cycle: 2
+OUTPUT:
+3 4 5 1 2
 */

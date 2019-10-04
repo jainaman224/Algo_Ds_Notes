@@ -6,27 +6,25 @@ public class Fenwick_Tree {
         int n = s.nextInt();
         int[] bit = new int[n+1];
 
-        // build the bit : O(NLogN)
-//        for (int i = 1; i <= n; i++) {
-//            bit[i] = s.nextInt();
-//            update(i, bit[i], n, bit);
-//        }
+//         build the bit : O(NLogN)
+       for (int i = 1; i <= n; i++) {
+           bit[i] = s.nextInt();
+           update(i, bit[i], n, bit);
+       }
 
-        // count inversions : Note - to make sure that array only has elements from 1 to n,
-        // assign numbers from 1 to n based on their increasing order if the elements are large
-        // This is called Coordinate Compression
-        int[] arr = new int[n+1];
-        for (int i = 1; i <= n; i++) {
-            arr[i] = s.nextInt();
-        }
-
-        // inversion count
-        int ans = 0;
-        for (int i = n; i >= 1; i--) {
-            ans += query(arr[i]-1, bit);
-            update(arr[i], 1, n, bit);
-        }
-        System.out.println(ans);
+//         count inversions : Note - to make sure that array only has elements from 1 to n,
+//         assign numbers from 1 to n based on their increasing order if the elements are large
+//         This is called Coordinate Compression
+//         int[] arr = new int[n+1];
+//         for (int i = 1; i <= n; i++) {
+//             arr[i] = s.nextInt();
+//         }
+//         int ans = 0;
+//         for (int i = n; i >= 1; i--) {
+//             ans += query(arr[i]-1, bit);
+//             update(arr[i], 1, n, bit);
+//         }
+//         System.out.println(ans);
     }
 
     // O(LogN)

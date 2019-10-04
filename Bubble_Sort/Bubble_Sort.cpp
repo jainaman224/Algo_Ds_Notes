@@ -32,19 +32,36 @@ void Bubble_Sort(int array[], int size)
 void Print_Array(int array[], int size)
 {
     for (int i = 0; i < size; i++)
-        cout << array[i] << " ";
+        cout<<array[i]<<" ";
 
-    cout << endl;
+    cout<<endl;
 }
 
 // Driver Function
 int main()
 {
-    int array[] = {2, 4, 3, 1, 6, 8, 4};
-    Bubble_Sort(array, 7);
-    Print_Array(array, 7);
+    int num;
+    cout<<"Enter number of elements in your array: ";
+    cin>>num;
+    int array[num];
+    cou<<"Enter your array: ";
+    for (int i = 0; i < num; i++)
+    {
+        cin>>array[i];
+    }
+    Bubble_Sort(array, num);
+    Print_Array(array, num);
     return 0;
 }
 
-// Output
-// 1 2 3 4 4 6 8
+/*INPUT:
+Enter number of elements in your array: 7
+Enter your array: 8
+4
+7
+2
+9
+2
+4
+Output:
+2 2 4 4 7 8 9*/

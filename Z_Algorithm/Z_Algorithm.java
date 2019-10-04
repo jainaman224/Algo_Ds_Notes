@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Z_Algorithm {
 
@@ -37,7 +38,7 @@ public class Z_Algorithm {
 	    }
 	}
 
-	static void search(String text, String pattern){
+	static void search(String text, String pattern) {
 
 	    String concat = pattern + "$" + text;
 	    int size = concat.length();
@@ -45,23 +46,22 @@ public class Z_Algorithm {
 
 	    getZarr(concat, Z);
 
-	    for(int i = 0; i < size; i++){
-	        if(Z[i] == pattern.length()){
-	            int index = i-pattern.length();
+	    for (int i = 0; i < size; i++) {
+	        if (Z[i] == pattern.length()) {
+	            int index = i - pattern.length();
 	            System.out.println("Pattern found at " + index);
 	        }
 	    }
-
-
 	}
 
-	public static void main(String args[]){
-
-		String text = "namanchamanbomanamansanam";
-		String pattern = "aman";
+	public static void main (String args[]) {
+		Scanner sc = new Scanner(System.in);
+		String text = sc.nextLine();
+		String pattern = sc.nextLine();
 		search(text, pattern);
 	}
 }
+
 /*
 Sample Input:
 	namanchamanbomanamansanam (text)

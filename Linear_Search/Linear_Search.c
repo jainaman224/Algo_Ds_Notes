@@ -14,23 +14,28 @@ int search(int a[],int size, int elt)
 
 int main()
 {
-	int arr[] = {23,43,2,67,90,2,6,19};
+	int num;
+	scanf("%d", &num);
+	int arr[num];
+	for (int i = 0; i < num; i++) {
+		scanf("%d", &arr[i]);
+	}
 	int pos;
-	//Search 6 in the list
-	pos = search(arr,8,6);
+	int desired;
+	scanf("%d", &desired);
+	pos = search(arr, num, desired);
 	if (pos != -1)
-		printf("Number found at %d\n", pos);
-	else
-		printf("Number not found\n");
-	//Search 4 in the list
-	pos = search(arr,8,4);
-		if (pos != -1)
 		printf("Number found at %d\n", pos);
 	else
 		printf("Number not found\n");
 }
 
-/*Output
-Number found at 7
+/*
+Input :
+num = 5
+arr = [1,4,5,6,3]
+desired = 3
+
+Output :
 Number not found
 */
