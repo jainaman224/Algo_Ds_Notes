@@ -140,8 +140,8 @@ Please discuss it with us first by creating new issue.
 
 **C**
 
-| [ayushin78](https://github.com/ayushin78) |
-| --- |
+| [ayushin78](https://github.com/ayushin78) | [legendphoenix0] (https://github.com/legendphoenix0)
+| --- | --- |
 
 **CoffeeScript**
 
@@ -151,7 +151,7 @@ Please discuss it with us first by creating new issue.
 **Cplusplus**
 
 | [KavyaSharma](https://github.com/KavyaSharma) | [sidgorey](https://github.com/sidgorey) | [uday1201](https://github.com/uday1201) |
-| --- | --- | --- |
+| --- | --- | --- | 
 
 **CSharp**
 
