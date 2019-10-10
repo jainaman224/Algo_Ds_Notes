@@ -32,13 +32,13 @@ class Bubble_Sort
 
     public static void main(String[] args)
     {
-    	Scanner input = new Scanner(System.in);
-    	System.out.println("Enter the size of the array");
-    	int size = input.nextInt();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the size of the array");
+        int size = input.nextInt();
         int[] array = new int[size];
         System.out.println("Enter elements of the array");
         for (int i = 0; i < size; i++){
-        		array[i] = input.nextInt();
+            array[i] = input.nextInt();
         }
         BubbleSort(array, size);
         Print_Array(array, size);
