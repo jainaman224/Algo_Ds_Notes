@@ -16,9 +16,15 @@ def Print_list(list):
         print(list[i], end = " ")
     print()
 
-list = [2, 4, 3, 1, 6, 8, 4]
-Bubble_Sort(list)
-Print_list(list)
+li = input("Enter elements of the array: ").split(" ")
+li = list(map(int, li))
+
+Bubble_Sort(li)
+
+Print_list(li)
+
+# Input
+# 6 4 8 2 3 4 1
 
 # Output
 # 1 2 3 4 4 6 8

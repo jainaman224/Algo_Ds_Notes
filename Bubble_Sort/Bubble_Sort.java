@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Bubble_Sort
 {
     // function for bubble sort
@@ -30,11 +32,21 @@ class Bubble_Sort
 
     public static void main(String[] args)
     {
-        int[] array = {2, 4, 3, 1, 6, 8, 4};
-        BubbleSort(array, 7);
-        Print_Array(array, 7);
+    	Scanner input = new Scanner(System.in);
+    	System.out.println("Enter the size of the array");
+    	int size = input.nextInt();
+        int[] array = new int[size];
+        System.out.println("Enter elements of the array");
+        for (int i = 0; i < size; i++){
+        		array[i] = input.nextInt();
+        }
+        BubbleSort(array, size);
+        Print_Array(array, size);
     }
 }
+
+// Input
+// 8 4 6 2 3 4 1
 
 // Output
 // 1 2 3 4 4 6 8
