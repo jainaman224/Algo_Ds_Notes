@@ -1,0 +1,25 @@
+Bead Sort 
+
+Also known as Gravity sort, this algorithm was inspired from natural phenomenons and was designed keeping in mind objects(or beads) falling under the influence of gravity.
+
+When one tries to visualize this algorithm it appears as if beads are falling down under the influence of gravity to the bottom-most level they can reach resulting the set of beads being arranged in a descending order from the ground up. If you are having trouble visualizing this visit this link
+
+Lets say that we have to sort the numbers 3, 4, 1, 2. The above algorithm would work like this.
+
+3 . . . _            3 . . . _               1 . _ _ _
+4 . . . .            1 . _ _ _         ->    2 . . _ _
+1 . _ _ _      ->    4 . . . .               3 . . . _
+2 . . _ _            2 . . _ _               4 . . . .
+
+
+Time Complexity:
+The algorithm’s run–time complexity ranges from O(1) to O(S) (S is the sum of the input integers) depending on the user’s perspective. Finally, three possible implementations are suggested.
+
+O(1) : Dropping all beads together as a single (simultaneous) operation. This complexity cannot be implemented in practice.
+O(n^1^/^2): In a realistic physical model that uses gravity, the time it takes to let the beads fall is proportional to the square root of the maximum height, which is proportional to n.
+O(n) : Dropping the row of beads in the frame (representing a number) as a distinct operation since the number of rows is equal to n.
+O(S) : Dropping each and every bead’ as a separate operation since S is the sum of all the beads.
+Like the Pigeonhole sort, bead sort is unusual in that in worst case it can perform faster than O(n log n), the fastest performance possible for a comparison sort in worst case. This is possible because the key for a bead sort is always a positive integer and bead sort exploits its structure.
+
+Space Complexity: Bead sort is the record-holder as for waste. The costs for the extra memory exceed the costs for storing the array itself. Its memory complexity is O(n^2)
+
