@@ -36,4 +36,6 @@ We have **five** types of Inheritance. Namely,
 
 	The method of combining any two or more forms of inheritance in single form is called Hybrid Inheritance.
 
-	![_Hybrid Inheritance_](http://gsrai.blog.com/wp-content/blogs.dir/00/07/75/97/7759739/files/inheritance-types/hybridinheritance_1.png)
+	![_Hybrid Inheritance_](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwivpaOllKLlAhXQfysKHYOFAFkQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.stechies.com%2Fhybrid-inheritance-sample-program%2F&psig=AOvVaw0kxMTdgQjrO4vOtjjOeX7j&ust=1571362664974687)
+	
+	The most popular form of hybrid inheritance is the diamond inheritance. It is shown in the above figure.
