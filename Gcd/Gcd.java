@@ -130,7 +130,7 @@ public class Gcd
      } 
  } 
 public static int gcd(int a ,int b) {
-	if(b==0)
+	if(b == 0)
 	{
         return a;
     }
@@ -153,5 +153,13 @@ public static int gcd(int a ,int b) {
      int k = s.nextInt(); 
      int ans=gcd(n,k);
      System.out.println("GCD : "+ans);
+     /*Sample Input 
+     45
+     9
+     Sample Output
+     9
+     */
+     
  } 
 } 
+
