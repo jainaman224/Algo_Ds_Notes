@@ -52,12 +52,17 @@ def Print_list(list):
         print(list[i],end=" ")
 
     print()
-
-list = [2, 4, 3, 1, 6, 8, 4]
+list = list(map(int,input().split()))
 
 Merge_Sort(list)
 
 Print_list(list)
 
-# Output
-# 1 2 3 4 4 6 8
+"""
+Input
+2 4 3 1 6 8 4
+
+Output
+1 2 3 4 4 6 8
+
+"""
