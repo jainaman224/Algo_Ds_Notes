@@ -25,9 +25,8 @@ def modInverse(a, m):
     else:
         return power(a, m - 2, m)
 
-
-a = 3
-m = 11
+a=int(input(" Enter the first number : "))
+m=int(input(" Enter the second number : "))
 
 ans = modInverse(a, m)
 
@@ -37,7 +36,13 @@ else:
     print("Modular multiplicative inverse is " + str(ans))
 
 
-''' Output
+''' 
+Sample Input
+
+3
+11
+
+Output
 
 Modular multiplicative inverse is 4
 
