@@ -48,18 +48,30 @@ class Graph:
             print stack.pop(),
 
 def main():
-    graph = Graph(6)
-    graph.add_edge(5, 2);
-    graph.add_edge(5, 0);
-    graph.add_edge(4, 0);
-    graph.add_edge(4, 1);
-    graph.add_edge(2, 3);
-    graph.add_edge(3, 1);
-
+   
+    n = int(raw_input("Enter no. of vertices : ")) 
+   
+    e = int(raw_input("Enter no. of edges : ")) 
+    graph = Graph(n)
+    for i in range(e):
+        l= raw_input().split(" ")
+        graph.add_edge(int(l[0]), int(l[1]));
+   
+   
     graph.topological_sort()
 
 if __name__ == "__main__":
     main()
-
-#OUTPUT
-#Topological Sort :  5 4 2 3 1 0
+"""
+    Sample input
+    6
+    6
+    5 2
+    5 0
+    4 0
+    4 1
+    2 3
+    3 1
+    Sample output
+    Topological Sort :  5 4 2 3 1 0
+"""
