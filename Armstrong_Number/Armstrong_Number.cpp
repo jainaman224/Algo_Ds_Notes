@@ -24,7 +24,7 @@ int armstrong(int num, int count)
     while (num > 0)
     {
         //d is the remainder 
-        d = num % 10;
+       int d = num % 10;
         //To calculate sum
         sum += pow(d, count);        
         num /= 10;
@@ -42,7 +42,7 @@ int main()
 
     int sum = armstrong(num, count);
 
-    if (sum == n)
+    if (sum == num)
         cout << "Armstrong number";
     else
         cout << "Not an armstrong number";  
