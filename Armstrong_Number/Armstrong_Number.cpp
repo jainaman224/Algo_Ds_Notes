@@ -20,7 +20,7 @@ int order(int num)
 //Function to check if the number is armstrong or not
 int armstrong(int num, int count)
 {
-    int sum = 0;
+    int d,sum = 0;
     while (num > 0)
     {
         //d is the remainder 
@@ -42,7 +42,7 @@ int main()
 
     int sum = armstrong(num, count);
 
-    if (sum == n)
+    if (sum == num)
         cout << "Armstrong number";
     else
         cout << "Not an armstrong number";  
