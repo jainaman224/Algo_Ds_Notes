@@ -1,41 +1,51 @@
-class Solution {
-    public List<String> generateParenthesis(int n) {
-        List<String> combinations = new ArrayList();
-        generateAll(new char[2 * n], 0, combinations);
-        return combinations;
-    }
+// Java program to print all 
+// combinations of balanced parentheses 
+import java.io.*; 
 
-    public void generateAll(char[] current, int pos, List<String> result) {
-        if (pos == current.length) {
-            if (valid(current))
-                result.add(new String(current));
-        } else {
-            current[pos] = '(';
-            generateAll(current, pos+1, result);
-            current[pos] = ')';
-            generateAll(current, pos+1, result);
-        }
-    }
-
-    public boolean valid(char[] current) {
-        int balance = 0;
-        for (char c: current) {
-            if (c == '(') balance++;
-            else balance--;
-            if (balance < 0) return false;
-        }
-        return (balance == 0);
-    }
-}
-
-def generateParenthesis(self, N):
-    if N == 0: return ['']
-    ans = []
-    for c in xrange(N):
-        for left in self.generateParenthesis(c):
-            for right in self.generateParenthesis(N-1-c):
-                ans.append('({}){}'.format(left, right))
-    return ans
+class generate_p
+{ 
+	// Function that print all combinations of 
+	// balanced parentheses 
+	// open store the count of opening parenthesis 
+	// close store the count of closing parenthesis 
+	static void _printParenthesis(char str[], int pos, int n, int open, int close) 
+	{ 
+		if(close == n) 
+		{ 
+			// print the possible combinations 
+			for(int i=0;i<str.length;i++) 
+				System.out.print(str[i]); 
+			System.out.println(); 
+			return; 
+		} 
+		else
+		{ 
+			if(open > close) { 
+				str[pos] = '}'; 
+				_printParenthesis(str, pos+1, n, open, close+1); 
+			} 
+			if(open < n) { 
+				str[pos] = '{'; 
+				_printParenthesis(str, pos+1, n, open+1, close); 
+			} 
+		} 
+	} 
+	
+	// Wrapper over _printParenthesis() 
+	static void printParenthesis(char str[], int n) 
+	{ 
+		if(n > 0) 
+		_printParenthesis(str, 0, n, 0, 0); 
+		return; 
+	} 
+	
+	public static void main (String[] args) 
+	{ 
+		int n = 3; 
+		char[] str = new char[2 * n]; 
+		printParenthesis(str, n); 
+	} 
+} 
 /*
 input: n = 3
 sample output:
