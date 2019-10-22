@@ -36,3 +36,14 @@ def generateParenthesis(self, N):
             for right in self.generateParenthesis(N-1-c):
                 ans.append('({}){}'.format(left, right))
     return ans
+/*
+input: n = 3
+sample output:
+[
+  "((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"
+]
+*/

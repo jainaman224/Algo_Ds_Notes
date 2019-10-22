@@ -39,3 +39,7 @@ class Solution {
     return stack.isEmpty();
   }
 }
+/*
+Input: "()[]{}"
+Output: true
+*/
