@@ -1,16 +1,16 @@
 // Merging to sorted array a[] and b[] and storing it in c[]
-
+// After merging, the resultant array is also sorted 
 #include <iostream>
 #include <math.h>
 
-using namespace std; 
+using namespace std;
 int main()
 {
     int i, num1, num2;
 
     cout << "Enter number of elements in array 1: ";
     cin >> num1;
-    
+
     int a[num1];
     cout << "Enter your sorted array 1: ";
     for (i = 0; i < num1; i++)
@@ -33,25 +33,25 @@ int main()
     int j = 0;
     i = 0;
 
-    // Traverse both array 
-    while (i < num1 && j < num2) 
-    { 
-        if (a[i] > b[j]) 
-            c[k++] = b[j++]; 
+    // Traverse both array
+    while (i < num1 && j < num2)
+    {
+        if (a[i] > b[j])
+            c[k++] = b[j++];
         else
-            c[k++] = a[i++]; 
-    } 
+            c[k++] = a[i++];
+    }
 
-    // copying remaining elements of array a 
-    while (i < num1) 
-        c[k++] = a[i++]; 
+    // copying remaining elements of array a
+    while (i < num1)
+        c[k++] = a[i++];
 
     // copying remaining elements of array b
-    while (j < num2) 
-        c[k++] = b[j++]; 
+    while (j < num2)
+        c[k++] = b[j++];
 
     cout << "New merged array: \n";
-    for (i = 0; i< (num1 + num2); i++)	
+    for (i = 0; i< (num1 + num2); i++)
     {
         cout << c[i] << " ";
     }
