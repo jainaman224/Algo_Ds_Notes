@@ -20,9 +20,9 @@ void solveMaze(int a[][10],int s[][10],int x,int y,int n)
         return;
 
     s[x][y]=1;
-    solveMaze(a,s,x,y+1,n);	//Going Right
-    solveMaze(a,s,x+1,y,n);	//Going Down
-    s[x][y]=0;			//Backtacking
+    solveMaze(a,s,x,y+1,n);	    //Going Right
+    solveMaze(a,s,x+1,y,n);	    //Going Down
+    s[x][y]=0;			        //Backtacking
 }
 int main()
 {
@@ -38,3 +38,27 @@ int main()
     
     solveMaze(a,s,0,0,n);	//Output Maze
 }
+
+/*
+
+Sample Input:
+
+4
+1 0 0 0
+1 1 0 1
+1 1 0 0
+0 1 1 1
+
+Sample Output:
+
+1 0 0 0 
+1 1 0 0 
+0 1 0 0 
+0 1 1 1 
+
+1 0 0 0 
+1 0 0 0 
+1 1 0 0 
+0 1 1 1    
+
+*/
