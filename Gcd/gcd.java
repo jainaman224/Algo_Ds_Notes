@@ -21,16 +21,8 @@ public class gcd {
 		int num1 = s.nextInt();
 		int num2 = s.nextInt();
 		
-		//variable to store gcd of given numbers
-		int result;
-		
-		//calling gcd function
-		if(num1 >= num2) {
-			result = gcd_func(num1, num2);
-		}else {
-			result = gcd_func(num2, num1);
-		}
-		
+		//function calling and storing gcd of given numbers to variable result
+		int result = gcd_func(Math.max(num1, num2), Math.min(num1, num2));
 		System.out.println("The GCD of given two numbers is " + result);
 	}
 
