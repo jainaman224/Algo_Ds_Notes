@@ -16,20 +16,23 @@ def generate_data(m, n):
 
     # Creating y as a function of X along with some noise (y = a * X + b + noise)
     y = np.random.randint(0, 100) * X + np.random.randint(0, 100) + np.random.rand(m, n)
-    
+
     return X, y
 
 
 def normal_equation(X, y):
-    """Takes in (input, target) and output the coefficients for best-fit line using normal equation"""
+    """
+    Takes in (input, target) matrices
+    Outputs coefficients for line of best fit using normal equation
+    """
 
     # X.shape is m, n here, we don't need n
     m, _ = X.shape
-    
+
     # Add x0 = 1 to each term to accommodate bias
     # Our theta vector will now have bias term
     X_b = np.c_[np.ones((m, 1)), X]
-    
+
     # We will use NumPy's Linear Algebra module (np.linalg)
     # array.T gives transpose of the array
     # array1.dot(array2) is used to calculate the dot products
@@ -57,7 +60,7 @@ def main():
     theta = normal_equation(X, y)
 
     # Calculate predictions by taking dot product of X and theta
-    # Add x0 = 1 to each instance to accommodate bias term 
+    # Add x0 = 1 to each instance to accommodate bias term
     X_b = np.c_[np.ones((m, 1)), X]
     y_pred = X_b.dot(theta)
 
