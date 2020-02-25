@@ -1,4 +1,4 @@
-
+import 'dart:io';
 
 CountDigit(int Num) {
   int ans = 0;
@@ -12,6 +12,9 @@ CountDigit(int Num) {
 
 
 void main() { 
-  
-  CountDigit(6789);
+
+  print("Enter Number: ");
+  var num = stdin.readLineSync();
+  int x = int.parse(num);
+  CountDigit(x);
 }
