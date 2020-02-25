@@ -6,11 +6,11 @@ class BubbleSort
     BubbleSort(this.unsorted);
 
     //add array that you want to sort
-    void addArray(int count, List<int> list) 
+    void addArray(int length, List<int> list) 
     {
         list = [];
         unsorted = list;
-        for (int i = 0; i < count; i++) 
+        for (int i = 0; i < length; i++) 
         {
             print('Add number to array : ');
             var input = stdin.readLineSync();
