@@ -1,3 +1,5 @@
+````bash
+
 ALGORITHM  
 Waershall(A[1..n, 1...n])
 //Implements Warshall’s Algorithm for computing the transitive closure
@@ -13,3 +15,4 @@ return A
 
 Time efficiency: (n3)
 Space efficiency: Matrices can be written over their predecessors
+````
