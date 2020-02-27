@@ -8,7 +8,7 @@ for i in range(0, num):
 
 #Finding frequency of an element
 n = int(input("Enter the number whose occurence is to be found: "))
-print(arr.count(n))
+print("Frequency is : ", arr.count(n))
 
 '''
 
