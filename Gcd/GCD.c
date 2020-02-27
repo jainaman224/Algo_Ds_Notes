@@ -18,3 +18,6 @@ int main(){
 	printf("The GCD of %d %d is %d\n",a,b,GCD(a,b));
 	return 0;
 }
+// Output
+// Enter number 14, 63
+// Gcd of 14, 63 = 7
