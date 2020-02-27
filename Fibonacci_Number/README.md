@@ -1,8 +1,7 @@
 # Fibonacci Sequence
 
 > The Fibonacci Sequence turns out to be the key to understanding how nature designs and is a part of the same ubiquitous music of the spheres that builds harmony into atoms, molecules, crystals, shells, suns and galaxies and makes the Universe sing.
-<br>
-*~Guy Murchie, The Seven Mysteries of Life: An Exploration of Science and Philosophy*
+<br>*~Guy Murchie, The Seven Mysteries of Life: An Exploration of Science and Philosophy*
 
 ## Introduction
 
