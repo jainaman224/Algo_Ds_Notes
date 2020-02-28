@@ -1,8 +1,7 @@
 # Fibonacci Sequence
 
 > The Fibonacci Sequence turns out to be the key to understanding how nature designs and is a part of the same ubiquitous music of the spheres that builds harmony into atoms, molecules, crystals, shells, suns and galaxies and makes the Universe sing.
-<br>
-*~Guy Murchie, The Seven Mysteries of Life: An Exploration of Science and Philosophy*
+<br>*~Guy Murchie, The Seven Mysteries of Life: An Exploration of Science and Philosophy*
 
 <img src="https://cdn.britannica.com/95/130895-050-F4DEFE46/numbers-diagonal-Fibonacci-sequence-triangle-Pascal.jpg" width=270 height=300>
 
@@ -189,7 +188,7 @@ The Fibonacci sequence is related to the golden ratio, a proportion (roughly 1:1
 
 Both the Fibonacci sequence and the golden ratio are used to guide design for architecture, websites and user interfaces, among other things.
 
-<img src="https://lh3.googleusercontent.com/proxy/OzIMdc27IaJWhErXp1jxFVGR5QNTx3mg8kZus2ZKjBM9L0IuI3e8dwhMjy0Sj0sla-lESo3E9d_S4_fqg03bCubML6Jo1ML_nNg-yVLQ-l1_6wWlPRcjDjfy2w" width=300>
+<img src="https://miro.medium.com/max/694/1*CyFEy7GFPwxysCDaX_jm-Q.png" width=300>
 
 <img src="https://www.quickanddirtytips.com/sites/default/files/images/1649/golden-ratio-shell.png" width=300>
 
