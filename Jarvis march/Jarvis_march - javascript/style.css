@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden;
+}
+canvas {
+  display: block;
+}
+.table{
+  display:grid;
+  grid-template-columns:1 fr;
+  grid-gap:4px;
+}
+.table span{
+    border:2px solid #000;
+}
