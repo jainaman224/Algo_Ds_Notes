@@ -1,7 +1,12 @@
 # Fibonacci Sequence
 
 > The Fibonacci Sequence turns out to be the key to understanding how nature designs and is a part of the same ubiquitous music of the spheres that builds harmony into atoms, molecules, crystals, shells, suns and galaxies and makes the Universe sing.
-<br>*~Guy Murchie, The Seven Mysteries of Life: An Exploration of Science and Philosophy*
+<br>
+*~Guy Murchie, The Seven Mysteries of Life: An Exploration of Science and Philosophy*
+
+<img src="https://cdn.britannica.com/95/130895-050-F4DEFE46/numbers-diagonal-Fibonacci-sequence-triangle-Pascal.jpg" width=270 height=300>
+
+<img src="https://media0.giphy.com/media/IdkQbKfSg1Gi4/giphy.gif">
 
 ## Introduction
 
@@ -78,12 +83,19 @@ Input (N): 2
 Output: 1
 Reason: F(2) = F(1) + F(0) = 1 + 0 = 1.
 
+Explanation: As per the algorithm, we know that F(0) returns 0, and F(1) is equal to 1.
+
+Hence, the addition of F(1) & F(0) will evaluate to F(2).
 ```
 
 ```
 Input (N): 3
 Output: 2
 Reason: F(3) = F(2) + F(1) = 1 + 1 = 2.
+
+Explanation: From the above patch, we evaluated F(2) as 1 and we already know F(1) = 1.
+
+Therefore, F(3) will evaluate to 1 + 1 = 2
 
 ```
 
@@ -92,6 +104,9 @@ Input (N): 4
 Output: 3
 Reason: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
+Explanation: From above, it is clear that F(3) & F(2) evaluate to 2 and 1 respectively.
+
+Hence, their sum will be equal to the value of F(4), that is 3.
 ```
 
 ```
@@ -122,6 +137,9 @@ Hence the next number in the sequence above will be 21 + 34 = 55
 F(n) = F(n - 1) + F(n - 2)
 ```
 - Repeat this until all numbers have been calculated, then return the resulting answer.
+
+<img src="https://i.stack.imgur.com/QVSdv.png">
+
 
 **Time Complexity: O(2<sup>N</sup>)**
 
@@ -159,7 +177,7 @@ Each number, starting at 2, up to and including N, is traversed, computed and th
 
 Each value from 2 to N will be visited at least once. The time it takes to do this is directly proportionate to N where N is the Fibonacci Number we are looking to compute.
 
-### Concluding Thoughts
+### Concluding Results
 
 The Iteration method would be the prefer and faster approach to solving our problem because we are storing the first two of our Fibonacci numbers in two variables (n - 1, n - 2) and using "Fib" to store our Fibonacci number. Storing these values prevent us from constantly using memory space in the Stack. Thus giving us a time complexity of O(N).
 
@@ -170,3 +188,81 @@ Golden Ratio is a number that’s equal to approximately 1.618. This number is n
 The Fibonacci sequence is related to the golden ratio, a proportion (roughly 1:1.6) that occurs frequently throughout the natural world and is applied across many areas of human endeavors.
 
 Both the Fibonacci sequence and the golden ratio are used to guide design for architecture, websites and user interfaces, among other things.
+
+<img src="https://lh3.googleusercontent.com/proxy/OzIMdc27IaJWhErXp1jxFVGR5QNTx3mg8kZus2ZKjBM9L0IuI3e8dwhMjy0Sj0sla-lESo3E9d_S4_fqg03bCubML6Jo1ML_nNg-yVLQ-l1_6wWlPRcjDjfy2w" width=300>
+
+<img src="https://www.quickanddirtytips.com/sites/default/files/images/1649/golden-ratio-shell.png" width=300>
+
+**There is a special relationship between Golden Ratio and Fibonacci Numbers**
+
+When we take any two successive Fibonacci Numbers, their ratio is very close to the Golden Ratio.
+
+| A  | B | Ratio (B / A) |
+| :-------------: | :-------------: | :-------------: |
+| 2  | 3  | 1.5  |
+| 3  | 5  | 1.666666666...  |
+| 5  | 8  | 1.6  |
+| 8  | 13  | 1.625  |
+| 13  | 21  | 1.615384615...  |
+| ...  | ...  | ...  |
+| 144  | 233  | 1.618055556...  |
+| 233  | 377  | 1.618025751...  |
+| ...  | ...  | ...  |
+
+## Magic Of Fibonacci Numbers
+
+Let us look at the final digit in each Fibonacci number - the units digit:
+
+**0**, **1**, **1**, **2**, **3**, **5**, **8**, 1**3**, 2**1**, 3**4**, 5**5**, 8**9**, 14**4**, 23**3**, 37**7**, 61**0**, 98**7**, ...
+
+There is a pattern in the final digits
+```
+0, 1, 1, 2, 3, 5, 8, 3, 1, 4, 5, 9, 4, 3, 7, 0, 7, ...
+```
+Yes! It takes a while before it is noticeable.
+
+In fact, the series is just 60 numbers long and then it repeats the same sequence again and again all the way through the Fibonacci series - for ever. Hence, we can say that the series of final digits repeats with a cycle length of 60.
+
+Similar analysis can be done for last digits as well.
+
+## Amazing Facts About Fibonacci Sequence And Nature
+
+- In music, a scale dominant note is the 5th note of major scale which is also the 8th note of all 13 notes that comprise octave. This provides an added instance of Fibonacci numbers in key musical relationship. Interestingly, 8/13 is .61538 which approximates Phi.
+
+- Fibonacci sequences appear in biological setting in two consecutive Fibonacci numbers, such as branching of trees, arrangement of leaves on stem, the fruitlets of pineapple ,the flowering of artichoke & arrangement of pine cone & family tree of honeybees.
+
+<img src="https://i.ya-webdesign.com/images/fibonacci-drawing-rose-3.png" width=400>
+
+<img src="https://i.pinimg.com/originals/ea/f1/73/eaf1738ff446ea088a4c7bf84a4b88fe.jpg" width=290>
+
+
+
+- A one dimensional optimization technique method called the **Fibonacci Search** techniques uses Fibonacci Numbers.
+
+- The Fibonacci numbers are also an example of a complete sequence.
+
+  + This means that every positive integer can be written as a sum of Fibonacci numbers, where any one number is used once at most. Specifically, every positive integer can be written in a unique way as the sum of one or more distinct Fibonacci numbers in such a way that the sum does not include any two consecutive Fibonacci numbers.
+
+- With the exceptions of 1, 8 and 144, every Fibonacci number has a prime factor that is not a factor of any smaller Fibonacci number.
+
+- No Fibonacci number greater than 8 is one greater or one less than any prime number.
+
+- Any three consecutive Fibonacci numbers, taken two at a time, are relatively prime.
+
+---
+
+The Pineapple scales are roughly hexagonal in shape. And because of this 3 distinct Fibonacci numbers 5,8 and 13 scales can be observed.
+
+<img src="https://i.ya-webdesign.com/images/fibonacci-drawing-pineapple.png">
+
+---
+
+The pattern and the way in which the seeds are packed on the flower heads seem to always follow a Fibonacci pattern. The reason is because this arrangement form an optimal packaging, so that no matter how large the head, the seeds are almost always uniformly spaced. This is usually seen in Sunflowers.
+
+<img src="https://i.pinimg.com/originals/2a/78/90/2a7890cbfb13ef42578155f79de55665.gif">
+
+## Conclusion
+
+### Fibonacci Sequence At A Glance
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtKMuS-fG5QYquaDo9Zk-wpLb7azf_dRiyTWABxegy9HH2KAPQ">
