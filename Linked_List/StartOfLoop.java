@@ -36,6 +36,7 @@ class StartOfLoop
 			tail = tail.next;
 		tail.next = head.next.next;
 		// Now, linked list contains a loop.
+		// We have linked 7 to 3 in our list 1, 2, 3, 4, 5, 6, 7
 	}
 	
 	static Node startOfLoop()
@@ -71,6 +72,7 @@ class StartOfLoop
 		System.out.println("Please enter " + n + " elements");
 		for(int i = 0; i < n; i++)
 			insert(scan.nextInt());
+		// Lets have 7 elements in our list 1, 2, 3, 4, 5, 6, 7
 	
 		createLoop(); // to create a loop in the linked list
 
