@@ -29,11 +29,33 @@ int LongestCommonSubsequence(int arr1[], int arr2[], int size1, int size2) {
 
 int main() 
 { 
-    int arr1[]= {10, 15, 20, 25, 30, 35, 40};
-    int arr2[] = {10, 12, 23, 25, 28, 30, 32, 40};
-    int size1 = sizeof(arr1) / sizeof(arr1[0]);
-    int size2 = sizeof(arr2) / sizeof(arr2[0]);
+    int size1, size2;
+
+    scanf("%d", &size1);
+    scanf("%d", &size2);
+
+    int arr1[size1], arr2[size2];
+
+    for (int i = 0; i < size1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+    for (int j = 0; j < size2; j++) {
+        scanf("%d", &arr2[j]);
+    }
+
     int l = LongestCommonSubsequence(arr1, arr2, size1, size2);
     printf("Length of Longest Common Subsequence is: %d\n", l);
     return 0; 
 }
+
+
+/*
+
+Sample Input: 
+7 8
+10 15 20 25 30 35 40
+10 12 23 25 28 30 32 40
+
+Sample Output: 
+4
+*/
