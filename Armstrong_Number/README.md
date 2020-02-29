@@ -49,3 +49,7 @@ In 1993 Hardy  wrote, "There are just four numbers, after unity, which are the s
 - [C Code](<https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Armstrong_Number/Armstrong_Number.c>)
 
 > 🚀 [Compile Online](https://repl.it/@gauravburjwal/Armstrong-Number-C) 🚀
+
+- [Go Code](<https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Armstrong_Number/Armstrong_Number.go>)
+
+> 🚀 [Compile Online](https://repl.it/@rinkinag/AngelicStormyCable) 🚀
