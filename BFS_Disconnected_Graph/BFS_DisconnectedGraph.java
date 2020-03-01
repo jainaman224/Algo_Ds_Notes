@@ -70,23 +70,37 @@ public class BFS_DisconnectedGraph {
 //Driver Code-The main function 
 	public static void main(String[] args) {
 
-		// sample input testcase
+		Scanner scn = new Scanner(System.in);
 
-		int v = 5;
-		addEdge(0, 4);
-		addEdge(1, 2);
-		addEdge(1, 3);
-		addEdge(1, 4);
-		addEdge(2, 3);
-		addEdge(3, 4);
+		// for bfs
+		int v = scn.nextInt();
+
+		int numberOfEdges = scn.nextInt();
+
+		// function call to make edges accordingly
+		while (numberOfEdges-- > 0) {
+			int a = scn.nextInt();
+			int b = scn.nextInt();
+			addEdge(a, b);
+		}
+		// bfs function call
 		bfs(v);
 
-		/*
-		 * sample output
-		 * 
-		 * 0 4 1 2 3
-		 * 
-		 */
 	}
+
+	/*
+	 * sample input case
+	 * 
+	 * int v = 5; addEdge(0, 4); addEdge(1, 2); addEdge(1, 3); addEdge(1, 4);
+	 * addEdge(2, 3); addEdge(3, 4); bfs(v);
+	 * 
+	 */
+
+	/*
+	 * sample output
+	 * 
+	 * 0 4 1 2 3
+	 * 
+	 */
 
 }
