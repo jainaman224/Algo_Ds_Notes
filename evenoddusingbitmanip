@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  // above lines for faster input
+  
+  int n;
+  cin >> n;
+  if(n & 1)
+    cout<<"Odd\n";      // for example 2 & 1 == 10 & 01 == 00 implies condition is false , hence 2 is even
+  else
+    cout<<"Even\n";
+}
