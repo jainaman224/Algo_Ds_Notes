@@ -80,3 +80,15 @@ class StartOfLoop
 	}
 
 }
+	/*
+	*	Sample Input
+	*	n = 7
+	*	list elements: 1, 2, 3, 4, 5, 6, 7
+	*/
+
+	
+	/*
+	*	Sample Output
+	*	The first element of the loop is: 3
+	*	(as we arbritarily chose to link the 3rd node with the last node)
+	*/
