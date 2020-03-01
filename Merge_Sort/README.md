@@ -5,7 +5,7 @@ Merge Sort is a stable sort which means that the same element in an array mainta
 
 ## Algorithn
 
-1. If it is only one element in the list it is already sorted, return.
+1. If it is only one element in the list it is already sorted, return..
 2. Divide the list recursively into two halves until it can no more be divided.
 3. Merge the smaller lists into new list in sorted order.
 
