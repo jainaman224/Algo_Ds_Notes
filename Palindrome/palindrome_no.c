@@ -7,10 +7,9 @@ int main()
     temp=n;
     while(temp!=0)
     {
-        rem=temp%10;    
-       	temp=temp/10;
-	rev=(rev*10)+rem;
-    }
+        rem=temp%10;
+        temp=temp/10;
+        rev=(rev*10)+rem;
     if(rev!=n)
     {
         printf("\nEntered number is not palindrome.\n");
