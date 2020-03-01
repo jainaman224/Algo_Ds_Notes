@@ -3,11 +3,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 class LinearRegression():
+    """
+        Initialize arr_x and arr_y
+    """
     def __init__(self,arr_x,arr_y,n):
         self.__arr_x = arr_x
         self.__arr_y = arr_y    
         self.__n = n
-    
+    """
+        calculate the intercept of line
+    """
     def intercept(self):
         xy=0
         x=0
@@ -21,7 +26,9 @@ class LinearRegression():
         
         a1 = (self.__n * xy - x*y)/(self.__n*sqr_x - x*x)
         return a1
-    
+    """
+        calculate the the slope of line
+    """
     def slope(self):
         xy=0
         x=0
@@ -35,7 +42,11 @@ class LinearRegression():
         
         a0 = (y*sqr_x - x*xy)/(self.__n*sqr_x - x*x)
         return a0
-    
+    """
+        return the value of equation
+        which is 
+        y = mx+c
+    """
     def prediction(self,x):
         y = self.slope() + self.intercept()*x
         return y
