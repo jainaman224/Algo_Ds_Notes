@@ -72,11 +72,22 @@ public class Merge_Sort
 
     public static void Main()
     {
-        int[] array = {2, 4, 3, 1, 6, 8, 4};
-        MergeSort(array, 7);
-        Print_Array(array, 7);
+    	int size;
+    	size= Convert.ToInt32(Console.ReadLine()); 
+
+        int[] array = new int[size];
+        for(i=0; i<size; i++)  
+    {  
+	    arr[i] = Convert.ToInt32(Console.ReadLine());  		
+    } 
+        MergeSort(array, size);
+        Print_Array(array, size);
     }
 }
+// input 
+// 7
+// 6 2 1 3 4 8 4
 
 // Output
 // 1 2 3 4 4 6 8
+
