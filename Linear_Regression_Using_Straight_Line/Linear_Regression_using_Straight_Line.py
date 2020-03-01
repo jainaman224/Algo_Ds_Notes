@@ -76,6 +76,20 @@ if __name__ == "__main__":
                 print("Invalid Option, Try Again")
     else:
         print("Invalid Input Format")
-     
         
-    
+#Enter size: 7
+#
+#Enter x array: 1,2,3,4,5,6,7
+#
+#Enter y array: 0.5,2.5,2.0,4.0,3.5,6.0,5.5
+#Calculated intercept:  0.8392857142857143
+#Calculated slope:  0.07142857142857142
+#
+#Do you want to predict values(y/n): y
+#
+#Enter value for prediction: 4
+#Predicted value:  3.428571428571429
+#
+#Do you want to predict values(y/n): n
+#        
+#    
