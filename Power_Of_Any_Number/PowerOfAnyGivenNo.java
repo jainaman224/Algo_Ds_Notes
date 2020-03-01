@@ -1,20 +1,20 @@
+/*
+ * Problem Statement
+ * 	Program to find if a No. is a power of any Given No. in Java
+ *	
+ *Approach
+ *	comparing the log's value with the floor value of log 
+ */
 import java.util.Scanner;
 
 public class PowerOfAnyGivenNo {
 
-	/*
-	 * Problem Statement
-	 * Program to find if a No. is a power of any Given No. in Java
-	 *	
-	 *	Approach
-	 *	comparing the log's value with the floor value of log 
-	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);	//input
-		System.out.print("Enter a no. : ");
+		System.out.print("Enter a no. : ");	
 		int number = sc.nextInt();
 		
-		System.out.print("Check for which no. ? ");
+		System.out.print("Check for which no. ? ");	//base element
 		int base = sc.nextInt();
 		
 		if( isPowerOfGivenNo(number, base) )
@@ -25,6 +25,7 @@ public class PowerOfAnyGivenNo {
 	}
 
 	private static boolean isPowerOfGivenNo(int number, int base) {
+		
 		//explicitly check for 1 because log(1) = 0
 		if(base == 1){
 			if(number == 1)
@@ -42,10 +43,10 @@ public class PowerOfAnyGivenNo {
 }
 
 /*
- * Input :
- 	Enter a no. : 14641
-	Check for which no. ? 11
+* Input :
+Enter a no. : 14641
+Check for which no. ? 11
  
- * Output :
-	Yes 14641 is a power of 11
+* Output :
+Yes 14641 is a power of 11
  * */
