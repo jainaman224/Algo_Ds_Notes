@@ -76,9 +76,9 @@ public class Merge_Sort
     	size= Convert.ToInt32(Console.ReadLine()); 
 
         int[] array = new int[size];
-        for(i=0; i<size; i++)  
+        for(int i=0; i<size; i++)  
     {  
-	    arr[i] = Convert.ToInt32(Console.ReadLine());  		
+	    array[i] = Convert.ToInt32(Console.ReadLine());  		
     } 
         MergeSort(array, size);
         Print_Array(array, size);
