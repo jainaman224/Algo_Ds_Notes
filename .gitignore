@@ -1,2 +1,4 @@
 .DS_Store
 .vscode/*
+a.out
+./*/a.out
