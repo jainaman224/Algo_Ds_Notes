@@ -4,7 +4,6 @@ main()
 {
     int t,n,a[200000],i,j,k,l,m;
     cout<<"ENTER THE NUMBER\n";
-	    scanf("%d",&n);
         m=1;
         a[0]=1;
         for(j=2;j<=n;j++)
