@@ -32,11 +32,11 @@ int multiply(int x, int res[], int res_size)
     return res_size; 
 } 
 int main() 
-{ int k;
+{ int n;
 cout<<"Enter a number: ";
-cin>>k;
+cin>>n;
 cout<<"Factorial is ";
-    factorial(k); 
+    factorial(n); 
     return 0; 
 } 
 

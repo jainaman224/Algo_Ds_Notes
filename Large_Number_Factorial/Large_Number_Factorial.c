@@ -31,11 +31,11 @@ int multiply(int x, int res[], int res_size)
     return res_size; 
 } 
 int main() 
-{ int k;
+{ int n;
 printf("Enter a number: ");
-scanf("%d",&k);
+scanf("%d",&n);
 printf("Factorial is ");
-    factorial(k); 
+    factorial(n); 
     return 1; 
 } 
 
