@@ -1,3 +1,10 @@
+/*
+This is implementation of Merge Sort in C#
+Merge Sort is a Divide and Conquer algorithm. 
+It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. 
+The conquer_merge() function is used for merging two halves.
+*/
+
 using System;
 public class Merge_Sort
 {
@@ -72,14 +79,14 @@ public class Merge_Sort
 
     public static void Main()
     {
-    	int size;
-    	size= Convert.ToInt32(Console.ReadLine()); 
+        int size;
+        size= Convert.ToInt32(Console.ReadLine()); 
 
         int[] array = new int[size];
+
         for(int i=0; i<size; i++)  
-    {  
-	    array[i] = Convert.ToInt32(Console.ReadLine());  		
-    } 
+	        array[i] = Convert.ToInt32(Console.ReadLine());  		
+    
         MergeSort(array, size);
         Print_Array(array, size);
     }
