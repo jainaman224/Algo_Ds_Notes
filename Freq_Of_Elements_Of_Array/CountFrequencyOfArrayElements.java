@@ -1,10 +1,10 @@
-import java.util.HashMap;
-import java.util.Scanner;
-
 
 /*Problem Statement
  * Given an array of elements count the frequency of every element in the array.
  */
+
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class CountFrequencyOfArrayElements {
 
