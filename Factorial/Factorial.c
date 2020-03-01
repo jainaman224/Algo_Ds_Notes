@@ -19,7 +19,7 @@ int main()
             }
             while(l)
             {
-	            a[k]=l%10;
+	        a[k]=l%10;
                 k++;
                 m++;
                 l=l/10;
