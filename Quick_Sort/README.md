@@ -1,4 +1,5 @@
 # Quick Sort
+Similar to merge sort in c,quicksort in c follows the principle of decrease and conquer
 
 Quick Sort is a divide and conquer algorithm that creates two empty arrays to hold elements less than the pivot value and elements greater than the pivot value, and then recursively sort the sub arrays. There are two basic operations in the algorithm, swapping items in place and partitioning a section of the array.
 
@@ -43,7 +44,15 @@ partition(A,p,r)
     }
 }
 ```
-
+Another algorithm for quick sort:
+quicksort(arr[],low,high)
+{
+if(low<high)
+{
+/*pi is partitioning index,arr[pi]is now at right place*/
+pi =partition(arr,low,high);
+quicksort(arr,low,pi-1);
+quicksort(arr,pi+1,high);
 ## Example
 
 Below given is an array, which needs to be sorted. We will use the Quick Sort Algorithm to sort this array:
