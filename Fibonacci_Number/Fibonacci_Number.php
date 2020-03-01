@@ -6,7 +6,10 @@ function FibonacciNum($num){
         return 0;     
     else if ($num == 1) 
         return 1;     
+<<<<<<< Updated upstream
       
+=======
+>>>>>>> Stashed changes
     else
         return (FibonacciNum($num-1) +  
                 FibonacciNum($num-2)); 
@@ -27,4 +30,8 @@ Fibonacci series:
 1 1 2 3 5 8
 */
 
+<<<<<<< Updated upstream
 ?> 
+=======
+?> 
+>>>>>>> Stashed changes
