@@ -1,7 +1,6 @@
 #include<iostream>
 #include<string.h> // to use swap()
 using namespace std;
-void string_palindrome(string);
 void string_palindrome(string s)
 {
 	string reverse=s;
