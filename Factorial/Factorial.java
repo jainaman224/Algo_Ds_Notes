@@ -7,7 +7,7 @@ class Factorial
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
-		Scanner s = new Scanner(System.in);
+		    Scanner s = new Scanner(System.in);
 		    int n = s.nextInt();
 		    BigInteger f = new BigInteger("1");
 		    for(int j = 1;j<=n;j++)
