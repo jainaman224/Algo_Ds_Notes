@@ -28,7 +28,6 @@ int main()
         printf("Answer is : ");
         for(i=m-1;i>=0;i--)
             printf("%d",a[i]);
-        printf("\n");
     return 0;
 }
 /*ENTER THE NUMBER
