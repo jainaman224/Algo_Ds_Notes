@@ -24,8 +24,6 @@ int main()
 
 
 
-
-
 /*
   INPUT:
 	n=12456
