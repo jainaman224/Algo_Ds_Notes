@@ -1,5 +1,5 @@
 /*
-* Find first node a loop in a Linked List
+* Find first node of a loop in a Linked List
 * A linked list is reported to form a loop. We have to find the first element of the loop or cycle.
 *
 */
