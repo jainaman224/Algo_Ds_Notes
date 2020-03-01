@@ -173,28 +173,58 @@ class Doubly_Linked_List {
 
 	public static void main(String[] args) {
 		doublyLL lst = new doublyLL();
-		lst.addFirst(30);
-		lst.addFirst(20);
-		lst.addFirst(10);
-		lst.display();
-		lst.addLast(10);
-		lst.addLast(20);
-		lst.addLast(30);
-		lst.display();
-		lst.removeFirst();
-		lst.removeLast();
-		lst.display();
-		lst.removeLast();
-		lst.removeLast();
-		lst.removeFirst();
-		lst.removeFirst();
-		lst.display();
-		lst.addAt(10, 0);
-		lst.addAt(20, 1);
-		lst.addAt(30, 2);
-		lst.display();
-		lst.removeAt(1);
-		lst.display();
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+		while(n!=0){
+			System.out.println("1: Add Last");
+			System.out.println("2: Add First");
+			System.out.println("3: Add At");
+			System.out.println("4: Remove Last");    
+			System.out.println("5: Remove First");
+			System.out.println("6: Remove At");
+			System.out.println("7: Display");
+
+			int c = scn.nextInt();
+			switch(c){
+				case 1: 
+					System.out.println("Enter Value");
+					int num = scn.nextInt();
+					lst.addLast(num);
+					break;
+				case 2:
+					System.out.println("Enter Value");
+					int num1 = scn.nextInt();
+					lst.addFirst(num1);
+					break;
+				case 3:
+					System.out.println("Enter Index");
+					int idx = scn.nextInt();
+					System.out.println("Enter Value");
+					int num3 = scn.nextInt();
+					lst.addAt(num3,idx);
+					break;
+				case 4:
+					lst.removeLast();
+					break;
+				case 5:
+					lst.removeFirst();
+					break;
+				case 6:
+					System.out.println("Enter Index");
+					int idx1 = scn.nextInt();
+					lst.removeAt(idx1);
+					break;
+				case 7:
+					lst.display();
+					break;
+				default: 
+					System.out.println("Invalid");
+			}
+			System.out.println("Enter 0 to quit and 1 to continue");
+			int no = scn.nextInt();
+			n = no;
+		}
+
 
 	}
 	
