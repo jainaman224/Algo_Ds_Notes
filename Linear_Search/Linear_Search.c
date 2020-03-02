@@ -3,6 +3,7 @@
 int search(int a[],int size, int elt)
 {
 	int i,flag = -1;
+	
 	for (i=0;i<size;i++)
 		if (a[i] == elt)
 		{
@@ -15,6 +16,7 @@ int search(int a[],int size, int elt)
 int main()
 {
 	int num;
+	printf("how many numbers you enter?");
 	scanf("%d", &num);
 	int arr[num];
 	for (int i = 0; i < num; i++) {
