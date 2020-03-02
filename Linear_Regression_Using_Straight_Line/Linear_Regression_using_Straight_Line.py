@@ -1,7 +1,3 @@
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
 class LinearRegression():
     def __init__(self,arr_x,arr_y,n):
         self.__arr_x = arr_x
