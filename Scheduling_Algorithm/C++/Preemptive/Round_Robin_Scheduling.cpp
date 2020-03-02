@@ -3,13 +3,13 @@ using namespace std;
 
 int main()
 {        
-	int i, j, no_of_process, current_time, remaining_time, f=0, time_slice, wait_time=0, turn_time=0;
+    int i, j, no_of_process, current_time, remaining_time, f=0, time_slice, wait_time=0, turn_time=0;
     cout<<"Enter number of processes: ";
     cin>>no_of_process;
 
     int a[no_of_process];	//Arrival Time
-	int b[no_of_process];	//Burst Time
-	int r[no_of_process];
+    int b[no_of_process];	//Burst Time
+    int r[no_of_process];
     remaining_time = no_of_process;
 
     for(i=0;i<no_of_process;i++)
@@ -25,16 +25,16 @@ int main()
     cin>>time_slice;
 
     cout<<"\nProcess\tTurnaround time\t Waiting Time\n";
-	cout<<"-------------------------------------------"
+    cout<<"-------------------------------------------"
     for(current_time = 0, i = 0; remaining_time ! = 0;)
     {        
-			 if(r[i] < = time_slice && r[i] > 0)		//If burst time is less than time slice
+	     if(r[i] < = time_slice && r[i] > 0)		//If burst time is less than time slice
              {        current_time + = r[i];			//Increase current time by adding burst time
-                      r[i] = 0;							//Make remaining time zero
+                      r[i] = 0;					//Make remaining time zero
                       f = 1;
              }
-             else if(r[i] > 0)							//If required time is more than time slice
-             {        r[i] - = time_slice;				//Reduce remaining time by time slice
+             else if(r[i] > 0)					//If required time is more than time slice
+             {        r[i] - = time_slice;			//Reduce remaining time by time slice
                       current_time + = time_slice;		//Increase current time by adding time slice
              }
 
