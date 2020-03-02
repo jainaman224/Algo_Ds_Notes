@@ -1,0 +1,153 @@
+
+
+//B tree cpp program
+#include <iostream>
+using namespace std;
+class btnode{
+    public :
+    int *value;
+    int t;
+    btnode **child;
+    int n;
+    bool leaf;
+    
+    btnode(int t1,bool leaf1){
+        t=t1;
+        leaf=leaf1;
+        value=new int[2*t-1];
+        child=new btnode *[2*t];
+        n=0;
+    }
+    void split(int i,btnode *y){
+        btnode *z=new btnode(y->t,y->leaf);
+        z->n=t-1;
+        for (int j = 0; j < t-1; j++)
+            z->value[j] = y->value[j+t];
+        
+        
+        if (y->leaf == false)
+        {
+            for (int j = 0; j < t; j++)
+                z->child[j] = y->child[j+t];
+        }
+        
+        
+        y->n = t - 1;
+        
+        
+        for (int j = n; j >= i+1; j--)
+            child[j+1] = child[j];
+        
+        child[i+1] = z;
+        
+        for (int j = n-1; j >= i; j--)
+            value[j+1] = value[j];
+        
+        value[i] = y->value[t-1];
+        
+        n = n + 1;  }
+    void insertnonfull(int k){
+        int i = n-1;
+        
+        if (leaf == true)
+        {
+            while (i >= 0 && value[i] > k)
+            {
+                value[i+1] = value[i];
+                i--;
+            }
+            
+            value[i+1] = k;
+            n = n+1;
+        }
+        else
+        {
+            while (i >= 0 && value[i] > k)
+                i--;
+            
+            if (child[i+1]->n == 2*t-1)
+            {
+                split(i+1, child[i+1]);
+                
+                if (value[i+1] < k)
+                    i++;
+            }
+            
+        }
+        
+    }
+    void traverse(){
+        int i;
+        for (i = 0; i < n; i++)
+        {
+            if (leaf == false)
+                child[i]->traverse();
+            cout <<"\n"<< value[i];
+        }
+        
+        
+        if (leaf == false)
+            child[i]->traverse();
+    }
+    friend class btree;
+};
+class btree{
+public:
+    btnode  *root;
+    int t,temp;
+    btree(int t1){
+        root=NULL;
+        t=t1;
+    }
+    void traverse()
+    {  if (root != NULL) root->traverse(); }
+    void insert(){
+        cout<<" "<<"Enter the number to add"<<"\n" ;
+        cin>>temp;
+        if(root==NULL){
+            root=new btnode(t,true);
+            root->value[0]=temp;
+            root->n=1;
+            
+        }
+        else{
+            if(root->n==(2*t-1)){
+                btnode *s=new btnode(t,false);
+                s->child[0]=root;
+                s->split(0,root);
+                int i=0;
+                if (s->value[0] < temp)
+                    i++;
+                s->child[i]->insertnonfull( temp);
+                root = s;
+                
+            }
+            
+            else{
+                root->insertnonfull( temp);
+            }
+        }
+    }
+    
+};
+
+int main()
+{
+    btree t(3);
+    int opt;
+    while(1){
+        cout<<"Enter \n 1. insert \n 2.traverse \n3. Exit ";
+        cin>>opt;
+        switch(opt){
+            case 1:
+                t.insert();
+                break;
+            case 2:
+                t.traverse();
+                break;
+            case 3:
+                exit(0);
+        }
+    }
+    return 0;
+}
