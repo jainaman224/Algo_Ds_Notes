@@ -15,6 +15,6 @@ def Pascal_Triangle(n):
         print(end='\n')  
 
 # Taking the Input from the user  
-rows = int(input("Enter number of row wants to print: ")) 
+rows = int(input("Enter the number of rows to be printed: ")) 
 # Calling the Function
 Pascal_Triangle(rows)
