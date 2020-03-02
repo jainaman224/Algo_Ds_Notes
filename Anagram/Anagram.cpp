@@ -1,38 +1,64 @@
+/*
+This program checks whether the two input strings are anagrams or not.
+*/
+
+
 #include <iostream>
 #include<string>
-
 using namespace std;
-
 int main()
 {
-	
-	string s1,s2;
-	int count2[256],count1[256],i,flag=0;//we are creating here two integer arrays two count occurrence of two char in string position wise because we have ascii values from 0-255 that is of size 265 
+    string s1, s2;
+    int count[256] = {0}, i, flag = 0;
+    cin >> s1;
+    cin >> s2;
 
-	//taking input of both the strings
-	cin>>s1;
-	cin>>s2;
-	
-	for(i=0;s1[i]&&s2[i];i++)
-	{
-	    count1[s1[i]]++;
-	    count2[s2[i]]++;
-	    
-	    
-	}
-    if(s1[i]||s2[i])//means if any of the strings will have remaining character than or condition will be true and flag will be raised to 1;
-	    flag=1;
-	    
-	for(i=0;i<256;i++)
-	{
-	    if(count1[i]!=count2[i])
-	        flag=1;
-	}
-	
-	if(flag==0)
-	    cout<<"Given strings are anagrams "<<endl;
-	else
-	    cout<<"Given strings are not anagram"<<endl;
-	
-	return 0;
+    for(i = 0; i < s1.length(); i++)
+    {   
+        /*
+         For each character in s1, increment count in 
+         the corresponding count array
+        */ 
+        count[s1[i]]++;
+    }
+
+    for(i = 0; i < s2.length(); i++)
+    {
+        /*
+         For each character in s2, decrement count in 
+         the corresponding count array
+        */ 
+        count[s2[i]]--;
+    }
+    
+    for(i=0; i < 256; i++)
+    {
+      // See if there is any non-zero value in count array 
+      if(count[i] != 0)
+          flag = 1;
+    }
+
+    if(flag == 0)
+        cout << "Given strings are anagrams " << endl;
+    else
+        cout << "Given strings are not anagrams" << endl;
+
+    return 0;
 }
+
+
+
+/*
+  INPUT:
+  s1="abc"
+  s2="cba"
+  OUTPUT:
+    Given strings are anagrams
+  
+  INPUT:
+    s1="abc"
+    s2="azs"
+  OUTPUT:
+    Given strings are not anagrams
+*/
+
