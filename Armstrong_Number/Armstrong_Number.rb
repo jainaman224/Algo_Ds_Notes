@@ -46,3 +46,8 @@ num = 134
 print(Armstrong(num))
 
 #False
+
+num = 370
+print(Armstrong(num))
+
+#True
