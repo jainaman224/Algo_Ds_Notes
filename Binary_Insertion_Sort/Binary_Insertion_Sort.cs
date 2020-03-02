@@ -25,9 +25,9 @@ class BIS {
         int[] array = new int[size];
 
         for(int i=0; i<size; i++)
-	{
-	    array[i] = Convert.ToInt32(Console.ReadLine());
-	}
+	    {
+	        array[i] = Convert.ToInt32(Console.ReadLine());
+	    }
 
         sort(array); 
   
