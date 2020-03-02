@@ -143,3 +143,38 @@ public class MAIN {
 	
 
 }
+/*
+ * 
+ * SRTF algorithm
+Enter no of process
+4
+Enter arrival time for process P0
+0
+Enter burst time for process P0
+7
+Enter arrival time for process P1
+2
+Enter burst time for process P1
+4
+Enter arrival time for process P2
+4
+Enter burst time for process P2
+2
+Enter arrival time for process P3
+7
+Enter burst time for process P3
+1
+
+
+P0| P0| P1| P1| P1| P1| P2| P2| P3| P0| P0| P0| P0| P0| 
+
+process  Arrival Time  Burst Time  Completion Time  Turnover Time  Waiting Time
+P0	 		0.0			7.0				14.0			14.0		7.0
+P1	 		2.0			4.0				6.0				4.0			0.0
+P2	 		4.0			2.0				8.0				4.0			2.0
+P3	 		7.0			1.0				9.0				2.0			1.0
+
+Average waiting time  is 2.5
+Average turnover time  is 6.0
+
+*/
