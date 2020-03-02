@@ -101,6 +101,8 @@ public class BFS_DisconnectedGraph {
 
     /*
      * sample input 1: 
+     * noOfVertices = 7
+     * noOfEdges = 7
      * Graph g = new Graph(7); 
      * g.addEdge(0, 1); 
      * g.addEdge(0, 2);
@@ -119,6 +121,8 @@ public class BFS_DisconnectedGraph {
 
     /*
      * sample input 2: 
+     * noOfVertices = 5
+     * noOfEdges = 6
      * Graph g = new Graph(5); 
      * g.addEdge(0, 4); 
      * g.addEdge(1, 2);
