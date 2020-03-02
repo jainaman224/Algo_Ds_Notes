@@ -29,7 +29,7 @@ void SieveOfEratosthenes(int n)
 // Program to test above function
 int main()
 {
-    int n ;
+    int n;
     cin >> n;
     cout << "Following are the prime numbers smaller than or equal to " << n << endl;
     SieveOfEratosthenes(n);
