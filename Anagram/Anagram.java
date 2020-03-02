@@ -5,9 +5,9 @@
     characters just appearing in another order.
 */
 
-import java.util.Scanner;
+import java.util.*;
 
-class Anagram
+class Anagrams
 {
     public static void main(String args[])
     {
@@ -18,36 +18,38 @@ class Anagram
         System.out.println("Enter 2nd string");
         String str2 = sc.nextLine();
 
-        int count1[] = new int[256];
-        int count2[] = new int[256];
-
+       
         // if lengths are not equal, they cannot be anagrams
         if (str1.length() != str2.length())
         {
             System.out.println("The strings are not anagrams");
             return;
         }
-    
-        // Store the count of every character in string
-        for (int i = 0; i < str1.length(); i++)
-        {
-            count1[str1.charAt(i) - 'a']++;
-            count2[str2.charAt(i) - 'a']++;
-        }
-    
-        // If the counts of characters are not equal,
-        // they are not anagrams
-        for (int i = 0; i < 256; i++)
-        {
-            if (count1[i] != count2[i])
-            {
-                System.out.println("The strings are not anagrams");
-                return;
-            }
-        }
-        System.out.println("The strings are anagrams");
+        
+        // convert the strings into respective Arrays
+        
+        char[] arr1 = str1.toCharArray();
+        char[] arr2 = str2.toCharArray();
+        
+        // sort the respective arrays 
+        
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        
+        // now convert the arrays back into strings and compare them 
+        // if the equalsIgnoreCase() method returns true they are anagrams
+        // if the equalsIgnoreCase() method returns false they are not anagrams
+        
+        String str_temp1 = new String(arr1);
+        String str_temp2 = new String(arr2);
+        
+        if(str_temp1.equalsIgnoreCase(str_temp2)==true)
+            System.out.println("The strings are anagrams");
+        else
+            System.out.println("The strings are not anagrams");
     }
 }
+
 
 /*
 Input:
@@ -58,8 +60,8 @@ Output:
 The strings are anagrams
 
 Input:
-cap
-tap
+Listen
+Silent
 
 Output:
 The strings are not anagrams
