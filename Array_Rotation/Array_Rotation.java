@@ -1,4 +1,4 @@
-//Program to rotate array Arr[] of size n by d Elements
+//Program to rotate array Arr[] of size n by d Elements to either left or right
 class Array_Rotation
 {
     private static void leftRotate(int arr[], int n) 
@@ -13,10 +13,11 @@ class Array_Rotation
     
     private static void rightRotate(int arr[], int n)
     {
-        int temp=arr[n-1], i;
-        //shifting all the elements of the array to right
-        for(i=n-1;i>0;i--)
-            arr[i]=arr[i-1];
+        int temp = arr[n-1], i;
+        // shifting all the elements of the array to right
+        for (i = n-1; i > 0; i--)
+            arr[i] = arr[i - 1];
+        
         arr[0] = temp;
     }
     private static void RotateDriverLeft(int arr[], int rotations, int n) 
@@ -44,16 +45,17 @@ class Array_Rotation
     { 
         // Sample input
         int arr1[] = {1, 2, 3, 4, 5}; 
-        int arr2[]={1,2,3,4,5};
+        int arr2[] = {1, 2, 3, 4, 5};
         int n = arr1.length; 
-        int m=arr2.length;
+        int m = arr2.length;
         RotateDriverLeft(arr1, 2, n);
         System.out.println();
-        RotateDriverRight(arr2,2,m);
+        RotateDriverRight(arr2, 2, m);
     } 
 }
 /*
 Input array: {1, 2, 3, 4, 5}
 Sample Output
 3 4 5 1 2 
+4 5 1 2 3
 */
