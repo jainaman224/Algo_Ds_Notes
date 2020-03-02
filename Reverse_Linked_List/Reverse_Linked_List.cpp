@@ -98,7 +98,8 @@ int main(){
 	linkedList->rev();
 	cout<<"After Reverse\n";
 	linkedList->print();
-	
+	free(linkedList);
+	return 0;
 }
 
 //Enter the number of node in linked list: 10
@@ -110,3 +111,7 @@ int main(){
 //After Reverse
 //Linked List:
 //10 9 8 7 6 5 4 3 2 1
+
+
+
+
