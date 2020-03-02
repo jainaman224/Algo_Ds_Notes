@@ -1,0 +1,260 @@
+include<stdio.h>
+#include<stdlib.h>
+#define SIZE 10
+struct ExpTree
+{
+struct ExpTree *lc;
+char data;
+struct ExpTree *rc;
+};
+
+struct Opndstack
+{
+int top;
+struct ExpTree *buffer[SIZE];
+};
+
+void inorder(struct ExpTree *froot);
+void preorder(struct ExpTree *froot);
+void postorder(struct ExpTree *froot);
+int push(struct ExpTree *fnewnode,struct Opndstack *fs);
+int pop(struct ExpTree **opnd,struct Opndstack *fs);
+int isfull(struct Opndstack *fs);
+int isempty(struct Opndstack *fs);
+void delete(struct ExpTree **froot);
+
+int main(void)
+{
+char postfix[SIZE]={'\0'};
+int i=0;
+char sym='\0';
+struct Opndstack s={-1,{NULL}};
+struct ExpTree *newnode=NULL;
+struct ExpTree *opnd2=NULL;
+struct ExpTree *opnd1=NULL;
+struct ExpTree *root=NULL;
+int flag=0;
+int p=0;
+int r=0;
+
+printf("\n\t enter the postfix string");
+scanf("%s" , postfix);
+
+for(i=0;postfix[i]!='\0';i++)
+{
+    sym=postfix[i];
+    newnode=(struct ExpTree *)calloc(1,sizeof(struct ExpTree));
+    if(newnode==NULL)
+    {
+        flag=1;
+    }
+    else
+    {
+        flag=0;
+        newnode->data=sym;
+        if(sym!='+' && sym!='-' && sym!= '*' && sym!= '/')
+        {
+       
+            p=push(newnode,&s);
+            if(p==1)
+            {
+                printf("\n\t push not succesful");
+            }
+            else
+            {
+                printf("\n\t push succesful");
+            }
+        }
+       
+        else
+        {
+           
+            r=pop(&opnd2,&s);
+       
+       
+            if(r==1)
+            {
+            printf("\n\t pop not succesful");
+            }
+            else
+            {
+            printf("\n\t pop succesful");
+            }
+           
+            r=pop(&opnd1,&s);
+           
+            if(r==1)
+            {
+                printf("\n\t pop not succesful");
+            }
+            else
+            {
+                printf("\n\t pop succesful");
+            }
+           
+           
+            newnode->rc=opnd2;
+            newnode->lc=opnd1;
+           
+           
+            p=push(newnode,&s);
+           
+            if(p==1)
+            {
+            printf("\n\t push not succesful");
+            }
+            else
+            {
+            printf("\n\t push  succesful");
+            }
+           
+        }
+    }
+   
+}
+           
+   
+     r=pop(&root,&s);
+     
+     if(r == 1)
+     {
+         printf("\n\t pop not succesful");
+         
+     }
+     
+     else
+     {
+           
+      printf("\n\t InOrder: ");
+      inorder(root);
+      printf("\n\t PreOrder: ");
+      preorder(root);
+      printf("\n\t PostOrder: ");
+      postorder(root);
+     
+     }
+           
+    delete(&root);
+
+return 0;
+
+}
+
+void inorder(struct ExpTree *froot)
+{
+if(froot!=NULL)
+{
+inorder(froot->lc);
+printf("%c",froot->data);
+inorder(froot->rc);
+}
+}
+
+void preorder(struct ExpTree *froot)
+{
+if(froot!=NULL)
+{
+printf("%c",froot->data);
+preorder(froot->lc);
+preorder(froot->rc);
+}
+}
+
+void postorder(struct ExpTree *froot)
+{
+if(froot!=NULL)
+{
+postorder(froot->lc);
+postorder(froot->rc);
+printf("%c",froot->data);
+
+}
+}
+
+int push(struct ExpTree *fnewnode,struct Opndstack *fs)
+{
+int rval=0;
+int sf=0;
+
+sf=isfull(fs);
+if(sf==1)
+{
+rval=1;
+}
+else
+{
+rval=0;
+fs->top++;
+fs->buffer[fs->top]=fnewnode;
+}
+return rval;
+}
+
+int pop(struct ExpTree **opnd,struct Opndstack *fs)
+{
+int rval=0;
+int se=0;
+
+se=isempty(fs);
+if(se==1)
+{
+rval=1;
+}
+else
+{
+*opnd=fs->buffer[fs->top];
+fs->top--;
+}
+return rval;
+
+}
+
+
+int isfull(struct Opndstack *fs)
+{
+int rval=0;
+if(fs->top==SIZE-1)
+{
+rval=1;
+}
+else
+{
+rval=0;
+}
+return rval;
+}
+
+int isempty(struct Opndstack *fs)
+{
+int rval=0;
+if(fs->top==-1)
+{
+rval=1;
+}
+else
+{
+rval=0;
+}
+
+return rval;
+}
+
+void delete(struct ExpTree **froot)
+{
+struct ExpTree *node=NULL;
+node=*froot;
+
+if(node!=NULL)
+{
+delete(&(node->lc));
+delete(&(node->rc));
+free(node);
+node=NULL;
+}
+*froot=node;
+}
+
+
+
+
+
