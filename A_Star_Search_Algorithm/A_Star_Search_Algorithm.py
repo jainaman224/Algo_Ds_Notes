@@ -1,5 +1,3 @@
-import numpy as np
-
 class Node:
     """
         A node class used in A* Pathfinding.
