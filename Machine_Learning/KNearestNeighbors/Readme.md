@@ -6,4 +6,5 @@ In Machine Learning, the K-nearest neighbors algorithm is a non-parametric metho
 Here, in the knn.cpp file, we have implemented the above algorithm using C language where the input data is taken from the user and the user can also set the value of K.
 
 ## Snapshot:
-[](https://github.com/arghac14/Algo_Ds_Notes/blob/master/Machine_Learning/KNearestNeihbors/KNN_snapshot.JPG)
+
+![](https://github.com/arghac14/Algo_Ds_Notes/blob/master/Machine_Learning/KNearestNeighbors/KNN_snapshot.JPG)
