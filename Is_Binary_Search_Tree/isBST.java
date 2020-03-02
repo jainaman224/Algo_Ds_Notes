@@ -1,18 +1,14 @@
 import java.util.Scanner;
 
 public class BinaryTree {
-
 	class Node {
-
 		int data;
 		Node left;
 		Node right;
-
 	}
-
+    
 	private Node root;
 	private int size;
-
 	public static Scanner scn = new Scanner(System.in);
 
 	public BinaryTree() {
@@ -57,10 +53,10 @@ public class BinaryTree {
 		boolean r = isBST(node.right); // r will store whether the right subtree is BST or not
 
 		//the below given conditions will return false if the current node doesnt satisfy the property of a BST
-		if(node.left!=null && node.data < node.left.data)
+		if(node.left != null && node.data < node.left.data)
 			return false;
 
-		if(node.right!=null && node.data>node.right.data)
+		if(node.right != null && node.data > node.right.data)
 			return false;
 
 		//if the curr node satifies the BST property then we will return true if both l and r subtree are BST or not
