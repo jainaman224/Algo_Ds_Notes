@@ -4,6 +4,9 @@
     element is present in the tree. In that case return the element which you found in the
     tree. If none of the 2 input element is present in the binary tree, return -1 signifying
     NULL.
+    Case 1: if both elements are present-> return LCA
+    Case 2: if one the elment is present-> return the element present
+    Case 3: if none of the element is present-> return -1
 
 */
 
@@ -117,3 +120,35 @@ int main()
     cout << Binary_Tree_LCA(root, val1, val2);
     delete root;
 }
+
+
+/*
+	Input1:
+Enter root data : 1
+Enter left child of 1 : 2
+Enter right child of 1 : 3
+Enter left child of 2 : 4
+Enter right child of 2 : 5
+Enter left child of 3 : -1
+Enter right child of 3 : -1
+Enter left child of 4 : -1
+Enter right child of 4 : -1
+Enter left child of 5 : -1
+Enter right child of 5 : -1
+enter the 2 values: 4 3
+	Output: 2
+	* 
+	* 
+	* 
+	Input2:
+enter the 2 values: 4 5
+	Output: 2
+	* 
+	* 
+	* 
+	Input3:
+enter the 2 values: 2 10
+	Output: 2
+
+ */ 
+
