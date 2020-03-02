@@ -6,7 +6,7 @@
 using namespace std;
 
 sem_t m,w;			//m is mutex and w is write_block semaphore
-int d = 0, readers = 0;		//d is a variable that stores what has to be read pr written and readers is for number of readers
+int d = 0, readers = 0;		//d is a variable that stores what has to be read or written and readers is for number of readers
 
 void *reader(void *arg){
 	long i = ((long)arg);	//Tells us which reader is supposed to read
