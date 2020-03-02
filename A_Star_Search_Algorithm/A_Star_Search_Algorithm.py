@@ -109,7 +109,7 @@ class FindPath():
             # computation cost is too high
             if counter > max_steps:
                 print ("Destination cannot be reached")
-                return self.return_path(current_node,maze)
+                return self.return_path(current_node,self.maze)
     
             # Pop current node out off
             queue.pop(current_index)
@@ -118,7 +118,7 @@ class FindPath():
     
             # check if goal is reached or not
             if current_node == end_node:
-                return self.return_path(current_node,maze)
+                return self.return_path(current_node,self.maze)
     
             # Generate coordinate from all adjacent coordinates
             coordinates = []
@@ -133,7 +133,7 @@ class FindPath():
                     continue
     
                 # Make sure walkable terrain
-                if maze[current_node_position[0]][current_node_position[1]] != 0:
+                if self.maze[current_node_position[0]][current_node_position[1]] != 0:
                     continue
     
                 # Create new node
