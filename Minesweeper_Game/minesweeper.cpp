@@ -16,59 +16,59 @@ int SIDE;
 int MINES;
 
 void clrscr()
-    {
-         std::cout << "\33[2J\33[1;1H" << std::flush;
-    }
+{
+    std::cout << "\33[2J\33[1;1H" << std::flush;
+}
 
 bool isvalid(int row,int col)
-    {
-        return (row>=0)&&(row<SIDE)&&(col>=0)&&(col<SIDE);
-    }
+{
+   return (row>=0)&&(row<SIDE)&&(col>=0)&&(col<SIDE);
+}
 
 bool ismine(int row,int col,char board[][max_side])
-    {
-        if(board[row][col]=='B')
-	    return (true);
-	else
-	    return (false);
-    }
+{
+    if(board[row][col]=='B')
+	return (true);
+    else
+	return (false);
+}
 
 void move(int *x,int *y)
-    {
-        printf("\nEnter your move as (row col) -> ");
-	scanf("%d %d", x, y);
-	return;
-    }
+{
+    printf("\nEnter your move as (row col) -> ");
+    scanf("%d %d", x, y);
+    return;
+}
 
 void board(char myboard[][max_side])
+{
+    clrscr();
+    printf("\n\n\t\t\t    ");
+    for(int i=0;i<SIDE;i++)
     {
-	clrscr();
-	printf("\n\n\t\t\t    ");
-        for(int i=0;i<SIDE;i++)
-        {
-	    if (i>9)
-                printf("%d ",i/10);
-	    else
-		printf("  ");
-	}
-		
-	printf("\n\t\t\t    ");
-
-	for(int i=0;i<SIDE;i++)
-	    printf("%d ",i%10);
-	    printf("\n\n");
-	    for(int i=0;i<SIDE;i++)
-	    {
-	        printf("\t\t\t    ");
-		for(int j=0;j<SIDE;j++)
-		{
-			printf("%c ",myboard[i][j]);
-	        }
-	        printf(" %2d",i);
-	        printf("\n");
-            }
-            return;
+        if (i>9)
+            printf("%d ",i/10);
+	else
+	    printf("  ");
     }
+		
+    printf("\n\t\t\t    ");
+
+    for(int i=0;i<SIDE;i++)
+	printf("%d ",i%10);
+    printf("\n\n");
+    for(int i=0;i<SIDE;i++)
+    {
+        printf("\t\t\t    ");
+        for(int j=0;j<SIDE;j++)
+	{
+	    printf("%c ",myboard[i][j]);
+	}
+	printf(" %2d",i);
+	printf("\n");
+    }
+    return;
+}
 
 int countadjacent(int row,int col,int mines[][2],char realboard[][max_side])
 {
