@@ -5,11 +5,11 @@
 #include<pthread.h>
 using namespace std;
 
-sem_t m,w;				//m is mutex and w is write_block semaphore
-int d = 0, readers = 0;	//d is a variable that stores what has to be read pr written and readers is for number of readers
+sem_t m,w;			//m is mutex and w is write_block semaphore
+int d = 0, readers = 0;		//d is a variable that stores what has to be read pr written and readers is for number of readers
 
 void *reader(void *arg){
-	long i = ((long)arg);//Tells us which reader is supposed to read
+	long i = ((long)arg);	//Tells us which reader is supposed to read
 	sem_wait(&m);		//waits for mutex to be released
 	readers + = 1;		//increment number of readers
 	if(readers == 1)
@@ -27,7 +27,7 @@ void *reader(void *arg){
 }
 
 void *writer(void *arg){
-	long i = ((long)arg);//Tells us which writer is supposed to write
+	long i = ((long)arg);	//Tells us which writer is supposed to write
 	sem_wait(&w);		//Waits for write block to be released
 	d++;
 	cout<<"Writer "<<i<<" writes "<<d<<endl;
