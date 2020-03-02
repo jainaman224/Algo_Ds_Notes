@@ -54,7 +54,7 @@ public class GENERIC_TREE_LOTRAVERSAL {
 		display(root);
 
 	}
-
+       //function to display generic tree
 	private void display(Node node) {
 
 		String str = node.data + " -> ";
@@ -75,16 +75,20 @@ public class GENERIC_TREE_LOTRAVERSAL {
 	// level order traversal
 
 		public void levelorder() {
+			//create a linked list, which will be used as a queue
 			LinkedList<Node> queue = new LinkedList<Node>();
-
+                        
+			//root node aaded to last 
 			queue.addLast(root);
 
 			while (!queue.isEmpty()) {
 
 				Node rn = queue.removeFirst();
 
+				//print the current node
 				System.out.print(rn.data + " ");
 
+				//add children of the current node at the end of queue
 				for (Node child : rn.children) {
 					queue.addLast(child);
 				}
@@ -102,5 +106,8 @@ public class GENERIC_TREE_LOTRAVERSAL {
 
 
 	}
+	
+	//SAMPLE INPUT: 10  3  20  2  50  0  60  0  30  0  40  0
+	//OUTPUT:  10 20 30 40 50 60 
 
 }
