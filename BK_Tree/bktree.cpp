@@ -161,3 +161,15 @@ int main(void){
         std::cout << i << std::endl;
     return 0;
 }
+
+/*
+
+Sample Input: 
+
+dictionary={"hell","help","shel","smell","fell","felt","oops","pop","oouch","halt"};
+
+Sample Output: 
+
+pop
+
+*/
