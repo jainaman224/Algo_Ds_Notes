@@ -41,3 +41,10 @@ void main()
   printf("\n"); 
  }
 }
+//sample input:
+/*Enter order of matrices:2 3
+ENTER elements of A:12 34 13 56 7 3
+ENTER elements of B:1 45 23 98 100 2
+Resultant Matrix is 
+13 	79 	36 	
+154 	107 	5 	*/
