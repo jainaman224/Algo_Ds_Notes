@@ -1,5 +1,5 @@
 <?php   
-
+/*A series of numbers in which each number is the sum of the two preceding numbers. Eg : 1, 1, 2, 3, 5, 8, etc. */
 function FibonacciNum($num){ 
       
     if ($num == 0) 
