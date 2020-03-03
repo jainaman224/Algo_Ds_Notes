@@ -7,16 +7,12 @@ names(Iris_Data) = c("sepal_length",
                      "petal_length",
                      "petal_width",
                      "species")
-
-
 train_size = floor(0.50 * nrow(Iris_Data))
 set.seed(1223)
 train_index = sample(1:nrow(Iris_Data), size = train_size)
-
 train_sample = Iris_Data[train_index, ]
 test_sample = Iris_Data[-train_index, ]
 train_label = train_sample[, 5]
-
 
 # distance calculation method
 distance <- function(train, test) {
@@ -29,7 +25,6 @@ distance <- function(train, test) {
   }
   return(sqrt(dist))
 }
-
 
 # KNN Method
 KNN <- function(test, N) {
@@ -53,5 +48,4 @@ KNN <- function(test, N) {
 
 test_data = test_sample[37, ]          # any random test sample
 new_label = KNN(test_data, 25)         # 25 nearest neighbours
-new_label                             # print the predicted new label
 test_data[, 5] = new_label             # assign the predicted label
