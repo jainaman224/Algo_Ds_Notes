@@ -34,3 +34,17 @@ class Eveodd
   System.out.println("Number of even terms in the array is:" +e+ "\nAnd number of odd terms is:" +o);
  }
 }
+//sample output:
+/*Enter number of elemnts in array:6
+Enter elements:1 34 0 47 134 9
+Even numbers of the array are:
+34 
+0 
+134 
+Odd numbers of the array are:
+1 
+47 
+9 
+Number of even terms in the array is:3
+And number of odd terms is:3
+/
