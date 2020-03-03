@@ -34,15 +34,21 @@ class StartOfLoop
         }
     }
     
-    static void createLoop()
+    static void createLoop(int p)
     {
-        // For demonstration, we will link the last node with the 3rd node of the linked list to create a loop.
-        Node tail = head;
+        // For demonstration, we will link the last node with the element at position p.
+        Node current = head, tail = head;
         while(tail.next != null)
             tail = tail.next;
-        tail.next = head.next.next;
+        
+        int count = 1;
+        while(current.next != null && count < p)
+		{   
+		    count += 1;
+		    current = current.next;
+		}
+		tail.next = current;
         // Now, linked list contains a loop.
-        // We have linked 7 to 3 in our list 1, 2, 3, 4, 5, 6, 7
     }
     
     static Node startOfLoop()
@@ -73,14 +79,18 @@ class StartOfLoop
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Please enter no. of elements");    
-        int n = scan.nextInt();
+        int size = scan.nextInt();
 
-        System.out.println("Please enter " + n + " elements");
-        for(int i = 0; i < n; i++)
+        System.out.println("Please enter " + size + " elements");
+        for(int i = 0; i < size; i++)
             insert(scan.nextInt());
-        // Lets have 7 elements in our list 1, 2, 3, 4, 5, 6, 7
     
-        createLoop(); // to create a loop in the linked list
+        System.out.println("Enter the position where loop should be created");
+        int position = 0;
+        while((position = scan.nextInt()) > size)
+            System.out.println("Please enter position less than or equal to " + size);      
+        
+        createLoop(position); // to create a loop in the linked list at the given position
 
         System.out.println("The first element of the loop is: " + startOfLoop().data);
     }
@@ -89,6 +99,7 @@ class StartOfLoop
     /*
     *    Sample Input
     *    n = 7
+    *    position = 3
     *    list elements: 1, 2, 3, 4, 5, 6, 7
     */
 
