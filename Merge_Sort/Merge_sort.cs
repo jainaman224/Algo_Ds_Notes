@@ -9,8 +9,7 @@ using System;
 public class Merge_Sort
 {
     public static int[] temp;
-
-	 // Conquer
+    // Conquer
     public static void conquer_merge(int[] array, int left, int right, int mid)
     {
         int k = left, i, j;
