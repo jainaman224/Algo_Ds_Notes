@@ -147,10 +147,23 @@ int main()
         }
     }
     int sum;
+    cout << "enter the number: ";
     cin >> sum;
     nodesSumToS(root, sum);
     delete root;
 }
+
+
+/*
+Input:
+5 10 6 2 3 -1 -1 -1 -1 -1 9 -1 -1
+15
+
+Output:
+5 10
+6 9
+
+ */ 
 
 
 
