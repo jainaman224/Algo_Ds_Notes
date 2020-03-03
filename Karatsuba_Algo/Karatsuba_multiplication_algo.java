@@ -76,3 +76,10 @@ public class Karatsuba{
     }
 }
 
+/**
+ * Enter two integer numbers
+    24869
+    24513
+
+    Product of the two number is : 609613797
+ */
