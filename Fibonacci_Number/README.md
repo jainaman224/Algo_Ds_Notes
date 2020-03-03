@@ -19,12 +19,6 @@ It is one of the most famous formulas in mathematics defined by the linear recur
 F(n) = F(n - 1) + F(n - 2)
 ```
 
-So, the Fibonacci Sequence becomes
-```
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-```
-and so on!
-
 ## Algorithm
 ```
 Step 1: START
@@ -38,7 +32,8 @@ Step 5: Print a and b
 Step 6: Repeat until i < n
            fib ← a + b
            print fib
-           a ← b, b ← fib
+           a ← b,
+           b ← fib
            i ← i + 1
 Stop 7: STOP
 ```
@@ -56,15 +51,12 @@ IF n is less than 1
 IF n is equal to 1
    DISPLAY 1
 
-IF n is equal to 2
-   DISPLAY 1, 1
-
-IF n is greater than 2
+IF n is greater than or equal to 2
    a = 1,
    b = 1,
 
    DISPLAY a, b
-   REPEAT FOR 0 to n
+   REPEAT LOOP from 2 to n
       Fib = a + b
       DISPLAY Fib
       a = b
@@ -123,7 +115,7 @@ Hence the next number in the sequence above will be 21 + 34 = 55
 
 ```
 
-## Complexity Analysis
+## Different Approaches To Solve Fibonacci Sequence
 
 ### Approach 1: Recursion
 
@@ -139,11 +131,6 @@ F(n) = F(n - 1) + F(n - 2)
 
 <img src="https://i.stack.imgur.com/QVSdv.png">
 
-
-**Time Complexity: O(2<sup>N</sup>)**
-
-This is probably the slowest way to solve the Fibonacci Sequence Problem since it takes exponential time. The amount of operations needed, for each level of recursion, grows exponentially as the depth approaches N.
-
 ### Approach 2: Bottom-Up Approach Using Memorization
 
 **Algorithm**
@@ -152,10 +139,6 @@ This is probably the slowest way to solve the Fibonacci Sequence Problem since i
 - Otherwise, iterate through N, storing each computed answer in an array along the way.
 - Use this array as a reference to the 2 previous numbers to calculate the current Fibonacci number.
 - Once we reach the last number, return it's Fibonacci number.
-
-**Time complexity : O(N)**
-
-Each number, starting at 2, up to and including N, is traversed, computed and then stored for O(1) access later on.
 
 ### Approach 3: Iterative Approach
 
@@ -172,9 +155,16 @@ Each number, starting at 2, up to and including N, is traversed, computed and th
 - End Loop
 - END
 
-**Time complexity: O(N)**
+## Complexity Analysis
 
-Each value from 2 to N will be visited at least once. The time it takes to do this is directly proportionate to N where N is the Fibonacci Number we are looking to compute.
+**Approach 1: Recursion**
+- Time Complexity: O(2<sup>N</sup>)
+
+**Approach 2: Bottom-Up Approach Using Memorization**
+- Time complexity : O(N)
+
+**Approach 3: Iterative Approach**
+- Time complexity: O(N)
 
 ### Concluding Results
 
@@ -233,8 +223,6 @@ Similar analysis can be done for last digits as well.
 <img src="https://i.ya-webdesign.com/images/fibonacci-drawing-rose-3.png" width=400>
 
 <img src="https://i.pinimg.com/originals/ea/f1/73/eaf1738ff446ea088a4c7bf84a4b88fe.jpg" width=290>
-
-
 
 - A one dimensional optimization technique method called the **Fibonacci Search** techniques uses Fibonacci Numbers.
 
