@@ -1,40 +1,38 @@
 /* Author : Sonali Patel*/
 /* Java Program for Boyer Moore String Matching Algorithm */
+import java.util.*;
 
-
-class BoyerMoore{ 
+class Main{ 
 	
-	static int NO_OF_CHARS = 256; 
+    static int NO_OF_CHARACTERS = 256; 
 	
-	static int max (int a, int b) { return (a > b)? a: b; } 
+	static int max_of_a_and_b (int a, int b) { return (a > b)? a: b; } 
 
-	static void badCharHeuristic( char []str, int size,int badchar[]) 
-	{ 
+	static void badCharHeuristic( char []str, int size,int badcharacter[]) { 
 	int i; 
 
-	// Initialize all occurrences as -1 
-	for (i = 0; i < NO_OF_CHARS; i++) 
-		badchar[i] = -1; 
+	// Initialize all elements of badcharacter as -1 
+	for (i = 0; i < NO_OF_CHARACTERS; i++) 
+		badcharacter[i] = -1; 
 
 	// Fill the actual value of last occurrence 
 	// of a character 
 	for (i = 0; i < size; i++) 
-		badchar[(int) str[i]] = i; 
+		badcharacter[(int) str[i]] = i; 
 	} 
 
-	/* A pattern searching function that uses Bad 
-	Character Heuristic of Boyer Moore Algorithm */
-	static void search( char txt[], char pat[]) 
+	// A pattern searching function 
+	static void search( char text[], char pattern[]) 
 	{ 
-	int m = pat.length; 
-	int n = txt.length; 
+	int m = pattern.length; 
+	int n = text.length; 
 
-	int badchar[] = new int[NO_OF_CHARS]; 
+	int badcharacter[] = new int[NO_OF_CHARACTERS]; 
 
 	/* Fill the bad character array by calling 
 		the preprocessing function badCharHeuristic() 
 		for given pattern */
-	badCharHeuristic(pat, m, badchar); 
+	badCharHeuristic(pattern, m, badcharacter); 
 
 	int s = 0; // s is shift of the pattern with 
 				// respect to text 
@@ -45,7 +43,7 @@ class BoyerMoore{
 		/* Keep reducing index j of pattern while 
 			characters of pattern and text are 
 			matching at this shift s */
-		while(j >= 0 && pat[j] == txt[s+j]) 
+		while(j >= 0 && pattern[j] == text[s+j]) 
 			j--; 
 
 		/* If the pattern is present at current 
@@ -61,21 +59,33 @@ class BoyerMoore{
 				The condition s+m < n is necessary for 
 				the case when pattern occurs at the end 
 				of text */
-			s += (s+m < n)? m-badchar[txt[s+m]] : 1; 
+			s += (s+m < n)? m-badcharacter[text[s+m]] : 1; 
 
 		} 
 
 		else
-			s += max(1, j - badchar[txt[s+j]]); 
+			s += max_of_a_and_b(1, j - badcharacter[text[s+j]]); 
 	} 
 	} 
 
 	/* Driver program*/
 	public static void main(String []args) { 
-		
-		char txt[] = "ABAAABCD".toCharArray(); 
-		char pat[] = "ABC".toCharArray(); 
-		search(txt, pat); 
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+		char text[] = s.toCharArray();
+		s = sc.nextLine();
+        char pattern[] = s.toCharArray();
+		search(text, pattern); 
 	} 
 } 
+
+/* Samle input and output
+ Input: AABAACAADAABAABA
+		AABA
+ Output:
+ pattern occurs at shift = 0
+ pattern occurs at shift = 9
+ pattern occurs at shift = 12 */
+
 
