@@ -43,11 +43,11 @@ class StartOfLoop
         
         int count = 1;
         while(current.next != null && count < p)
-		{   
-		    count += 1;
-		    current = current.next;
-		}
-		tail.next = current;
+	{   
+	    count += 1;
+	    current = current.next;
+	}
+	tail.next = current;
         // Now, linked list contains a loop.
     }
     
