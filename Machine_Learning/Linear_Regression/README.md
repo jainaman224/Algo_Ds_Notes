@@ -138,7 +138,7 @@ In the gradient descent algorithm, the number of steps you take is the learning 
 
 ## Visualization
 
-![](https://forums.fast.ai/uploads/default/original/2X/7/788e1a31f23e07b9c77fc93573970c2a9b4668c7.gif)
+![Visualization](https://forums.fast.ai/uploads/default/original/2X/7/788e1a31f23e07b9c77fc93573970c2a9b4668c7.gif)
 
 ## Major Uses Of Regression analysis
 
@@ -154,7 +154,6 @@ Second, it can be used to forecast effects or impact of changes. That is, the re
 Third, regression analysis predicts trends and future values. The regression analysis can be used to get point estimates. A typical question is, “What will the price of gold be in 6 months?”
 
 ![Analysis](https://bioinfo.iric.ca/wpbioinfo/wp-content/uploads/2017/08/training.gif)
-
 
 ## Real World Applications Of Simple Linear Regression
 
