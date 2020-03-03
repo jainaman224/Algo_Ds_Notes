@@ -1,4 +1,5 @@
 <?php
+/* Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. */
 function merge_sort($my_array){
 	if(count($my_array) == 1 ) return $my_array;
 	$mid = count($my_array) / 2;
@@ -33,10 +34,7 @@ $test_array = array(100, 54, 7, 2, 5, 4, 1);
 echo implode(' ',merge_sort($test_array));
 
 /*
-
 Output :
 1 2 4 5 7 54 100
-
 */
-
 ?>
