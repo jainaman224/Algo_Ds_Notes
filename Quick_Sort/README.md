@@ -64,7 +64,6 @@ Consider the  following unsorted array, which needs to be sorted. We will consid
 [10, 80, 30, 90, 40, 50, 70]
 
 ### Here are the steps:
-- #### For Partition
  - Pass 1: 
   - Value of variables: i = -1, j = 0 | Test condition: arr[j] <= pivot (10 < 70 :  True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 80, 30, 90, 40, 50, 70]
 
