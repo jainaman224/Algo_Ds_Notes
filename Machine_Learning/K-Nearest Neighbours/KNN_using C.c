@@ -79,19 +79,19 @@ int main(){
 	printf("\nNumber of nearest neighbors(k): ");
 	scanf("%d",&k);	
 	int freq1 = 0;  	//for class 1
-    int freq2 = 0;     // for class 2  
-    int freq3=0;      // for class 3
-    int none=0;			
-    for (int i = 0; i < k; i++) { 
-        if (arr[i].op == 1) 
-            freq1++; 
-        else if (arr[i].op == 2) 
-            freq2++; 
-        else if(arr[i].op==3)
+        int freq2 = 0;     // for class 2  
+        int freq3=0;      // for class 3
+        int none=0;			
+        for (int i = 0; i < k; i++) { 
+            if (arr[i].op == 1) 
+                freq1++; 
+            else if (arr[i].op == 2) 
+                freq2++; 
+            else if(arr[i].op==3)
         	freq3++;
-        else
+            else
         	none++;
-    } 
+        } 
 	if(freq1>= freq2 && freq1 >= freq3){
 		printf("The class of unknown point is: 1");
 	}
