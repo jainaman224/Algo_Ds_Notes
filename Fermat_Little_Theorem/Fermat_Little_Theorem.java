@@ -1,8 +1,15 @@
+/*
+x^(n-1) cong== 1modn
+where x and n are coprime (gcd is 1)
+multiplying by x inverse on both sides
+x inverse = x^(n-2) mod n which is found using fast modular exponentiation
+ */
 public class Fermat_Little_Theorem {
     public static void main(String[] args) {
         findModInverse(3,11);
     }
     public static void findModInverse(int x, int n){
+
         if(recursiveGCD(x,n)!=1){
             System.out.println("inverse does not exist! returning...");
             return;
