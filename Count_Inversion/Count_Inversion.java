@@ -1,6 +1,27 @@
+/*
+Counting inversion means finding how many elements are such that
+a[i]>a[j] for i<j
+brute force would be using O(n^2) approach.
+
+we will try to implement it in O(nlogn) time using merge sort approach
+ */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Count_Inversion {
-    public static void main(String[] args) {
-        int arr[] = {2, 1, 3, 1, 2};
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("please enter length of array");
+        int n = Integer.parseInt(br.readLine());
+        int arr[] = new int[n];
+        String input[] = br.readLine().split(" ");
+        for(int i=0; i<n; i++){
+            arr[i] = Integer.parseInt(input[i]);
+        }
+
+
         System.out.println(countInversions(arr, 0, arr.length-1));
     }
 
@@ -10,6 +31,12 @@ public class Count_Inversion {
         }
         if(low<high){
             int mid = (low+high)/2;
+            /*
+            3 types of inversions:
+            1. left inversion
+            2. right inversion
+            3. split inversions
+             */
             return countInversions(arr,low,mid)+countInversions(arr,mid+1,high) +
                     merge(arr,low,mid,high);
         }
@@ -44,6 +71,11 @@ public class Count_Inversion {
             }
             else{
                 arr[k]=right[j];
+                /*
+                incrementing the count by all the elements in the left array because
+                if current arr[i] is greater than arr[j], then all those that follow
+                arr[i] in the left array will also be greater.
+                 */
                 count+=n1-i;
                 j++;
             }
@@ -64,3 +96,11 @@ public class Count_Inversion {
         return count;
     }
 }
+/*
+input :
+5
+2 1 3 1 2
+
+output :
+4
+ */
