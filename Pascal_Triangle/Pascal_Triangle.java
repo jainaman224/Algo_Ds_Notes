@@ -17,8 +17,21 @@ public class Pascal_Triangle{
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value to generate Pascal Traingle: ");
         int val = sc.nextInt();
         pascalTriangleGenerator(val);
     }
 
 }
+
+// Basic Input and Output Operations.
+/**
+ * Enter the value to generate Pascal Traingle: 5
+ * 
+ *  1  
+    1 1  
+    1 2 1  
+    1 3 3 1  
+    1 4 6 4 1  
+ * 
+ */
