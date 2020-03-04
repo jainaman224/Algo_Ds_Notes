@@ -37,7 +37,9 @@ The algorithm is based on the condition that if n is any number, then it is prim
 Checking for n = 3 :
 
 (x-1)^3 – (x^3 – 1)
+
 = (x^3 – 3x^2 + 3x – 1) – (x^3 – 1)
+
 = -3x^2 + 3x
 
 As all the coefficients are divisible by n i.e. 3, so 3 (n) is prime. As the number increases, size increases.
