@@ -45,13 +45,14 @@ int main()
     }
     cout << "Enter a number to be searched from array: ";
     cin >> ele;
-    if(jump_search(arr,no,ele) == -1)
+    int result = jump_search(arr,no,ele);
+    if(result == -1)
     {
         cout << ele << " is not present in array." << endl;
     }
     else
     {
-        cout << ele << " is present at index no. " << jump_search(arr,no,ele) << endl;
+        cout << ele << " is present at index no. " << result+1 << endl;
     }
     return 0;
 }
