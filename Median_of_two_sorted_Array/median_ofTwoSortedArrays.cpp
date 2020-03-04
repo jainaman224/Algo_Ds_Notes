@@ -39,8 +39,22 @@ int main()
     cin>>m;
     cout<<"Enter Elements of Array 1 \n";
     for(int i=0;i<n;i++) cin>>arr1[i];
-    cout<<"Enter Elements of Array 1 \n";
+    cout<<"Enter Elements of Array 2 \n";
     for(int i=0;i<m;i++) cin>>arr2[i];
     cout<<"Median of Combined Sorted Array is "<<median(arr1,arr2,n,m);
     return 0;
 }
+
+/* Sample Input
+ Enter size of Array 1
+    3
+ Enter size of Array 2
+    3
+Enter Elements of Array 1
+    1 2 3
+Enter Elements of Array 1
+    4 5 6
+
+Sample Output
+Median of Combined Sorted Array is - 3.5
+ */
