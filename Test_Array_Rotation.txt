@@ -1,0 +1,5 @@
+INPUT: 5 4 (number of elements and no. of times rotation)
+ 1 2 3 4 5 (the input array)
+
+Output: 5 1 2 3 4 
+
