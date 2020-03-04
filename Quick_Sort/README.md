@@ -65,22 +65,22 @@ Consider the  following unsorted array, which needs to be sorted. We will consid
 
 ### Here are the steps:
  - Pass 1: 
-  - Value of variables: i = -1, j = 0 | Test condition: arr[j] <= pivot (10 < 70 :  True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 80, 30, 90, 40, 50, 70]
+   - Value of variables: i = -1, j = 0 | Test condition: arr[j] <= pivot (10 < 70 :  True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 80, 30, 90, 40, 50, 70]
 
  - Pass 2:
-  - Value of variables: i = 0, j = 1 | Test condition: arr[j] <= pivot (80 < 70 : False) | Actions: No Action | Array: [10, 80, 30, 90, 40, 50, 70]
+   - Value of variables: i = 0, j = 1 | Test condition: arr[j] <= pivot (80 < 70 : False) | Actions: No Action | Array: [10, 80, 30, 90, 40, 50, 70]
 
  - Pass 3:
-  - Value of variables: i = 0, j = 2 | Test condition: arr[j] <= pivot (30 < 70 : True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 80, 90, 40, 50, 70]
+   - Value of variables: i = 0, j = 2 | Test condition: arr[j] <= pivot (30 < 70 : True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 80, 90, 40, 50, 70]
 
  - Pass 4:
-  - Value of variables: i = 1, j = 3 | Test condition: arr[j] <= pivot (90 < 70 : False) | Actions: No Action | Array: [10, 30, 80, 90, 40, 50, 70]
+   - Value of variables: i = 1, j = 3 | Test condition: arr[j] <= pivot (90 < 70 : False) | Actions: No Action | Array: [10, 30, 80, 90, 40, 50, 70]
 
  - Pass 5:
-  - Value of variables: i = 1, j = 4 | Test condition: arr[j] <= pivot (40 < 70: True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 40, 90, 80, 50, 70]
+   - Value of variables: i = 1, j = 4 | Test condition: arr[j] <= pivot (40 < 70: True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 40, 90, 80, 50, 70]
 
  - Pass 6:
-  - Value of variables: i = 2, j = 5 | Test condition: arr[j] <= pivot (50 < 70: True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 40, 50, 80, 90, 70]
+   - Value of variables: i = 2, j = 5 | Test condition: arr[j] <= pivot (50 < 70: True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 40, 50, 80, 90, 70]
  - Before pass 7, j becomes 6, so we come out of the loop and now swap(arr[i+1], pivot) | Array: [10, 30, 40, 50, 70, 90, 80
  - Now 70 is in its position, so we call quicksort function again on the left and right halves.
  - Since the left part of 70 is already sorted, everytime the partition function is called, the pivot(i.e the last elements is already in its desired position)
