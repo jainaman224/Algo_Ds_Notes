@@ -1,8 +1,10 @@
+#include <bits/stdc++.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+using namespace std;
 
-void first_fit(int memory_block[],int process_size[],int m,int n)
+void best_fit(int memory_block[],int process_size[],int m,int n)
 {
 
 	int allocated_list[n][3];
@@ -78,18 +80,54 @@ void first_fit(int memory_block[],int process_size[],int m,int n)
 int main()
 {
 
-	int memory_block[] = {100,500,250,300,50,400};
+	int num_of_mem_blocks;
+		int num_of_processes;
 
-	int process_size[] = {300,250,229,97,103,350};
+		cout<<"Enter the number of memory blocks\n";
 
-	int num_of_mem_blocks = sizeof(memory_block)/sizeof(memory_block[0]);
+		cin>>num_of_mem_blocks;
 
-	int num_of_processes = sizeof(process_size)/sizeof(process_size[0]);
+		cout<<"Enter the number of processes\n";
 
-	first_fit(memory_block,process_size,num_of_mem_blocks,num_of_processes);
+		cin>>num_of_processes;
+
+		int memory_block[num_of_mem_blocks];
+
+		int process_size[num_of_processes];
+
+		cout<<"Enter the memory blocks size:\n";
+
+		for(int i=0;i<num_of_mem_blocks;i++)
+		{
+			cin>>memory_block[i];
+		}
+
+		cout<<"Enter the process size:\n";
+
+		for(int i=0;i<num_of_processes;i++)
+		{
+			cin>>process_size[i];
+		}
+
+	
+	best_fit(memory_block,process_size,num_of_mem_blocks,num_of_processes);
 
 	return 0;
 }
 
+/*  Input: Memory blocks: 100 500 200 300 600
+ 
+    Processes:     212 417 112 426
 
+    Output: process size       blockno
+
+    		212		300
+
+		417		500
+
+		112		200
+
+		426		600
+
+*/	
 
