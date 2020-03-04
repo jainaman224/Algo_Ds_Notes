@@ -121,6 +121,7 @@ class client {
 		graph.addVertex("F");
 		graph.addVertex("G");
 
+		//edges are added to hashmap with weight
 		graph.addEdge("A", "B", 10);
 		graph.addEdge("B", "C", 10);
 		graph.addEdge("C", "D", 10);
@@ -138,4 +139,24 @@ class client {
 	}
 
 }
+
+/*Output
+A=>D(40),B(10),END
+B=>C(10),A(10),END
+C=>D(10),B(10),END
+D=>C(10),E(2),A(40),END
+E=>G(3),D(2),F(8),END
+F=>G(3),E(8),END
+G=>E(3),F(3),END
+*****************
+A=>D(40),B(10),END
+B=>A(10),END
+C=>D(10),END
+D=>C(10),E(2),A(40),END
+E=>D(2),F(8),END
+F=>E(8),END
+*****************
+*/
+//This article is contributed by Ritika Jain
+//http://ritikajain8818.github.io/
 
