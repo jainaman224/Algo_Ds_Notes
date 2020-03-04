@@ -15,15 +15,15 @@ The AKS primality test is based upon the following theorem:
 
 An integer n greater than 2 is prime if and only if the polynomial congruence relation :
 
-(x+a)^{n}\equiv (x^{n}+a){\pmod {n}}}
+**(x+a)^{n} ≡ (x^{n}+a) (mod n)**
 holds for some a coprime to n. Here x is just a formal symbol .
 
 
 The AKS test evaluates the equality by making complexity dependent on the size of r . This is expressed as
-  {\displaystyle (x+a)^{n}\equiv (x^{n}+a){\pmod {x^{r}-1, n}}}
+**(x+a)^{n} ≡ (x^{n}+a) (mod x^{r}-1, n)**
 
 which can be expressed in simpler term as
-    {\displaystyle (x+a)^{n}-(x^{n}+a)=(x^{r}-1)g+nf} 
+**(x+a)^{n} - (x^{n}+a) = (x^{r}-1)g + nf**
 for some polynomials f and g .
 
 This congruence can be checked in polynomial time when r is polynomial to the digits of n. The AKS algorithm evaluates this congruence for a large set of a values, whose size is polynomial to the digits of n. The proof of validity of the AKS algorithm shows that one can find r and a set of a values with the above properties such that if the congruences hold then n is a power of a prime. The brute force approach would require the expansion of the (x – a)^n polynomial and a reduction (mod n) of the resulting n + 1 coefficients .
