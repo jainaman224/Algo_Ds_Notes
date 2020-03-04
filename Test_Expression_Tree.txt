@@ -1,0 +1,17 @@
+
+Test cases for expression trees using array given a postfix string.
+
+Input: enter the postfix string:ab+   (POSTFIX STRING)                                                                                                         
+                                                                                                                                                
+Output:  InOrder: a+b                                                                                                                           
+         PreOrder: +ab                                                                                                                          
+         PostOrder: ab+ 
+
+Input:	enter the postfix string: AB+CD-* (Postfix string)                                                                                                     
+                                                                                                                                              
+Output:  InOrder: A+B*C-D                                                                                                                     
+         PreOrder: *+AB-CD                                                                                                                    
+         PostOrder: AB+CD-*   
+
+
+
