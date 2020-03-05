@@ -5,10 +5,17 @@
 def order(num)
 	# variable to store of the number 
 	count = 0
+<<<<<<< HEAD
 	  while (num != 0) 
 		  count = count + 1
 		  num = num / 10
 	  end
+=======
+	while (num != 0) 
+		count = count + 1
+		num = num / 10
+	end
+>>>>>>> origin/master
 	return count 
 end
 
@@ -18,15 +25,24 @@ def Armstrong (num)
 	count = order(num) 
 	temp = num 
 	sum1 = 0
+<<<<<<< HEAD
 	  while (temp != 0)
 		  d = temp % 10
 		  sum1 = sum1 + d**count
 		  temp = temp / 10
 	  end
+=======
+	while (temp != 0)
+		d = temp % 10
+		sum1 = sum1 + d**count
+		temp = temp / 10
+	end
+>>>>>>> origin/master
 
 	# If condition satisfies 
 	boolean=false
 
+<<<<<<< HEAD
 	  if (num != sum1)
 		  return boolean
 	  else if(num == sum1)
@@ -38,6 +54,19 @@ end
 
 # Driver Program 
 num = gets.chomp.to_i
+=======
+	if (num != sum1)
+		return boolean
+	else if(num == sum1)
+		boolean=true
+		return boolean 
+	end 
+end
+end
+
+# Driver Program 
+num = gets.chomp
+>>>>>>> origin/master
 print(Armstrong(num))
 
 #True
