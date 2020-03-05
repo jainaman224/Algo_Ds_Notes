@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>KNN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <form class="card p-4" id="form" style="margin:0 auto;margin-top: 5vh;">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="CSV file link" value="https://datahub.io/machine-learning/iris/r/iris.csv" style="width: 40vw;">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-secondary">Start</button>
+          </div>
+        </div>
+       <h3 id="error" style="margin:0 auto;color: red;margin-top: 5vh;"></h3>
+       <h5 style="margin:0 auto;margin-top: 5vh;">Test sample:</h5>
+       <h3 id="test" style="margin:0 auto;color: blue;"></h3>
+       <h5 style="margin:0 auto;margin-top: 5vh;">Predicted label:</h5>
+       <h3 id="output" style="margin:0 auto;color: green;"></h3>
+      </form>
+
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/csv-to-array/csvToArray.v2.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('h5').hide();
+    $csvData = null;
+    $("#form").submit(function(e) {
+      e.preventDefault();
+      var fileLink = $('input').val();
+      if (fileLink == '' || fileLink == null || fileLink == undefined) {
+        alert('Specify file link before');
+      } else {
+        $.ajax({
+          type: "GET",
+          url: fileLink,
+          dataType: "text",
+          success: function(data) {
+            $('#error').hide();
+            csvData = data.csvToArray().slice(1, 100);
+            preProcessing(csvData);
+            $('h5').show();
+             $('#test').show();
+            $('#output').show();
+          },
+          error: function(data){
+            $('#error').html('Error while reading file');
+            $('#error').show();
+            $('h5').hide();
+            $('#test').hide();
+            $('#output').hide();
+          }
+        });
+      }
+    });
+
+    function preProcessing(csvData) {
+      var train_data = shuffle(csvData);
+      var test_data = train_data.splice(0, Math.ceil(train_data.length / 2));
+      var train_labels = [];
+      for (var i = 0; i < train_data.length; i++) {
+        train_labels[i] = train_data[i][4]
+      }
+      KNN(train_data, test_data[0], 25)
+      $('#test').html(JSON.stringify(test_data[0]))
+
+    }
+
+
+    function shuffle(a) {
+      var j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+      }
+      return a;
+    }
+
+    function distance(train, test) {
+      let dist = 0;
+      for (var i = 0; i < train.length - 1; i++) {
+        dist = dist + Math.pow((train[i] - test[i]), 2)
+      }
+      return Math.sqrt(dist)
+    }
+
+    function KNN(train_sample, test, N) {
+      let dist_array = [];
+      for (var i = 0; i < train_sample.length; i++) {
+        dist_array[i] = [];
+      }
+      for (var i = 0; i < train_sample.length; i++) {
+        dist_array[i][1] = distance(train_sample[i], test)
+        dist_array[i][0] = i;
+      }
+      labels = [];
+      for (var i = 0; i < N; i++) {
+        labels[i] = []
+      }
+      for (var i = 0; i < N; i++) {
+        labels[i] = train_sample[dist_array[i][0]][4]
+
+      }
+      $('#output').html(mode(labels))
+
+      // table_data = table(labels)
+      // new_label = names(table_data)[which(table_data == max(table_data))]
+      // return (new_label)
+    }
+
+    function mode(array) {
+      if (array.length == 0)
+        return null;
+      var modeMap = {};
+      var maxEl = array[0],
+        maxCount = 1;
+      for (var i = 0; i < array.length; i++) {
+        var el = array[i];
+        if (modeMap[el] == null)
+          modeMap[el] = 1;
+        else
+          modeMap[el]++;
+        if (modeMap[el] > maxCount) {
+          maxEl = el;
+          maxCount = modeMap[el];
+        }
+      }
+      return maxEl;
+    }
+  });
+</script>
+
+</html>
