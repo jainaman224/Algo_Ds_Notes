@@ -19,3 +19,10 @@ using System;
         Console.Write("The Entered number is not an Armstrong Number.");      
       }  
   }  
+//Sample inputs and outputs:
+
+//Enter the Number= 153
+//The Entered Number is an Armstrong Number.
+
+//Enter the Number= 121
+//The Entered number is not an Armstrong Number.
