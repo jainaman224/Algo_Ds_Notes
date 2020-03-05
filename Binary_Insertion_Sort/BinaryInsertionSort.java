@@ -10,19 +10,25 @@ import java.util.Scanner;
 
 class BinaryInsertionSort {
     public static void main(String[] args) {
+
+        //Taking Input from User for Array Length
         Scanner s = new Scanner(System.in);
         System.out.print("Enter the Length of the array:    ");
         int length = s.nextInt();
-        int[] arr = new int[length];
-        System.out.println("Enter the Elements of the array:");
 
+        //Initialized new array
+        int[] arr = new int[length];
+
+        System.out.println("Enter the Elements of the array:");
+        
+        //Taking Input from User for Array Elements
         for (int i = 0; i < length; i++) {
             arr[i] = s.nextInt();
         }
 
         s.close();
 
-        new GFG().sort(arr);
+        new BinaryInsertionSort().sort(arr);
 
         System.out.print("The Sorted Array is: ");
         for (int i = 0; i < arr.length; i++)
@@ -30,6 +36,13 @@ class BinaryInsertionSort {
     }
 
     public void sort(int array[]) {
+        /**
+         * BinaryInsertionSort Function
+         * 
+         * params:
+         * array[]: unsorted array
+         * 
+         */
         for (int i = 1; i < array.length; i++) {
             int x = array[i];
 
@@ -44,3 +57,19 @@ class BinaryInsertionSort {
         }
     }
 }
+
+/**
+ * Sample Input:
+ * 
+ * Enter the Length of the array:    5
+ * Enter the Elements of the array:
+ * 24
+ * 63
+ * 25
+ * 82
+ * 63
+ * 
+ * Sample Output:
+ * 
+ * The Sorted Array is: 24 25 63 63 82
+*/
