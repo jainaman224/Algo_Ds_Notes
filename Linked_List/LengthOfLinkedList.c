@@ -60,11 +60,11 @@ int main() {
 /*
 
 TestCase-1:
-Sample Input: GSSOC2020
+Sample Input: G S S O C 2 0 2 0 
 Sample Output: 9 //9 letters
 
 TestCase-2:
-Sample Input: Open-Source
+Sample Input: O p e n - S o u r c e
 Sample Output: 11 //11 letters
 
 */

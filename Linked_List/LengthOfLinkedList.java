@@ -6,44 +6,66 @@ just replace relevent data type in place of string in class Node.
 */
 
 class Node {
-	String data;
-	Node next;
-	Node(String info) {
-		data = info;
-		next = null;
-	}
+	    String data;
+	    Node next;
+	    Node(String info) {
+		        data = info;
+		        next = null;
+	    }
 }
 
 class LinkedListLength {
-	Node head;
+	    Node head;
 	
-	public void pushing_data_to_LL(String new_data) {
-		Node new_node = new Node(new_data); // Creating the node and assign the data.
-		new_node.next = head; // making the next node as head node
-		head = new_node; // making head to point to new Node
-	}
-	public int gettingLength() {
-		Node temp = head;
-		int count = 0;
-		while(temp != null) {
-			count++;
-			temp = temp.next;
-		}
-		return count;
-	}
+	    public void pushing_data_to_LL(String new_data) {
+		        Node new_node = new Node(new_data); // Creating the node and assign the data.
+		        new_node.next = head; // making the next node as head node
+		        head = new_node; // making head to point to new Node
+	    }
+	    public int gettingLength() {
+		        Node temp = head;
+		        int count = 0;
+		        while(temp != null) {
+			            count++;
+			            temp = temp.next;
+		        }
+		        return count;
+	    }
 }
 
 class Mainer {
-	public static void main(String[] args) {
-		LinkedListLength thisList = new LinkedListLength();
+	    public static void main(String[] args) {
+		    LinkedListLength thisList = new LinkedListLength();
+			
+			System.out.println("Currently the Length of the LinkedList is: " + thisList.gettingLength());
+			
+		    thisList.pushing_data_to_LL("G");
+		    thisList.pushing_data_to_LL("S");
+		    thisList.pushing_data_to_LL("S");
+		    thisList.pushing_data_to_LL("O");
+		    thisList.pushing_data_to_LL("C");
+			
+			System.out.println("Currently the Length of the LinkedList is: " + thisList.gettingLength());
+			
+		    thisList.pushing_data_to_LL("2");
+			thisList.pushing_data_to_LL("0");
+			thisList.pushing_data_to_LL("2");
+			thisList.pushing_data_to_LL("0");
 		
-		thisList.pushing_data_to_LL("G");
-		thisList.pushing_data_to_LL("S");
-		thisList.pushing_data_to_LL("S");
-		thisList.pushing_data_to_LL("O");
-		thisList.pushing_data_to_LL("C");
-		thisList.pushing_data_to_LL("2020");
-		
-		System.out.println("The Length of the LinkedList is: " + thisList.gettingLength());
+		    System.out.println("Currently the Length of the LinkedList is: " + thisList.gettingLength());
 	}
 }
+
+
+
+/*
+
+TestCase-1:
+Sample Input: G S S O C 2 0 2 0
+Sample Output: 9 //9 letters
+
+TestCase-2:
+Sample Input: O p e n - S o u r c e
+Sample Output: 11 //11 letters
+
+*/
