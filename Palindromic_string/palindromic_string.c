@@ -1,6 +1,8 @@
-//C Programme to check palindromic string.
-/* A Palindromic String is a sequence of characters which is
-the same when read both forward and backward.*/
+/*
+C Programme to check palindromic string.
+A Palindromic String is a sequence of characters which is
+the same when read both forward and backward.
+*/
 
 #include <stdio.h>
 #include <string.h>
@@ -36,7 +38,9 @@ int main()
     }
     return 0;
 }
-/*Input:
+
+/*
+Input:
 radar
 
 Output:
@@ -47,5 +51,4 @@ Enter a string: india
 
 Output:
 india is not a palindrome
-
 */
