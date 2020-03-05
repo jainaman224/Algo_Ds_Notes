@@ -42,17 +42,17 @@ if __name__ == "__main__":
     arr_x = list(map(int , input("Enter x array: ").strip().split(',')))
     arr_y = list(map(float , input("Enter y array: ").strip().split(',')))
     
-    if(n==len(arr_x) and n==len(arr_y)):
+    if(n == len(arr_x) and n == len(arr_y)):
         ls = LinearRegression(arr_x , arr_y , n)
         print("Calculated intercept: ", ls.intercept())
         print("Calculated slope: ", ls.slope())
         
         while(True):
             flag = str(input("Do you want to predict values(y/n): "))
-            if(flag=="n"):
+            if(flag == "n"):
                 print("System Exit")
                 break
-            elif(flag=="y"):
+            elif(flag == "y"):
                 c = int(input("Enter value for prediction: "))
                 print("Predicted value: ", ls.prediction(c))
             else:
@@ -61,16 +61,11 @@ if __name__ == "__main__":
         print("Invalid Input Format")
         
 #Enter size: 7
-#
 #Enter x array: 1,2,3,4,5,6,7
-#
 #Enter y array: 0.5,2.5,2.0,4.0,3.5,6.0,5.5
 #Calculated intercept:  0.8392857142857143
 #Calculated slope:  0.07142857142857142
-#
 #Do you want to predict values(y/n): y
-#
 #Enter value for prediction: 4
 #Predicted value:  3.428571428571429
-#
 #Do you want to predict values(y/n): n
