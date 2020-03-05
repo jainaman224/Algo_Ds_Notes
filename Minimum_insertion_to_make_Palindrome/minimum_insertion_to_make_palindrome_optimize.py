@@ -15,12 +15,10 @@ def Min(a, b):
     """
     return min(a, b)
 
-
-
 # Function for Finding Min Insertion.
 def find_min_insertion_DP(s, n):
     """
-    This Function return minimum insertion value for string to make palindrome.
+    This Function return min insertion value for string to make palindrome.
     """
 
     # Create table of size n * n
@@ -36,14 +34,24 @@ def find_min_insertion_DP(s, n):
                 t[l][h] = (Min(t[l][h-1], t[l+1][h]) + 1)
             l += 1
     return t[0][n - 1]
-
-    
+ 
 # Main Function.
 def main():
-    s = "abcd"
-    x = find_min_insertion_DP(s, len(s))
+    s = "car"  # Input String
+    x = find_min_insertion_DP(s, len(s))  # Minimum value.
     print(x)
 
 # Driver Code.
 if __name__ == "__main__":
     main()
+
+"""
+    [Simple Input 1]
+      s = 'car'
+    [Simple Output 1]
+      min_insertion = 2
+    [Simple Input 2]
+      s = 'radar'
+    [Simple Output 2]
+      min_insertion = 0
+"""

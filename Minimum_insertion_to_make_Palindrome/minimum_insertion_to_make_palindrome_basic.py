@@ -26,7 +26,8 @@ def find_min_insertion(str, l, h):
     if str[l] == str[h]:
         return find_min_insertion(str,l+1,h-1)
     else:
-        return min(find_min_insertion(str,l,h-1), find_min_insertion(str,l+1,h)) + 1
+        val=min(find_min_insertion(str,l,h-1),find_min_insertion(str,l+1,h))
+        return val+1
 
 # Main Function.
 def main():
@@ -37,3 +38,10 @@ def main():
 # Driver Code.
 if __name__ == "__main__":
     main()
+
+"""
+    [Simple Input]
+      s = 'dcbabcd'
+    [Simple Output]
+      min_insertion = 3
+"""
