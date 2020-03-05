@@ -97,7 +97,7 @@ public class AhoCorasick {
         ahoCorasick.addString("aho");
         ahoCorasick.addString("cor");
 
-        //this string contains "aho" twice and therefore will give both the occurrences of ti
+        
         String s = "ahotrcohaoahocorasicktrie";
         int node = 0;
         List<Integer> list = new ArrayList<>();
@@ -108,4 +108,6 @@ public class AhoCorasick {
         }
         System.out.println(list);
     }
+    //OUTPUT: [2,12,15,24]
+    //this string contains "aho" twice and therefore will give both the occurrences of it
 }
