@@ -11,7 +11,7 @@ and substract from total sum to find out the sum of contributing elements.
 
 #include<stdio.h>
 
-//Return max. of two no.
+//Returns max. of two no.
 int max(int num1, int num2)
 {
     return (num1 > num2 ) ? num1 : num2;
@@ -30,17 +30,16 @@ int kadaneAlgo(int a[], int n)
  		if(max_ending_here < 0)
  		 max_ending_here = 0;
 
- 		 max_so_far = max(max_ending_here, max_so_far);
- 	 }
-  return max_so_far;
-
-
+ 		max_so_far = max(max_ending_here, max_so_far);
+    }	
+    
+    return max_so_far;
 }
 
 int circular_subarray_sum(int a[], int n)
 {   
     //ans for case 1
- 	int kadane_max=kadaneAlgo(a, n);
+    int kadane_max=kadaneAlgo(a, n);
     
     //find total sum and negate all elements of the array
  	int total_sum = 0;
@@ -52,7 +51,7 @@ int circular_subarray_sum(int a[], int n)
  	}
 
  	/*find out the sum of non contributing elements and subtract this sum from the 
-      total sum.*/
+    total sum.*/
  	total_sum = total_sum + kadaneAlgo(a, n); 
  	return max(kadane_max, total_sum);
 }
