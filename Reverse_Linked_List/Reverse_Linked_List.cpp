@@ -101,7 +101,6 @@ int main(){
 	free(linkedList);
 	return 0;
 }
-
 //Enter the number of node in linked list: 10
 //
 //Before Reverse
@@ -111,7 +110,3 @@ int main(){
 //After Reverse
 //Linked List:
 //10 9 8 7 6 5 4 3 2 1
-
-
-
-
