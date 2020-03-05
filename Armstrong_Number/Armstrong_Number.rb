@@ -34,7 +34,6 @@ def Armstrong (num)
 		boolean=true
 		return boolean 
 	end 
-  end
 end
 
 # Driver Program 
