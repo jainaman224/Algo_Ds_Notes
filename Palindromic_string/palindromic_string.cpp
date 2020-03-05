@@ -26,7 +26,7 @@ int main()
         {
             flag = 1;
             break;
-  	}
+  	    }
     }
     
     if (flag) 
@@ -37,6 +37,7 @@ int main()
     {
         cout << string1 << " is a palindrome" << endl; 
     }
+
     return 0;
 }
 
