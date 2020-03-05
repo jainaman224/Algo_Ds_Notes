@@ -33,7 +33,8 @@ def Armstrong (num)
 	else if(num == sum1)
 		boolean=true
 		return boolean 
-	end 
+	end
+  end 
 end
 
 # Driver Program 
