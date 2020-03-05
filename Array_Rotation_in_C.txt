@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int a[1000000] = {0};
+    int i=0 ;
+    int j;
+    int n=0;
+    int d=0;
+    int temp;
+
+     scanf("%d %d" , &n , &d);  // n is the number of elements and d is the number of times rotation.
+
+    for(i=0 ; i<n ; i++)
+    {
+        scanf("%d" , &a[i]);	// scanning elements
+    }
+
+    for(j=0 ; j<d ; j++)
+    {
+        temp = a[0];
+
+    for(i=0 ; i<n ; i++)
+    {
+        a[i] = a[i+1];
+        a[n] = temp;
+    }
+    }
+
+    for(i=0 ; i<n ; i++)
+    {
+    printf("%d " , a[i]);
+    }
+
+
+
+
+
+
+return 0 ;
+}
+
+//Test input
+INPUT: 5 4 (number of elements and no. of times rotation)
+       1 2 3 4 5 (the input array)
+
+Output: 5 1 2 3 4 
+//
+
+
+
