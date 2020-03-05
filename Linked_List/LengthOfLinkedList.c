@@ -7,42 +7,64 @@ just replace relevent data type in place of char in class Node.
 */
 
 struct Node {
-	char data;
-	struct Node* next;
+    	char data;
+	    struct Node* next;
 };
 
 
 void pushing_data_to_LL(struct Node** headPointer, char newData) {
-	struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-	newNode->data = newData;
-	newNode->next = (*headPointer);
-	(*headPointer) = newNode;
+	    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+	    newNode->data = newData;
+	    newNode->next = (*headPointer);
+	    (*headPointer) = newNode;
 }
 
 int gettingLength(struct Node* head) {
-	int count = 0;
-	struct Node* current = head;
-	while(current != NULL) {
-		count++;
-		current = current->next;
-	}
-	return count;
+	    int count = 0;
+	    struct Node* current = head;
+	    while(current != NULL) {
+		        count++;
+		        current = current->next;
+	    }
+	    return count;
 }
 
 int main() {
-	struct Node* head = NULL;
 	
-	pushing_data_to_LL(&head, 'G');
-	pushing_data_to_LL(&head, 'S');
-	pushing_data_to_LL(&head, 'S');
-	pushing_data_to_LL(&head, 'O');
-	pushing_data_to_LL(&head, 'C');
-	pushing_data_to_LL(&head, '2');
-	pushing_data_to_LL(&head, '0');
-	pushing_data_to_LL(&head, '2');
-	pushing_data_to_LL(&head, '0');
+	    struct Node* head = NULL;
 	
-	printf("The Length of Linkedlist is: %d", gettingLength(head));
-	return 0;
-} 
+	    printf("Currently Length of Linkedlist is: %d", gettingLength(head));
+	    
+	    pushing_data_to_LL(&head, 'G');
+	    pushing_data_to_LL(&head, 'S');
+	    pushing_data_to_LL(&head, 'S');
+	    pushing_data_to_LL(&head, 'O');
+	    pushing_data_to_LL(&head, 'C');
+	    
+	    printf("\nCurrently Length of Linkedlist is: %d", gettingLength(head));
+	    
+	    pushing_data_to_LL(&head, '-');
 
+	    printf("\nCurrently Length of Linkedlist is: %d", gettingLength(head));
+	    
+	    pushing_data_to_LL(&head, '2');
+	    pushing_data_to_LL(&head, '0');
+	    pushing_data_to_LL(&head, '2');
+	    pushing_data_to_LL(&head, '0');
+	
+	    printf("\nCurrently Length of Linkedlist is: %d", gettingLength(head));
+	    
+	    return 0;
+}
+
+/*
+
+TestCase-1:
+Sample Input: GSSOC2020
+Sample Output: 9 //9 letters
+
+TestCase-2:
+Sample Input: Open-Source
+Sample Output: 11 //11 letters
+
+*/
