@@ -8,7 +8,7 @@ public:
     Node *next;
 };
 Node *start;
-
+/*Function to insert values to the linked_list at the end*/
 void insert_end()
 {
     Node *p = start;
@@ -33,6 +33,7 @@ void insert_end()
         temp->next = NULL;
     }
 }
+/*Function to display the Linked List*/
 void display()
 {
     struct Node *p = start;
@@ -45,6 +46,7 @@ void display()
     }
     cout << "[NULL]" << endl;
 }
+/*Function to check whether a string is palindrome or not*/
 bool palindrome(string str)
 {
     string strc=str;
@@ -54,7 +56,7 @@ bool palindrome(string str)
         return true;
     return false;
 }
-
+/*Function to check whether LinkedList Data is Palindrome or not*/
 bool isPalindrome()
 {
     Node *p=start;
@@ -92,3 +94,45 @@ int main()
     
     return 0;
 }
+/*input/output Demo 1:
+PUSH ELEMENTS ONE BY ONE  INTO THE LINKED LIST:
+ENTER ITEM:
+1
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+1
+ENTER ITEM:
+ab
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+1
+ENTER ITEM:
+dba
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+1
+ENTER ITEM:
+1
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+0
+ YOUR LINKED LIST LOOKS LIKE :
+ |_START |_1_|_|-> |_ab_|_|-> |_dba_|_|-> |_1_|_|->[NULL]
+ Palindrome
+input/output Demo 2:
+PUSH ELEMENTS ONE BY ONE  INTO THE LINKED LIST:
+ENTER ITEM:
+1
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+1
+ENTER ITEM:
+ab
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+1
+ENTER ITEM:
+dca
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+1
+ENTER ITEM:
+1
+ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
+0
+ YOUR LINKED LIST LOOKS LIKE :
+ |_START |_1_|_|-> |_ab_|_|-> |_dca_|_|-> |_1_|_|->[NULL]
+ Not Palindrome
