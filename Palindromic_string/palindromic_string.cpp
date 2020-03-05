@@ -1,6 +1,8 @@
-//C++ Programme to check palindromic string.
-/* A Palindromic String is a sequence of characters which is
-the same when read both forward and backward.*/
+/*
+C++ Programme to check palindromic string.
+A Palindromic String is a sequence of characters which is
+the same when read both forward and backward.
+*/
 
 #include <iostream>
 #include<cstring>
@@ -13,18 +15,19 @@ int main()
     int i, length;
     int flag = 0;
     
-    cout << "Enter a string: "; cin >> string1;
+    cout << "Enter a string: ";
+    cin >> string1;
     
     length = strlen(string1);
     
-    for(i=0;i < length/2 ;i++)
+    for(i = 0;i < length/2 ;i++)
     {
         if(string1[i] != string1[length-i-1])
         {
             flag = 1;
             break;
-  	 	}
-	}
+  	}
+    }
     
     if (flag) 
     {
@@ -36,6 +39,7 @@ int main()
     }
     return 0;
 }
+
 /*Input:
 radar
 
@@ -47,5 +51,4 @@ Enter a string: india
 
 Output:
 india is not a palindrome
-
 */
