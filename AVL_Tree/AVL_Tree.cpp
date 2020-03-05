@@ -1,90 +1,37 @@
 #include<iostream>
-
 #include<cstdio>
-
 #include<sstream>
-
 #include<algorithm>
-
 #define pow2(n) (1 << (n))
 
 using namespace std;
-
- 
-
-/*
-
- * Node Declaration
-
- */
-
 struct avl_node
-
 {
-
     int data;
-
     struct avl_node *left;
-
     struct avl_node *right;
-
 }*root;
 
- 
-
-/*
-
- * Class Declaration
-
- */
-
 class avlTree
-
 {
-
     public:
-
         int height(avl_node *);
-
         int diff(avl_node *);
-
         avl_node *rr_rotation(avl_node *);
-
         avl_node *ll_rotation(avl_node *);
-
         avl_node *lr_rotation(avl_node *);
-
         avl_node *rl_rotation(avl_node *);
-
         avl_node* balance(avl_node *);
-
         avl_node* insert(avl_node *, int );
-
         void display(avl_node *, int);
-
         void inorder(avl_node *);
-
         void preorder(avl_node *);
-
         void postorder(avl_node *);
-
         avlTree()
-
         {
-
             root = NULL;
-
         }
-
 };
-
- 
-
-/*
-
- * Main Contains Menu
-
- */
 
 int main()
 
@@ -425,129 +372,54 @@ avl_node *avlTree::insert(avl_node *root, int value)
         root->left = insert(root->left, value);
 
         root = balance (root);
-
     }
-
     else if (value >= root->data)
-
     {
-
         root->right = insert(root->right, value);
-
         root = balance (root);
-
     }
-
     return root;
-
 }
-
- 
-
-/*
-
- * Display AVL Tree
-
- */
 
 void avlTree::display(avl_node *ptr, int level)
-
 {
-
     int i;
-
     if (ptr!=NULL)
-
     {
-
         display(ptr->right, level + 1);
-
         printf("\n");
-
         if (ptr == root)
-
         cout<<"Root -> ";
-
         for (i = 0; i < level && ptr != root; i++)
-
             cout<<"        ";
-
         cout<<ptr->data;
-
         display(ptr->left, level + 1);
-
     }
-
 }
-
- 
-
-/*
-
- * Inorder Traversal of AVL Tree
-
- */
 
 void avlTree::inorder(avl_node *tree)
-
 {
-
     if (tree == NULL)
-
         return;
-
     inorder (tree->left);
-
     cout<<tree->data<<"  ";
-
     inorder (tree->right);
-
 }
-
-/*
-
- * Preorder Traversal of AVL Tree
-
- */
 
 void avlTree::preorder(avl_node *tree)
-
 {
-
     if (tree == NULL)
-
         return;
-
     cout<<tree->data<<"  ";
-
     preorder (tree->left);
-
     preorder (tree->right);
-
- 
-
 }
 
- 
-
-/*
-
- * Postorder Traversal of AVL Tree
-
- */
-
 void avlTree::postorder(avl_node *tree)
-
 {
-
     if (tree == NULL)
-
         return;
-
     postorder ( tree ->left );
-
     postorder ( tree ->right );
-
     cout<<tree->data<<"  ";
-
 }
