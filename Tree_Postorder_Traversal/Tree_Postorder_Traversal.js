@@ -1,3 +1,8 @@
+/*
+ * Program to traverse a tree in Post Order.
+ */
+
+// Creates a Tree Node with input value.
 class Node {
     constructor(value) {
         this.value = value;
@@ -6,6 +11,7 @@ class Node {
     }
 }
 
+// Function for POST ORDER Tree Transversal.
 function PostOrder(root) {
     if (root) {
         PostOrder(root.left);
@@ -14,6 +20,7 @@ function PostOrder(root) {
     }
 }
 
+// Sample Input.
 var root = new Node(1);
 root.left = new Node(2);
 root.right = new Node(3);
@@ -21,11 +28,11 @@ root.left.left = new Node(4);
 root.left.right = new Node(5);
 root.right.left = new Node(6);
 root.right.right = new Node(7);
-console.log("Post Order traversal of tree is:-")
+
+// Sample Output
+console.log("Post Order traversal of tree is:-");
 PostOrder(root);
 
 /*
-    * Output
-    * Post Order traversal of tree is 4 5 2 6 7 3 1
-*/ 
-
+ * Expected Output:- 4 5 2 6 7 3 1
+ */
