@@ -24,7 +24,6 @@ class CircularQueue(object):
 
 
 		else:
-			#s("Here")
 			self._rear = (self._rear + 1) % self.Max
 			self.queue[self._rear] = key
 			self._size +=1
@@ -39,7 +38,7 @@ class CircularQueue(object):
 			return False 
 
 		else:
-			#print("Here again")
+
 			self._front = (self._front + 1) % self.Max
 			self._size -= 1
 
@@ -86,12 +85,13 @@ class CircularQueue(object):
 		if ((self._rear + 1) % self.Max == self._front):
 			print("Queue is Full") 
 
-# obj = CircularQueue(6)
-# p1 = obj.enqueue(5)
-# p6 = obj.enqueue(7)
-# p7 = obj.enqueue(8)
-# p8 = obj.enqueue(9)
-# p2 = obj.dequeue()
-# p3 = obj.dequeue()
-# p8 = obj.enqueue(10)
-# p5 = obj.PrintQueue()
+# Sample Input / Output
+obj = CircularQueue(6)
+p1 = obj.enqueue(5)
+p6 = obj.enqueue(7)
+p7 = obj.enqueue(8)
+p8 = obj.enqueue(9)
+p2 = obj.dequeue()
+p3 = obj.dequeue()
+p8 = obj.enqueue(10)
+p5 = obj.PrintQueue()
