@@ -1,61 +1,88 @@
-// C++ Program for Floyd Warshall Algorithm 
-#include <bits/stdc++.h> 
-using namespace std; 
-#define V 4 
-#define INF 99999 
-// A function to print the solution matrix 
-void printSolution(int dist[][V]); 
-void floydWarshall (int graph[][V]) 
-{ 
-	int dist[V][V], i, j, k; 
-	for (i = 0; i < V; i++) 
-		for (j = 0; j < V; j++) 
-			dist[i][j] = graph[i][j]; 
-	for (k = 0; k < V; k++) 
-	{ 
-		// Pick all vertices as source one by one 
-		for (i = 0; i < V; i++) 
-		{ 
-			// Pick all vertices as destination for the 
-			// above picked source 
-			for (j = 0; j < V; j++) 
-			{ 
-				// If vertex k is on the shortest path from 
-				// i to j, then update the value of dist[i][j] 
-				if (dist[i][k] + dist[k][j] < dist[i][j]) 
-					dist[i][j] = dist[i][k] + dist[k][j]; 
-			} 
-		} 
-	} 
-
-	// Print the shortest distance matrix 
-	printSolution(dist); 
-} 
-void printSolution(int dist[][V]) 
-{ 
-	cout<<"The following matrix shows the shortest distances"
-			" between every pair of vertices \n"; 
-	for (int i = 0; i < V; i++) 
-	{ 
-		for (int j = 0; j < V; j++) 
-		{ 
-			if (dist[i][j] == INF) 
-				cout<<"INF"<<"	 "; 
-			else
-				cout<<dist[i][j]<<"	 "; 
-		} 
-		cout<<endl; 
-	} 
-} 
-int main() 
-{ 
-	int graph[V][V] = { {0, 5, INF, 10}, 
-						{INF, 0, 3, INF}, 
-						{INF, INF, 0, 1}, 
-						{INF, INF, INF, 0} 
-					}; 
-
-	// Print the solution 
-	floydWarshall(graph); 
-	return 0; 
-} 
+//Floyd warshall algorithm
+#include<bits/stdc++.h>
+using namespace std;
+ int main()
+{
+    int i,j,k;
+    int n,e;
+    int s,d,w;
+    cout<<"Enter the number of vertices ";
+    cin>>n;
+    //adjacency matrix
+    //initialized to infinity
+    vector<vector<int> > distMat(n,vector<int>(n,INT_MAX));
+    for(i=0;i<n;i++)
+    {
+        //distance of verter i from itself is always zero
+        distMat[i][i]=0;
+    }
+    cout<<"Enter the number of edges ";
+    cin>>e;
+    cout<<"Enter the src, dest and weight of each edge"<<endl;
+    for(i=0;i<e;i++)
+    {
+        cin>>s>>d>>w;
+ 
+        //add to the adjacency list
+ 
+        distMat[s-1][d-1]=w;
+    }
+ 
+    //now, we have the adjacency matrix
+    //we will create n matrices from this considering a vertex as an intermediate vertex
+ 
+    //intermediate
+    for(k=0;k<n;k++)
+    {
+        //source
+        for(i=0;i<n;i++)
+        {
+            //destination
+            for(j=0;j<n;j++)
+            {
+                if(distMat[i][k]!=INT_MAX && 
+                   distMat[k][j]!=INT_MAX &&
+                   distMat[i][k]+distMat[k][j]<distMat[i][j])
+                    {
+                        distMat[i][j]=distMat[i][k]+distMat[k][j];
+                    }
+ 
+            }
+        }
+    }
+ 
+    cout<<endl<<"The all pairs shortest distance matrix is "<<endl;
+ 
+    cout<<"       ";
+ 
+    for(i=0;i<n;i++)
+    {
+        printf("%6d",i+1);
+    }
+ 
+    cout<<endl;
+ 
+    for(i=0;i<6*n;i++)
+    {
+        cout<<"_";
+    }
+ 
+    cout<<"_______"<<endl;
+ 
+    for(i=0;i<n;i++)
+    {
+        printf("%5d |",i+1);
+        for(j=0;j<n;j++)
+        {
+            if(distMat[i][j]==INT_MAX)
+                printf("   INF");
+ 
+            else
+                printf("%6d",distMat[i][j]);
+            //cout<<distMat[i][j]<<"   ";
+        }
+ 
+        cout<<endl;
+    }
+ return 0;
+}
