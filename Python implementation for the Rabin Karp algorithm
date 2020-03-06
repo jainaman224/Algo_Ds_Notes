@@ -46,3 +46,9 @@ q = 101
 search(pat, txt, q) 
 
 # This code is contributed by Amit sharma 
+'''
+test 1
+sample input ='amitsharma'
+smaple pattern='ar'
+sample output =6
+'''
