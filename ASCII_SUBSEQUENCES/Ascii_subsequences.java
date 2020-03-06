@@ -1,8 +1,15 @@
+/* Take as input str, a string. We are concerned with all the possible ascii-subsequences of str.
+    Also we have to print the count of such subsequences.
+    Sample input : ab
+	Sample output :
+ 	b 98 a ab a98 97 97b 9798
+	9 */
+
 import java.util.Scanner;
 
 public class Ascii_Subsequences {
 	public static void main(String args[]) {
-		// Your Code Here
+	// Your Code Here
 		Scanner obj = new Scanner(System.in);
 		String str = obj.next();
 		int ans = find(str, ""); //this function will return count of such subsequences and also print them
