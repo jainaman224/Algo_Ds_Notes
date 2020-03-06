@@ -10,3 +10,6 @@ function  leapyear() {
         alert(year + " is not a leap year");
     }
 }
+
+//Sample IP = 2020
+//Sample OP = 2020 is a leap year
