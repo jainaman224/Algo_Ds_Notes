@@ -1,5 +1,5 @@
 class CircularQueue(object):
-	"""Simple Circular Queue"""
+	'''Simple Circular Queue'''
 	
 	def __init__(self, size):
 		'''
@@ -10,7 +10,7 @@ class CircularQueue(object):
 		self.queue = [None] * size
 		self._front = self._rear = -1
 
-	def enqueue(self, key):
+	def Enqueue(self, key):
 		'''
 		Insert element key into the queue.
 		'''
@@ -30,7 +30,7 @@ class CircularQueue(object):
 
 		return True
 
-	def dequeue(self):
+	def Dequeue(self):
 		'''
 		Delete an element from the queue.
 		'''
@@ -38,7 +38,6 @@ class CircularQueue(object):
 			return False 
 
 		else:
-
 			self._front = (self._front + 1) % self.Max
 			self._size -= 1
 
@@ -56,9 +55,9 @@ class CircularQueue(object):
 
 		return self.queue[self._front]
 	def Rear(self):
-		"""
+		'''
 		Get the last item from the queue.
-		"""
+		'''
 		if (self._front == -1):
 			return -1
 
@@ -87,11 +86,11 @@ class CircularQueue(object):
 
 # Sample Input / Output
 obj = CircularQueue(6)
-p1 = obj.enqueue(5)
-p6 = obj.enqueue(7)
-p7 = obj.enqueue(8)
-p8 = obj.enqueue(9)
-p2 = obj.dequeue()
-p3 = obj.dequeue()
-p8 = obj.enqueue(10)
+p1 = obj.Enqueue(5)
+p6 = obj.Enqueue(7)
+p7 = obj.Enqueue(8)
+p8 = obj.Enqueue(9)
+p2 = obj.Dequeue()
+p3 = obj.Dequeue()
+p8 = obj.Enqueue(10)
 p5 = obj.PrintQueue()
