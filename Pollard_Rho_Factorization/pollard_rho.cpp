@@ -1,3 +1,8 @@
+/*This method works particularly fast for a large composite number with small prime factors
+For detailed working, check out https://www.cs.colorado.edu/~srirams/courses/csci2824-spr14/pollardsRho.html
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
@@ -38,9 +43,12 @@ int main()
     ll n;
     cin>>n;
     cout<<"One of the factors of "<<n<<" is "<<pollard_rho(n);
-           return 0;	
+    return 0;	
 }
 
 /*Sample input
 n = 10967535067
+
+Output:
+One of the factors of 10967535067 is 104723
 */

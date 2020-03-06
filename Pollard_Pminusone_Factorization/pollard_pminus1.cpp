@@ -1,3 +1,8 @@
+/*This method discovers a prime factor p of an integer n
+whenever p - 1 has only small prime factors
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
@@ -33,14 +38,18 @@ ll pollard_p1(ll n, ll B)
 
 int main()
 {
-    ll n;
-    cin>>n;
-    cout<<"One of the factors of "<<n<<" is "<<pollard_p1(n,8);
-           return 0;	
+    ll n,B;
+    cout<<"Enter n (to factor) and limit B\n";
+    cin>>n>>B;
+    cout<<"One of the factors of "<<n<<" is "<<pollard_p1(n,B);
+    return 0;	
 }
 
 /*
 Sample Input
 n = 57247159
+B = 8
 
+Output:
+One of the factors of 57247159 is 421
 */
