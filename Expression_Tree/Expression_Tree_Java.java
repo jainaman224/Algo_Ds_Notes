@@ -81,8 +81,3 @@ class expressionTree {
 sample input  : 395+2*+
 sample output : 3 + 9 + 5 * 2
 */
-
-/*
-This code is contributed by Ritika Jain
-https://github.com/RitikaJain8818
-*/
