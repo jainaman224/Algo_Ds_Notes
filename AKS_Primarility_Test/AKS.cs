@@ -1,17 +1,17 @@
 using System;
 
-class AKS{
+class AKS {
     public static void main(String[] args){
     
         //Prints all the primes less than 100000000
         
-        for(int i=0;i<1000000;i++)
+        for(int i = 0; i < 1000000; i++)
         {
             if(isprm(i))
             {
                 Console.Write(i);
             }
-    }
+        }
     }
     
     
@@ -28,7 +28,9 @@ Output prime.
 
     
     public  static boolean isprm(long n)
-    {   long i=5,w=2;
+    {   
+        long i,w=2;
+        i=Console.WriteLine();
         if(n==2 || n==3)
         return true;
         if(n%2 ==0 ||n%3==0||n==1)
@@ -37,10 +39,18 @@ Output prime.
             {
                 if(n%1==0)
                     return false;
-                    i +=w;
-                    w=6-w;
+                i +=w;
+                w=6-w;
                     
             }
             return true;
     }
 }
+
+
+/*
+Input 
+37
+Output
+Prime
+*/
