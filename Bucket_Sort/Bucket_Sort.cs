@@ -42,7 +42,7 @@ namespace bucketsort
                 // Calculate the bucketindex for each value in the given input.
                 bucketindex = (bucketcount * input[i] / (max + 1));
 
-                buckets[(int)bucketindex].Add(input[i]);
+                buckets[bucketindex].Add(input[i]);
             }
 
             // Sort each bucket that has been created in ascending order.
