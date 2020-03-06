@@ -5,7 +5,7 @@ public class Ascii_Subsequences {
 		// Your Code Here
 		Scanner obj = new Scanner(System.in);
 		String str = obj.next();
-		int ans = find(str, ""); //this function will return count of such subsequences and also print them 
+		int ans = find(str, ""); //this function will return count of such subsequences and also print them
 		System.out.println();
 		System.out.println(ans); //this is to print the count
 	}
