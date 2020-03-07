@@ -1,3 +1,6 @@
+#Python program to count even and odd numbers in an array
+
+# To count number of even elements
 def  no_of_even_elem(arr):
 
     #Initialization
@@ -31,3 +34,15 @@ for i in range(0, n):
 num = no_of_even_elem(lst)
 print "Number of odd elements in array", len(lst)- num
 print "Number of even elements in array", num
+
+'''
+Sample Testcase
+
+Enter number of elements : 4
+2
+1
+67
+43
+Number of odd elements in array 3
+Number of even elements in array 1
+'''
