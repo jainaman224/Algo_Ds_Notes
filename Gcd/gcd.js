@@ -4,19 +4,19 @@ JS Implementation of GCD Program using Euclidean Algorithm
 
 function gcd(m, n)
 {
-    if(m<n)
+    if(m < n)
     {
         var temp = m;
         m = n;
         n = temp;
     }
-    if(m%n===0)
+    if(m%n === 0)
     {
         return n;
     }
     else
     {
-        return gcd(n, m%n);
+        return gcd(n, m % n);
     }
 
 }
