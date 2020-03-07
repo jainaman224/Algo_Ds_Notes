@@ -3,6 +3,7 @@ using namespace std;
 
 class Node
 {
+    
 public:
     string data;
     Node *next;
@@ -68,6 +69,7 @@ bool palindrome(string str)
 
     if(str==strc)
         return true;
+    
     return false;
 }
 
@@ -77,11 +79,13 @@ bool isPalindrome()
 {
     Node *p=start;
     string copy="";
+    
     while(p!=NULL)
     {
         copy.append(p->data);
         p=p->next;
     }
+    
     return palindrome(copy);
 }
 
