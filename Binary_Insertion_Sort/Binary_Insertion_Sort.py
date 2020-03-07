@@ -1,6 +1,6 @@
 #sort function
 
-def bin_InsertionSort(lst):
+def Binary_Insertion_Sort(lst):
     for i in range(1, len(lst)):
         x = lst[i]                            # here x is a temporary variable
         pos = BinarySearch(lst, x, 0, i) + 1
@@ -33,7 +33,7 @@ def BinarySearch(array, value, low, high):
 
 array = input('Enter the array of numbers: ').split() #enter the values leaving a space between each
 array = [int(x) for x in array]
-bin_InsertionSort(array)
+Binary_Insertion_Sort(array)
 print('The array after sorting: ', end='')
 print(array)
 
