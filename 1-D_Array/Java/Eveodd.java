@@ -7,7 +7,7 @@ class Eveodd
         Scanner sc = new Scanner(System.in);
         //take input for the array size
         System.out.print("Enter number of elemnts in array:");
-        n=sc.nextInt();
+        n = sc.nextInt();
         //declare array of size n
         int arr[] = new int[n];
         System.out.print("Enter elements:");
