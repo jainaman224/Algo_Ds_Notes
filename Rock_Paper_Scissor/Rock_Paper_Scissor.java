@@ -3,9 +3,18 @@ public class Main
 {
     public static int large = 500;
     public static double dp[][][] = new double[large][large][large];
+	
+    public static void initializeDp(int rock, int paper, int scissor) {
+    	for(int i=1;i<=rock;i++) {
+			for(int j=1;j<=paper;j++) {
+				for(int k=0; k<=scissor; k++) {
+					dp[i][j][k] = -1.0;
+				}
+			}
+		}   
+	}
     
-    public static double probrock(int r, int p, int s)
-    {
+    public static double probrock(int r, int p, int s) {
         if(s == 0 || r == 0)
             return 0.0;
         
@@ -19,15 +28,14 @@ public class Main
         double total = r*p + p*s + s*r;
         double res = 0.0;
         
-        res+=probrock(r-1, p, s)*(((double)(r*p))/total);       //prob. of fight btw r&p = r*p/total
-        res+=probrock(r, p-1, s)*(((double)(s*p))/total);       //prob. of fight btw s&p = s*p/total
-        res+=probrock(r, p, s-1)*(((double)(r*s))/total);       //prob. of fight btw r&s= r*s/total 
+        res += probrock(r-1, p, s)*(((double)(r*p))/total);       //prob. of fight btw r&p = r*p/total
+        res += probrock(r, p-1, s)*(((double)(s*p))/total);       //prob. of fight btw s&p = s*p/total
+        res += probrock(r, p, s-1)*(((double)(r*s))/total);       //prob. of fight btw r&s= r*s/total 
         
         return dp[r][p][s] = res;
     }
     
-    public static double probpaper(int r, int p, int s)
-    {
+    public static double probpaper(int r, int p, int s) {
         if(p == 0 || r == 0)
             return 0.0;
         
@@ -41,15 +49,14 @@ public class Main
         double total = r*p + p*s + s*r;
         double res = 0.0;
         
-        res+=probpaper(r-1, p, s)*(((double)(r*p))/total);
-        res+=probpaper(r, p-1, s)*(((double)(s*p))/total);
-        res+=probpaper(r, p, s-1)*(((double)(r*s))/total);
+        res += probpaper(r-1, p, s)*(((double)(r*p))/total);
+        res += probpaper(r, p-1, s)*(((double)(s*p))/total);
+        res += probpaper(r, p, s-1)*(((double)(r*s))/total);
         
         return dp[r][p][s] = res;
     }
-    
-     public static double probscissor(int r, int p, int s)
-    {
+	
+   public static double probscissor(int r, int p, int s) {
         if(p == 0 || s == 0)
             return 0.0;
         
@@ -63,13 +70,14 @@ public class Main
         double total = r*p + p*s + s*r;
         double res = 0.0;
         
-        res+=probscissor(r-1, p, s)*(((double)(r*p))/total);
-        res+=probscissor(r, p-1, s)*(((double)(s*p))/total);
-        res+=probscissor(r, p, s-1)*(((double)(r*s))/total);
+        res += probscissor(r-1, p, s)*(((double)(r*p))/total);
+        res += probscissor(r, p-1, s)*(((double)(s*p))/total);
+        res += probscissor(r, p, s-1)*(((double)(r*s))/total);
         
         return dp[r][p][s] = res;
     }
-	public static void main(String[] args) {
+	
+    public static void main(String[] args) {
 	    int rock, scissor, paper;
 	    Scanner sc = new Scanner(System.in);
 	    System.out.println("Enter total no. of rocks");
@@ -88,25 +96,8 @@ public class Main
 	    initializeDp(rock, paper, scissor);
 	    double ansScissor = probscissor(rock, paper, scissor);
 	    
-	    System.out.println("Probability of rock to survive is "+ ansRock);
-	    System.out.println("Probability of scissor to survive is "+ ansScissor);
-	    System.out.println("Probability of paper to survive is "+ ansPaper);
-	    
-	}
-	
-	public static void initializeDp(int rock, int paper, int scissor)
-	{
-	     for(int i=1;i<=rock;i++)
-	    {
-	        for(int j=1;j<=paper;j++)
-	        {
-	            for(int k=0; k<=scissor; k++)
-	            {
-	                dp[i][j][k] = -1.0;
-	            }
-	        }
-	    }
-	    
+	    System.out.println("Probability of rock to survive is " + ansRock);
+	    System.out.println("Probability of scissor to survive is " + ansScissor);
+	    System.out.println("Probability of paper to survive is " + ansPaper);    
 	}
 }
-
