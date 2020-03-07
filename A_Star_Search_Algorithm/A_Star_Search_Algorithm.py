@@ -8,34 +8,34 @@ class Node:
         f: total cost of present node i.e. :  f = g + h
     """
     
-    def __init__(self,parent=None,poistion=None):
+    def __init__(self , parent=None , poistion=None):
         self.parent = parent
         self.position = poistion
         self.g = 0
         self.f = 0
         self.h = 0
         
-    def __eq__(self,other):
+    def __eq__(self , other):
         return self.position == other.position
 
 class FindPath():
-    def __init__(self,maze,cost,start,end):
+    def __init__(self , maze , cost , start , end):
         self.maze = maze
         self.cost = cost
         self.start = start
         self.end = end
-        self.move = [[-1, 0], # go up
-                     [ 0,-1], # go left
-                     [ 1, 0], # go down
-                     [ 0, 1], # go right
-                     [-1,-1], # go left-up
-                     [-1, 1], # go left down
-                     [ 1,-1], # go right down
-                     [ 1, 1]] # go right up
+        self.move = [ [-1, 0] , # go up
+                      [ 0,-1] , # go left
+                      [ 1, 0] , # go down
+                      [ 0, 1] , # go right
+                      [-1,-1] , # go left-up
+                      [-1, 1] , # go left down
+                      [ 1,-1] , # go right down
+                      [ 1, 1] ] # go right up
         
     def return_path(self,curr_node,cost_matrix):
         path = []
-        no_rows, no_columns = np.shape(cost_matrix)
+        no_rows , no_columns = np.shape(cost_matrix)
         
         # here we create the initialized result maze with -1 in every position
         res = [[-1 for i in range(no_columns)] for j in range(no_rows)]
@@ -96,14 +96,14 @@ class FindPath():
             # computation cost is too high
             if counter > max_steps:
                 print ("Destination cannot be reached")
-                return self.return_path(current_node,self.maze)
+                return self.return_path(current_node , self.maze)
             # Pop current node out off
             queue.pop(current_index)
             # mark it visited
             visited_list.append(current_node)
             # check if goal is reached or not
             if current_node == end_node:
-                return self.return_path(current_node,self.maze)
+                return self.return_path(current_node , self.maze)
             # Generate coordinate from all adjacent coordinates
             coordinates = []
             for move in self.move: 
@@ -135,12 +135,12 @@ class FindPath():
                 queue.append(child)
                 
 class Preprocess:
-    def __init__(self,maze,n,m):
+    def __init__(self , maze , n , m):
         self.maze = maze
-        self.n=n
-        self.m=m
+        self.n = n
+        self.m = m
     
-    def check(self,value):
+    def check(self , value):
         data=''
         for i in range(len(value)):
             if(value[i] == '[' or value[i] == ']'):
