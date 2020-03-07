@@ -7,7 +7,10 @@ public:
     string data;
     Node *next;
 };
+
 Node *start;
+
+
 /*Function to insert values to the linked_list at the end*/
 void insert_end()
 {
@@ -18,34 +21,45 @@ void insert_end()
     cout << "ENTER ITEM:" << endl;
     cin >> item;
     temp->data = item;
+    
     if (start == NULL)
     {
         start = temp;
         temp->next = NULL;
     }
+    
     else
     {
+        
         while (p->next != NULL)
         {
             p = p->next;
         }
+        
         p->next = temp;
         temp->next = NULL;
     }
+    
 }
+
+
 /*Function to display the Linked List*/
 void display()
 {
     struct Node *p = start;
     cout << " YOUR LINKED LIST LOOKS LIKE :" << endl;
     cout << "|_START";
+    
     while (p != NULL)
     {
         cout << " |_" << p->data << "_|_|->";
         p = p->next;
     }
+    
     cout << "[NULL]" << endl;
 }
+
+
 /*Function to check whether a string is palindrome or not*/
 bool palindrome(string str)
 {
@@ -56,6 +70,8 @@ bool palindrome(string str)
         return true;
     return false;
 }
+
+
 /*Function to check whether LinkedList Data is Palindrome or not*/
 bool isPalindrome()
 {
@@ -68,6 +84,8 @@ bool isPalindrome()
     }
     return palindrome(copy);
 }
+
+
 int main()
 {
     int choice;
@@ -75,18 +93,23 @@ int main()
     int count = 0;
 
     int will;
+    
     while (will)
     {
         insert_end();
         cout << "ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:" << endl;
         cin >> will;
     }
+    
     display();
+    
     bool result = isPalindrome();
+    
     if(result==true)
     {
         cout<<"Palindrome"<<endl;
     }
+    
     else
     {
         cout<<"Not a Palindrome"<<endl;
@@ -94,6 +117,7 @@ int main()
     
     return 0;
 }
+
 /*input/output Demo 1:
 PUSH ELEMENTS ONE BY ONE  INTO THE LINKED LIST:
 ENTER ITEM:
@@ -135,4 +159,4 @@ ENTER 1 TO CONTINUE INSERTING AND 0 TO STOP:
 0
  YOUR LINKED LIST LOOKS LIKE :
  |_START |_1_|_|-> |_ab_|_|-> |_dca_|_|-> |_1_|_|->[NULL]
- Not Palindrome
+ Not Palindrome*/
