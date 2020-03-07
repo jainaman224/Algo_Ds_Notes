@@ -18,7 +18,6 @@ function gcd(m, n)
     {
         return gcd(n, m % n);
     }
-
 }
 
 var n1 = prompt("Enter number 1:");
