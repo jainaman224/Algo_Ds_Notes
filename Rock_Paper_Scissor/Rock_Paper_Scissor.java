@@ -90,14 +90,13 @@ public class Main
 	    System.out.println("Probability of scissor to survive is " + ansScissor);
 	    System.out.println("Probability of paper to survive is " + ansPaper);    
 	}
-	
-	 public static void initializeDp(int rock, int paper, int scissor) {
+   public static void initializeDp(int rock, int paper, int scissor) {
     	for(int i=1;i<=rock;i++) {
-			for(int j=1;j<=paper;j++) {
-				for(int k=0; k<=scissor; k++) {
-					dp[i][j][k] = -1.0;
-				}
-			}
-		}   
+	   for(int j=1;j<=paper;j++) {
+	      for(int k=0; k<=scissor; k++) {
+		  dp[i][j][k] = -1.0;
+		    }
+	        }
+	    }   
 	}
 }
