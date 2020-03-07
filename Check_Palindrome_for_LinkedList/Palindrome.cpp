@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
 
 class Node
@@ -65,7 +67,7 @@ void display()
 bool palindrome(string str)
 {
     string strc=str;
-    reverse(str.begin(),str.end());
+    std::reverse(str.begin(),str.end());
 
     if(str==strc)
         return true;
