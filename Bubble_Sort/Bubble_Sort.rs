@@ -15,3 +15,7 @@ fn bubble_sort(numbers: &Vec<i64>, compare_fn: |i64, i64| -> i64) -> Vec<i64> {
 
     target
 }
+
+ /*sample input: 2 3 4 5 6 7 1
+output :1 2 3 4 5 6 7
+*/
