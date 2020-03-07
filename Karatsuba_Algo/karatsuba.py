@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 from math import ceil, floor
 
 def karatsuba(x,y):
@@ -16,7 +15,7 @@ def karatsuba(x,y):
     c = floor(y / 10**m)
     d = y % (10**m)
 
-    #recursive steps
+    # recursive steps
     ac = karatsuba(a,c)
     bd = karatsuba(b,d)
     ad_plus_bc = karatsuba(a + b, c + d) - ac - bd
