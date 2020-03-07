@@ -10,7 +10,7 @@ function gcd(m, n)
         m = n;
         n = temp;
     }
-    if(m%n === 0)
+    if(m % n === 0)
     {
         return n;
     }
