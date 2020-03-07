@@ -1,6 +1,7 @@
 /*Problem Statement
  * Given an array of elements count the frequency of every element in the array.
  */
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -20,7 +21,8 @@ public class CountFrequencyOfArrayElements {
 		countFreq(a, n);
 		sc.close();
 	}
-
+    
+    //function to count frequency 
 	private static void countFreq(int[] a, int n) {
 		HashMap<Integer, Integer> hm = new HashMap<>(); // using hashmap to store the freq
 		
@@ -37,7 +39,7 @@ public class CountFrequencyOfArrayElements {
 		hm.forEach(
 			(k,v) ->
 			{
-				System.out.println(k+" \t\t "+v);
+			    System.out.println(k+" \t\t "+v);
 			}
 			);
 	}
