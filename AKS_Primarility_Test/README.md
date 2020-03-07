@@ -53,16 +53,20 @@ As all the coefficients are divisible by n i.e. 3, so 3 (n) is prime. As the num
 
 ## Implementation
 
-- [C code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.c)
+- [C code]
+(https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.c)
 
-- [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.cpp) 
+- [C++ Code]
+(https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.cpp) 
 
-- [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.py)
+- [Python Code]
+(https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.py)
 
-- [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.java)
+- [Java Code]
+(https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.java)
 
-- [JavaScript Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.js)
-
+- [JavaScript Code]
+(https://github.com/jainaman224/Algo_Ds_Notes/blob/master/AKS_Primarility_Test/AKS.js)
  
 ## See also
 [AKS Primality Test on Wikipedia](https://en.wikipedia.org/wiki/AKS_primality_test)
