@@ -35,7 +35,7 @@ fun merge(arr: IntArray, left: Int, right: Int, mid: Int)
         }
         k++
     }
-    //Inserting remaining element
+    // Inserting remaining element
     while (index1 < arr1Size)
     {
         arr[k] = arr1[index1]
@@ -61,7 +61,7 @@ fun mergeSort(arr: IntArray, left: Int, right: Int)
     }
 }
 
-//Driver Function for Merge Sort
+// Driver Function for Merge Sort
 fun main()
 {
     var read = Scanner(System.`in`)
@@ -80,6 +80,7 @@ fun main()
         print("${arr[i]} ")
     }
 }
+
 /*
 OUTPUT:-
 Enter the size of Array
