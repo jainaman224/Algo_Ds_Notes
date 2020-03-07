@@ -27,8 +27,14 @@ void gnome_sort(int arr[], int n)
 // Sample Test cases to test above function. 
 int main() 
 { 
-    int arr[] = {3, 2, 1, -5, 7}; 
-    int n = sizeof(arr) / sizeof(arr[0]); 
+    
+    int n;
+    cout<<"Enter the size of an Array: ";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
     gnome_sort(arr, n); 
 
     for(int i=0;i<n;i++){
@@ -37,3 +43,22 @@ int main()
   
     return 0; 
 } 
+
+/*
+    Sample Driver Code:
+    INPUT: 
+    Enter the size of an Array: 5
+    3
+    2
+    1
+    -5
+    7
+
+    OUTPUT:
+    -5
+    1
+    2
+    3
+    7
+
+*/

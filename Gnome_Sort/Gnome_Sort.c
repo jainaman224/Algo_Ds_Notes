@@ -28,8 +28,13 @@ void gnome_sort(int arr[], int n)
 // Sample Test cases to test above function. 
 int main() 
 { 
-    int arr[] = {3, 2, 1, -5, 7}; 
-    int n = sizeof(arr) / sizeof(arr[0]); 
+    int n;
+    printf("Enter the size of an Array: ");
+    scanf("%d",&n);
+    int arr[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
     gnome_sort(arr, n); 
 
     for(int i=0;i<n;i++){
@@ -38,3 +43,23 @@ int main()
   
     return 0; 
 } 
+
+/*
+    Sample Driver Code:
+    INPUT: 
+    Enter the size of an Array: 5
+    3
+    2
+    1
+    -5
+    7
+
+    OUTPUT:
+    -5
+    1
+    2
+    3
+    7
+
+
+*/

@@ -16,11 +16,30 @@ def gnome_sort(arr, n):
     return arr 
   
 # Test Code 
-arr = [ 3, 2, 1, -5, 7] 
-n = len(arr) 
+n = int(input("Enter the size of an Array: "))
+arr = list()
+for i in range(n):
+    val = int(input())
+    arr.append(val)
+# Function Call
 result = gnome_sort(arr,n)
 print(result)
 
-# Output:
-# -5, 1, 2, 3, 7
-  
+'''
+    Sample Driver Code:
+    INPUT: 
+    Enter the size of an Array: 5
+    3
+    2
+    1
+    -5
+    7
+
+    OUTPUT:
+    -5
+    1
+    2
+    3
+    7
+
+'''

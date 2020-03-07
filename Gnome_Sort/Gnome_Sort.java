@@ -25,14 +25,36 @@ class GnomeSort {
 
     // Sample Input to test above function
     public static void main(String[] args) {
-        final int arr[] = { 3, 2, 1, -5, 7 };
-  
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Size of an Array: ");
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+
         gnome_sort(arr, arr.length); 
   
         System.out.println(Arrays.toString(arr)); 
     } 
 } 
 
-// Output:
-// -5, 1, 2, 3, 7
-  
+/*
+    Sample Driver Code:
+    INPUT: 
+    Enter the size of an Array: 5
+    3
+    2
+    1
+    -5
+    7
+
+    OUTPUT:
+    -5
+    1
+    2
+    3
+    7
+
+*/
