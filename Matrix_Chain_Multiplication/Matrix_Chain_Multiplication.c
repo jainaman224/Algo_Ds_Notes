@@ -36,7 +36,7 @@ int MCM(int *p, int n)
         } 
     } 
   
-    return m[1][n-1]; 
+    return m[1][n - 1]; 
 }
 
 int main()
@@ -60,7 +60,7 @@ int main()
     printf("The minimum number of scalar multiplications: %d\n", MCM(P, size));
 }
 
-                                                                    /*OUTPUT DESCRIPTION*/
+                /* OUTPUT DESCRIPTION */
 /*
               P = {10, 20, 30, 40, 30},
               dimensions of matrix [1] = 10X20,
@@ -76,5 +76,5 @@ int main()
                 0 0    0     36000
                 0 0    0     0
 
-        ,where table[1][size-1]=30000 is the answer.
+        where table[1][size-1]=30000 is the answer.
 */
