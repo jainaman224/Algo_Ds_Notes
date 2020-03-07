@@ -2,6 +2,9 @@
  * This code is designed to create a special data structure called queue
  * Queue works on the first come first out(FIFO) logic
  */
+
+import java.util.Scanner;
+
 class queue {
 	//initialization
 	private int data[];
@@ -34,7 +37,7 @@ class queue {
 	public int size() {
 		return size;
 	}
-	
+		
 	//returns the first element in the queue
 	public int first() throws QueueEmptyException {
 		if(isEmpty()) {
@@ -43,7 +46,7 @@ class queue {
 		}
 		return data[first];
 	}
-	
+		
 	//adds an element in the last
 	public void push(int element) {
 		if(isEmpty()) {
@@ -59,7 +62,7 @@ class queue {
 		data[last] = element;
 		size++;
 	}
-	
+		
 	//remove and returns the first element of queue
 	public int pop() throws QueueEmptyException {
 		if(isEmpty()) {
@@ -75,7 +78,7 @@ class queue {
 		}
 		return temp;
 	}
-	
+		
 	//doubles the size of array/queue
 	private void doubleArray() {
 		int temp[] = data;
@@ -94,26 +97,91 @@ class queue {
 }
 
 //main class to use the class queueUsingArray
-public class Queue_Using_Arrays {
+public class QueueUsingArray {
 	public static void main(String[] args) throws QueueEmptyException {
+		Scanner s = new Scanner(System.in);
 		queue q = new queue();
-		for(int i=1; i<16; i++) {
-			q.push(i);
-		}
+		System.out.println("=============================");
+		System.out.println("          OPERATIONS         ");
+		System.out.println("=============================");
+		System.out.println("1. Enqueue ");
+		System.out.println("2. Dequeue ");
+		System.out.println("3. Size ");
+		System.out.println("4. Check isEmpty ");
+		System.out.println("5. First element ");
+		System.out.println("0. Exit ");
 		
-		while(!q.isEmpty()) {
-			try {
-				System.out.print(q.pop() + " ");
-			} catch (QueueEmptyException e) {
-				// will never reach
+		System.out.print("Enter the operaton you want to perform - ");
+		int op = s.nextInt();
+		while(op != 0) {
+			if(op == 1) {
+				System.out.print("Enter the data you want to add - ");
+				int data = s.nextInt();
+				q.push(data);
+			}else if(op == 2) {
+				if(q.isEmpty()) {
+					System.out.println("Sorry, queue has no element");
+				}else {
+					System.out.println("Poped data is " + q.pop());
+				}
+			}else if(op == 3) {
+				System.out.println("Size of queue is " + q.size());
+			}else if(op == 4) {
+				if(q.isEmpty()) {
+					System.out.println("Yes, the queue is empty");
+				}else {
+					System.out.println("No, the queue is not empty");
+				}
+			}else if(op == 5) {
+				if(q.isEmpty()) {
+					System.out.println("Sorry, queue has no element");
+				}else {
+					System.out.println("First element in the queue is " + q.first());
+				}
+			}else {
+				System.out.println("Input is invalid, please enter the correct option");
 			}
+			System.out.print("Enter the operaton you want to perform - ");
+			op = s.nextInt();
 		}
 		
-		System.out.println();
 	}
+	
 }
 
 //exception class
 class QueueEmptyException extends Exception {
 	private static final long serialVersionUID = 1L;
 }
+
+/*
+ *==============================
+ *Sample Input-Output
+ *==============================
+ *
+ *==============================
+          OPERATIONS         
+ *==============================
+ *1. Enqueue 
+ *2. Dequeue 
+ *3. Size 
+ *4. Check isEmpty 
+ *5. First element 
+ *0. Exit 
+ *
+ *Enter the operaton you want to perform - 1
+ *Enter the data you want to add - 24
+ *Enter the operaton you want to perform - 1
+ *Enter the data you want to add - 30
+ *Enter the operaton you want to perform - 2
+ *Poped data is 24
+ *Enter the operaton you want to perform - 3
+ *Size of queue is 1
+ *Enter the operaton you want to perform - 4
+ *No, the queue is not empty
+ *Enter the operaton you want to perform - 5
+ *First element in the queue is 30
+ *Enter the operaton you want to perform - 6
+ *Input is invalid, please enter the correct option
+ *Enter the operaton you want to perform - 0
+ */
