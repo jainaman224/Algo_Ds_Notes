@@ -33,9 +33,8 @@ class Pigeonhole {
             while(pighole[j] --> 0) 
                 array[index++] = j + min; 
   
-    } 
+    }
   
-// Driver Code 
     static void Main() 
     { 
         int size;
