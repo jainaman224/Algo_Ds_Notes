@@ -62,3 +62,10 @@ class pancakeSortProgram {
         printArray(arr, n);
     }
 }
+/*
+Input:
+23 10 20 11 12 6 7
+
+Output:
+6 7 10 11 12 20 23
+*/
