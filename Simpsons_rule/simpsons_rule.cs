@@ -1,7 +1,7 @@
 //simpson's 1/3 rule in C#
 using System; 
   
-public class sr 
+public class simpsonRule 
 { 
   
     static float func(float x) 
