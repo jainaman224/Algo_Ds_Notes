@@ -1,0 +1,44 @@
+#include<iostream>
+#include<iomanip>
+#define NODE 7
+#define INF 999
+using namespace std;
+
+//Cost matrix of the graph
+int costMat[NODE][NODE] = {
+   {0, 3, 6, INF, INF, 3, INF},
+   {7, 0, 2, 1, INF, INF, INF},
+   {6, 2, 0, INF, 5, 2, INF},
+   {INF, 1, 2, 0, 2, INF, 4},
+   {INF, INF, 4, INF, 0, 2, 1},
+   {INF, INF, 2, INF, 1, 0, 1},
+   {INF, INF, INF, 5, 1, 1, 0}
+};
+
+void floydWarshal() {
+   int cost[NODE][NODE];    //define to store shortest distance from any node to any node
+   for(int i = 0; i<NODE; i++)
+      for(int j = 0; j<NODE; j++)
+         cost[i][j] = costMat[i][j];     //copy costMatrix to new matrix
+
+   for(int k = 0; k<NODE; k++) {
+      for(int i = 0; i<NODE; i++)
+         for(int j = 0; j<NODE; j++)
+            if(cost[i][k]+cost[k][j] < cost[i][j])
+               cost[i][j] = cost[i][k]+cost[k][j];  //update with new lesser cost
+   }
+
+   cout << "The matrix:" << endl;
+   for(int i = 0; i<NODE; i++) {
+      for(int j = 0; j<NODE; j++)
+         cout << setw(3) << cost[i][j];
+      cout << endl;
+   }
+}
+
+int main() {
+   floydWarshal();
+}
+
+
+
