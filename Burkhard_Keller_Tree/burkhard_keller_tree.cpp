@@ -4,24 +4,17 @@ Burkhard Keller Tree is a popular String Matching Algorithm which is used to
 perform spell checks based on the concept of Levenshtein distance.
 
 */
-
 #include <iostream>
 #include <vector>
 #include <map>
-
-
 typedef std::vector< std::string > strlist;
-
 // Defining the Node 
-
 class Node {
     public:
-        std::map< int, Node* > Edge;
+        std::map< int, Node* > TreeEdge;
         std::string Name;
 };
-
 // Defining the BK Tree
-
 class BKTree {
     public:
         strlist search(std::string Name, int target_dist);
@@ -67,7 +60,7 @@ void BKTree::insert(std::string& Name, Node*& node){
     }
     else {
         int dist = d(Name, node->Name);
-        insert(Name, node->Edge[dist]);
+        insert(Name, node->TreeEdge[dist]);
     }
 }
 
@@ -78,7 +71,7 @@ void BKTree::delete_node(Node* node){
     if (node == nullptr)
         return;
 
-    for(auto& i : node->Edge)
+    for(auto& i : node->TreeEdge)
         delete_node(i.second);
 
     delete node;
@@ -107,7 +100,7 @@ void BKTree::search(Node* node, std::string& Name, int target_dist, strlist& sug
     if (start < 0) start = 1;
     
     for(int i = start; i < dist + target_dist; i++)
-        search(node->Edge[i], Name, target_dist, suggestion_points); 
+        search(node->TreeEdge[i], Name, target_dist, suggestion_points); 
 }
 
 int BKTree::min(int& a, int& b, int& c){
@@ -147,12 +140,11 @@ int BKTree::d(std::string& test, std::string& comp){
 }
 
 // Driver Function
-
 int main(void){
     std::string Name = "Root";
     BKTree tree(Name);
     strlist dictionary;
-    dictionary={"hell","help","shel","smell","fell","felt","oops","pop","oouch","halt"};
+    dictionary={"hell", "help", "shel", "smell", "fell", "felt", "oops", "pop", "oouch", "halt"};
 
     tree.insert_into(dictionary);
     
@@ -161,15 +153,10 @@ int main(void){
         std::cout << i << std::endl;
     return 0;
 }
-
 /*
-
 Sample Input: 
-
 dictionary={"hell","help","shel","smell","fell","felt","oops","pop","oouch","halt"};
 
 Sample Output: 
-
 pop
-
 */
