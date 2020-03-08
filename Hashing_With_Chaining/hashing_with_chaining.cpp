@@ -68,7 +68,7 @@ public:
 		string name;
 		int key,hash;
 		
-		cout<<"\nEnter name : ";
+		cout<<"\nEnter attribute name : ";
 		cin>>name;
 		
 		//Find hash value for this key
@@ -101,13 +101,13 @@ public:
 		} 
 	}
 
-	void getAtrribute()
+	void getAttribute()
 	{
 		symbolTableEntry *n;
 		string name;
 		int key,hash;
 		
-		cout<<"\nEnter name : ";
+		cout<<"\nEnter attribute name : ";
 		cin>>name;
 		
 		//Find hash value for this key
@@ -190,7 +190,7 @@ public:
 		cin>>size;
 	}
 
-	void withReplacement()
+	void withReplacement() 
 	{
 		char ch='n';
 		int hash,ptr,key;
@@ -200,7 +200,7 @@ public:
 		do
 		{
 
-			cout<<"\nEnter name : ";
+			cout<<"\nEnter attribute name : ";
 			cin>>name;
 
 			cout<<"\nEnter attribute value : ";
@@ -217,7 +217,7 @@ public:
 			{
 				table[hash].name=name;
 				table[hash].attr=attr;
-				cout<<"\n"<<key<<" inserted at "<<hash<<"location\n";
+				cout<<"\nINSERTED\n;
 			}
 			else						// Table entry not empty, so replace the prev entry
 										// and add the prev entry into chain at beginning.
@@ -230,7 +230,7 @@ public:
 					table[hash].name=name;
 					table[hash].attr=attr;
 
-					cout<<"\n"<<key<<" inserted at "<<hash<<"location\n";
+					cout<<"\nINSERTED\n";
 			} 
 
 
@@ -249,7 +249,7 @@ public:
 
 			do
 			{
-				cout<<"\nEnter name : ";
+				cout<<"\nEnter attribute name : ";
 				cin>>name;
 
 				cout<<"\nEnter attribute value : ";
@@ -289,7 +289,6 @@ public:
 						n->name=name;
 						n->attr=attr;
 
-						cout<<"\n"<<key<<" inserted at "<<hash<<"location\n";
 						cout<<"\n"<<n->name<<"  "<<n->attr;
 				}
 
@@ -306,7 +305,7 @@ public:
 			string name;
 			int key,hash;
 
-			cout<<"\nEnter name (delete): ";
+			cout<<"\nEnter name of attribute to delete : ";
 			cin>>name;
 
 			//Find hash value for this key
@@ -387,7 +386,7 @@ int main() {
 				symTable.search();
 				break;
 			case 4:
-				symTable.getAtrribute();
+				symTable.getAttribute();
 				break;
 			case 5:
 				symTable.updateAttribute();
@@ -405,3 +404,44 @@ int main() {
 	}while(choice);
 	return 0;
 }
+
+/*
+	Sample Input/output -
+	
+	************************** SYMBOL TABLE *************************
+	   1. Enter size of table : 5
+	   2. Insertion method :- 
+	   			1. With replacement 
+				2. Without replacement
+				Enter choice : 1
+				
+	   1. Choice 1 - Enter attribute name : proc_name
+	   				 Enter attribute value : sum
+	   				 INSERTED
+	   2. Choice 1 - Enter attribute name : var_name
+	   				 Enter attribute value : num1
+	   				 INSERTED
+	   3. Choice 6 - SYMBOL TABLE
+	   					i Name Attr
+	   					0 NULL NULL
+	   					1 var_name num1
+	   					2 NULL NULL
+	   					3 proc_name sum
+	   					4 NULL NULL
+	   4. Choice 4 -  (Get Attribute)
+	   				  Enter attribute name : proc_name
+	   				  Attribute : sum
+	   5. Choice 3 -  (Search)
+	   				  Enter attribute name : var_name
+	   				  FOUND
+	   6. Choice 2 -  (Delete)
+	   				  Enter attribute name : var_name
+	   				  DELETED
+	   7. Choice 6 - SYMBOL TABLE
+	   					i Name Attr
+	   					0 NULL NULL
+	   					1 NULL NULL
+	   					2 NULL NULL
+	   					3 proc_name sum
+	   					4 NULL NULL
+*/
