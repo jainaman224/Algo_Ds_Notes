@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void first_fit(int memory_block[],int process_size[],int m,int n) {
+void worst_fit(int memory_block[],int process_size[],int m,int n) {
     int allocated_list[n][3];
     int allocation_marking[m];
     
@@ -76,7 +76,7 @@ int main() {
         cin>>process_size[i];
     }
 
-    first_fit(memory_block,process_size,num_of_mem_blocks,num_of_processes);
+    worst_fit(memory_block,process_size,num_of_mem_blocks,num_of_processes);
 
     return 0;
 }

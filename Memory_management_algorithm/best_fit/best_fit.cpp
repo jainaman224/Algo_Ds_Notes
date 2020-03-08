@@ -46,7 +46,7 @@ void best_fit(int memory_block[],int process_size[],int m,int n) {
 	        else { 
 	            printf("%d                         %d                  Not Allocated          Not Allocated\n",i,allocated_list[i][0]);
 	        }
-		}
+	    }
     }
 }
 
