@@ -76,5 +76,6 @@ class expressionTree {
 }
 
 /*
- * sample input : 395+2*+ sample output : 3 + 9 + 5 * 2
- */
+   sample input : 395+2*+ 
+   sample output : 3 + 9 + 5 * 2
+*/
