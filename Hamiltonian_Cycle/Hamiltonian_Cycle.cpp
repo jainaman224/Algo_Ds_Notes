@@ -83,27 +83,50 @@ bool hamilcycle(int adjmat[NODE][NODE]) {
 
 int main() {
 
-    int adjmat[NODE][NODE] = {
-    {0, 1, 0, 1, 0},
-    {1, 0, 1, 1, 1},
-    {0, 1, 0, 0, 1},
-    {1, 1, 0, 0, 1},
-    {0, 1, 1, 1, 0},
-    };
+
+    cout<<"Enter the connections between the nodes\n";
+    cout<<"Nodes will be marked from 0 to 4\n";
+    cout<<"Enter 0 0 to end the input process\n";
+
+    int x,y;
+    int adjmat[NODE][NODE];
+
+    x=1;
+    y=1;
+    for(int i=0;i<NODE;i++)
+    {
+        for(int j=0;j<NODE;j++)
+        {
+            adjmat[i][j]=0;
+        }
+    }
+    cin>>x>>y;
+    while(x!=0 || y!=0)
+    {
+        adjmat[x][y]=1;
+        adjmat[y][x]=1;
+        cin>>x>>y;
+    }
 
    hamilcycle(adjmat);
 }
 
 /*
 
-Change the adjmat value by below value
+Sample Input
 
-int adjmat[NODE][NODE] = {
-   {0, 1, 0, 1, 0},
-   {1, 0, 1, 1, 1},
-   {0, 1, 0, 0, 1},
-   {1, 1, 0, 0, 0},
-   {0, 1, 1, 0, 0},
-};
+0 1
+0 3
+1 3
+1 4
+1 2
+2 4
+3 4
+0 0
+
+Sample Output
+
+Hamiltonian Cycle: 0 1 2 4 3
 
 */
+
