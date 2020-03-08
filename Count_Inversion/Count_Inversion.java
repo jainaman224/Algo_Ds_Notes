@@ -21,8 +21,6 @@ public class Count_Inversion {
         for(int i=0; i<n; i++){
             arr[i] = Integer.parseInt(input[i]);
         }
-
-
         System.out.println(countInversions(arr, 0, arr.length-1));
     }
 
@@ -43,7 +41,6 @@ public class Count_Inversion {
         }
         return 0;
     }
-
 
     public static long merge(int[] arr, int low, int mid, int high){
         int count = 0;
