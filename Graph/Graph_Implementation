@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
+import java.util.*;
 
 class Graph {
 	private class Vertex {
@@ -113,42 +114,45 @@ class Graph {
 class client {
 
 	public static void main(String[] args) {
+	    Scanner scn=new Scanner(System.in);
 		// TODO Auto-generated method stub
 		Graph graph = new Graph();
-		graph.addVertex("A");
-		graph.addVertex("B");
-		graph.addVertex("C");
-		graph.addVertex("D");
-		graph.addVertex("E");
-		graph.addVertex("F");
-		graph.addVertex("G");
-
+		int No_Of_Vertices=scn.nextInt();
+		while(No_Of_Vertices-->0){
+		    String s=scn.next();
+		    graph.addVertex(s);
+		}
+		int No_Of_Edges=scn.nextInt();
 		// edges are added to hashmap with weight
-		graph.addEdge("A", "B", 10);
-		graph.addEdge("B", "C", 10);
-		graph.addEdge("C", "D", 10);
-		graph.addEdge("A", "D", 40);
-		graph.addEdge("D", "E", 2);
-		graph.addEdge("E", "F", 8);
-		graph.addEdge("F", "G", 3);
-		graph.addEdge("E", "G", 3);
-		graph.display();
-		graph.removeVertex("G");
-		graph.removeEdge("B", "C");
-		// G is removed from vtces HashMap.
-		// We have removed the edge b/w B and C so, nbrs hashmap of B will not contain C
-		// and vice-versa
+		while(No_Of_Edges-->0){
+		    String v1=scn.next();
+		    String v2=scn.next();
+		    int cost=scn.nextInt();
+		    graph.addEdge(v1, v2,cost);
+		}
 		graph.display();
 	}
 
 }
 
 /*
- Output A=>D(40),B(10),END B=>C(10),A(10),END C=>D(10),B(10),END
- D=>C(10),E(2),A(40),END E=>G(3),D(2),F(8),END F=>G(3),E(8),END
- G=>E(3),F(3),END
- *****************
- A=>D(40),B(10),END B=>A(10),END C=>D(10),END D=>C(10),E(2),A(40),END
- E=>D(2),F(8),END F=>E(8),END
- *****************
+  Sample Input:
+  5
+  A
+  B
+  C
+  D
+  E
+  4
+  A B 10
+  C D 8
+  E C 7
+  A E 4
+  Sample Output:
+  A=>B(10),E(4),END
+  B=>A(10),END
+  C=>D(8),E(7),END
+  D=>C(8),END
+  E=>C(7),A(4),END
+  *****************
  */
