@@ -22,7 +22,7 @@ int kadaneAlgo(int a[], int n)
  	{ 
 		max_ending_here += a[i];
  		if(max_ending_here < 0)
- 			max_ending_here = 0;
+ 		 max_ending_here = 0;
 
  		max_so_far = max(max_ending_here, max_so_far);
  	}
@@ -30,11 +30,11 @@ int kadaneAlgo(int a[], int n)
 }
 
 int circular_subarray_sum(int a[], int n)
-{  
-	//Ans for case 1.
- 	int kadane_max = kadaneAlgo(a, n);
+{   
+    //Ans for case 1.
+    int kadane_max = kadaneAlgo(a, n);
     
-    //Find total sum and negate all elements of the array.
+	//Find total sum and negate all elements of the array.
  	int total_sum = 0;
  	for(int i = 0; i < n; i++)
  	{ 
