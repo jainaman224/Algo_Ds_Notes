@@ -1,4 +1,4 @@
-# Python Program to find min Insertion in a string to make it Palindrome.
+# Python Program to find Minimum Insertion in a string to make it Palindrome.
 """ -----------------------------------
 Example:
 ab : No. of insertion is required 1 (bab)
