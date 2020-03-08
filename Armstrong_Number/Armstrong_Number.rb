@@ -1,12 +1,12 @@
-#A positive integer of n digits is called an Armstrong number of order n (order is number of digits) if
-#abcd... = pow(a,n) + pow(b,n) + pow(c,n) + pow(d,n) + .... 
+# A positive integer of n digits is called an Armstrong number of order n (order is number of digits) if
+# abcd... = pow(a,n) + pow(b,n) + pow(c,n) + pow(d,n) + .... 
 
-#To calculate the order of the number
+# To calculate the order of the number
 def order(num)
 	# variable to store of the number 
-	count = 0
+    count = 0
 	while (num != 0) 
-		count = count + 1
+	    count = count + 1
 		num = num / 10
 	end
 	return count 
@@ -18,7 +18,7 @@ def Armstrong (num)
 	count = order(num) 
 	temp = num 
 	sum1 = 0
-	boolean=false
+	boolean = false
 	while (temp != 0)
 		d = temp % 10
 		sum1 = sum1 + d**count
