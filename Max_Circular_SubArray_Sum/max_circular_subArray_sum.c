@@ -24,7 +24,7 @@ int kadaneAlgo(int a[], int n)
     int max_so_far = 0, max_ending_here = 0;
 
     for(int i = 0; i < n ; i++)
- 	{ 
+    { 
 		max_ending_here += a[i];
 		
  		if(max_ending_here < 0)
