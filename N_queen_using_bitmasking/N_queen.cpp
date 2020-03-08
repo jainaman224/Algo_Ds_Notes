@@ -40,7 +40,7 @@ void N_queen(int r,int n)
             d1[r-i+n-1] = 1;
             d2[r+i] = 1;
             board[r][i] = 1; // placing a queen at this position
-            N_queen(r+1,n,ans);
+            N_queen(r+1,n);
             //once recur place 0 again at that position
             col[i] = 0;
             d1[r-i+n-1] = 0;
