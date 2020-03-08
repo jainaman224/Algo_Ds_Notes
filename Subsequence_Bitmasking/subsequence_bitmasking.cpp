@@ -32,7 +32,7 @@ int main()
     cout << "Enter string" << endl;
     cin >> str;
     subsequence_bitmasking(str);
-    cout<<endl;
+    cout << endl;
     return 0;
 }
 
