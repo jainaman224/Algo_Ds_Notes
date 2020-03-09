@@ -1,6 +1,6 @@
 /*
  * PROBLEM STATEMENT
-  Program to find if a No. is a power of any Given No. in Java
+  Program to find if a No. is a power of any Given No. in C++
 
  * APPROACH
    Comparing the log's value with the floor value of log 
@@ -10,14 +10,14 @@ using namespace std;
 
 bool isPowerOfGivenNo(int number, int base) {
 if(number == 0)
-	{
-    //0 power anything is 0
-    if(base == 0)
-	    return true;
+    {
+     //0 power anything is 0
+     if(base == 0)
+        return true;
 
-    //0 is not the power of any number
-    return false;
-	}
+     //0 is not the power of any number
+     return false;
+    }
 
 	//explicitly check for 1 because log(1) = 0
 	if(base == 1)
