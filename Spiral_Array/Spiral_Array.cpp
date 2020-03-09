@@ -1,4 +1,4 @@
-//SPIRAL PRINTING 2-D matrix
+// SPIRAL PRINTING 2-D matrix
 
 #include <iostream>
 using namespace std;
@@ -10,29 +10,29 @@ int main()
     int i, j, count, dir;
     int arr[100][100];
 
-    cin>>m>>n;  // Matrix of m*n
+    cin >> m >> n;  // Matrix of m*n
 
     left = 0;
     right = n-1;
     top = 0;
     bottom = m-1;
 
-    count = m * n;        //no. of elements
+    count = m * n;        // no. of elements
     dir = 1;
 
-    for (i=0; i<m; i++)	// Taking Inputs
+    for (i = 0; i < m; i++)	// Taking Inputs
     {
-        for (j=0; j<n; j++)
-            cin>>arr[i][j];
+        for (j = 0; j < n; j++)
+            cin >> arr[i][j];
     }
 
     while (left <= right && top <= bottom && count > 0)
     {
-        if (dir == 1)		//left to right
+        if (dir == 1)		// left to right
         {
             for (i = left; i <= right; i++)
             {
-                cout<<arr[top][i];	//Printing the topmost untraversed row
+                cout << arr[top][i];	// Printing the topmost untraversed row
                 count--;
             }
             dir++;
@@ -42,7 +42,7 @@ int main()
         {
             for (i = top; i <= bottom; i++)
             {
-                cout<<arr[i][right];	//Printing the rightmost untraversed column
+                cout << arr[i][right];	// Printing the rightmost untraversed column
                 count--;
             }
             dir++;
@@ -52,17 +52,17 @@ int main()
         {
             for (i = right; i >= left; i--)
             {
-                cout<<arr[bottom][i];	//Printing the bottommost untraversed column
+                cout << arr[bottom][i];	// Printing the bottommost untraversed column
                 count--;
             }
             dir++;
             bottom--;
         }
-        if (dir == 4)		//bottom to top
+        if (dir == 4)		// bottom to top
         {
             for (i = bottom; i >= top; i--)
             {
-                cout<<arr[i][left];	//Printing the leftmost untraversed column
+                cout << arr[i][left];	// Printing the leftmost untraversed column
                 count--;
             }
             dir = 1;
