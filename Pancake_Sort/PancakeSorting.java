@@ -1,10 +1,17 @@
-// Input n=5 array={5,4,3,2,1}
+/* Input
+n=5 array={5,4,3,2,1}
+
+ Output 
+1 2 3 4 5 */
+
+
 import java.util.*;
-class Main
+class PancakeSorting
 {   
-    static void reverseArray(int a[],int n) //This functions reverses the array upto index n
+    
+    static void reverseArray(int a[], int n) //This functions reverses the array upto index n
     {
-        int temp[]=new int[n+1]; // temp is the temporary array 
+        int temp[] =new int[n+1]; // temp is the temporary array 
         for(int i=0;i<=n;i++)
         {
             temp[i]=a[n-i];
@@ -12,7 +19,9 @@ class Main
         for(int i=0;i<=n;i++)
         a[i]=temp[i];
      }
-     static int findmax(int a[],int n) //Function to find index of max element upto index n
+    
+    
+     static int findMax(int a[],int n) //Function to find index of max element upto index n
      {
          int max=a[0];int j=0; //j stores the index of max element
          for(int i=1;i<=n;i++)
@@ -27,7 +36,9 @@ class Main
          return j;
                 
      }
-    static void pancakesort(int a[],int n)
+    
+    
+    static void pancakeSort(int a[],int n)
     {  
         int currentLength;
         for(currentLength=n;currentLength>0;--currentLength)
@@ -40,6 +51,8 @@ class Main
             }
         }
      }
+    
+    
     public static void main(String[] args)
     {
         Scanner sc=new Scanner(System.in);
@@ -53,5 +66,7 @@ class Main
         System.out.print(array[i]+" ");
         System.out.println();
     }
+    
+    
 }
-// Output 1 2 3 4 5 
+
