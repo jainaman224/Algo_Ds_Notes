@@ -9,26 +9,29 @@
 
     public class Ascii_Subsequences {
         public static void main(String args[]) {
-	// Your Code Here
-	Scanner obj = new Scanner(System.in);
-	String str = obj.next();
-	int ans = find(str, ""); //this function will return count of such subsequences and also print them
-	System.out.println();
-	System.out.println(ans); //this is to print the count
+	    // Your Code Here
+	    Scanner obj = new Scanner(System.in);
+	    String str = obj.next();
+	    int ans = find(str, "");
+	    //this function will return count of such subsequences and also print them
+	    System.out.println();
+	    System.out.println(ans); //this is to print the count
     }
 
-    public static int find(String str, String ans) {
-	if (str.length() == 0) {
-	    System.out.print(ans + " ");
-	    return 1; //this will develop the count of such subsequences
-	}
+        public static int find(String str, String ans) {
+	    if (str.length() == 0) {
+	        System.out.print(ans + " ");
+	        return 1; //this will develop the count of such subsequences
+	    }
 
-	char ch = str.charAt(0);
-	int x = find(str.substring(1), ans); // when ans is passed as it is
-	int y = find(str.substring(1), ans + ch); // when ch is added to the ans
-	int z = find(str.substring(1), ans + (int) ch); // when ch's ascii code is added to the ans
+	    char ch = str.charAt(0);
+	    int x = find(str.substring(1), ans); // when ans is passed as it is
+	    int y = find(str.substring(1), ans + ch); // when ch is added to the ans
+	    int z = find(str.substring(1), ans + (int) ch);
+	    // when ch's ascii code is added to the ans
 
-	return x + y + z; //the count for this frame will be sum of x,y,z
+	    return x + y + z; 
+            //the count for this frame will be sum of x,y,z
         }
    }
 
