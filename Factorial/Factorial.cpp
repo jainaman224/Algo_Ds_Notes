@@ -15,20 +15,20 @@ main()
       l = 0;
       for (k = 0; k < m; k++) 
       {
-        a[k] = a[k] * j + l;
-        l = a[k] / 10;
-        a[k] = a[k] % 10;
+          a[k] = a[k] * j + l;
+          l = a[k] / 10;
+          a[k] = a[k] % 10;
       }
 
     // Code to break a number having more than one digit into array of single
     // digits
-    while (l) 
-    {
-        a[k] = l % 10;
-        k ++;
-        m ++;
-        l = l / 10;
-    }
+      while (l) 
+      {
+          a[k] = l % 10;
+          k ++;
+          m ++;
+          l = l / 10;
+      }
   }
   printf("Answer is : ");
   for (i = m - 1; i >= 0; i--)
