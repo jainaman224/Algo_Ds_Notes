@@ -9,10 +9,9 @@ void multiply(int x)
     for(i=0; i<rs; i++){ 
         int pro=res[i]*x+c; 
         res[i]=pro%10; 
-    	c=pro/10;     
+        c=pro/10;     
     }
-    while (c) 
-    { 
+    while (c){ 
         res[rs] = c%10; 
         c = c/10; 
         rs++; 
