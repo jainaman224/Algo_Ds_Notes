@@ -58,7 +58,7 @@ class queue {
 		if(last == data.length) {
 			last = -1;
 		}
-		last = (last + 1)% data.length;
+		last = (last + 1) % data.length;
 		data[last] = element;
 		size++;
 	}
@@ -70,7 +70,7 @@ class queue {
 			throw e;
 		}
 		int temp = data[first];
-		first = (first + 1)% data.length;
+		first = (first + 1) % data.length;
 		size--;
 		if(first == 0) {
 			first = -1;
@@ -82,16 +82,16 @@ class queue {
 	//doubles the size of array/queue
 	private void doubleArray() {
 		int temp[] = data;
-		data = new int[2*data.length];
+		data = new int[2 * data.length];
 		int j = 0;
 		int temp1 = first;
-		for(int i=first; i<temp.length; i++, j++) {
+		for(int i = first; i < temp.length; i++, j++) {
 			data[j] = temp[i];
 		}	
-		for(int i=0; i<=first-1; i++, j++) {
+		for(int i = 0; i <= first - 1; i++, j++) {
 			data[j] = temp[i];
 		}
-		last = temp.length -1;
+		last = temp.length - 1;
 		first = 0;
 	}	
 }
