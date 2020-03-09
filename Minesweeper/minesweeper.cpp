@@ -198,11 +198,11 @@ void initialise(char realboard[][max_side],char myboard[][max_side])
     srand(time(NULL)); //initalising random so that same config doesn't arise
     int i,j;
     for(i=0;i<SIDE;i++)
-	for(j=0;j<SIDE;j++)
-	{
-	    myboard[i][j]=realboard[i][j]='-';
-	}
-	return;
+	    for(j=0;j<SIDE;j++)
+	    {
+	        myboard[i][j]=realboard[i][j]='-';
+	    }
+	    return;
 }
 
 void cheatmines (char realboard[][max_side])
