@@ -3,10 +3,10 @@
 #define max 1000 
 int res[max]; 
 int rs,x,i; 
-void mult(int x) 
+void multiply(int x) 
 {   
-    int i,c = 0;
-    for (i=0; i<rs; i++){ 
+    int i,c=0;
+    for(i=0; i<rs; i++){ 
         int pro=res[i]*x+c; 
         res[i]=pro%10; 
     	c=pro/10;     
@@ -18,26 +18,25 @@ void mult(int x)
         rs++; 
     } 
 }
-void fact(int n) 
+void factorial(int n) 
 {     
     res[0] = 1; 
     rs = 1; 
     for (x=2; x<=n; x++) 
     {
-	    mult(x);  
-	}
-	for (i=rs-1; i>=0; i--)
-	{ 
-    	printf("%d",res[i]); 
-	}
+        multiply(x);  
+    }
+    for (i=rs-1; i>=0; i--){ 
+	printf("%d",res[i]); 
+    }
 }
 
-int main() 
-{	int n;
-	printf("Enter a number: ");
-	scanf("%d",&n);
-	printf("Factorial is ");
-    fact(n);  
+int main(){
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+    printf("Factorial is ");
+    factorial(n);  
 } 
 
 /* 
