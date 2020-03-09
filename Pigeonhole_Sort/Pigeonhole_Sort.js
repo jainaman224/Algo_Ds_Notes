@@ -1,7 +1,12 @@
-//array to be sorted  
-//no. of elements = 7
-var arr = [ 19,9,2,3,8,12,10];
-
+//taking dynamic input array to be sorted
+var i;
+var n=prompt("enter the size of your array");
+var arr = [];
+for(i=0; i<n; i++) {
+	
+	//Taking Input from user
+	arr[i] = prompt('Enter Element ' + (i+1));
+}
 //function for pigeonsort
 function pigeonsort(array)
 {
@@ -16,7 +21,7 @@ function pigeonsort(array)
   
   //initialising hole array with value 0
   var hole = Array(holerange).fill(0);
-  var i;
+  
   //filling the hole array
   for(i=0;i<array.length;i++)
   {
@@ -39,5 +44,5 @@ function pigeonsort(array)
 
 console.log(pigeonsort(arr));
 
-
+//input -  [19,9,2,3,8,12,10]
 //output - [2,3,8,9,10,12,19]
