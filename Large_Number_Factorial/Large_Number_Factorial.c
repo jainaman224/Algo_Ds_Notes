@@ -4,10 +4,10 @@
 int res[max]; 
 int rs,x,i; 
 void mult(int x) 
-{   int i,c = 0;
-	for (i=0; i<rs; i++) 
-    { 
-		int pro=res[i]*x+c; 
+{   
+    int i,c = 0;
+    for (i=0; i<rs; i++){ 
+        int pro=res[i]*x+c; 
         res[i]=pro%10; 
     	c=pro/10;     
     }
@@ -17,8 +17,7 @@ void mult(int x)
         c = c/10; 
         rs++; 
     } 
-} 
-
+}
 void fact(int n) 
 {     
     res[0] = 1; 
