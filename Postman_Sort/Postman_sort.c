@@ -1,9 +1,8 @@
 #include <stdio.h>
-int array[100], array1[100];
 int i, j, temp, max, count, maxdigits = 0, c = 0;
 
 /* Function to arrange the of sequence having same base */
-void arrange(int k , int n)
+void arrange(int array[], int array1[], int k , int n)
 {
     for (i = k; i < n - 1; i++)
     {
@@ -28,6 +27,8 @@ int main()
     int temp, t, n = 1;
     printf("Enter the size of array : ");
     scanf("%d", &count);  // size of array
+
+    int array[count], array1[count];
 
     printf("Enter the elements of array : ");
     for (i = 0; i < count; i++)
@@ -84,7 +85,7 @@ int main()
         {
             temp = array[i] / n;
             for (j = i + 1; temp == (array[j] / n); j++);
-            arrange(i, j);
+            arrange(array, array1, i, j);
             i = j;
         }
         n = n / 10;
