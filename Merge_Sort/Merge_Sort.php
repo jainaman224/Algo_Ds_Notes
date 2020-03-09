@@ -1,7 +1,3 @@
-/* 
-author: chandrikadeb7
-date: 06.03.2020
-*/
 <?php
 function merge_sort($array)
 {
@@ -14,6 +10,7 @@ function merge_sort($array)
 	$right = merge_sort($right);
 	return merge($left, $right);
 }	
+
 function merge($left, $right)
 {
 	$res = array();
@@ -42,6 +39,7 @@ function merge($left, $right)
 	}
 	return $res;
 }
+
 $test = array(1000, 54, 17, 24, 50, 4, 11);
 echo "Input Array : ";
 echo implode(' ;  ',$test );
