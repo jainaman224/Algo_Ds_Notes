@@ -1,15 +1,15 @@
-#include<stdio.h>
-int main()
+#include<stdio.h>    /*Header file inclusion statement*/
+int main()           /*Driver function*/
 {
-	int i,n,j,k;
-	printf("Enter the size of array : ");
+    int i,n,j,k;
+    printf("Enter the size of array : ");
     scanf("%d",&n);
     int a[n];
-    printf("The array elements are : ");
+    printf("The array elements are : ");    /*Taking input from user*/
     for(i=0;i<n;i++)
     {
     	scanf("%d",&a[i]);
-	}
+    }
 	printf("The array without duplicates : ");
 	for(i=0;i<n;i++)
 	{
@@ -19,7 +19,7 @@ int main()
 	{
 		for(k=j;k<n;k++)
 		{
-			a[k]=a[k+1];
+			a[k]=a[k+1];    /*Logic statement for removing duplicates*/
 		}
 		n--;
 		j--;
@@ -28,8 +28,8 @@ int main()
     }
     for (i = 0; i < n; i++) 
 	{
-        printf("%d ", a[i]);
+        printf("%d ", a[i]);   /*Printing the new array without duplicates*/
     }
     
-	return 0;
+	return 0;  /*Return statement*/
 }
