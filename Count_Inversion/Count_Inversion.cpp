@@ -66,12 +66,12 @@ int inversions_count(int array[], int n)
     return mergeSort(array, aux, 0, n-1);
 }
 
-int main()
+int main ()
 {       
     int n;
     cin>>n;
     int arr[n];
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     cin>>arr[i];
     cout<<(inversions_count(arr, n))<<endl;
     return 0;
@@ -80,5 +80,6 @@ int main()
 /* Sample input 
 5
 1 20 6 4 5
+
 Sample Output
 5 */
