@@ -1,68 +1,100 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
+/** Class BoyerMoore **/
+public class BoyerMoore
+{
+    public void findPattern(String t, String p)
+    {
+        char[] text = t.toCharArray();
+        char[] pattern = p.toCharArray();
+        int pos = indexOf(text, pattern);
+        if (pos == -1)
+            System.out.println("\nNo Match\n");
+        else
+            System.out.println("Pattern found at position : "+ pos);
+    }
 
-class AWQ{ 
-	
-	static int NO_OF_CHARS = 256; 
-	
+    /** Function to calculate index of pattern substring **/
+    public int indexOf(char[] text, char[] pattern) 
+    {
+        if (pattern.length == 0) 
+            return 0;
+        int charTable[] = makeCharTable(pattern);
+        int offsetTable[] = makeOffsetTable(pattern);
+        for (int i = pattern.length - 1, j; i < text.length;) 
+        {
+            for (j = pattern.length - 1; pattern[j] == text[i]; --i, --j) 
+                     if (j == 0) 
+                    return i;
 
-	static int max (int a, int b) { return (a > b)? a: b; } 
+ 
 
-	static void badCharHeuristic( char []str, int size,int badchar[]) 
-	{ 
-	int i; 
+              // i += pattern.length - j; // For naive method
+              i += Math.max(offsetTable[pattern.length - 1 - j], charTable[text[i]]);
+        }
+        return -1;
+      }
 
-	// Initialize all occurrences as -1 
-	for (i = 0; i < NO_OF_CHARS; i++) 
-		badchar[i] = -1; 
+      /** Makes the jump table based on the mismatched character information **/
+      private int[] makeCharTable(char[] pattern) 
+      {
+        final int ALPHABET_SIZE = 256;
+        int[] table = new int[ALPHABET_SIZE];
+        for (int i = 0; i < table.length; ++i) 
+               table[i] = pattern.length;
+        for (int i = 0; i < pattern.length - 1; ++i) 
+               table[pattern[i]] = pattern.length - 1 - i;
+        return table;
+      }
 
-	// Fill the actual value of last occurrence 
-	// of a character 
-	for (i = 0; i < size; i++) 
-		badchar[(int) str[i]] = i; 
-	} 
+      /** Makes the jump table based on the scan offset which mismatch occurs. **/
+      private static int[] makeOffsetTable(char[] pattern) 
+      {
+        int[] table = new int[pattern.length];
+        int lastPrefixPosition = pattern.length;
+        for (int i = pattern.length - 1; i >= 0; --i) 
+        {
+            if (isPrefix(pattern, i + 1)) 
+                   lastPrefixPosition = i + 1;
+              table[pattern.length - 1 - i] = lastPrefixPosition - i + pattern.length - 1;
+        }
+        for (int i = 0; i < pattern.length - 1; ++i) 
+        {
+              int slen = suffixLength(pattern, i);
+              table[slen] = pattern.length - 1 - i + slen;
+        }
+        return table;
+    }
 
+    /** function to check if needle[p:end] a prefix of pattern **/
+    private static boolean isPrefix(char[] pattern, int p) 
+    {
+        for (int i = p, j = 0; i < pattern.length; ++i, ++j) 
+            if (pattern[i] != pattern[j]) 
+                 return false;
+        return true;
+    }
 
-	static void search( char txt[], char pat[]) 
-	{ 
-	int m = pat.length; 
-	int n = txt.length; 
+    /** functin to returns the maximum length of the substring ends at p and is a suffix **/
+    private static int suffixLength(char[] pattern, int p) 
+    {
+        int len = 0;
+        for (int i = p, j = pattern.length - 1; i >= 0 && pattern[i] == pattern[j]; --i, --j) 
+               len += 1;
+        return len;
+    }
+    public static void main(String[] args) throws IOException
+    {    
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Boyer Moore Algorithm Test\n");
+        System.out.println("\nEnter Text\n");
+        String text = br.readLine();
+        System.out.println("\nEnter Pattern\n");
+        String pattern = br.readLine();
+        BoyerMoore bm = new BoyerMoore(); 
+        bm.findPattern(text, pattern);     
+    }
+}
 
-	int badchar[] = new int[NO_OF_CHARS]; 
-
-
-	badCharHeuristic(pat, m, badchar); 
-
-	int s = 0; // s is shift of the pattern with 
-				// respect to text 
-	while(s <= (n - m)) 
-	{ 
-		int j = m-1; 
-
-
-		while(j >= 0 && pat[j] == txt[s+j]) 
-			j--; 
-
-
-		if (j < 0) 
-		{ 
-			System.out.println("Patterns occur at shift = " + s); 
-
-
-			s += (s+m < n)? m-badchar[txt[s+m]] : 1; 
-
-		} 
-
-		else
-		
-			s += max(1, j - badchar[txt[s+j]]); 
-	} 
-	} 
-
-	
-	public static void main(String []args) { 
-		
-		char txt[] = "ABAAABCD".toCharArray(); 
-		char pat[] = "ABC".toCharArray(); 
-		search(txt, pat); 
-	} 
-} 
