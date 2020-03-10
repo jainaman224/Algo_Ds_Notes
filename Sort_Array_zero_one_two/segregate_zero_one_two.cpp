@@ -49,3 +49,4 @@ Enter the number of elements of array: 7
 Enter the array elements: 1 0 2 1 1 0 2                                                                                                                                                                                                             
 Original array : 1 0 2 1 1 0 2 
 Sorted array   : 0 0 1 1 1 2 2  */
+
