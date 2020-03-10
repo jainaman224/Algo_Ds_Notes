@@ -11,10 +11,16 @@ int gcd (int a, int b)
 main()
 {
 	int a,b,hcf;
-	printf ("Enter a,b");
+	printf ("Input two numbers : ");
 	scanf ("%d%d",&a,&b);
 	/* Function Calling*/
 	hcf = gcd (a,b);
 	printf ("GCD = %d", hcf);
 	return 0;
 }
+
+/* 
+Sample input:-
+   input two numbers : 15 45
+   GCD = 15
+   */
