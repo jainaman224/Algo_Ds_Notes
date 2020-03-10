@@ -32,9 +32,7 @@ int main() {
     string line;
     while (getline(cin, line)) {
         int x = stringToInteger(line);
-        
         int ret = Solution().mySqrt(x);
-
         string out = to_string(ret);
         cout << out << endl;
     }
@@ -43,5 +41,4 @@ int main() {
 
 /*Sample Input:
 Input: 4
-Output: 2
-*/
+Output: 2*/
