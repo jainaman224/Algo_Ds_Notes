@@ -1,143 +1,129 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include<bits/stdc++.h>
+using namespace std; 
 
-class Graph
-{
+class Graph 
+{ 
+	int V; // Number of vertices 
+	list<int> *adj; // An array of adjacency lists 
 
-  int V;			// Number of vertices 
-    list < int >*adj;		// An array of adjacency lists 
+	void order_finishing_time(int v, bool visited[], stack<int> &Stack); //Fills Stack with vertices in increasing order of finishing times
 
-  void fillOrder (int v, bool visited[], stack < int >&Stack);	//Fills Stack with vertices in increasing order of finishing times
+	void DFSUtil(int v, bool visited[]); // A recursive function to get DFS
+public: 
+	Graph(int V); 
+	void addEdge(int v, int w); 
 
-  void DFSUtil (int v, bool visited[]);	// A recursive function to print DFS
-public:
-    Graph (int V);
-  void addEdge (int v, int w);
+	void KasurajaAlgorithm(); // Finds and prints strongly connected components 
+	Graph getTranspose(); // Function that returns transpose of graph 
+}; 
 
-  void KasurajaAlgorithm ();	// Finds and prints strongly connected components 
+Graph::Graph(int V) 
+{ 
+	this->V = V; 
+	adj = new list<int>[V]; 
+} 
 
-  Graph getTranspose ();	// Function that returns transpose of graph 
-};
+void Graph::DFSUtil(int v, bool visited[]) 
+{ 
+    // Mark the current node as visited and print it 
+	visited[v] = true; 
+	cout << v << " "; 
 
-Graph::Graph (int V)
-{
-  this->V = V;
-  adj = new list < int >[V];
-}
+	list<int>::iterator i; 
+	for (i = adj[v].begin(); i != adj[v].end(); ++i) 
+		if (!visited[*i]) 
+			DFSUtil(*i, visited); 
+} 
 
+Graph Graph::getTranspose() 
+{ 
+	Graph g(V); 
+	for (int v = 0; v < V; v++) 
+	{ 
+	    // Recur for all the adjacent vertices
+		list<int>::iterator i; 
+		for(i = adj[v].begin(); i != adj[v].end(); ++i) 
+		{ 
+			g.adj[*i].push_back(v); 
+		} 
+	} 
+	return g; 
+} 
 
-void
-Graph::DFSUtil (int v, bool visited[])
-{
-  // Mark the current node as visited and print it 
-  visited[v] = true;
-  cout << v << " ";
+void Graph::addEdge(int v, int w) 
+{ 
+    //Adding edge is equivalent to pushing corresponding vertices in adjacency list
+	adj[v].push_back(w); 
+} 
 
+void Graph::order_finishing_time(int v, bool visited[], stack<int> &Stack) 
+{ 
+    // Mark the current node as visited
+	visited[v] = true; 
 
-  list < int >::iterator i;
-  for (i = adj[v].begin (); i != adj[v].end (); ++i)
-    if (!visited[*i])
-      DFSUtil (*i, visited);
-}
+    // Recur for all the adjacent vertices
+	list<int>::iterator i; 
+	for(i = adj[v].begin(); i != adj[v].end(); ++i) 
+		if(!visited[*i]) 
+			order_finishing_time(*i, visited, Stack); 
+			
+	// All vertices reachable from v are processed , push v 
+	Stack.push(v); 
+} 
+void Graph::KasurajaAlgorithm() 
+{ 
+	stack<int> Stack; 
 
-Graph
-Graph::getTranspose ()
-{
-  Graph g (V);
-  for (int v = 0; v < V; v++)
-    {
-      // Recur for all the adjacent vertices 
-      list < int >::iterator i;
-      for (i = adj[v].begin (); i != adj[v].end (); ++i)
-	{
-	  g.adj[*i].push_back (v);
-	}
-    }
-  return g;
-}
+    // Mark all the vertices as not visited - first DFS
+	bool *visited = new bool[V]; 
+	for(int i = 0; i < V; i++) 
+		visited[i] = false; 
 
-void
-Graph::addEdge (int v, int w)
-{
-  //Adding edge is equivalent to pushing corresponding vertices in adjacency list
-  adj[v].push_back (w);
-}
+    // Fill vertices in stack according to their finishing times
+	for(int i = 0; i < V; i++) 
+		if(visited[i] == false) 
+			order_finishing_time(i, visited, Stack); 
 
-void
-Graph::fillOrder (int v, bool visited[], stack < int >&Stack)
-{
-  // Mark the current node as visited
-  visited[v] = true;
+    // Create a reversed graph 
+	Graph gr = getTranspose(); 
+	
+	// Mark all the vertices as not visited -second DFS
+	for(int i = 0; i < V; i++) 
+		visited[i] = false; 
 
-  // Recur for all the adjacent vertices
-  list < int >::iterator i;
-  for (i = adj[v].begin (); i != adj[v].end (); ++i)
-    if (!visited[*i])
-      fillOrder (*i, visited, Stack);
+	while (Stack.empty() == false) 
+	{ 
+		int v = Stack.top(); 
+		Stack.pop(); 
 
-  // All vertices reachable from v are processed , push v 
-  Stack.push (v);
-}
+        // Print Strongly connected components
+		if (visited[v] == false) 
+		{ 
+			gr.DFSUtil(v, visited); 
+		    cout << endl; 
+		} 
+	} 
+} 
 
-void
-Graph::KasurajaAlgorithm ()
-{
-  stack < int >Stack;
-
-  // Mark all the vertices as not visited - first DFS
-  bool *visited = new bool[V];
-  for (int i = 0; i < V; i++)
-    visited[i] = false;
-
-  // Fill vertices in stack according to their finishing times 
-  for (int i = 0; i < V; i++)
-    if (visited[i] == false)
-      fillOrder (i, visited, Stack);
-
-  // Create a reversed graph 
-  Graph gr = getTranspose ();
-
-  // Mark all the vertices as not visited -second DFS
-  for (int i = 0; i < V; i++)
-    visited[i] = false;
-
-  while (Stack.empty () == false)
-    {
-      int v = Stack.top ();
-      Stack.pop ();
-
-      // Print Strongly connected components
-      if (visited[v] == false)
-	{
-	  gr.DFSUtil (v, visited);
-	  cout << endl;
-	}
-    }
-}
-
-int
-main ()
-{
-  int V, n, v1, v2;
-  cout << "Enter number of vertices" << endl;
-  cin >> V;
-  Graph g (V);			//Create a graph with V number of vertices
-  cout << "Enter number of edges" << endl;
-  cin >> n;
-  for (int i = 0; i < n; i++)
-    {
-      cout << "Enter the vertices forming this edge" << endl;
-      cin >> v1 >> v2;
-      g.addEdge (v1, v2);
+int main() 
+{ 
+    int V, n, v1, v2;
+    cout << "Enter the number of vertices" << endl;
+    cin >> V;
+    Graph g (V); //Create a graph with V number of vertices
+    cout << "Enter the number of edges" << endl;
+    cin >> n;
+    for (int i = 0; i < n; i++){
+        cout << "Enter the vertices forming this edge" << endl;
+        cin >> v1 >> v2;
+        g.addEdge (v1, v2);
     }
 
-  cout <<
-    "The strongly connected components in given graph are using Kasuraja Algorithm are"
-    << endl;
-  g.KasurajaAlgorithm ();
-
-  /* Sample Input:
-    8
+    cout <<"The strongly connected components in given graph are using Kasuraja Algorithm are"<<endl;
+    g.KasurajaAlgorithm();
+	
+	/* Sample Input:
+	8
     8
     2 1
     2 3
@@ -147,7 +133,7 @@ main ()
     4 2
     3 4
     0 3
-
+    
     Sample Output:
     The strongly connected components in given graph are using Kasuraja Algorithm are
     7 
@@ -155,5 +141,5 @@ main ()
     5 
     0 1 2 4 3 */
 
-  return 0;
-}
+	return 0; 
+} 
