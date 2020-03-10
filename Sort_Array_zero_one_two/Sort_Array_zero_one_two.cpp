@@ -9,18 +9,18 @@ void sort_zero_one_two(int a[],int n)
 {
     int zero = 0; //counter to store number of 0's
     int one = 0;  //counter to store number of 1's
-    for(int i = 0;i < n;i++)
+    for(int i = 0 ; i < n ; i++)
     {
         if(a[i] == 0)
             zero++;
         else if(a[i] == 1)
             one++;
     }
-    for(int i = 0;i < zero;i++)
+    for(int i = 0 ; i < zero ; i++)
         a[i] = 0;
-    for(int i = zero;i < zero+one;i++)
+    for(int i = zero ; i < zero+one ; i++)
         a[i] = 1;
-    for(int i = one+zero;i < n;i++) //filling rest of the array with 2
+    for(int i = one+zero ; i < n ; i++) //filling rest of the array with 2
         a[i] = 2;
 }
 
@@ -31,15 +31,16 @@ int main()
     cin>>n;
     int a[n];
     cout<<"Enter the array elements: ";
-    for(int i=0;i<n;i++)
+    for(int i = 0 ; i < n ; i++)
         cin>>a[i];
     cout<<"Original array : ";
-    for(int i=0;i<n;i++)
+    for(int i = 0 ; i < n ; i++)
         cout<<a[i]<<" ";
     sort_zero_one_two(a,n); //calling the sort function
-    cout<<"\nSorted array   : ";
-    for(int i = 0;i < n;i++)
-        cout<<a[i]<<" ";
+    cout<<endl;
+    cout<<"Sorted array   : ";
+    for(int i = 0;i < n ; i++)
+        cout<< a[i] <<" ";
     cout<<endl;
     return 0;
 }
