@@ -1,4 +1,5 @@
-/*We can use binary search to reduce the number of comparisons in normal insertion sort. Binary Insertion Sort uses binary search to find the proper location to insert the selected item at each iteration.*/
+/*We can use binary search to reduce the number of comparisons in normal insertion sort. 
+Binary Insertion Sort uses binary search to find the proper location to insert the selected item at each iteration.*/
 using System; 
   
 class BIS { 
@@ -26,13 +27,11 @@ class BIS {
         int[] array = new int[size];
 
         for (int i = 0; i < size; i++)
-	    {
-	        array[i] = Convert.ToInt32(Console.ReadLine());
-	    }
-
-        sort(array); 
-  
-        for (int i = 0; i < array.Length; i++) 
+	    array[i] = Convert.ToInt32(Console.ReadLine());
+	    
+	sort(array); 
+	    
+	for (int i = 0; i < array.Length; i++) 
             Console.Write(array[i] + " "); 
     } 
 } 
