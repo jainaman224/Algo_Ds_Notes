@@ -18,9 +18,9 @@ void sort_zero_one_two(int a[],int n)
     }
     for(int i = 0 ; i < zero ; i++)
         a[i] = 0;
-    for(int i = zero ; i < zero+one ; i++)
+    for(int i = zero ; i < zero + one ; i++)
         a[i] = 1;
-    for(int i = one+zero ; i < n ; i++) //filling rest of the array with 2
+    for(int i = one + zero ; i < n ; i++) //filling rest of the array with 2
         a[i] = 2;
 }
 
