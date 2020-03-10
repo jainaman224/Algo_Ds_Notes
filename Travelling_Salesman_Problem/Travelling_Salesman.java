@@ -1,41 +1,37 @@
+//Travelling Salesman Problem
+
 import java.util.*;
 class TSP 
 { 
-
 	// Function to find the minimum weight 
 	// Hamiltonian Cycle 
-	
-  static int tspfn ( int[][] graph, boolean[] visited, int currPosition, int n, int count, int cost, int answer ) 
+  static int tspfn( int[][] graph, boolean[] visited, int currPosition, int n, int count, int cost, int answer) 
 	{ 
-  
 		// If last node is reached and it has a link 
 		// to the starting node i.e the source then 
 		// keep the minimum value out of the total cost 
 		// of traversal and "answer" 
 		// Finally return to check for more possible values 
 		
-    if ( count == n && graph[currPosition][0] > 0 ) 
+    if( count == n && graph[currPosition][0] > 0) 
 		{ 
-    
-			answer = Math.min( answer, cost + graph[currPosition][0] ); 
-			return answer; 
-		
-    } 
+			answer = Math.min( answer, cost + graph[currPosition][0]); 
+			return answer; 	
+    	} 
     
 		// BACKTRACKING STEP 
 		// Loop to traverse the adjacency list 
 		// of currPos node and increasing the count 
 		// by 1 and cost by graph[currPos,i] value 
 		
-    for ( int i = 0; i < n; i++ ) 
+    for( int i = 0; i < n; i++) 
 		{ 
     
-			if ( visited[i] == false && graph[currPosition][i] > 0 ) 
+			if( visited[i] == false && graph[currPosition][i] > 0) 
 			{ 
-
 				// Mark as visited 
 				visited[i] = true; 
-				answer = tspfn( graph, visited, i, n, count + 1, cost + graph[currPosition][i], answer ); 
+				answer = tspfn( graph, visited, i, n, count + 1, cost + graph[currPosition][i], answer); 
 				// Mark ith node as unvisited 
 				visited[i] = false; 
 		
@@ -43,7 +39,7 @@ class TSP
 		} 
 		return answer; 
 	} 
-	public static void main( String[] args ) 
+	public static void main( String[] args) 
 	{ 
 
 		// n is the number of nodes i.e. V 
