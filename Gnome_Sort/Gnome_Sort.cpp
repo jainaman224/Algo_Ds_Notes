@@ -3,9 +3,8 @@
 using namespace std; 
   
 // A function which is used to sort the algorithm using gnome sort 
-void gnome_sort(int arr[], int n) 
-{   
-    // 
+void gnome_sort(int arr[], int n) {   
+
     int index = 0; 
   
     while (index < n) { 
@@ -19,26 +18,24 @@ void gnome_sort(int arr[], int n)
             swap(arr[index], arr[index - 1]); 
             index--; 
         } 
-    } 
-   
+    }  
 } 
   
-  
-// Sample Test cases to test above function. 
+// Main function. 
 int main() 
 { 
     
     int n;
-    cout<<"Enter the size of an Array: ";
-    cin>>n;
+    cout << "Enter the size of an Array: ";
+    cin >> n;
     int arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    for(int i = 0;i < n;i++){
+        cin >> arr[i];
     }
     gnome_sort(arr, n); 
 
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<endl;
+    for(int i = 0;i < n;i++){
+        cout << arr[i] <<endl;
     }
   
     return 0; 
