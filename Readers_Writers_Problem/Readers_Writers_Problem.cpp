@@ -48,7 +48,7 @@ int main()
     for(i = 0;i <= 2;i++)
     {
         pthread_create(&rthreads[i],NULL,reader,(void *)i);
-    	pthread_create(&wthreads[i],NULL,writer,(void *)i);
+        pthread_create(&wthreads[i],NULL,writer,(void *)i);
     }
     //Loop for joining threads
     for(i = 0;i <= 2;i++)
