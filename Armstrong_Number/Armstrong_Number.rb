@@ -6,7 +6,7 @@ def order(num)
 	# variable to store of the number 
     count = 0
 	while (num != 0) 
-	    count = count + 1
+	    	count = count + 1
 		num = num / 10
 	end
 	return count 
