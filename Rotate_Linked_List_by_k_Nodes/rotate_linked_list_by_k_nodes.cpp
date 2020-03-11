@@ -18,11 +18,13 @@ public:
 
 node* insert(){
 	// no. of values to insert
+	cout<<"Enter no. of nodes you want to insert in linked list: "<<endl;
 	int n;
 	cin >> n;
 	node* head = NULL;
 	node* temp = head;
 
+	cout<<"Enter "<<n<<" values of linked list : "<<endl;
 	for(int i=0; i<n; i++){
 		int value;
 		cin>>value;
@@ -99,10 +101,25 @@ void printList(node* head){
 int main(){
 	node* head = insert();
 	printList(head);
+	cout<<"Enter value by which you want to rotate linked list counter clockwise : "<<endl;
 	int k;
 	cin >> k;
 	head = rotate(head,k);
+	cout<<"After rotation : "<<endl;
 	printList(head);
 	return 0;
 }
 
+// Input and Output :
+/*
+Enter no. of nodes you want to insert in linked list:
+9
+Enter 9 values of linked list :
+1 2 3 4 5 6 7 8 9
+1 --> 2 --> 3 --> 4 --> 5 --> 6 --> 7 --> 8 --> 9 --> NULL
+Enter value by which you want to rotate linked list counter clockwise :
+3
+After rotation :
+4 --> 5 --> 6 --> 7 --> 8 --> 9 --> 1 --> 2 --> 3 --> NULL
+
+*/
