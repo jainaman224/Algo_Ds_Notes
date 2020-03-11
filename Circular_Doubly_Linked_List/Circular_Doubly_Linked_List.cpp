@@ -246,7 +246,7 @@ int main()
 			    cout << endl;
 			    break;
 				
-			case 2:
+		    case 2:
 		        insertAtLast();
 		        cout << endl;
 		        break;
@@ -277,17 +277,17 @@ int main()
 			    cout << endl;
 		        break;
 				
-    	    case 7:
+            case 7:
 	    	    display();
 		        cout << endl;
 		        break;
 				
-		    case 8:
-    			cout << "Exit" << endl;
+            case 8:
+    		    cout << "Exit" << endl;
 	    	    return 0;
 		        break;
 				
-		    default:
+			default:
     		    cout << "Invalid Choice!" << endl;
 	    	    break;
 	    }
