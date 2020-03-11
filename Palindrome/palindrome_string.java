@@ -1,10 +1,10 @@
-//Program to find whether a string is a pallindrome or not
+//Program to find whether a string is a palindrome or not
 
 import java.util.Scanner;
-public class pallindrome_string {
+public class palindrome_string {
 	
 	// Reverse a given string
-	public static String pallindrome(String str) {
+	public static String palindrome(String str) {
 		String str1  = "";
 		for (int i = str.length()-1; i>=0;i --) {
 			str1 = str1 + str.charAt(i);
@@ -16,9 +16,9 @@ public class pallindrome_string {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter a string");
 		String str = s.nextLine();
-		String strrev = pallindrome(str);
+		String strrev = palindrome(str);
 		
-		// Comparing 2 strings to find if input string is pallindrome or not
+		// Comparing 2 strings to find if input string is palindrome or not
 		if(str.equals(strrev)) {
 			System.out.println("String entered is palindrome!");
 		}
