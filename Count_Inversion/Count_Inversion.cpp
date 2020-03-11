@@ -69,11 +69,11 @@ int inversions_count(int array[], int n)
 int main ()
 {       
     int n;
-    cin>>n;
+    cin >> n;
     int arr[n];
     for(int i=0; i<n; i++)
-    cin>>arr[i];
-    cout<<(inversions_count(arr, n))<<endl;
+    cin >> arr[i];
+    cout << (inversions_count(arr, n))<<endl;
     return 0;
 }
 
