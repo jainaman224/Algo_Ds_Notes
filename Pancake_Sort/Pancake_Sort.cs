@@ -14,6 +14,7 @@ class pancakeSortProgram {
             i--;
         }
     }
+ 
     static int findMax(int []arr, int n)
     {
         int mi, i;
@@ -25,8 +26,7 @@ class pancakeSortProgram {
  
     static int pancakeSort(int []arr, int n)
     {
-        for (int curr_size = n; curr_size > 1;
-                                  --curr_size)
+        for (int curr_size = n; curr_size > 1;--curr_size)
         { 
             int mi = findMax(arr, curr_size);
             if (mi != curr_size - 1)
@@ -38,7 +38,7 @@ class pancakeSortProgram {
         return 0;
     }
  
-    static void printArray(int []arr,int arr_size)
+    static void printArray(int []arr, int arr_size)
     {
         for (int i = 0; i < arr_size; i++)
             Console.Write(arr[i] + " ");
