@@ -22,6 +22,7 @@ class LinkedList {
 	private:
 		Node* head;
 		Node* tail;
+	
 	public:
 		LinkedList(){
 			head = NULL;
@@ -34,6 +35,7 @@ class LinkedList {
 		---------   ---------   ---------
 		*/
 		// here, we insert node to the queue
+	
 		void addNode(int data){
 			// if head node is empty, then, initialize it.
 			// else increasse append the node using tail pointer. 
@@ -49,6 +51,7 @@ class LinkedList {
 				tail = node;
 			}
 		}
+	
 		void rev(){
 			// Initialize current=head, previous=NULL and 
         		// next_node=NULL 
@@ -66,6 +69,7 @@ class LinkedList {
 			}
 			head = previous;
 		}
+	
 		void print() {
 			Node* temp = head;
 			cout<<"Linked List: "<<endl;
@@ -75,6 +79,7 @@ class LinkedList {
 			}
 			cout<<endl;
 		}
+	
 		~LinkedList() {
 			delete head;
 			delete tail;
