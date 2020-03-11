@@ -31,7 +31,7 @@ int main()
     {
         if(r[i] <= time_slice && r[i] > 0)	//If burst time is less than time slice
         {
-	    current_time += r[i];		//Increase current time by adding burst time
+            current_time += r[i];		//Increase current time by adding burst time
             r[i] = 0;				//Make remaining time zero
             f = 1;
         }
