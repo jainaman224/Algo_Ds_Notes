@@ -508,5 +508,5 @@ Element 99 is removed.
 
 Enter your choice: 7
 Elements of Doubly Linked List are: 21 45
+
 */
->>>>>>> 7874b836d582b98bbfa9d5dbfc64e8639a279ac2
