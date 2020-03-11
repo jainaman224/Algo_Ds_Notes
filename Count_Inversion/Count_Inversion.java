@@ -81,7 +81,6 @@ class CountInversion
 	} 
 } 
 
-
 /* Sample input
 5 
 1 20 6 4 5
