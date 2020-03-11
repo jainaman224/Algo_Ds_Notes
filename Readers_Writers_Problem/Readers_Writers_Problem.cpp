@@ -6,7 +6,7 @@
 using namespace std;
 
 sem_t m,w;			//m is mutex and w is write_block semaphore
-int d = 0, readers = 0;		//d is a variable that stores what has to be read or written and readers is for number of readers
+int d = 0, readers = 0;         //d is a variable that stores what has to be read or written and readers is for number of readers
 
 void *reader(void *arg)
 {
@@ -22,7 +22,7 @@ void *reader(void *arg)
     sem_wait(&m);		//waits for mutex to be released
     readers -= 1;		//Decrement number of readers
     if(readers == 0)		//If no reader is there
-	sem_post(&w);		//Release the write block
+        sem_post(&w);		//Release the write block
     sem_post(&m);		//Release mutex	
 }
 
