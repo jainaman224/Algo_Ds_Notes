@@ -81,7 +81,7 @@ void insertAtLast()
         return;
     }
 
-    else{
+    else {
             while(trav -> rptr != HEAD)
             {
                 trav = trav -> rptr;
@@ -153,7 +153,7 @@ void deleteAtFront()
             cout << "Element " << HEAD -> data << " is removed." << endl;
             HEAD = NULL;
     }
-    else{
+    else {
             cout << "Element " << HEAD -> data << " is removed." << endl;
             while(trav -> rptr != HEAD){
                 trav = trav -> rptr;
@@ -178,16 +178,16 @@ void deleteAtLast()
     {
         HEAD = NULL;
     }
-    else{
-        while(trav -> rptr != HEAD)
-        {
-            previous = trav;
-            trav = trav -> rptr;
-        }
-        cout << "Element " << trav -> data << " is removed." << endl;
-        previous = trav -> lptr;
-        previous -> rptr = HEAD;
-        }
+    else {
+         while(trav -> rptr != HEAD)
+         {
+             previous = trav;
+             trav = trav -> rptr;
+         }
+             cout << "Element " << trav -> data << " is removed." << endl;
+             previous = trav -> lptr;
+             previous -> rptr = HEAD;
+         }
 }
 
 // Delete node from a particular position in the list
@@ -235,56 +235,172 @@ int main()
         cin >> choice;
         switch(choice)
         {
-        case 1:
-            insertAtFront();
-            cout << endl;
-            break;
+            case 1:
+                insertAtFront();
+                cout << endl;
+                break;
 
-        case 2:
-            insertAtLast();
-            cout << endl;
-            break;
+            case 2:
+                insertAtLast();
+                cout << endl;
+                break;
 
-        case 3:
-            int x;
-            cout << "Enter the node information: ";
-            cin >> x;
-            insertAtPosition(x);
-            cout << endl;
-            break;
+            case 3:
+                int x;
+                cout << "Enter the node information: ";
+                cin >> x;
+                insertAtPosition(x);
+                cout << endl;
+                break;
 
-        case 4:
-            deleteAtFront();
-            cout << endl;
-            break;
+            case 4:
+                deleteAtFront();
+                cout << endl;
+                break;
 
-        case 5:
-            deleteAtLast();
-            cout << endl;
-            break;
+            case 5:
+                deleteAtLast();
+                cout << endl;
+                break;
 
-        case 6:
-            int y;
-            cout << "Enter the node information: ";
-            cin >> y;
-            deleteAtPosition(y);
-            cout << endl;
-            break;
+            case 6:
+                int y;
+                cout << "Enter the node information: ";
+                cin >> y;
+                deleteAtPosition(y);
+                cout << endl;
+                break;
 
-        case 7:
-            display();
-            cout << endl;
-            break;
+            case 7:
+                display();
+                cout << endl;
+                break;
 
-        case 8:
-            cout << "Exit" << endl;
-            return 0;
-            break;
+            case 8:
+                cout << "Exit" << endl;
+                return 0;
+                break;
 
-        default:
-            cout << "Invalid Choice!" << endl;
-            break;
+            default:
+                cout << "Invalid Choice!" << endl;
+                break;
         }
     }
     return 0;
 }
+
+/**
+
+**************************************
+*    Circular Doubly Linked List     *
+**************************************
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 1
+Enter the value to be inserted: 21
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 1
+Enter the value to be inserted: 52
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 7
+Elements of Doubly Linked List are: 52 21
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 2
+Enter the value to be inserted: 99
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 3
+Enter the node information: 21
+Enter the value to be inserted: 45
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 7
+Elements of Doubly Linked List are: 52 21 45 99
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 4
+Element 52 is removed.
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 5
+Element 99 is removed.
+
+1. Insert node at the beginning
+2. Insert node at the end
+3. Insert node at given position
+4. Delete node at front
+5. Delete node at last
+6. Delete node at given position
+7. Display elements of linked list
+8. Exit
+
+Enter your choice: 7
+Elements of Doubly Linked List are: 21 45
+*/
