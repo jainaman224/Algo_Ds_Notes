@@ -54,7 +54,7 @@ int main()
     for(i = 0;i <= 2;i++)
     {
         pthread_join(wthreads[i],NULL);
-    	pthread_join(rthreads[i],NULL);
+        pthread_join(rthreads[i],NULL);
     }
     return 0;
 }
