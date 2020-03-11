@@ -45,10 +45,13 @@ class pancakeSortProgram {
         Console.Write("");
     }
  
-    public static void Main ()
+    public static void Main (string [] args)
     {
-        int []arr = {23, 10, 20, 11, 12, 6, 7};
-        int n = arr.Length;
+        int n=Convert.ToInt32(Console.ReadLine());  
+        int []arr=new int[n];
+        for(int i=0;i<n;i++)
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        n = arr.Length;
         pancakeSort(arr, n);
         Console.Write("Sorted Array: ");
         printArray(arr, n);
@@ -56,8 +59,15 @@ class pancakeSortProgram {
 }
 /*
 Input:
-23 10 20 11 12 6 7
+6
+23 
+10 
+20 
+11 
+12 
+6 
+7
 
 Output:
-6 7 10 11 12 20 23
+Sorted Array: 6 7 10 11 12 20 23
 */
