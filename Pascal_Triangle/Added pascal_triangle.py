@@ -1,6 +1,6 @@
-n = int(input())
-arr = []
-for i in range(n):
+n = int(input())  #Taking input from user
+arr = []      #Empty list
+for i in range(n):   #For loop for iterations
     arr.append([])
     arr[i].append(1)
     for j in range(1, i):
@@ -10,5 +10,5 @@ for i in range(n):
 for i in range(n):
     print(" " * (n - i), end = " ", sep = " ")
     for _ in range(0, i + 1):
-        print('{0:6}'.format(arr[i][_]), end = " ", sep = " ")
+        print('{0:6}'.format(arr[i][_]), end = " ", sep = " ")  #Printing the pattern
     print()
