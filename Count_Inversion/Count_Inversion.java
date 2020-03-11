@@ -67,7 +67,7 @@ class CountInversion
 		return invcount; 
 	} 
 
-	
+
 	public static void main(String[] args) 
 	{ 
 	    
