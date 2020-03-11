@@ -28,8 +28,7 @@ class Graph:
  
     def __iter__(self):
         return iter(self.vertices.values())
- 
- 
+
 class Vertex:
     def __init__(self, k):
         self.k = k
@@ -59,94 +58,73 @@ class Vertex:
         # Returns True if this vertex points to destination vertex
         return destination in self.points
  
- 
-def johnson(g):
+ def johnson(g):
     # Returns distance where d[u][v] is the min distance from u to v
     # Adding new vertex q
     g.add_v('q')
     # Making q point to all other vertices with zero-weight edges
     for v in g:
         g.add_e('q', v.get_k(), 0)
- 
     # Shortest distance from q to other vertices
     bell_dist = bellman_ford(g, g.get_v('q'))
- 
     # Setting weight of u, v = weight of (u, v) + bell_dist of (u) - bell_dist of (v) for each edge
     for v in g:
         for n in v.get_n():
             z = v.get_w(n)
             v.set_w(n, z + bell_dist[v] - bell_dist[n])
- 
     # Deleting vertex q
     del g.vertices['q']
- 
     # d[u][v] has the minimum distance from u to v
     d = {}
     # Applying dijktra's algorithm on all vertices
     for v in g:
         d[v] = dijkstra(g, v)
- 
     # Correcting the distances
     for v in g:
         for z in g:
             d[v][z] += bell_dist[z] - bell_dist[v]
- 
     # Correcting weights in original graph
     for v in g:
         for n in v.get_n():
             z = v.get_w(n)
             v.set_w(n, w + bell_dist[n] - bell_dist[v])
+     return d
  
-    return d
- 
- 
-def bellman_ford(g, source):
+ def bellman_ford(g, source):
     # Returns d where d[v] is minimum distance from source to v
-
     d = dict.fromkeys(g, float('inf'))
     d[source] = 0
- 
     for _ in range(len(g) - 1):
         for v in g:
             for n in v.get_n():
                 d[n] = min(d[n], d[v] + v.get_w(n))
- 
     return d
- 
  
 def dijkstra(g, source):
     # Returns d where d[v] is minimum distance from source to v
     unvisited = set(g)
     d = dict.fromkeys(g, float('inf'))
     d[source] = 0
- 
     while unvisited != set():
         # Finding vertex with minimum distance
         closest = min(unvisited, key=lambda v: d[v])
- 
         # Marking as visited
         unvisited.remove(closest)
- 
         # Updating distances
         for neighbour in closest.get_n():
-           if neighbour in unvisited:
-               new_d = d[closest] + closest.get_w(neighbour)
-               if d[neighbour] > new_d:
-                   d[neighbour] = new_d
- 
+            if neighbour in unvisited:
+                new_d = d[closest] + closest.get_w(neighbour)
+                if d[neighbour] > new_d:
+                    d[neighbour] = new_d
     return d
  
- 
 g = Graph()
-
 print('To add vertex, enter: add vertex <key>')
 print('To add edge, enter: add edge <source key> <destination key> <weight>')
 print('To apply Johnson algorithm, enter: johnson')
 print('To quit, enter: quit')
- 
 while True:
     do = input('What would you like to do? ').split()
- 
     operation = do[0]
     if operation == 'add':
         suboperation = do[1]
@@ -169,7 +147,6 @@ while True:
                     g.add_e(source, destination, w)
                 else:
                     print('Edge already exists.')
- 
     elif operation == 'johnson':
         d = johnson(g)
         print('Shortest distances:')
@@ -177,21 +154,18 @@ while True:
             for end in g:
                 print('{} to {}'.format(start.get_k(), end.get_k()), end=' ')
                 print('distance {}'.format(d[start][end]))
- 
     elif operation == 'display':
         print('Vertices: ', end='')
         for v in g:
             print(v.get_k(), end=' ')
         print()
- 
         print('Edges: ')
         for v in g:
             for destination in v.get_n():
                 z = v.get_w(destination)
                 print('(source={}, destination={}, w={}) '.format(v.get_k(),
                                                              destination.get_k(), z))
-        print()
- 
+                print()
     elif operation == 'quit':
         break
 
