@@ -2,14 +2,14 @@ def introsort(list):
     #Here maxdepth is chosen equal to 2 times floor of log base 2 of the length of the list
     depth = (len(list).bit_length() - 1)
     #calls helper function
-    helper(list, 0 , len(list),depth) 
+    helper(list, 0 , len(list), depth) 
 
 def helper(list,start,end,depth):
     if end - start <= 1:
         #if there is only one element, just return
         return   
     elif depth == 0:
-        heapsort(list,start,end)
+        heapsort(list, start, end)
         #if depth comes out to be 0, perform heapsort
     else:
         #else partition the list and call introsort on both lists
@@ -24,14 +24,14 @@ def partition(list, start, end):
     j = end
     while True:
         i = i + 1
-        while list[i]<pivot:
+        while list[i] < pivot:
             i = i+1
         j = j-1
-        while list[j]>pivot:
+        while list[j] > pivot:
             j = j-1
-        if i>=j:
+        if i >= j:
             return j
-        swap(list,i,j)
+        swap(list, i, j)
 
 def swap(list, i, j):
     #swaps the elements
