@@ -1,9 +1,9 @@
-#Python program to find whether a string is a pallindrome or not
+# Python program to find whether a string is a palindrome or not
 
 # Function to reverse a String
 def reverse(str):
 
-    #Initialize variable
+    # Initialize variable
     rev=""
 
     for i in range (len(str)-1,-1,-1):
@@ -29,5 +29,4 @@ String entered is palindrome!
 
 Enter a string: abbcd
 String entered is not a palindrome!
-
 '''
