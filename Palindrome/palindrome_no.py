@@ -1,9 +1,9 @@
-#Python program to find whether a number is a pallindrome or not
+# Python program to find whether a number is a palindrome or not
 
 # Function to reverse a number
 def reverse(num):
 
-    #Initialize variable
+    # Initialize variable
     rev=0
 
     while(num>0):
