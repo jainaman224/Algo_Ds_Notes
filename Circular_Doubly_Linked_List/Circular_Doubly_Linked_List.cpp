@@ -245,12 +245,12 @@ int main()
 			    insertAtFront();
 			    cout << endl;
 			    break;
-
+				
 		    case 2:
 			    insertAtLast();
 			    cout << endl;
 			    break;
-
+				
 		    case 3:
 			    int x;
 			    cout << "Enter the node information: ";
@@ -258,17 +258,17 @@ int main()
 			    insertAtPosition(x);
 			    cout << endl;
 			    break;
-
+				
 		    case 4:
 			    deleteAtFront();
 			    cout << endl;
 			    break;
-
+				
 		    case 5:
 			    deleteAtLast();
 			    cout << endl;
 			    break;
-
+				
 		    case 6:
 			    int y;
 			    cout << "Enter the node information: ";
@@ -276,17 +276,17 @@ int main()
 			    deleteAtPosition(y);
 			    cout << endl;
 			    break;
-
+				
 		    case 7:
 			    display();
 			    cout << endl;
 			    break;
-
+				
 		    case 8:
 			    cout << "Exit" << endl;
 			    return 0;
 			    break;
-
+				
 		    default:
 			    cout << "Invalid Choice!" << endl;
 			    break;
