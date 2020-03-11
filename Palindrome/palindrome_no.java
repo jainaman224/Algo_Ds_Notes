@@ -1,6 +1,6 @@
-// Program to find whether a number is a pallindrome or not
+// Program to find whether a number is a palindrome or not
 import java.util.Scanner;
-public class pallindrome_no {
+public class palindrome_no {
 	
 	// Find reverse of a number
 	public static int reverse(int num) {
@@ -20,10 +20,10 @@ public class pallindrome_no {
 		
 		// Check whether the number entered is equal to reversed number or not
 		if (reverseno == num) {
-			System.out.println("Number entered is a pallindrome");
+			System.out.println("Number entered is a palindrome");
 		}
 		else {
-			System.out.println("Number entered is not a pallindrome");
+			System.out.println("Number entered is not a palindrome");
 		}
 	}
 }
@@ -33,9 +33,9 @@ Test cases
  
 Enter a number
 1223
-Number entered is not a pallindrome
+Number entered is not a palindrome
 
 Enter a number
 1223221
-Number entered is a pallindrome
+Number entered is a palindrome
 */
