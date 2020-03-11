@@ -1,45 +1,43 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Node{
-	/*------------------------*/
-		/*
-			this class is used to create node
-			---------
-		   | 0  |   |->NULL
-		   ---------
-		*/
-	/*------------------------*/
+class Node {
+	/*
+	this class is used to create node
+	---------
+	| 0  |   |->NULL
+	---------
+	*/
 
 	public:
 		int data;
 		Node* next;
 		Node(int n){
 			data = n;
-			next=NULL;
+			next = NULL;
 		}
 };
 
-class LinkedList{
+class LinkedList {
 	private:
 		Node* head;
 		Node* tail;
 	public:
 		LinkedList(){
-			head=NULL;
-			tail=NULL;
+			head = NULL;
+			tail = NULL;
 		}
 		/*
-			this will add node to the linkedlist node and refer it to node type pointer
-			---------   ---------  	---------
-		   | 0  |   |->| 1  |   |->| 2  |   |->NULL
-		   ---------   ---------   ---------
+		this will add node to the linkedlist node and refer it to node type pointer
+		---------   ---------  	---------
+		| 0  |   |->| 1  |   |->| 2  |   |->NULL
+		---------   ---------   ---------
 		*/
 		// here, we insert node to the queue
 		void addNode(int data){
 			// if head node is empty, then, initialize it.
 			// else increasse append the node using tail pointer. 
-			if(head==NULL){
+			if(head	== NULL){
 				Node* node = new Node(data);
 				node->next = head;
 				head = node;
@@ -53,11 +51,11 @@ class LinkedList{
 		}
 		void rev(){
 			// Initialize current=head, previous=NULL and 
-        	// next_node=NULL 
+        		// next_node=NULL 
 			Node* current  = head;
 			Node* previous = NULL;
 			Node* next_node = NULL;
-			while(current!=NULL){
+			while(current != NULL){
 				// Store next 
 				next_node = current->next;
 				// Reverse current node's pointer 
@@ -68,20 +66,21 @@ class LinkedList{
 			}
 			head = previous;
 		}
-		void print(){
+		void print() {
 			Node* temp = head;
-			cout<<"Linked List:\n";
+			cout<<"Linked List: "<<endl;
 			while(temp!=NULL){
 				cout<<temp->data<<" ";
-				temp=temp->next;
+				temp = temp->next;
 			}
-			cout<<"\n\n";
+			cout<<endl;
 		}
-		~LinkedList(){
+		~LinkedList() {
 			delete head;
 			delete tail;
 		}
 };
+
 int main(){
 	int n;
 	// dynamic allocation 
@@ -92,11 +91,11 @@ int main(){
 	for(int i = 1;i<=n;i++){
 		linkedList->addNode(i);
 	}
-	cout<<"\n";
-	cout<<"Before Reverse\n";
+	cout<<endl;
+	cout<<"Before Reverse"<<endl;
 	linkedList->print();
 	linkedList->rev();
-	cout<<"After Reverse\n";
+	cout<<"After Reverse"<<endl;
 	linkedList->print();
 	free(linkedList);
 	return 0;
