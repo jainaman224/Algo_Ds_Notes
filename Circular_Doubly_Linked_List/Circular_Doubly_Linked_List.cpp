@@ -82,7 +82,7 @@ void insertAtLast()
     }
 
     else
-	{
+    {
         while(trav -> rptr != HEAD)
         {
             trav = trav -> rptr;
@@ -133,7 +133,8 @@ void display()
     }
     struct node *temp = HEAD;
     cout << "Elements of Doubly Linked List are: ";
-    do{
+    do
+    {
         cout << ptr -> data << " ";
         ptr = ptr -> rptr;
     }
@@ -151,15 +152,15 @@ void deleteAtFront()
         return;
     }
     if(HEAD -> rptr == HEAD)
-	{
+    {
         cout << "Element " << HEAD -> data << " is removed." << endl;
         HEAD = NULL;
     }
     else
-	{
+    {
         cout << "Element " << HEAD -> data << " is removed." << endl;
         while(trav -> rptr != HEAD)
-		{
+        {
             trav = trav -> rptr;
         }
         HEAD = HEAD -> rptr;
@@ -175,7 +176,7 @@ void deleteAtLast()
     struct node *previous;
     trav = HEAD;
     if(HEAD == NULL)
-	{
+    {
         cout << "List is Empty!";
         return;
     }
@@ -184,7 +185,7 @@ void deleteAtLast()
         HEAD = NULL;
     }
     else
-	{
+    {
         while(trav -> rptr != HEAD)
         {
             previous = trav;
