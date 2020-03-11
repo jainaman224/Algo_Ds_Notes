@@ -53,7 +53,6 @@ void insertAtFront()
     {
         newNode -> lptr = NULL;
         newNode -> rptr = HEAD;
-
         while(trav -> rptr != HEAD)
         {
             trav = trav -> rptr;
@@ -80,7 +79,6 @@ void insertAtLast()
         newNode -> rptr = HEAD;
         return;
     }
-
     else
     {
         while(trav -> rptr != HEAD)
