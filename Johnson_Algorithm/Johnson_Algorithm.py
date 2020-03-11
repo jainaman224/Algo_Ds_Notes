@@ -163,8 +163,7 @@ while True:
         for v in g:
             for destination in v.get_n():
                 z = v.get_w(destination)
-                print('(source={}, destination={}, w={}) '.format(v.get_k(),
-                                                             destination.get_k(), z))
+                print('(source={}, destination={}, w={}) '.format(v.get_k(),destination.get_k(), z))
                 print()
     elif operation == 'quit':
         break
