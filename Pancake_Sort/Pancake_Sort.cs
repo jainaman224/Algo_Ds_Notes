@@ -2,7 +2,7 @@ using System;
  
 class pancakeSortProgram {
  
-    static void flip(int []arr, int i)
+    static void flip(int []arr, int i)// function swapping adjacent integer in array till from index 0 toindex i
     {
         int temp, start = 0;
         while (start < i)
@@ -15,7 +15,7 @@ class pancakeSortProgram {
         }
     }
  
-    static int findMax(int []arr, int n)
+    static int findMax(int []arr, int n)// function returning index of max value till index curr_size
     {
         int mi, i;
         for (mi = 0, i = 0; i < n; ++i)
@@ -28,8 +28,8 @@ class pancakeSortProgram {
     {
         for (int curr_size = n; curr_size > 1;--curr_size)
         { 
-            int mi = findMax(arr, curr_size);
-            if (mi != curr_size - 1)
+            int mi = findMax(arr, curr_size);// function calling for finding index of max integer till the index curr_size
+            if (mi != curr_size - 1)// call function flip for swapping if index of max integer till the index curr_size is not equal to curr_size-1
             {
                 flip(arr, mi);
                 flip(arr, curr_size - 1);
@@ -38,7 +38,7 @@ class pancakeSortProgram {
         return 0;
     }
  
-    static void printArray(int []arr, int arr_size)
+    static void printArray(int []arr, int arr_size)// function for printing sorted array
     {
         for (int i = 0; i < arr_size; i++)
             Console.Write(arr[i] + " ");
@@ -47,14 +47,13 @@ class pancakeSortProgram {
  
     public static void Main (string [] args)
     {
-        int n=Convert.ToInt32(Console.ReadLine());  
-        int []arr=new int[n];
+        int n=Convert.ToInt32(Console.ReadLine());//input size of array
+        int []arr=new int[n];//initializing array of size n
         for(int i=0;i<n;i++)
-            arr[i] = Convert.ToInt32(Console.ReadLine());
-        n = arr.Length;
-        pancakeSort(arr, n);
+            arr[i] = Convert.ToInt32(Console.ReadLine());//input value in array
+        pancakeSort(arr, n);// call function which is sorting the input array
         Console.Write("Sorted Array: ");
-        printArray(arr, n);
+        printArray(arr, n);// call fubction which print the sorted array
     }
 }
 /*
