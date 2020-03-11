@@ -37,13 +37,13 @@ int main()
         }
         else if(r[i] > 0)			//If required time is more than time slice
         {        
-	    r[i] -= time_slice;			//Reduce remaining time by time slice
+            r[i] -= time_slice;			//Reduce remaining time by time slice
             current_time += time_slice;		//Increase current time by adding time slice
         }
 
         if(r[i] == 0 && f == 1)
         {
-	    remaining_time--;
+            remaining_time--;
             cout << "\nProcess " << i << "\t" << current_time - a[i] << "\t\t" << current_time - a[i] - b[i];
             wait_time += current_time - a[i] - b[i];
             turn_time += current_time - a[i];
