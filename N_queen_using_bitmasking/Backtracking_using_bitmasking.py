@@ -1,51 +1,39 @@
 # Here we use bit patterns to keep track of queen placements for the columns, left diagonals and right diagonals.
 # 1 in the bit pattern denotes that there is a queen attacking that column or diagonal line and 0 means that no queens are attacking that position
             
-class Backtracking(object):
-    def solveNQueens(self, n):
-        def dfs(r):
-            if r == n:
-                res.append([''.join(row) for row in b])
-                return
-            for c in range(n):
-                if isValid(r, c):
-                    b[r][c] = 'Q'
-                    dfs(r + 1)      # fill row by row
-                    b[r][c] = '.'
-        
-        def isValid(r, c):
-            for i in range(r):
-                for j in range(n):
-                    if b[i][j] == 'Q' and (c == j or        # same column
-                                           i+j == r+c or    # 45 degree line (left diagonal)
-                                           i-j == r-c):     # 135 degree line (right diagonal)
-                        return False
-            return True
-                        
-        
-        b = [['.'] * n for _ in range(n)]
-        res = []
-        dfs(0)      # start from row 0
-        return res
+def totalNQueens(n):
+    all_ones = 2 ** n - 1
+    count = 0
+
+    def helper(ld, column, rd):
+        nonlocal count
+        if column == all_ones:
+            count += 1
+            return
+        possible_slots = ~(ld | column | rd) & all_ones
+        while possible_slots:
+            current_bit = possible_slots & -possible_slots
+            possible_slots -= current_bit
+            helper((ld | current_bit) >> 1,
+                   column | current_bit,
+                   (rd | current_bit) << 1)
+
+    helper(0, 0, 0)
+    return count
+
 if __name__ == '__main__': 
     n = int(input())
-    obj = Backtracking()
-    ans = obj.solveNQueens(n)
-    for x in range(len(ans)):
-        for y in range(len(ans[x])):
-            print(ans[x][y])
-        print('\n')
+    d = (1<<n)-1
+    cnt = totalNQueens(n)
+    print(cnt);
 
 
 # Sample Input: 
 # 4
 # Sample Output: 
-# .Q..
-# ...Q
-# Q...
-# ..Q.
-#
-# ..Q.
-# Q...
-# ...Q
-# .Q..
+# 2
+
+# Sample Input: 
+# 5
+# Sample Output: 
+# 10
