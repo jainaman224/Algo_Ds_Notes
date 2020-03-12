@@ -19,7 +19,7 @@ public class Kosaraju
     /** function fill order **/
     public List<Integer> fillOrder(List<Integer>[] graph, boolean[] visited) 
     {        
-        int V = graph.length;
+         int V = graph.length;
         List<Integer> order = new ArrayList<Integer>();
  
         for (int i = 0; i < V; i++)
