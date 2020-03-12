@@ -18,7 +18,6 @@ void *reader(void *arg)
     sem_post(&m);		//Mutex is released
     cout << "Reader " << i << " reads " << d << endl;
     sleep(1);
-    cout << "Done";
     sem_wait(&m);		//waits for mutex to be released
     readers -= 1;		//Decrement number of readers
     if(readers == 0)		//If no reader is there
@@ -33,7 +32,6 @@ void *writer(void *arg)
     d++;
     cout << "Writer " << i << " writes " << d << endl;
     sleep(1);
-    cout << "Done";
     sem_post(&w);		//Release the write block
 }
 
@@ -47,8 +45,8 @@ int main()
     //Loop for creating threads
     for(i = 0;i <= 2;i++)
     {
-        pthread_create(&rthreads[i],NULL,reader,(void *)i);
         pthread_create(&wthreads[i],NULL,writer,(void *)i);
+        pthread_create(&rthreads[i],NULL,reader,(void *)i);
     }
     //Loop for joining threads
     for(i = 0;i <= 2;i++)
