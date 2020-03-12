@@ -2,9 +2,9 @@
     nCr % p.
 
     The task is to find the binomial coefficient nCr under modulo p. The normal approach would
-    be to first find nCr and then do modulo p, which is highly efficient for large numbers,
+    be to first find nCr and then do modulo p, which is highly inefficient for large numbers,
     and may cause overflow.
-    Thus, we use dynamic programming approach to solve this problem.
+    Thus, we use dynamic programming approach to solve this problem as this is highly efficient over bruteforce approach.
 */
 #include <bits/stdc++.h>
 using namespace std;
