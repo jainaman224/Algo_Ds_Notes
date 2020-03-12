@@ -1,17 +1,16 @@
-## Rabin Karp Algorithm
+# Rabin Karp Algorithm
 The problem is to find a pattern P in a given string S. 
 The Rabin-Karp string matching algorithm calculates a hash value for the pattern, as well as for each M-character subsequences of text to be compared. If the hash values are unequal, the algorithm will determine the hash value for next M-character sequence. If the hash values are equal, the algorithm will analyze the pattern and the M-character sequence. In this way, there is only one comparison per text subsequence, and character matching is only required when the hash values match.
 
-
 ## Algorithm
 
-#### Input:
+### Input:
 Text T, pattern P, d and q are chosen depending on the text and pattern.
 
-#### Output:
+### Output:
 Index at which the pattern occurs.
 
-#### Pseudocode:
+### Pseudocode:
 ```
 RABIN-KARP-MATCHER (T, P, d, q)
  n ← length [T]
@@ -33,8 +32,6 @@ RABIN-KARP-MATCHER (T, P, d, q)
 ## Example
 ![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Pattern-Searching-2-1.png)
 
-
-
 ## Time Complexity
 The running time of RABIN-KARP-MATCHER in the worst case scenario O((n-m+1) m but it has a good average case running time. If the expected number of strong shifts is small O (1) and prime q is chosen to be quite large, then the Rabin-Karp algorithm can be expected to run in time O (n+m) plus the time to require to process spurious hits.
 
@@ -44,7 +41,6 @@ The running time of RABIN-KARP-MATCHER in the worst case scenario O((n-m+1) m bu
 
 - [JAVA Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Rabin_karp/Rabin_karp.java)
 > :rocket: [Compile Online](https://repl.it/repls/AccomplishedLightpinkMapping) :rocket:
-
 
 ## References
 * [GeeksforGeeks](https://www.geeksforgeeks.org/rabin-karp-algorithm-for-pattern-searching/)
