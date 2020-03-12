@@ -26,7 +26,7 @@ int main()
     cin >> time_slice;
 
     cout << "\nProcess\tTurnaround time\t Waiting Time\n";
-    cout << "-------------------------------------------"
+    cout << "-------------------------------------------";
     for(current_time = 0, i = 0; remaining_time != 0;)
     {
         if(r[i] <= time_slice && r[i] > 0)	//If burst time is less than time slice
