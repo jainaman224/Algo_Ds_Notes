@@ -1,34 +1,35 @@
 #include<iostream>
 using namespace std;
-main()
+int main()
 {
-    int n,m;
-    cout<<"Enter dimensions of 2-D array: ";
-    cin>>n>>m;
+    int n , m;
+    cout<< "Enter dimensions of 2-D array: ";
+    cin>> n >> m;
 
     int arr1[n][m],arr2[n][m],i,j;
-    cout<<"Enter factor of first and second array: ";
+    cout<< "Enter factor of first and second array: ";
 
     int a,b;
-    cin>>a>>b;
+    cin>> a >> b;
 
-    cout<<"Enter values of first array: ";
+    cout<< "Enter values of first array: ";
     for(i=0;i<n;i++)
     {
         for(j=0;j<m;j++)
         {
-            cin>>arr1[i][j];
+            cin>> arr1[i][j];
         }
-        cout<<endl;   //to add a new line when elements of other rwo are added
+        cout<< endl;   //to add a new line when elements of other rwo are added
     }
 
-    cout<<"Enter values of second array: ";
+    cout<< "Enter values of second array: ";
     for(i=0;i<n;i++)
     {
         for(j=0;j<m;j++)
         {
-            cin>>arr2[i][j];
-        }cout<<endl;
+            cin>> arr2[i][j];
+        }
+        cout<< endl;
     }
 
     int arr[n][m];
@@ -41,16 +42,17 @@ main()
         }
     }
 
-    cout<<"Added matrix is: ";
+    cout<< "Added matrix is: ";
     for(i=0;i<n;i++)
     {
         for(j=0;j<m;j++)
         {
-            cout<<arr[i][j]<<" ";
+            cout<< arr[i][j] << " ";
         }
-        cout<<endl;
+        cout<< endl;
     }
 }
+
 // Enter dimensions of 2-D array: 2 2
 // Enter factor of first and second array: 1
 // 2
