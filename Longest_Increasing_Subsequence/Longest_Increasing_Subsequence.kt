@@ -1,6 +1,6 @@
 import java.util.*
 
-fun main(){
+fun main() {
     // Taking Inputs
     var read = Scanner(System.`in`)
     println("Enter the size of Array:")
