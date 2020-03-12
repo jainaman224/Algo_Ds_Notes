@@ -1,4 +1,4 @@
-#Fenwick Tree
+# Fenwick Tree
 A Fenwick Tree (a.k.a. Binary Indexed Tree, or BIT) is a fairly common data structure. that can efficiently update elements and calculate prefix sums in a table of numbers.
 
 Problems that can be solved efficiently with Fenwick tree :-
@@ -7,9 +7,9 @@ Problems that can be solved efficiently with Fenwick tree :-
 
 A simple solution is to run a loop from 0 to i-1 and calculate the sum of the elements. To update a value, simply do arr[i] = x. The first operation takes O(n) time and the second operation takes O(1) time.
 
-###But, Wait!
-###Can we do something better?
-###And the answer is Yes.
+### But, Wait!
+### Can we do something better?
+### And the answer is Yes.
 
 A BIT can perform both of these operations in O(log N) time, and takes O(N) memory.
 
@@ -17,7 +17,7 @@ Wondering how?
 
 Binary Indexed Tree is an array in which each node stores sum of some elements of a given array for which the BI Tree is made.
 
-##Construction of Binary Indexed tree
+## Construction of Binary Indexed tree
 BI Tree for an array arr[] has following operations :
 1. update() : Updates BI Tree for oeration arr[index] += val
 2. getSum() : Returns sum of arr[0..index]
@@ -56,11 +56,11 @@ BITree[y] is the parent of BITree[x], if and only if y can be obtained by removi
 
 The child node BITree[x] of the node BITree[y] stores the sum of the elements between y(inclusive) and x(exclusive): arr[y,…,x).
 
-##Working
+## Working
 
 The idea is based on the fact that all positive integers can be represented as the sum of powers of 2. For example 19 can be represented as 16 + 2 + 1. Every node of the BITree stores the sum of n elements where n is a power of 2. For example, in the first diagram above (the diagram for getSum()), the sum of the first 12 elements can be obtained by the sum of the last 4 elements (from 9 to 12) plus the sum of 8 elements (from 1 to 8). The number of set bits in the binary representation of a number n is O(Logn). Therefore, we traverse at-most O(Logn) nodes in both getSum() and update() operations. The time complexity of the construction is O(nLogn) as it calls update() for all n elements.
 
-##Applications
+## Applications
 
 1. Binary Indexed trees are used to implement the arithmetic coding algorithm. Development of operations it supports were primarily motivated by use in that case.
 
