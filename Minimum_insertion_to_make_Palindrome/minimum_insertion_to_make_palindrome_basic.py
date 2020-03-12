@@ -31,7 +31,7 @@ def find_min_insertion(str, l, h):
 
 # Main Function.
 def main():
-    s = "abcd"
+    s = input("Enter the String: ")
     n = len(s) - 1
     print(find_min_insertion(s, 0, n))
 

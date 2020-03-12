@@ -37,7 +37,7 @@ def find_min_insertion_DP(s, n):
  
 # Main Function.
 def main():
-    s = "car"  # Input String
+    s = input("Enter the String: ")  # Input String
     x = find_min_insertion_DP(s, len(s))  # Minimum value.
     print(x)
 
