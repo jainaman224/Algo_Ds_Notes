@@ -12,20 +12,20 @@ void clrscr()
     std::cout << "\33[2J\33[1;1H" << std::flush;
 }
 
-bool isvalid(int row,int col)
+bool isvalid(int row, int col)
 {
    return (row >= 0) && (row < SIDE) && (col >= 0) && (col < SIDE);
 }
 
-bool ismine(int row,int col,char board[][max_side])
+bool ismine(int row, int col, char board[][max_side])
 {
     if(board[row][col]=='B')
-		return (true);
+        return (true);
     else
-		return (false);
+        return (false);
 }
 
-void move(int *x,int *y)
+void move(int *x, int *y)
 {
     printf("\nEnter your move as (row col) -> ");
     scanf("%d %d", x, y);
@@ -60,58 +60,58 @@ void board(char myboard[][max_side])
     return;
 }
 
-int countadjacent(int row,int col,int mines[][2],char realboard[][max_side])
+int countadjacent(int row, int col, int mines[][2], char realboard[][max_side])
 {
     int count=0;
-    if(isvalid(row-1,col)==true)
+    if(isvalid(row - 1, col) == true)
     {
-    	if(ismine(row-1,col,realboard)==true)
+    	if(ismine(row - 1, col, realboard) == true)
 	        count++;
     }
-    if(isvalid(row+1,col)==true)
+    if(isvalid(row + 1, col) == true)
     {
-		if(ismine(row+1,col,realboard)==true)
-	        count++;
-    }
-    if(isvalid(row,col+1)==true)
-    {
-		if(ismine(row,col+1,realboard)==true)
-	        count++;
-    }
-    if(isvalid(row,col-1)==true)
-    {
-		if(ismine(row,col-1,realboard)==true)
-			count++;
-    }
-    if(isvalid(row-1,col-1)==true)
-    {
-		if(ismine(row-1,col-1,realboard)==true)
-	        count++;
-    }
-    if(isvalid(row-1,col+1)==true)
-    {
-		if(ismine(row-1,col+1,realboard)==true)
+        if(ismine(row + 1, col, realboard) == true)
             count++;
     }
-    if(isvalid(row+1,col-1)==true)
+    if(isvalid(row, col + 1) == true)
     {
-		if(ismine(row+1,col-1,realboard)==true)
-	        count++;
+        if(ismine(row, col + 1, realboard) == true)
+            count++;
     }
-    if(isvalid(row+1,col+1)==true)
+    if(isvalid(row, col - 1) == true)
     {
-		if(ismine(row+1,col+1,realboard)==true)
-	        count++;
+        if(ismine(row, col - 1, realboard) == true)
+            count++;
+    }
+    if(isvalid(row - 1, col - 1) == true)
+    {
+        if(ismine(row - 1, col - 1, realboard) == true)
+            count++;
+    }
+    if(isvalid(row - 1, col + 1) == true)
+    {
+        if(ismine(row - 1, col + 1, realboard) == true)
+            count++;
+    }
+    if(isvalid(row + 1, col - 1) == true)
+    {
+        if(ismine(row + 1, col - 1, realboard) == true)
+            count++;
+    }
+    if(isvalid(row + 1, col + 1) == true)
+    {
+        if(ismine(row + 1, col + 1, realboard) == true)
+            count++;
     }
     return (count);
 }
 
-bool playuntil(char myboard[][max_side],char realboard[][max_side],int mines[][2],int row,int col,int *moves_left)
+bool playuntil(char myboard[][max_side], char realboard[][max_side], int mines[][2], int row, int col, int *moves_left)
 {
-	if(myboard[row][col]!='-')
+	if(myboard[row][col] != '-')
 	    return false;
 	int i,j;
-	if(realboard[row][col]=='B')
+	if(realboard[row][col] == 'B')
 	{
 	    myboard[row][col]='B';
 	    for(i=0;i<MINES;i++)
@@ -127,45 +127,45 @@ bool playuntil(char myboard[][max_side],char realboard[][max_side],int mines[][2
 	    myboard[row][col]= count+'0';
 	    if(!count)
 	    {
-			if(isvalid(row-1,col)==true)
+			if(isvalid(row - 1, col) == true)
 			{
-		    	if(ismine(row-1,col,realboard)==false)
-	   				playuntil(myboard, realboard, mines, row-1, col, moves_left);
+		    	if(ismine(row - 1, col, realboard) == false)
+	   				playuntil(myboard, realboard, mines, row - 1, col, moves_left);
 			}   
-			if (isvalid (row+1, col) == true)
+			if (isvalid (row + 1, col) == true)
 			{
-		    	if (ismine (row+1, col, realboard) == false)
-					playuntil(myboard, realboard, mines, row+1, col, moves_left);
+		    	if (ismine (row + 1, col, realboard) == false)
+					playuntil(myboard, realboard, mines, row + 1, col, moves_left);
 			}
-			if (isvalid (row, col+1) == true)
+			if (isvalid (row, col + 1) == true)
 			{
-		    	if (ismine (row, col+1, realboard) == false)
-		        	playuntil(myboard, realboard, mines, row, col+1, moves_left);
+		    	if (ismine (row, col + 1, realboard) == false)
+		        	playuntil(myboard, realboard, mines, row, col + 1, moves_left);
 			}
-            if (isvalid (row, col-1) == true)
+            if (isvalid (row, col - 1) == true)
 			{
-		    	if (ismine (row, col-1, realboard) == false)
-					playuntil(myboard, realboard, mines, row, col-1, moves_left);
+		    	if (ismine (row, col - 1, realboard) == false)
+					playuntil(myboard, realboard, mines, row, col - 1, moves_left);
 			}
-			if (isvalid (row-1, col+1) == true)
+			if (isvalid (row - 1, col + 1) == true)
 			{
-		    	if (ismine (row-1, col+1, realboard) == false)
-					playuntil(myboard, realboard, mines, row-1, col+1, moves_left);
+		    	if (ismine (row - 1, col + 1, realboard) == false)
+					playuntil(myboard, realboard, mines, row - 1, col + 1, moves_left);
 			}     
-			if (isvalid (row-1, col-1) == true)
+			if (isvalid (row - 1, col - 1) == true)
 			{
-		    	if (ismine (row-1, col-1, realboard) == false)
-					playuntil(myboard, realboard, mines, row-1, col-1, moves_left);
+		    	if (ismine (row - 1, col - 1, realboard) == false)
+					playuntil(myboard, realboard, mines, row - 1, col - 1, moves_left);
 			}
-            if (isvalid (row+1, col+1) == true)
+            if (isvalid (row + 1, col + 1) == true)
 			{
-		    	if (ismine (row+1, col+1, realboard) == false)
-					playuntil(myboard, realboard, mines, row+1, col+1, moves_left);
+		    	if (ismine (row + 1, col + 1, realboard) == false)
+					playuntil(myboard, realboard, mines, row + 1, col + 1, moves_left);
 			}
-        	if (isvalid (row+1, col-1) == true)
+        	if (isvalid (row + 1, col - 1) == true)
 			{
-		    	if (ismine (row+1, col-1, realboard) == false)
-					playuntil(myboard, realboard, mines, row+1, col-1, moves_left);
+		    	if (ismine (row + 1, col - 1, realboard) == false)
+					playuntil(myboard, realboard, mines, row + 1, col - 1, moves_left);
 			}
 
 	    }
@@ -182,7 +182,7 @@ void placemines(int mines[][2],char realboard[][max_side])
 		int random=rand()%(SIDE*SIDE);
  		int x=random/SIDE;
 		int y=random%SIDE;
-		if(mark[random]==false) //add mine if not present at position random
+		if(mark[random] == false) //add mine if not present at position random
 		{
 			mines[i][0]=x;
 	        mines[i][1]=y;
@@ -193,7 +193,7 @@ void placemines(int mines[][2],char realboard[][max_side])
     }
 }
 
-void initialise(char realboard[][max_side],char myboard[][max_side])
+void initialise(char realboard[][max_side], char myboard[][max_side])
 {
     srand(time(NULL)); //initalising random so that same config doesn't arise
     int i,j;
@@ -212,7 +212,7 @@ void cheatmines (char realboard[][max_side])
     return;
 }
 
-void replacemine(int row,int col,char board[][max_side])
+void replacemine(int row, int col, char board[][max_side])
 {
 	for(int i=0;i<SIDE;i++)
 	{
@@ -240,20 +240,20 @@ void play()
 	//if you want cheat and win 
 	//cheatmines(realboard);
 	int currentmoveindex=0;
-	while(gameover==false)
+	while(gameover == false)
 	{
 		printf ("Current Status of Board : \n");
 		board(myboard);
 		move(&x,&y);
 		//if first move is mine
-		if(currentmoveindex==0)
+		if(currentmoveindex == 0)
 		{
-			if(ismine(x,y,realboard)==true) //first attempt is a mine
+			if(ismine(x,y,realboard) == true) //first attempt is a mine
 				replacemine(x,y,realboard); //replace the mine at that location
 		}
 		currentmoveindex++;
 		gameover = playuntil(myboard,realboard,mines,x,y,&moves_left);
-		if((gameover==false)&&(moves_left==0))
+		if((gameover == false) && (moves_left == 0))
 		{
 			printf ("\nYou won !\n");
 			gameover=true;
@@ -270,17 +270,17 @@ void chdiff()
     cout<<"\n\nENTER YOUR LEVEL (0-2) : ";
     int ch;
     cin>>ch;
-    if(ch==0)
+    if(ch == 0)
     {
 	    SIDE=9; 
 	    MINES=10;
     }
-    else if(ch==1)
+    else if(ch == 1)
 	{
 		SIDE=16; 
 	  	MINES=40;
 	}
-	else if(ch==2)
+	else if(ch == 2)
 	{
 		SIDE=24; 
 		MINES=99;
