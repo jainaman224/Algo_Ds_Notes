@@ -60,3 +60,29 @@ int main()
      cout << "\nAverage Turnaround Time: " << (turn_time*1.0) / no_of_process;
      return 0;
 }
+
+Sample Input/Output:
+
+Enter number of processes: 4
+
+Process 0: Enter Arrival Time: 1
+Enter Burst Time: 5
+
+Process 1: Enter Arrival Time: 3
+Enter Burst Time: 7
+
+Process 2: Enter Arrival Time: 2
+Enter Burst Time: 5
+
+Process 3: Enter Arrival Time: 5
+Enter Burst Time: 8
+Enter Time slice: 3
+
+Process	Turnaround time	 Waiting Time
+-------------------------------------------
+Process 0	13		8
+Process 2	17		12
+Process 1	20		13
+Process 3	20		12
+Average Waiting Time: 11.25
+Average Turnaround Time: 17.5
