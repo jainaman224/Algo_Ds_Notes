@@ -73,7 +73,7 @@ public class Kosaraju
         Scanner scan = new Scanner(System.in);
         System.out.println("Kosaraju algorithm Test\n");
         Kosaraju k = new Kosaraju();
- 
+        
         System.out.println("Enter number of Vertices");
         /** number of vertices **/
         int V = scan.nextInt();
