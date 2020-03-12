@@ -1,3 +1,6 @@
+# Here we use bit patterns to keep track of queen placements for the columns, left diagonals and right diagonals.
+# 1 in the bit pattern denotes that there is a queen attacking that column or diagonal line and 0 means that no queens are attacking that position
+            
 class Backtracking(object):
     def solveNQueens(self, n):
         def dfs(r):
@@ -14,8 +17,8 @@ class Backtracking(object):
             for i in range(r):
                 for j in range(n):
                     if b[i][j] == 'Q' and (c == j or        # same column
-                                           i+j == r+c or    # 45 degree line
-                                           i-j == r-c):     # 135 degree line
+                                           i+j == r+c or    # 45 degree line (left diagonal)
+                                           i-j == r-c):     # 135 degree line (right diagonal)
                         return False
             return True
                         
