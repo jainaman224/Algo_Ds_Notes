@@ -1,14 +1,14 @@
 #include<stdio.h>
-void main()
+int main()
 {
-    int n,m;
+    int n , m;
     printf("Enter dimensions of 2-D array: ");
     scanf("%d %d",&n,&m);
 
     int arr1[n][m],arr2[n][m],i,j;
     printf("Enter factor of first and second array: ");
 
-    int a,b;
+    int a , b;
     scanf("%d %d",&a,&b);
 
     printf("Enter values of first array: ");
@@ -27,7 +27,8 @@ void main()
         for(j=0;j<m;j++)
         {
             scanf("%d",&arr2[i][j]);
-        }printf("\n");
+        }
+        printf("\n");
     }
 
     int arr[n][m];
@@ -50,6 +51,7 @@ void main()
         printf("\n");
     }
 }
+
 // Enter dimensions of 2-D array: 2 2
 // Enter factor of first and second array: 1
 // 2
