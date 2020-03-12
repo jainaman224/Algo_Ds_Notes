@@ -65,3 +65,8 @@ The idea is based on the fact that all positive integers can be represented as t
 1. Binary Indexed trees are used to implement the arithmetic coding algorithm. Development of operations it supports were primarily motivated by use in that case.
 
 2. Binary Indexed Tree can be used to count inversions in an array in O(NlogN) time.
+
+## See also
+
+* [Wikipedia : Fenwick Tree](https://en.wikipedia.org/wiki/Fenwick_tree)
+* [Hackerearth : Fenwick Tree](https://www.hackerearth.com/practice/notes/binary-indexed-tree-or-fenwick-tree/)
