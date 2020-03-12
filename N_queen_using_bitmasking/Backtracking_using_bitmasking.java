@@ -18,6 +18,11 @@ class Solution {
             return;
         }
         for(int col=0;col!=n;col++){
+            
+            /*Here we use bit patterns to keep track of queen placements for the columns, left diagonals and right diagonals.
+            1 in the bit pattern denotes that there is a queen attacking that column or diagonal line and 
+            0 means that no queens are attacking that position.*/
+            
             if(flag[col]==1 && flag[n+col+row]==1 && flag[4*n-2+col-row]==1){
                 flag[col]=0;
                 flag[n+col+row]=0;
@@ -29,6 +34,7 @@ class Solution {
                 
                 solve(res,queens,flag,row+1,n);
                 
+                // backtrack the path
                 chars=queens[row].toCharArray();
                 chars[col]='.';
                 queens[row]=String.valueOf(chars);
