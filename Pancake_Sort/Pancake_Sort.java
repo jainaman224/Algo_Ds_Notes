@@ -16,7 +16,7 @@ class PancakeSorting
     
      static int findMax ( int a [] , int n ) // Function to find index of max element upto index n
      {
-         int max = a [ 0 ] ; int j = 0 ; //j stores the index of max element
+         int max = a [ 0 ] ; int j = 0 ; // j stores the index of max element
          for ( int i = 1 ; i <= n ; i ++ )
          {  
              if ( a [ i ] > max )
