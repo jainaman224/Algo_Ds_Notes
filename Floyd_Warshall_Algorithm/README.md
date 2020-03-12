@@ -1,11 +1,11 @@
-## Floyd Warshall Algorithm
+# Floyd Warshall Algorithm
 
 In computer science, the **Floyd–Warshall algorithm** is an algorithm for finding
 shortest paths in a weighted graph with positive or negative edge weights (but
 with no negative cycles). A single execution of the algorithm will find the 
 lengths (summed weights) of shortest paths between all pairs of vertices.
 
-### Algorithm
+## Algorithm
 
 The Floyd–Warshall algorithm compares all possible paths through the graph between 
 each pair of vertices. It is able to do this with `O(|V|^3)` comparisons in a graph.
@@ -36,16 +36,16 @@ FLOYD - WARSHALL (W)
  3. for k ← 1 to n
  4. do for i ← 1 to n     
  5. do for j ← 1 to n     
- 6. do d(i,j,k) ← min (d(i,j,k-1),d(i,k,k-1)+d(k,j,k-1) )
+ 6. do d(i, j, k) ← min ( d(i, j, k-1),d(i, k, k-1) + d(k, j, k-1) )
  7. return D(n) 
 ```
 
-### Time complexity
+## Time complexity
 The strategy adopted by the Floyd-Warshall algorithm is Dynamic Programming. 
 The running time of the Floyd-Warshall algorithm is determined by the triply nested for loops of lines 3-6.
 Each execution of line 6 takes O (1) time. The algorithm thus runs in time θ(n3 ).
 
-### Example
+## Example
 
 The algorithm above is executed on the graph on the left below:
 
@@ -104,7 +104,7 @@ In the tables below `i` is row numbers and `j` is column numbers.
 | **4** |	3   |	−1  | 1   | 0   |
 
 
-### Implementation
+## Implementation
 * [CPP Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Floyd_Warshall_Algorithm/Floyd_Warshall_Algorithm.cpp)
 * [Go Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Floyd_Warshall_Algorithm/Floyd_Warshall_Algorithm.go)
 * [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Floyd_Warshall_Algorithm/Floyd_Warshall_Algorithm.java)
