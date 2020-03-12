@@ -1,12 +1,12 @@
 #include <stdio.h>
-int i, j, temp, max, count, maxdigits = 0, c = 0;
 
 /* Function to arrange the of sequence having same base */
 void arrange(int array[], int array1[], int k , int n)
 {
-    for (i = k; i < n - 1; i++)
+    int temp = 0;
+    for (int i = k; i < n - 1; i++)
     {
-        for (j = i + 1; j < n; j++)
+        for (int j = i + 1; j < n; j++)
         {
             if (array1[i] > array1[j])
             {
@@ -25,6 +25,7 @@ void arrange(int array[], int array1[], int k , int n)
 int main()
 {
     int temp, t, n = 1;
+    int i, j, max, count, maxdigits = 0, c = 0;
     printf("Enter the size of array : ");
     scanf("%d", &count);  // size of array
 
