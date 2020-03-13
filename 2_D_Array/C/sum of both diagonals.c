@@ -14,26 +14,26 @@ int main()
     {
 	//for storing matrix.
         printf("Enter Matrix :\n");
-        for(int i=0; i<m; i++)
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j < n; j++)
             {
                 scanf("%d",&a[i][j]);
             }
         }
-        int sum=0;
+        int sum = 0;
 	//for calculating sum both the diagonals.
-        for(int i=0; i<m; i++)
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j < n; j++)
             {
-                if(i==j || i+j==n-1)
+                if(i == j || i+j == n-1)
                 {
-                    sum+=a[i][j];
+                    sum += a[i][j];
                 }
             }
         }
-        sum-=a[m/2][n/2];
+        sum -= a[m/2][n/2];
         printf("\nDiagonal sum : %d",sum);
         printf("\n");
     }
