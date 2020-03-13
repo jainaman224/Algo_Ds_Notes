@@ -1,4 +1,5 @@
 /* This code is used to find factorial of large numbers*/
+
 import java.util.*;
 import java.lang.*;
 import java.math.*;
@@ -14,7 +15,9 @@ class Factorial
             f = f.multiply(BigInteger.valueOf(j));
         }
         System.out.println(f);
-  }
-}/*ENTER THE NUMBER
+    }
+}
+
+/*ENTER THE NUMBER
 5
 Answer is : 120*/
