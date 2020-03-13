@@ -160,6 +160,6 @@ class LinkedList
     23 2 34 5 1 - Adding the contents of the linked list
 
     Sample Output
-    1 2 5 23 34
+    1-->2-->5-->23-->34
 */
 
