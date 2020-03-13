@@ -10,9 +10,7 @@ def no_of_even_elem(arr):
     for i in range (0,len(arr)):
         if arr[i] %2 == 0:
             even_num +=1
-
-    return even_num
-            
+    return even_num      
 
 #--- main--- function
 
@@ -31,7 +29,7 @@ for i in range(0, n):
     lst.append(elem) # adding the element 
 
 num = no_of_even_elem(lst)
-print "Number of odd elements in array", len(lst)- num
+print "Number of odd elements in array", len(lst) - num
 print "Number of even elements in array", num
 
 '''
