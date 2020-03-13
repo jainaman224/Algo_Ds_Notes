@@ -16,7 +16,7 @@ All levels of the constructed segment tree will be completely filled except the 
 
 Height of the segment tree will be ```[log2 n]```. Since the tree is represented using array and relation between parent and child indexes must be maintained, size of memory allocated for segment tree will be ```2*2[log2 n]-1```.
 
-![Segment Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/RangeMinimumQuery.png)
+ ![Segment Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/RangeMinimumQuery.png)
 
 ## Query for minimum value of given range 
 
@@ -42,4 +42,4 @@ Time complexity to query is O(Logn). To query a range minimum, we process at mos
 ## Implementation
  
 ## See also
-[Segment Tree on GeekforGeeks](https://www.geeksforgeeks.org/segment-tree-set-1-range-minimum-query/)
+[Segment Tree on GeeksforGeeks](https://www.geeksforgeeks.org/segment-tree-set-1-range-minimum-query/)
