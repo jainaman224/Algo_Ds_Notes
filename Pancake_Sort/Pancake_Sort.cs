@@ -1,8 +1,8 @@
 using System;
  
 class pancakeSortProgram {
- 
-    static void flip(int []arr, int i)// function swapping adjacent integer in array till from index 0 toindex i
+    // function swapping adjacent integer in array till from index 0 toindex i
+    static void flip(int []arr, int i)
     {
         int temp, start = 0;
         while (start < i)
@@ -29,7 +29,8 @@ class pancakeSortProgram {
         for (int curr_size = n; curr_size > 1; --curr_size)
         { 
             int mi = findMax(arr, curr_size);// function calling for finding index of max integer till the index curr_size
-            if (mi != curr_size - 1)// call function flip for swapping if index of max integer till the index curr_size is not equal to curr_size-1
+            // call function flip for swapping if index of max integer till the index curr_size is not equal to curr_size-1
+            if (mi != curr_size - 1)
             {
                 flip(arr, mi);
                 flip(arr, curr_size - 1);
@@ -47,8 +48,8 @@ class pancakeSortProgram {
  
     public static void Main (string [] args)
     {
-        int n=Convert.ToInt32(Console.ReadLine());//input size of array
-        int []arr=new int[n];//initializing array of size n
+        int n = Convert.ToInt32(Console.ReadLine());//input size of array
+        int []arr = new int[n];//initializing array of size n
      
         for(int i = 0; i < n; i++)
             arr[i] = Convert.ToInt32(Console.ReadLine());//input value in array
