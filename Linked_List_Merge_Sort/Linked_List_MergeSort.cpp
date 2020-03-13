@@ -1,3 +1,26 @@
+/*C++ program for sorting a Single Linked List using Merge Sort technique. Merge Sort uses divide and conquer technique i.e. it 
+  divides the input array into two halves, calls itself recursively for the two halves until one element remains and then merges
+  the two halves
+                                          | 6 | 5 | 4 | 3 | 2 | 1 |           *
+                                                    /   \                     *
+                                                   /     \                    *
+                                      | 6 | 5 | 4 |      | 3 | 2 | 1 |        *
+                                          /  \                /  \            *        DIVIDE
+                                         /    \              /    \           *
+                                | 6 | 5 |    | 4 |   | 3 | 2 |    | 1 |       *     
+                                  /   \        |       /   \        |         *
+                                |6|   |5|      |     |3|   |2|      |         *
+                                 \     /       |      \     /       |
+                                  \   /        |       \   /        |
+                                | 5 | 6 |      |     | 2 | 3 |      |         *
+                                   \           |         \          |         *
+                                    \          |          \         |         *
+                                    | 4 | 5 | 6 |         | 1 | 2 | 3 |       *        MERGE
+                                          \                     /             *
+                                           \                   /              *
+                                         | 1 | 2 | 3 | 4 | 5 | 6 |            *
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -19,40 +42,40 @@ struct Node *merge(struct Node *l1, struct Node *l2)
     if(!l2)
         return l1;
 
-    struct Node *head=NULL;
+    struct Node *head = NULL;
     
-    if(l1->data<l2->data)
+    if(l1->data < l2->data)
     {
-        head=l1;
-        l1=l1->next;
-    }
+        head = l1;
+        l1 = l1->next;
+    } 
     else
     {
-        head=l2;
-        l2=l2->next;
+        head = l2;
+        l2 = l2->next;
     }
     
-    struct Node *ptr=head;
+    struct Node *ptr = head;
     
     while(l1 && l2)
     {
-        if(l1->data<l2->data)
+        if(l1->data < l2->data)
         {
-            ptr->next=l1;
-            l1=l1->next;
+            ptr->next = l1;
+            l1 = l1->next;
         }
         else
         {
-            ptr->next=l2;
-            l2=l2->next;
+            ptr->next = l2;
+            l2 = l2->next;
         }
-        ptr=ptr->next;
+        ptr = ptr->next;
     }
     
     if(l1)
-        ptr->next=l1;
+        ptr->next = l1;
     else
-        ptr->next=l2;
+        ptr->next = l2;
     
     return head;
 }
@@ -60,22 +83,22 @@ struct Node *merge(struct Node *l1, struct Node *l2)
 /*Dividing the linked list*/
 struct Node* mergeSort(struct Node* head) {
     
-    if(head==NULL || head->next==NULL)
+    if(head == NULL || head->next == NULL)
         return head;
         
     /*Dividing the linked list into two equal parts as done in merge sort*/
-    struct Node *ptr1=head;
-    struct Node *ptr2=head->next;
+    struct Node *ptr1 = head;
+    struct Node *ptr2 = head->next;
     
     while(ptr2 && ptr2->next)
     {
-        ptr1=ptr1->next;
+        ptr1 = ptr1->next;
         if(ptr2->next)
-            ptr2=ptr2->next->next;
+            ptr2 = ptr2->next->next;
     }
     
-    ptr2=ptr1->next;
-    ptr1->next=NULL;
+    ptr2 = ptr1->next;
+    ptr1->next = NULL;
     
     return merge(mergeSort(head),mergeSort(ptr2));
 }
@@ -89,16 +112,6 @@ void printList(struct Node* head) {
 
     printf("NULL");
 }
-
-/*
-Sample Input
-1 - Test cases
-5 - Total number of elements to be inserted in linked list
-23 2 34 5 1 - Adding the contents of the linked list
-
-Sample Output
-1 2 5 23 34
-*/
 
 int main() {
     int test,n,ele;
@@ -116,7 +129,7 @@ int main() {
 
             struct Node *ptr = new Node(ele);
 
-            if(head==NULL)
+            if(head == NULL)
                 head = ptr;
             else
                 temp->next = ptr;
@@ -129,3 +142,15 @@ int main() {
     }
     return 0;
 }
+
+/*
+Sample Input
+1 - Test cases
+5 - Total number of elements to be inserted in linked list
+23 2 34 5 1 - Adding the contents of the linked list
+
+Sample Output
+1-->2-->5-->23-->34
+*/
+
+
