@@ -13,16 +13,15 @@ fun main(args: Array<String>) {
   val graph = Graph<String>()
   graph.apply {
     // Node / vertex "0"
-    addEdge("0", "1")
-    addEdge("0", "4")
-    // Node / vertex "1"
-    addEdge("1", "2")
-    addEdge("1", "3")
-    addEdge("1", "4")
-    // Node / vertex "2"
-    addEdge("2", "3")
-    // Node / vertex "3"
-    addEdge("3", "4")
+    
+    // Node / vertex "
+     addEdge("0", "1"); 
+    addEdge("0", "2"); 
+    addEdge("1", "2"); 
+    addEdge("2", "0"); 
+    addEdge("2", "3"); 
+    addEdge("3", "3"); 
+    addEdge("3", "4");
   }
   print(graph.toString())
 
@@ -94,3 +93,9 @@ fun <T> depthFirstTraversal(graph: Graph<T>, startNode: T): String {
 
   return traversalList.joinToString()
 }
+/* OUTPUT 
+Following is Depth First Traversal
+0 1 2 3
+
+
+*/
