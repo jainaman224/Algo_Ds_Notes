@@ -26,7 +26,7 @@ class pancakeSortProgram {
  
     static int pancakeSort(int []arr, int n)
     {
-        for (int curr_size = n; curr_size > 1;--curr_size)
+        for (int curr_size = n; curr_size > 1; --curr_size)
         { 
             int mi = findMax(arr, curr_size);// function calling for finding index of max integer till the index curr_size
             if (mi != curr_size - 1)// call function flip for swapping if index of max integer till the index curr_size is not equal to curr_size-1
@@ -49,7 +49,7 @@ class pancakeSortProgram {
     {
         int n=Convert.ToInt32(Console.ReadLine());//input size of array
         int []arr=new int[n];//initializing array of size n
-        for(int i=0;i<n;i++)
+        for(int i = 0; i < n; i++)
             arr[i] = Convert.ToInt32(Console.ReadLine());//input value in array
         pancakeSort(arr, n);// call function which is sorting the input array
         Console.Write("Sorted Array: ");
