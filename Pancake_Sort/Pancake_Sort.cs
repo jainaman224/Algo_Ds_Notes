@@ -14,8 +14,8 @@ class pancakeSortProgram {
             i--;
         }
     }
- 
-    static int findMax(int []arr, int n)// function returning index of max value till index curr_size
+    // function returning index of max value till index curr_size
+    static int findMax(int []arr, int n)
     {
         int mi, i;
         for (mi = 0, i = 0; i < n; ++i)
