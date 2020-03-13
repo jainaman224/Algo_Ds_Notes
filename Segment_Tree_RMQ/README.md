@@ -40,6 +40,11 @@ Time Complexity for tree construction is O(n). There are total 2n-1 nodes, and v
 Time complexity to query is O(Logn). To query a range minimum, we process at most two nodes at every level and number of levels is **O(Log n)**.
 
 ## Implementation
+- [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Segment_Tree_RMQ/Segement_Tree_RMQ.cpp) 
+
+- [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Segment_Tree_RMQ/Segement_Tree_RMQ.py)
+
+- [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Segment_Tree_RMQ/Segement_Tree_RMQ.java)
  
 ## See also
 [Segment Tree on GeeksforGeeks](https://www.geeksforgeeks.org/segment-tree-set-1-range-minimum-query/)
