@@ -1,3 +1,5 @@
+/* C program to print right view of the binary tree*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -19,7 +21,7 @@ struct Node *create()
     printf("Enter data(-1 for no node):");
     scanf("%d",&x);
 
-    if(x==-1)
+    if(x == -1)
     return NULL;
 
     ptr = (struct Node*)malloc(sizeof(struct Node));
@@ -34,11 +36,12 @@ struct Node *create()
 /*Recursive solution for priniting right view of Binary Tree*/
 void findRightView(struct Node *root, int *ans, int *size, int index)
 {
-    if(root==NULL)
+    if(root == NULL)
         return;
     
     index++;
 
+    // Increasing the level of the tree every time a node with the same level appears
     if(index > *size)
         ans[(*size)++] = root->data;
     
@@ -46,13 +49,25 @@ void findRightView(struct Node *root, int *ans, int *size, int index)
     findRightView(root->left, and, size, index);
 }
 
+// Function for intializing the level of the root node and size of the array 
 int *rightView(struct Node *root, int *size)
 {
     int *ans = malloc(sizeof(int)*100);
-    *size=0;
-    findRightView(root,ans,size,0);
+    *size = 0;
+    findRightView(root, ans, size, 0);
 
     return ans;
+}
+
+int main()
+{
+    struct Node *root = create();
+
+    int size = 0;
+    int *res = rightView(root, &size);
+
+    for(int i=0; i<size; i++)
+        printf("%d", res[i]);
 }
 
 /* Sample Input
@@ -83,13 +98,3 @@ Enter data(-1 for no node: -1
 Output :- 1 3 6
 */
 
-int main()
-{
-    struct Node *root = create();
-
-    int size = 0;
-    int *res = rightView(root, &size);
-
-    for(int i=0; i<size; i++)
-        printf("%d", res[i]);
-}
