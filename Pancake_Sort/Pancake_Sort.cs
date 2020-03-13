@@ -49,8 +49,10 @@ class pancakeSortProgram {
     {
         int n=Convert.ToInt32(Console.ReadLine());//input size of array
         int []arr=new int[n];//initializing array of size n
+     
         for(int i = 0; i < n; i++)
             arr[i] = Convert.ToInt32(Console.ReadLine());//input value in array
+     
         pancakeSort(arr, n);// call function which is sorting the input array
         Console.Write("Sorted Array: ");
         printArray(arr, n);// call fubction which print the sorted array
