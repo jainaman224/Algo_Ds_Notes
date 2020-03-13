@@ -16,40 +16,40 @@ int main()
     cout<<"Column :";
     cin>>l;
     int a[m][n], b[k][l];
-    if(m==k && n==l)
+    if(m == k && n == l)
     {
         //for storing first matrix.
         cout<<"Enter 1st array :"<<endl;
-        for(int i=0; i<m; i++)
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j < n; j++)
             {
                 cin>>a[i][j];
             }
         }
 	//for storing second matrix.
         cout<<"Enter 2nd array :"<<endl;
-        for(int i=0; i<m; i++)
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j < n; j++)
             {
                 cin>>b[i][j];
             }
         }
         int c[m][n];
 	//calculating sum of a and b matrices.
-        for(int i=0; i<m; i++)
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j < n; j++)
             {
-                c[i][j]=a[i][j]+b[i][j];
+                c[i][j] = a[i][j] + b[i][j];
             }
         }
 	//for displaying output matrix.
         cout<<"Added Array :"<<endl;
-        for(int i=0; i<m; i++)
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j < n; j++)
             {
                 cout<<c[i][j]<<"\t";
             }
