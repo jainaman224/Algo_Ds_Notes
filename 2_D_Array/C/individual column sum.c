@@ -12,21 +12,21 @@ int main()
     int a[m][n];
     printf("Enter Matrix :\n");
     //for storing matrix.
-    for(int i=0; i<m; i++)
+    for(int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for(int j = 0; j < n; j++)
         {
             scanf("%d",&a[i][j]);
         }
     }
 
     //for calculating each column sum.
-    for(int j=0; j<n; j++)
+    for(int j = 0; j < n; j++)
     {
-        int sum=0;
-        for(int i=0; i<m; i++)
+        int sum = 0;
+        for(int i = 0; i < m; i++)
         {
-            sum+=a[i][j];
+            sum += a[i][j];
         }
         printf("\nSum of column %d",j+1);
         printf(" : %d",sum);
