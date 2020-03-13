@@ -5,11 +5,11 @@ using namespace std;
 int main()
 {
     int n,m;
-    cout <<"Enter size of matrix :"<< endl;
-    cout<<"Row : ";
-    cin>>m;
-    cout<<"Column : ";
-    cin>>n;
+    cout << "Enter size of matrix :" << endl;
+    cout << "Row :";
+    cin >> m;
+    cout <<"Column :";
+    cin >> n;
     int a[m][n];
     cout<<"Enter Matrix :"<<endl;
     //for storing matrix.
@@ -26,7 +26,7 @@ int main()
         int sum=0;
         for(int i=0; i<m; i++)
         {
-            sum+=a[i][j];
+            sum += a[i][j];
         }
         cout<<"Sum of column "<<j+1<<" : "<<sum<<endl;
     }
