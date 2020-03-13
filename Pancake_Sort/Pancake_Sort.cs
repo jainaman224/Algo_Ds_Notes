@@ -37,8 +37,8 @@ class pancakeSortProgram {
         } 
         return 0;
     }
- 
-    static void printArray(int []arr, int arr_size)// function for printing sorted array
+    // function for printing sorted array
+    static void printArray(int []arr, int arr_size)
     {
         for (int i = 0; i < arr_size; i++)
             Console.Write(arr[i] + " ");
