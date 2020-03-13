@@ -1,16 +1,22 @@
 # Here we use bit patterns to keep track of queen placements for the columns, left diagonals and right diagonals.
-# 1 in the bit pattern denotes that there is a queen attacking that column or diagonal line and 0 means that no queens are attacking that position
             
 def totalNQueens(n):
-    all_ones = 2 ** n - 1
-    count = 0
+    all_ones = 2 ** n - 1  #Helps identify valid solutions
+    count = 0 #Keeps track of the # of valid solutions
 
+    #Checks all possible board configurations
     def helper(ld, column, rd):
         nonlocal count
+
+        #All columns are occupied,so the solution must be complete
         if column == all_ones:
             count += 1
             return
+
+        #Gets a bit sequence with "1"s whereever there is an open "slot"
         possible_slots = ~(ld | column | rd) & all_ones
+
+        #Loops as long as there is a valid place to put another queen.
         while possible_slots:
             current_bit = possible_slots & -possible_slots
             possible_slots -= current_bit
