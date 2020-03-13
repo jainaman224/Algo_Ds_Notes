@@ -4,41 +4,41 @@ using namespace std;
 int main()
 {
     int n,m;
-    cout <<"Enter size of matrix :"<< endl;
-    cout<<"Row : ";
-    cin>>m;
-    cout<<"Column : ";
-    cin>>n;
+    cout << "Enter size of matrix :"<< endl;
+    cout << "Row : ";
+    cin >> m;
+    cout << "Column : ";
+    cin >> n;
     int a[m][n];
     //for storing matrix.
-    if(m==n)
+    if(m == n)
     {
-        cout<<"Enter Matrix :"<<endl;
-        for(int i=0; i<m; i++)
+        cout << "Enter Matrix :"<<endl;
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j < n; j++)
             {
-                cin>>a[i][j];
+                cin >> a[i][j];
             }
         }
-        int sum=0;
+        int sum = 0;
 	//for calculating sum both the diagonals.
-        for(int i=0; i<m; i++)
+        for(int i = 0; i < m; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j = 0; j <   n; j++)
             {
-                if(i==j || i+j==n-1)
+                if(i == j || i + j == n-1)
                 {
-                    sum+=a[i][j];
+                    sum += a[i][j];
                 }
             }
         }
-        sum-=a[n/2][n/2];
-        cout<<endl<<"Diagonal Sum : "<<sum;
+        sum -= a[n/2][n/2];
+        cout << endl << "Diagonal Sum : " << sum;
     }
     else
     {
-      cout<<endl<<"Diagonals are present in square matrix only.."<<endl;
+      cout << endl << "Diagonals are present in square matrix only.." << endl;
     }
     return 0;
 }
