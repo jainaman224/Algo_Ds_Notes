@@ -42,4 +42,4 @@ Time complexity to query is O(Logn). To query a range minimum, we process at mos
 ## Implementation
  
 ## See also
-[AVL tree on Wikipedia](https://en.wikipedia.org/wiki/AVL_tree)
+[Segment Tree on GeekforGeeks](https://www.geeksforgeeks.org/segment-tree-set-1-range-minimum-query/)
