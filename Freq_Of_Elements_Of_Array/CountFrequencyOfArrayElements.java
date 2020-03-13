@@ -39,10 +39,10 @@ public class CountFrequencyOfArrayElements
         //display the frequencies	
         System.out.println("Element \t Frequency");
         hm.forEach(
-        (k,v) ->
-        {
-            System.out.println(k+" \t\t "+v);
-        }
+            (k,v) ->
+            {
+                System.out.println(k + " \t\t " + v);
+            }
         );
     }
 
