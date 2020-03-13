@@ -20,6 +20,7 @@
                                           \                     /             *
                                            \                   /              *
                                          | 1 | 2 | 3 | 4 | 5 | 6 |            *
+ */
 #include<stdio.h>
 #include<stdlib.h>
 
