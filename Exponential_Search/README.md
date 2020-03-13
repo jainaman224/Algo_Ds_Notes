@@ -2,7 +2,7 @@
 
 Exponential search (also called doubling search or galloping search or Struzik search) is a searching technique for sorted, unbounded/infinite lists.
 
- ![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DBDVYtuWXgXE&psig=AOvVaw0GNhWGATKKDle-deGn2mwG&ust=1584177000138000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCQqZaNl-gCFQAAAAAdAAAAABAD)
+![alt text](https://i.ytimg.com/vi/BDVYtuWXgXE/maxresdefault.jpg)
 
  The name of this searching algorithm may be misleading but it works in O(Log n) time. The name comes from the way it searches an element.
 
