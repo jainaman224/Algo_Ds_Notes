@@ -1,3 +1,28 @@
+'''
+ PYTHON program for sorting a Single Linked List using Merge Sort technique. Merge Sort uses divide and conquer technique i.e. 
+ it divides the input array into two halves, calls itself recursively for the two halves until one element remains and then 
+ merges the two halves
+ 
+                                          | 6 | 5 | 4 | 3 | 2 | 1 |           *
+                                                    /   \                     *
+                                                   /     \                    *
+                                      | 6 | 5 | 4 |      | 3 | 2 | 1 |        *
+                                          /  \                /  \            *        DIVIDE
+                                         /    \              /    \           *
+                                | 6 | 5 |    | 4 |   | 3 | 2 |    | 1 |       *     
+                                  /   \        |       /   \        |         *
+                                |6|   |5|      |     |3|   |2|      |         *
+                                 \     /       |      \     /       |
+                                  \   /        |       \   /        |
+                                | 5 | 6 |      |     | 2 | 3 |      |         *
+                                   \           |         \          |         *
+                                    \          |          \         |         *
+                                    | 4 | 5 | 6 |         | 1 | 2 | 3 |       *        MERGE
+                                          \                     /             *
+                                           \                   /              *
+                                         | 1 | 2 | 3 | 4 | 5 | 6 |            *
+'''
+
 import atexit
 import io
 import sys
@@ -37,7 +62,7 @@ class LinkedList:
     
         while l1!=None and l2!=None:
             
-            if l1.data<l2.data:
+            if l1.data < l2.data:
                 ptr.next = l1
                 l1 = l1.next
             else:
@@ -87,15 +112,6 @@ def printList(head):
 
     print("NULL")
 
-'''
-Sample Input
-1 - Test cases
-5 - Total number of elements to be inserted in linked list
-23 2 34 5 1 - Adding the contents of the linked list
-
-Sample Output
-1 2 5 23 34
-'''
 
 if __name__ == '__main__':
     t=int(input())
@@ -120,3 +136,14 @@ if __name__ == '__main__':
         
         li.head = li.mergeSort(li.head)
         printList(li.head)
+        
+ '''
+    Sample Input
+    1 - Test cases
+    5 - Total number of elements to be inserted in linked list
+    23 2 34 5 1 - Adding the contents of the linked list
+
+    Sample Output
+    1-->2-->5-->23-->34-->NULL
+'''
+
