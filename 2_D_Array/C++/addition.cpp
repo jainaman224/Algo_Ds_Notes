@@ -10,7 +10,7 @@ int main()
     cin >> m;
     cout << "Column :";
     cin >> n;
-    cout << "Enter size of 2st array :" << endl;
+    cout << "Enter size of 2nd array :" << endl;
     cout << "Row :";
     cin >> k;
     cout << "Column :";
