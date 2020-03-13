@@ -58,7 +58,7 @@ int main()
     }
     else
     {
-        cout << endl << "The two matrices cannot be added due to difference in size."<<endl;
+        cout << endl << "The two matrices cannot be added due to difference in size." << endl;
     }
     return 0;
 }
