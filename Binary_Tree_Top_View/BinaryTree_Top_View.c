@@ -1,9 +1,10 @@
+/* C program to print top view of Binary tree*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<limits.h>
 
-/* A binary tree node has data, pointer to left child
-   and a pointer to right child */
+/* A binary tree node has data, pointer to left child and a pointer to right child */
 struct Node
 {
     int data;
@@ -20,7 +21,7 @@ struct Node *create()
     printf("Enter data(-1 for no node):");
     scanf("%d",&x);
 
-    if(x==-1)
+    if(x == -1)
     return NULL;
 
     ptr = (struct Node*)malloc(sizeof(struct Node));
@@ -37,7 +38,7 @@ struct Node *create()
 
 void findTopView(struct Node *root, int *a, int *b, int level, int dist)
 {
-    if(root==NULL)
+    if(root == NULL)
         return;
 
     if(level < a[50+dist])
@@ -54,9 +55,9 @@ int *topView(struct Node* root, int *len) {
     
     int i,o=0;
 
-    int *a=(int *)calloc(100,sizeof(int));
-    int *b=(int *)calloc(100,sizeof(int));
-    int *c=(int *)calloc(100,sizeof(int));
+    int *a = (int *)calloc(100,sizeof(int));
+    int *b = (int *)calloc(100,sizeof(int));
+    int *c = (int *)calloc(100,sizeof(int));
     
     for(i=0;i<100;i++)
     {
@@ -64,18 +65,26 @@ int *topView(struct Node* root, int *len) {
         b[i]=INT_MAX;
     }
 
-    findTopView(root,a,b,0,0);
+    findTopView(root, a, b, 0, 0);
     
     for(i=0;i<100;i++)
     {
         if(b[i]!=INT_MAX)
-        {
-        c[o++]=b[i];
-        }
+            c[o++]=b[i];
     }
 
     *len = o;
     return c;
+}
+
+int main()
+{
+    struct Node *root = create();
+    int len = 0;
+    int *res = topView(root, &len);
+    
+    for(int i=0; i<len; i++)
+        printf("%d ", res[i]);
 }
 
 /* Sample Input
@@ -106,12 +115,4 @@ Enter data(-1 for no node: -1
 Output :- 6 2 1 3
 */
 
-int main()
-{
-    struct Node *root = create();
-    int len = 0;
-    int *res = topView(root, &len);
-    
-    for(int i=0; i<len; i++)
-        printf("%d ", res[i]);
-}
+
