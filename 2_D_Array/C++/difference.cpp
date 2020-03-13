@@ -69,7 +69,7 @@ Output
 Enter size of 1st array :
 Row :3
 Column :2
-Enter size of 2st array :
+Enter size of 2nd array :
 Row :3
 Column :2
 Enter 1st array :
