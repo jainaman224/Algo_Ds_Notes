@@ -12,20 +12,20 @@ int main()
     int a[m][n];
     printf("Enter Matrix :\n");
     //for storing matrix.
-    for(int i=0; i<m; i++)
+    for(int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for(int j = 0; j < n; j++)
         {
             scanf("%d",&a[i][j]);
         }
     }
     //for calculating each row sum.
-    for(int i=0; i<m; i++)
+    for(int i = 0; i < m; i++)
     {
-        int sum=0;
-        for(int j=0; j<n; j++)
+        int sum = 0;
+        for(int j = 0; j < n; j++)
         {
-            sum+=a[i][j];
+            sum += a[i][j];
         }
         printf("\nSum of row %d",i+1);
         printf(" : %d",sum);
