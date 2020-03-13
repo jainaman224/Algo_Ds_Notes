@@ -5,30 +5,30 @@ using namespace std;
 int main()
 {
     int n,m;
-    cout <<"Enter size of matrix :"<< endl;
-    cout<<"Row : ";
-    cin>>m;
-    cout<<"Column : ";
-    cin>>n;
+    cout << "Enter size of matrix :"<< endl;
+    cout << "Row : ";
+    cin >> m;
+    cout << "Column : ";
+    cin >> n;
     int a[m][n];
-    cout<<"Enter Matrix :"<<endl;
+    cout << "Enter Matrix :" << endl;
     //for storing matrix.
-    for(int i=0; i<m; i++)
+    for(int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for(int j = 0; j < n; j++)
         {
-            cin>>a[i][j];
+            cin >> a[i][j];
         }
     }
     //for calculating each row sum.
-    for(int i=0; i<m; i++)
+    for(int i = 0; i < m; i++)
     {
-        int sum=0;
-        for(int j=0; j<n; j++)
+        int sum = 0;
+        for(int j = 0; j < n; j++)
         {
-            sum+=a[i][j];
+            sum += a[i][j];
         }
-        cout<<"Sum of row "<<i+1<<" : "<<sum<<endl;
+        cout << "Sum of row " << i+1 << " : " << sum << endl;
     }
     return 0;
 }
