@@ -53,4 +53,8 @@ func main(){
 	}
 	cocktail_sort(arr,n)
 	fmt.Print("Sorted Arry is: ",arr)
+	
+	/* Sample Input arr[]={89,23,1,65,4,7,9,100}
+	output arr[]={1,4,7,9,23,65,89,100}
+	*/
 }
