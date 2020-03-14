@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class PascalsTriangle
 {
     public static void main(String[] args)
@@ -6,16 +7,16 @@ class PascalsTriangle
         Scanner s = new Scanner(System.in);
         System.out.println("Enter number of rows");
         int n = s.nextInt(); 
-        int i,j,k;
-        int a[][] = new int[n][n]; Create an array of n * n
+        int i, j, k;
+        int a[][] = new int[n][n]; //Create an array of n * n
         for(i = 0; i < n; i++)
         {
             for(j = 0; j < n; j++)
             {
                 if(j==0)
-                a[i][j] = 1; //for the first value in each row give the value 1
+                    a[i][j] = 1; //for the first value in each row give the value 1
                 else
-                a[i][j] = 0; // make the rest 0
+                    a[i][j] = 0; // make the rest 0
             
             }
         }
@@ -34,11 +35,11 @@ class PascalsTriangle
                     System.out.print("  "); //give the required spaces
                 }
             
-            for(j = 0; j <= i; j++)
-            {
-               System.out.printf(" %3d", a[i][j]); // print the value
-            }
-            System.out.println();
+                for(j = 0; j <= i; j++)
+                {
+                    System.out.printf(" %3d", a[i][j]); // print the value
+                }
+                System.out.println();
             
         }
     }
