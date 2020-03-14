@@ -11,24 +11,22 @@ int main()
     cout <<"Column :";
     cin >> n;
     int a[m][n];
-    cout<<"Enter Matrix :"<<endl;
-    //for storing matrix.
-    for(int i=0; i<m; i++)
+    cout << "Enter Matrix :" << endl;
+    for(int i = 0; i < m; i++)                                              //for storing matrix.
     {
-        for(int j=0; j<n; j++)
+        for(int j = 0; j < n; j++)
         {
-            cin>>a[i][j];
+            cin >> a[i][j];
         }
     }
-    //for calculating each column sum.
-    for(int j=0; j<n; j++)
+    for(int j = 0; j < n; j++)                                              //for calculating each column sum.
     {
-        int sum=0;
-        for(int i=0; i<m; i++)
+        int sum = 0;
+        for(int i = 0; i < m; i++)
         {
             sum += a[i][j];
         }
-        cout<<"Sum of column "<<j+1<<" : "<<sum<<endl;
+        cout << "Sum of column " << j+1 << " : " << sum << endl;
     }
     return 0;
 }
