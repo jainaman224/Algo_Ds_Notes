@@ -18,6 +18,7 @@ struct Node *create()
 {
     Node *ptr;
     int x;
+    
     printf("Enter data(-1 for no node):");
     scanf("%d",&x);
 
@@ -26,10 +27,13 @@ struct Node *create()
 
     ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr->data = x;
+    
     printf("Enter left child of %d:\n",x);
     ptr->left = create();
+    
     printf("Enter right child of %d:\n",x);
     ptr->right = create();
+    
     return ptr;
 }
 
@@ -43,12 +47,13 @@ void findTopView(struct Node *root, int *a, int *b, int level, int dist)
 
     if(level < a[50+dist])
     {
-        a[50+dist] = level;
-        b[50+dist] = root->data;
+        a[50 + dist] = level;
+        b[50 + dist] = root->data;
     }
     
     # Recursively calling the left and the right child to get the bottom view
     findTopView(root->left, a, b, level+1, dist-1);
+    
     findTopView(root->right, a, b, level+1, dist+1);
 }
 
@@ -62,7 +67,7 @@ int *topView(struct Node* root, int *len) {
     
     /* Initialising a(level of the node) and b(Vertical distance of the node from root) as INT_MAX as we need to print 
        top most elements*/
-    for(i=0;i<100;i++)
+    for(i = 0; i < 100; i++)
     {
         a[i] = INT_MAX;
         b[i] = INT_MAX;
@@ -70,7 +75,7 @@ int *topView(struct Node* root, int *len) {
 
     findTopView(root, a, b, 0, 0);
     
-    for(i=0;i<100;i++)
+    for(i = 0; i < 100; i++)
     {
         if(b[i] != INT_MAX)
             c[o++] = b[i];
@@ -86,7 +91,7 @@ int main()
     int len = 0;
     int *res = topView(root, &len);
     
-    for(int i=0; i<len; i++)
+    for(int i = 0; i < len; i++)
         printf("%d ", res[i]);
 }
 
