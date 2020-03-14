@@ -10,8 +10,7 @@ int main()
     cout << "Column : ";
     cin >> n;
     int a[m][n];
-    //for storing matrix.
-    if(m == n)
+    if(m == n)									//for storing matrix.
     {
         cout << "Enter Matrix :"<<endl;
         for(int i = 0; i < m; i++)
@@ -21,9 +20,8 @@ int main()
                 cin >> a[i][j];
             }
         }
-        int sum = 0;
-	//for calculating sum both the diagonals.
-        for(int i = 0; i < m; i++)
+        int sum = 0;			
+        for(int i = 0; i < m; i++)						//for calculating sum both the diagonals.
         {
             for(int j = 0; j <   n; j++)
             {
