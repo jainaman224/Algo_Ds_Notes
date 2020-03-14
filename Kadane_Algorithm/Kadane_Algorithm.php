@@ -30,13 +30,13 @@ function max_sumSubArray($a)
 } 
 
 // Sample example
-$a = array(4 , -3 , -2 , 2 , 3 , 1 , -2 , -3 , 4 , 2 , -6 , -3 , -1 , 3 , 1 , 2); 
+$a = array(4, -3, -2, 2, 3, 1, -2, -3, 4, 2, -6, -3, -1, 3, 1, 2); 
 $max_sum = max_sumSubArray($a); 
 echo "Maximum sum of subarray is: ", $max_sum; 
 
 /*
 Input as specified in the code:
-4 , -3 , -2 , 2 , 3 , 1 , -2 , -3 , 4 , 2 , -6 , -3 , -1 , 3 , 1 , 2
+4, -3, -2, 2, 3, 1, -2, -3, 4, 2, -6, -3, -1, 3, 1, 2
 
 Output: 
 Maximum sum of subarray is: 7
