@@ -1,49 +1,64 @@
-function floydWarshall(matrice) {
-    var temp = [];
-    var temp2 = [];
-    var temp3 = [];
-    
-    for (var k = 0; k < matrice.length; k++) {
-      for (var i = 0; i < matrice.length; i++) {
-        for (var j = 0; j < matrice.length; j++) {
-          temp.push(matrice[j][i] * matrice[k][j]);
-        }
-        if (sum(temp) > 0) {
-          temp2.push(1);
-        } else {
-          temp2.push(0);
-        }
-        temp = [];
+class Graph {
+   constructor() {
+      this.edges = {};
+      this.nodes = [];
+   }
+
+   addNode(node) {
+      this.nodes.push(node);
+      this.edges[node] = [];
+   }
+
+   addEdge(node1, node2, weight = 1) {
+      this.edges[node1].push({ node: node2, weight: weight });
+      this.edges[node2].push({ node: node1, weight: weight });
+   }
+  floydWarshallAlgorithm() {
+      let dist = {};
+      for (let i = 0; i < this.nodes.length; i++) {
+         dist[this.nodes[i]] = {};
+
+         // For existing edges assign the dist to be same as weight
+         this.edges[this.nodes[i]].forEach(e => (dist[this.nodes[i]][e.node] = e.weight));
+
+         this.nodes.forEach(n => {
+            // For all other nodes assign it to infinity
+            if (dist[this.nodes[i]][n] == undefined)
+               dist[this.nodes[i]][n] = Infinity;
+               // For self edge assign dist to be 0
+               if (this.nodes[i] === n) dist[this.nodes[i]][n] = 0;
+         });
       }
-      temp3.push(temp2);
-      temp2 = [];
-    }
-      return temp3;
-  }
-  
-  function sum(arr) {
-    return arr.reduce(function(a, b) {
-      return a + b;
-    }, 0);
-  }
-  
-  // Matrices examples
-  var matrice8 = [
-    [1, 0, 1, 0, 0, 0, 0, 0],
-    [1, 1, 0, 1, 0, 0, 0, 0],
-    [1, 0, 1, 0, 0, 0, 0, 0],
-    [1, 0, 0, 1, 0, 0, 1, 0],
-    [0, 1, 0, 0, 1, 0, 1, 0],
-    [0, 0, 1, 0, 0, 1, 0, 0],
-    [0, 0, 1, 0, 0, 1, 1, 1],
-    [0, 0, 0, 0, 1, 0, 0, 1]
-  ];
-  
-  var matrice4 = [
-    [1, 0, 1, 1], 
-    [1, 0, 1, 1], 
-    [0, 1, 1, 1], 
-    [0, 0, 1, 1]
-  ];
-  
-  console.log(floydWarshall(matrice4));
+
+      this.nodes.forEach(i => {
+         this.nodes.forEach(j => {
+            this.nodes.forEach(k => {
+               // Check if going from i to k then from k to j is better
+               // than directly going from i to j. If yes then update
+               // i to j value to the new value
+               if (dist[i][k] + dist[k][j] < dist[i][j])
+                  dist[i][j] = dist[i][k] + dist[k][j];
+            });
+         });
+      });
+      return dist;
+   }
+}
+
+let g = new Graph();
+var edges = prompt("Please enter number of edges", "5");
+var vertices = prompt("Please enter number of vertices", "5");
+for(let i=0;i<vertices;i++){
+  var e=prompt("Please enter vertex name", "A");
+  g.addNode(e);
+}
+ 
+for(let i=0;i<edges;i++){
+  var e1=prompt("Please enter start edge name", "A");
+  var e2=prompt("Please enter start edge name", "A");
+  var w=prompt("Please enter start edge name", 100);
+  g.addEdge(e1, e2, w);
+}
+ 
+
+console.log(g.floydWarshallAlgorithm());
