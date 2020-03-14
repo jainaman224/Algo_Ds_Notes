@@ -1,3 +1,14 @@
+//Round Robin Scheduling is a CPU scheduling algorithm where each process is assigned a fixed time slot in a cyclic way.
+//It is preemtive in nature.
+//It is cyclic in nature so starvation doesn’t occur
+//It is variant of first come, first served scheduling
+//No priority given to any process or task
+//It is also known as Time slicing scheduling
+/*Arrival Time: Time at which the process arrives in the ready queue.
+  Burst Time: Time required by a process for CPU execution.
+  Turn Around Time: Time Difference between completion time and arrival time.          
+  Waiting Time: Time Difference between turn around time and burst time. */
+
 #include<iostream>
 using namespace std;
 
@@ -61,6 +72,7 @@ int main()
      return 0;
 }
 
+/*
 Sample Input/Output:
 
 Enter number of processes: 4
@@ -86,3 +98,4 @@ Process 1	20		13
 Process 3	20		12
 Average Waiting Time: 11.25
 Average Turnaround Time: 17.5
+*/
