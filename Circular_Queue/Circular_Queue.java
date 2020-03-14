@@ -129,3 +129,120 @@ Deletion:
     }
 
 }
+/*
+Enter the size of queue:
+4
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+1
+
+Enter the value:
+10
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+1
+
+Enter the value:
+20
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+1
+
+Enter the value:
+30
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+1
+
+Enter the value:
+40
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+1
+
+Enter the value:
+50
+
+OVERFLOW! Queue is Full.
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+3
+
+Elements in Circular Queue are:
+10	20	30	40
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+2
+
+10 Deleted from queue.
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+2
+
+20 Deleted from queue.
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+2
+
+30 Deleted from queue.
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+2
+
+40 Deleted from queue.
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+2
+
+UNDERFLOW! Queue is Empty.
+
+1. Insert
+2. Delete
+3. Display
+4. Exit
+Enter choice:
+4
+ */
