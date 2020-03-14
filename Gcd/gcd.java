@@ -5,6 +5,7 @@
 
 //importing files
 import java.util.Scanner;
+
 public class gcd {
 	
 	public static int gcd_func(int a, int b) {
