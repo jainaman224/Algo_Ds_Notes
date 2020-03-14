@@ -26,10 +26,13 @@ struct Node *create()
 
     ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr->data = x;
-    printf("Enter left child of %d:\n",x);
+    
+    printf("Enter left child of %d:\n", x);
     ptr->left = create();
-    printf("Enter right child of %d:\n",x);
+    
+    printf("Enter right child of %d:\n", x);
     ptr->right = create();
+    
     return ptr;
 }
 
@@ -48,13 +51,15 @@ void findBottomView(struct Node *root, int *a, int *b, int level, int dist)
     }
     
     # Recursively calling the right and the left child to get the bottom view
+    
     findBottomView(root->right, a, b, level+1, dist+1);
+    
     findBottomView(root->left, a, b, level+1, dist-1);
 }
 
 int *bottomView(struct Node* root, int *len) {
     
-    int i,o=0;
+    int i, o=0;
 
     int *a = (int *)calloc(100,sizeof(int));
     int *b = (int *)calloc(100,sizeof(int));
@@ -62,18 +67,18 @@ int *bottomView(struct Node* root, int *len) {
     
     /* Initialising a(level of the node) and b(Vertical distance of the node from root) as INT_MIN as we need to print 
        bottom most elements*/
-    for(i=0;i<100;i++)
+    for(i = 0; i < 100; i++)
     {
-        a[i]=INT_MIN;
-        b[i]=INT_MIN;
+        a[i] = INT_MIN;
+        b[i] = INT_MIN;
     }
 
-    findBottomView(root,a,b,0,0);
+    findBottomView(root, a, b, 0, 0);
     
-    for(i=0;i<100;i++)
+    for(i = 0; i < 100; i++)
     {
-        if(b[i]!= INT_MIN)
-            c[o++]=b[i];
+        if(b[i] != INT_MIN)
+            c[o++] = b[i];
     }
 
     *len = o;
@@ -86,7 +91,7 @@ int main()
     int len = 0;
     int *res = bottomView(root, &len);
     
-    for(int i=0; i<len; i++)
+    for(int i = 0; i < len; i++)
         printf("%d ", res[i]);
 }
 
