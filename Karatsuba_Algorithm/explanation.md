@@ -39,4 +39,16 @@ karatsuba(x, y):
     return int(ac*(10**(m*2)) + ad_plus_bc*(10**m) + bd)
 ```
 
- 
+### Complexity
+
+To analyze the complexity of the Karatsuba algorithm, consider the number of multiplications the algorithm performs as a function of n, M(n).
+
+The algorithm multiplies together two nn-bit numbers. If n=2^k for some k then the algorithm recurses three times on n/2-bit number. The recurrence for this is:
+
+M(n) = 3M(n/2)
+
+This takes care of the multiplications required for Karatsuba--now to consider the additions and subtractions. There are O(n)O(n) additions and subtractions required for the algorithm. Therefore, the overall recurrence for the Karatsuba algorithm is:
+
+T(n) = 3T(n/2) + O(n)
+
+Using the master theorem on the above recurrence yields that the running time of the Karatsuba algorithm is: $\Theta$(n<sup>log<sub>2</sub>3</sup>)  
