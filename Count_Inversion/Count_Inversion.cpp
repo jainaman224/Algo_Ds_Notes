@@ -71,9 +71,9 @@ int main ()
     int n;
     cin >> n;
     int arr[n];
-    for(int i=0; i<n; i++)
+    for(int i=0; i < n; i++)
     cin >> arr[i];
-    cout << (inversions_count(arr, n))<<endl;
+    cout << (inversions_count(arr, n)) << endl;
     return 0;
 }
 
