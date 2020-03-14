@@ -1,9 +1,12 @@
-# Python implementation of Kosaraju's algorithm 
-# It is used to print all Strongly Connected Components (SCCs) in a directed graph
+# Python implementation of Kosaraju's Algorithm 
+# Kosaraju's Algorithm is used to print all Strongly Connected Components (SCCs) in a directed graph
 # A component is said to be strongly connected if there is a path between all pairs of vertices in it.
 
-# defaultdict is useful if one tries to access or modify a missing key, then defaultdict will automatically 
-# create the key and generate a default value for it. It handles missing keys well.
+# Kosaraju’s Algorithm involves two passes of Depth First Search in order to find the number of SCCs
+
+# defaultdict is useful if one tries to access or modify a missing key. In such a case,
+# defaultdict will automatically create the key and generate a default value for it. 
+# It handles missing keys well.
 
 from collections import defaultdict 
 
@@ -16,12 +19,12 @@ class Graph:
 	def add_newEdge(self,u,v): 
 		self.graph[u].append(v) 
 				
-    	# Function to fill vertices in stack 
-	def fillStack(self,v,visited, stack): 
+    	# Function for first DFS pass and to fill vertices in stack 
+	def firstDFS(self,v,visited, stack): 
 		visited[v] = True
 		for i in self.graph[v]: 
 			if visited[i] == False: 
-				self.fillStack(i, visited, stack) 
+				self.firstDFS(i, visited, stack) 
 		stack = stack.append(v) 
 	
 	# Function to return reverse of the graph 
@@ -32,32 +35,33 @@ class Graph:
 				g.add_newEdge(j,i) 
 		return g 
 
-    	# function for DFS traversal
-	def DFS(self,v,visited): 
+    	# Function for second DFS pass  
+	def secondDFS(self,v,visited): 
 		visited[v] = True
 		print(v, end = " ")
 		for i in self.graph[v]: 
 			if visited[i] == False: 
-				self.DFS(i,visited) 
+				self.secondDFS(i,visited) 
 
 	# Function to print all strongly connected components 
 	def printSCC(self): 
 		stack = [] 
 		
+		# First DFS pass
 		visited = [False]*(self.V) 
-		
 		for i in range(self.V): 
 			if visited[i] == False: 
-				self.fillStack(i, visited, stack) 
-				
+				self.firstDFS(i, visited, stack) 
+		
+		# After the first DFS pass reverse the graph
 		gr = self.getReverse() 
 		
+		# Second DFS pass
 		visited = [False]*(self.V) 
-
 		while stack: 
 			i = stack.pop() 
 			if visited[i] == False: 
-				gr.DFS(i, visited) 
+				gr.secondDFS(i, visited) 
 				print() 
 
 
