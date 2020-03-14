@@ -13,9 +13,9 @@ int main()
     // Storing elements of first matrix.
 
     printf("\nEnter the element of first matrix:\n");
-    for(i=0; i<row1; i++)
+    for(i = 0; i < row1; i++)
     {
-        for(j=0; j<col1; j++)
+        for(j = 0; j < col1; j++)
             scanf("%d", &mat1[i][j]);
     }
     printf("\nEnter size of second matrix:\n");
@@ -27,16 +27,16 @@ int main()
     // Storing elements of second matrix.
 
     printf("\nEnter the element of second matrix:\n");
-    for(i=0; i<row2; i++)
+    for(i = 0; i < row2; i++)
     {
-        for(j=0; j<col2; j++)
+        for(j = 0; j < col2; j++)
             scanf("%d", &mat2[i][j]);
     }
 
     // If column of first matrix in not equal to row of second matrix,
     // ask the user to enter the size of matrix again.
 
-    if(col1!=row2)
+    if(col1 != row2)
     {
         printf("\nMultiplication not possible!");
         printf("\nExiting...\n");
@@ -46,12 +46,12 @@ int main()
     }
     // Multiplying matrix a and b and storing in array mult.
     printf("\nMultiplying the two matrix...\n");
-    for(i=0; i<row1; i++)
+    for(i = 0; i < row1; i++)
     {
-        for(j=0; j<col2; j++)
+        for(j = 0; j < col2; j++)
         {
             sum = 0;
-            for(k=0; k<col1; k++)
+            for(k = 0; k < col1; k++)
                 sum = sum + mat1[i][k] * mat2[k][j];
             matmult[i][j] = sum;
         }
@@ -59,9 +59,9 @@ int main()
 
     // Displaying the multiplication of two matrix.
     printf("The multiplication result is:\n");
-    for(i=0; i<row1; i++)
+    for(i = 0; i < row1; i++)
     {
-        for(j=0; j<col2; j++)
+        for(j = 0; j < col2; j++)
             printf("%d ", matmult[i][j]);
         printf("\n");
     }
