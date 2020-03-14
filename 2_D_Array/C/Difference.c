@@ -3,7 +3,7 @@
 
 int main()
 {
-    int m,n,k,l;
+    int m, n, k, l;
     printf("Enter size of 1st array :\n");
     printf("Row :");
     scanf("%d",&m);
@@ -17,8 +17,7 @@ int main()
     int a[m][n], b[k][l];
     if(m == k && n == l)
     {
-        //for storing first matrix.
-        printf("Enter 1st array : \n");
+        printf("Enter 1st array : \n");						 //for storing first matrix.
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
@@ -26,8 +25,7 @@ int main()
                 scanf("%d",&a[i][j]);
             }
         }
-        //for storing second matrix.
-        printf("Enter 2nd array :\n");
+        printf("Enter 2nd array :\n");						//for storing second matrix.
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
@@ -36,8 +34,7 @@ int main()
             }
         }
         int c[m][n];
-	//calculating subtraction of a and b matrices.
-        for(int i = 0; i < m; i++)
+        for(int i = 0; i < m; i++)						//calculating subtraction of a and b matrices.
         {
             for(int j = 0; j < n; j++)
             {
@@ -45,8 +42,7 @@ int main()
             }
         }
         printf("Subtracted Array :\n");
-	//for displaying output matrix.
-        for(int i = 0; i < m; i++)
+        for(int i = 0; i < m; i++)						//for displaying output matrix.
         {
             for(int j = 0; j < n; j++)
             {
