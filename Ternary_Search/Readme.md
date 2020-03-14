@@ -1,4 +1,4 @@
-## Ternary Search
+# Ternary Search
 
 Ternary search is a searching technique that is used to search the position of a specific value in an array. Ternary search is a divide-and-conquer algorithm. It is mandatory for the array to be sorted (in which you will search for an element).
 
