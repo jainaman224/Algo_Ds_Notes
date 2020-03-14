@@ -57,3 +57,4 @@ TestCase-2:
 Sample Input: 10
 Sample Output: 55
 */
+ 
