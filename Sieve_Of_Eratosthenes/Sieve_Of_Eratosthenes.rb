@@ -1,34 +1,32 @@
-def sieve(max)
-    # Set up an array with all the numbers from 0 to the max
-    primes = (0..max).to_a
-  
-    # Set both the first and second positions (i.e., 0 and 1) to nil, as they
-    # aren't prime.
-    primes[0] = primes[1] = nil
-    
-    # Iterate through primes array
-    counter = 0
-    primes.each do |p|
-      # Skip if nil
-      next unless p
-  
-      # Break if we are past the square root of the max value 
-      break if p*p > max
-      counter += 1
-      # Start at the square of the current number, and step through.
-      # Go up to the max value, by multiples of the current number, and replace
-      # that value with nil in the primes array
-      (p*p).step(max,p) { |m| primes[m] = nil }
-    end
-  
-    # Finally, return the compacted array.
-    puts "Solved for #{max} in #{counter} steps."
-    primes.compact
+#Enter the number below which you need to find prime numbers
+#In this case 2..30
+
+n = 2..30
+o = []
+p = []
+
+puts "Following are the prime numbers smaller than or equal to 30"
+
+#for loop iterates till n
+for i in n
+  next if o.include? i
+  ii = i * 2
+  while ii <= n.last do
+    o << ii
+    ii = ii + i
+
   end
+#Print all the prime numbers less than or equal to the number
+  p << i unless o.include?(i)
   
-  def prime?(num)
-    sieve(num).include?(num)
-  end
   
-   # Checks whether a given number say 105557 is prime or not
-  puts prime?(105557)
+end
+
+puts p.inspect
+
+#Output
+
+#Following are the prime numbers smaller than or equal to 30
+#2 3 5 7 11 13 17 19 23 29
+
+#
