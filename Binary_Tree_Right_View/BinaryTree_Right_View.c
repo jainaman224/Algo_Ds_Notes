@@ -3,8 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/* A binary tree node has data, pointer to left child
-   and a pointer to right child */
+/* A binary tree node has data, pointer to left child and a pointer to right child */
 struct Node
 {
     int data;
@@ -18,18 +17,22 @@ struct Node *create()
 {
     Node *ptr;
     int x;
+   
     printf("Enter data(-1 for no node):");
-    scanf("%d",&x);
+    scanf("%d", &x);
 
     if(x == -1)
     return NULL;
 
     ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr->data = x;
+   
     printf("Enter left child of %d:\n",x);
     ptr->left = create();
+   
     printf("Enter right child of %d:\n",x);
     ptr->right = create();
+   
     return ptr;
 }
 
@@ -45,15 +48,20 @@ void findRightView(struct Node *root, int *ans, int *size, int index)
     if(index > *size)
         ans[(*size)++] = root->data;
     
+    // Recursively calling the nodes down the tree
+    
     findRightView(root->right, ans, size, index);
+    
     findRightView(root->left, and, size, index);
+   
 }
 
 // Function for intializing the level of the root node and size of the array 
 int *rightView(struct Node *root, int *size)
 {
-    int *ans = malloc(sizeof(int)*100);
+    int *ans = malloc(sizeof(int) * 100);
     *size = 0;
+    
     findRightView(root, ans, size, 0);
 
     return ans;
@@ -66,7 +74,7 @@ int main()
     int size = 0;
     int *res = rightView(root, &size);
 
-    for(int i=0; i<size; i++)
+    for(int i = 0; i < size; i++)
         printf("%d", res[i]);
 }
 
