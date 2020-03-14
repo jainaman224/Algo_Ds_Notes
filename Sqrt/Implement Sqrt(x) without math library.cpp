@@ -7,27 +7,25 @@ class Solution {
 public:
     int mySqrt(long int x) {
         long int c = 0, m;
-        for(long int i=1;i<=x;i++)
+        for(long int i = 1;i <= x;i++)
         {
-            m=i*i;
-            if(m==x)
+            m = i*i;
+            if(m == x)
             {
-                c=i;
+                c = i;
                 break;
             }
-            else if(m>x){
-                c=i-1;
+            else if(m > x){
+                c = i-1;
                 break;
             }
         }
         return c;
     }
 };
-
 int stringToInteger(string input) {
     return stoi(input);
 }
-
 int main() {
     string line;
     while (getline(cin, line)) {
