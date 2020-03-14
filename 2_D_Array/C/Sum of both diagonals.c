@@ -3,17 +3,16 @@
 
 int main()
 {
-    int n,m;
+    int n, m;
     printf("Enter size of matrix :\n");
     printf("Row : ");
     scanf("%d",&m);
     printf("Column : ");
     scanf("%d",&n);
     int a[m][n];
-    if(m==n)
+    if(m == n)
     {
-	//for storing matrix.
-        printf("Enter Matrix :\n");
+        printf("Enter Matrix :\n");							//for storing matrix.
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
@@ -22,8 +21,7 @@ int main()
             }
         }
         int sum = 0;
-	//for calculating sum both the diagonals.
-        for(int i = 0; i < m; i++)
+        for(int i = 0; i < m; i++)							//for calculating sum both the diagonals.
         {
             for(int j = 0; j < n; j++)
             {
