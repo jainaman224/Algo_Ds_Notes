@@ -3,7 +3,7 @@
 
 int main()
 {
-    int n,m;
+    int n, m;
     printf("Enter size of matrix :\n");
     printf("Row : ");
     scanf("%d",&m);
@@ -11,17 +11,14 @@ int main()
     scanf("%d",&n);
     int a[m][n];
     printf("Enter Matrix :\n");
-    //for storing matrix.
-    for(int i = 0; i < m; i++)
+    for(int i = 0; i < m; i++)                                                          //for storing matrix.
     {
         for(int j = 0; j < n; j++)
         {
             scanf("%d",&a[i][j]);
         }
     }
-
-    //for calculating each column sum.
-    for(int j = 0; j < n; j++)
+    for(int j = 0; j < n; j++)                                                          //for calculating each column sum.
     {
         int sum = 0;
         for(int i = 0; i < m; i++)
