@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
 	Code contributed by Hardev Khandhar for GirlScript Summer of Code 2020
 	link: https://github.com/HardevKhandhar
@@ -407,6 +408,8 @@ Elements of Doubly Linked List are: 21 45
 
 */
 =======
+=======
+>>>>>>> 89b8d3f7ed5869df3081b09dadd50fabb12b225a
 /**
 	Code contributed by Hardev Khandhar for GirlScript Summer of Code 2020
 	link: https://github.com/HardevKhandhar
@@ -819,4 +822,7 @@ Enter your choice 7
 Elements of Doubly Linked List are 21 45
 
 */
+<<<<<<< HEAD
 >>>>>>> 84e0c05... Commited Latest Changes
+=======
+>>>>>>> 89b8d3f7ed5869df3081b09dadd50fabb12b225a
