@@ -1,3 +1,5 @@
+/* Pancake Sorting is a Sorting Technique in which the array of length n can be sorted only by reversing the array upto an index i where i is in range of 0 to n - 1 */
+
 import java.util.* ;
 class PancakeSorting
 {   
@@ -10,7 +12,7 @@ class PancakeSorting
             temp [ i ] = a [ n - i ] ;
         }
         for ( int i = 0 ; i <= n ; i ++ )
-        a [ i ] = temp [ i ] ;
+            a [ i ] = temp [ i ] ;
      }
     
     
