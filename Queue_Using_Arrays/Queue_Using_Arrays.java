@@ -1,6 +1,7 @@
 /*
  * This code is designed to create a special data structure called queue
  * Queue works on the first come first out(FIFO) logic
+ *
  */
 
 import java.util.Scanner;
