@@ -24,10 +24,6 @@ struct Graph {
 };
 int n_vertex = sizeof(vertex) / sizeof(struct Graph);
 
-//struct stk{
-//    int top;
-//    int items[MAX_VERTEX];
-//} stack = {-1, {}};
 int top =-1;
 int stk[MAX_VERTEX];
 
