@@ -83,7 +83,6 @@ void subseq(char s[], int i, char str[])
     s3[i2] = '\0';
     // Third function call
     subseq(s3, i + 1, str); 
-
 }
 
 int main()
