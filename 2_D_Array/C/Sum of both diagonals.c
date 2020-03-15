@@ -6,22 +6,28 @@ int main()
     int n, m;
     printf("Enter size of matrix :\n");
     printf("Row : ");
-    scanf("%d",&m);
+    scanf("%d", &m);
     printf("Column : ");
-    scanf("%d",&n);
+    scanf("%d", &n);
     int a[m][n];
     if(m == n)
     {
-        printf("Enter Matrix :\n");							//for storing matrix.
+        
+        //for storing matrix.
+        
+        printf("Enter Matrix :\n");							
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
             {
-                scanf("%d",&a[i][j]);
+                scanf("%d", &a[i][j]);
             }
         }
         int sum = 0;
-        for(int i = 0; i < m; i++)							//for calculating sum both the diagonals.
+        
+        //for calculating sum both the diagonals.
+        
+        for(int i = 0; i < m; i++)							
         {
             for(int j = 0; j < n; j++)
             {
@@ -32,7 +38,7 @@ int main()
             }
         }
         sum -= a[m/2][n/2];
-        printf("\nDiagonal sum : %d",sum);
+        printf("\nDiagonal sum : %d", sum);
         printf("\n");
     }
     else
