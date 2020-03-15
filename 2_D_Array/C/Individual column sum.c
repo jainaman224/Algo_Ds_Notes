@@ -6,19 +6,25 @@ int main()
     int n, m;
     printf("Enter size of matrix :\n");
     printf("Row : ");
-    scanf("%d",&m);
+    scanf("%d", &m);
     printf("Column : ");
-    scanf("%d",&n);
+    scanf("%d", &n);
     int a[m][n];
     printf("Enter Matrix :\n");
-    for(int i = 0; i < m; i++)                                                          //for storing matrix.
+    
+    //for storing matrix.
+    
+    for(int i = 0; i < m; i++)                                                          
     {
         for(int j = 0; j < n; j++)
         {
-            scanf("%d",&a[i][j]);
+            scanf("%d", &a[i][j]);
         }
     }
-    for(int j = 0; j < n; j++)                                                          //for calculating each column sum.
+    
+    //for calculating each column sum.
+    
+    for(int j = 0; j < n; j++)                                                          
     {
         int sum = 0;
         for(int i = 0; i < m; i++)
@@ -26,9 +32,9 @@ int main()
             sum += a[i][j];
         }
         printf("\nSum of column %d",j+1);
-        printf(" : %d",sum);
+        printf(" : %d", sum);
     }
-    printf("%d","\n");
+    printf("%d", "\n");
     return 0;
 }
 /*
