@@ -6,47 +6,59 @@ int main()
     int m, n, k, l;
     printf("Enter size of 1st array :\n");
     printf("Row :");
-    scanf("%d",&m);
+    scanf("%d", &m);
     printf("Column :");
-    scanf("%d",&n);
+    scanf("%d", &n);
     printf("Enter size of 2nd array :\n");
     printf("Row :");
-    scanf("%d",&k);
+    scanf("%d", &k);
     printf("Column :");
-    scanf("%d",&l);
+    scanf("%d", &l);
     int a[m][n], b[k][l];
     if(m == k && n == l)
     {
-        printf("Enter 1st array : \n");						//for storing first matrix.
+	    
+	//for storing first matrix.
+	    
+        printf("Enter 1st array : \n");						
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
             {
-                scanf("%d",&a[i][j]);
+                scanf("%d", &a[i][j]);
             }
         }
-        printf("Enter 2nd array :\n");						//for storing second matrix.
+	    
+	//for storing second matrix.
+	    
+        printf("Enter 2nd array :\n");						
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
             {
-                scanf("%d",&b[i][j]);
+                scanf("%d", &b[i][j]);
             }
         }
         int c[m][n];
-        for(int i = 0; i < m; i++)						//calculating sum of a and b matrices.
+	    
+	//calculating sum of a and b matrices.
+	    
+        for(int i = 0; i < m; i++)						
         {
             for(int j = 0; j < n; j++)
             {
                 c[i][j] = a[i][j] + b[i][j];
             }
 	}
-        printf("Added Array :\n");						//for displaying output matrix.
+	    
+	//for displaying output matrix.
+	    
+        printf("Added Array :\n");						
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
             {
-                printf("%d\t",c[i][j]);
+                printf("%d\t", c[i][j]);
             }
             printf("\n");
         }
