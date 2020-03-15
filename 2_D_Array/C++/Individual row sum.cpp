@@ -12,14 +12,19 @@ int main()
     cin >> n;
     int a[m][n];
     cout << "Enter Matrix :" << endl;
-    for(int i = 0; i < m; i++)                                                  //for storing matrix.
+    
+     //for storing matrix.
+    for(int i = 0; i < m; i++)                                                 
     {
         for(int j = 0; j < n; j++)
         {
             cin >> a[i][j];
         }
     }
-    for(int i = 0; i < m; i++)                                                  //for calculating each row sum.
+    
+    //for calculating each row sum.
+    
+    for(int i = 0; i < m; i++)                                                  
     {
         int sum = 0;
         for(int j = 0; j < n; j++)
