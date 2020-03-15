@@ -2,9 +2,9 @@ def introsort(list):
     #Here maxdepth is chosen equal to 2 times floor of log base 2 of the length of the list
     depth = (len(list).bit_length() - 1)
     #calls helper function
-    helper(list, 0 , len(list), depth) 
+    helper(list, 0, len(list), depth) 
 
-def helper(list,start,end,depth):
+def helper(list, start, end, depth):
     if end - start <= 1:
         #if there is only one element, just return
         return   
@@ -26,9 +26,9 @@ def partition(list, start, end):
         i = i + 1
         while list[i] < pivot:
             i = i+1
-        j = j-1
+        j = j - 1
         while list[j] > pivot:
-            j = j-1
+            j = j - 1
         if i >= j:
             return j
         swap(list, i, j)
@@ -43,7 +43,7 @@ def heapsort(list, start, end):
     for i in range(end - 1, start, -1):
         #swap first and last element in heap
         swap(list, start, i)
-        max_heapify(list, index=0, start = start, end = i)
+        max_heapify(list, index = 0, start = start, end = i)
         #max heapify the remaining heap of size one less than previous
  
 def build_max_heap(list, start, end):
@@ -57,9 +57,9 @@ def build_max_heap(list, start, end):
 
 def max_heapify(list, index, start, end):
     def left(i):
-        return 2*i + 1
+        return 2 * i + 1
     def right(i):
-        return 2*i + 2
+        return 2 * i + 2
     size = end - start
     l = left(index)
     r = right(index)
