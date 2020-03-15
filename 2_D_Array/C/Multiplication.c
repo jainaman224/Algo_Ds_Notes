@@ -44,7 +44,9 @@ int main()
         getch();
         return 0;
     }
+    
     // Multiplying matrix a and b and storing in array mult.
+    
     printf("\nMultiplying the two matrix...\n");
     for(i = 0; i < row1; i++)
     {
@@ -58,6 +60,7 @@ int main()
     }
 
     // Displaying the multiplication of two matrix.
+    
     printf("The multiplication result is:\n");
     for(i = 0; i < row1; i++)
     {
