@@ -1,15 +1,14 @@
 public class Driver {
 	public static void main(String[] args) {
 		BST b=new BST();
-		b.insert(50);
-		b.insert(20);
-		b.insert(80);
-		b.insert(30);
-		b.insert(10);
-		b.insert(70);
-		b.insert(90);
+		Scanner sc=new Scanner(); //number of numbers in an array
+		for(int i=0;i<sc;i++){
+			Scanner a=new Scanner();
+			b.insert(a);
+		}
 		b.levelorder();
-		b.delete(80);
-		b.levelorder();
+		b.inorder();
+		b.preorder();
+		b.postorder();
 	}
 }
