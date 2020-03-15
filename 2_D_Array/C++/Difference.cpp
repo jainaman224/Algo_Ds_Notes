@@ -18,7 +18,10 @@ int main()
     int a[m][n], b[k][l];
     if(m == k && n == l)
     {
-        cout << "Enter 1st array :" << endl;					//for storing first matrix.
+
+	    //for storing first matrix.
+
+        cout << "Enter 1st array :" << endl;					
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
@@ -26,7 +29,10 @@ int main()
                 cin >> a[i][j];
             }
         }
-        cout << "Enter 2nd array :" << endl;					//for storing second matrix.
+
+	    //for storing second matrix.
+
+        cout << "Enter 2nd array :" << endl;					
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
@@ -35,14 +41,20 @@ int main()
             }
         }
         int c[m][n];
-        for(int i = 0; i < m; i++)						//calculating subtraction of a and b matrices.
+
+	    //calculating subtraction of a and b matrices.
+
+        for(int i = 0; i < m; i++)						
         {
             for(int j = 0; j < n; j++)
             {
                 c[i][j] = a[i][j] - b[i][j];
             }
         }
-        cout << endl << "Subtracted Array :" << endl;				//for displaying output matrix.
+
+	    //for displaying output matrix.
+
+        cout << endl << "Subtracted Array :" << endl;				
         for(int i = 0; i < m; i++)
         {
             for(int j = 0; j < n; j++)
@@ -61,7 +73,6 @@ int main()
 
 /*
 Output
-
 Enter size of 1st array :
 Row :3
 Column :2
@@ -82,10 +93,8 @@ Enter 2nd array :
 1
 -7
 -6
-
 Subtracted Array :
 -4      12
 -9      3
 -1      11
-
 */
