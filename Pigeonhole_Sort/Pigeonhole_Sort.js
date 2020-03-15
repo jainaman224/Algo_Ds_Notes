@@ -2,11 +2,13 @@
 var i;
 var n=prompt("enter the size of your array");
 var arr = [];
+
 for(i=0; i<n; i++) 
 {
     //Taking Input from user
     arr[i] = prompt('Enter Element ' + (i+1));
 }
+
 //function for pigeonsort
 function pigeonsort(array)
 {
