@@ -4,19 +4,19 @@
 def reverse(str):
 
     # Initialize variable
-    rev=""
+    rev = ""
 
-    for i in range (len(str)-1,-1,-1):
+    for i in range (len(str)-1, -1, -1):
         rev = rev + str[i]
-    return rev    # Returning reversed number
+    return rev
 
     
 # --- main --- 
-string=raw_input(("Enter a string: "))  #User Input
+string = raw_input(("Enter a string: "))  #User Input
 
 a  = reverse(string) #Function call
 
-if(a==string):  #Comparing the reversed String with original String
+if(a == string):  #Comparing the reversed String with original String
     print("String entered is palindrome!")
 else:
     print("String entered is not a palindrome!")
