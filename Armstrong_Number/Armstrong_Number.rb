@@ -27,12 +27,7 @@ def Armstrong(num)
 
   # If condition satisfies
 
-  if (num != sum1)
-    return boolean
-  else if (num == sum1)
-    boolean = true
-    return boolean
-  end   end
+  return num == sum1
 end
 
 # Driver Program
