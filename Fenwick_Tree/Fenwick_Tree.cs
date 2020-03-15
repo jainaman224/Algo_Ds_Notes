@@ -59,7 +59,7 @@ public class BinaryIndexedTree
       
             // Update index to that of parent  
             // in update View  
-            index += index & (-index);  
+            index += index & (-index);
         }  
     }  
   
@@ -80,9 +80,14 @@ public class BinaryIndexedTree
     // Driver code  
     public static void Main(String []args)  
     {  
-        int []freq = {2, 1, 1, 3, 2, 3,  
-                    4, 5, 6, 7, 8, 9};  
-        int n = freq.Length;  
+        Console.WriteLine("Enter the number of elements .");
+      	int n=int.Parse(Console.ReadLine());
+        int []freq = new int[n];  
+	      for (i = 0; i < n; i++)
+        {
+                freq[i] = int.Parse(Console.ReadLine());
+        }
+ 
         BinaryIndexedTree tree = new BinaryIndexedTree();  
   
         // Build fenwick tree from given array  
