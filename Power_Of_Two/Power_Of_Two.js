@@ -8,7 +8,7 @@ This is true for all powers of two.
 */
 
 function isPowerofTwo(n){
-    return n && ( ! ( n & (n-1) ));
+    return n && ( ! ( n & (n - 1) ));
 }
 
 var num = parseInt(prompt("Enter a number to check:"));
