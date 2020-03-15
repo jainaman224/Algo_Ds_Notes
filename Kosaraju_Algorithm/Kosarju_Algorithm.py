@@ -19,7 +19,7 @@ class Graph:
 	def add_newEdge(self,u,v): 
 		self.graph[u].append(v) 
 
-    # Function for first DFS pass and to fill vertices in stack 
+    	# Function for first DFS pass and to fill vertices in stack 
 	def firstDFS(self,v,visited, stack): 
 		visited[v] = True
 		for i in self.graph[v]: 
@@ -27,7 +27,7 @@ class Graph:
 				self.firstDFS(i, visited, stack) 
 		stack = stack.append(v) 
 
-    # Function for second DFS pass  
+    	# Function for second DFS pass  
 	def secondDFS(self,v,visited): 
 		visited[v] = True
 		print(v, end = " ")
@@ -35,8 +35,8 @@ class Graph:
 			if visited[i] == False: 
 				self.secondDFS(i,visited) 
 
-	# Function to print all strongly connected components 
-	def printSCC(self): 
+	# Function to get and print all strongly connected components 
+	def get_printSCC(self): 
 		stack = [] 
 
 		# First DFS pass
@@ -69,7 +69,7 @@ for i in range(1,e+1):
     num = list(map(int, input(' ').split()))
     g.add_newEdge(num[0],num[1])
 print ("Strongly connected components in the graph are: ") 
-g.printSCC() 
+g.get_printSCC() 
 
 
 '''
