@@ -217,7 +217,7 @@ public:
 			{
 				table[hash].name=name;
 				table[hash].attr=attr;
-				cout<<"\nINSERTED\n;
+				cout<<"\nINSERTED\n";
 			}
 			else						// Table entry not empty, so replace the prev entry
 										// and add the prev entry into chain at beginning.
