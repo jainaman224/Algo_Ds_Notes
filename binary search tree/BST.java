@@ -24,7 +24,7 @@ public class BST {
 		else {
 			ArrayDeque<Node> deq = new ArrayDeque<Node>();
 			deq.addLast(root);
-			while ( !deq.isEmpty() ) { // until queue is not empty
+			while ( !deq.isEmpty() ) { 
 			    Node n = deq.removeFirst();
 			    System.out.print(n.data + " ");
 			    if (n.left != null)
@@ -42,13 +42,13 @@ public class BST {
 	void delete(int key) {
 		if(root == null) return;
 		else if(root.data == key) {
-			Node pp = root.left; // pp = predecessor parent
+			Node pp = root.left; 
 			if(pp.right == null) {
 				root.data = pp.data;
 				root.left = pp.left;
 			}
 			else {
-				Node p = pp.right;   // p = predecessor
+				Node p = pp.right;   
 				while(p.right != null) {
 					pp = p;
 					p = p.right;
