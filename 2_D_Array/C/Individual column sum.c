@@ -31,7 +31,7 @@ int main()
         {
             sum += a[i][j];
         }
-        printf("\nSum of column %d",j+1);
+        printf("\nSum of column %d", j+1);
         printf(" : %d", sum);
     }
     printf("%d", "\n");
