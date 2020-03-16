@@ -16,20 +16,26 @@ int main() {
     struct point arr[n];
     cout << "\nEnter the dataset values: \n";
     cout << "w\tx\ty\tz\top\n";
+    
     // Taking dataset
     for (i = 0; i < n; i++) {
         cin >> arr[i].w >> arr[i].x >> arr[i].y >> arr[i].z >> arr[i].op;
     }
+    
     cout << "\nw\tx\ty\tz\top\n";
+    
     for (i = 0; i < n; i++) {
         cout << fixed << setprecision(2) << arr[i].w << '\t' << arr[i].x << '\t' << arr[i].y << '\t' << arr[i].z << '\t' << arr[i].op << '\n';
     }
+    
     cout << "\nEnter the feature values of the unknown point: \nw\tx\ty\tz\n";
     cin >> p.w >> p.x >> p.y >> p.z;
+    
     // Measuring the Euclidean distance
     for (i = 0; i < n; i++) {
         arr[i].distance = sqrt(((arr[i].w - p.w) * (arr[i].w - p.w)) + ((arr[i].x - p.x) * (arr[i].x - p.x)) + ((arr[i].y - p.y) * (arr[i].y - p.y)) + ((arr[i].z - p.z) * (arr[i].z - p.z)));
     }
+    
     // Sorting the training data with respect to distance
     for (i = 1; i < n; i++) {
         for (j = 0; j < n - i; j++) {
@@ -40,19 +46,24 @@ int main() {
             }
         }
     }
+    
     cout << "\nw\tx\ty\tz\top\tdistance\n";
     for (i = 0; i < n; i++) {
         cout << fixed << setprecision(2) << arr[i].w << '\t' << arr[i].x << '\t' << arr[i].y << '\t' << arr[i].z << '\t' << arr[i].op << '\t' << arr[i].distance << '\n';
     }
+    
     // Taking the K nearest neighbors
     cout << "\nNumber of nearest neighbors(k): ";
     cin >> k;
+    
     int freq[1000] = {0};
     int index = 0, maxfreq = 0;
+    
     // Creating frequency array of the class of k nearest neighbors
     for (int i = 0; i < k; i++) {
         freq[arr[i].op]++;
     }
+    
     // Finding the most frequent occurring class
     for (int i = 0; i < 1000; i++) {
         if(freq[i] > maxfreq) {
@@ -60,6 +71,7 @@ int main() {
             index = i;
         }
     }
+    
     cout << "The class of unknown point is " << index;
     return 0;
 }
