@@ -28,8 +28,11 @@ class pancakeSortProgram {
     {
         for (int curr_size = n; curr_size > 1; --curr_size)
         { 
-            int mi = findMax(arr, curr_size);// function calling for finding index of max integer till the index curr_size
-            // call function flip for swapping if index of max integer till the index curr_size is not equal to curr_size-1
+            // function calling for finding index of max integer 
+            // till the index curr_size
+            int mi = findMax(arr, curr_size);
+            // call function flip for swapping if index of max integer
+            // till the index curr_size is not equal to curr_size-1
             if (mi != curr_size - 1)
             {
                 flip(arr, mi);
