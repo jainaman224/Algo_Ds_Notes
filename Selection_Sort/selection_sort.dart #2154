@@ -14,20 +14,13 @@ void selection_sort(List<int> arr, int n)
             if(arr[j] < arr[min_index])
                 min_index = j;
             
-        if(i != min_index)
+         if(i != min_index)
         {
             temp = arr[i];
             arr[i] = arr[min_index];
             arr[min_index] = temp;
         }
     } 
-}
-
-void print_element(List<int> arr)
-{
-    for(int ele in arr)
-        print(ele);
-    
 }
 
 main()
@@ -38,9 +31,9 @@ main()
     
     List<int> array = List();
     
-    print("Enter array element ");
     for(int i = 0; i < size; i++)
     {
+        print("Enter $i element ");
         var ele = int.parse( stdin.readLineSync());
         array.add(ele);
     }
@@ -48,21 +41,23 @@ main()
     selection_sort(array ,size);
      
     print("Sorted array is ");
-    print_element(array);
+    
+    print(array);
+
 }
 /*
 Enter the size of array 
 5
-Enter array element
-50 
-40 
-30 
-20 
+Enter 0 element 
+50
+Enter 1 element
+40
+Enter 2 element 
+30
+Enter 3 element
+20
+Enter 4 element 
 10
 Sorted array is
-10
-20
-30
-40
-50
+[10, 20, 30, 40, 50]
 */
