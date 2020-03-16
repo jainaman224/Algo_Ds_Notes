@@ -15,8 +15,7 @@ def subseq(s, i, string1):
     subseq(s + string1[i], i + 1, string1) 
     #Third function call in which ord(string1[i]) gives the ASCII value which is then converted to string for concatenation
     subseq(s + str(ord(string1[i])),i + 1, string1)  
-    
-    
+        
 string1 = input("Enter the string")
 print("Number of Subsequences :", pow(3, len(string1)))
 subseq("", 0, string1)
