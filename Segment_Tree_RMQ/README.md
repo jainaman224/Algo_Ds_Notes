@@ -18,9 +18,16 @@ Height of the segment tree will be ```[log2 n]```. Since the tree is represented
 
  ![Segment Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/RangeMinimumQuery.png)
 
-## Query for minimum value of given range 
+## Range Minimum Query
+Given an array A[1 … n] of n objects taken from a well-ordered set[clarification needed] (such as numbers), returns the position of the minimal element in the specified sub-array A[l … r], (r<=n).
 
-Once the tree is constructed, how to do range minimum query using the constructed segment tree. Following is algorithm to get the minimum.
+## Example 
+
+When A = [0,5,2,5,4,3,1,6,3], then the answer to the range minimum query for the sub-array A[3 … 8] = [2,5,4,3,1,6] is 7, as A[7] = 1.
+
+## Algorithm
+
+Following is algorithm to get the minimum.
 
     qs --> query start index, qe --> query end index
     int RMQ(node, qs, qe) 
