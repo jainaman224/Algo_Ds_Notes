@@ -69,7 +69,25 @@ namespace bucketsort
         static void Main(string[] args)
         {
             int buckets = 5;
-            int[] input = new int[] {2, 16, 3, 82, 7, 132, 5200, 6, 4, 10000, 8, 9};
+            int inputlength = 0;
+            int number = 0;
+            int[] input = null;
+
+            inputlength = args.Length;
+
+            input = new int [inputlength];
+
+            for(int i = 0; i < args.Length; i++)
+            {
+                if (!int.TryParse(args[i], out number))
+                {
+                    Console.WriteLine(string.Format("Argument at index {0} not valid", i));
+
+                    return;
+                }
+
+                input[i] = number;
+            }
 
             foreach(int i in BucketSort(input, buckets))
             {
