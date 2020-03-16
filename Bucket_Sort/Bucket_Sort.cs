@@ -73,6 +73,13 @@ namespace bucketsort
             int number = 0;
             int[] input = null;
 
+            if (args.Length == 0)
+            {
+                Console.WriteLine("No Arguments given");
+
+                return;
+            }
+            
             inputlength = args.Length;
 
             input = new int [inputlength];
