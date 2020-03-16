@@ -70,3 +70,6 @@ int main()
     search(txt, pat);
     return 0;
 }
+
+/// Sample IP : txt = ABAAABCD, pat = ABC
+/// Sample OP : pattern occurs at shift = 4
