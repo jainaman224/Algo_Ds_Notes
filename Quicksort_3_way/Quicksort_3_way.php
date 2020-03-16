@@ -104,5 +104,6 @@ function printarr($a, $n)
 	printarr($a, $size); 
 	return 0; 
 } 
-
+//Output
+//1 1 4 4 4 4 4 4 4 4 9 9 9 
 ?>
