@@ -24,9 +24,6 @@ def Armstrong(num)
     sum1 = sum1 + d ** count
     temp = temp / 10
   end
-
-  # If condition satisfies
-
   return num == sum1
 end
 
