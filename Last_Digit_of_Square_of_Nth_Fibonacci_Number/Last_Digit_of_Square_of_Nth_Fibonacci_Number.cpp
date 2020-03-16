@@ -11,10 +11,11 @@ int main(){
     
     /*Using the concept that after 60 numbers in a fibonacci 
     numbers the last digit repeats itself again and again*/
-    for(i = 2 ; i < 60 ; i++){        //for storing the last digits of squares of first 60 fibonacci numbers
-        a[i] = (a[i - 1] + a[i - 2]) % 10;       
+    
+    for(i = 2 ; i < 60 ; i++){        //for storing the last digits of squares of first 60 fibonacci number 
+        a[i] = (a[i - 1] + a[i - 2]) % 10;//Now we will store last digits in new array and their index as position in fibonacci series        
         c = a[i];                        
-        b[i] = (c * c) % 10;            //Now we will store last digits in new array and their index as position in fibonacci series 
+        b[i] = (c * c) % 10;            
     } 
     cin>> n ;
     
