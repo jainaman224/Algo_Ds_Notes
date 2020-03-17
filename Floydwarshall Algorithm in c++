@@ -14,7 +14,6 @@ void floydwarshal(int cost[4][4])
                     {
                         cost[i][j] = cost[i][k] + cost[k][j];  //change only if value is less
                     }
-
             }
         }
     }
@@ -25,7 +24,6 @@ void floydwarshal(int cost[4][4])
         {
             cout<<cost[i][j]<<"\t";
         }
-
     }
 }
 int main()
