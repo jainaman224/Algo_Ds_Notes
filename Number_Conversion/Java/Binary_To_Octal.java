@@ -1,16 +1,18 @@
 import java.io.*; 
 import java.util.Scanner;
-public class Binary_To_Octal {
+public class Binary_To_Octal 
+{
 	public static void binToOctal(long num)
-	{  int n=0,decimal=0;
+	{  
+		int n=0,decimal=0;
 		//converting binary to decimal
-	while(num > 0)
-	{
+	    while(num > 0)
+	   {
 		long temp = num%10;  
 		decimal += temp*Math.pow(2, n);  
 		num = num/10;  
 		n++;  
-	}
+	    }
 	//decimal to octal
 	int octal[] = new int[20];
 	int i = 0;
@@ -34,7 +36,6 @@ public class Binary_To_Octal {
         binToOctal(num);  
         sc.close();
 	}
-
 }
 /*
 Input:
