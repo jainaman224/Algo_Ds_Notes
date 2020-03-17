@@ -21,6 +21,6 @@ public class Decimal_to_binary {
         System.out.println("Binary number:"+Bin);   //output
     }
 }
-//Input : 10
-//Output : 1010
+//Input : 10 
+//Output : 1010 
 
