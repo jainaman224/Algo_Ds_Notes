@@ -1,0 +1,45 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+void floydwarshal(int cost[4][4])
+{
+    int i, j, k;
+    for (k = 0; k < 4; k++)
+    {
+        for (i = 0; i < 4; i++)
+        {
+            for (j = 0; j < 4; j++)
+            {
+                  if ((cost[i][k] + cost[k][j] < cost[i][j]) )
+                    {
+                        cost[i][j] = cost[i][k] + cost[k][j];  //change only if value is less
+                    }
+
+            }
+        }
+    }
+    for (i = 0; i < 4; i++)
+    {
+        cout<<"\nMinimum Cost With Respect to Node:"<<i<<endl;
+        for (j = 0; j < 4; j++)
+        {
+            cout<<cost[i][j]<<"\t";
+        }
+
+    }
+}
+int main()
+{
+    int cost[4][4];
+    cout<<"ENTER VALUES OF ADJACENCY MATRIX\n\n";
+    for (int i = 0; i < 4; i++)
+    {
+        cout<<"enter values for "<<(i+1)<<" row"<<endl;
+        for (int j = 0; j < 4; j++)
+        {
+            cin>>cost[i][j];
+        }
+    }
+    floydwarshal(cost);
+    getch();
+}
