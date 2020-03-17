@@ -1,20 +1,21 @@
-//Round Robin Scheduling is a CPU scheduling algorithm where each process is assigned a fixed time slot in a cyclic way.
-//It is preemtive in nature.
-//It is cyclic in nature so starvation doesn’t occur
-//It is variant of first come, first served scheduling
-//No priority given to any process or task
-//It is also known as Time slicing scheduling
-/*Arrival Time: Time at which the process arrives in the ready queue.
-  Burst Time: Time required by a process for CPU execution.
-  Turn Around Time: Time Difference between completion time and arrival time.          
-  Waiting Time: Time Difference between turn around time and burst time. */
+/*Round Robin Scheduling is a CPU scheduling algorithm where each process is assigned a fixed time slot in a cyclic way.
+It is preemtive in nature.
+It is cyclic in nature so starvation doesn’t occur
+It is variant of first come, first served scheduling
+No priority given to any process or task
+It is also known as Time slicing scheduling
+-Arrival Time: Time at which the process arrives in the ready queue.
+-Burst Time: Time required by a process for CPU execution.
+-Turn Around Time: Time Difference between completion time and arrival time.          
+-Waiting Time: Time Difference between turn around time and burst time. */
 
 #include<iostream>
 using namespace std;
 
 int main()
 {        
-    int i, j, no_of_process, current_time, remaining_time, f = 0, time_slice, wait_time = 0, turn_time = 0;
+    int i, j, no_of_process, current_time, remaining_time;
+    int f = 0, time_slice, wait_time = 0, turn_time = 0;
     cout << "Enter number of processes: ";
     cin >> no_of_process;
 
@@ -40,13 +41,15 @@ int main()
     cout << "-------------------------------------------";
     for(current_time = 0, i = 0; remaining_time != 0;)
     {
-        if(r[i] <= time_slice && r[i] > 0)	//If burst time is less than time slice
+        //If burst time is less than time slice
+        if(r[i] <= time_slice && r[i] > 0)	
         {
             current_time += r[i];		//Increase current time by adding burst time
             r[i] = 0;				//Make remaining time zero
             f = 1;
         }
-        else if(r[i] > 0)			//If required time is more than time slice
+        //If required time is more than time slice
+        else if(r[i] > 0)			
         {        
             r[i] -= time_slice;			//Reduce remaining time by time slice
             current_time += time_slice;		//Increase current time by adding time slice
