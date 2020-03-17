@@ -1,3 +1,6 @@
+/* Problem Statement :
+To find the length of the Longest Increasing Subsequence of a given sequence, that is all the elements of the subsequence are in increasing sorted order.
+*/
 package main
 
 import "fmt"
