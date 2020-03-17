@@ -9,19 +9,19 @@ from collections import defaultdict
 
 # Function for first DFS pass and to fill vertices in finishStack
 def firstDFS(g, v, visited, finishStack): 
-	visited[v] = True
-	for i in g[v]: 
-		if visited[i] == False: 
-			firstDFS(g, i, visited, finishStack) 
-	finishStack = finishStack.append(v) 
+    visited[v] = True
+    for i in g[v]: 
+        if visited[i] == False: 
+            firstDFS(g, i, visited, finishStack) 
+    finishStack = finishStack.append(v) 
 
 # Function for second DFS pass
 def secondDFS(gt, v, visited): 
-	visited[v] = True
-	print(v, end = " ")
-	for i in gt[v]: 
-		if visited[i] == False: 
-			secondDFS(gt, i, visited) 
+    visited[v] = True
+    print(v, end = " ")
+    for i in gt[v]: 
+        if visited[i] == False: 
+            secondDFS(gt, i, visited) 
 
 # Create Graph
 v = int(input("Enter number of vertices in the graph: "))
@@ -33,7 +33,7 @@ g = defaultdict(list)
 gt = defaultdict(list)
 
 e = int(input("Enter number of edges in the graph: "))
-for i in range(1,e+1):
+for i in range(1 , e + 1):
     print("Edge no. %d - "%(i), end = "")
     num = list(map(int, input(' ').split()))
     g[num[0]].append(num[1])
@@ -44,25 +44,25 @@ finishStack = []
 
 # Maintaining visited array of size v
 # All vertices are marked False for first DFS pass
-visited = [False]*v
+visited = [False] * v
 
 # First DFS on g
 for i in range(v): 
-	if visited[i] == False: 
-		firstDFS(g, i, visited, finishStack)
+    if visited[i] == False: 
+        firstDFS(g, i, visited, finishStack)
 	
 print ("Strongly connected components(SCCs) in the graph are: ") 
 	
 # Maintaining visited array of size v
 # All vertices are marked False for second DFS pass
-visited = [False]*v
+visited = [False] * v
 
 # Second DFS on gt
 while finishStack: 
-	i = finishStack.pop() 
-	if visited[i] == False: 
-		secondDFS(gt, i, visited) 
-		print() 
+    i = finishStack.pop() 
+    if visited[i] == False: 
+        secondDFS(gt, i, visited) 
+        print() 
 		
 '''
 Sample Input:
