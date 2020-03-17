@@ -1,193 +1,193 @@
 import 'dart:io';
 
-class Node {
-  int value;
-  Node leftNode;
-  Node rightNode;
+class Node{
+	int value;
+	Node leftNode;
+	Node rightNode;
 
-  Node(int val) {
-    this.value = val;
-    this.leftNode = null;
-    this.rightNode = null;
-  }
+	Node(int val){
+		this.value = val;
+		this.leftNode = null;
+		this.rightNode = null;
+	}
+	
+	Node get left{
+		return this.leftNode;
+	}
+	
+	Node get right{
+		return this.rightNode;
+	}
+	
+	int get val{
+		return this. value;
+	}
+	
+	void set val(int x){
+		this.value = x;
+	}
 
-  Node get left {
-    return this.leftNode;
-  }
+	void set left(Node x){
+		this.leftNode = x;
+	}
 
-  Node get right {
-    return this.rightNode;
-  }
-
-  int get val {
-    return this.value;
-  }
-
-  void set val(int x) {
-    this.value = x;
-  }
-
-  void set left(Node x) {
-    this.leftNode = x;
-  }
-
-  void set right(Node x) {
-    this.rightNode = x;
-  }
+	void set right(Node x){
+		this.rightNode = x;
+	}
 }
 
 Node root;
 
-preOrderTraversal(Node x) {
-  if (x == null) return;
-  print(x.val);
-  preOrderTraversal(x.left);
-  preOrderTraversal(x.right);
+preOrderTraversal(Node x){
+	if(x == null) return;
+	print(x.val);
+	preOrderTraversal(x.left);
+	preOrderTraversal(x.right);
 }
 
-inOrderTraversal(Node x) {
-  if (x == null) return;
-  inOrderTraversal(x.left);
-  print(x.val);
-  inOrderTraversal(x.right);
+inOrderTraversal(Node x){
+	if(x == null) return;
+	inOrderTraversal(x.left);
+	print(x.val);
+	inOrderTraversal(x.right);
 }
 
-postOrderTraversal(Node x) {
-  if (x == null) return;
-  postOrderTraversal(x.left);
-  postOrderTraversal(x.right);
-  print(x.val);
+postOrderTraversal(Node x){
+	if(x == null) return;
+	postOrderTraversal(x.left);
+	print(x.val);
+	postOrderTraversal(x.right);
 }
 
-insertElement(Node x, int val) {
-  if (root == null) {
-    root = new Node(val);
-    print(root.val);
-    return;
-  }
-  if (x.val == val) return;
-  if (x.val > val) {
-    if (x.left == null) {
-      Node newNode = new Node(val);
-      x.left = newNode;
-      return;
-    }
-    insertElement(x.left, val);
-    return;
-  }
-  if (x.right == null) {
-    Node newNode = new Node(val);
-    x.right = newNode;
-    return;
-  }
-  insertElement(x.right, val);
-  return;
+insertElement(Node x,int val){
+	if(root == null){
+		root == new Node(val);
+		print(root.val);
+		return;
+	}
+	if(x.val == val) return;
+	if(x.val > val){
+		if(x.left == null){
+			Node newNode = new Node(val);
+			x.left = newNode;
+			return;
+		}
+		insertElement(x.left, val);
+		return;
+	}
+	if(x.right == null){
+		Node newNode = new Node(val);
+		x.right = newNode;
+		return;
+	}
+	insertElement(x.right, val);
+	return;
 }
 
-searchTree(Node x, int val) {
-  if (x == null) {
-    print('Did not $val in Tree!');
-    return;
-  }
-  if (x.val == val) {
-    print('Found $val in Tree!');
-    return;
-  }
-  if (x.val > val) {
-    searchTree(x.left, val);
-    return;
-  }
-  if (x.val < val) {
-    searchTree(x.right, val);
-    return;
-  }
+searchTree(Node x, int val){
+	if(x == null){
+		print('Did not find $val in Tree!');
+		return;
+	}
+	if(x.val == val){
+		print('Found $val in Tree!');
+		return;
+	}
+	if(x.val > val){
+		searchTree(x.left, val);
+		return;
+	}
+	if(x.val < val){
+		searchTree(x.right, val);
+		return;
+	}
 }
 
 main() {
-  int task = 0;
-  print('Binary Search Tree Program');
-  while (task != 3) {
-    print(
-        '0 - Display Tree\n1 - Insert element in Tree \n2 - Search element in Tree\n3 - Quit\nSelect task:-');
-    try {
-      task = int.parse(stdin.readLineSync());
-    } on Exception {
-      print('Please enter valid Integer value!');
-      continue;
-    }
-    switch (task) {
-      case 0:
-        if (root == null) {
-          print('Empty Tree!');
-        } else {
-          print(
-              'Traversal Order:-\n1 - Preorder \n2 - Inorder \n3 - Postorder');
-          int val;
-          try {
-            val = int.parse(stdin.readLineSync());
-          } on Exception {
-            print('Please enter valid Integer value!');
-            continue;
-          }
-          switch (val) {
-            case 1:
-              print('PreOrder Traversal');
-              preOrderTraversal(root);
-              break;
-            case 2:
-              print('InOrder Traversal');
-              inOrderTraversal(root);
-              break;
-            case 3:
-              print('PostOrder Traversal');
-              postOrderTraversal(root);
-              break;
-            default:
-              print('Please enter valid Integer value!');
-          }
-        }
-        break;
-      case 1:
-        int val = null;
-        print('Enter value that needs to be inserted in Tree:- ');
-        try {
-          val = int.parse(stdin.readLineSync());
-        } on Exception {
-          print('Please enter valid Integer value!');
-          continue;
-        }
-        if (val == null) {
-          print('Failed to insert element in Tree!');
-          continue;
-        }
-        insertElement(root, val);
-        print('Successfully inserted $val in Tree!');
-        break;
+	int task = 0;
+	print('Binary Search Tree Program');
+	while(task != 3){
+		print('0 - Display Tree\n1 - Insert Element in Tree \n2 - Search element in Tree\n3 - Quit\nSelect task:-');
+		try{
+			task = int.parse(stdin.readLineSync());
+		} on Exception{
+			print('Please enter valid Integer value!');
+			continue;
+		}
+		switch(task){
+			case 0:
+				if(root == null){
+					print('Empty Tree!');
+				}
+				else{
+					print('Traversal Order:-\n1 - Preorder \n2 - Inorder \n3 - Postorder');
+					int val;
+					try{
+						val = int.parse(stdin.readLineSync());
+					} on Exception{
+						print('Please enter valid Integer value!');
+						continue;
+					}
+					switch(val){
+						case 1:
+							print('PreOrder Traversal');
+							preOrderTraversal(root);
+							break;
+						case 2:
+							print('InOrder Traversal');
+							inOrderTraversal(root);
+							break;
+						case 3:
+							print('PostOrder Traversal');
+							postOrderTraversal(root);
+							break;
+						default:
+							print('Please enter valid Integer value!');
+					}
+				}
+				break;
+			
+			case 1:
+				int val = null;
+				print('Enter value that needs to be inserted in Tree:-');
+				try{
+					val = int.parse(stdin.readLineSync());
+				} on Exception{
+					print('Please enter valid Integer value!');
+					continue;
+				}
+				if(val == null){
+					print('Failed to insert element in Tree!');
+					continue;
+				}
+				insertElement(root, val);
+				print('Successfully inserted $val in Tree!');
+				break;
+			
+			case 2:
+				int val = null;
+				print('Enter value that needs to be searched in Tree:-');
+				try{
+					val = int.parse(stdin.readLineSync());
+				} on Exception{
+					print('Failed to search element in Tree!');
+					continue;
+				}
+				if(val == null){
+					print('Failed to search element in Tree!');
+					continue;
+				}
+				searchTree(root, val);
+				break;
+			
+			case 3:
+				print('Binary Search Tree Program Complete');
+				break;
 
-      case 2:
-        int val = null;
-        print('Enter value that needs to be searched in Tree:- ');
-        try {
-          val = int.parse(stdin.readLineSync());
-        } on Exception {
-          print('Please enter valid Integer value!');
-          continue;
-        }
-        if (val == null) {
-          print('Failed to search element in Tree!');
-          continue;
-        }
-        searchTree(root, val);
-        break;
-
-      case 3:
-        print('Binary Search Tree Program Complete');
-        break;
-
-      default:
-        continue;
-    }
-  }
+			default:
+				continue;
+		}
+	}
 }
 
 /*
