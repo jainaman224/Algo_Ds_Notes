@@ -1,11 +1,15 @@
 #include<bits/stdc++.h>
+
 #define pow2(n) (1 << (n))
+
 using namespace std;
+
 struct avl {
    int d;
    struct avl *l;
    struct avl *r;
 }*r;
+
 class avl_tree {
    public:
       int height(avl *);
@@ -24,6 +28,7 @@ class avl_tree {
          r = NULL;
       }
 };
+
 int avl_tree::height(avl *t) {
    int h = 0;
    if (t != NULL) {
@@ -34,12 +39,14 @@ int avl_tree::height(avl *t) {
    }
    return h;
 }
+
 int avl_tree::difference(avl *t) {
    int l_height = height(t->l);
    int r_height = height(t->r);
    int b_factor = l_height - r_height;
    return b_factor;
 }
+
 avl *avl_tree::rr_rotat(avl *parent) {
    avl *t;
    t = parent->r;
@@ -48,6 +55,7 @@ avl *avl_tree::rr_rotat(avl *parent) {
    cout<<"Right-Right Rotation";
    return t;
 }
+
 avl *avl_tree::ll_rotat(avl *parent) {
    avl *t;
    t = parent->l;
