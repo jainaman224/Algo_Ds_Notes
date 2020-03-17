@@ -114,21 +114,21 @@ class Graph {
 class client {
 
     public static void main(String[] args) {
-        Scanner scn=new Scanner(System.in);
+        Scanner scn = new Scanner(System.in);
         // TODO Auto-generated method stub
         Graph graph = new Graph();
-        int No_Of_Vertices=scn.nextInt();
-        while(No_Of_Vertices-->0){
-            String s=scn.next();
+        int No_Of_Vertices = scn.nextInt();
+        while(No_Of_Vertices-- > 0){
+            String s = scn.next();
             graph.addVertex(s);
         }
-        int No_Of_Edges=scn.nextInt();
+        int No_Of_Edges = scn.nextInt();
         // edges are added to hashmap with weight
-        while(No_Of_Edges-->0){
-            String v1=scn.next();
-            String v2=scn.next();
-            int cost=scn.nextInt();
-            graph.addEdge(v1, v2,cost);
+        while(No_Of_Edges-- > 0){
+            String v1 = scn.next();
+            String v2 = scn.next();
+            int cost = scn.nextInt();
+            graph.addEdge(v1, v2, cost);
         }
         graph.display();
     }
