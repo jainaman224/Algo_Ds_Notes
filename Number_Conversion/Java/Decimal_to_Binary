@@ -12,7 +12,8 @@ import java.util.Scanner;
 public class DecimalToBinary {
        
 	static void Decimal_to_binary(int decimal)
-	{   int i=0;
+	{   
+	        int i=0;
 		int binary[]=new int[100];
 		while(decimal>0)
 		{
