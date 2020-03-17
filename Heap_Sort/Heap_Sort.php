@@ -21,15 +21,15 @@ function MaxHeapify(&$data, $heapSize, $index) {
      if ($right < $heapSize && $data[$right] > $data[$largest]) // If right child is larger than largest so far 
          $largest = $right;
   
-    if ($largest != $index)  // If largest is not root 
-   {
+     if ($largest != $index)  // If largest is not root 
+     {
          $temp = $data[$index];
          $data[$index] = $data[$largest];
          $data[$largest] = $temp;
  
          //Recursively heapify the affected sub-tree 
          MaxHeapify($data, $heapSize, $largest);
-    }
+      }
 }
  
 function HeapSort(&$data, $count) {
@@ -52,8 +52,8 @@ function HeapSort(&$data, $count) {
 }
  
 // example of driver function
-$array = array(20 , 43 , 65 , 88 , 11 , 33 , 56 ,74);
-HeapSort($array,8);
+$array = array(20 , 43 , 65 , 88 , 11 , 33 , 56 , 74);
+HeapSort($array , 8);
 print_r($array);
  
  // output
