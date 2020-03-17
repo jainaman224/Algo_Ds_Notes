@@ -20,7 +20,11 @@ main()
 }
 
 /* 
-Sample input:-
-   input two numbers : 15 45
+Sample input/output 1:-
+   Input two numbers : 15 45
    GCD = 15
    */
+/* Sample input/output 2:-
+    Input two numbers : 20 30
+    GCD = 10
+    */
