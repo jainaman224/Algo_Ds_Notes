@@ -2,7 +2,7 @@
 
 using namespace std; 
   
-// A function which is used to sort the algorithm using gnome sort 
+// A function that is used to sort the algorithm using gnome sort 
 void gnome_sort(int arr[], int n) {   
 
     int index = 0; 
@@ -29,12 +29,12 @@ int main()
     cout << "Enter the size of an Array: ";
     cin >> n;
     int arr[n];
-    for(int i = 0;i < n;i++){
+    for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
     gnome_sort(arr, n); 
 
-    for(int i = 0;i < n;i++){
+    for(int i = 0; i < n; i++){
         cout << arr[i] <<endl;
     }
   
