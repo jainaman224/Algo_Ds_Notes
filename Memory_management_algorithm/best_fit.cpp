@@ -26,30 +26,30 @@ void best_fit(int memory_block[], int process_size[], int m, int n) {
 	    }
 		
 
-       	if(allocation == -1) {
-	    allocated_list[i][0] = process_size[i];
-	    allocated_list[i][1] = -1;
-	    allocated_list[i][2] = -1;
-	}
-	else {
-	    allocated_list[i][0] = process_size[i];
-	    allocated_list[i][1] = memory_block[allocation];
-            allocated_list[i][2] = allocation;
-            allocation_marking[allocation] = i;
-	}
-
-	printf("Process Number     Process Size     Allocated memory block size     Memory block number\n");
-
-	for(int i = 0; i < n; i++) {
-	    if(allocated_list[i][1] != -1) {
-	        printf("%d                         %d                       %d                 %d\n",i,allocated_list[i][0],allocated_list[i][1],allocated_list[i][2]);
+       	    if(allocation == -1) {
+	        allocated_list[i][0] = process_size[i];
+	        allocated_list[i][1] = -1;
+	        allocated_list[i][2] = -1;
 	    }
-	    else { 
-	        printf("%d                         %d                  Not Allocated          Not Allocated\n",i,allocated_list[i][0]);
+	    else {
+	        allocated_list[i][0] = process_size[i];
+	        allocated_list[i][1] = memory_block[allocation];
+                allocated_list[i][2] = allocation;
+                allocation_marking[allocation] = i;
 	    }
+
+	    printf("Process Number     Process Size     Allocated memory block size     Memory block number\n");
+
+	    for(int i = 0; i < n; i++) {
+	        if(allocated_list[i][1] != -1) {
+	            printf("%d                         %d                       %d                 %d\n",i,allocated_list[i][0],allocated_list[i][1],allocated_list[i][2]);
+	        }
+	        else { 
+	            printf("%d                         %d                  Not Allocated          Not Allocated\n",i,allocated_list[i][0]);
+	        }
 		
-	}
-     }			
+	    }
+        }			
 
 } 
 
