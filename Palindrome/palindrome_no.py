@@ -2,26 +2,25 @@
 
 # Function to reverse a number
 def reverse(num):
-
     # Initialize variable
-    rev=0
+    rev = 0
 
     while ( num > 0 ) :
         dig = num % 10
         rev = rev * 10 + dig
         num = num // 10
-    return rev    # Returning reversed number
-
+    # Returning reversed number
+    return rev    
     
 # --- main --- 
-num=int(input("Enter a number:"))
+num = int(input("Enter a number:"))
 a  = reverse(num)
 
-if(a == num):  #Comparing the reversed number with original number
+#Comparing the reversed number with original number
+if(a == num):  
     print("Number entered is palindrome!")
 else:
     print("Number entered is not a palindrome!")
-
 
 '''
 TEST CASES
