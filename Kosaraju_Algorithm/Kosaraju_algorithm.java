@@ -96,5 +96,20 @@ public class Kosaraju
         /** print all strongly connected components **/
         List<List<Integer>> scComponents = k.getSCComponents(g);
         System.out.println(scComponents);    
+     
+     /*INPUTS
+Enter the no. of vertices : 6
+Enter the no. of edges  :7
+1 2
+2 3
+3 4
+4 1
+3 5
+5 6
+6 5
+OUTPUT
+6 5
+2 3 4 1         */
+
     }    
 }
