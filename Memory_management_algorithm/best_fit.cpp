@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void best_fit(int memory_block[],int process_size[],int m,int n){
+void best_fit(int memory_block[], int process_size[], int m, int n){
      int allocated_list[n][3];
      int allocation_marking[m];
 
