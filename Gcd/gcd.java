@@ -1,6 +1,5 @@
 /*
  * This program is based on Euclid's method to find the GCD of two numbers
- * 
  */
 
 //importing files
