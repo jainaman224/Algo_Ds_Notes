@@ -50,7 +50,6 @@ void best_fit(int memory_block[], int process_size[], int m, int n) {
 		
 	    }
         }			
-
 } 
 
 
