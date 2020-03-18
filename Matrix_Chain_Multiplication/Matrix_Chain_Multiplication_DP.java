@@ -44,7 +44,7 @@ public class matrixChainMultiplication {
 		return dp[1][size - 1]; 
 	} 
 
-	//`Main function
+	// Main function
 	public static void main(String args[]) { 
 		Scanner s = new Scanner(System.in);
 		System.out.print("Enter size of array - ");
