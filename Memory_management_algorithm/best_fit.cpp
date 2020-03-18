@@ -4,34 +4,34 @@
 
 using namespace std;
 
-void best_fit(int memory_block[], int process_size[], int m, int n){
+void best_fit(int memory_block[], int process_size[], int m, int n) {
      int allocated_list[n][3];
      int allocation_marking[m];
 
      for(int i = 0; i < m; i++)
          allocation_marking[i] = -1;
 
-	for(int i = 0; i < n; i++){
+	for(int i = 0; i < n; i++) {
 	
 	    int allocation = -1;
 	    int mem_block = 10000000;
 
-	    for(int j = 0; j < m; j++){
-	        if((process_size[i] <= memory_block[j]) && (allocation_marking[j] ==  -1)){
-		    if(memory_block[j] < mem_block){
+	    for(int j = 0; j < m; j++) {
+	        if((process_size[i] <= memory_block[j]) && (allocation_marking[j] ==  -1)) {
+		    if(memory_block[j] < mem_block) {
 		        mem_block = memory_block[j];
 			allocation = j;
-			}
+		    }
 		}
-	}
+	    }
 		
 
-       	if(allocation == -1){
+       	if(allocation == -1) {
 	    allocated_list[i][0] = process_size[i];
 	    allocated_list[i][1] = -1;
 	    allocated_list[i][2] = -1;
 	}
-	else{
+	else {
 	    allocated_list[i][0] = process_size[i];
 	    allocated_list[i][1] = memory_block[allocation];
             allocated_list[i][2] = allocation;
@@ -40,20 +40,21 @@ void best_fit(int memory_block[], int process_size[], int m, int n){
 
 	printf("Process Number     Process Size     Allocated memory block size     Memory block number\n");
 
-	for(int i = 0; i < n; i++){
-	    if(allocated_list[i][1] != -1){
+	for(int i = 0; i < n; i++) {
+	    if(allocated_list[i][1] != -1) {
 	        printf("%d                         %d                       %d                 %d\n",i,allocated_list[i][0],allocated_list[i][1],allocated_list[i][2]);
 	    }
-	    else{ 
+	    else { 
 	        printf("%d                         %d                  Not Allocated          Not Allocated\n",i,allocated_list[i][0]);
 	    }
 		
 	}
+     }			
 
-}
+} 
 
 
-int main(){
+int main() {
 
     int num_of_mem_blocks;
     int num_of_processes;
@@ -69,13 +70,13 @@ int main(){
 
     cout<<"Enter the memory blocks size:\n";
 
-    for(int i = 0; i < num_of_mem_blocks; i++){
+    for(int i = 0; i < num_of_mem_blocks; i++) {
         cin>>memory_block[i];
     }
 
     cout<<"Enter the process size:\n";
     
-    for(int i = 0; i < num_of_processes; i++){
+    for(int i = 0; i < num_of_processes; i++) {
         cin>>process_size[i];
     }
 
