@@ -52,5 +52,29 @@ pub fn interpolation_search(arr: &[i32], target: &i32) -> Result<usize, usize> {
 }
 
 fn main() {
-    println!("{:?}", interpolation_search(&[1,2,3,4,6], &1));
+    /* Sample Input :-
+        1
+        2
+        3
+        4
+        6
+        Sample Output :-
+        The element is present at index: 4
+    */
+    // Taking input from user
+    println!("Enter 5 elements :- ");
+    let mut input = String::new();
+    let mut some_vec = vec![];
+    for i in 0..5 {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Error reading input");
+        let my_int: i32 = input.trim().parse().expect("Not a valid number");
+        some_vec.push(my_int);
+    }
+    println!("Enter the element to be searched in the array :- ");    
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Error reading input");
+    let my_int: i32 = input.trim().parse().expect("Not a valid number");
+
+    println!("{:?}", interpolation_search(&some_vec, &my_int));
 }
