@@ -45,5 +45,11 @@ func ope(n int) {
 
     // Function Calling for the Algo
     output = KAlgo(a, n) 
-    fmt.Println("\nsum of the sub array: ", output)
+    fmt.Println("\nSum of the sub array: ", output)
 }
+
+/*
+Enter Number of Elements 6
+Enter Elements 2 -4 -5 -6 8 10
+Sum of the sub array: 18
+*/
