@@ -12,14 +12,19 @@ int main(){
     /*Using the concept that after 60 numbers in a fibonacci 
     numbers the last digit repeats itself again and again*/
     
-    for(i = 2 ; i < 60 ; i++){        //for storing the last digits of squares of first 60 fibonacci number 
-        a[i] = (a[i - 1] + a[i - 2]) % 10;//Now we will store last digits in new array and their index as position in fibonacci series        
+    /*In this loop we store the last digits of squares of first 60 fibonacci number and 
+    we will store last digits in new array and their index as position in fibonacci series*/
+    
+    for(i = 2 ; i < 60 ; i++){  
+        a[i] = (a[i - 1] + a[i - 2]) % 10;        
         c = a[i];                        
         b[i] = (c * c) % 10;            
     } 
     cin>> n ;
     
-    cout<< " \n The Last Digit of Square of this Number : " << b[ n % 60] ;//print the last digit given in that position
+    //print the last digit given in that position
+    
+    cout<< " \n The Last Digit of Square of this Number : " << b[ n % 60] ;
     
     return 0;
 }
