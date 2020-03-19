@@ -7,7 +7,7 @@ int cnt = 0;
 //Here we don’t need to write is Safe Positon Function 
 //which works in linear time instead we use bitsets which work in O(1) time.
 
-void solve(int row,int left,int right,int n)
+void solve(int row, int left, int right, int n)
 {
     //All rows are occupied,so the solution must be complete
     if(row == d)
@@ -31,7 +31,7 @@ void solve(int row,int left,int right,int n)
 int main() {
     int n;
     cin >> n;
-    solve(0,0,0,n);
+    solve(0, 0, 0, n);
     cout << cnt;
 }
 
