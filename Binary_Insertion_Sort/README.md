@@ -1,4 +1,4 @@
-# BINARY INSERTION SORT:
+# BINARY INSERTION SORT
 
 Binary Insertion sort is a special type up of Insertion sort which uses binary search algorithm to find out the correct position of the inserted element in the array.
 
@@ -45,13 +45,13 @@ binary_search(arr, val, start, end)
   }
 ```
 
-### Example:
+### Example
            {9,7,6,15,17,5,10,11}
    In normal insertion, sort it takes O(i) (at ith iteration) in worst case. we can reduce it to O(logi) by using binary search.
    ![Binary Insertion Sort](https://www.wikitechy.com/technology/wp-content/uploads/2017/10/insertion_sort-recursion.png)
 
 
-## TIME COMPLEXITY:
+## TIME COMPLEXITY
 
 |ALGORITHM            |              BEST-CASE   |  AVG-CASE |     WORST-CASE|
 |---------------------|--------------------------|-----------|---------------|
@@ -59,7 +59,7 @@ binary_search(arr, val, start, end)
 |BINARY INSERTION SORT|       O(N log N)         |     O(N^2)|        O(N^2) |     
 
 
-## ADVANTAGE of BINARY INSERTION SORT over INSERTION SORT:
+## ADVANTAGE of BINARY INSERTION SORT over INSERTION SORT
 
   The binary insertion sort does fewer array element comparisons than insertion sort.
 
