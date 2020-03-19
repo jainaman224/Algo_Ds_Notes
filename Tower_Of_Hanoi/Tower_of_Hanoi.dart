@@ -27,7 +27,7 @@ main()
 	tower (disks, "A", "B", "C") ;
 }
 
-/* OUTPUT:
+/*OUTPUT:
 ENTER NUMBER OF DISCS:
 4
 Move disk 1 from A ---> B
