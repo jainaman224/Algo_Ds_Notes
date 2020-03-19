@@ -46,9 +46,12 @@ class Graph {
 }
 
 let g = new Graph();
+
 var edges = prompt("Please enter number of edges", "5");
+
 var vertices = prompt("Please enter number of vertices", "5");
-for(let i=0;i<vertices;i++){
+
+for(let i = 0;i < vertices; i++){
   var e=prompt("Please enter vertex name", "A");
   g.addNode(e);
 }
