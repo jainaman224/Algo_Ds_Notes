@@ -110,3 +110,37 @@ func binarySearch(arr []int, k int) int {
 	}
 
 }
+/*
+Output
+key: 36955                                                                                                                
+STEP: 1  l: 0  r 9999                                                                                                     
+STEP: 2  l: 5000  r 9999                                                                                                  
+STEP: 3  l: 5000  r 7498                                                                                                  
+STEP: 4  l: 6250  r 7498                                                                                                  
+STEP: 5  l: 6875  r 7498                                                                                                  
+STEP: 6  l: 7187  r 7498                                                                                                  
+STEP: 7  l: 7343  r 7498                                                                                                  
+STEP: 8  l: 7343  r 7419                                                                                                  
+STEP: 9  l: 7343  r 7380                                                                                                  
+STEP: 10  l: 7362  r 7380                                                                                                 
+STEP: 11  l: 7362  r 7370                                                                                                 
+STEP: 12  l: 7362  r 7365                                                                                                 
+STEP: 13  l: 7362  r 7362                                                                                                 
+-1                                                                                                                        
+STEP: 1  l: 0  r: 9999  slider1: 3333  slider2: 6666                                                                      
+STEP: 2  l: 6667  r: 9999  slider1: 7777  slider2: 8887                                                                   
+STEP: 3  l: 6667  r: 7776  slider1: 7036  slider2: 7405                                                                   
+STEP: 4  l: 7037  r: 7404  slider1: 7159  slider2: 7281                                                                   
+STEP: 5  l: 7282  r: 7404  slider1: 7322  slider2: 7362                                                                   
+STEP: 6  l: 7363  r: 7404  slider1: 7376  slider2: 7389                                                                   
+STEP: 7  l: 7363  r: 7375  slider1: 7367  slider2: 7371                                                                   
+STEP: 8  l: 7363  r: 7366  slider1: 7364  slider2: 7365                                                                   
+STEP: 9  l: 7363  r: 7363  slider1: 7363  slider2: 7363                                                                   
+-1                                                                                                                        
+                                                                                                                          
+                                                                                                                          
+...Program finished with exit code 0                                                                                      
+Press ENTER to exit console.
+
+*/
+
