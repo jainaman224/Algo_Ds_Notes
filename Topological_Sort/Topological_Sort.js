@@ -7,7 +7,7 @@ class Graph {
         for (let i = 0; i < nodes; i++) {
             this.adj[i] = new Array();
         }
-        this.stack = [] // a stack for storing the ending times of dfs
+        this.stack = []; // a stack for storing the ending times of dfs
     }
 
     showGraph = () => {
@@ -59,7 +59,7 @@ class Graph {
             }
         }
 
-        this.stack.push(start) // push the node when we have completed it
+        this.stack.push(start); // push the node when we have completed it
     };
 }
 
