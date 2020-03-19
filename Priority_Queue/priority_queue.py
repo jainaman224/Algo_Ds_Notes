@@ -1,34 +1,5 @@
 
-# The program is made of user choice
-'''
-Example:
-        1. Insert value in queue
-        2. Delete value in queue
-        3. Print Queue
-        4. Exit
-Enter your option: 1        # Here you have to give value to be inserted in the queue
-Enter the value: 12
-
-        1. Insert value in queue
-        2. Delete value in queue
-        3. Print Queue
-        4. Exit
-Enter your option:2          # To delete the value of highest priority(here highest value)
-14 is deleted
-
-Enter your option:3          #  display the queue
-[12, 1, 7]
-
-Enter your option:4           #to exit
-If you enter any other value other than (1,2,3,4), You will be shown:
-    Invalid option!
-    Try Again!!
-
-'''
-
-
-
-queue=[]
+queue = []
 
 def insert(data):           # To insert values into the Queue
     queue.append(data)
@@ -73,6 +44,34 @@ while 1:
 
     else:
         print("\tInvalid option!\n\tTry Again!!")
-    
+
+        
+# The program is made of user choice
+'''
+Example:
+        1. Insert value in queue
+        2. Delete value in queue
+        3. Print Queue
+        4. Exit
+Enter your option: 1        # Here you have to give value to be inserted in the queue
+Enter the value: 12
+
+        1. Insert value in queue
+        2. Delete value in queue
+        3. Print Queue
+        4. Exit
+Enter your option:2          # To delete the value of highest priority(here highest value)
+14 is deleted
+
+Enter your option:3          #  display the queue
+[12, 1, 7]
+
+Enter your option:4           #to exit
+If you enter any other value other than (1,2,3,4), You will be shown:
+    Invalid option!
+    Try Again!!
+
+'''
+
 
 
