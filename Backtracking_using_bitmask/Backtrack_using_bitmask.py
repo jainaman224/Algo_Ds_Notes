@@ -1,8 +1,11 @@
-# Here we use bit patterns to keep track of queen placements for the columns, left diagonals and right diagonals.
+#Here we use bit patterns to keep track of queen placements 
+#for the columns, left diagonals and right diagonals.
 
 def totalNQueens(n):
-    all_ones = 2 ** n - 1  #Helps identify valid solutions
-    count = 0 #Keeps track of the # of valid solutions
+    #Helps identify valid solutions
+    all_ones = 2 ** n - 1  
+    #Keeps track of the # of valid solutions
+    count = 0 
 
     #Checks all possible board configurations
     def helper(ld, column, rd):
@@ -29,17 +32,17 @@ def totalNQueens(n):
 
 if __name__ == '__main__': 
     n = int(input())
-    d = (1<<n)-1
+    d = (1 << n) - 1
     cnt = totalNQueens(n)
     print(cnt);
 
-
-# Sample Input: 
-# 4
-# Sample Output: 
-# 2
-
-# Sample Input: 
-# 5
-# Sample Output: 
-# 10
+'''
+Sample Input:
+4
+Sample Output:
+2
+Sample Input:
+5
+Sample Output:
+10
+'''
