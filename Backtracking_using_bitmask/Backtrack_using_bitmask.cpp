@@ -4,7 +4,7 @@ using namespace std;
 int cnt = 0;
 
 //This is an optimised approach than the normal backtracking approach. 
-//Here we don’t need to write is Safe Positon Function 
+//Here we don’t need to write is Safe Position Function 
 //which works in linear time instead we use bitsets which work in O(1) time.
 
 void solve(int row, int left, int right, int n)
