@@ -42,10 +42,10 @@ void best_fit(int memory_block[], int process_size[], int m, int n) {
 
 	    for(int i = 0; i < n; i++) {
 	        if(allocated_list[i][1] != -1) {
-	            printf("%d\t\t\t\t%d\t\t%d\t\t\t%d\n",i,allocated_list[i][0],allocated_list[i][1],allocated_list[i][2]);
+	            printf("%d\t\t\t\t%d\t\t%d\t\t\t%d\n", i, allocated_list[i][0], allocated_list[i][1], allocated_list[i][2]);
 	        }
 	        else { 
-	            printf("%d\t\t\t\t%d\t\t\tNot Allocated\t\tNot Allocated\n",i,allocated_list[i][0]);
+	            printf("%d\t\t\t\t%d\t\t\tNot Allocated\t\tNot Allocated\n", i, allocated_list[i][0]);
 	        }
 		
 	    }
@@ -79,7 +79,7 @@ int main() {
         cin >> process_size[i];
     }
 
-    best_fit(memory_block,process_size,num_of_mem_blocks,num_of_processes);
+    best_fit(memory_block, process_size, num_of_mem_blocks, num_of_processes);
     
     return 0;
 }
