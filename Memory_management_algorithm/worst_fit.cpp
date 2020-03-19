@@ -25,24 +25,24 @@ void first_fit(int memory_block[],int process_size[],int m,int n){
 	 }
 		
 
-	if(allocation == -1){
-	    allocated_list[i][0] = process_size[i];
-            allocated_list[i][1] = -1;
-            allocated_list[i][2] = -1;
-	}
-        else{
-            allocated_list[i][0] = process_size[i];
-            allocated_list[i][1] = memory_block[allocation];
-            allocated_list[i][2] = allocation;
-            allocation_marking[allocation] = i;
-        }
+	 if(allocation == -1){
+	     allocated_list[i][0] = process_size[i];
+             allocated_list[i][1] = -1;
+             allocated_list[i][2] = -1;
+	 }
+         else {
+             allocated_list[i][0] = process_size[i];
+             allocated_list[i][1] = memory_block[allocation];
+             allocated_list[i][2] = allocation;
+             allocation_marking[allocation] = i;
+         }
 		
      }
 
      printf("Process Number     Process Size     Allocated memory block size     Memory block number\n");
 
-     for(int i = 0; i < n; i++){
-         if(allocated_list[i][1] != -1){
+     for(int i = 0; i < n; i++) {
+         if(allocated_list[i][1] != -1) {
              printf("%d                        %d                    %d                      %d\n",i,allocated_list[i][0],allocated_list[i][1],allocated_list[i][2]);
          }
          else{
@@ -54,32 +54,32 @@ void first_fit(int memory_block[],int process_size[],int m,int n){
 }
 
 
-int main(){
+int main() {
     int num_of_mem_blocks;
     int num_of_processes;
 
-    cout<<"Enter the number of memory blocks\n";
-    cin>>num_of_mem_blocks;
+    cout << "Enter the number of memory blocks\n";
+    cin >> num_of_mem_blocks;
 
-    cout<<"Enter the number of processes\n";
-    cin>>num_of_processes;
+    cout << "Enter the number of processes\n";
+    cin >> num_of_processes;
 
     int memory_block[num_of_mem_blocks];
     int process_size[num_of_processes];
 
-    cout<<"Enter the memory blocks size:\n";
+    cout << "Enter the memory blocks size:\n";
 
     for(int i = 0; i < num_of_mem_blocks; i++){
-        cin>>memory_block[i];
+        cin >> memory_block[i];
     }
 
-    cout<<"Enter the process size:\n";
+    cout << "Enter the process size:\n";
 
     for(int i = 0; i < num_of_processes; i++){
-        cin>>process_size[i];
+        cin >> process_size[i];
     }
 
-    first_fit(memory_block,process_size,num_of_mem_blocks,num_of_processes);
+    first_fit(memory_block, process_size, num_of_mem_blocks, num_of_processes);
 
     return 0;
 }
