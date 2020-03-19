@@ -39,22 +39,22 @@ void board(char myboard[][max_side])
     for(int i = 0; i < SIDE; i++)
     {
         if (i > 9)
-            printf("%d ",i/10);
+            printf(" %d ", i / 10);
         else
             printf("  ");
     }
     printf("\n\t\t\t    ");
     for(int i = 0; i < SIDE; i++)
-        printf("%d ",i%10);
+        printf(" %d ", i % 10);
     printf("\n\n");
     for(int i = 0; i < SIDE; i++)
     {
         printf("\t\t\t    ");
         for(int j = 0; j < SIDE; j++)
         {
-            printf("%c ",myboard[i][j]);
+            printf("%c ", myboard[i][j]);
         }
-        printf(" %2d",i);
+        printf(" %2d", i);
         printf("\n");
     }
     return;
@@ -66,7 +66,7 @@ int countadjacent(int row, int col, int mines[][2], char realboard[][max_side])
     if(isvalid(row - 1, col) == true)
     {
     	if(ismine(row - 1, col, realboard) == true)
-	        count++;
+            count++;
     }
     if(isvalid(row + 1, col) == true)
     {
@@ -114,7 +114,7 @@ bool playuntil(char myboard[][max_side], char realboard[][max_side], int mines[]
 	if(realboard[row][col] == 'B')
 	{
 	    myboard[row][col] = 'B';
-	    for(i = 0;i < MINES; i++)
+	    for(i = 0; i < MINES; i++)
 	        myboard[mines[i][0]][mines[i][1]] = 'B';	
 	    board(myboard);
 	    printf ("\nYou lost!\n");
@@ -178,9 +178,9 @@ void placemines(int mines[][2],char realboard[][max_side])
     memset(mark, false, sizeof(mark));
     for(int i = 0; i < MINES;)
     {
-        int random = rand() % (SIDE*SIDE);
-        int x = random/SIDE;
-        int y = random%SIDE;
+        int random = rand() % (SIDE * SIDE);
+        int x = random / SIDE;
+        int y = random % SIDE;
         if(mark[random] == false) //add mine if not present at position random
         {
             mines[i][0] = x;
