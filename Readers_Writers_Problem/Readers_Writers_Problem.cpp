@@ -12,29 +12,42 @@ int d = 0, readers = 0;
 
 void *reader(void *arg)
 {
-    long i = ((long)arg);	//Tells us which reader is supposed to read
-    sem_wait(&m);		//waits for mutex to be released
-    readers += 1;		//increment number of readers
+    //Tells us which reader is supposed to read
+    long i = ((long)arg);
+    //waits for mutex to be released
+    sem_wait(&m);
+    //increment number of readers
+    readers += 1;
     if(readers == 1)
-        sem_wait(&w);		//If there is one reader then wait for write block to be released
-    sem_post(&m);		//Mutex is released
+        //If there is one reader then wait for write block to be released
+        sem_wait(&w);
+    //Mutex is released
+    sem_post(&m);
     cout << "Reader " << i << " reads " << d << endl;
     sleep(1);
-    sem_wait(&m);		//waits for mutex to be released
-    readers -= 1;		//Decrement number of readers
-    if(readers == 0)		//If no reader is there
-        sem_post(&w);		//Release the write block
-    sem_post(&m);		//Release mutex	
+    //waits for mutex to be released
+    sem_wait(&m);
+    //Decrement number of readers
+    readers -= 1;
+    //If no reader is there
+    if(readers == 0)
+        //Release the write block
+        sem_post(&w);
+    //Release mutex	
+    sem_post(&m);
 }
 
 void *writer(void *arg)
 {
-    long i = ((long)arg);	//Tells us which writer is supposed to write
-    sem_wait(&w);		//Waits for write block to be released
+    //Tells us which writer is supposed to write
+    long i = ((long)arg);
+    //Waits for write block to be released
+    sem_wait(&w);
     d++;
     cout << "Writer " << i << " writes " << d << endl;
     sleep(1);
-    sem_post(&w);		//Release the write block
+    //Release the write block
+    sem_post(&w);
 }
 
 int main()
