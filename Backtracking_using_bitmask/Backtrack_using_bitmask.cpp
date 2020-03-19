@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define d (1 << n) - 1
 int cnt = 0;
 
@@ -15,15 +16,24 @@ void solve(int row, int left, int right, int n)
 =======
 #define d (1<<n)-1
 int cnt=0;
+=======
+#define d (1 << n) - 1
+int cnt = 0;
+>>>>>>> d83e063... Update Backtrack_using_bitmask.py
 
 //This is an optimised approach than the normal backtracking approach. 
-//Here we don’t need to write is Safe Positon Function which works in linear time instead we use bitsets which work in O(1) time.
+//Here we don’t need to write is Safe Position Function 
+//which works in linear time instead we use bitsets which work in O(1) time.
 
-void solve(int row,int left,int right,int n)
+void solve(int row, int left, int right, int n)
 {
     //All rows are occupied,so the solution must be complete
+<<<<<<< HEAD
     if(row==d)
 >>>>>>> 42bb684... Backtracking using Bitmasking
+=======
+    if(row == d)
+>>>>>>> d83e063... Update Backtrack_using_bitmask.py
     {
         cnt++;
         return;
@@ -31,10 +41,14 @@ void solve(int row,int left,int right,int n)
 
     //Gets a bit sequence with "1"s whereever there is an open "slot"
 <<<<<<< HEAD
+<<<<<<< HEAD
     int pos = d & ~(left | row | right);
 =======
     int pos = d & ~(left|row|right);
 >>>>>>> 42bb684... Backtracking using Bitmasking
+=======
+    int pos = d & ~(left | row | right);
+>>>>>>> d83e063... Update Backtrack_using_bitmask.py
 
     //Loops as long as there is a valid place to put another queen.
     while(pos > 0)
@@ -42,15 +56,20 @@ void solve(int row,int left,int right,int n)
         int bit = pos & (-pos);
         pos -= bit;
 <<<<<<< HEAD
+<<<<<<< HEAD
         solve(row | bit, (left | bit) << 1, (right | bit) >> 1, n);
 =======
         solve(row|bit, (left|bit)<<1, (right|bit)>>1,n);
 >>>>>>> 42bb684... Backtracking using Bitmasking
+=======
+        solve(row | bit, (left | bit) << 1, (right | bit) >> 1, n);
+>>>>>>> d83e063... Update Backtrack_using_bitmask.py
     }
 }
 
 int main() {
     int n;
+<<<<<<< HEAD
 <<<<<<< HEAD
     cin >> n;
     solve(0, 0, 0, n);
@@ -60,6 +79,11 @@ int main() {
     solve(0,0,0,n);
     cout<<cnt;
 >>>>>>> 42bb684... Backtracking using Bitmasking
+=======
+    cin >> n;
+    solve(0, 0, 0, n);
+    cout << cnt;
+>>>>>>> d83e063... Update Backtrack_using_bitmask.py
 }
 
 /*
