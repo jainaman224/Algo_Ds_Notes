@@ -1,6 +1,5 @@
 
-/**
- * Binary Insertion Sort
+/*
  * Author: Raktim Midya 
  * Date: 05/03/2020
 */
