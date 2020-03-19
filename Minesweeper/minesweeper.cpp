@@ -65,7 +65,7 @@ int countadjacent(int row, int col, int mines[][2], char realboard[][max_side])
     int count = 0;
     if(isvalid(row - 1, col) == true)
     {
-    	if(ismine(row - 1, col, realboard) == true)
+        if(ismine(row - 1, col, realboard) == true)
             count++;
     }
     if(isvalid(row + 1, col) == true)
