@@ -1,78 +1,85 @@
 #include <bits/stdc++.h>
 #include <stdio.h>
 #include <stdlib.h>
-	
+
 using namespace std;
-	
-void first_fit(int memory_block[],int process_size[],int m,int n){
-    int allocated_list[n][3];
-    int allocation_marking[m];
 
-    for(int i = 0; i < m; i++)
-        allocation_marking[i] = -1;
+void first_fit(int memory_block[], int process_size[], int m, int n)
+{
+	int allocated_list[n][3];
+	int allocation_marking[m];
 
-    for(int i = 0; i < n; i++) {
-	    for(int j = 0; j < m; j++) {
-	        if((process_size[i] <= memory_block[j]) && (allocation_marking[j] == -1)) {
-	            allocated_list[i][0] = process_size[i];
-		        allocated_list[i][1] = memory_block[j];
-		        allocated_list[i][2] = j;
-		        allocation_marking[j] = i;
-		        break;
-		    }
-		    else {
-		        allocated_list[i][0] = process_size[i]; 
-		        allocated_list[i][1] = -1;
-		        allocated_list[i][2] = -1;
-	 	    }
-	    }
+	for (int i = 0; i < m; i++)
+		allocation_marking[i] = -1;
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if ((process_size[i] <= memory_block[j]) && (allocation_marking[j] == -1))
+			{
+				allocated_list[i][0] = process_size[i];
+				allocated_list[i][1] = memory_block[j];
+				allocated_list[i][2] = j;
+				allocation_marking[j] = i;
+				break;
+			}
+			else
+			{
+				allocated_list[i][0] = process_size[i];
+				allocated_list[i][1] = -1;
+				allocated_list[i][2] = -1;
+			}
+		}
 	}
 
 	printf("Process Number     Process Size     Allocated memory block size     Memory block number\n");
 
-	for(int i = 0; i < n; i++) {
-	    if(allocated_list[i][1] != -1) {
-	        printf("%d                         %d                          %d                    %d\n",i,allocated_list[i][0],allocated_list[i][1],allocated_list[i][2]);
-	    }
-	    else {
-	        printf("%d                         %d                          Not Allocated          Not Allocated\n",i,allocated_list[i][0]);
-	    }
+	for (int i = 0; i < n; i++)
+	{
+		if (allocated_list[i][1] != -1)
+		{
+			printf("%d\t\t\t%d\t\t\t%d\t\t\t%d\n", i, allocated_list[i][0], allocated_list[i][1], allocated_list[i][2]);
+		}
+		else
+		{
+			printf("%d\t\t\t%d\t\t\tNot Allocated\t\tNot Allocated\n", i, allocated_list[i][0]);
+		}
 	}
 }
 
+int main()
+{
+	int num_of_mem_blocks;
+	int num_of_processes;
 
+	cout << "Enter the number of memory blocks\n";
+	cin >> num_of_mem_blocks;
 
-int main() {
-    int num_of_mem_blocks;
-    int num_of_processes;
+	cout << "Enter the number of processes\n";
+	cin >> num_of_processes;
 
-    cout<<"Enter the number of memory blocks\n";
-    cin>>num_of_mem_blocks;
+	int memory_block[num_of_mem_blocks];
+	int process_size[num_of_processes];
 
-    cout<<"Enter the number of processes\n";
-    cin>>num_of_processes;
+	cout << "Enter the memory blocks size:\n";
 
-    int memory_block[num_of_mem_blocks];
-    int process_size[num_of_processes];
+	for (int i = 0; i < num_of_mem_blocks; i++)
+	{
+		cin >> memory_block[i];
+	}
 
-    cout<<"Enter the memory blocks size:\n";
+	cout << "Enter the process size:\n";
 
-    for(int i = 0; i < num_of_mem_blocks; i++) {
-        cin>>memory_block[i];
-    }
+	for (int i = 0; i < num_of_processes; i++)
+	{
+		cin >> process_size[i];
+	}
 
-    cout<<"Enter the process size:\n";
-    
-    for(int i = 0; i < num_of_processes; i++) {
-        cin>>process_size[i];
-    }
+	first_fit(memory_block, process_size, num_of_mem_blocks, num_of_processes);
 
-    first_fit(memory_block,process_size,num_of_mem_blocks,num_of_processes);
-
-    return 0;
-
+	return 0;
 }
-	
 
 /*    INPUT:  Memory Blocks: 
  *
@@ -96,4 +103,3 @@ int main() {
  *		426		Not Allocated
  *
  */
-
