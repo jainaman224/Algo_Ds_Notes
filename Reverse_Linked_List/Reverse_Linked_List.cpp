@@ -38,13 +38,13 @@ class LinkedList {
     // else increasse append the node using tail pointer. 
         if(head == NULL){
             Node* node = new Node(data);
-	    node->next = head;
+	    node -> next = head;
 	    head = node;
 	    tail = node;
 	}
 	else{
 	    Node* node = new Node(data);
-	    tail->next = node;
+	    tail -> next = node;
 	    tail = node;
         }
      }
@@ -58,7 +58,7 @@ class LinkedList {
 	    // Store next 
 	    next_node = current->next;
 	    // Reverse current node's pointer 
-	    current->next = previous;
+	    current -> next = previous;
 	    // Move pointers one position ahead.
 	    previous = current;
 	    current = next_node;
@@ -70,8 +70,8 @@ class LinkedList {
           Node* temp = head;
 	  cout << "Linked List: " << endl;
 	  while(temp!=NULL){
-	      cout << temp->data <<" ";
-	      temp = temp->next;
+	      cout << temp -> data <<" ";
+	      temp = temp -> next;
 	  }
 	  cout << endl;
        }
@@ -88,15 +88,15 @@ int main(){
     // input will be given here 
     cout << "Enter the number of node in linked list: ";
     cin >> n;
-    for(int i = 1;i<=n;i++){
+    for(int i = 1 ; i <= n ; i++){
         linkedList->addNode(i);
     }
     cout << endl;
     cout << "Before Reverse" << endl;
-    linkedList->print();
-    linkedList->rev();
+    linkedList -> print();
+    linkedList -> rev();
     cout << "After Reverse" << endl;
-    linkedList->print();
+    linkedList -> print();
     free(linkedList);
     return 0;
 }
