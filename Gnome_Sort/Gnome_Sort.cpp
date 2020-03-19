@@ -5,6 +5,7 @@ using namespace std;
 // A function that is used to sort the algorithm using gnome sort 
 void gnome_sort(int arr[], int n) {   
 
+    // Implementation Logic Begins here
     int index = 0; 
   
     while (index < n) { 
