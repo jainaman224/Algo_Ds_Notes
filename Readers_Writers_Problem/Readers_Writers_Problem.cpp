@@ -5,14 +5,16 @@
 #include<pthread.h>
 using namespace std;
 
-sem_t m,w;			//m is mutex and w is write_block semaphore
-int d = 0, readers = 0;         //d is a variable that stores what has to be read or written and readers is for number of readers
+//m is mutex and w is write_block semaphore
+sem_t m, w;
+//d is a variable that stores what has to be read or written and readers is for number of readers
+int d = 0, readers = 0;
 
 void *reader(void *arg)
 {
     long i = ((long)arg);	//Tells us which reader is supposed to read
     sem_wait(&m);		//waits for mutex to be released
-    readers + = 1;		//increment number of readers
+    readers += 1;		//increment number of readers
     if(readers == 1)
         sem_wait(&w);		//If there is one reader then wait for write block to be released
     sem_post(&m);		//Mutex is released
@@ -37,22 +39,24 @@ void *writer(void *arg)
 
 int main()
 {
-    long i,b;
-    pthread_t rthreads[5],wthreads[5];
-    sem_init(&m,0,1);	//Initializes mutex
-    sem_init(&w,0,1);	//Initializes write block semaphore
+    long i, b;
+    pthread_t rthreads[5], wthreads[5];
+    //Initializes mutex
+    sem_init(&m, 0, 1);
+    //Initializes write block semaphore
+    sem_init(&w, 0, 1);	
   	
     //Loop for creating threads
-    for(i = 0;i <= 2;i++)
+    for(i = 0; i <= 2; i++)
     {
-        pthread_create(&wthreads[i],NULL,writer,(void *)i);
-        pthread_create(&rthreads[i],NULL,reader,(void *)i);
+        pthread_create(&wthreads[i], NULL, writer, (void *)i);
+        pthread_create(&rthreads[i], NULL, reader, (void *)i);
     }
     //Loop for joining threads
-    for(i = 0;i <= 2;i++)
+    for(i = 0; i <= 2; i++)
     {
-        pthread_join(wthreads[i],NULL);
-        pthread_join(rthreads[i],NULL);
+        pthread_join(wthreads[i], NULL);
+        pthread_join(rthreads[i], NULL);
     }
     return 0;
 }
