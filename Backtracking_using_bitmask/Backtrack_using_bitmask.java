@@ -49,6 +49,7 @@ class Solution
         input.close();
     }  
 };
+
 /*
 Sample Input: 
 4
