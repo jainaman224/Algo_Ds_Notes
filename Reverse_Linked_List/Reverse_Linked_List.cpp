@@ -68,12 +68,12 @@ class LinkedList {
 	
       void print() {
           Node* temp = head;
-	  cout<<"Linked List: "<<endl;
+	  cout << "Linked List: " << endl;
 	  while(temp!=NULL){
-	      cout<<temp->data<<" ";
+	      cout << temp->data <<" ";
 	      temp = temp->next;
 	  }
-	  cout<<endl;
+	  cout << endl;
        }
        ~LinkedList() {
             delete head;
@@ -86,16 +86,16 @@ int main(){
     // dynamic allocation 
     LinkedList* linkedList = new LinkedList();
     // input will be given here 
-    cout<<"Enter the number of node in linked list: ";
-    cin>>n;
+    cout << "Enter the number of node in linked list: ";
+    cin >> n;
     for(int i = 1;i<=n;i++){
         linkedList->addNode(i);
     }
-    cout<<endl;
-    cout<<"Before Reverse"<<endl;
+    cout << endl;
+    cout << "Before Reverse" << endl;
     linkedList->print();
     linkedList->rev();
-    cout<<"After Reverse"<<endl;
+    cout << "After Reverse" << endl;
     linkedList->print();
     free(linkedList);
     return 0;
