@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main
 {
-    public static int large = 500;
+	public static int large = 500;
     public static double dp[][][] = new double[large][large][large];
 
     public static double probrock (int r, int p, int s) {
@@ -19,11 +19,11 @@ public class Main
 		double total = r * p + p * s + s * r;
 		double res = 0.0;
 
-		  res += probrock (r - 1, p, s) * (((double) (r * p)) / total);	//prob. of fight btw r&p = r*p/total
-		  res += probrock (r, p - 1, s) * (((double) (s * p)) / total);	//prob. of fight btw s&p = s*p/total
-		  res += probrock (r, p, s - 1) * (((double) (r * s)) / total);	//prob. of fight btw r&s= r*s/total 
+		res += probrock (r - 1, p, s) * (((double) (r * p)) / total);	//prob. of fight btw r&p = r*p/total
+		res += probrock (r, p - 1, s) * (((double) (s * p)) / total);	//prob. of fight btw s&p = s*p/total
+		res += probrock (r, p, s - 1) * (((double) (r * s)) / total);	//prob. of fight btw r&s= r*s/total 
 
-		  return dp[r][p][s] = res;
+		return dp[r][p][s] = res;
     }
 
     public static double probpaper (int r, int p, int s) {
