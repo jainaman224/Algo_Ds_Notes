@@ -55,23 +55,29 @@ for(let i = 0;i < vertices; i++){
   var e=prompt("Please enter vertex name", "A");
   g.addNode(e);
 }
+
 /*g.addNode("A");
 g.addNode("B");
 g.addNode("C");
 g.addNode("D");*/
-for(let i=0;i<edges;i++){
+
+for(let i = 0;i < edges; i++){
   var e1=prompt("Please enter start edge name", "A");
   var e2=prompt("Please enter start edge name", "A");
   var w=prompt("Please enter start edge name", 100);
   g.addEdge(e1, e2, w);
 }
+
 /*g.addEdge("A", "C", 100);
 g.addEdge("A", "B", 3);
 g.addEdge("A", "D", 4);
 g.addEdge("D", "C", 3);*/
+
+console.log(g.floydWarshallAlgorithm());
+
 /* output : 
 A: {C: 7, B: 3, D: 4, A: 0}
 B: {A: 3, B: 0, C: 10, D: 7}
 C: {A: 7, D: 3, B: 10, C: 0}
 D: {A: 4, C: 3, B: 7, D: 0}*/
-console.log(g.floydWarshallAlgorithm());
+
