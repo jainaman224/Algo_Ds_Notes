@@ -50,15 +50,15 @@ O(n^2)
 
 
 [c code]: <http://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.c>
-[coffee code]: < https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.coffee>
+[coffee code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.coffee>
   [cpp code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.cpp>
    [c# code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.cs>
    [go code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.go>
    [java code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.java>
    [javaScript code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.js>
-   [kotlin code]: <http://nodejs.org>
-   [python code]: <http://twitter.github.com/bootstrap/>
-   [ruby code]: <http://jquery.com>
-   [dart code ]: <http://twitter.com/tjholowaychuk>
+   [kotlin code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.ky>
+   [python code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.py>
+   [ruby code]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.rb>
+   [dart code ]: <https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Insertion_Sort/Insertion_Sort.dart>
    
   
