@@ -43,7 +43,7 @@ class Solution
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
         //Helps identify valid solutions
-        int done = power(2, n)-1;
+        int done = power(2, n) - 1;
         solveNQueens(0, 0, 0, n, done); 
         System.out.print(ans);
         input.close();
