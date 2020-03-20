@@ -11,7 +11,6 @@ struct Node
     struct Node* right;
 };
 
-
 /* Inserting elements into Binary Tree*/
 struct Node *create()
 {
@@ -25,13 +24,13 @@ struct Node *create()
     return NULL;
 
     ptr = (struct Node*)malloc(sizeof(struct Node));
-    ptr->data = x;
+    ptr -> data = x;
    
     printf("Enter left child of %d:\n",x);
-    ptr->left = create();
+    ptr -> left = create();
    
     printf("Enter right child of %d:\n",x);
-    ptr->right = create();
+    ptr -> right = create();
    
     return ptr;
 }
@@ -46,14 +45,12 @@ void findRightView(struct Node *root, int *ans, int *size, int index)
 
     // Increasing the level of the tree every time a node with the same level appears
     if(index > *size)
-        ans[(*size)++] = root->data;
+        ans[(*size)++] = root -> data;
     
     // Recursively calling the nodes down the tree
+    findRightView(root -> right, ans, size, index);
     
-    findRightView(root->right, ans, size, index);
-    
-    findRightView(root->left, and, size, index);
-   
+    findRightView(root -> left, and, size, index);
 }
 
 // Function for intializing the level of the root node and size of the array 
