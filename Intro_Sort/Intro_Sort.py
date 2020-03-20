@@ -14,8 +14,8 @@ def helper(list, start, end, depth):
     else:
         #else partition the list and call introsort on both lists
         part = partition(list, start, end)
-        helper(list, start, part+1, depth-1)
-        helper(list, part+1, end, depth-1)
+        helper(list, start, part + 1, depth - 1)
+        helper(list, part + 1, end, depth - 1)
     
 def partition(list, start, end):
     #uses Hoare’s partition scheme to partition the list
@@ -78,7 +78,7 @@ list = input('Enter the list of numbers: ').split() #take input
 list = [int(x) for x in list]
 introsort(list)
 #print sorted list
-print('Sorted list: ', end='')
+print('Sorted list: ', end = '')
 print(list)
 
 #Input : 8 7 5 4 6
