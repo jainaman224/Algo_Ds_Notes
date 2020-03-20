@@ -97,7 +97,6 @@ public class AhoCorasick {
         ahoCorasick.addString("aho");
         ahoCorasick.addString("cor");
 
-        
         String s = "ahotrcohaoahocorasicktrie";
         int node = 0;
         List<Integer> list = new ArrayList<>();
