@@ -1,7 +1,7 @@
-/*
- * Author: Raktim Midya 
- * Date: 05/03/2020
-*/
+
+
+
+
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -26,14 +26,14 @@ class BinaryInsertionSort {
 
         s.close();
 
-        new BinaryInsertionSort().bis(arr);
+        new BinaryInsertionSort().binary_insertion_sort(arr);
 
         System.out.print("The Sorted Array is: ");
         for (int i = 0; i < arr.length; i++)
             System.out.print(arr[i] + " ");
     }
 
-    public void bis(int array[]) {
+    public void binary_insertion_sort(int array[]) {
         for (int i = 1; i < array.length; i++) {
             int x = array[i];
 
