@@ -6,67 +6,279 @@
  points in a graph in the same time, hence this problem is sometimes called
  the single-source shortest paths problem.
 */
-int mind(dist, visited , n)
+import 'dart:io';
+
+var INT_MAX = 9223372036854775807;
+
+int minDistance(dist, visited , n)
 {
+    int min = INT_MAX, min_index;
 
-int min = 9223372036854775807, min_index;
+    for (var v = 0; v < n+1; v++)
+    {
+        if ((visited[v] == false) && (dist[v] <= min))
+        {
+            min = dist[v];
+            min_index = v;
+        }
+    }
 
-for (var v = 0; v < n; v++) {
-  if ((visited[v] == false) && (dist[v] <= min)) {
-    min = dist[v];
-    min_index = v;
-  }
-}
-
-return min_index;
+    return min_index;
 }
 
 void printsol(dist , n)
 {
-  print('Vertex \t\t Distance from Source\n');
+    print('Vertex \t\t Distance from Source\n');
 
-  for (var i = 0; i < n; i++)
+    for (var i = 0; i < n+1; i++)
     {
-      print('${i} \t\t ${dist[i]}\n');
+        print('${i} \t\t ${dist[i]}\n');
     }
 }
 
 void dijkstra(graph, src, n)
 {
-  var dist = new List(n);
+    var dist = new List(n+1);
 
-  var visited = new List(n);
+    var visited = new List(n+1);
 
-  for (var i = 0; i < n; i++) {
-    dist[i] = 9223372036854775807;
-    visited[i] = false;
-  }
-
-  dist[src] = 0;
-
-  for (var count = 0; count < n - 1; count++)
-  {
-
-    var u = mind(dist, visited , n);
-
-    visited[u] = true;
-
-    for (var v = 0; v < n; v++)
+    for (var i = 0; i < n+1; i++)
     {
-        if (!visited[v] && graph[u][v]>0 && dist[u] != 9223372036854775807
-        && dist[u] + graph[u][v] < dist[v])
+        dist[i] = INT_MAX;
+        visited[i] = false;
+    }
+
+    dist[src] = 0;
+
+    for (var count = 0; count < n ; count++)
+    {
+
+        var u = minDistance(dist, visited , n);
+
+        visited[u] = true;
+
+        for (var v = 0; v < n+1; v++)
         {
-          dist[v] = dist[u] + graph[u][v];
+            if (!visited[v] && graph[u][v]>0 && dist[u] != INT_MAX
+            && dist[u] + graph[u][v] < dist[v])
+            {
+                dist[v] = dist[u] + graph[u][v];
+            }
         }
     }
-  }
+
     printsol(dist,n);
 }
 
 void main()
 {
+    print('Enter number of nodes 0 to ?');
 
-  var adjmat = [[0, 14, 0, 7, 0, 0, 0, 8, 0, 10],
+    int n = int.parse(stdin.readLineSync());
+
+    var max_edges = (n+1)*(n);
+
+    var adjmat = new List.generate(n+1, (_) => new List(n+1));
+
+    for(var i=0; i<=n; i++)
+    {
+        for(var j=0; j<=n; j++)
+        {
+            adjmat[i][j]=0;
+        }
+    }
+
+    print('Enter in the following format\nsrc\ndest\nweight\n');
+    for(var i=0; i<max_edges;i++)
+    {
+        var src = int.parse(stdin.readLineSync());
+        var dest = int.parse(stdin.readLineSync());
+        var weight = int.parse(stdin.readLineSync());
+
+        print('*'*20);
+
+        if( (src==-1) && (dest==-1) )
+        {
+            break;
+        }
+
+        if( src > n || dest > n || src<0 || dest<0)
+        {
+            print('Invalid edge!\n');
+            i--;
+        }
+        else
+        {
+            adjmat[src][dest] = weight;
+        }
+    }
+
+    dijkstra(adjmat, 0 , n);
+}
+
+/*
+Input:
+Enter number of nodes 0 to ?
+9
+Enter in the following format
+Source
+Destination
+Weight
+
+0
+1
+14
+********************
+0
+3
+7
+********************
+0
+7
+8
+********************
+0
+9
+10
+********************
+1
+0
+14
+********************
+1
+2
+8
+********************
+1
+7
+11
+********************
+2
+1
+8
+********************
+2
+3
+7
+********************
+2
+5
+4
+********************
+2
+8
+2
+********************
+3
+0
+7
+********************
+3
+2
+7
+********************
+3
+4
+9
+********************
+3
+5
+12
+********************
+3
+9
+5
+********************
+4
+3
+9
+********************
+5
+2
+4
+********************
+5
+6
+2
+********************
+5
+9
+11
+********************
+6
+3
+12
+********************
+6
+5
+2
+********************
+6
+7
+1
+********************
+6
+8
+6
+********************
+6
+9
+15
+********************
+7
+0
+8
+********************
+7
+1
+11
+********************
+7
+6
+1
+********************
+7
+8
+7
+********************
+8
+2
+2
+********************
+8
+6
+6
+********************
+8
+7
+7
+********************
+9
+0
+10
+********************
+9
+3
+5
+********************
+9
+5
+11
+********************
+9
+6
+15
+********************
+-1
+-1
+-1
+********************
+
+
+*******************************************************
+The adjacency matrix will look like this
+
+admat=[[0, 14, 0, 7, 0, 0, 0, 8, 0, 10],
     [14, 0, 8, 0, 0, 0, 0, 11, 0, 0],
     [0, 8, 0, 7, 0, 4, 0, 0, 2, 0],
     [7, 0, 7, 0, 9, 12, 0, 0, 0, 5],
@@ -77,10 +289,9 @@ void main()
     [0, 0, 2, 0, 0, 0, 6, 7, 0, 0],
     [10, 0, 0, 5, 0, 11, 15, 0, 0, 0]];
 
-  dijkstra(adjmat, 0 , 9);
+*******************************************************
 
-}
-/* Output
+Output:
 Distance from Source:
 Vertex		Distance
 0		0
