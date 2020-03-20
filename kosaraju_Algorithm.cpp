@@ -4,6 +4,7 @@
 #include <stack>
 #include <unordered_set>
 using namespace std;
+
 //dfs to store vertices in a stack as per their finish time
 void dfs(vector<int>* edges, int start, unordered_set<int> &visited, stack<int> &finishStack) { 
     visited.insert(start);
@@ -15,16 +16,16 @@ void dfs(vector<int>* edges, int start, unordered_set<int> &visited, stack<int> 
     }
     finishStack.push(start);
 }
-
-void dfs2(vector<int>* edges, int start, unordered_set<int>* component, unordered_set<int> & visited) { //dfs of a transpose graph
-	visited.insert(start);
-	component->insert(start);
-	for (int i = 0; i < edges[start].size(); i++) {
-		int adjacent = edges[start][i];
-		if (visited.count(adjacent) == 0) {
-			dfs2(edges, adjacent, component, visited);
-		}
-	}
+ //dfs of a transpose graph
+void dfs2(vector<int>* edges, int start, unordered_set<int>* component, unordered_set<int> & visited) { 
+    visited.insert(start);
+    component->insert(start);
+    for (int i = 0; i < edges[start].size(); i++) {
+        int adjacent = edges[start][i];
+        if (visited.count(adjacent) == 0) {
+            dfs2(edges, adjacent, component, visited);
+        }
+    }
 }
 
 unordered_set<unordered_set<int>*>* getSCC(vector<int>* edges, vector<int>* edgesT, int n) {
@@ -49,23 +50,27 @@ unordered_set<unordered_set<int>*>* getSCC(vector<int>* edges, vector<int>* edge
     }
     return output;
 }
+
 int main() {
-    int n;                                             //no.of vertices
+    int n;                                                 //no.of vertices
     cout<<"Enter the no. of vertices : "<<endl;
     cin >> n;
-    vector<int>* edges = new vector<int>[n];           //using a adjacency list to implement
-    vector<int>* edgesT = new vector<int>[n];         //transpose of a graph
-    int m;                                             // no.of edges
+    vector<int>* edges = new vector<int>[n];   //using a adjacency list to implement
+    vector<int>* edgesT = new vector<int>[n];             //transpose of a graph
+    int m;                                                // no.of edges
     cout<<"Enter the no. of edges : "<<endl;
     cin >> m;
+	
     for (int i = 0; i < m; i++) {
         int j, k;
         cin >> j >> k;
         edges[j - 1].push_back(k - 1);
         edgesT[k - 1].push_back(j - 1);
     }
+	
     unordered_set<unordered_set<int>*>* components = getSCC(edges, edgesT, n);
     unordered_set<unordered_set<int>*>::iterator it = components->begin();
+	
     while (it != components->end()) {
         unordered_set<int>* component = *it;
         unordered_set<int>::iterator it2 = component->begin();
@@ -77,6 +82,7 @@ int main() {
         delete component;
         it++;
     }
+	
     delete components;
     delete [] edges;
     delete [] edgesT;
