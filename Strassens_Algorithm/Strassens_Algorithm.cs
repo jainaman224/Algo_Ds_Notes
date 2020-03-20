@@ -13,22 +13,23 @@ public class Test
 		
 		Console.Write("Enter the 4 elements of first matrix: ");
 		
-		
 		for(int i=0;i<2;i++){
+		    var numList= new string[2];
+		    numList=Console.ReadLine().Split();
 		    for(int j=0;j<2;j++){
-	        firstMatrix[i, j] = int.Parse(Console.ReadLine());; 
-	        //Convert.ToInt32(Console.ReadLine()); 
-	        }
-	    }
+	        	firstMatrix[i, j] = Convert.ToInt32(numList[j]); 
+	        	}
+	    	 }
 	    
-	    Console.Write("Enter the 4 elements of second matrix: ");
+	    	Console.Write("Enter the 4 elements of second matrix: ");
 	    
-	    for(int i=0;i<2;i++){
-	        for(int j=0;j<2;j++){
-	            secondMatrix[i, j] = int.Parse(Console.ReadLine());
-	            //Convert.ToInt32(Console.ReadLine());
-	        }
-	    }
+	   	 for(int i=0;i<2;i++){
+	         	var numList= new string[2];
+		    	numList=Console.ReadLine().Split();
+	         	for(int j=0;j<2;j++){
+	         		secondMatrix[i, j] = Convert.ToInt32(numList[j]);
+	        	}
+	    	  }
 	    
 	    int a= (firstMatrix[0, 0] + firstMatrix[1, 1]) * (secondMatrix[0, 0] + secondMatrix[1, 1]);
 	    int b= (firstMatrix[1, 0] + firstMatrix[1, 1]) * secondMatrix[0, 0];
@@ -41,32 +42,27 @@ public class Test
 	    productMatrix[0, 0] = a + d- e + g;
 	    productMatrix[0, 1] = c + e;
 	    productMatrix[1, 0] = b + d;
-      	productMatrix[1, 1] = a - b + c + f;
+      	    productMatrix[1, 1] = a - b + c + f;
       	
-      	Console.Write("Resultant matrix: \n");
+      	    Console.Write("Resultant matrix: \n");
       	
-      	for(int i=0; i<2;i++){
-      	    for(int j=0;j<2;j++){
-      	        Console.Write(productMatrix[i, j]+" ");
-      	    }
-      	    Console.Write("\n");
-      	}
-}
+      	    for(int i=0; i<2;i++){
+      	    	for(int j=0;j<2;j++){
+      	        	Console.Write(productMatrix[i, j]+" ");
+      	    	}
+      	    	Console.Write("\n");
+      	     }
+	}
 }
 
 /** 
 Enter the 4 elements of first matrix:
-5 
-6
-1
-7
+5 6
+1 7
 Enter the 4 elements of second matrix:
-6
-2
-8
-7
+6 2
+8 7
 Resultant matrix:  
 78 52
 62 51
-
 */
