@@ -10,17 +10,7 @@ import (
 
 func main() {
 
-	/*
-	   A|B,7|C,9|F,20
-	   Connect A with B with an edge from A "to" B of weight value 7
-	   Connect A with C with an edge from A "to" C of weight value 9
-	   Connect A with F with an edge from A "to" F of weight value 20
-
-	   F|A,20|C,2|E,9
-	   Connect F with A with an edge from F "to" A of weight value 20
-	   Connect F with C with an edge from F "to" C of weight value 2
-	   Connect F with E with an edge from F "to" E of weight value 9
-	*/
+	
 
 	str1 := `
 S|A,7|B,6
@@ -44,19 +34,7 @@ T|S,2|C,7
 	}
 	println()
 
-	/*
-	   Target: T , Predecessor Back(): B , Source: S
-	   Target: B , Predecessor Back(): C , Source: S
-	   Target: C , Predecessor Back(): T , Source: S
-	   Target: A , Predecessor Back(): B , Source: S
-	   Target: S , Predecessor Back(): T , Source: S
-	   Graph 01 Bellman-Ford: S(=0) → A(=7) → C(=4) → B(=2) → T(=-2) →
-	   S(=0)
-	   A(=7)
-	   B(=2)
-	   C(=4)
-	   T(=-2)
-	*/
+	
 
 	str2 := `
 S|A,15|B,14|C,9
@@ -114,62 +92,7 @@ T|A,44|D,16|F,6|E,19
 	}
 	println()
 
-	/*
-	   Target: T , Predecessor Back(): F , Source: S
-	   Target: F , Predecessor Back(): T , Source: S
-	   Target: E , Predecessor Back(): T , Source: S
-	   Target: D , Predecessor Back(): T , Source: S
-	   Target: B , Predecessor Back(): E , Source: S
-	   Target: A , Predecessor Back(): T , Source: S
-	   Target: S , Predecessor Back(): C , Source: S
-
-	   Right Path is ...
-	   Graph 02 Shortest Path & Weight: S(=0) → B(=14) → E(=32) → F(=38) → T(=44) →
-
-
-	   Graph 02 Bellman-Ford: S(=0) → A(=15) → B(=14) → D(=34) → E(=32) → F(=38) → T(=44) →
-	   S(=0)
-	   A(=15)
-	   B(=14)
-	   C(=9)
-	   D(=34)
-	   T(=44)
-	   E(=32)
-	   F(=38)
-
-	   Using list, Predecessor of T: A D E F
-	   Using list, Predecessor of F: D E T
-	   Using list, Predecessor of E: B C D F T
-	   Using list, Predecessor of B: S A D E
-	   Using list, Predecessor of S: A B C
-
-	   Therefore, if there is negative-weight-value edges, we use Bellman-Ford
-	   and if there is no negatives, we can use Dijkstra
-	   and then we can keep the same backtracking function.
-	*/
-}
-
-/////////// Bellman-Ford ///////////
-/*
-	BellmanFordShortestPath(G, source, target)
-		// Initialize-Single-Source(G,s)
-		for each vertex v ∈ G.V
-			v.d = ∞
-			v.π = nil
-		source.d = 0
-
-		// for each vertex
-		for  i = 1  to  |G.V| - 1
-			for  each edge (u, v) ∈ G.E
-				Relax(u, v, w)
-
-		for  each edge (u, v) ∈ G.E
-			if  v.d > u.d + w(u, v)
-				if v.d > u.d + w(u,v)
-					return FALSE
-
-		return TRUE
-*/
+	
 func (G *Graph) BellmanFordShortestPath(source, target *Vertex) *list.List {
 
 	for vtx := G.GetVertexList().Front(); vtx != nil; vtx = vtx.Next() {
@@ -237,40 +160,27 @@ func (G *Graph) BellmanFordShortestPath(source, target *Vertex) *list.List {
 	return result_list
 }
 
-/*
-	Recursive Backtrack needs to check
-	0. Be consistent with Stack/Queue order (PushBack, Back, Front)
-	1. Exclude the case when we have NON-connected graph (len = 0)
-	2. Exclude the case when we get to Source
-	3. Check if we still continue recursion
-	4. If so, Exclude ENDing Target
-	5. If so, Exclude Previously Visited Node
-	6. If so, Exclude Duplicate Source Node Visit, caused by concurrent recursion
-*/
+
 func (G *Graph) TrackBellmanFord(source, target, end *Vertex, result_list *list.List) {
 
 	result_list.PushFront(target)
 	doneWithRecursion := false
 
-	// 1. Exclude the case when we have NON-connected graph (len = 0)
+	
 	if target.Predecessor.Len() == 0 {
 		doneWithRecursion = true
 	}
 
-	// 2. Exclude the case when we get to Source
+	
 	if target.Predecessor.Back().Value.(*Vertex) == source {
 		doneWithRecursion = true
 	}
 
 	fmt.Println("Target:", target.ID, ",", "Predecessor Back():", target.Predecessor.Back().Value.(*Vertex).ID, ",", "Source:", source.ID)
 
-	// 3. Check if we still continue recursion
+	
 	if doneWithRecursion == false {
-		/*
-		   4. If so, Exclude ENDing Target
-		   5. If so, Exclude Previously Visited Node
-		   6. If so, Exclude Duplicate Source Node Visit, caused by concurrent recursion
-		*/
+		
 
 		var newtarget *Vertex
 		for vtx1 := target.Predecessor.Back(); vtx1 != nil; vtx1 = vtx1.Prev() {
@@ -281,29 +191,23 @@ func (G *Graph) TrackBellmanFord(source, target, end *Vertex, result_list *list.
 			}
 
 			texist := false
-			// 5. If so, Exclude Previously Visited Node
 			for vtx2 := result_list.Front(); vtx2 != nil; vtx2 = vtx2.Next() {
 				if newtarget == vtx2.Value.(*Vertex) {
 					texist = true
 				}
 
 				if source == vtx2.Value.(*Vertex) {
-					// we need to skip the case
-					// when the recursions visit the source node later
-					// which is duplicate
+					
 					goto skip
 				}
 			}
 
 			if texist == true {
-				// back to for-loop
 				continue
 			} else {
-				// If neither ENDing Target nor Visited, Run with Recursion
 				G.TrackBellmanFord(source, newtarget, end, result_list)
 			}
 		}
-		// 6. If so, Exclude Duplicate Source Node Visit, caused by concurrent recursion
 	skip:
 	} else {
 		result_list.PushFront(source)
@@ -383,24 +287,7 @@ func (A *Vertex) GetEdgesChannelFromThisVertex() chan *Edge {
 	return edgechan
 }
 
-/*
-	Comments on this pattern from Alan Donovan
 
-	While tempting, it's not idiomatic Go style to use channels
-	simply for the ability to iterate over them.
-
-	It's not efficient
-	, and it can easily lead to an accumulation of idle goroutines:
-
-	consider what happens when the caller of GetEdgesChannelFromThisVertex
-	discards the channel before reading to the end.
-
-	---
-
-	It's better to use container/list rather than channel
-
-	Return an adjacent edge list that comes "out of" vertex A.
-*/
 func (A *Vertex) GetEdgeListFromThisVertex() *list.List {
 	return A.EdgesFromThisVertex
 }
@@ -431,8 +318,7 @@ func ConstructDirectedGraph(input_str string) *Graph {
 
 		for _, pair := range edgepairs {
 			if len(strings.Split(pair, ",")) == 1 {
-				// to skip the lines below
-				// and go back to the for-loop
+				
 				continue
 			}
 			DestinationID := strings.Split(pair, ",")[0]
@@ -459,7 +345,6 @@ func StrToInt64(input_str string) int64 {
 }
 func (G *Graph) GetVertexByID(id string) *Vertex {
 	for vtx := G.VertexList.Front(); vtx != nil; vtx = vtx.Next() {
-		// NOT  vtx.Value.(Vertex).ID
 		if vtx.Value.(*Vertex).ID == id {
 			return vtx.Value.(*Vertex)
 		}
@@ -472,7 +357,6 @@ func (G *Graph) FindOrConstruct(id string) *Vertex {
 	if vertex == nil {
 		vertex = NewVertex(id)
 
-		// then add this vertex to the graph
 		G.VertexList.PushBack(vertex)
 	}
 	return vertex
@@ -489,7 +373,6 @@ func (G *Graph) GetEdgeList() *list.List {
 func (G *Graph) DeleteVertex(A *Vertex) {
 	for vtx := G.VertexList.Front(); vtx != nil; vtx = vtx.Next() {
 		if vtx.Value.(*Vertex) == A {
-			// remove from the graph
 			G.VertexList.Remove(vtx)
 		}
 	}
