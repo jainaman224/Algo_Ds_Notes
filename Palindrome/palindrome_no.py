@@ -16,7 +16,7 @@ def reverse(num):
 num = int(input("Enter a number:"))
 a  = reverse(num)
 
-#Comparing the reversed number with original number
+# Comparing the reversed number with original number
 if(a == num):  
     print("Number entered is palindrome!")
 else:
