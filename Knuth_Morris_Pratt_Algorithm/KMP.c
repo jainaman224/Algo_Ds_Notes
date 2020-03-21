@@ -1,5 +1,4 @@
 //Implementation of the Knuth Morris Pratt algorithm for pattern searching in C language
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -62,9 +61,9 @@ int main() {
     scanf("%s", pat);
     printf("\n");
 	
-	KMP_ALGORITHM(text, pat);
-	printf("\n");
-	return 0;
+    KMP_ALGORITHM(text, pat);
+    printf("\n");
+    return 0;
 }
 
 /*SAMPLE INPUT AND OUTPUT
