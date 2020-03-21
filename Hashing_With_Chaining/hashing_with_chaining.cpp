@@ -8,11 +8,11 @@
     1. Insert entry 
 		a. With replacement
 		b. Without replacement
-	2. Delete entry
-	3. Search entry
-	4. Get attribute
-	5. Update attribute
-	6. Display symbol table
+    2. Delete entry
+    3. Search entry
+    4. Get attribute
+    5. Update attribute
+    6. Display symbol table
 */
 
 #include <iostream>
