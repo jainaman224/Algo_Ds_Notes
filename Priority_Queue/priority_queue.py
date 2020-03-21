@@ -1,4 +1,3 @@
-
 queue = []
 
 def insert(data):           # To insert values into the Queue
@@ -19,8 +18,7 @@ def delete():               # TO remove value from the Priority Queue
     except IndexError:              # Instead of giving error for empty queue
         print("Queue is empty!!")   # Displays that 'Queue is empty'
         exit()                      # Exits the program if trying to delete from empty queue
-        
-        
+                
 while 1:
     opt = 0                  # initializing option
     
@@ -33,7 +31,7 @@ while 1:
         insert(value)
         
     elif opt == 2:
-        del_value=delete()
+        del_value = delete()
         print("\n" + str(del_value) + " is deleted")
         
     elif opt == 3:
@@ -44,7 +42,6 @@ while 1:
 
     else:
         print("\tInvalid option!\n\tTry Again!!")
-
         
 # The program is made of user choice
 '''
@@ -70,8 +67,4 @@ Enter your option:4           #to exit
 If you enter any other value other than (1,2,3,4), You will be shown:
     Invalid option!
     Try Again!!
-
 '''
-
-
-
