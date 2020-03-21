@@ -56,18 +56,3 @@ class BinaryInsertionSort {
  * 
  * The Sorted Array is: 24 25 63 63 82
 */
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
