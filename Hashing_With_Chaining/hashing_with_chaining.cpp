@@ -6,8 +6,8 @@
 
     Program includes following functionality - 
     1. Insert entry 
-		a. With replacement
-		b. Without replacement
+        a. With replacement
+        b. Without replacement
     2. Delete entry
     3. Search entry
     4. Get attribute
@@ -22,7 +22,7 @@ class symbolTableEntry
 {
     string name, attr;
     symbolTableEntry *next;
-public:
+    public:
     symbolTableEntry()
     {
         name = "NULL";
@@ -56,7 +56,7 @@ public:
             n = table[i].next;
             cout << "\n" << i << "  " << table[i].name << "  " << table[i].attr;
             while(n != NULL)
-	        {
+            {
 	            cout << "\n" << i << "  " << n -> name << "  " << n -> attr;
 		        n = n -> next;
 	        }
