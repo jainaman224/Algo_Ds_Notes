@@ -2,54 +2,54 @@
 using namespace std;
 int main()
 {
-    int n , m;
-    cout<< "Enter dimensions of 2-D array: ";
-    cin>> n >> m;
+    int n, m;
+    cout << "Enter dimensions of 2-D array: ";
+    cin >> n >> m;
 
-    int arr1[n][m],arr2[n][m],i,j;
-    cout<< "Enter factor of first and second array: ";
+    int arr1[n][m], arr2[n][m], i, j;
+    cout << "Enter factor of first and second array: ";
 
-    int a,b;
-    cin>> a >> b;
+    int a, b;
+    cin >> a >> b;
 
-    cout<< "Enter values of first array: ";
-    for(i=0;i<n;i++)
+    cout << "Enter values of first array: ";
+    for(i=0; i<n; i++)
     {
-        for(j=0;j<m;j++)
+        for(j=0; j<m; j++)
         {
-            cin>> arr1[i][j];
+            cin >> arr1[i][j];
         }
-        cout<< endl;   //to add a new line when elements of other rwo are added
+        cout << endl;   //to add a new line when elements of other rwo are added
     }
 
-    cout<< "Enter values of second array: ";
-    for(i=0;i<n;i++)
+    cout << "Enter values of second array: ";
+    for(i=0; i<n; i++)
     {
-        for(j=0;j<m;j++)
+        for(j=0; j<m; j++)
         {
-            cin>> arr2[i][j];
+            cin >> arr2[i][j];
         }
-        cout<< endl;
+        cout << endl;
     }
 
     int arr[n][m];
     //array in which answer i.e. a*arr1+b*arr2 is stored
-    for(i=0;i<n;i++)
+    for(i=0; i<n; i++)
     {
-        for(j=0;j<m;j++)
+        for(j=0; j<m; j++)
         {
             arr[i][j]=a*arr1[i][j]+b*arr2[i][j];
         }
     }
 
-    cout<< "Added matrix is: ";
-    for(i=0;i<n;i++)
+    cout << "Added matrix is: ";
+    for(i=0; i<n; i++)
     {
-        for(j=0;j<m;j++)
+        for(j=0; j<m; j++)
         {
-            cout<< arr[i][j] << " ";
+            cout << arr[i][j] << " ";
         }
-        cout<< endl;
+        cout << endl;
     }
 }
 
