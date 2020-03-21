@@ -64,6 +64,7 @@ avl *avl_tree::ll_rotat(avl *parent) {
    cout<<"Left-Left Rotation";
    return t;
 }
+
 avl *avl_tree::lr_rotat(avl *parent) {
    avl *t;
    t = parent->l;
@@ -71,6 +72,7 @@ avl *avl_tree::lr_rotat(avl *parent) {
    cout<<"Left-Right Rotation";
    return ll_rotat(parent);
 }
+
 avl *avl_tree::rl_rotat(avl *parent) {
    avl *t;
    t = parent->r;
@@ -78,6 +80,7 @@ avl *avl_tree::rl_rotat(avl *parent) {
    cout<<"Right-Left Rotation";
    return rr_rotat(parent);
 }
+
 avl *avl_tree::balance(avl *t) {
    int bal_factor = difference(t);
    if (bal_factor > 1) {
@@ -85,7 +88,8 @@ avl *avl_tree::balance(avl *t) {
          t = ll_rotat(t);
       else
          t = lr_rotat(t);
-   } else if (bal_factor < -1) {
+   }
+    else if (bal_factor < -1) {
       if (difference(t->r) > 0)
          t = rl_rotat(t);
       else
@@ -93,6 +97,7 @@ avl *avl_tree::balance(avl *t) {
    }
    return t;
 }
+
 avl *avl_tree::insert(avl *r, int v) {
    if (r == NULL) {
       r = new avl;
@@ -100,14 +105,17 @@ avl *avl_tree::insert(avl *r, int v) {
       r->l = NULL;
       r->r = NULL;
       return r;
-   } else if (v< r->d) {
+   } 
+    else if (v< r->d) {
       r->l = insert(r->l, v);
       r = balance(r);
-   } else if (v >= r->d) {
+   } 
+    else if (v >= r->d) {
       r->r = insert(r->r, v);
       r = balance(r);
    } return r;
 }
+
 void avl_tree::show(avl *p, int l) {
    int i;
    if (p != NULL) {
@@ -121,6 +129,7 @@ void avl_tree::show(avl *p, int l) {
          show(p->l, l + 1);
    }
 }
+
 void avl_tree::inorder(avl *t) {
    if (t == NULL)
       return;
@@ -128,6 +137,7 @@ void avl_tree::inorder(avl *t) {
       cout << t->d << " ";
       inorder(t->r);
 }
+
 void avl_tree::preorder(avl *t) {
    if (t == NULL)
       return;
@@ -135,6 +145,7 @@ void avl_tree::preorder(avl *t) {
       preorder(t->l);
       preorder(t->r);
 }
+
 void avl_tree::postorder(avl *t) {
    if (t == NULL)
       return;
@@ -142,6 +153,7 @@ void avl_tree::postorder(avl *t) {
       postorder(t ->r);
       cout << t->d << " ";
 }
+
 int main() {
    int c, i;
    avl_tree avl;
