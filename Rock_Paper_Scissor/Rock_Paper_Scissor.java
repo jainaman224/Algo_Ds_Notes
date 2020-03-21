@@ -7,13 +7,13 @@ public class Main
 
     public static double probrock (int r, int p, int s) {
     if (s == 0 || r == 0)
-    return 0.0;
+        return 0.0;
 
     if (p == 0)
-    return 1.0;
+        return 1.0;
 
     if (dp[r][p][s] != -1.0)
-    return dp[r][p][s];
+        return dp[r][p][s];
 
     //total no. of fight = rC1.pC1 + pC1.sC1 + sC1.rC1
     double total = r * p + p * s + s * r;
@@ -28,13 +28,13 @@ public class Main
 
 public static double probpaper (int r, int p, int s) {
     if (p == 0 || r == 0)
-    return 0.0;
+        return 0.0;
 
     if (s == 0)
-    return 1.0;
+        return 1.0;
 
     if (dp[r][p][s] != -1.0)
-    return dp[r][p][s];
+        return dp[r][p][s];
 
     //total no. of fight = rC1.pC1 + pC1.sC1 + sC1.rC1
     double total = r * p + p * s + s * r;
@@ -49,13 +49,13 @@ public static double probpaper (int r, int p, int s) {
 
 public static double probscissor (int r, int p, int s) {
     if (p == 0 || s == 0)
-    return 0.0;
+        return 0.0;
 
     if (r == 0)
-    return 1.0;
+        return 1.0;
 
     if (dp[r][p][s] != -1.0)
-    return dp[r][p][s];
+        return dp[r][p][s];
 
     //total no. of fight = rC1.pC1 + pC1.sC1 + sC1.rC1
     double total = r * p + p * s + s * r;
