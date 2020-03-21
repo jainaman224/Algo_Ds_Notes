@@ -3,55 +3,80 @@ including the extra phase required when all the numbers in array are negative */
 
 import 'dart:io';
 
-int max(a, b) // Function that returns maximum between Two Numbers
-{
+// Function that returns maximum between Two Numbers
+int max(a, b){
     if(a > b) 
-        return a;
+          return a;
     else 
-        return b;
+          return b;
 }
 
-int kadane( input , n ) // Function implementing Kadane's Algorithm (array contains at least one positive number)
-{
+
+// Function implementing Kadane's Algorithm (array contains at least one positive number)
+int kadane( input , n ){
     int currentmax = 0, maxsofar = 0;
 
-    for(int i = 0; i < n; i++)
+    for( int i = 0; i < n; i++ )
     {
-        currentmax = max( 0 , currentmax + input[i]);
+        currentmax = max( 0 , currentmax + input[i] );
         maxsofar = max( maxsofar, currentmax );
     }
-
-    return maxsofar; // Maximum subarray sum
+    return maxsofar;
 }
 
 void main() {
-    var maxsubarraysum;
-    var input = [-2, 1, -6, 4, -1, 2, 1, -5, 4]; // Input array
-    var n = input.length; // Size of array
-    var flag = 0; // Flag variable to check if all the numbers in array are negative or not
-    var largestinnegative = input[0]; // Smallest_negative variable will store the maximum subarray sum if all the numbers are negative in array
 
-    for(int i = 0; i < n; i++) // Scanning each element in array
+    int maxsubarraysum, size;
+
+    // Input array
+    stdout.write("Enter the number of elements in the array:");
+    String input = stdin.readLineSync();
+    size = int.parse(input);
+    List array = [];
+    for( int i = 0; i < size; i++ )
     {
-        if(input[i] >= 0) // If any element is positive, kadane's algo can be applied
+        String x1 = stdin.readLineSync();
+        int x2 = int.parse(x1);
+        array.add(x2);
+    }
+
+    // Size of array
+    int n = array.length;
+
+    // Flag variable to check if all the numbers in array are negative or not
+    int flag = 0;
+
+    // Smallest_negative variable will store the maximum subarray sum if all the numbers are negative in array
+    int largestinnegative = array[0];
+
+    // Scanning each element in array
+    for( int i = 0; i < n; i++ )
+    {
+        // If any element is positive, kadane's algo can be applied
+        if(array[i] >= 0)
         {
             flag = 1;
             break;
         }
         else 
-            if( input[i] > largestinnegative ) // If all the elements are negative, find the largest in them
-                largestinnegative = input[i];
+        {   // If all the elements are negative, find the largest in them
+            if( array[i] > largestinnegative )
+            {
+                largestinnegative = array[i];
+            }
+        }
     }
 
-    if(flag == 1) // Kadane's algo applicable
-        maxsubarraysum = kadane( input , n );
+    // Kadane's algo applicable
+    if(flag == 1)
+    {
+        maxsubarraysum = kadane( array , n );
+    }
     else
-        maxsubarraysum = largestinnegative;// Kadane 's algo not applicable,
-        // hence the max_subarray_sum will be the largest number in array itself
+    {   // Kadane 's algo not applicable,
+        maxsubarraysum = largestinnegative;
+    }
 
+    // hence the max_subarray_sum will be the largest number in array itself
     print("Maximum Subarray Sum is: $maxsubarraysum");
 }
-
-/* Output
-Maximum Subarray Sum is: 6
-*/
