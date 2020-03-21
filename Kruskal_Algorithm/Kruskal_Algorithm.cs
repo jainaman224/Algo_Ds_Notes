@@ -55,15 +55,15 @@ private static void Union(Subset[] subsets, int x, int y)
 	    subsets[yroot].Parent = xroot;
     else
     {
-	    subsets[yroot].Parent = xroot;
-	    ++subsets[xroot].Rank;
+         subsets[yroot].Parent = xroot;
+         ++subsets[xroot].Rank;
     }
 }
 
 private static void Print(Edge[] result, int e)
 {
     for (int i = 0; i < e; ++i)
-	    Console.WriteLine("{0} -- {1} == {2}", result[i].Source, result[i].Destination, result[i].Weight);
+        Console.WriteLine("{0} -- {1} == {2}", result[i].Source, result[i].Destination, result[i].Weight);
 }
 
 public static void Kruskal(Graph graph)
@@ -74,9 +74,8 @@ public static void Kruskal(Graph graph)
     int e = 0;
 
     Array.Sort(graph.edge, delegate (Edge a, Edge b)
-	{
-	    return a.Weight.CompareTo(b.Weight);
-    });
+        return a.Weight.CompareTo(b.Weight);
+    );
 
     Subset[] subsets = new Subset[verticesCount];
 
@@ -135,11 +134,9 @@ graph.edge[4].Weight = 4;
 
 Kruskal(graph);
 
-
-
-
 Output
 2 -- 3 == 4
 0 -- 3 == 5
 0 -- 1 == 10
+
 */
