@@ -80,3 +80,6 @@ void main() {
     // hence the max_subarray_sum will be the largest number in array itself
     print("Maximum Subarray Sum is: $maxsubarraysum");
 }
+
+// sample input = [-2, 1, -6, 4, -1, 2, 1, -5, 4]
+// sample output = Maximum Subarray Sum is: 6
