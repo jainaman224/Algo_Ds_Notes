@@ -46,10 +46,9 @@ def optimalStrategyOfGame(arr, n):
 	return table[0][n - 1] 
 
 # Driver Code 
-# Enter array
 arr = list( map( int , input().split() ) ) 
-n = len(arr1) 
-print( optimalStrategyOfGame( arr1, n ) ) 
+n = len(arr) 
+print( optimalStrategyOfGame( arr, n ) ) 
 
 """
 Input for test case 1:
