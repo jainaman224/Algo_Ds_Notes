@@ -63,14 +63,14 @@ Dijkstra's algorithm is used to find the shortest paths from the source vertex t
             dist[i] = INT_MAX
             sptSet[i] = false
         dist[src] = 0
-        for(count = 0; count< V-1; count++)
+        for(count = 0; count < V-1; count++)
             u = minDistance(dist, sptSet)
             sptSet[u] = true
             for(v = 0; v < V; v++)
                 if(not(sptSet[v]) && graph[u][v] && dist[u] not equal to INT_MAX && dist[u] + graph[u][v] < dist[v]) 
                      dist[v] = dist[u] + graph[u][v]
         for(i = 0; i < V; i++)
-            display i,dist[i]
+            display i, dist[i]
 ```
 
 **Using C++ STL**
@@ -80,7 +80,7 @@ Dijkstra's algorithm is used to find the shortest paths from the source vertex t
        dijkstra(src)
            set< pair<int,int> > s
            dist[V] = {INF}
-           s.insert(0,src)
+           s.insert(0, src)
            dist[src] = 0
            while(s is not empty):
                temp = *(s.begin())
