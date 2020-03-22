@@ -7,14 +7,14 @@
 
 //Define INF(infinite) as a large value. This will be used for
 //the vertices that are not connected with each other
-#define INF 1000000
+#define INF INT_MAX
 
 //A function to print the solution matrix
 void printSolution(int dist[][A]);          
 
 //Function to solve ALL-PAIR SHORTEST PATH problem
 //using Floyd Warshall Algorithm
-void floydWarshall (int graph[][A])
+void Floyd_Warshall (int graph[][A])
 {
 
     //dist[][] will hold the final shortest distance between
@@ -80,7 +80,7 @@ int main()
                       };
 
     //Calling function to execute Floyd Warshall Algorithm
-    floydWarshall(graph);
+    Floyd_Warshall(graph);
     return 0;
 }
 
@@ -106,3 +106,4 @@ int main()
         INF     0     6   11
         INF   INF     0    5
         INF   INF   INF    0 */
+
