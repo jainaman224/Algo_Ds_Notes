@@ -9,16 +9,16 @@ class CountInversion
       return mergeSort(arr, temp, 0, n - 1); 
     } 
 
-    /* This function returns  the number of inversions in the array */
-    static int mergeSort( int arr[], int temp[], int left, int right ) 
+    /*This function returns  the number of inversions in the array*/
+    static int mergeSort( int arr[], int temp[], int left, int right) 
     { 
      int mid, invcount = 0; 
-     if (right > left) 
+     if(right > left) 
      { 
       /* Divide the array into two parts */
-       mid = (right + left) / 2; 
+      mid = (right + left) / 2; 
 
-      /* inversions in the left subarray */
+      /*inversions in the left subarray*/
       invcount = mergeSort( arr, temp, left, mid); 
 			
       /* inversions in the right subarray */
@@ -30,7 +30,7 @@ class CountInversion
      return invcount; 
    } 
 
-    /* This method merges two sorted arrays and returns inversion count in 
+    /*This method merges two sorted arrays and returns inversion count in 
     the arrays.*/
     static int mergefn( int arr[], int temp[], int left, int mid, int right ) 
      { 
