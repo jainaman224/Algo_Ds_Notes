@@ -1,14 +1,20 @@
-// C Program for Floyd Warshall Algorithm
+//C Program for Floyd Warshall Algorithm
 
 #include<stdio.h>
 
-#define V 4             // Number of vertices in the graph
+//Number of vertices in the graph
+#define V 4
 
-#define INF 99999               // Define INF(infinite) as a large value. This will be used for the vertices that are not connected with each other
+//Define INF(infinite) as a large value. This will be used for
+//the vertices that are not connected with each other
+#define INF 1000000
 
-void printSolution(int dist[][V]);          // A function to print the solution matrix
+// A function to print the solution matrix
+void printSolution(int dist[][V]);          
 
-void floydWarshall (int graph[][V])         // Function to solve ALL-PAIR SHORTEST PATH problem using Floyd Warshall Algorithm
+//Function to solve ALL-PAIR SHORTEST PATH problem 
+//using Floyd Warshall Algorithm
+void floydWarshall (int graph[][V])
 {
 
     int dist[V][V], i, j, k;            //dist[][] will hold the final shortest distance between every pair of vertices
