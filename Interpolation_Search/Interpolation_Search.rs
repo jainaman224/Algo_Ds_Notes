@@ -52,15 +52,6 @@ pub fn interpolation_search(arr: &[i32], target: &i32) -> Result<usize, usize> {
 }
 
 fn main() {
-    /* Sample Input :-
-        1
-        2
-        3
-        4
-        6
-        Sample Output :-
-        The element is present at index: 4
-    */
     // Taking input from user
     println!("Enter 5 elements :- ");
     let mut input = String::new();
@@ -77,4 +68,13 @@ fn main() {
     let my_int: i32 = input.trim().parse().expect("Not a valid number");
 
     println!("{:?}", interpolation_search(&some_vec, &my_int));
+    /* Sample Input :-
+        1
+        2
+        3
+        4
+        6
+        Sample Output :-
+        The element is present at index: 4
+    */
 }
