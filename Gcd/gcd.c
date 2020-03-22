@@ -10,15 +10,16 @@ int gcd (int a, int b)
      else 
          return gcd (b,a%b);
 }
+
 main()
-{
-	int a, b, hcf;
-	printf ("Input two numbers : ");
-	scanf ("%d%d",&a,&b);
-	/* Function Calling*/
-	hcf = gcd (a,b);
-	printf ("GCD = %d", hcf);
-	return 0;
+{      
+     int a, b, hcf;
+     printf ("Input two numbers : ");
+     scanf ("%d%d",&a,&b);
+     /* Function Calling*/
+     hcf = gcd (a,b);
+     printf ("GCD = %d", hcf);
+     return 0;
 }
 
 /* 
