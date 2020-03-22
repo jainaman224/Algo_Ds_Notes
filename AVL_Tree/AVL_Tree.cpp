@@ -2,7 +2,7 @@
 
 #define pow2(n) (1 << (n))
 
-using namespace std;
+using namespace std; 
 
 struct avl {
    int d;
