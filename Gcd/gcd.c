@@ -3,7 +3,7 @@
 /* Function for gcd */
 
 int gcd (int a, int b)
-{    
+{        
      if (b==0)
          return a;
      /* Using recursion for checking gcd*/
