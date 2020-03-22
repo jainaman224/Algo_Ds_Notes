@@ -24,8 +24,8 @@ public class Ascii_Subsequences {
 	}
 
 	char ch = str.charAt(0);
-	int x = find(str.substring(1) , ans); // when ans is passed as it is
-	int y = find(str.substring(1) , ans + ch); // when ch is added to the ans
+	int x = find(str.substring(1), ans); // when ans is passed as it is
+	int y = find(str.substring(1), ans + ch); // when ch is added to the ans
 	int z = find(str.substring(1), ans + (int) ch);
 	// when ch's ascii code is added to the ans
 
@@ -34,7 +34,7 @@ public class Ascii_Subsequences {
    }
 }
 
-    // Sample input : ab
-    /* Sample output :
-       b 98 a ab a98 97 97b 9798
-       9 */
+// Sample input : ab
+// Sample output :
+// b 98 a ab a98 97 97b 9798
+// 9 
