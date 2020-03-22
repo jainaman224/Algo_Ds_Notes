@@ -11,15 +11,6 @@ fn linear_search<T: Ord>(vec: &Vec<T>, key: &T) -> Option<usize> {
 } 
 
 fn main() {
-    /* Sample Input :-
-        1
-        2
-        3
-        4
-        6
-        Sample Output :-
-        The element is present at index: 4
-    */
     println!("Enter 5 elements :- ");
     let mut input = String::new();
     let mut some_vec = vec![];
@@ -37,5 +28,14 @@ fn main() {
     match linear_search(&some_vec, &my_int) {
         Some(val) => println!("The element is present at index: {}", val),
         None => println!("The element is not present")
-    }; 
+    };
+    /* Sample Input :-
+        1
+        2
+        3
+        4
+        6
+        Sample Output :-
+        The element is present at index: 4
+    */
 }
