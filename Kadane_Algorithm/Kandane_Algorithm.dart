@@ -6,9 +6,9 @@ import 'dart:io';
 // Function that returns maximum between Two Numbers
 int max(a, b){
     if(a > b) 
-          return a;
+        return a;
     else 
-          return b;
+        return b;
 }
 
 
