@@ -14,9 +14,9 @@ int minDistance(dist, visited , n)
 {
     int min = INT_MAX, min_index;
 
-    for (var v = 0; v < n+1; v++)
+    for (var v = 0; v < n + 1; v++)
     {
-        if ((visited[v] == false) && (dist[v] <= min))
+        if (( visited[v] == false ) && ( dist[v] <= min ))
         {
             min = dist[v];
             min_index = v;
@@ -30,7 +30,7 @@ void printsol(dist , n)
 {
     print('Vertex \t\t Distance from Source\n');
 
-    for (var i = 0; i < n+1; i++)
+    for (var i = 0; i < n + 1; i++)
     {
         print('${i} \t\t ${dist[i]}\n');
     }
@@ -38,11 +38,11 @@ void printsol(dist , n)
 
 void dijkstra(graph, src, n)
 {
-    var dist = new List(n+1);
+    var dist = new List(n + 1);
 
-    var visited = new List(n+1);
+    var visited = new List(n + 1);
 
-    for (var i = 0; i < n+1; i++)
+    for (var i = 0; i < n + 1; i++)
     {
         dist[i] = INT_MAX;
         visited[i] = false;
@@ -57,17 +57,17 @@ void dijkstra(graph, src, n)
 
         visited[u] = true;
 
-        for (var v = 0; v < n+1; v++)
+        for (var v = 0; v < n + 1; v++)
         {
-            if (!visited[v] && graph[u][v]>0 && dist[u] != INT_MAX
-            && dist[u] + graph[u][v] < dist[v])
+            if ( !visited[v] && graph[u][v] > 0 && dist[u] != INT_MAX
+            && dist[u] + graph[u][v] < dist[v] )
             {
                 dist[v] = dist[u] + graph[u][v];
             }
         }
     }
 
-    printsol(dist,n);
+    printsol(dist, n);
 }
 
 void main()
@@ -76,33 +76,33 @@ void main()
 
     int n = int.parse(stdin.readLineSync());
 
-    var max_edges = (n+1)*(n);
+    var max_edges = (n + 1) * (n);
 
-    var adjmat = new List.generate(n+1, (_) => new List(n+1));
+    var adjmat = new List.generate(n + 1, (_) => new List(n + 1));
 
-    for(var i=0; i<=n; i++)
+    for(var i = 0; i <= n; i++)
     {
-        for(var j=0; j<=n; j++)
+        for(var j = 0; j <= n; j++)
         {
-            adjmat[i][j]=0;
+            adjmat[i][j] = 0;
         }
     }
 
     print('Enter in the following format\nsrc\ndest\nweight\n');
-    for(var i=0; i<max_edges;i++)
+    for(var i = 0; i < max_edges; i++)
     {
         var src = int.parse(stdin.readLineSync());
         var dest = int.parse(stdin.readLineSync());
         var weight = int.parse(stdin.readLineSync());
 
-        print('*'*20);
+        print('*' * 20);
 
-        if( (src==-1) && (dest==-1) )
+        if( (src == -1) && (dest == -1) )
         {
             break;
         }
 
-        if( src > n || dest > n || src<0 || dest<0)
+        if( src > n || dest > n || src < 0 || dest < 0 )
         {
             print('Invalid edge!\n');
             i--;
@@ -124,156 +124,6 @@ Enter in the following format
 Source
 Destination
 Weight
-
-0
-1
-14
-********************
-0
-3
-7
-********************
-0
-7
-8
-********************
-0
-9
-10
-********************
-1
-0
-14
-********************
-1
-2
-8
-********************
-1
-7
-11
-********************
-2
-1
-8
-********************
-2
-3
-7
-********************
-2
-5
-4
-********************
-2
-8
-2
-********************
-3
-0
-7
-********************
-3
-2
-7
-********************
-3
-4
-9
-********************
-3
-5
-12
-********************
-3
-9
-5
-********************
-4
-3
-9
-********************
-5
-2
-4
-********************
-5
-6
-2
-********************
-5
-9
-11
-********************
-6
-3
-12
-********************
-6
-5
-2
-********************
-6
-7
-1
-********************
-6
-8
-6
-********************
-6
-9
-15
-********************
-7
-0
-8
-********************
-7
-1
-11
-********************
-7
-6
-1
-********************
-7
-8
-7
-********************
-8
-2
-2
-********************
-8
-6
-6
-********************
-8
-7
-7
-********************
-9
-0
-10
-********************
-9
-3
-5
-********************
-9
-5
-11
-********************
-9
-6
-15
-********************
--1
--1
--1
-********************
-
 
 *******************************************************
 The adjacency matrix will look like this
