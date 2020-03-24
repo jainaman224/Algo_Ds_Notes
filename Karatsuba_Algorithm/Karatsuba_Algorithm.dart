@@ -18,7 +18,7 @@ int karatSuba(num1, num2){
     String num1Str = num1.toString();
     String num2Str = num2.toString();
     int n = minof(num1Str.length, num2Str.length);
-    int half = (n/2).round();
+    int half = (n / 2).round();
 
     // divide num1 into two halves
     int num1_H = int.parse(num1Str.substring(0, num1Str.length - half));
@@ -47,3 +47,11 @@ void main(){
     b = stdin.readLineSync();
     print(karatSuba(int.parse(a), int.parse(b)));
 }
+/*
+Sample input:
+12345
+6789
+
+Sample Output:
+83810205
+*/
