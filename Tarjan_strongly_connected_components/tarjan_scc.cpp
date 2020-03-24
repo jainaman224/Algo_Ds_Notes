@@ -77,7 +77,7 @@ int main()
     stack<int> *s = new stack<int>(); //creating a stack 
   	bool *visited = new bool[V]; //an array to know if a vertex is already visited or not
  
-    // Initializing disc and low, and stackMember arrays 
+    // Initializing dis and low, and visited arrays 
     for (int i = 0; i < V; i++) 
     { 
         dis[i] = NIL; 
