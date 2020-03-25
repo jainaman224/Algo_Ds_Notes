@@ -49,33 +49,33 @@ void    quick_sort(int    array[], int    low, int    high){
 //Function    to    print    an    array 
 void    print_array(int    array[], int    n){
     for(int    i = 0; i < n; i++)
-        cout<<array[i]<<"    ";
-    cout<<endl;
+        cout << array[i] << "    ";
+    cout << endl;
 }
 
 //Main    function
 int    main(){
-    cout<<"Enter    the    number    of    elements    of    array:    ";
+    cout << "Enter    the    number    of    elements    of    array:    ";
     int    n;
-    cin>>n;
+    cin >> n;
     
     int    array[n];
-    cout<<"\nEnter    the    array    elements:    ";
-    for(int    i = 0; i < n; i++)
-        cin>>array[i];
+    cout << "\nEnter    the    array    elements:    ";
+    for(int    i = 0;    i < n;    i++)
+        cin >> array[i];
         
-    cout<<"\nOriginal    array:    ";
+    cout << "\nOriginal    array:    ";
     print_array(array, n);
     
     quick_sort(array, 0, n - 1);
-    cout<<"Sorted array:    ";
+    cout << "Sorted array:    ";
     print_array(array, n);
 }
 
 /*Sample    Input    -    Output
 Enter    the    number    of    elements    of    array:    8                                                                                      
                                                                                                                               
-Enter the array elements:    45 23 78 23 1 78 34 0                                                                               
+Enter the array elements:    45    23    78    23    1    78    34    0                                                                               
                                                                                                                               
-Original array:    45 23 78 23 1 78 34 0                                                                                         
-Sorted array:    0 1 23 23 34 45 78 78     */
+Original array:    45    23    78    23    1    78    34    0                                                                                         
+Sorted array:    0    1    23    23    34    45    78    78    */
