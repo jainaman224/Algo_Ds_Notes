@@ -1,17 +1,20 @@
-/* Tower of Hanoi is a mathematical problem where we have three rods A, B and C and n number of disks where n is taken from user in this code. The goal of the problem is to transfer the entire stack of disks to another rod, obeying the conditions as follows:
+/* Tower of Hanoi is a mathematical problem where we have three rods A, B and C and n
+number of disks where n is taken from user in this code. 
+The goal of the problem is to transfer the entire stack of disks to another rod,
+obeying the conditions as follows:
 1) Only one disk can be moved at a time.
-2) Each move consists of taking the top disk from one of the stacks and placing it on top of another stack.
+2) Each move consists of taking the top disk from one of the stacks and placing 
+it on top of another stack.
 3) No disk can be placed on top of a smaller disk. */
 
 import 'dart:io';
 
 void tower (int disks, String beg, String aux, String end)
 {
-
     if (disks == 1)
     {
-         print ("\nMove disk 1 from $beg ---> $end \n") ;
-	 return ;
+    	print ("\nMove disk 1 from $beg ---> $end \n") ;
+	return ;
     }
     tower (disks - 1, beg, end, aux) ;
     print ("\nMove disk $disks from $beg ---> $end \n") ;
