@@ -9,18 +9,17 @@ puts "Following are the prime numbers smaller than or equal to 30"
 
 #for loop iterates till n
 for i in n
-  next if o.include? i
-  ii = i * 2
-  while ii <= n.last do
-    o << ii
-    ii = ii + i
+    next if o.include? i
+    ii = i * 2
+    while ii <= n.last do
+        o << ii
+        ii = ii + i
 
-  end
+    end
 #Print all the prime numbers less than or equal to the number
-  p << i unless o.include?(i)
+p << i unless o.include?(i)
   
-  
-end
+    end
 
 puts p.inspect
 
