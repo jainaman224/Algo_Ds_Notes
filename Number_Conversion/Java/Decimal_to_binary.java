@@ -12,6 +12,10 @@ public class Decimal_to_binary {
         System.out.println("Enter any decimal number:");
         n = sc.nextInt();   //Taking the decimal input
 
+        if(n == 0){
+            Bin = "0";
+        }
+
         //Simultaneously storing the remainder when number divided by 2 in the string in reverse order
         while(n > 0){
             rem = n % 2;
