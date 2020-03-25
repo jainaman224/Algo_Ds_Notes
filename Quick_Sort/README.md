@@ -1,6 +1,6 @@
 # Quick Sort
 
-Quick Sort is a divide and conquer algorithm that creates two empty arrays to hold elements less than the pivot value and elements greater than the pivot value, and then recursively sort the sub arrays. There are two basic operations in the algorithm, swapping items in place and partitioning a section of the array.
+> QuickSort is one of the most efficient sorting algorithms and is based on the splitting of an array into smaller ones. The name comes from the fact that, quick sort is capable of sorting a list of data elements significantly faster than any of the common sorting algorithms. And like Merge sort, Quick sort also falls into the category of divide and conquer approach of problem-solving methodology.
 
 ## Algorithm
 
@@ -44,15 +44,48 @@ partition(A,p,r)
 }
 ```
 
-## Example
+## Example 1(Interactive)
+![Quick Sort 1](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
 
-Below given is an array, which needs to be sorted. We will use the Quick Sort Algorithm to sort this array:
+## Example 2(With explanation)
 
-![Quick Sort](https://cdn-images-1.medium.com/max/800/1*DtH6fEdBhoUGnjBWudJ8pA.png)
+Below given is an array, which needs to be sorted. We will use the Quick Sort Algorithm to sort this array(this example chooses any element as pivot):
+
+![Quick Sort 2](https://miro.medium.com/max/600/1*DtH6fEdBhoUGnjBWudJ8pA.png)
+ - After the above step, the first pivot is in its required place, similarly we sort the left and right halves of the array in a recursive manner.
+
+
+## Example 3(A different case)
+
+Consider the  following unsorted array, which needs to be sorted. We will consider the last element as pivot in this case.
+
+[10, 80, 30, 90, 40, 50, 70]
+
+### Here are the steps:
+ - Pass 1: 
+   - Value of variables: i = -1, j = 0 | Test condition: arr[j] <= pivot (10 < 70 :  True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 80, 30, 90, 40, 50, 70]
+
+ - Pass 2:
+   - Value of variables: i = 0, j = 1 | Test condition: arr[j] <= pivot (80 < 70 : False) | Actions: No Action | Array: [10, 80, 30, 90, 40, 50, 70]
+
+ - Pass 3:
+   - Value of variables: i = 0, j = 2 | Test condition: arr[j] <= pivot (30 < 70 : True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 80, 90, 40, 50, 70]
+
+ - Pass 4:
+   - Value of variables: i = 1, j = 3 | Test condition: arr[j] <= pivot (90 < 70 : False) | Actions: No Action | Array: [10, 30, 80, 90, 40, 50, 70]
+
+ - Pass 5:
+   - Value of variables: i = 1, j = 4 | Test condition: arr[j] <= pivot (40 < 70: True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 40, 90, 80, 50, 70]
+
+ - Pass 6:
+   - Value of variables: i = 2, j = 5 | Test condition: arr[j] <= pivot (50 < 70: True) | Actions: i++, swap(arr[i], arr[j]) | Array: [10, 30, 40, 50, 80, 90, 70]
+ - Before pass 7, j becomes 6, so we come out of the loop and now swap(arr[i+1], pivot) | Array: [10, 30, 40, 50, 70, 90, 80
+ - Now 70 is in its position, so we call quicksort function again on the left and right halves.
+ - Since the left part of 70 is already sorted, everytime the partition function is called, the pivot(i.e the last elements is already in its desired position)
+ - For the right half, after swapping 80 and 90, the pivot is brought to its desired position and now the entire array is sorted.
 
 ## Complexity
 
-The **Time Complexity** of Quick Sort is O(nLogn). In the worst case, it becomes O(n2).
+The **Time Complexity** of Quick Sort is **O(nLogn)**. In the **worst case**, it becomes **O(n^2)**.
 
-The **Space Complexity** of Quick Sort is O(nLogn).
-
+The **Space Complexity** of Quick Sort is **O(Logn)**.
