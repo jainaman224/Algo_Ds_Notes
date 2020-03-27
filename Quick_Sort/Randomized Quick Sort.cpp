@@ -6,7 +6,7 @@ using namespace std;
   places all smaller(smaller than pivot) to left of pivot and all
   greater elements to right of pivot*/
 
-int partition_index(int    array[], int    low, int    high){
+int partition_index(int array[], int low, int high){
     int pivot = array[high];
     int i = low - 1;
     for(int j = low; j < high; j++){
@@ -32,16 +32,16 @@ int random_partition(int array[], int low, int high){
 
     int random_index = low + rand() % (high - low);   
     swap(array[random_index], array[high]);
-    return    partition_index(array,low,high);
+    return partition_index(array,low,high);
 }
 
 /*Recursive function that implements QuickSort 
 array[] - Array to be sorted, 
 low - Starting index, 
 high - Ending index */
-void quick_sort(int    array[], int    low, int    high){
+void quick_sort(int array[], int low, int high){
     if(low < high){
-        int    partition = random_partition(array, low, high);
+        int partition = random_partition(array, low, high);
 
         //Separately sort elements before 
         //partition and after partition 
