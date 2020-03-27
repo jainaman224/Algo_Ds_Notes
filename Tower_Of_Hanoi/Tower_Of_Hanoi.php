@@ -1,3 +1,7 @@
+/* This is an implementation of Tower Of Hanoi problem in PHP. 
+    We have considered 4 disks in this case. 
+*/
+
 <?php 
 
 function towerOfHanoi($n, $src_rod, $dest_rod, $aux_rod) 
