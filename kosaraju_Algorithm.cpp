@@ -16,6 +16,7 @@ void dfs(vector<int>* edges, int start, unordered_set<int> &visited, stack<int> 
     }
     finishStack.push(start);
 }
+
  //dfs of a transpose graph
 void dfs2(vector<int>* edges, int start, unordered_set<int>* component, unordered_set<int> & visited) { 
     visited.insert(start);
