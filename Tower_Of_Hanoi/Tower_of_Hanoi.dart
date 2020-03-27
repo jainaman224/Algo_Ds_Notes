@@ -13,8 +13,8 @@ void tower (int disks, String beg, String aux, String end)
 {
     if (disks == 1)
     {
-    	print ("\nMove disk 1 from $beg ---> $end \n") ;
-	return ;
+    print ("\nMove disk 1 from $beg ---> $end \n") ;
+    return ;
     }
     tower (disks - 1, beg, end, aux) ;
     print ("\nMove disk $disks from $beg ---> $end \n") ;
