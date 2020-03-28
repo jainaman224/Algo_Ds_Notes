@@ -12,8 +12,7 @@ int main()
     int a[m][n];
     printf("Enter Matrix :\n");
     
-    //for storing matrix.
-    
+    //for storing matrix.    
     for(int i = 0; i < m; i++)                                                          
     {
         for(int j = 0; j < n; j++)
@@ -23,7 +22,6 @@ int main()
     }
     
     //for calculating each column sum.
-    
     for(int j = 0; j < n; j++)                                                          
     {
         int sum = 0;
@@ -37,6 +35,7 @@ int main()
     printf("%d", "\n");
     return 0;
 }
+
 /*
 Output
 
