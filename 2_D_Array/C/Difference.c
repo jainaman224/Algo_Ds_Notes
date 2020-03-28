@@ -18,8 +18,7 @@ int main()
     if(m == k && n == l)
     {
         
-        //for storing first matrix.
-        
+        //for storing first matrix.        
         printf("Enter 1st array : \n");						 
         for(int i = 0; i < m; i++)
         {
@@ -29,8 +28,7 @@ int main()
             }
         }
         
-        //for storing second matrix.
-        
+        //for storing second matrix.   
         printf("Enter 2nd array :\n");						
         for(int i = 0; i < m; i++)
         {
@@ -41,8 +39,7 @@ int main()
         }
         int c[m][n];
         
-        //calculating subtraction of a and b matrices.
-        
+        //calculating subtraction of a and b matrices.       
         for(int i = 0; i < m; i++)						
         {
             for(int j = 0; j < n; j++)
@@ -52,8 +49,7 @@ int main()
         }
         printf("Subtracted Array :\n");
         
-        //for displaying output matrix.
-        
+        //for displaying output matrix.       
         for(int i = 0; i < m; i++)						
         {
             for(int j = 0; j < n; j++)
