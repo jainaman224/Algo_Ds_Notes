@@ -13,8 +13,7 @@ int main()
     if(m == n)
     {
         
-        //for storing matrix.
-        
+        //for storing matrix.        
         printf("Enter Matrix :\n");							
         for(int i = 0; i < m; i++)
         {
@@ -26,7 +25,6 @@ int main()
         int sum = 0;
         
         //for calculating sum both the diagonals.
-        
         for(int i = 0; i < m; i++)							
         {
             for(int j = 0; j < n; j++)
@@ -47,6 +45,7 @@ int main()
     }
     return 0;
 }
+
 /*
 Output
 
