@@ -43,9 +43,9 @@ class Graph {
                     // i to j value to the new value
                     if (dist[i][k] + dist[k][j] < dist[i][j])
                         dist[i][j] = dist[i][k] + dist[k][j];
-                    });
                 });
             });
+        });
         return dist;
     }
 }
@@ -66,19 +66,19 @@ class Graph {
     g.addNode("C");
     g.addNode("D");*/
 
-        for(let i=0;i<edges; i++){
-            var e1=prompt("Please enter start edge name","A");
-            var e2=prompt("Please enter start edge name","A");
-            var w=prompt("Please enter start edge name",100);
-            g.addEdge(e1,e2,w);
-        }
+    for(let i=0;i<edges; i++){
+        var e1=prompt("Please enter start edge name","A");
+        var e2=prompt("Please enter start edge name","A");
+        var w=prompt("Please enter start edge name",100);
+        g.addEdge(e1,e2,w);
+    }
 
     /*g.addEdge("A", "C", 100);
     g.addEdge("A", "B", 3);
     g.addEdge("A", "D", 4);
     g.addEdge("D", "C", 3);*/
 
-        console.log(g.floydWarshallAlgorithm());
+    console.log(g.floydWarshallAlgorithm());
 
     /* output : 
     A: {C: 7, B: 3, D: 4, A: 0}
