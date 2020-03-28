@@ -1,6 +1,7 @@
 /*The Floyd Warshall Algorithm is for solving the All Pairs Shortest Path problem.
 The problem is to find shortest distances between every pair of vertices in a given
 edge weighted directed Graph.This is Floyd Warshall algorithm in java script.*/
+
 class Graph {
     constructor() {
         this.edges = {};
@@ -12,9 +13,9 @@ class Graph {
         this.edges[node] = [];
     }
 
-    addEdge(node1, node2, weight = 1) {
-        this.edges[node1].push({ node: node2, weight: weight });
-        this.edges[node2].push({ node: node1, weight: weight });
+    addEdge(node1, node2, weight =1) {
+        this.edges[node1].push({node:node2, weight:weight });
+        this.edges[node2].push({node:node1, weight:weight });
     }
 
     floydWarshallAlgorithm() {
@@ -23,26 +24,26 @@ class Graph {
             dist[this.nodes[i]] = {};
 
             // For existing edges assign the dist to be same as weight
-            this.edges[this.nodes[i]].forEach(e => (dist[this.nodes[i]][e.node] = e.weight));
+            this.edges[this.nodes[i]].forEach(e = > (dist[this.nodes[i]][e.node] = e.weight));
 
-            this.nodes.forEach(n => {
+            this.nodes.forEach(n = > {
             // For all other nodes assign it to infinity
             if (dist[this.nodes[i]][n] == undefined)
                 dist[this.nodes[i]][n] = Infinity;
             // For self edge assign dist to be 0
-            if (this.nodes[i] === n) dist[this.nodes[i]][n] = 0;
+            if (this.nodes[i] == = n) dist[this.nodes[i]][n] = 0;
               });
         }
 
-        this.nodes.forEach(i => {
-                this.nodes.forEach(j => {
-                        this.nodes.forEach(k => {
-        // Check if going from i to k then from k to j is better
-        // than directly going from i to j. If yes then update
-        // i to j value to the new value
-        if (dist[i][k] + dist[k][j] < dist[i][j])
-            dist[i][j] = dist[i][k] + dist[k][j];
-                   });
+        this.nodes.forEach(i = > {
+            this.nodes.forEach(j = > {
+                this.nodes.forEach(k = > {
+                    // Check if going from i to k then from k to j is better
+                    // than directly going from i to j. If yes then update
+                    // i to j value to the new value
+                    if (dist[i][k] + dist[k][j] < dist[i][j])
+                        dist[i][j] = dist[i][k] + dist[k][j];
+                    });
                 });
             });
         return dist;
@@ -55,8 +56,8 @@ class Graph {
 
     var vertices = prompt("Please enter number of vertices", "5");
 
-    for(let i = 0;i < vertices; i++){
-        var e=prompt("Please enter vertex name", "A");
+    for(let i=0;i<vertices; i++){
+        var e=prompt("Please enter vertex name","A");
         g.addNode(e);
         }
 
@@ -65,11 +66,11 @@ class Graph {
     g.addNode("C");
     g.addNode("D");*/
 
-        for(let i = 0;i < edges; i++){
-        var e1=prompt("Please enter start edge name", "A");
-        var e2=prompt("Please enter start edge name", "A");
-        var w=prompt("Please enter start edge name", 100);
-        g.addEdge(e1, e2, w);
+        for(let i=0;i<edges; i++){
+            var e1=prompt("Please enter start edge name","A");
+            var e2=prompt("Please enter start edge name","A");
+            var w=prompt("Please enter start edge name",100);
+            g.addEdge(e1,e2,w);
         }
 
     /*g.addEdge("A", "C", 100);
