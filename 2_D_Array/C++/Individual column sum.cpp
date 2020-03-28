@@ -14,7 +14,6 @@ int main()
     cout << "Enter Matrix :" << endl;
     
     //for storing matrix.
-    
     for(int i = 0; i < m; i++)                                              
     {
         for(int j = 0; j < n; j++)
@@ -24,7 +23,6 @@ int main()
     }
     
     //for calculating each column sum.
-    
     for(int j = 0; j < n; j++)                                              
     {
         int sum = 0;
