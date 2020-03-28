@@ -23,7 +23,6 @@ int main()
     }
     
     //for calculating each row sum.
-    
     for(int i = 0; i < m; i++)                                                  
     {
         int sum = 0;
@@ -35,6 +34,7 @@ int main()
     }
     return 0;
 }
+
 /*
 Output
 Enter size of matrix :
