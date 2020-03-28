@@ -1,3 +1,8 @@
+//A Circular Doubly Linked List is a linked data structure that consists of a set of 
+//sequentially linked records called nodes. Each node is connected to the next node 
+//and previous node via two link fields which refences the next node in sequence and 
+//previous node in sequence. Each node consists of a data/key.
+
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
