@@ -59,7 +59,7 @@ class Graph {
     for(let i=0;i<vertices; i++){
         var e=prompt("Please enter vertex name","A");
         g.addNode(e);
-        }
+    }
 
     /*g.addNode("A");
     g.addNode("B");
