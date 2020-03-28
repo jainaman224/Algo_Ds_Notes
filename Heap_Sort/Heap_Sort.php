@@ -56,8 +56,8 @@ $array = array(20 , 43 , 65 , 88 , 11 , 33 , 56 , 74);
 HeapSort($array , 8);
 print_r($array);
  
- // output
-   /*Array
+ /* output
+    Array
    (
     [0] => 11
     [1] => 20
