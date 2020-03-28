@@ -12,7 +12,6 @@ int main()
     int a[m][n];
     
     //for storing matrix.
-    
     if(m == n)									
     {
         cout << "Enter Matrix :" << endl;
@@ -25,8 +24,7 @@ int main()
         }
         int sum = 0;			
         
-        //for calculating sum both the diagonals.
-        
+        //for calculating sum both the diagonals.        
         for(int i = 0; i < m; i++)						
         {
             for(int j = 0; j < n; j++)
@@ -46,6 +44,7 @@ int main()
     }
     return 0;
 }
+
 /*
 Output
 
