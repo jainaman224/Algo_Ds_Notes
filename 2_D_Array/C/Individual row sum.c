@@ -13,7 +13,6 @@ int main()
     printf("Enter Matrix :\n");
     
      //for storing matrix.
-    
     for(int i = 0; i < m; i++)                                                             
     {
         for(int j = 0; j < n; j++)
@@ -22,8 +21,7 @@ int main()
         }
     }
     
-     //for calculating each row sum.
-    
+     //for calculating each row sum.   
     for(int i = 0; i < m; i++)                                                              
     {
         int sum = 0;
@@ -37,6 +35,7 @@ int main()
     printf("%d", "\n");
     return 0;
 }
+
 /*
 Output
 
