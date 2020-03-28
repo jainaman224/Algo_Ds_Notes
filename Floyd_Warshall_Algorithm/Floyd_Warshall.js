@@ -27,12 +27,12 @@ class Graph {
             this.edges[this.nodes[i]].forEach(e = > (dist[this.nodes[i]][e.node] = e.weight));
 
             this.nodes.forEach(n = > {
-            // For all other nodes assign it to infinity
-            if (dist[this.nodes[i]][n] == undefined)
-                dist[this.nodes[i]][n] = Infinity;
-            // For self edge assign dist to be 0
-            if (this.nodes[i] == = n) dist[this.nodes[i]][n] = 0;
-              });
+                // For all other nodes assign it to infinity
+                if (dist[this.nodes[i]][n] == undefined)
+                    dist[this.nodes[i]][n] = Infinity;
+                    // For self edge assign dist to be 0
+                if (this.nodes[i] == = n) dist[this.nodes[i]][n] = 0;
+            });
         }
 
         this.nodes.forEach(i = > {
