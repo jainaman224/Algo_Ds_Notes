@@ -20,7 +20,6 @@ int main()
     {
 
 	//for storing first matrix.
-
         cout << "Enter 1st array :" << endl;				
         for(int i = 0; i < m; i++)
         {
@@ -31,7 +30,6 @@ int main()
         }
 
 	 //for storing second matrix.
-
         cout << "Enter 2nd array :" << endl;                            
         for(int i = 0; i < m; i++)
         {
@@ -43,7 +41,6 @@ int main()
         int c[m][n];
 
 	 //calculating sum of a and b matrices.
-
         for(int i = 0; i < m; i++)                                     
         {
             for(int j = 0; j < n; j++)
@@ -53,7 +50,6 @@ int main()
         }
 
 	//for displaying output matrix.
-
         cout << "Added Array :" << endl;				
         for(int i = 0; i < m; i++)
         {
