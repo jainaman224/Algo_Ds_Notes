@@ -1,3 +1,7 @@
+/*
+ * Program to traverse a tree in Inorder.
+ */
+
 // Creates a Tree Node with input value
 class Node {
     constructor(value) {
