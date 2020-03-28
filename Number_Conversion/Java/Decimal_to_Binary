@@ -22,7 +22,7 @@ public class DecimalToBinary
 			i++;
 		}
 		System.out.println("binary representation");
-		for(int j = i ; j <= i ; j--)
+		for(int j = i; j <= i; j--)
 		    System.out.print(binary[j]);
 	}
 	public static void main(String[] args)
