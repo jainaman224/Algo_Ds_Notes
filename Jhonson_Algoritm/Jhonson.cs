@@ -12,11 +12,13 @@ namespace ConsoleApp1
             int INF = 999999;
             int[,] cost = new int[10, 10];
             int[,] adj = new int[10, 10];
+            
             Console.WriteLine("Enter no of vertices: ");
             vert = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter no of Edges: ");
             edge = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the EDGE cost: ");
+            
             for (k = 1; k <= edge; k++)
             {
                 //take the input and store it into adj and cost matrix
@@ -25,17 +27,20 @@ namespace ConsoleApp1
                 c = Convert.ToInt32(Console.ReadLine());
                 adj[i, j] = cost[i, j] = c;
             }
+            
             for (i = 1; i <= vert; i++)
                 for (j = 1; j <= vert; j++)
                 {
                     if (adj[i, j] == 0 && i != j)
-                        adj[i, j] = INF; //If its not a edge put infinity
+                        //If its not a edge put infinity
+                        adj[i, j] = INF; 
                 }
             for (k = 1; k <= vert; k++)
                 for (i = 1; i <= vert; i++)
                     for (j = 1; j <= vert; j++)
                         //Finding the minimum
-                        adj[i, j] = (adj[i, k] + adj[k, j]) > adj[i, j] ? adj[i, j] : (adj[i, k] + adj[k, j]) ; //find minimum path from i to j through k
+                        //find minimum path from i to j through k
+                        adj[i, j] = (adj[i, k] + adj[k, j]) > adj[i, j] ? adj[i, j] : (adj[i, k] + adj[k, j]) ; 
             Console.WriteLine("The distance matrix of the graph.\n");
             // Output the resultant matrix
             for (i = 1; i <= vert; i++)
