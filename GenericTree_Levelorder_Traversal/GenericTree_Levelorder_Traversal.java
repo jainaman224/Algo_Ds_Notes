@@ -9,27 +9,27 @@ public class GenericTree_Levelorder_Traversal {
     private class Node {
         int data;
         ArrayList<Node> children = new ArrayList<>();
-	}
+    }
 
     private Node root;
 
     public GenericTree_Levelorder_Traversal() {
         root = takeInput(null, -1);
-	}
+    }
 
     private Node takeInput(Node parent, int ith) {
 
         if (parent == null) {
             System.out.println("Enter the data for Root Node ?");
         } else {
-            System.out.println("Enter data for " + ith + " child of " +
-                parent.data);
-	}
+            System.out.println(
+                    "Enter data for " + ith + " child of " + parent.data);
+        }
 
-	// take input
+        // take input
         int item = scn.nextInt();
 
-	// make a new node
+        // make a new node
         Node nn = new Node();
         nn.data = item;
 
@@ -42,7 +42,7 @@ public class GenericTree_Levelorder_Traversal {
 
             // add children in array list
             nn.children.add(child);
-	}
+        }
 
         return nn;
 
@@ -54,7 +54,7 @@ public class GenericTree_Levelorder_Traversal {
 
     }
 
-    //function to display generic tree
+    // function to display generic tree
 
     private void display(Node node) {
 
@@ -77,25 +77,25 @@ public class GenericTree_Levelorder_Traversal {
 
     public void levelorder() {
 
-    	//create a linked list which will be used as queue
+        // create a linked list which will be used as queue
         LinkedList<Node> queue = new LinkedList<Node>();
 
-	//add root node to last of queue
+        // add root node to last of queue
         queue.addLast(root);
 
         while (!queue.isEmpty()) {
 
-            //remove node from front and print
+            // remove node from front and print
             Node rn = queue.removeFirst();
 
             System.out.print(rn.data + " ");
 
-            //add children of current node to the end of queue
+            // add children of current node to the end of queue
             for (Node child : rn.children) {
                 queue.addLast(child);
             }
 
-	}
+        }
 
         System.out.println();
 
@@ -103,13 +103,12 @@ public class GenericTree_Levelorder_Traversal {
 
     public static void main(String[] args) {
 
-        GenericTree_Levelorder_Traversal gt
-                = new GenericTree_Levelorder_Traversal();
+        GenericTree_Levelorder_Traversal gt = new GenericTree_Levelorder_Traversal();
         gt.levelorder();
 
     }
 
 }
 
-    //SAMPLE INPUT: 10 3 20 2 50 0 60 0 30 0 40 0
-    //OUTPUT: 10 20 30 40 50 60
+//SAMPLE INPUT: 10 3 20 2 50 0 60 0 30 0 40 0
+//OUTPUT: 10 20 30 40 50 60
