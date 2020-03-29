@@ -15,7 +15,7 @@ main()
 {      
     int a, b, hcf;
     printf ("Input two numbers : ");
-    scanf ("%d %d",&a, &b);
+    scanf ("%d %d", &a, &b);
     /* Function Calling*/
     hcf = gcd (a, b);
     printf ("GCD = %d", hcf);
