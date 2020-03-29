@@ -84,28 +84,28 @@ public class Main {
             System.out.println(array[i]);
     }
 
-  /*  Output -
-        Enter number of elements in your array:
-        6
-        Enter your array:
-        23
-        5
-        78
-        46
-        58
-        14
-        Unsorted Array :
-        23
-        5
-        78
-        46
-        58
-        14
-        Sorted Array :
-        5
-        14
-        23
-        46
-        58
-        78
+/* Output -
+Enter number of elements in your array
+6
+Enter your array:
+23
+5
+78
+46
+58
+14
+Unsorted Array :
+23
+5
+78
+46
+58
+14
+Sorted Array :
+5
+14
+23
+46
+58
+78
 */
