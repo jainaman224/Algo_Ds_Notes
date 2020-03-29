@@ -5,7 +5,7 @@
 //Number of vertices in the graph
 #define A 4
 
-//Define INF(infinite) as a large value. This will be used for
+//Define inf(infinite) as a large value. This will be used for
 //the vertices that are not connected with each other
 #define inf 999999
 
