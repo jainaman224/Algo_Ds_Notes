@@ -5,12 +5,9 @@ public class Aggressive_Cows {
 
     public static void main(String[] args) {
 
-        // in this problem we have to maximise the minimum
-        // distance between the cows
-        // since minimum distance is being linearly checked
-        // we apply binary search on
-        // minimum
-        // distance
+        /* in this problem we have to maximise the minimum distance between the
+         * cows since minimum distance is being linearly checked we apply
+         * binary search on minimum distance */
 
         Scanner scn = new Scanner(System.in);
         int nos = scn.nextInt(); // input for no. of stalls
@@ -38,10 +35,9 @@ public class Aggressive_Cows {
                 finalAns = mid;
                 lo = mid + 1;
 
-            } else {
+            }else{
                 hi = mid - 1;
             }
-
         }
 
         System.out.println(finalAns);
@@ -56,7 +52,7 @@ public class Aggressive_Cows {
 
         for (int i = 1; i < arr.length; i++) {
 
-                if (arr[i] - lastCowPos >= mid) {
+            if (arr[i] - lastCowPos >= mid) {
                 cowsPlaced++;
                 lastCowPos = arr[i];
 
@@ -64,13 +60,9 @@ public class Aggressive_Cows {
                     return true;
                 }
             }
-
         }
-
         return false;
-
     }
-
 }
 
 // SAMPLE INPUT: 5 3
