@@ -22,7 +22,8 @@ class BinarySearchTree
     if(this.root == null)
     {
       this.root = node;
-    }else
+    }
+    else
     {
       this.insertNode(this.root, node);
     }
@@ -35,16 +36,19 @@ class BinarySearchTree
       if(root.left == null)
       {
         root.left = newNode;
-      }else
+      }
+      else
       {
         this.insertNode(root.left, newNode);
       }
-    }else if(newNode.data > root.data)
+    }
+    else if(newNode.data > root.data)
     {
       if(root.right == null)
       {
         root.right = newNode;
-      }else
+      }
+      else
       {
         this.insertNode(root.right, newNode);
       }
@@ -80,4 +84,10 @@ console.log('\n');
 
 /*
 output:
+Preorder Traversal:
+3
+1
+5
+4
+6
 */
