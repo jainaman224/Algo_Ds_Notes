@@ -7,7 +7,7 @@
 
 //Define INF(infinite) as a large value. This will be used for
 //the vertices that are not connected with each other
-#define INF INT_MAX
+#define inf 999999
 
 //A function to print the solution matrix
 void printSolution(int dist[][A]);          
@@ -61,8 +61,8 @@ void printSolution(int dist[][A])
     {
         for (int j = 0; j < A; j++)
         {
-            if (dist[i][j] == INF)
-                printf("%7s", "INF");
+            if (dist[i][j] == inf)
+                printf("%7s", "inf");
             else
                 printf ("%7d", dist[i][j]);
         }
@@ -73,10 +73,10 @@ void printSolution(int dist[][A])
 int main()
 {
 
-    int graph[A][A] = { {0,   9,  INF, 8},
-                        {INF, 0,   6, INF},
-                        {INF, INF, 0,   5},
-                        {INF, INF, INF, 0}
+    int graph[A][A] = { {0,   9,  inf, 8},
+                        {inf, 0,   6, inf},
+                        {inf, inf, 0,   5},
+                        {inf, inf, inf, 0}
                       };
 
     //Calling function to execute Floyd Warshall Algorithm
@@ -103,7 +103,7 @@ int main()
     every pair of vertices:
 
           0     9    15    8
-        INF     0     6   11
-        INF   INF     0    5
-        INF   INF   INF    0 */
+        inf     0     6   11
+        inf   inf     0    5
+        inf   inf   inf    0 */
 
