@@ -37,6 +37,7 @@ public class Binary_To_Octal
         sc.close();
 	}
 }
+
 /*
 Input:
 1011001010
