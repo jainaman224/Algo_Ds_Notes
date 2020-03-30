@@ -12,16 +12,16 @@ import java.util.Scanner;
 public class DecimalToBinary {
        
 	static void Decimal_to_binary(int decimal)
-	{   int i=0;
+	{   int i = 0;
 		int binary[]=new int[100];
-		while(decimal>0)
+		while(decimal > 0)
 		{
-			binary[i]=decimal%2;
-			decimal=decimal/2;
+			binary[i]=decimal % 2;
+			decimal=decimal / 2;
 			i++;
 		}
 		System.out.println("binary representation");
-		for(int j=i;j<=i;j--)
+		for(int j = i; j <= i; j--)
 			System.out.print(binary[j]);
 	}
 	public static void main(String[] args) {
