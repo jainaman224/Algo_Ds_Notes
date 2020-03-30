@@ -7,6 +7,7 @@ perform spell checks based on the concept of Levenshtein distance.
 #include <iostream>
 #include <vector>
 #include <map>
+
 typedef std::vector< std::string > strlist;
 // Defining the Node 
 class Node {
@@ -14,6 +15,8 @@ class Node {
         std::map< int, Node* > TreeEdge;
         std::string Name;
 };
+
+
 // Defining the BK Tree
 class BKTree {
     public:
@@ -33,14 +36,11 @@ class BKTree {
 };
 
 // Constructor to initialize the BK Tree
-
-BKTree::BKTree(std::string& Root_STR){
+BKTree::BKTree(std::string& Root_STR) {
     root = new Node();
     root->Name = Root_STR;
 }
-
 // Destructor to remove any memory in the BK Tree
-
 BKTree::~BKTree(){
     delete_node(root);
 }
