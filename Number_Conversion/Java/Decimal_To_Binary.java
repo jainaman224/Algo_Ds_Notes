@@ -30,8 +30,9 @@ public class DecimalToBinary {
 		System.out.println("Enter a decimal number");
 		int decimal=sc.nextInt();
 		Decimal_to_binary(decimal);
-		
-
 	}
+ }
 
-}
+/*INPUT:4
+OUTPUT:100
+*/
