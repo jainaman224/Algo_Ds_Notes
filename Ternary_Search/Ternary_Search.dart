@@ -44,7 +44,7 @@ void main()
 
     //Take input of every element from the user
     print("Enter the elements: ");
-    for(int i=0; i<n; i++)
+    for(int i = 0; i < n; i++)
     {
         x = stdin.readLineSync();
         L.add(int.parse(x)); 
@@ -56,7 +56,7 @@ void main()
     int desired = int.parse(y);
 
     //Applying Ternary Search
-    if(Ternary_Search(L, 0, n-1, desired)==-1)
+    if(Ternary_Search(L, 0, n - 1, desired) == -1)
     {
         print("Not Found");
     }
