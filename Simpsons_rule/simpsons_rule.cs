@@ -14,8 +14,7 @@ public class simpsonRule
 	} 
 
 	// Function for approximate integral 
-	static float simpsons_(float ll, float ul, 
-										int n) 
+	static float simpsons_(float ll, float ul, int n) 
 	{ 
 		float h = (ul - ll) / n; 
 		float[] x = new float[10]; 
