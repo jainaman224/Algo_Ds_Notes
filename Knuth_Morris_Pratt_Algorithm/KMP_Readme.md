@@ -9,18 +9,17 @@ Components of KMP
 2.LPS Table:It stands for Longest proper Prefix which is also suffix.Sometimes prefix table is also known as LPS Table.
  
 ##Steps for Creating LPS Table 
+
 Step 1 - Define a one dimensional array with the size equal to the length of the Pattern. (LPS[size])
 Step 2 - Define variables i & j. Set i = 0, j = 1 and LPS[0] = 0.
 Step 3 - Compare the characters at Pattern[i] and Pattern[j].
 Step 4 - If both are matched then set LPS[j] = i+1 and increment both i & j values by one. Goto to Step 3.
 Step 5 - If both are not matched then check the value of variable 'i'. If it is '0' then set LPS[j] = 0 and increment 'j' value by one, if it is not '0' then set i = LPS[i-1]. Goto Step 3.
-
- 
 Step 6- Repeat above steps until all the values of LPS[] are filled.
 
 
+###ALGORITHM
 
-#ALGORITHM
 Input: The main text, and the pattern, which will be searched.
 
 Begin
@@ -45,7 +44,7 @@ End
 Output: The location where patterns are found
 
 
-#HOW THE KMP ALGORITM WORK
+####HOW THE KMP ALGORITM WORK
 Let us see an example
 Consider the following Text and Pattern
                   Text:ABC ABCDAB ABCDABCDABDE
@@ -87,11 +86,13 @@ So, we conclude that given Pattern found at index 15 in Text.
 
 
 
-#TIME COMPLEXITY
+#####TIME COMPLEXITY
+
 The time complexity of KMP  is O(n)
 
 
-#SEE ALSO
+######SEE ALSO
+
 https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
 https://www.javatpoint.com/daa-knuth-morris-pratt-algorithm
 https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
