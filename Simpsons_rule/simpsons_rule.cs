@@ -19,17 +19,19 @@ public class simpsonRule
 	{ 
 		float h = (ul - ll) / n; 
 		float[] x = new float[10]; 
-		float[] fx= new float[10]; 
+		float[] fx = new float[10]; 
 
 		// Calculatiion of x and f(x) 
-		for (int i = 0; i <= n; i++) { 
+		for (int i = 0; i <= n; i++) 
+		{ 
 			x[i] = ll + i * h; 
 			fx[i] = func(x[i]); 
 		} 
 
 		// Result Calculation
 		float res = 0; 
-		for (int i = 0; i <= n; i++) { 
+		for (int i = 0; i <= n; i++) 
+		{ 
 			if (i == 0 || i == n) 
 				res += fx[i]; 
 			else if (i % 2 != 0) 
@@ -55,11 +57,9 @@ public class simpsonRule
         
         val = Console.ReadLine();
         n = Convert.ToInt32(val);
-
-		Console.WriteLine("Result : ");                             
-		Console.WriteLine(simpsons_(lower_limit, 
-								upper_limit, n)); 
-        Console.WriteLine("Result : ");                                
+	Console.WriteLine("Result : ");                             
+	Console.WriteLine(simpsons_(lower_limit, upper_limit, n));
+	Console.WriteLine("Result : ");                                
 	} 
 }
 
@@ -69,4 +69,7 @@ Inout lower limit, upper limit and interval : 2
 9
 6
 Result : 11.38688
-*/
+*/	
+		
+							
+        
