@@ -17,7 +17,7 @@ void dfs(vector<int>* edges, int start, unordered_set<int> &visited, stack<int> 
     finishStack.push(start);
 }
 
- //dfs of a transpose graph
+//dfs of a transpose graph
 void dfs2(vector<int>* edges, int start, unordered_set<int>* component, unordered_set<int> & visited) {
     visited.insert(start);
     component->insert(start);
@@ -53,12 +53,12 @@ unordered_set<unordered_set<int>*>* getSCC(vector<int>* edges, vector<int>* edge
 }
 
 int main() {
-    int n;                                                 //no.of vertices
+    int n;    //no.of vertices
     cout<<"Enter the no. of vertices : "<<endl;
     cin >> n;
-    vector<int>* edges = new vector<int>[n];   //using a adjacency list to implement
-    vector<int>* edgesT = new vector<int>[n];             //transpose of a graph
-    int m;                                                // no.of edges
+    vector<int>* edges = new vector<int>[n];    //using a adjacency list to implement
+    vector<int>* edgesT = new vector<int>[n];    //transpose of a graph
+    int m;    // no.of edges
     cout<<"Enter the no. of edges : "<<endl;
     cin >> m;
 
@@ -88,6 +88,7 @@ int main() {
     delete [] edges;
     delete [] edgesT;
 }
+
 /*INPUTS
 Enter the no. of vertices : 6
 Enter the no. of edges  :7
@@ -102,8 +103,3 @@ Enter the no. of edges  :7
 OUTPUT
 6 5
 2 3 4 1 */
-
-
-
-
-
