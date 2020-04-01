@@ -14,8 +14,8 @@ int* makeTable(char* pattern) {
 	int j = 0; int i = 1 ;
 	memset(table, 0, sizeof(table));
 	for (i = 1; i <= patternSize; i++) {
-		while (j > 0 && pattern[i] != pattern[j]) {
-			j = table[j - 1];    // If there is a mismatch, move j one by one until the last match. At this time, j = table [j-1].
+		while (j > 0 && pattern[i] != pattern[j]) { // If there is a mismatch, move j one by one until the last match. At this time, j = table [j-1].
+			j = table[j - 1];   
 		}
 		if (pattern[i] == pattern[j]) {
 			table[i] = ++j; 
