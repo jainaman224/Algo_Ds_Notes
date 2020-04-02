@@ -1,5 +1,8 @@
 # implementing AhoCorasick using adjacency list
-
+#Algorithm:
+#1. Construct the trie, and then set its failure transitions.
+#2. After trie is constructed, traverse the trie while reading input text
+#3. Output the positions that where  the keywords are found.
 import collections
 
 AdjList = []  # declaring thr adjacency list
@@ -11,7 +14,6 @@ def init_trie(wordList):
 
 def createTrie():  # initializing a root of the trie
     AdjList.append({'character': ' ', 'nextState': [], 'failedState': 0, 'outputList': []})
-
 # character -> the character the root node is repesenting
 # nextStates -> list of ids of child nodes of the root node
 # failedState -> id of the failed state
@@ -88,7 +90,6 @@ def GetKeywords(words):
 
         if currState is None:
             currState = 0
-
         else:
             for j in AdjList[currState]["outputList"]:
                 start = i - len(j) + 1
