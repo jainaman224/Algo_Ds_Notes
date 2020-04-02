@@ -23,10 +23,10 @@ class LinkedList {
     Node * head;
     Node * tail;
     public:
-        LinkedList() {
-            head = NULL;
-            tail = NULL;
-        }
+    LinkedList() {
+        head = NULL;
+        tail = NULL;
+    }
     /*
 	this will add node to the linkedlist node and refer it to node type pointer
 	---------   ---------  	---------
