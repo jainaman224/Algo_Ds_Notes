@@ -10,6 +10,7 @@ package main
 
 import "fmt"
 
+//Extended Euclid Algorithm
 func inverse(a int, m int) (x1 int) {
     var m0 int = m
     x0 := 0
@@ -21,6 +22,10 @@ func inverse(a int, m int) (x1 int) {
         return 0
     }
 
+    // while the number is greater than 1
+    // keep on making (a,m) = (m,a%m)
+    // Go on reverse to find out x0 and x1 from there.
+    // where x1 will be the inverse modulo
     for a > 1 {
         quotient = a / m; next = m
         m = a % m
@@ -45,7 +50,8 @@ func CRT(number []int, rem []int, k int) int {
     }
 
     var result int = 0
-
+    
+    // Optimized CRT formula
     for i := 0; i < k; i++ {
         prod_exp = prod / number[i]
         result = result + rem[i] * inverse(prod_exp, number[i]) * prod_exp
