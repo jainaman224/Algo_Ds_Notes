@@ -1,8 +1,3 @@
-/**
-    Code contributed by Hardev Khandhar for GirlScript Summer of Code 2020
-    link: https://github.com/HardevKhandhar
-*/
-
 // C# Program for Boyer Moore String Matching Algorithm 
 
 using System;
@@ -40,7 +35,7 @@ public class Algorithm
         /* 
             s is used to keep track of 
             pattern shifting with respect to text
-	*/
+        */
 
         int s = 0; 
 
