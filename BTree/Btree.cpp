@@ -21,7 +21,7 @@ class create_tree_node
     public :
         
         int *Key;                       // An array of keys
-        int no_of_key;                  //total number of key value in a node
+        int no_of_key;                  // total number of key value in a node
         create_tree_node **child;       // An array of child pointers
         int count_of_keys;              // Current number of keys
         bool leaf;                      // Is true when node is leaf. Otherwise false
@@ -30,11 +30,12 @@ class create_tree_node
     {
         no_of_key = t1;
         leaf = leaf1;
-        count_of_keys = 0;            // Initialize the number of keys as 0
+        count_of_keys = 0;               // Initialize the number of keys as 0
         
         // Allocate memory for maximum number of possible keys and child pointers
         Key = new int[2*no_of_key-1];
         child = new create_tree_node *[2*no_of_key];
+     
     }
     
     // Function to split note and create new node
@@ -132,28 +133,30 @@ class create_tree_node
             cout <<"\n"<< Key[i];
         }
         
-        
         if (leaf == false)
             child[i]->traverse();
-    }
-    friend class btree;
+     }
+   
+     friend class btree;
+    
 };
 
 class btree
 {
 
     public:
-        create_tree_node  *root;    //pointer to root node
-        int t,temp;                 //min degree
+        
+        create_tree_node  *root;    // pointer to root node
+        int t,temp;                 // min degree
     
-        //contructor of class btree for initializes the root to null
+        // contructor of class btree for initializes the root to null
         btree(int t1)
         {
             root = NULL;
             t = t1;
         }
     
-         //tree traverse function
+        // tree traverse function
         void traverse()
         {
             if (root != NULL) root->traverse();
@@ -162,48 +165,50 @@ class btree
         //first call to insert the data in to tree
         void insert()
         {
-        cout<<" "<<"Enter the number to add"<<"\n" ;
-        cin>>temp;                              //value to be insert to tree
+            cout<<" "<<"Enter the number to add"<<"\n" ;
+            cin>>temp;                                // value to be insert to tree
         
-        if(root == NULL)                          //if tree is empty
-        {
-            root = new create_tree_node(t,true);  //create a memory location for root
-            root->Key[0] = temp;                  //assigning a key  to root node
-            root->count_of_keys = 1;              // update a number of key in node
-        }
-        
-        else
-        {
-            //check count of key in node is equal min degree the tree grown in height
-            if(root->count_of_keys == (2*t-1))
+            if(root == NULL)                          // if tree is empty
             {
-                //Allocate memory location for new root
-                create_tree_node *s = new create_tree_node(t,false);
-                s->child[0] = root;   // make a old root to child of new root
-                s->split(0,root);  //function to split old node by creating new node and move one 1 key in one node
-                int i = 0;
-                if (s->Key[0] < temp)
-                    i++;
-                s->child[i]->insertnonfull( temp);
-                root = s;
+                root = new create_tree_node(t,true);  // create a memory location for root
+                root->Key[0] = temp;                  // assigning a key  to root node
+                root->count_of_keys = 1;              // update a number of key in node
             }
-            
+        
             else
             {
-                root->insertnonfull( temp);
+                // check count of key in node is equal min degree the tree grown in height
+                if(root->count_of_keys == (2*t-1))
+                {
+                    // Allocate memory location for new root
+                    create_tree_node *s = new create_tree_node(t,false);
+                    s->child[0] = root;   // make a old root to child of new root
+                    s->split(0,root);  // function to split old node by creating new node and move one 1 key in one node
+                    int i = 0;
+                    if (s->Key[0] < temp)
+                        i++;
+                    s->child[i]->insertnonfull( temp);
+                    root = s;
+                 }
+            
+                else
+                {
+                    root->insertnonfull( temp);
+                }
             }
         }
-    }
 };
 
 int main()
 {
+    
     btree t(3);
     int opt;
     
     // infinte loop for inserting  or traverse or exit according to user choice
-    while(1){
-        
+    while(1)
+    {
+       
         cout<<" \npress 1 for insert \npress 2 for traverse \npress 3 for Exit ";
         
         cin>>opt;
@@ -211,15 +216,22 @@ int main()
         switch(opt)
         {
             case 1:
+                
                 t.insert();     // function call to inset of Btree class
                 break;
+            
             case 2:
+                
                 t.traverse();   // function call to traverse of Btree class
                 break;
+            
             case 3:
+               
                 exit(0);        // to exit from current working program
         }
+     
     }
+    
     return 0;
 }
 
