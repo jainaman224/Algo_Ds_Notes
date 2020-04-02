@@ -13,36 +13,38 @@
  */
 
 #include <iostream>
+
 using namespace std;
 
 class create_tree_node
 {
     public :
-    int *Key;                       // An array of keys
-    int no_of_key;                  //total number of key value in a node
-    create_tree_node **child;       // An array of child pointers
-    int count_of_keys;              // Current number of keys
-    bool leaf;                      // Is true when node is leaf. Otherwise false
+        
+        int *Key;                       // An array of keys
+        int no_of_key;                  //total number of key value in a node
+        create_tree_node **child;       // An array of child pointers
+        int count_of_keys;              // Current number of keys
+        bool leaf;                      // Is true when node is leaf. Otherwise false
     
-    create_tree_node(int t1,bool leaf1)
+    create_tree_node(int t1, bool leaf1)
     {
-        no_of_key=t1;
-        leaf=leaf1;
-        count_of_keys=0;            // Initialize the number of keys as 0
+        no_of_key = t1;
+        leaf = leaf1;
+        count_of_keys = 0;            // Initialize the number of keys as 0
         
         // Allocate memory for maximum number of possible keys and child pointers
-        Key=new int[2*no_of_key-1];
-        child=new create_tree_node *[2*no_of_key];
+        Key = new int[2*no_of_key-1];
+        child = new create_tree_node *[2*no_of_key];
     }
     
-    //Function to split note and create new node
+    // Function to split note and create new node
     void split(int i,create_tree_node *y)
     {
         // create a new node pointer
-        create_tree_node *z=new create_tree_node(y->no_of_key,y->leaf);
+        create_tree_node *z = new create_tree_node(y->no_of_key,y->leaf);
         
         // new node t-1 node
-        z->count_of_keys=no_of_key-1;
+        z->count_of_keys = no_of_key-1;
         
         // Copy the last (t-1) keys of y to z
         for (int j = 0; j < no_of_key-1; j++)
@@ -57,7 +59,7 @@ class create_tree_node
         
         y->count_of_keys = no_of_key - 1;
         
-        //create a space of new child in node
+        // create a space of new child in node
         for (int j = count_of_keys; j >= i+1; j--)
             child[j+1] = child[j];
         
@@ -147,8 +149,8 @@ class btree
         //contructor of class btree for initializes the root to null
         btree(int t1)
         {
-            root=NULL;
-            t=t1;
+            root = NULL;
+            t = t1;
         }
     
          //tree traverse function
@@ -163,23 +165,23 @@ class btree
         cout<<" "<<"Enter the number to add"<<"\n" ;
         cin>>temp;                              //value to be insert to tree
         
-        if(root==NULL)                          //if tree is empty
+        if(root == NULL)                          //if tree is empty
         {
-            root=new create_tree_node(t,true);  //create a memory location for root
-            root->Key[0]=temp;                  //assigning a key  to root node
-            root->count_of_keys=1;              // update a number of key in node
+            root = new create_tree_node(t,true);  //create a memory location for root
+            root->Key[0] = temp;                  //assigning a key  to root node
+            root->count_of_keys = 1;              // update a number of key in node
         }
         
         else
         {
             //check count of key in node is equal min degree the tree grown in height
-            if(root->count_of_keys==(2*t-1))
+            if(root->count_of_keys == (2*t-1))
             {
                 //Allocate memory location for new root
-                create_tree_node *s=new create_tree_node(t,false);
-                s->child[0]=root;   // make a old root to child of new root
+                create_tree_node *s = new create_tree_node(t,false);
+                s->child[0] = root;   // make a old root to child of new root
                 s->split(0,root);  //function to split old node by creating new node and move one 1 key in one node
-                int i=0;
+                int i = 0;
                 if (s->Key[0] < temp)
                     i++;
                 s->child[i]->insertnonfull( temp);
