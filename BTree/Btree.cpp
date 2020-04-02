@@ -162,7 +162,7 @@ class btree
             if (root != NULL) root->traverse();
         }
     
-        //first call to insert the data in to tree
+        // first call to insert the data in to tree
         void insert()
         {
             cout<<" "<<"Enter the number to add"<<"\n" ;
@@ -236,12 +236,14 @@ int main()
 }
 
 /*
- //Sample input :
+ 
+ // Sample input :
  10 21 31 41 51
- output
+ // output
  10 21 31 41 51
- //Sample input :
+ // Sample input :
  70 31 31 21 51
- output
+ // output
  21 21 31 51 70
- */
+ 
+*/
