@@ -105,6 +105,23 @@ public class BinaryIndexedTree
         // Find sum after the value is updated  
         Console.WriteLine("Sum of elements in arr[0..5]"+  
                     " after update is " + tree.getSum(5));  
+        //Sample input and output.
+        int []freq = {5, 1, 0, 3, 2, 1,  
+                    4, 2, 6, 4, 8, 9};  
+        int n = freq.Length;  
+        BinaryIndexedTree tree = new BinaryIndexedTree();  
+  
+        // Building fenwick tree from given array  
+        tree.constructBITree(freq, n);  
+  
+        Console.WriteLine("Sum of elements in arr[0..5]"+  
+                        " is "+ tree.getSum(5)); 
+        freq[3] += 6;  
+          
+        // Update BIT for above change in arr[]  
+        updateBIT(n, 3, 6);  
+        Console.WriteLine("Sum of elements in arr[0..5]"+  
+                    " after update is " + tree.getSum(5));
     }  
 }  
  
