@@ -8,12 +8,13 @@ the minimum time taken to cross the bridge.
 """
 
 def bridgeTorch(arr):
+    # Sorting all the Inputs
     arr.sort()                                  
     if len(arr)>3:                               
-        a = arr[0]+arr[-1]+min(2*arr[1],arr[0]+arr[-2])  
-        return  a + bridgeTorch(arr[:-2])                  
+        a = arr[0]+arr[-1]+min(2*arr[1],arr[0]+arr[-2]) #Calculating the Minimum Time
+        return  a + bridgeTorch(arr[:-2]) #Recursion on Remaining Inputs                 
     else:
-        return sum(arr[len(arr)==2:])   
+        return sum(arr[len(arr)==2:]) #If Length is less than 3, just add all the inputs
 
 # Driver Function
 if __name__ == "__main__":
