@@ -1,8 +1,6 @@
 /* 
-
 Burkhard Keller Tree is a popular String Matching Algorithm which is used to
 perform spell checks based on the concept of Levenshtein distance.
-
 */
 #include <iostream>
 #include <vector>
@@ -46,7 +44,6 @@ BKTree::~BKTree(){
 }
 
 // Insertion Operation into BK Tree
-
 void BKTree::insert_into(strlist& Names){
     for (auto& i : Names)
         insert(i, root);
@@ -65,7 +62,6 @@ void BKTree::insert(std::string& Name, Node*& node){
 }
 
 // Deletion Operation in BK Tree
-
 void BKTree::delete_node(Node* node){
 
     if (node == nullptr)
@@ -78,7 +74,6 @@ void BKTree::delete_node(Node* node){
 }
 
 // Search Operation in BK Tree
-
 strlist BKTree::search(std::string Name, int target_dist){
     strlist suggestion_points;
 
@@ -143,20 +138,28 @@ int BKTree::d(std::string& test, std::string& comp){
 int main(void){
     std::string Name = "Root";
     BKTree tree(Name);
+    std::cout<<"Enter the Strings in the Dictionary: (Press 1 to exit)"<<std::endl;
     strlist dictionary;
-    dictionary={"hell", "help", "shel", "smell", "fell", "felt", "oops", "pop", "oouch", "halt"};
+    dictionary={};
+    std::string input;
+    while(std::cin>>input){
+      if(input=="1") {break;}
+      dictionary.push_back(input);
+    }
 
     tree.insert_into(dictionary);
-    
-    strlist test = tree.search("oo", 2);
+    std::string searchStr;
+    std::cout<<"Enter the String that needs to be checked:"<<std::endl;
+    std::cin>>searchStr;
+    strlist test = tree.search(searchStr, 2);
     for(auto& i : test)
         std::cout << i << std::endl;
     return 0;
 }
+
 /*
 Sample Input: 
 dictionary={"hell","help","shel","smell","fell","felt","oops","pop","oouch","halt"};
-
 Sample Output: 
 pop
 */
