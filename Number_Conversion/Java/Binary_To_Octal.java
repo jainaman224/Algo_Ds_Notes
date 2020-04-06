@@ -4,7 +4,7 @@ public class Binary_To_Octal
 {
     public static void binToOctal(long num)
     {  
-         int n = 0,decimal = 0;
+         int n = 0, decimal = 0;
 	  //converting binary to decimal
 	  while(num > 0)
 	  {
@@ -26,7 +26,6 @@ public class Binary_To_Octal
 	  for(int j = i-1 ; j >= 0 ; j--)
 	      System.out.print(octal[j]); 
       } 
-
       public static void main(String[] args)
       {
           long num;
@@ -37,7 +36,6 @@ public class Binary_To_Octal
           sc.close();
       }
 }
-
 /*
 Input:
 1011001010
