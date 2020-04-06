@@ -10,9 +10,10 @@ public class Binary_To_Octal
 	  {
 	       long temp = num % 10;  
 	       decimal += temp * Math.pow(2, n);  
-	        num = num / 10;  
-	        n++;  
+	       num = num / 10;  
+	       n++;  
 	  }
+	    
 	  //decimal to octal
 	  int octal[] = new int[20];
 	  int i = 0;
