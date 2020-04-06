@@ -19,7 +19,7 @@ public class Binary_To_Octal
 	  int i = 0;
 	  while(decimal > 0)
 	  {
-	      int t = decimal % 8;
+              int t = decimal % 8;
 	      octal[i++] = t;
        	      decimal = decimal / 8;
 	  }
