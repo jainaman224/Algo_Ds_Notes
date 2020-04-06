@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
 class Node {
@@ -33,6 +32,7 @@ class LinkedList {
 	| 0  |   |->| 1  |   |->| 2  |   |->NULL
 	---------   ---------   ---------
     */
+	
     // here, we insert node to the queue
     void addNode(int data) {
         // if head node is empty, then, initialize it.
@@ -48,6 +48,7 @@ class LinkedList {
             tail = node;
         }
     }
+	
     void rev() {
         // Initialize current=head, previous=NULL and 
         // next_node=NULL 
@@ -75,6 +76,7 @@ class LinkedList {
         }
         cout << endl;
     }
+	
     ~LinkedList() {
         delete head;
         delete tail;
@@ -100,13 +102,14 @@ int main() {
     free(linkedList);
     return 0;
 }
+/*
+Enter the number of node in linked list: 10
 
-//Enter the number of node in linked list: 10
-//
-//Before Reverse
-//Linked List:
-//1 2 3 4 5 6 7 8 9 10
-//
-//After Reverse
-//Linked List:
-//10 9 8 7 6 5 4 3 2 1
+Before Reverse
+Linked List:
+1 2 3 4 5 6 7 8 9 10
+
+After Reverse
+Linked List:
+10 9 8 7 6 5 4 3 2 1
+*/
