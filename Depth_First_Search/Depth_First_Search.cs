@@ -42,19 +42,22 @@ class DirectedGraph
     
   public static void Main(String[] args) 
     { 
-        DirectedGraph newgraph = new DirectedGraph(4); 
+        DirectedGraph newgraph = new DirectedGraph(4);
+        Console.WriteLine("Number of edges to enter");
+        int n = Convert.ToInt32(Console.ReadLine());
+        
+        for(int i=0;i<n;i++){
+          int x = Convert.ToInt32(Console.ReadLine());
+          int y = Convert.ToInt32(Console.ReadLine());
+          newgraph.Addition_of_Edge(x, y);
+        }
   
-        newgraph.Addition_of_Edge(0, 2); 
-        newgraph.Addition_of_Edge(0, 1); 
-        newgraph.Addition_of_Edge(2, 1); 
-        newgraph.Addition_of_Edge(2, 0); 
-        newgraph.Addition_of_Edge(3, 2); 
-        newgraph.Addition_of_Edge(2, 2); 
-  
-        Console.WriteLine("Depth First Search Traversal starting from vertex 3 is :"); 
-        newgraph.Depth_First_Search(3); 
+        Console.WriteLine("Enter vertex which is the starting point");
+        int s = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Depth First Search Traversal starting from vertex " + s + " is : "); 
+        newgraph.Depth_First_Search(s); 
     } 
 } 
-
+// Sample input: 0 2 0 1 2 1 2 0 3 2 2 2
+//               3
 // Sample OP: 3 2 1 0
-   
