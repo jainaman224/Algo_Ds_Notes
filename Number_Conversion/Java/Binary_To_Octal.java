@@ -14,7 +14,6 @@ public class Binary_To_Octal
 	       n++;  
 	  }
 	    
-	  //decimal to octal
 	  int octal[] = new int[20];
 	  int i = 0;
 	  while(decimal > 0)
