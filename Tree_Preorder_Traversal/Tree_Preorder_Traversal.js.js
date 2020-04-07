@@ -1,75 +1,74 @@
+
 //Tree_Preorder_Traversal in javascript
 class Node
 {
-  constructor(data)
-  {
-    this.data = data;
-    this.left = null; //left child of the node
-    this.right = null; //right child of the node
-  }
+    constructor(data)
+    {
+        this.data = data;
+        this.left = null; //left child of the node
+        this.right = null; //right child of the node
+    }
 }
-
 class BinarySearchTree
 {
-  constructor()
-  {
-    this.root = null;
-  }
+    constructor()
+    {
+        this.root = null;
+    }
 //data inserting in tree
-  insert(data)
-  {
+insert(data)
+{
     let node = new Node(data);
     if(this.root == null)
     {
-      this.root = node;
+        this.root = node;
     }
     else
     {
       this.insertNode(this.root, node);
     }
-  }
-  
-  insertNode(root, newNode)
-  {
+}
+insertNode(root, newNode)
+{
     if(newNode.data < root.data)
     {
-      if(root.left == null)
-      {
-        root.left = newNode;
-      }
-      else
-      {
-        this.insertNode(root.left, newNode);
-      }
+        if(root.left == null)
+        {
+            root.left = newNode;
+        }
+        else
+        {
+            this.insertNode(root.left, newNode);
+        }
     }
     else if(newNode.data > root.data)
     {
-      if(root.right == null)
-      {
-        root.right = newNode;
-      }
-      else
-      {
-        this.insertNode(root.right, newNode);
-      }
+        if(root.right == null)
+        {
+            root.right = newNode;
+        }
+        else
+        {
+            this.insertNode(root.right, newNode);
+        }
     }
-  }
-  
-  getRootNode()
-  {
+}
+getRootNode()
+{
     return this.root; 
-  }
-  //function of preorder traversal
-  preorder(root)
-  {
+}
+//function of preorder traversal
+preorder(root)
+{
     if(root != null)
     {
-      console.log(root.data); // first line - P L R
-      this.preorder(root.left); // second line
-      this.preorder(root.right); // third line
+        console.log(root.data); // first line - P L R
+        this.preorder(root.left); // second line
+        this.preorder(root.right); // third line
     }
-  }
 }
+}
+
 var bst = new BinarySearchTree();
 //tree data insertion statically
 bst.insert(3);
@@ -90,4 +89,5 @@ Preorder Traversal:
 5
 4
 6
+
 */
