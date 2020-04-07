@@ -12,12 +12,13 @@ and used to flip all pancakes above it. A pancake number is the minimum number o
 Unlike a traditional sorting algorithm, which attempts to sort with the fewest comparisons possible, the goal is to sort the sequence in as few reversals as possible.
 
 Following are the detailed steps. Let given array be arr[] and size of array be n.
+```
 1. Start from current size equal to n and reduce current size by one while it’s greater than 1.
-1. Let the current size be current_size. Do following for every current_size.
-   - Find index of the maximum element in arr[0..current_szie-1]. Let the index be ‘max_index’.
-   - Call flip(arr, max_index).
-   - Call flip(arr, current_size-1).
+2. Let the current size be current_size. Do following for every current_size.
+      Find index of the maximum element in arr[0..current_szie-1]. Let the index be ‘max_index’.
+      Call flip(arr, max_index).
+      Call flip(arr, current_size-1).
+```
+**Time complexity** : O(n<sup>2</sup>)
 
-
-
-
+**Space complexity** : log(n)
