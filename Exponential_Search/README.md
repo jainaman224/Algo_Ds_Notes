@@ -44,21 +44,29 @@ Input: An sorted array, start and end location, and the search key.
 
 Output: location of the key (if found), otherwise wrong location.
 
-1. Begin
-   2. if (end – start) <= 0 then
-        3. return invalid location
+ Begin
    
-   4. i := 1
+   if (end – start) <= 0 then
+       
+       return invalid location
    
-   5. while i < (end - start) do
-      6. if array[i] < key then   
-         7. i := i * 2 //increase i as power of 2
-      8. else
-         9. terminate the loop
+   i := 1
    
-   10. done
-   11. call binarySearch(array, i/2, i, key)
-12. End
+  while i < (end - start) do
+      
+      if array[i] < key then   
+          
+          i := i * 2 //increase i as power of 2
+      
+      else
+        
+        terminate the loop
+   
+    done
+   
+   call binarySearch(array, i/2, i, key)
+ 
+ End
 
 
 ## Example
