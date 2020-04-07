@@ -46,15 +46,23 @@ Output: location of the key (if found), otherwise wrong location.
 
 Begin
    if (end – start) <= 0 then
+   
       return invalid location
    i := 1
+   
    while i < (end - start) do
+      
       if array[i] < key then
+         
          i := i * 2 //increase i as power of 2
+      
       else
+         
          terminate the loop
    done
+   
    call binarySearch(array, i/2, i, key)
+
 End
 
 
