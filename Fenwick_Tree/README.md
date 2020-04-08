@@ -32,8 +32,6 @@ Then we call update() operation for all indexes to insert values according to gi
 ...b) Go to parent of BITree[index].  The parent can be obtained by incrementing
      the last set bit of the current index, i.e., index = index + (index & (-index))
 
-     ![alt text](https://media.geeksforgeeks.org/wp-content/cdn-uploads/BITUpdate12.png)
-
 The update function needs to make sure that all the BITree nodes which contain arr[i] within their ranges being updated. We loop over such nodes in the BITree by repeatedly adding the decimal number corresponding to the last set bit of the current index.
 
  2. getSum()
@@ -44,10 +42,6 @@ The update function needs to make sure that all the BITree nodes which contain a
 ...b) Go to the parent of BITree[index].  The parent can be obtained by removing
      the last set bit from the current index, i.e., index = index - (index & (-index))
 3) Return sum.
-
-![alt text](https://media.geeksforgeeks.org/wp-content/cdn-uploads/BITSum.png)
-
-The diagram above provides an example of how getSum() is working. Here are some important observations.
 
 BITree[0] is a dummy node.
 
@@ -60,20 +54,31 @@ The child node BITree[x] of the node BITree[y] stores the sum of the elements be
 ## Algorithm
 
 #define LSB(i) ((i) & -(i)) // zeroes all the bits except the least significant one
+
 //One based indexing is assumed
+
 int A[SIZE+1];
 
 int sum(int i) // Returns the sum from index 1 to i
+
 {
+
     int sum = 0;
+    
     while (i > 0)
-        sum += A[i], i -= LSB(i);
+         
+         sum += A[i], i -= LSB(i);
+    
     return sum;
+
 }
 
 void add(int i, int k) // Adds k to element with index i
+
 {
+
     while (i <= SIZE)
+        
         A[i] += k, i += LSB(i);
 }
 
