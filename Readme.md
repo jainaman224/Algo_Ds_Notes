@@ -1,39 +1,78 @@
-# Kosaraju's Algorithm
+# RSA Algorithm
 
-Kosaraju's algorithm (also known as Kosaraju–Sharir algorithm) is a linear time algorithm to find the strongly connected components of a directed graph. Aho, Hopcroft and Ullman credit it to S. Rao Kosaraju and Micha Sharir. Kosaraju suggested it in 1978 but did not publish it, while Sharir independently discovered it and published it in 1981. It makes use of the fact that the transpose graph (the same graph with the direction of every edge reversed) has exactly the same strongly connected components as the original graph.
+RSA (Rivest–Shamir–Adleman) is an algorithm used by modern computers to encrypt and decrypt messages. It is an asymmetric cryptographic algorithm. Asymmetric means that there are two different keys. This is also called public key cryptography, because one of the keys can be given to anyone. The other key must be kept private. The algorithm is based on the fact that finding the factors of a large composite number is difficult: when the factors are prime numbers, the problem is called prime factorization. It is also a key pair (public and private key) generator.
 
-## Strongly Connected Components
+It implements a trapdoor function such as Diffie’s one.
 
-A graph can be said strongly connected if every vertex can be reached by every other vertex. The strongly connected components of an arbitrary directed graph form a partition into subgraphs that are themselves strongly connected. 
+RSA is rather slow so it’s hardly used to encrypt data , more frequently it is used to encrypt and pass around symmetric keys which can actually deal with encryption at a faster speed.
 
-## Uses of SCC algorithms
+## Idea 
 
-In case of social network ( like a group of students or any other community) there are common pages which people like, common games they play or common places they visit. These can be considered as strongly connected communities. The SCC algorithms can be of use here. By using them websites can suggest the commonly liked pages,games,places etc. to people who have not liked them yet but are part of the group.
+The public key consists of two numbers where one number is multiplication of two large prime numbers. And private key is also derived from the same two prime numbers. So if somebody can factorize the large number, the private key is compromised. Therefore encryption strength totally lies on the key size and if we double or triple the key size, the strength of encryption increases exponentially. RSA keys can be typically 1024 or 2048 bits long, but experts believe that 1024 bit keys could be broken in the near future. But till now it seems to be an infeasible task.
+
+## Mechanism
+
+For this example we will be using small prime numbers, just for easy understanding, but in actual implementation the numbers are required to be very large for better encryption.
+
+### Generating Public Key :
+    Select two prime no's. Suppose P = 53 and Q = 59.
+    Now First part of the Public key  : n = P*Q = 3127.
+
+        We also need a small exponent say e : 
+
+        But e Must be 
+                    1.  An integer.
+            2.  Not be a factor of n.
+            3.  1 < e < Φ(n) [Φ(n) is discussed below], 
+
+    Let us now consider it to be equal to 3.
+
+    --- Our Public Key is made of n and e---
+
+### Generating Private Key :
+
+  1. We need to calculate Φ(n) :
+     Such that Φ(n) = (P-1)(Q-1)     
+     so,  Φ(n) = 3016
+
+
+  2. Now calculate Private Key, d : 
+     d = (k*Φ(n) + 1) / e for some integer k
+     For k = 2, value of d is 2011.      
+
+------Here we now have our PUBLIC KEY (n = 3127 & e = 3) and PRIVATE KEY (d = 2011)---------------
+
+### Encryption
+
+    Step 1. Convert letters to numbers 
+            as A = 1, B = 2 etc.
+
+        Let us take an example of message "HI".
+
+        H = 8 , I = 9
+
+    Step 2. Thus **Encrypted Data c = 89e mod n**. 
+            Thus our Encrypted Data comes out to be 1394
+
+### Decryption 
+
+    Now we will decrypt 1394 : 
+
+        **Decrypted Data = cd mod n**. 
+        Thus our Encrypted Data comes out to be 89.
+
+        8 = H and I = 9 i.e. "HI".
+
 
 ## Implementation
 
-    Step 1. - Create an empty stack and do DFS traversal of a graph.
+- [C code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/RSA_Algorithm/RSA_Algorithm.c)
 
-    Step 2. - In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack.
+- [C++ Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/RSA_Algorithm/RSA_Algorithm.cpp) 
 
-    Step 3. - Find the transpose of the graph by reversing all arcs.
+- [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/RSA_Algorithm/RSA_Algorithm.py)
 
-    Step 4. - One by one pop a vertex from stack while stack is not empty.  
-
-    Step 5. - Let the popped vertex be ‘v’. Take v as source and do DFS (call DFSUtil(v)).\
-
-    Step 6. - The DFS starting from v prints strongly connected component of v. 
-
-
-
-### Time Complexity
-
-    O(V + E) - This algorithm uses DFS for a graph represented using adjacency list O(V + E) and reversing a graph also takes O(V + E). This algorithm is asymptotically best algorithm.
-
-
-## Implementation
-
-- [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Kosaraju_Algorithm/Kosaraju_Algorithm.py)
+- [Java Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/RSA_Algorithm/RSA_Algorithm.java)
 
 ## References 
-- Wikipedia and GeeksforGeeks.
+- Wikipedia.
