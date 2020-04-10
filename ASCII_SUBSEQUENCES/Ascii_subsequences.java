@@ -4,7 +4,7 @@ public class Ascii_Subsequences {
 	
     public static void main(String args[]) {
 	   
-        /* in this problem we have to find all the possible ascii subsequences
+        /* In this problem we have to find all the possible ascii subsequences
          * of the given string */
     
         Scanner obj = new Scanner(System.in);
