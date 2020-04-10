@@ -8,12 +8,12 @@ public class Ascii_Subsequences {
          * of the given string */
     
         Scanner obj = new Scanner(System.in);
-	String str = obj.next();
+	    String str = obj.next();
 	    
-	int ans = find(str, ""); 
+	    int ans = find(str, ""); 
 	
-	System.out.println();
-	System.out.println(ans); 
+	    System.out.println();
+	    System.out.println(ans); 
 	
     }
 
@@ -22,8 +22,8 @@ public class Ascii_Subsequences {
         if (str.length() == 0) {
             
             System.out.print(ans + " ");
-	    return 1;  		
-	}
+	        return 1;  		
+	    }
 
         char ch = str.charAt(0);
         
