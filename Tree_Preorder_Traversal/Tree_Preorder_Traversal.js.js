@@ -9,6 +9,7 @@ class Node
         this.right = null; //right child of the node
     }
 }
+
 class BinarySearchTree
 {
     constructor()
@@ -16,57 +17,61 @@ class BinarySearchTree
         this.root = null;
     }
 //data inserting in tree
-insert(data)
-{
-    let node = new Node(data);
-    if(this.root == null)
+
+    insert(data)
     {
-        this.root = node;
-    }
-    else
-    {
-      this.insertNode(this.root, node);
-    }
-}
-insertNode(root, newNode)
-{
-    if(newNode.data < root.data)
-    {
-        if(root.left == null)
+        let node = new Node(data);
+        if(this.root == null)
         {
-            root.left = newNode;
+            this.root = node;
         }
         else
         {
-            this.insertNode(root.left, newNode);
+            this.insertNode(this.root, node);
         }
     }
-    else if(newNode.data > root.data)
+
+    insertNode(root, newNode)
     {
-        if(root.right == null)
+        if(newNode.data < root.data)
         {
-            root.right = newNode;
+            if(root.left == null)
+            {
+                root.left = newNode;
+            }
+            else
+            {
+                this.insertNode(root.left, newNode);
+            }
         }
-        else
+        else if(newNode.data > root.data)
         {
-            this.insertNode(root.right, newNode);
+            if(root.right == null)
+            {
+                root.right = newNode;
+            }
+            else
+            {
+                this.insertNode(root.right, newNode); 
+            }
         }
     }
-}
-getRootNode()
-{
-    return this.root; 
-}
+
+    getRootNode()
+    {
+        return this.root;
+    }
 //function of preorder traversal
-preorder(root)
-{
-    if(root != null)
+    
+    preorder(root)
     {
-        console.log(root.data); // first line - P L R
-        this.preorder(root.left); // second line
-        this.preorder(root.right); // third line
+        if(root != null)
+        {
+            console.log(root.data); // first line - P L R
+            this.preorder(root.left); // second line
+            this.preorder(root.right); // third line
+        }
     }
-}
 }
 
 var bst = new BinarySearchTree();
