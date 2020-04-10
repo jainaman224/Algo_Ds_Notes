@@ -40,10 +40,10 @@ The factor 2 in the maximum depth is arbitrary; it can be tuned for practical pe
 
 ### Example
 
-Input:
+**Input:**
   2,10,24,2,10,11,27,4,2,4,28,16,9,8,28,10,13,24,22,28,0,13,27,13,3,23,18,22,8,8
 
-Step 1:
+**Step 1:**
       begin=0, end=29
       depthLimit=8,
        a[pivot]=8
@@ -52,7 +52,7 @@ The method partition() finds the correct position of the a[pivot] and helps in a
 Here,the element 8(in comment)lies in the correct position and in the further steps recursion will be carried over for the sub array before and after 8.
  2,2,4,2,4,8,0,3,8,/8/,28,16,9,11,28,10,13,24,22,28,27,13,27,13,24,23,18,22,10,10 
 
-Step 2: 
+**Step 2:**
    From the previous step,
    begin=0, end=29,
    a[pivot]=8
@@ -65,8 +65,8 @@ Step 2:
 
 0,2,2,2,3,4,4,8,8,  8,   16,9,11,10,13,24,22,10,13,27,13,24,23,18,22,10,  27,  28,28,28
 
-Step 3 :
- From the previous step, depthLimit=6,begin=10, end=29
+**Step 3:**
+  From the previous step, depthLimit=6,begin=10, end=29
  The recursion starts fo the sub-array a[begin,partition-1] and a[partition+1,end]
 
      0,2,2,2,3,4,4,8,8,8,16,9,11,10,13,24,22,10,13,27,13,24,23,18,22,10,27,28,28,28
@@ -80,7 +80,7 @@ Step 3 :
        Sorted!                               Sorted!                    Sorted!                        
   hence no further recursion      hence no further recursion                               hence no further recursion
                                        
-Step 4:  
+**Step 4:** 
    output:
        0,2,2,2,3,4,4,8,8,8,9,10,10,11,13,13,13,16,18,22,22,23,24,24,27,27,28,28,28
      In the above example, the depthLimit came until 6, and for bigger datasets the depthLimit might reach 0 for certain sub-array.
