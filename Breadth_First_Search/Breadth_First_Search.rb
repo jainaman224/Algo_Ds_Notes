@@ -1,8 +1,3 @@
-=begin
-    Code contributed by Hardev Khandhar for GirlScript Summer of Code 2020
-    link: https://github.com/HardevKhandhar
-=end
-
 ## Breadth First Search algorithm in Ruby.
 
 def breadth_first_search(adj_matrix, source, destination)
@@ -63,12 +58,15 @@ end
 
 ## User input for Source Node and Destination Node
 
+puts "\nEnter Source Node: "
+source = gets.to_i
+
 puts "\nEnter Destination Node: "
 destination = gets.to_i
 
 ## Passing the adjacent matrix, source and destination as arguments to the algorithm.
 
-breadth_first_search(adj_matrix, 0, destination)
+breadth_first_search(adj_matrix, source, destination)
 
 =begin
 
@@ -81,6 +79,8 @@ Enter the values of row 2: 1 0 0 0
 Enter the values of row 3: 1 0 1 0
 
 Enter the values of row 4: 0 1 0 0
+
+Enter Source Node: 0
 
 Enter Destination Node: 2
 
