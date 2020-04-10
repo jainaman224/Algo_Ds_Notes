@@ -4,16 +4,16 @@ public class Ascii_Subsequences {
 	
     public static void main(String args[]) {
 	   
-	    /* in this problem we have to find all the possible ascii subsequences
+        /* in this problem we have to find all the possible ascii subsequences
          * of the given string */
     
         Scanner obj = new Scanner(System.in);
-	    String str = obj.next();
+	String str = obj.next();
 	    
-	    int ans = find(str, ""); 
+	int ans = find(str, ""); 
 	
-	    System.out.println();
-	    System.out.println(ans); 
+	System.out.println();
+	System.out.println(ans); 
 	
     }
 
@@ -31,7 +31,7 @@ public class Ascii_Subsequences {
         int y = find(str.substring(1), ans + ch); // when ch is added to the ans
         int z = find(str.substring(1), ans + (int) ch); // when ch's ascii code is added to the ans
 
-	    return x + y + z; //the count for this frame will be sum of x,y,z
+        return x + y + z; //the count for this frame will be sum of x,y,z
         
     }
 }
