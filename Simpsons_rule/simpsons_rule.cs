@@ -34,9 +34,9 @@ public class simpsonRule
 	        res += 4 * fx[i]; 
 	    else
 	        res += 2 * fx[i]; 
-	    } 
-	res = res * (h / 3); 
-	return res; 
+	} 
+    res = res * (h / 3); 
+    return res; 
     } 
 	
     // MAIN FUNCTION 
@@ -63,4 +63,4 @@ Inout lower limit, upper limit and interval : 2
 9
 6
 Result : 11.38688
-*?
+*/
