@@ -21,9 +21,9 @@ public class Ascii_Subsequences {
 	    
         if (str.length() == 0) {
             
-	        System.out.print(ans + " ");
-	        return 1;  
-	    }
+            System.out.print(ans + " ");
+	    return 1;  		
+	}
 
         char ch = str.charAt(0);
         
