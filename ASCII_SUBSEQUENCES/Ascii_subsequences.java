@@ -7,7 +7,7 @@ public class Ascii_Subsequences {
         /* In this problem we have to find all the possible Ascii subsequences
          * of the given string */
     
-        Scanner obj = new Scanner(System.in);
+            Scanner obj = new Scanner(System.in);
 	    String str = obj.next();
 	    
 	    int ans = find(str, ""); 
