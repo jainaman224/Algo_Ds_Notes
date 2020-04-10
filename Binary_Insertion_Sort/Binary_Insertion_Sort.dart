@@ -1,7 +1,6 @@
 /* Binary Insertion sort is a special type up of Insertion sort which uses binary search algorithm to find out the correct position 
    of the inserted element in the array. */
 
-CODE:
 
 void insertionSort(List ar)
 {
@@ -26,9 +25,9 @@ void insertionSort(List ar)
 
 int binarySearch(List ar, int key, int start, int end)
 {
-    if(end-start <= 1)
+    if (end-start <= 1)
     {
-        if(key < ar[start])
+        if (key < ar[start])
         {
             return start - 1;
         }
@@ -38,11 +37,11 @@ int binarySearch(List ar, int key, int start, int end)
 		}
 	}
 	int mid = (start + end) ~/ 2;
-	if(ar[mid] < key)
+	if (ar[mid] < key)
 	{
 		return binarySearch(ar, key, mid, end);
 	}
-	else if(ar[mid] > key)
+	else if (ar[mid] > key)
 	{
 		return binarySearch(ar, key, start, mid);
 	}
@@ -58,7 +57,7 @@ main()
 	int n = ar.length;
 	insertionSort(ar);
 	print("Sorted Array: ");
-	for(int i = 0;i < n; i++)
+	for (int i = 0;i < n; i++)
 	{
 		print(ar[i]);
 	}
