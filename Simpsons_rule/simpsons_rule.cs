@@ -9,20 +9,23 @@ public class simpsonRule
     {
     return (float)Math.Log(x); 
     } 
+	
     // Function for approximate integral 
     static float simpsons_(float ll, float ul, int n) 
     { 
+    float res = 0;	    
     float h = (ul - ll) / n; 
     float[] x = new float[10]; 
     float[] fx = new float[10]; 
+	    
     // Calculatiion of x and f(x) 
         for (int i = 0; i <= n; i++) 
         { 
         x[i] = ll + i * h; 
         fx[i] = func(x[i]); 
         } 
+	    
     // Result Calculation
-    float res = 0;
         for (int i = 0; i <= n; i++) 
         { 
             if (i == 0 || i == n) 
@@ -35,12 +38,14 @@ public class simpsonRule
 	res = res * (h / 3); 
 	return res; 
     } 
+	
     // MAIN FUNCTION 
     public static void Main() 
     {  
     string val;
     int n;
     float lower_limit, upper_limit;
+	    
     Console.WriteLine("Input lower limit, upper limit and internal : ");
     lower_limit = float.Parse(Console.ReadLine());
     upper_limit = float.Parse(Console.ReadLine());
