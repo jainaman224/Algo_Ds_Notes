@@ -34,7 +34,7 @@ public class simpsonRule
 	        res += 4 * fx[i]; 
 	    else
 	        res += 2 * fx[i]; 
-	} 
+	    } 
 	res = res * (h / 3); 
 	return res; 
     } 
