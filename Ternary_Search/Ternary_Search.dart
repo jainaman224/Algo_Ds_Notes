@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-int Ternary_Search(array, left , right, desired)
+int Ternary_Search(array, left ,right, desired)
 {
     if(right >= left)
     {
@@ -66,23 +66,23 @@ void main()
     }
 }
 
-/* Input
+/* 
+Input
 Number of elements = 7
 array = [1,2,3,4,5,6,7]
 Desired element = 6
-*/
 
-/* Output
+Output
 Found
 */
 
 
-/* Input
+/* 
+Input
 Number of elements = 7
 array = [1,2,3,4,5,6,7]
 Desired element = 9
-*/
 
-/* Output
+Output
 Not Found
 */
