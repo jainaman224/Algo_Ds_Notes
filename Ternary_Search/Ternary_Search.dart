@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-int Ternary_Search(array, left ,right, desired)
+int Ternary_Search(array, left, right, desired)
 {
     if(right >= left)
     {
