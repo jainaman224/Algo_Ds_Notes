@@ -76,7 +76,6 @@ Output
 Found
 */
 
-
 /* 
 Input
 Number of elements = 7
