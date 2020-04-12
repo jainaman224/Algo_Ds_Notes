@@ -5,18 +5,17 @@
 //Vertices count in the Graph
 #define A 4
 
-//Defining inf(infinite) as a large value.
+//Defining INF(infinite) as a large value.
 //It's used for non-connected vertices
-#define inf 999999
+#define INF 999999
 
 //Declaring a function to print the solution matrix
 void solution(int dist[][A]);          
 
 //Function to solve ALL-PAIR SHORTEST PATH problem
 //using Floyd Warshall Algorithm
-void Floyd_Warshall (int graph[][A])
+void floyd_warshall (int graph[][A])
 {
-
     //Final result will be held in dist[][]
     int dist[A][A], i, j, k;
 
@@ -52,8 +51,8 @@ void solution(int dist[][A])
     {
         for (int j = 0; j < A; j++)
         {
-            if (dist[i][j] == inf)
-                printf("%7s", "inf");
+            if (dist[i][j] == INF)
+                printf("%7s", "INF");
             else
                 printf ("%7d", dist[i][j]);
         }
@@ -63,18 +62,16 @@ void solution(int dist[][A])
 
 int main()
 {
-
-    int graph[A][A] = { {0,   9,  inf, 8},
-                        {inf, 0,   6, inf},
-                        {inf, inf, 0,   5},
-                        {inf, inf, inf, 0}
+    int graph[A][A] = {{0, 9, INF, 8},
+                       {INF, 0, 6, INF},
+                       {INF, INF, 0, 5},
+                       {INF, INF, INF, 0}
                       };
 
     //Calling function to execute Floyd Warshall Algorithm
-    Floyd_Warshall(graph);
+    floyd_warshall(graph);
     return 0;
 }
-
 
 //Sample Input :
 
@@ -88,13 +85,13 @@ int main()
        (1)------->(2)
             6
 
-    OUTPUT :
+OUTPUT :
 
-    The following matrix shows the shortest distance between
-    every pair of vertices:
+The following matrix shows the shortest distance between
+every pair of vertices:
 
           0     9    15    8
-        inf     0     6   11
-        inf   inf     0    5
-        inf   inf   inf    0 
+        INF     0     6   11
+        INF   INF     0    5
+        INF   INF   INF    0 
 */
