@@ -3,7 +3,7 @@
 
 void sort(int a[], int n)
 {
-    int writes = 0,start,element,pos,temp,i;
+    int writes = 0, start, element, pos, temp, i;
     
     // Find position where we put the element.
     for (start = 0; start <= n - 2; start++) {
@@ -50,22 +50,24 @@ void sort(int a[], int n)
 int main()
 {
     int a[50], size;
-    printf("Enter number of elements/n");
-    scanf("%d",&size);
+    printf("Enter number of elements /n");
+    scanf("%d", &size);
     printf("Enter array elements: \n");
-    for(int i=0;i<size;i++)
+    for(int i = 0; i < size; i++)
     {
-        printf("a[%d] :",i);
-        scanf("%d",&a[i]);
+        printf("a[%d] :", i);
+        scanf("%d", &a[i]);
     }
   
     sort(a, size);
     printf("After sort, array : \n");
     for (int i = 0; i < size; i++)
-        printf("%d ",a[i]);
+        printf("%d " , a[i]);
     return 0;
 }
+
 /*Output-
+ 
 Enter number of elements/n6
 Enter array elements:
 a[0] :3
