@@ -89,18 +89,3 @@ OUTPUT
 Ans is 100
 */
 
-
-
-/*
-TEST CASE
-
-INPUT
-2
-600000
-250000
-
-OUTPUT
-577500
-250000
-*/
-
