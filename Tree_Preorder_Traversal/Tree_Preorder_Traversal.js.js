@@ -16,7 +16,7 @@ class BinarySearchTree
     {
         this.root = null;
     }
-//data inserting in tree
+    //data inserting in tree
 
     insert(data)
     {
@@ -61,7 +61,7 @@ class BinarySearchTree
     {
         return this.root;
     }
-//function of preorder traversal
+    //function of preorder traversal
     
     preorder(root)
     {
