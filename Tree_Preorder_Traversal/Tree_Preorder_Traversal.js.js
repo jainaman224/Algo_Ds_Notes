@@ -1,5 +1,5 @@
 
-    //Tree_Preorder_Traversal in javascript
+//Tree_Preorder_Traversal in javascript
 class Node
 {
     constructor(data)
