@@ -1,10 +1,10 @@
-﻿# KMP
+﻿# Knuth-Morris Pratt Algorithm
 
 1. It was invented by Donald Knuth and Vaughan Pratt.
 2. It was the first linear time complexity algorithm for string matching which is used to find a pattern in a text.
 3. This algorithm compares character by character from left to right.
 
-**Components of KMP**
+**Components of Knuth-Morris Pratt algorithm**
 + Prefix Table:In this algorithm whenever a mismatch occurs,it uses a preprocessed table known as Prefix Table to skip characters comparison while matching.
 + LPS Table:It stands for Longest proper Prefix which is also suffix.Sometimes prefix table is also known as LPS Table.
 
@@ -58,7 +58,7 @@ Begin
 
 **Output**: The location where patterns are found.
 
-#### HOW THE KMP ALGORITM WORK
+#### How The Knuth-Morris Pratt Algorithm Work?
 
  Let us see an example
 Consider the following Text and Pattern
@@ -103,7 +103,9 @@ So, we conclude that given Pattern found at index 15 in Text.
 
 ##### TIME COMPLEXITY
 
-The time complexity of KMP  is O(n)
++ The time complexity of Knuth-Morris Pratt Algorithm is O(n).
++ It also has a space complexity of O (m) because there’s some pre-processing involved.
+
 
 
 ###### SEE ALSO
