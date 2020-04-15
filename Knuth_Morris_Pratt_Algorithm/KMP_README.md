@@ -110,6 +110,7 @@ So, we conclude that given Pattern found at index 15 in Text.
 
 ###### SEE ALSO
 
-1. https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
-2. https://www.javatpoint.com/daa-knuth-morris-pratt-algorithm
-3. https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
+1. https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Knuth_Morris_Pratt_Algorithm/KMP.cpp
+2. https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Knuth_Morris_Pratt_Algorithm/KMP.java
+3. https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Knuth_Morris_Pratt_Algorithm/KMP.py
+4. https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Knuth_Morris_Pratt_Algorithm/KMP.cs
