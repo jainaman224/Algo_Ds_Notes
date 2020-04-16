@@ -42,14 +42,14 @@ void Huffman(int count[], char data[], int n){
     priority_queue<MinHeap_Node*, vector<MinHeap_Node*>, compare> heap;  
  
     for(int i = 0; i < n; i++)
-        queue.push(new MinHeap_Node(count[i], data[i]));
+        heap.push(new MinHeap_Node(count[i], data[i]));
     
     while(heap.size() != 1){
         // Extract the two minimum freq items from min heap 
         MinHeap_Node *left = heap.top();
         heap.pop();
         MinHeap_Node *right = heap.top ();
-        queue.pop();
+        heap.pop();
       
         /* Create a new internal node with count equal to the sum of
         the two nodes counts.Make the two extracted node as left and 
@@ -59,7 +59,7 @@ void Huffman(int count[], char data[], int n){
         MinHeap_Node *top = new MinHeap_Node(left -> count + right -> count, '#');
         top -> left = left;
         top -> right = right;
-        queue.push(top);
+        heap.push(top);
     }
 
     // Print Huffman codes using the Huffman tree
