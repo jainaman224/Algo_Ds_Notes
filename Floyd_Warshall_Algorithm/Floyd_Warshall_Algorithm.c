@@ -38,7 +38,6 @@ void floyd_warshall(int graph[][A])
             }
         }
     }
-
     solution(dist);   
 }
 
