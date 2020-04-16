@@ -14,7 +14,7 @@ void solution(int dist[][A]);
 
 //Function to solve ALL-PAIR SHORTEST PATH problem
 //using Floyd Warshall Algorithm
-void floyd_warshall (int graph[][A])
+void floyd_warshall(int graph[][A])
 {
     //Final result will be held in dist[][]
     int dist[A][A], i, j, k;
