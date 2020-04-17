@@ -1,3 +1,5 @@
+//Floyd Warshall algorithm using Kotlin language
+
 object FloydWarshall {
     fun doCalcs(weights: Array<IntArray>, nVertices: Int) {
         val dist = Array(nVertices) { DoubleArray(nVertices) { Double.POSITIVE_INFINITY } }
@@ -54,3 +56,19 @@ fun main(args: Array<String>) {
     val nVertices = 4
     FloydWarshall.doCalcs(weights, nVertices)
 }
+
+/*Output
+
+pair     dist    path
+1 -> 2    -1     1 -> 3 -> 4 -> 2
+1 -> 3    -2     1 -> 3
+1 -> 4     0     1 -> 3 -> 4
+2 -> 1     4     2 -> 1
+2 -> 3     2     2 -> 1 -> 3
+2 -> 4     4     2 -> 1 -> 3 -> 4
+3 -> 1     5     3 -> 4 -> 2 -> 1
+3 -> 2     1     3 -> 4 -> 2
+3 -> 4     2     3 -> 4
+4 -> 1     3     4 -> 2 -> 1
+4 -> 2    -1     4 -> 2
+4 -> 3     1     4 -> 2 -> 1 -> 3*/
