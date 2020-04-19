@@ -28,7 +28,7 @@ fun main() {
         nodes.add(Node(arr[i]))
     }
     
-    for(i in 0..arrSize-2)
+    for(i in 0..arrSize - 2)
     {
         if ((i * 2) + 1 < arrSize && arr[(i * 2) + 1] != -1)
 			nodes[i].left = nodes[(i * 2) + 1]
