@@ -36,7 +36,7 @@ class BKTree {
 // Constructor to initialize the BK Tree
 BKTree::BKTree(std::string& Root_STR) {
     root = new Node();
-    root->Name = Root_STR;
+    root -> Name = Root_STR;
 }
 // Destructor to remove any memory in the BK Tree
 BKTree::~BKTree(){
@@ -53,11 +53,11 @@ void BKTree::insert(std::string& Name, Node*& node){
 
     if (node == nullptr){
         node = new Node();
-        node->Name = Name;
+        node -> Name = Name;
     }
     else {
-        int dist = d(Name, node->Name);
-        insert(Name, node->TreeEdge[dist]);
+        int dist = d( Name, node -> Name );
+        insert(Name, node -> TreeEdge[dist]);
     }
 }
 
@@ -110,13 +110,10 @@ int BKTree::min(int& a, int& b, int& c){
 int BKTree::d(std::string& test, std::string& comp){
     int m = test.length();
     int n = comp.length();
-
-	std::vector< int > v0(n + 1);
-	std::vector< int > v1(n + 1);
-	
+	  std::vector< int > v0( n + 1 );
+	  std::vector< int > v1( n + 1 );
     for(int i = 0; i < n; i++)
         v0[i] = i;
-
     for(int i = 0; i < m; i++){
         v1[i] = i + 1;
         for (int j = 0; j < n; j++){
@@ -130,28 +127,27 @@ int BKTree::d(std::string& test, std::string& comp){
         }
         v0 = v1;
     }
-
     return v0.back();
 }
 
 // Driver Function
 int main(void){
     std::string Name = "Root";
-    BKTree tree(Name);
-    std::cout<<"Enter the Strings in the Dictionary: (Press 1 to exit)"<<std::endl;
+    BKTree tree( Name );
+    std::cout << "Enter the Strings in the Dictionary: (Press 1 to exit)" << std::endl;
     strlist dictionary;
-    dictionary={};
+    dictionary = {};
     std::string input;
-    while(std::cin>>input){
-      if(input=="1") {break;}
-      dictionary.push_back(input);
+    while(std::cin >> input){
+      if(input == "1") { break; }
+      dictionary.push_back( input );
     }
 
-    tree.insert_into(dictionary);
+    tree.insert_into( dictionary );
     std::string searchStr;
-    std::cout<<"Enter the String that needs to be checked:"<<std::endl;
-    std::cin>>searchStr;
-    strlist test = tree.search(searchStr, 2);
+    std::cout << "Enter the String that needs to be checked:"<< std::endl;
+    std::cin >> searchStr;
+    strlist test = tree.search( searchStr, 2 );
     for(auto& i : test)
         std::cout << i << std::endl;
     return 0;
