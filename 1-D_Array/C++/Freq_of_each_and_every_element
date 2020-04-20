@@ -1,0 +1,27 @@
+#include<iostream> 
+using namespace std; 
+  
+// Function to find counts of all 
+void printfrequency(int arr[],int n) 
+{ 
+    
+    for (int j =0; j<n; j++) 
+        arr[j] = arr[j]-1; 
+  
+    
+    for (int i=0; i<n; i++) 
+        arr[arr[i]%n] = arr[arr[i]%n] + n; 
+  
+    
+    for (int i =0; i<n; i++) 
+        cout << i + 1 << " ->  " << arr[i]/n << endl; 
+} 
+  
+// Driver program to test above function 
+int main() 
+{ 
+    int arr[] = {2, 3, 3, 2, 5}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    printfrequency(arr,n); 
+    return 0; 
+}
