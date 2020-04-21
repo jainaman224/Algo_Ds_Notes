@@ -6,7 +6,7 @@ elements in that integer is determined, the length of the longest integer is sto
 array are divided by a particular base. The elements of the array are sorted on the basis of the most significant
 digit to the least significant digit i.e. from leftmost to rightmost digit.
 
-**Example**
+## Example
 
 Let's arrange the numbers in ascending order using postman sort.
 
@@ -103,3 +103,5 @@ where
       
 ## Implementation
 * [C# Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Postman_Sort/Postman_Sort.cs)
+
+
