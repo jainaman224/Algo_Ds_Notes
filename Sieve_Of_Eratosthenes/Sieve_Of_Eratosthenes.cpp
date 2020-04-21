@@ -22,8 +22,8 @@ void SieveOfEratosthenes(int n)
 
     // Print all prime numbers
     for(int p = 2; p <= n; p++)
-       if(prime[p])
-          cout << p << " ";
+        if(prime[p])
+            cout << p << " ";
 }
 
 // Program to test above function
