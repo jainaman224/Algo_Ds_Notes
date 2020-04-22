@@ -91,11 +91,11 @@ void arrange(int k, int n)
             
 ```
 
-## Time Complexity
-
-    Best Case complexity =  d * (n + k) 
-    Worst case complexity =  n * k / d
-    Space complexity = n + 2^d
+## Complexity 
+    
+    Time Complexity =  d * (n + k) 
+    Space Complexity =   n + 2^d
+    
 where
 >d = number of digits<br/>
 >n = number of keys<br/>
