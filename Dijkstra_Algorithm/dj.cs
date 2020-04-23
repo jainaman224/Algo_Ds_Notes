@@ -2,19 +2,21 @@ using System;
 
 class DA
 {
-	static int v = 9;
-	int minDistance(int[] dist,bool[] sptSet)
-	{
-	    int min = int.MaxValue, min_index = -1;
-            for (int i = 0; i < v; i++)
+    static int v = 9
+    int minDistance(int[] dist,bool[] sptSet)
+    {
+        int min = int.MaxValue, min_index = -1;
+        for (int i = 0; i < v; i++)
 	        if (sptSet[i] == false && dist[i] <= min) 
 		    {
 		        min = dist[i];
-			min_index = i;
+			    min_index = i;
 		    }
 
 	    return min_index;
 	}
+    
+    
 	void printSolution(int[] dist, int n)
 	{
 	    Console.Write("Vertex	 Distance "+ "from Source\n");
@@ -31,7 +33,7 @@ class DA
 	        {
 		    dist[i] = int.MaxValue;
 		    sptSet[i] = false;
-		}
+		    }
 
 	    dist[src] = 0;
 	    for (int count = 0; count < v - 1; count++) 
@@ -40,7 +42,7 @@ class DA
 		    for (int v = 0; v < V; v++)
 		        if (!sptSet[v] && graph[u, v] != 0 && dist[u] != int.MaxValue && dist[u] + graph[u, v] < dist[v])
 			    dist[v] = dist[u] + graph[u, v];
-		}
+		    }
 	}
 
 	// Driver Code
@@ -60,7 +62,6 @@ class DA
 	}
 }
 
-//contribute
 
 // Output
 // Vertex     Distance from Source
