@@ -4,20 +4,20 @@ int main()
 {
     int n, m;
     printf("Enter dimensions of 2-D array: ");
-    scanf("%d %d",&n,&m);
+    scanf("%d %d", &n, &m);
 
     int arr1[n][m], arr2[n][m], i, j;
     printf("Enter factor of first and second array: ");
 
     int a, b;
-    scanf("%d %d",&a,&b);
+    scanf("%d %d", &a, &b);
 
     printf("Enter values of first array: ");
     for(i=0; i<n; i++)
     {
         for(j=0; j<m; j++)
         {
-            scanf("%d",&arr1[i][j]);
+            scanf("%d", &arr1[i][j]);
         }
         printf("\n");   //to add a new line when elements of other rwo are added
     }
@@ -27,7 +27,7 @@ int main()
     {
         for(j=0; j<m; j++)
         {
-            scanf("%d",&arr2[i][j]);
+            scanf("%d", &arr2[i][j]);
         }
         printf("\n");
     }
@@ -47,7 +47,7 @@ int main()
     {
         for(j=0; j<m; j++)
         {
-            printf("%d ",arr[i][j]);
+            printf("%d ", arr[i][j]);
         }
         printf("\n");
     }
