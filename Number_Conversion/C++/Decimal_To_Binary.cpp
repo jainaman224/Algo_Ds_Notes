@@ -19,7 +19,7 @@ void printBinary(int n){
     }
 
     cout<<"\nThe binary form is : ";
-    for(j = size-1; j >= 0; j--)
+    for(j = size - 1; j >= 0; j--)
         cout << b[j];
 }
 
