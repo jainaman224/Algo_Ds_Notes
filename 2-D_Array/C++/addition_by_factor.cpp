@@ -14,9 +14,9 @@ int main()
     cin >> a >> b;
 
     cout << "Enter values of first array: ";
-    for(i=0; i<n; i++)
+    for(i=0; i < n; i++)
     {
-        for(j=0; j<m; j++)
+        for(j=0; j < m; j++)
         {
             cin >> arr1[i][j];
         }
@@ -24,9 +24,9 @@ int main()
     }
 
     cout << "Enter values of second array: ";
-    for(i=0; i<n; i++)
+    for(i=0; i < n; i++)
     {
-        for(j=0; j<m; j++)
+        for(j=0; j < m; j++)
         {
             cin >> arr2[i][j];
         }
@@ -35,18 +35,18 @@ int main()
 
     int arr[n][m];
     //array in which answer i.e. a*arr1+b*arr2 is stored
-    for(i=0; i<n; i++)
+    for(i=0; i < n; i++)
     {
-        for(j=0; j<m; j++)
+        for(j=0; j < m; j++)
         {
-            arr[i][j]=a*arr1[i][j]+b*arr2[i][j];
+            arr[i][j]=a*arr1[i][j] + b*arr2[i][j];
         }
     }
 
     cout << "Added matrix is: ";
-    for(i=0; i<n; i++)
+    for(i=0; i < n; i++)
     {
-        for(j=0; j<m; j++)
+        for(j=0; j < m; j++)
         {
             cout << arr[i][j] << " ";
         }
