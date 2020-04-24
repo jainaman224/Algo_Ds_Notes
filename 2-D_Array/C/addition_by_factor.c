@@ -38,7 +38,7 @@ int main()
     {
         for(j=0; j < m; j++)
         {
-            arr[i][j]=a*arr1[i][j]+b*arr2[i][j];
+            arr[i][j]=a*arr1[i][j] + b*arr2[i][j];
         }
     }
 
