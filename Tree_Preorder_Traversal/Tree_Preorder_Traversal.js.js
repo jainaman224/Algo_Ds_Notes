@@ -62,7 +62,7 @@ class BinarySearchTree
         return this.root;
     }
     //function of preorder traversal
-    
+
     preorder(root)
     {
         if(root != null)
