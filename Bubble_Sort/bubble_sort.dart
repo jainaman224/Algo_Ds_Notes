@@ -94,3 +94,15 @@ Sorted Array is:
 78
 98 
 */
+/*
+Test Case 1:
+Input: 1 7 99 2 0 12 15
+Output: 0 1 2 7 12 15 99
+
+Test Case 2:
+Input: 8 5 3 1 9 6 0 7 4 2 5
+Output: 0 1 2 3 4 5 5 6 7 8 9
+
+Test Case 3:
+Input: 10 9 8 7 6 5 4 3 2 1 0
+Output: 0 1 2 3 4 5 6 7 8 9 10 */
