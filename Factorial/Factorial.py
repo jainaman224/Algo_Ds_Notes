@@ -16,6 +16,6 @@ else:
 
 
 Output:
-Enter a number: 4
-4
-The factorial of 4 is 24
+Enter a number: 5
+5
+The factorial of 5 is 120Fa
