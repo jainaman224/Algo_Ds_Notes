@@ -18,4 +18,4 @@ else:
 Output:
 Enter a number: 5
 5
-The factorial of 5 is 120Fa
+The factorial of 5 is 120
