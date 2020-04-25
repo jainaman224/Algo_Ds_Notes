@@ -1,17 +1,16 @@
 /*
- 
             Rust Program to implement Merge Sort  
-     --------------------------------------------------------
-            
+     --------------------------------------------------------            
                     Merge Sort 
-     --------------------------------------------------------
-            
+     --------------------------------------------------------            
 Merge sort is a divide-conquer-combine algorithm based on the idea of breaking down a list into several sub-lists .
-The list is broken into sublists until each sublist consists of a single element and merging those sublists in a manner that results into a sorted list.
+The list is broken into sublists until each sublist consists of a single element and merging those sublists in a 
+manner that results into a sorted list.
 
 The idea is :
     -> Divide the unsorted list into N sublists, each containing 1 element.
-    -> Take adjacent pairs of two singleton lists and merge them to form a list of 2 elements.N will now convert into N/2 lists of size 2.
+    -> Take adjacent pairs of two singleton lists and merge them to form a list of 2 elements.N will now convert
+       into N/2 lists of size 2.
     -> Repeat the process till a single sorted list of size N is obtained.
 
 Complexity Analysis :
@@ -20,7 +19,6 @@ The list of size N is divided into a max of logN parts, and the merging of all s
 The worst case run time of this algorithm is O(NlogN) .
 The average and best case run time of this algorithm is N(logN) .
 The space complexity of this algorithm is N .
-
 */
 
 
@@ -94,7 +92,6 @@ fn read_values<T: FromStr>() -> Result<Vec<T>, T::Err> {
     
     Sample Output :
     
-    Sorted array: [1, 3, 4, 45, 56, 76]
-    
+    Sorted array: [1, 3, 4, 45, 56, 76]    
 */
 
