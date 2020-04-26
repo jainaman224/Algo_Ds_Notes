@@ -1,3 +1,5 @@
+// Program in Go language to find mean , variance and standard deviation
+
 package main
 
 import (

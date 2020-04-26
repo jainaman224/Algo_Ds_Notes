@@ -1,3 +1,5 @@
+// Program in Go language to find the frequency of an element
+
 package main
 
 import "fmt"

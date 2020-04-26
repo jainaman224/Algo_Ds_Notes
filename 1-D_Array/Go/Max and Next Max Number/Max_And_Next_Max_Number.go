@@ -1,3 +1,5 @@
+// Program in Go language to find the maximum and the next maximum number in an array
+
 package main
 
 import "fmt"

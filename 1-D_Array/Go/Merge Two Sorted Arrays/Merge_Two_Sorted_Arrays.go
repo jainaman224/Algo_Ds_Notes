@@ -1,3 +1,5 @@
+// Program in Go language to merge two sorted arrays a[] and b[] and storing it in c[]
+
 package main
 
 import "fmt"
@@ -12,11 +14,11 @@ func main() {
 
 	fmt.Println("Enter your sorted array 1: ")
 
-	// Creating the array1
-	array1 := make([]int, arraySize1)
+	// Creating the array 'a'
+	a := make([]int, arraySize1)
 
 	for i := 0; i < arraySize1; i++ {
-		fmt.Scan(&array1[i])
+		fmt.Scan(&a[i])
 	}
 
 	fmt.Print("Enter number of elements in array 2: ")
@@ -24,11 +26,11 @@ func main() {
 
 	fmt.Println("Enter your sorted array 2: ")
 
-	// Creating the array2
-	array2 := make([]int, arraySize2)
+	// Creating the array 'b'
+	b := make([]int, arraySize2)
 
 	for i := 0; i < arraySize2; i++ {
-		fmt.Scan(&array2[i])
+		fmt.Scan(&b[i])
 	}
 
 	var i, j, k int
@@ -39,12 +41,12 @@ func main() {
 	c := make([]int, arraySize1+arraySize2)
 
 	for i < arraySize1 && j < arraySize2 {
-		if array1[i] > array2[j] {
-			c[k] = array2[j]
+		if a[i] > b[j] {
+			c[k] = b[j]
 			j = j + 1
 			k = k + 1
 		} else {
-			c[k] = array1[i]
+			c[k] = a[i]
 			k = k + 1
 			i = i + 1
 		}
@@ -52,14 +54,14 @@ func main() {
 
 	// copying remaining elements of array a
 	for i < arraySize1 {
-		c[k] = array1[i]
+		c[k] = a[i]
 		k = k + 1
 		i = i + 1
 	}
 
 	// copying remaining elements of array b
 	for j < arraySize2 {
-		c[k] = array2[j]
+		c[k] = b[j]
 		k = k + 1
 		j = j + 1
 	}
