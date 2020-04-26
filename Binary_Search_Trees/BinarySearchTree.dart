@@ -59,7 +59,7 @@ postOrderTraversal(Node x){
     postOrderTraversal(x.right);
 }
 
-insertElement(Node x,int val){
+insertElement(Node x, int val){
     if(root == null){
         root == new Node(val);
         print(root.val);
