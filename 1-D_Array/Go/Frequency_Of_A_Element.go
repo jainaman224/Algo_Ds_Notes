@@ -6,34 +6,34 @@ import "fmt"
 
 func main() {
 
-	// Declare the array size
-	var arraySize, number int
+    // Declare the array size
+    var arraySize, number int
 
-	fmt.Print("Enter number of elements in your array: ")
+    fmt.Print("Enter number of elements in your array: ")
 
-	fmt.Scan(&arraySize)
+    fmt.Scan(&arraySize)
 
-	fmt.Println("Enter your array: ")
+    fmt.Println("Enter your array: ")
 
-	// Creating the array
-	array := make([]int, arraySize)
+    // Creating the array
+    array := make([]int, arraySize)
 
-	for i := 0; i < arraySize; i++ {
-		fmt.Scan(&array[i])
-	}
+    for i := 0; i < arraySize; i++ {
+        fmt.Scan(&array[i])
+    }
 
-	fmt.Print("\nEnter the number whose occurence is to be found: ")
-	fmt.Scan(&number)
+    fmt.Print("\nEnter the number whose occurence is to be found: ")
+    fmt.Scan(&number)
 
-	frequency := 0
+    frequency := 0
 
-	for i := 0; i < arraySize; i++ {
-		if array[i] == number {
-			frequency = frequency + 1
-		}
-	}
+    for i := 0; i < arraySize; i++ {
+        if array[i] == number {
+            frequency = frequency + 1
+        }
+    }
 
-	fmt.Printf("\nFrequency is : %d", frequency)
+    fmt.Printf("\nFrequency is : %d", frequency)
 }
 
 /*

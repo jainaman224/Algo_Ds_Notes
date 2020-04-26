@@ -7,31 +7,31 @@ import "fmt"
 func main() {
 
 	// Declare the array size
-	var arraySize int
+    var arraySize int
 
-	fmt.Print("Enter number of elements in your array: ")
+    fmt.Print("Enter number of elements in your array: ")
 
-	fmt.Scan(&arraySize)
+    fmt.Scan(&arraySize)
 
-	fmt.Println("Enter your array: ")
+    fmt.Println("Enter your array: ")
 
 	// Creating the array
-	array := make([]int, arraySize)
+    array := make([]int, arraySize)
 
-	for i := 0; i < arraySize; i++ {
-		fmt.Scan(&array[i])
-	}
+    for i := 0; i < arraySize; i++ {
+        fmt.Scan(&array[i])
+    }
 
-	evenCount := 0
+    evenCount := 0
 
-	for i := 0; i < arraySize; i++ {
-		if array[i]%2 == 0 {
-			evenCount = evenCount + 1
-		}
-	}
+    for i := 0; i < arraySize; i++ {
+        if array[i]%2 == 0 {
+            evenCount = evenCount + 1
+        }
+    }
 
-	fmt.Printf("\nNumber of odd elements in array : %d", (arraySize - evenCount))
-	fmt.Printf("\nNumber of even elements in array : %d", evenCount)
+    fmt.Printf("\nNumber of odd elements in array : %d", (arraySize - evenCount))
+    fmt.Printf("\nNumber of even elements in array : %d", evenCount)
 }
 
 /*

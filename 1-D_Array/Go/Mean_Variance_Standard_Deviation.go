@@ -3,51 +3,51 @@
 package main
 
 import (
-	"fmt"
-	"math"
+    "fmt"
+    "math"
 )
 
 func main() {
 
-	// Declare the array size
-	var arraySize int
+    // Declare the array size
+    var arraySize int
 
-	fmt.Print("Enter number of elements in your array: ")
+    fmt.Print("Enter number of elements in your array: ")
 
-	fmt.Scan(&arraySize)
+    fmt.Scan(&arraySize)
 
-	fmt.Println("Enter your array: ")
+    fmt.Println("Enter your array: ")
 
-	// Create the array
-	array := make([]int, arraySize)
-	var mean, variance, sd, sum float64
+    // Create the array
+    array := make([]int, arraySize)
+    var mean, variance, sd, sum float64
 
-	mean = 0
-	for i := 0; i < arraySize; i++ {
-		fmt.Scan(&array[i])
+    mean = 0
+    for i := 0; i < arraySize; i++ {
+        fmt.Scan(&array[i])
 
-		// Calculating sum of the array
-		mean = mean + float64(array[i])
-	}
+        // Calculating sum of the array
+        mean = mean + float64(array[i])
+    }
 
-	//  mean is the average of the numbers
-	mean = mean / float64(arraySize)
+    //  mean is the average of the numbers
+    mean = mean / float64(arraySize)
 
-	// We are typecasting to float64 because, thats the type of argument given in math package
-	sum = 0
-	for i := 0; i < arraySize; i++ {
-		sum = sum + math.Pow(float64(array[i])-mean, float64(2))
-	}
+    // We are typecasting to float64 because, thats the type of argument given in math package
+    sum = 0
+    for i := 0; i < arraySize; i++ {
+        sum = sum + math.Pow(float64(array[i])-mean, float64(2))
+    }
 
-	// Variance is the average of the squared differences from the Mean
-	variance = float64(float64(sum) / float64(arraySize))
+    // Variance is the average of the squared differences from the Mean
+    variance = float64(float64(sum) / float64(arraySize))
 
-	// Standard Deviation is a measure of how spread out numbers are, it is the square root of the Variance.
-	sd = math.Sqrt(variance)
+    // Standard Deviation is a measure of how spread out numbers are, it is the square root of the Variance.
+    sd = math.Sqrt(variance)
 
-	fmt.Println("\nMean = ", mean)
-	fmt.Println("\nVariance = ", variance)
-	fmt.Println("\nStandard Deviation = ", sd)
+    fmt.Println("\nMean = ", mean)
+    fmt.Println("\nVariance = ", variance)
+    fmt.Println("\nStandard Deviation = ", sd)
 
 }
 
