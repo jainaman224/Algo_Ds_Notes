@@ -1,4 +1,4 @@
-// Program in Go language to find mean , variance and standard deviation
+// Program in Go language to implement the RSA Algorthim
 
 package main
 
