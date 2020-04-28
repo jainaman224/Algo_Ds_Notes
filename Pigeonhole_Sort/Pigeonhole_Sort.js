@@ -1,12 +1,12 @@
 //taking dynamic input array to be sorted
 var i;
-var n=prompt("enter the size of your array");
+var n = prompt("enter the size of your array");
 var arr = [];
 
-for(i=0 ; i<n ; i++) 
+for ( i = 0 ; i < n ; i++) 
 {
     //Taking Input from user
-    arr[i] = prompt('Enter Element ' + (i+1));
+    arr[i] = prompt('Enter Element ' + (i + 1));
 }
 
 //function for pigeonsort
@@ -25,17 +25,17 @@ function pigeonsort(array)
     var hole = Array(holerange).fill(0);
   
     //filling the hole array
-    for(i=0 ; i<array.length ; i++)
+    for (i = 0 ; i < array.length ; i++)
     {
-        hole[array[i]-min]++;
+        hole[array[i] - min]++;
     }
 	
     count = 0;
   
     //finally putting the values in sorted manner
-    for(var j = 0 ; j<holerange ; j++)
+    for (var j = 0 ; j < holerange ; j++)
     {
-        while(hole[j] !== 0)
+        while (hole[j] !== 0)
         {
             array[count] = j + min;
             hole[j]--;
