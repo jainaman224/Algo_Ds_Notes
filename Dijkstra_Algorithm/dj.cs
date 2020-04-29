@@ -10,7 +10,7 @@ class DA
 	        if (sptSet[i] == false && dist[i] <= min) 
 		    {
 		        min = dist[i];
-			min_index = i;
+			    min_index = i;
 		    }
 
 	    return min_index;
@@ -19,7 +19,7 @@ class DA
     
     void printSolution(int[] dist, int n)
     {
-        Console.Write("Vertex	 Distance "+ "from Source\n");
+        Console.Write("Vertex Distance "+ "from Source\n");
         for (int i = 0; i < v; i++)
             Console.Write(i + " \t\t " + dist[i] + "\n");
     }
@@ -54,10 +54,11 @@ class DA
 				                      { 0, 0, 4, 14, 10, 0, 2, 0, 0 },
 				                      { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
 				                      { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
-				                      { 0, 0, 2, 0, 0, 0, 6, 7, 0 } };
+				                      { 0, 0, 2, 0, 0, 0, 6, 7, 0 } 
+                                    };
          DA t = new DA();
          t.dijkstra(graph, 0);
-    }
+    } 
 }
 
 
