@@ -13,7 +13,7 @@ class DA
 			    min_index = i;
 		    }
 
-	    return min_index;
+	return min_index;
     }
     
     
