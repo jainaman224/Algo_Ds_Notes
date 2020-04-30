@@ -25,7 +25,7 @@ arr = []
 while n > 0
   num = gets.chomp.to_i
   arr.push(num)
-  n = n-1
+  n = n - 1
 end
 number = gets.to_i #number whose index is to be searched
 puts "Index of #{number} is #{ternarySearch(0, arr.length - 1, number, arr)}"
