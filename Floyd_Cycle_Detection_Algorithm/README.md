@@ -9,7 +9,7 @@ The algorithm is also popularly known as **The Tortoise and the Hare (Floyd’s 
 Time Complexity - O(N) , N :- Length of List <br/>
 Space Complexity - O(1)
 
-## Pseudo code
+## Algorithm
 
 1. Initialize two pointers (tortoise and hare) that both point to the head of the linked list
 2. Loop as long as the hare does not reach null
@@ -20,4 +20,16 @@ Space Complexity - O(1)
 7. Return the node in which they meet
 8. Else, if the hare reaches null, then return null
 
+## Pseudo code
+
+Node Cycle_detection(Node Hare, Node Tortoise) 
+    while(Tortoise and Hare and  Hare->next)
+        Tortoise = Tortoise->next
+        Hare = Hare->next->next
+        if(Hare == Tortoise)
+            return Hare
+    return null
+
+## Example
+   
 ![Gif-hare-tortoise](https://miro.medium.com/max/780/1*clbAFjEFicLYjsq4pVVP4g.gif)
