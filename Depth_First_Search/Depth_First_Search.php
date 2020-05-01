@@ -35,10 +35,12 @@ class Node
 
 /* Building Graph */
 $root = new Node('root');
-foreach (range(1, 6) as $v) {
-        $name = "node{$v}";
-        $$name = new Node($name);
+foreach (range(1, 6) as $v) 
+{
+    $name = "node{$v}";
+    $$name = new Node($name);
 }
+
 $root->link_to($node1)->link_to($node2);
 $node1->link_to($node3)->link_to($node4);
 $node2->link_to($node5)->link_to($node6);
@@ -50,7 +52,8 @@ function dfs(Node $node, $path = '', $visited = array())
 {
     $visited[] = $node->name;
     $not_visited = $node->not_visited_nodes($visited);
-    if (empty($not_visited)) {
+    if (empty($not_visited)) 
+    {
         echo 'path : ' . $path . '->' . $node->name . PHP_EOL;
         return;
     }
