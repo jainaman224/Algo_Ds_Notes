@@ -21,7 +21,7 @@ Space Complexity - O(1)
 8. Else, if the hare reaches null, then return null
 
 ## Pseudo code
-
+```
 Node Cycle_detection(Node Hare, Node Tortoise) 
     while(Tortoise and Hare and  Hare->next)
         Tortoise = Tortoise->next
@@ -29,7 +29,7 @@ Node Cycle_detection(Node Hare, Node Tortoise)
         if(Hare == Tortoise)
             return Hare
     return null
-
+```
 ## Example
-   
+
 ![Gif-hare-tortoise](https://miro.medium.com/max/780/1*clbAFjEFicLYjsq4pVVP4g.gif)
