@@ -7,11 +7,11 @@ function bubble(array : number[]) : number[]
      console.log("Steps in bubble sorting the array : ");
      
          //FOR LOOP to perform bubble sort(swapping)
-         for( let i = 0; i < array.length ; i++)
+         for (let i = 0; i < array.length ; i++)
          { 
-              for(let j = 0; j < array.length - 1; j++ ) 
+              for (let j = 0; j < array.length - 1; j++ ) 
               {
-                   if(array[j] > array[j + 1])
+                   if (array[j] > array[j + 1])
                    {
                         let swap = array[j];
                         array[j] = array[j + 1];
