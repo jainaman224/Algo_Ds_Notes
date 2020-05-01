@@ -1,4 +1,4 @@
-                                # Kadane’s Algorithm
+  # Kadane’s Algorithm
 
 Kadane  Algorithm is used to find the sum of contiguous subarray  within a one-dimensional array of numbers which has the largest sum.
                          
