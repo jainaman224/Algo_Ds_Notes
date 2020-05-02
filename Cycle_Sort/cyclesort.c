@@ -29,7 +29,7 @@ void main()
 		{
 			continue ;
 	    }
-        //if duplicate elements are present
+        //skipping duplicate elements
 		while(arr[index] == value)
 		{
 
