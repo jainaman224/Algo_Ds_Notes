@@ -6,8 +6,8 @@ public class Matrix_intersection {
     //Finding the elements which are different in both the matrices and replacing it with a char
     public static void check_intersection(int[][] matrix1, int[][] matrix2, String character){
         int index1, index2 = 0;
-        for ( index1 = 0; index1 < matrix1.length; index1++){
-            for ( index2 = 0; index2 < matrix1[0].length; index2++){
+        for ( index1 = 0; index1 < matrix1.length; index1++) {
+            for ( index2 = 0; index2 < matrix1[0].length; index2++) {
                 if (matrix1[index1][index2] != matrix2[index1][index2]) {
                     System.out.print(character + " ");
                 }
