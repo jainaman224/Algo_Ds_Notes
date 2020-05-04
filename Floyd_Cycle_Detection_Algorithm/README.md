@@ -1,13 +1,9 @@
 # Flyod's_Cycle_Detection
 
-The name already give idea about the algorithm , It determines if a singly linked list is circular and if it is,  It is going to return the node where the cycle begins
+Floyd's cycle-finding algorithm is a pointer algorithm that uses only two pointers, which move through the sequence at different speeds. It determines if a singly linked list is circular and if it is,  It is going to return the node where the cycle begins
 It was invented by **Robert W. Floyd** in late 1960s.
 The algorithm is also popularly known as **The Tortoise and the Hare (Floyd’s Algorithm)**
 
-## Complexity
-
-Time Complexity - O(N) , N :- Length of List <br/>
-Space Complexity - O(1)
 
 ## Algorithm
 
@@ -33,3 +29,8 @@ Node Cycle_detection(Node Hare, Node Tortoise)
 ## Example
 
 ![Gif-hare-tortoise](https://miro.medium.com/max/780/1*clbAFjEFicLYjsq4pVVP4g.gif)
+
+## Complexity
+
+Time Complexity - O(N) , N :- Length of List <br/>
+Space Complexity - O(1)
