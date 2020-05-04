@@ -16,8 +16,8 @@ public class Middle_row_column_sum {
             middle_column_sum += matrix[index2][ matrix[0].length / 2];
         }
 
-        System.out.println("Middle row's sum is "+ middle_row_sum);
-        System.out.println("Middle column's sum is "+ middle_column_sum);
+        System.out.println("Middle row's sum is " + middle_row_sum);
+        System.out.println("Middle column's sum is " + middle_column_sum);
     }
 
     public static void main(String args[]){
@@ -27,7 +27,7 @@ public class Middle_row_column_sum {
         int rows = s.nextInt();
 
         System.out.println(" Enter number of columns ");
-        int columns= s.nextInt();
+        int columns = s.nextInt();
         int[][] matrix = new int[rows][columns];
 
         System.out.println(" Enter elements of matrix ");
