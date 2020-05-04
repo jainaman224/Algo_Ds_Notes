@@ -56,7 +56,7 @@ func printArray(arr []int, no int) {
    
     //printing the sorted array
     for i := 0; i < no; i++ {
-        fmt.Print( arr[i]," " )
+        fmt.Print(arr[i], " ")
     }
     
 }
@@ -95,3 +95,4 @@ Sorted array is
 0 5 6 7 11 12 13 
 
 */
+
