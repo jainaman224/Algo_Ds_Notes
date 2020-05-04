@@ -1,6 +1,7 @@
 
-/*  Heap Sort is a comparison-based sorting method performed on a Heap data structure.
-    Here we build a max heap first to later sort the elements in the heap in ascending order.
+/*  Heap Sort is a comparison-based sorting method performed
+    on a Heap data structure. Here we build a max heap first
+    to later sort the elements in the heap in ascending order.
 */
    
 
@@ -26,7 +27,9 @@ func max_heapify(arr []int, n int, i int) {
   
     // If largest is not root 
     if largest != i { 
-        arr[i], arr[largest] = arr[largest], arr[i] //swapping
+        
+        //swapping
+        arr[i], arr[largest] = arr[largest], arr[i] 
   
         // Recursively heapify the affected sub-tree 
         max_heapify(arr, n, largest) 
@@ -43,8 +46,9 @@ func heapSort(arr []int, n int) {
   
     // One by one extract an element from heap 
     for  i := n - 1; i >= 0; i-- { 
+        
         // Move current root to end 
-        arr[0], arr[i] = arr[i], arr[0];  //swapping
+        arr[0], arr[i] = arr[i], arr[0]; 
   
         // call heapify on the reduced heap 
         max_heapify(arr, i, 0); 
@@ -65,10 +69,14 @@ func printArray(arr []int, no int) {
 func main() {
     var n int
     fmt.Println("Enter the number of elements :") 
-    fmt.Scan(&n) //accepting the number of elements from the user
-    arr := make([]int, n) //creating an array of n elements
+    
+    //accepting the number of elements from the user
+    fmt.Scan(&n) 
+    arr := make([]int, n) 
     for i := 0; i < n; i++ {
-        fmt.Scan(&arr[i])  //accepting input elements
+       
+        //accepting input elements
+        fmt.Scan(&arr[i])  
     }
     fmt.Println(arr)
     
