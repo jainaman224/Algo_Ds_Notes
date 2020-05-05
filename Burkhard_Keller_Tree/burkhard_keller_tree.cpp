@@ -6,11 +6,11 @@ perform spell checks based on the concept of Levenshtein distance.
 #include <vector>
 #include <map>
 
-typedef std::vector< std::string > strlist;
+typedef std::vector<std::string> strlist;
 // Defining the Node 
 class Node {
     public:
-        std::map< int, Node* > TreeEdge;
+        std::map<int, Node*> TreeEdge;
         std::string Name;
 };
 
@@ -56,7 +56,7 @@ void BKTree::insert(std::string& Name, Node*& node){
         node -> Name = Name;
     }
     else {
-        int dist = d( Name, node -> Name );
+        int dist = d(Name, node -> Name);
         insert(Name, node -> TreeEdge[dist]);
     }
 }
@@ -86,16 +86,16 @@ void BKTree::search(Node* node, std::string& Name, int target_dist, strlist& sug
     if(node == nullptr)
         return;
 
-    int dist = d(Name, node->Name);
+    int dist = d(Name, node -> Name);
 
     if (dist <= target_dist)
-        suggestion_points.push_back(node->Name);
+        suggestion_points.push_back(node -> 6Name);
 
     int start = dist - target_dist;
     if (start < 0) start = 1;
     
     for(int i = start; i < dist + target_dist; i++)
-        search(node->TreeEdge[i], Name, target_dist, suggestion_points); 
+        search(node -> TreeEdge[i], Name, target_dist, suggestion_points); 
 }
 
 int BKTree::min(int& a, int& b, int& c){
@@ -110,8 +110,8 @@ int BKTree::min(int& a, int& b, int& c){
 int BKTree::d(std::string& test, std::string& comp){
     int m = test.length();
     int n = comp.length();
-	  std::vector< int > v0( n + 1 );
-	  std::vector< int > v1( n + 1 );
+	  std::vector<int> v0( n + 1 );
+	  std::vector<int> v1( n + 1 );
     for(int i = 0; i < n; i++)
         v0[i] = i;
     for(int i = 0; i < m; i++){
@@ -140,14 +140,14 @@ int main(void){
     std::string input;
     while(std::cin >> input){
       if(input == "1") { break; }
-      dictionary.push_back( input );
+      dictionary.push_back(input);
     }
 
     tree.insert_into( dictionary );
     std::string searchStr;
     std::cout << "Enter the String that needs to be checked:"<< std::endl;
     std::cin >> searchStr;
-    strlist test = tree.search( searchStr, 2 );
+    strlist test = tree.search(searchStr, 2);
     for(auto& i : test)
         std::cout << i << std::endl;
     return 0;
