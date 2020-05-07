@@ -1,6 +1,19 @@
   # Kadane’s Algorithm
+  
+The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum.
 
-Kadane  Algorithm is used to find the sum of contiguous subarray  within a one-dimensional array of numbers which has the largest sum.
+_Example_:
+
+int input[] = {−2, 1, −3, 4, −1, 2, 1, −5, 4};
+Output: contiguous subarray with the largest sum is 4, −1, 2, 1 with sum 6.
+
+_Naive Approach_ : 
+        use two for loops and check every subarray and return the subarray which has the maximum sum.
+	Time complexity : O(N^2).
+	
+ We can reduce its time complexity to O(N) by using a Kadane's algorithm. 
+
+  Kadane Algorithm is used to find the sum of contiguous subarray  within a one-dimensional array of numbers which has the largest sum.
                          
  # Example  
 ![download](https://user-images.githubusercontent.com/49182690/80751350-3d8fe200-8b47-11ea-83bc-c16bca71d21d.png)
@@ -26,6 +39,8 @@ _Initialise_:
     4.return best_sum
 
 # Explanation
+
+Simple idea of the Kadane’s algorithm is to look for all positive contiguous segments of the array (current_sum). And keep track of maximum sum contiguous segment among all positive segments (best_sum). Each time we get a positive sum compare it with best_sum and update best_sum if it is greater than current_sum.
 			
 Lets take the example:
     {-2, -3, 4, -1, -2, 1, 5, -3}
