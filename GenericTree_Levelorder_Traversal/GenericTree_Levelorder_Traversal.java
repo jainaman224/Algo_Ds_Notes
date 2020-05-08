@@ -3,7 +3,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class GenericTree_Levelorder_Traversal {
-
     Scanner scn = new Scanner(System.in);
 
     private class Node {
@@ -18,12 +17,11 @@ public class GenericTree_Levelorder_Traversal {
     }
 
     private Node takeInput(Node parent, int ith) {
-
         if (parent == null) {
             System.out.println("Enter the data for Root Node ?");
         } else {
             System.out.println(
-                    "Enter data for " + ith + " child of " + parent.data);
+                "Enter data for " + ith + " child of " + parent.data);
         }
 
         // take input
@@ -45,13 +43,11 @@ public class GenericTree_Levelorder_Traversal {
     }
 
     public void display() {
-
         display(root);
     }
 
     // function to display generic tree
     private void display(Node node) {
-
         String str = node.data + " -> ";
 
         for (Node child : node.children) {
@@ -68,7 +64,6 @@ public class GenericTree_Levelorder_Traversal {
 
     // level order traversal
     public void levelorder() {
-
         // create a linked list which will be used as queue
         LinkedList<Node> queue = new LinkedList<Node>();
         // add root node to last of queue
@@ -90,10 +85,10 @@ public class GenericTree_Levelorder_Traversal {
     }
 
     public static void main(String[] args) {
-
         GenericTree_Levelorder_Traversal gt = new GenericTree_Levelorder_Traversal();
         gt.levelorder();
     }
 }
+
 //SAMPLE INPUT: 10 3 20 2 50 0 60 0 30 0 40 0
 //OUTPUT: 10 20 30 40 50 60
