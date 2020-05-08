@@ -8,14 +8,12 @@ class DA
         int min = int.MaxValue, min_index = -1;
         for (int i = 0; i < v; i++)
 	        if (sptSet[i] == false && dist[i] <= min) 
-		    {
-		        min = dist[i];
-			    min_index = i;
-		    }
-
-	return min_index;
+		        {
+		         min = dist[i];
+			     min_index = i;
+		        }
+	    return min_index;
     }
-    
     
     void printSolution(int[] dist, int n)
     {
@@ -29,10 +27,10 @@ class DA
         int[] dist = new int[v];
         bool[] sptSet = new bool[v];
         for (int i = 0; i < v; i++) 
-        {
+           {
 	        dist[i] = int.MaxValue;
 	        sptSet[i] = false;
-	    }
+	       }
         dist[src] = 0;
         for (int count = 0; count < v - 1; count++) 
         {
