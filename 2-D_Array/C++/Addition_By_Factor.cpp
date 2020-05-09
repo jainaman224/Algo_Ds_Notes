@@ -60,15 +60,12 @@ int main()
 // 2
 // Enter values of first array: 1
 // 2
-
 // 3
 // 4
 
 // Enter values of second array: 1
 // 3
-
 // 5
 // 7
-
 // Added matrix is: 3 8
 // 13 18
