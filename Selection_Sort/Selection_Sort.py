@@ -2,7 +2,6 @@
 def Selection_Sort(array):
     for i in range(0, len(array) - 1):
         min_index = i
-
         for j in range(i + 1, len(array)):
             if array[j] < array[min_index]:
                 min_index = j
@@ -11,15 +10,18 @@ def Selection_Sort(array):
 
 # Function to print list
 def Print_list(array):
+    print("Your sorted array: ")
     for i in range(0, len(array)):
         print(array[i], end = " ")
 
     print()
 
-num = int(input())
+num = int(input("Enter number of elements you want to sort:"))
 array = []
 for i in range(0, num):
     array.append(int(input()))
+
+
 Selection_Sort(array)
 Print_list(array)
 
