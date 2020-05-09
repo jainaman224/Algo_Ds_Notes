@@ -62,7 +62,6 @@ int main()
 // 2
 // 3
 // 4
-
 // Enter values of second array: 1
 // 3
 // 5
