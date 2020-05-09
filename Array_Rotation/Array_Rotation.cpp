@@ -2,39 +2,50 @@
 #include<iostream>
 using namespace std;
 
-void leftRotate(int arr[], int n) 
-{ 
-    int temp = arr[0], i; 
-    for (i = 0; i < n - 1; i++) 
-        arr[i] = arr[i + 1]; 
-  
-    arr[i] = temp; 
-} 
-  
-void Rotate(int arr[], int d, int n) 
-{ 
-    for (int i = 0; i < d; i++) 
-        leftRotate(arr, n); 
+void swap(int *input,int i,int j){
 
-    for (int i = 0; i < n; i++) 
-        cout << arr[i] << " ";    
-} 
+    int temp=input[i];
+    input[i]=input[j];
+    input[j]=temp;
+}
+void Reverse(int * input,int start,int end){
 
-int main() 
-{ 
+    int i=start,j=end;
+    while(i<j){
+        swap(input,i,j);
+        i++;
+        j--;
+    }
+}
+void Rotate(int * input,int d ,int n){
+    if(d>=n)
+        d=d%n;
+    Reverse(input,0,n-1);   // reverse the whole array
+    Reverse(input,0,n-d-1);  //reverse array from starting index till n-d-1
+    Reverse(input,n-d,n-1);  //reverse array from n-d to last element
+
+}
+int main()
+{
     int n, r;
     cout << "Enter number of elements in your array: ";
     cin >> n;
-    int arr[n];
+    int *arr=new int [n+1];
+
     cout << "Enter your array: ";
     for(int i = 0; i < n; i++)
         cin >> arr[i];
     cout << "Enter the value for rotation cycle: ";
 	cin >> r;
-    
+
     Rotate(arr, r, n);
-    return 0; 
-} 
+    for(int i=0;i<n;i++)
+        cout<<arr[i]<<" ";
+     delete []arr;	
+    return 0;
+}
+
+
 
 /*
 INPUT:
