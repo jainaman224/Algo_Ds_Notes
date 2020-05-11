@@ -25,7 +25,6 @@ void selection_sort ( List<int> arr, int n)
 
 main()
 {
-    
     print ( "Enter the size of array " );
     int size = int.parse ( stdin.readLineSync() );
     
@@ -38,9 +37,7 @@ main()
         array.add (ele);
     }
    
-    selection_sort (array ,size);
-     
-    print ("Sorted array is ");
+    selection_sort (array, size);
     
     print (array);
 
