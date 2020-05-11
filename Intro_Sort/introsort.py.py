@@ -2,7 +2,7 @@
 def introsort(nlist):
     #maxdepth is chosen equal to 2 times floor of log base 2 of the length of the list.
     maxdepth = (len(nlist).bit_length() - 1)*2
-    # Call introsort_helper with start=0 and end=len(alist).
+    # Call introsort_helper with start = 0 and end = len(alist).
     introsort_helper(nlist, 0, len(nlist), maxdepth)
  
 #The function sorts the list from indexes start to end. 
@@ -39,7 +39,7 @@ def partition(nlist, start, end):
 def swap(nlist, i, j):
     nlist[i], nlist[j] = nlist[j], nlist[i]
 
-#heapsort from indexes start to end � 1 
+#heapsort from indexes start to end - 1 
 def heapsort(alist, start, end):
     build_max_heap(nlist, start, end)
     for i in range(end - 1, start, -1):
