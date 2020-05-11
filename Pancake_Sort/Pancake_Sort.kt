@@ -8,16 +8,16 @@ class PancakeSorting
         int temp[] = new int [n+1] ;   
         for (i in 0 until n)
         {
-            temp [i] = a [n-i];
+            temp[i] = a[n-i];
         }
         for (i in 0 until n)
 	{
-	    a [i] = temp [i];
+	    a[i] = temp[i];
 	}
      }
     
      // Function to find index of max element upto index n
-     fun findMax (int:a [] , int:n ):int
+     fun findMax (int:a[] , int:n ):int
      {
          int max = a[0] ; int j = 0 ;
          for (i in 1 until n)
@@ -39,7 +39,7 @@ class PancakeSorting
         int currentLength ;
         for (currentLength in n until 0)
         {
-            int j = findmax ( a , currentLength-1 ) ;
+            int j = findmax (a , currentLength-1) ;
             if (j != currentLength)
             {
                 reverseArray (a , j) ;
