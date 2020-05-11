@@ -53,10 +53,8 @@ void main()
                     index++;
                 }
             }
-
             while (arr[index] == value)
             {
-
                 index++;
             }
             if (index != k)
