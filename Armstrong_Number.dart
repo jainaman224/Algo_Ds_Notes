@@ -14,7 +14,7 @@ bool is_armstrong(int n,int l)
     while(n1 > 0)
     {
         rem = n1 % 10;
-        sum = sum + pow(rem,l);
+        sum = sum + pow(rem, l);
         n1 = (n1 / 10).toInt();
     }
     
@@ -32,7 +32,7 @@ main()
     int len = input.length;              //to clalculate the length of string
     int num = int.parse(input);         //conveting string into integer    
     
-    bool check = is_armstrong(num,len);
+    bool check = is_armstrong(num, len);
 
     if(check == true)
         print("YES");
