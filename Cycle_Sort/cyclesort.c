@@ -3,20 +3,20 @@
 void main()
 {
     int arr[100], i, j, k, p, n, value, index, l, temp;
-   	//input for array size
+    //input for array size
     printf("enter the number of elements required \n");
     scanf("%d", &n);
     printf("enter the elements of the array");
     for (i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);
-    }
-   	//this sorting follows comparing process,with it's right elements hence loop goes to n-2 to avoid garbage values in the output
+    }  
+    //this sorting follows comparing process,with it's right elements hence loop goes to n-2 to avoid garbage values in the output
     for (k = 0; k < n - 2; k++)
     {
         value = arr[k];
         index = k;
-       	//loop to find number of elements less than the element in consideration 
+        //loop to find number of elements less than the element in consideration 
         for (j = k + 1; j < n; j++)
         {
             if (arr[j] < value)
@@ -24,25 +24,24 @@ void main()
                 index++;
             }
         }
-       	//if the element is at right position
+        //if the element is at right position
         if (index == k)
         {
             continue;
         }
-       	//skipping duplicate elements
+        //skipping duplicate elements
         while (arr[index] == value)
         {
-
             index++;
         }
-       	//providing the correct position to the element
+        //providing the correct position to the element
         if (index != k)
         {
             temp = value;
             value = arr[index];
             arr[index] = temp;
         }
-       	//rotate rest of the cycle
+        //rotate rest of the cycle
         while (index != k)
         {
             index = k;
