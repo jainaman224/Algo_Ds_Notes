@@ -14,10 +14,10 @@ def init_trie(wordList):
 
 def createTrie():  # initializing a root of the trie
     AdjList.append({'character': ' ', 'nextState': [], 'failedState': 0, 'outputList': []})
-# character -> the character the root node is repesenting
-# nextStates -> list of ids of child nodes of the root node
-# failedState -> id of the failed state
-# outputList -> list of all the valid words encountered
+    # character -> the character the root node is repesenting
+    # nextStates -> list of ids of child nodes of the root node
+    # failedState -> id of the failed state
+    # outputList -> list of all the valid words encountered
 
 def addKeyWords(wordList):  # ading all the valid words in list of valid words
     for validWord in wordList:
