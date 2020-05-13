@@ -1,46 +1,55 @@
 class BinarySearchTree { 
     private var head: node? = null
-
+    
     class node(var data: Int) { 
         var left: node? = null
-	var right: node? = null
+        var right: node? = null
     }
-
+    
     fun Insert(value: Int) {
-	val temp = node(value)
-	if (head == null)
-	    head = temp
-	else {
-	    var current: node?
-	    current = head
-	    while (current != null) {
-	        if (value < current.data) {
-		    if (current.left != null)
-			current = current.left
-		    else {
-			current.left = temp
-			return
-		    }
-		} else {
-		    if (current.right != null)
-			current = current.right
-		    else {
-			current.right = temp
-			return
-		    }
-		}
-	    }
-	}
+        val temp = node(value)
+        if (head == null) {
+            head = temp
+        }
+        else {
+            var current: node?
+            current = head
+            while (current != null) {
+                if (value < current.data) {
+                    if (current.left != null) {
+                        current = current.left
+                    }
+                    else {
+                        current.left = temp
+                        return
+                    }
+                }
+                else if (current.right != null) {
+                    current = current.right
+                }
+                else {
+                    current.right = temp
+                    return
+                }
+            }
+        }
     }
 
     fun Search(value: Int) {
         var current: node?
         current = head
         while (current != null) {
-	    current = if (value < current.data) current.left else if (value > current.data) current.right else {
-	        println("Element $value Found")
-	        return
-	    }
+        current = 
+            if (value < current.data) {
+                current.left
+            }
+            else if(value > current.data) {
+                current.right
+            }
+            else {
+                println("Element $value Found")
+                return
+            }
         }
         println("Element $value not Found")
     }
@@ -53,25 +62,30 @@ class BinarySearchTree {
     }
 
     fun Delete_Key(head: node?, value: Int): node? {
-        if (head == null)
-	    return head
-        if (value < head.data)
-	    head.left = Delete_Key(head.left, value)
-        else if (value > head.data)
-	    head.right = Delete_Key(head.right, value)
+        if (head == null) {
+            return head
+        }
+        if (value < head.data) {
+            head.left = Delete_Key(head.left, value)
+        }
+        else if (value > head.data) {
+            head.right = Delete_Key(head.right, value)
+        }
         else { 
-	    if (head.left == null)
-	       return head.right
-	    else if (head.right == null)
-	       return head.left
-	    head.data = Min_Value(head.right)
-	    head.right = Delete_Key(head.right, head.data)
+            if (head.left == null) {
+                return head.right
+            }
+            else if (head.right == null) {
+                return head.left
+            }
+            head.data = Min_Value(head.right)
+            head.right = Delete_Key(head.right, head.data)
         }
         return head
     }
 
     fun Delete(value: Int) {
-	head = Delete_Key(head, value)
+        head = Delete_Key(head, value)
     }
 
 }
