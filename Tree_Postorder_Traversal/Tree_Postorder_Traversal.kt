@@ -22,9 +22,9 @@ fun main() {
     val nodes = mutableListOf<Node<Int>>()
     println("Enter the array respresentaion of binary tree")
     
-    for(i in 0 until arrSize)
+    for(i in 0 until arrSize) 
     {
-		arr[i] = read.nextLine().toInt()
+        arr[i] = read.nextLine().toInt()
         nodes.add(Node(arr[i]))
     }
     
