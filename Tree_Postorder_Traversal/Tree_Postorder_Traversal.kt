@@ -24,7 +24,7 @@ fun main() {
     
     for(i in 0 until arrSize)
     {
-    	arr[i] = read.nextLine().toInt()
+		arr[i] = read.nextLine().toInt()
         nodes.add(Node(arr[i]))
     }
     
