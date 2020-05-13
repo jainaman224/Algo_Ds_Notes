@@ -8,9 +8,9 @@ class Node<Int>(
 {
     fun postorderTraversal()
     {
-      left?.postorderTraversal()
-      right?.postorderTraversal()
-      print("$key ")
+        left?.postorderTraversal()
+        right?.postorderTraversal()
+        print("$key ")
     }
 }
 
@@ -24,16 +24,20 @@ fun main() {
     
     for(i in 0 until arrSize)
     {
-        arr[i] = read.nextLine().toInt()
+    	arr[i] = read.nextLine().toInt()
         nodes.add(Node(arr[i]))
     }
     
     for(i in 0..arrSize - 2)
     {
-        if ((i * 2) + 1 < arrSize && arr[(i * 2) + 1] != -1)
-			nodes[i].left = nodes[(i * 2) + 1]
-		if ((i * 2) + 2 < arrSize && arr[(i * 2) + 2] != -1)
-			nodes[i].right = nodes[(i * 2) + 2]
+    	if ((i * 2) + 1 < arrSize && arr[(i * 2) + 1] != -1)
+	{
+	    nodes[i].left = nodes[(i * 2) + 1]
+	}
+	if ((i * 2) + 2 < arrSize && arr[(i * 2) + 2] != -1)
+	{    
+	    nodes[i].right = nodes[(i * 2) + 2]
+	}
     }
     print("Post Order traversal of tree is ")
     nodes[0].postorderTraversal()
