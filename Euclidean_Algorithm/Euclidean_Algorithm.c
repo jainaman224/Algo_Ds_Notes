@@ -1,18 +1,17 @@
 // Program to demonstrate Basic Euclidean Algorithm 
-
 #include <stdio.h> 
 
 // Function to return gcd of x and y
-int gcd_algorithm (int x, int y)
+int gcd_algorithm(int x,int y)
 {
    // if the remainder is 0, return second number
-    if (x == 0)
+    if(x == 0)
     {
-        return y;
-    } 
-     return gcd_algorithm( (y % x) , x ); // recursive call to the function     
+      return y;
+    }   
+    return gcd_algorithm((y % x),x); // recursive call to the function     
 }
- 
+
 // Driver program 
 int main()
 {
