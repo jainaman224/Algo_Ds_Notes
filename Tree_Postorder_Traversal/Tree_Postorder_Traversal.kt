@@ -34,6 +34,7 @@ fun main() {
 	{
 	    nodes[i].left = nodes[(i * 2) + 1]
 	}
+	    
 	if ((i * 2) + 2 < arrSize && arr[(i * 2) + 2] != -1)
 	{    
 	    nodes[i].right = nodes[(i * 2) + 2]
