@@ -1,5 +1,4 @@
-  # Kadane’s Algorithm
-  
+# Kadane’s Algorithm
 The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum.
 
 _Example_:
@@ -11,37 +10,15 @@ _Naive Approach_ :
         use two for loops and check every subarray and return the subarray which has the maximum sum.
 	Time complexity : O(N^2).
 	
- We can reduce its time complexity to O(N) by using a Kadane's algorithm. 
+We can reduce its time complexity to O(N) by using a Kadane's algorithm.
 
-  Kadane Algorithm is used to find the sum of contiguous subarray  within a one-dimensional array of numbers which has the largest sum.
+Kadane Algorithm is used to find the sum of contiguous subarray  within a one-dimensional array of numbers which has the largest sum.
+
+Simple idea of the Kadane’s algorithm is to look for all positive contiguous segments of the array (current_sum). And keep track of maximum sum contiguous segment among all positive segments (best_sum). Each time we get a positive sum compare it with best_sum and update best_sum if it is greater than current_sum.
                          
  # Example  
 ![download](https://user-images.githubusercontent.com/49182690/80751350-3d8fe200-8b47-11ea-83bc-c16bca71d21d.png)
- 
-       
- # Pseudo code
- 
-_Initialise_:
 
-	current_sum=0
-	best_sum=0
-  
-  loop for each element of the array
-  
-    1.current_sum=current_sum + a[i]
-    
-    2.if(best_sum < current_sum)
-            best_sum= current_sum
-            
-    3.if(current_sum < 0)
-            current_sum=0
-            
-    4.return best_sum
-
-# Explanation
-
-Simple idea of the Kadane’s algorithm is to look for all positive contiguous segments of the array (current_sum). And keep track of maximum sum contiguous segment among all positive segments (best_sum). Each time we get a positive sum compare it with best_sum and update best_sum if it is greater than current_sum.
-			
 Lets take the example:
     {-2, -3, 4, -1, -2, 1, 5, -3}
 
@@ -82,8 +59,25 @@ Lets take the example:
     for i=7,  a[7] =  -3
     current_sum = current_sum + (-3)
     current_sum = 4
-               
+ 
+# Pseudo code
+ '''
+ _Initialise_:
+
+	current_sum=0
+	best_sum=0
+	
+loop for each element of the array
+  
+    1.current_sum=current_sum + a[i]
+    
+    2.if(best_sum < current_sum)
+            best_sum= current_sum
+            
+    3.if(current_sum < 0)
+            current_sum=0
+            
+    4.return best_sum
+    '''
 # Time Complexity
-
 Kadane’s  algorithm is able to find the maximum sum of a contiguous  subarray  in an array with a runtime of O(n).
-
