@@ -46,7 +46,7 @@ class PancakeSorting
                 reverseArray (a , currentLength-1) ;
             }
         }
-     }
+    }
     
     
     fun main ()
@@ -59,15 +59,12 @@ class PancakeSorting
    	{
        	    array[i] = read.nextLine().toInt()
         }
-        pancakesort ( array , n ) ;
+        pancakesort (array, n) ;
         for (i in 0 until n)
 	{
             println( array[i] + " " ) ;	
 	}
-        
     }
-    
-    
 }
 
 /* 
