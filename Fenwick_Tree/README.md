@@ -53,6 +53,7 @@ The child node BITree[x] of the node BITree[y] stores the sum of the elements be
 
 ## Algorithm
 
+```C++
 #define LSB(i) ((i) & -(i)) // zeroes all the bits except the least significant one
 
 //One based indexing is assumed
@@ -81,6 +82,7 @@ void add(int i, int k) // Adds k to element with index i
         
         A[i] += k, i += LSB(i);
 }
+```
 
 ## Example
 
