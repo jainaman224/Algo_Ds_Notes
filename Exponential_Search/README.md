@@ -19,6 +19,7 @@ Once we find an index i (after repeated doubling of i), we know that the element
 
 The algorithm consists of two stages. The first stage determines a range in which the search key would reside if it were in the list. In the second stage, a binary search is performed on this range. In the first stage, assuming that the list is sorted in ascending order, the algorithm looks for the first exponent, j, where the value 2j is greater than the search key. This value, 2j becomes the upper bound for the binary search with the previous power of 2, 2j - 1, being the lower bound for the binary search.[3]
 
+```C++
 // Returns the position of key in the array arr of length size.
 template <typename T>
 int exponential_search(T arr[], int size, T key)
@@ -36,6 +37,8 @@ int exponential_search(T arr[], int size, T key)
 
     return binary_search(arr, key, bound/2, min(bound + 1, size));
 }
+```
+
 In each step, the algorithm compares the search key value with the key value at the current search index. If the element at the current index is smaller than the search key, the algorithm repeats, skipping to the next search index by doubling it, calculating the next power of 2.[3] If the element at the current index is larger than the search key, the algorithm now knows that the search key, if it is contained in the list at all, is located in the interval formed by the previous search index, 2j - 1, and the current search index, 2j. The binary search is then performed with the result of either a failure, if the search key is not in the list, or the position of the search key in the list.
 
 ## Pseudocode
