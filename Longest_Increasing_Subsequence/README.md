@@ -35,6 +35,24 @@ To find the LIS for a given array, we need to return max(L(i)) where 0 < i < n.
 Thus, we see the LIS problem satisfies the optimal substructure property as the main problem can be solved using solutions to subproblems.
 ```
 
+## Pseudo Code
+
+```
+LIS(A[1..n]):
+    Array L[1..n]
+    (* L[i] = value of LIS ending(A[1..i]) *)
+    for i = 1 to n do
+        L[i] = 1
+        for j = 1 to i − 1 do
+            if (A[j] < A[i]) do
+                L[i] = max(L[i], 1 + L[j])
+    return L
+
+MAIN(A[1..n]):
+    L = LIS(A[1..n])
+        return the maximum value in L
+```
+
 ## Overlapping Subproblems:
 
 Considering the above implementation, following is recursion tree for an array of size 4. lis(n) gives us the length of LIS for arr[].
