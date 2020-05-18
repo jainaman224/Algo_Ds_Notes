@@ -1,19 +1,22 @@
 <?php
 
-class AVLTree {
+class AVLTree 
+{
     var $left;
     var $right;
     var $depth;
     var $data;
    
-    function AVLTree() {
+    function AVLTree() 
+    {
         $this->left = NULL;
         $this->right = NULL;
         $this->depth = 0;
         $this->data = NULL;
     }
    
-    function balance() {
+    function balance() 
+    {
         $ldepth = $this->left !== NULL
                 ? $this->left->depth
                 : 0;
@@ -23,7 +26,8 @@ class AVLTree {
                 : 0;
                
                
-        if( $ldepth > $rdepth+1 ) { // LR or LL rotation
+        if( $ldepth > $rdepth+1 ) 
+        { // LR or LL rotation
             $lldepth = $this->left->left !== NULL
                      ? $this->left->left->depth
                      : 0;
@@ -32,12 +36,15 @@ class AVLTree {
                      ? $this->left->right->depth
                      : 0;
 
-            if( $lldepth < $lrdepth ) { // LR rotation
+            if( $lldepth < $lrdepth ) 
+            { // LR rotation
                 $this->left->rotateRR(); // consist of a RR rotation of the left child ...
             } // ... plus a LL rotation of this node, which happens anyway
 
             $this->rotateLL();
-        } else if( $ldepth+1 < $rdepth ) { // RR or RL rorarion
+        } 
+        else if( $ldepth+1 < $rdepth ) 
+        { // RR or RL rorarion
             $rrdepth = $this->right->right !== NULL
                      ? $this->right->right->depth
                      : 0;
@@ -46,7 +53,8 @@ class AVLTree {
                      ? $this->right->left->depth
                      : 0;
 
-            if( $rldepth > $rrdepth ) { // RR rotation
+            if( $rldepth > $rrdepth ) 
+            { // RR rotation
                 $this->right->rotateLL(); // consist of a LL rotation of the right child ...
             } // ... plus a RR rotation of this node, which happens anyway
 
@@ -54,7 +62,8 @@ class AVLTree {
         }
     }
    
-    function rotateLL() { // the left side is too long => rotate from the left (_not_ leftwards)
+    function rotateLL() 
+    { // the left side is too long => rotate from the left (_not_ leftwards)
         $data_before =& $this->data;
         $right_before =& $this->right;
        
@@ -68,7 +77,8 @@ class AVLTree {
         $this->updateInNewLocation();
     }
    
-    function rotateRR() { // the right side is too long => rotate from the right (_not_ rightwards)
+    function rotateRR() 
+    { // the right side is too long => rotate from the right (_not_ rightwards)
         $data_before =& $this->data;
         $left_before =& $this->left;
        
@@ -84,12 +94,14 @@ class AVLTree {
    
     // -- updateInNewLocation
     // may be overloaded by derived class
-    function updateInNewLocation() {
+    function updateInNewLocation() 
+    {
         $this->getDepthFromChildren();
     }
    
    
-    function getDepthFromChildren() {
+    function getDepthFromChildren() 
+    {
         $this->depth = $this->data !== NULL ? 1 : 0;
         if( $this->left !== NULL )
             $this->depth = $this->left->depth+1;
@@ -99,10 +111,12 @@ class AVLTree {
 
     // --- debugging functions
        
-    function toString() {
+    function toString() 
+    {
         $s = "<table border><tr>\n".$this->toTD(0)."</tr>\n";
         $depth = $this->depth-1;
-        for( $d = 0; $d < $depth; ++$d ) {
+        for( $d = 0; $d < $depth; ++$d ) 
+        {
             $s .= "<tr>";
            
             $s .= $this->left !== NULL
@@ -120,20 +134,30 @@ class AVLTree {
         return $s;
     }
    
-    function toTD( $depth ) {
-        if( $depth == 0 ) {
+    function toTD( $depth ) 
+    {
+        if( $depth == 0 ) 
+        {
             $s = "<td align=center colspan=".$this->getNLeafs().">";
             $s .= $this->data."[".$this->depth."]</td>\n";
-        } else {
-            if( $this->left !== NULL ) {
+        } 
+        else 
+        {
+            if( $this->left !== NULL ) 
+            {
                 $s = $this->left->toTD( $depth-1);
-            } else {
+            } 
+            else 
+            {
                 $s="<td></td>";
             }
 
-            if( $this->right !== NULL ) {
+            if( $this->right !== NULL ) 
+            {
                 $s .= $this->right->toTD( $depth-1);
-            } else {
+            } 
+            else 
+            {
                 if( $this->left !== NULL )
                     $s.="<td></td>";
             }
@@ -142,15 +166,19 @@ class AVLTree {
         return $s;
     }
    
-    function getNLeafs() {
-        if( $this->left !== NULL ) {
+    function getNLeafs() 
+    {
+        if( $this->left !== NULL ) 
+        {
             $nleafs = $this->left->getNLeafs();
            
             if( $this->right !== NULL )
                 $nleafs += $this->right->getNLeafs();
             else
                 ++$nleafs; // lus one for the right "stump"
-        } else {
+        } 
+        else 
+        {
             if( $this->right !== NULL )
                 $nleafs = $this->right->getNLeafs()+1; // plus one for the left "stump"
             else
