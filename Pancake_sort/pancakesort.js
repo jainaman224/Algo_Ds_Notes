@@ -1,3 +1,4 @@
+//implementation of pancake sorting in JS
 var n = prompt("enter the size of an array required");
 var arr = new Array();
 //taking input for array
