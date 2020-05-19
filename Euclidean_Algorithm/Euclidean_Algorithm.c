@@ -4,7 +4,7 @@
 // Function to return gcd of x and y
 int gcd_algorithm(int x,int y)
 {
-   // if the remainder is 0, return second number
+    // if the remainder is 0, return second number
     if(x == 0)
     {
       return y;
