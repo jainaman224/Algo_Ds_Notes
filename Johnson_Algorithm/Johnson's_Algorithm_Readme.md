@@ -41,6 +41,21 @@ Johnson(G)
 }
 ```
 
+## Example
+Let us consider the following graph.
+
+![image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Johnson1.png)
+
+We add a source s and add edges from s to all vertices of the original graph. In the following diagram s is 4.
+
+![image](https://www.geeksforgeeks.org/wp-content/uploads/Johnson2-300x196.png)
+
+We calculate the shortest distances from 4 to all other vertices using Bellman-Ford algorithm. The shortest distances from 4 to 0, 1, 2 and 3 are 0, -5, -1 and 0 respectively, i.e., h[] = {0, -5, -1, 0}. Once we get these distances, we remove the source vertex 4 and reweight the edges using following formula. w(u, v) = w(u, v) + h[u] - h[v].
+
+![image](https://www.geeksforgeeks.org/wp-content/uploads/Johnson3.png)
+
+Since all weights are positive now, we can run Dijkstra's shortest path algorithm for every vertex as source.
+
 ## Time Complexity
 The main steps involved in this algorithm are
 * Bellman-Ford Algorithm, called once. (Time complexity O(VE))
