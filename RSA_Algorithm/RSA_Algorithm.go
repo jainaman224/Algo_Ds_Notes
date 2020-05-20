@@ -7,7 +7,11 @@ import (
 )
 
 //Function to calculate Greatest Common Divisor based on Euclid's Method
+<<<<<<< HEAD
 func egcd(a int, b int) int {
+=======
+func egcd(a int, b int) int {1
+>>>>>>> 40fdce46247f933b45c796bd2baf754e84919f19
     var rem int
     for b != 0 {
     rem = a % b
