@@ -1,6 +1,6 @@
 /*
-Tim Sort is a sorting algorithm based on Insertion Sort and Merge Sort.It first sort small pieces using Insertion Sort and then merges
-the pieces using merge of merge sort.
+Tim Sort is a sorting algorithm based on Insertion Sort and Merge Sort.
+It first sort small pieces using Insertion Sort and then merges the pieces using merge of merge sort.
 */
 
 using System;
@@ -20,11 +20,11 @@ class TimSort
 			
 	    while (j >= left && arr[j] > temp) 
 	    { 
-	        arr[j+1] = arr[j]; 
+	        arr[j + 1] = arr[j]; 
 		j--; 
 	    } 
 			
-            arr[j+1] = temp; 
+            arr[j + 1] = temp; 
 	} 
     } 
 		
@@ -78,8 +78,8 @@ class TimSort
 	
     public static void Tim_Sort(int[] arr, int n) 
     { 
-        for (int i = 0; i < n; i+=RUN) 
-	    Insertion_Sort(arr, i, Math.Min((i+31), (n-1))); 
+        for (int i = 0; i < n; i += RUN) 
+	    Insertion_Sort(arr, i, Math.Min((i + 31), (n - 1))); 
 		
 	for (int size = RUN; size < n; size = 2*size) 
 	{ 
@@ -87,7 +87,7 @@ class TimSort
 	    { 
 	        int mid = left + size - 1; 
 				
-		int right = Math.Min((left + 2*size - 1), (n-1)); 
+		int right = Math.Min((left + 2*size - 1), (n - 1)); 
 		
 		Merge(arr, left, mid, right); 
 	    } 
@@ -115,7 +115,6 @@ class TimSort
 		
 	printArray(arr, n); 
     } 
-	
 } 
 
 /*
