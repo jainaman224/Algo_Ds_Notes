@@ -2,14 +2,14 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
-    var n: Int = Integer.valueOf(readLine())    // taking input for size of the array
-    var arr = arrayOfNulls<Int>(n)              // declaring arr of size n
+    var n: Int = Integer.valueOf(readLine())    
+    var arr = arrayOfNulls<Int>(n)              
     var read= Scanner(System.`in`)          
     for(i in 0..(n-1)){
-        arr[i] = read.nextInt()                 //input value of each array element
+        arr[i] = read.nextInt()                 
     }   
-    var min = arr[0]                            //min element in the array
-    var max = arr[0]                            //max element in the array
+    var min = arr[0]                            
+    var max = arr[0]                            
     //finding the minimum and maximum elements in the array
     for(i in 0..(n-1)){
         if(arr[i]!! < min!!)
