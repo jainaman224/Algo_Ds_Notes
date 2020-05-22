@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-void selection_sort ( List<int> arr, int n)
+void selection_sort (List<int> arr, int n)
 {
     int temp, min_index;
     
@@ -10,11 +10,11 @@ void selection_sort ( List<int> arr, int n)
     {
         min_index = i;
         
-        for ( int j = i + 1 ; j < n ; j++ )
+        for (int j = i + 1 ; j < n ; j++)
             if ( arr[j] < arr[min_index] )
                  min_index = j;
             
-        if ( i != min_index )
+        if (i != min_index)
         {
             temp = arr[i];
             arr[i] = arr[min_index];
@@ -25,15 +25,15 @@ void selection_sort ( List<int> arr, int n)
 
 main()
 {
-    print ( "Enter the size of array " );
-    int size = int.parse ( stdin.readLineSync() );
+    print ("Enter the size of array ");
+    int size = int.parse (stdin.readLineSync());
     
     List <int> array = List();
     
     for (int i = 0; i < size; i++)
     {
-        print ( "Enter $i element " );
-        var ele = int.parse ( stdin.readLineSync());
+        print ("Enter $i element ");
+        var ele = int.parse (stdin.readLineSync());
         array.add (ele);
     }
    
