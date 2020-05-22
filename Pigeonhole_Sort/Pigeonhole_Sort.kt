@@ -37,7 +37,7 @@ fun main(args: Array<String>) {
     }
     
     //printing the array
-	println("Sorted Array")
+    println("Sorted Array")
     for(i in 0..(n-1)){
         println(arr[i])
     }
