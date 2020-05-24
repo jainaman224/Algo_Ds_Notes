@@ -9,8 +9,8 @@ class DA
         for (int i = 0; i < v; i++)
 	        if (sptSet[i] == false && dist[i] <= min) 
 		        {
-		         min = dist[i];
-			     min_index = i;
+		             min = dist[i];
+			         min_index = i;
 		        }
 	    return min_index;
     }
