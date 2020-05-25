@@ -1,4 +1,7 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+//java program for bitwise addition of two numbers
 class Bitwise
 {
     public static void main(String args[])throws Exception
