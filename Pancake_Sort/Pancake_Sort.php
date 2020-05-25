@@ -52,4 +52,12 @@ for($i = 0;$i < $num; $i++)    //Prints the sorted array
 }
   
 return 0; 
+
+/*
+Input: 
+  112,65,12,56,100,93,20
+
+Output:
+  12,20,56,65,93,100,112
+*/
 ?>
