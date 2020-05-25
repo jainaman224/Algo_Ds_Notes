@@ -28,8 +28,15 @@ int gcdFunction(a, b, x, y) {
 
     int x1 = 0, y1 = 0;
     int gcd = gcdFunction(b % a, a, x1, y1);
+  
     x = y1 - (b / a).round() * x1;
     y = x1;
 
     return gcd;
 }
+
+// Sample input :
+//  98
+//  21
+// Sample output :
+//  7
