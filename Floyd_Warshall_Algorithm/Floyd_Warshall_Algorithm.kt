@@ -60,6 +60,10 @@ fun main(args: Array<String>) {
 /*
 
 Output:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 940af2abbf26fc8870d24acdcabbe9fd7a652b41
 pair     dist    path
 1 -> 2    -1     1 -> 3 -> 4 -> 2
 1 -> 3    -2     1 -> 3
@@ -74,5 +78,9 @@ pair     dist    path
 4 -> 2    -1     4 -> 2
 4 -> 3     1     4 -> 2 -> 1 -> 3
 
+<<<<<<< HEAD
 */
 
+=======
+*/
+>>>>>>> 940af2abbf26fc8870d24acdcabbe9fd7a652b41
