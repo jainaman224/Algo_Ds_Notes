@@ -69,3 +69,4 @@ fn main() {
     
     Graph::dft(v1, |v| println!("{}", v));
 }
+
