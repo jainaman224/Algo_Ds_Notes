@@ -1,22 +1,35 @@
 <?php 
 //Function to find GCD
-function gcd($a, $b) 
+function gcd($a, $b, $x, $y) 
 { 
+    // Base Case 
     if ($a == 0) 
+    { 
+        $x = 0; 
+        $y = 1; 
         return $b; 
-    return gcd($b % $a, $a); 
+    } 
+
+    // To store results of recursive call 
+    $gcd = gcd($b % $a, $a, $x, $y); 
+
+    // Update x and y using results of recursive call 
+    $x = $y - ($b / $a) * $x; 
+    $y = $x; 
+    return $gcd; 
 } 
 
 // Driver Code 
-$a = 35; 
-$b = 15; 
-echo "\nGCD of ",$a ," and ", $b," is ", gcd($a, $b); 
+$x = 0; 
+$y = 0; 
+$a = 20; 
+$b = 5; 
+echo "\nGCD of ", $a, " and ", $b, " is ", gcd($a, $b, $x, $y); 
 
 /*
-    Input
-    a = 35, b = 15; 
+    Input:
+    a = 20, b = 5; 
     Output: 
-    GCD of 35 and 15 is 5
+    GCD of 20 and 5 is 5
 */
 ?> 
-
