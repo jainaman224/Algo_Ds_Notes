@@ -44,7 +44,7 @@ int main()
     cout<<"Enter number of elements in your array: ";
     cin>>num;
     int array[num];
-    cou<<"Enter your array: ";
+    cout<<"Enter your array: ";
     for (int i = 0; i < num; i++)
     {
         cin>>array[i];
