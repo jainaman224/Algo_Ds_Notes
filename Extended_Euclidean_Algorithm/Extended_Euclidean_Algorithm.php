@@ -1,35 +1,45 @@
 <?php 
+
+/* Extended Euclidean Algorithm 
+  ==============================
+  GCD of two numbers is the largest number that divides both of them.  
+    GCD(a,b) = ax + by
+  If we can find the value of  x and y then we can easily find the 
+  value of GCD(a,b) by replacing (x,y) with their respective values.
+*/
+
 //Function to find GCD
-function gcd($a, $b, $x, $y) 
-{ 
+//This function returns an array having elements gcd, x and y
+function gcd($a, $b) 
+{  
     // Base Case 
-    if ($a == 0) 
-    { 
-        $x = 0; 
-        $y = 1; 
-        return $b; 
-    } 
-
+    if ($a == 0)
+        return array($b, 0, 1);
+        
     // To store results of recursive call 
-    $gcd = gcd($b % $a, $a, $x, $y); 
-
+    $arr = gcd($b % $a, $a);
     // Update x and y using results of recursive call 
-    $x = $y - ($b / $a) * $x; 
-    $y = $x; 
-    return $gcd; 
-} 
-
+    $gcd = $arr[0];
+    $x = $arr[1];
+    $y = $arr[2];
+    return array($gcd, (int)($y - ($b / $a) * $x), $x);
+}
+ 
 // Driver Code 
-$x = 0; 
-$y = 0; 
-$a = 20; 
-$b = 5; 
-echo "\nGCD of ", $a, " and ", $b, " is ", gcd($a, $b, $x, $y); 
+$a = readline("Enter number 1 : ");
+$b = readline("Enter number 2 : ");
+$arr = gcd($a, $b);
+echo "\nGCD of ", $a, " and ", $b, " is ", $arr[0];
+echo "\nx = ", $arr[1];
+echo "\ny = ", $arr[2];
+
 
 /*
-    Input:
-    a = 20, b = 5; 
-    Output: 
-    GCD of 20 and 5 is 5
-*/
-?> 
+Sample input/output: 
+Enter number 1 : 100                                                                                                          
+Enter number 2 : 20                                                                                                                                                                                                                                         
+GCD of 100 and 20 is 20                                                                                                       
+x = 0                                                                                                                         
+y = 1   
+*/ 
+?>
