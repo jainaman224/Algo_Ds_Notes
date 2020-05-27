@@ -11,10 +11,10 @@ class PancakeSorting
             temp[i] = a[n-i];
         }
         for (i in 0 until n)
-	{
-	    a[i] = temp[i];
-	}
-     }
+        {
+        	a[i] = temp[i];
+        }
+    }
     
      // Function to find index of max element upto index n
      fun findMax (int:a[] , int:n ):int
@@ -24,7 +24,7 @@ class PancakeSorting
          {  
              if (a[i] > max)
              {
-                 max = a [i];
+                 max = a[i];
                  j = i;
              }
          }
@@ -43,7 +43,7 @@ class PancakeSorting
                 reverseArray (a , currentLength-1);
             }
         }
-    }
+     }
     
     fun main ()
     {
@@ -52,14 +52,14 @@ class PancakeSorting
         val n = read.nextLine().toInt()
         int array [] = new int [n];
         for(i in 0 until n)
-   	{
+        {
        	    array[i] = read.nextLine().toInt()
         }
         pancakesort (array, n);
         for (i in 0 until n)
-	{
+        {
             println( array[i] + " " );	
-	}
+        }
     }
 }
 
