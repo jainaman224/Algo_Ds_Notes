@@ -47,23 +47,23 @@ class SRTF
     float Awt;
     float Att;
     float sumBT;
+    static Scanner in = new Scanner(System.in);
     public SRTF()
     {
         sumBT = 0;
     }
-    static Scanner in = new Scanner(System.in);
     
     public void Accept(Process p[],int n)//accept func
     {
-        for(int i = 0;i< n;i++)
+        for(int i = 0; i < n; i++)
         {
-            System.out.println("Enter arrival time for process P"+i);//at
+            System.out.println("Enter arrival time for process P" + i);//at
             float a = in.nextFloat();
-            System.out.println("Enter burst time for process P"+i);//bt
+            System.out.println("Enter burst time for process P" + i);//bt
             float b = in.nextFloat();
-            p[i] = new Process(a,b);
+            p[i] = new Process(a, b);
             p[i].Timeleft = p[i].Bt;//used to find shortest process remaining
-            sumBT= sumBT+p[i].Bt;//used for cal ct in calcct function
+            sumBT = sumBT + p[i].Bt;//used for cal ct in calcct function
         }
     }
    
@@ -72,22 +72,22 @@ class SRTF
         System.out.println();
         System.out.println();
         int min = 0;
-        for(int i = 0;i< sumBT;i++)
+        for(int i = 0; i < sumBT; i++)
         {
-            for(int j = 0;j< n;j++)
+            for(int j = 0; j < n; j++)
             {
-                if(p[j].At<=i&&p[min].Timeleft>p[j].Timeleft&&p[j].Timeleft!=0)//finding process with least bt
+                if(p[j].At <= i&&p[min].Timeleft > p[j].Timeleft && p[j].Timeleft != 0)//finding process with least bt
                 {
                     min = j;//  process index with min bt
                 }
             }
             p[min].Timeleft--;
-            if(p[min].Timeleft==0)//setting ct when execution is done
+            if(p[min].Timeleft == 0)//setting ct when execution is done
             {
-                p[min].Ct = i+1;// +1 because it will complete in next cycle
+                p[min].Ct = i + 1;// +1 because it will complete in next cycle
                 p[min].Timeleft = 32767;
             }
-            System.out.print("P"+min+"| ");//gantt chart
+            System.out.print("P" + min + "| ");//gantt chart
         }    
         Att = Process.calTt(p, n);//att
         Awt = Process.calWt(p, n);//awt
@@ -97,13 +97,13 @@ class SRTF
     { 
         System.out.println();
         System.out.println("process  Arrival Time  Burst Time  Completion Time  Turnover Time  Waiting Time");//table
-        for(int i = 0;i< n;i++)
+        for(int i = 0; i < n; i++)
         {
             System.out.println("P"+i+"\t "+p[i].At+"\t\t"+p[i].Bt+"\t\t"+p[i].Ct+"\t\t"+p[i].Tt+"\t\t"+p[i].Wt);   
         }
         System.out.println();
-        System.out.println("Average waiting time  is "+Awt);//other data to be displayed
-        System.out.println("Average turnover time  is "+Att);
+        System.out.println("Average waiting time  is " + Awt);//other data to be displayed
+        System.out.println("Average turnover time  is " + Att);
         System.out.println();
     }
 }
