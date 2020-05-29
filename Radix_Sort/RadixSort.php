@@ -31,6 +31,7 @@ function radixsort(&$arr, $n)
 { 
     // Find the maximum number to know number of digits
     $m = max($arr); 
+	
     // Do counting sort for every digit
     for ($exp = 1; $m / $exp > 0; $exp *= 10) 
         countSort($arr, $n, $exp); 
