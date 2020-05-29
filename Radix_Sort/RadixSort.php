@@ -8,7 +8,7 @@ function countSort(&$arr, $n, $exp)
 
     // Store count of occurrences in count[] 
     for ($i = 0; $i < $n; $i++) 
-	    $count[ ($arr[$i] / $exp) % 10 ]++; 
+        $count[ ($arr[$i] / $exp) % 10 ]++; 
 
     // contains actual position of this digit in output[] 
     for ($i = 1; $i < 10; $i++) 
@@ -17,13 +17,13 @@ function countSort(&$arr, $n, $exp)
     // Build the output array 
     for ($i = $n - 1; $i >= 0; $i--) 
     { 
-	    $output[$count[ ($arr[$i] / $exp) % 10 ] - 1] = $arr[$i]; 
-	    $count[ ($arr[$i] / $exp) % 10 ]--; 
+        $output[$count[ ($arr[$i] / $exp) % 10 ] - 1] = $arr[$i]; 
+	$count[ ($arr[$i] / $exp) % 10 ]--; 
     } 
 
     // Copy the output array to arr[]
     for ($i = 0; $i < $n; $i++) 
-	    $arr[$i] = $output[$i]; 
+        $arr[$i] = $output[$i]; 
 } 
 
 // The main function that sorts arr[]  
@@ -33,7 +33,7 @@ function radixsort(&$arr, $n)
     $m = max($arr); 
     // Do counting sort for every digit
     for ($exp = 1; $m / $exp > 0; $exp *= 10) 
-	    countSort($arr, $n, $exp); 
+        countSort($arr, $n, $exp); 
 } 
 
 // A utility function to print an array 
@@ -41,7 +41,7 @@ function PrintArray(&$arr,$n)
 { 
     echo "sorted Array : ";
     for ($i = 0; $i < $n; $i++) 
-	    echo $arr[$i] . " "; 
+        echo $arr[$i] . " "; 
 } 
 
 // Driver Code 
