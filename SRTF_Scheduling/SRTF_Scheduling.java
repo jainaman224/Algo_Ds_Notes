@@ -20,24 +20,24 @@ class Process
     public static float calTt(Process p[], int n)//tt = ct-at and avg tt
     {
         float avg = 0;//avg
-        for(int i = 0;i< n;i++)
+        for(int i = 0; i < n; i++)
         {
-            p[i].Tt = p[i].Ct-p[i].At;
-            avg = avg+p[i].Tt;
+            p[i].Tt = p[i].Ct - p[i].At;
+            avg = avg + p[i].Tt;
         }
-        avg = avg/n;
+        avg = avg / n;
         return avg;
     }
    
     public static float calWt(Process p[], int n)//wt = tt-bt and avg wt
     {
         float avg = 0;//avg
-        for(int i = 0;i< n;i++)
+        for(int i = 0; i < n; i++)
         {
-            p[i].Wt = p[i].Tt-p[i].Bt;
-            avg = avg+p[i].Wt;
+            p[i].Wt = p[i].Tt - p[i].Bt;
+            avg = avg + p[i].Wt;
         }
-        avg = avg/n;//avg wt
+        avg = avg / n;//avg wt
         return avg;
     }
 }
@@ -53,7 +53,7 @@ class SRTF
         sumBT = 0;
     }
     
-    public void Accept(Process p[],int n)//accept func
+    public void Accept(Process p[], int n)//accept func
     {
         for(int i = 0; i < n; i++)
         {
@@ -76,7 +76,7 @@ class SRTF
         {
             for(int j = 0; j < n; j++)
             {
-                if(p[j].At <= i&&p[min].Timeleft > p[j].Timeleft && p[j].Timeleft != 0)//finding process with least bt
+                if(p[j].At <= i && p[min].Timeleft > p[j].Timeleft && p[j].Timeleft != 0)//finding process with least bt
                 {
                     min = j;//  process index with min bt
                 }
@@ -93,13 +93,13 @@ class SRTF
         Awt = Process.calWt(p, n);//awt
     }
     
-    public void Display(Process p[],int n)
+    public void Display(Process p[], int n)
     { 
         System.out.println();
         System.out.println("process  Arrival Time  Burst Time  Completion Time  Turnover Time  Waiting Time");//table
         for(int i = 0; i < n; i++)
         {
-            System.out.println("P"+i+"\t "+p[i].At+"\t\t"+p[i].Bt+"\t\t"+p[i].Ct+"\t\t"+p[i].Tt+"\t\t"+p[i].Wt);   
+            System.out.println("P" + i + "\t " + p[i].At + "\t\t" + p[i].Bt + "\t\t" + p[i].Ct + "\t\t" + p[i].Tt + "\t\t" + p[i].Wt);   
         }
         System.out.println();
         System.out.println("Average waiting time  is " + Awt);//other data to be displayed
