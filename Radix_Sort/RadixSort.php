@@ -18,7 +18,7 @@ function countSort(&$arr, $n, $exp)
     for ($i = $n - 1; $i >= 0; $i--) 
     { 
         $output[$count[ ($arr[$i] / $exp) % 10 ] - 1] = $arr[$i]; 
-	$count[ ($arr[$i] / $exp) % 10 ]--; 
+        $count[ ($arr[$i] / $exp) % 10 ]--; 
     } 
 
     // Copy the output array to arr[]
