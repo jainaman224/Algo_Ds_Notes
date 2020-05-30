@@ -3,17 +3,17 @@
 #include <time.h>
 
 typedef void qsort3way_swap(void *a, void *b);
-typedef int qsort3way_cmp(void const *a, void const *b);
+ typedef int qsort3way_cmp(void const *a, void const *b);
 
-static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
+  static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
                           qsort3way_cmp *cmp, qsort3way_swap *swap) 
-{
+ {
          if (array_begin < array_end)
        {
          char *i = array_begin + size;
          char *lower = array_begin;
          char *greater = array_end;
-          // 3-way partition based quick sort 
+         // 3-way partition based quick sort 
         while (i < greater) 
        {
          int ret = cmp(lower, i);
@@ -84,8 +84,8 @@ static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
 
      #define SIZE 42
 
-int main(void)
-{
+     int main(void)
+ {
        int array[SIZE];
 
        srand((unsigned int)time(NULL));
@@ -99,6 +99,6 @@ int main(void)
        qsort3way(array, array + SIZE, sizeof *array, cmp_int, swap_int);
 
        print_int("after", array, SIZE);
-}
+ }
 // INPUT: 9 1 13 14 9 -17 -12 -7 -6 3 4 -2 -4 -3 -11 20 20 18 -13 -11 -8 -3 15 -19 2 -10 -14 17 3 -4 -4 -8 19 4 -14 -14 11 -20 -16 7 12 17
 // OUTPUT: -20 -19 -17 -16 -14 -14 -14 -13 -12 -11 -11 -10 -8 -8 -7 -6 -4 -4 -4 -3 -3 -2 1 2 3 3 4 4 7 9 9 11 12 13 14 15 17 17 18 19 20 20
