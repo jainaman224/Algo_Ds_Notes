@@ -1,18 +1,18 @@
- #include <stdio.h>
- #include <stdlib.h>
- #include <time.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <time.h>
 
-  typedef void qsort3way_swap(void *a, void *b);
-  typedef int qsort3way_cmp(void const *a, void const *b);
+    typedef void qsort3way_swap(void *a, void *b);
+    typedef int qsort3way_cmp(void const *a, void const *b);
 
-  static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
-                           qsort3way_cmp *cmp, qsort3way_swap *swap) 
+     static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
+                              qsort3way_cmp *cmp, qsort3way_swap *swap) 
  {
          if (array_begin < array_end)
        {
-         char *i = array_begin + size;
-         char *lower = array_begin;
-         char *greater = array_end;
+          char *i = array_begin + size;
+          char *lower = array_begin;
+           char *greater = array_end;
          // 3-way partition based quick sort 
         while (i < greater) 
        {
