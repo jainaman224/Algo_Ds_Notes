@@ -13,10 +13,10 @@
       int Q[n][n], i, j, k;
       printf("\n The adjacency matrix is : ");
       display(adj);
-        // Initialize the solution matrix same as input graph matrix. Or  we can say the initial values of shortest distances are based on shortest paths considering no intermediate vertex. 
+     // Initialize the solution matrix same as input graph matrix. Or  we can say the initial values of shortest distances are based on shortest paths considering no intermediate vertex. 
 	 for(i=0;i<n;i++)
    {
-	 	 for(j=0;j<n;j++)
+	 	for(j=0;j<n;j++)
      {
 	 	 	 if(adj[i][j] == 0)
              Q[i][j] = INFINITY;
