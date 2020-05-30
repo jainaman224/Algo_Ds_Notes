@@ -1,32 +1,43 @@
 <?php
-
-function pancakeSort(&$arr, $num)    //function which actually sorts the array
+//function which actually sorts the array
+function pancakeSort(&$arr, $num)    
 { 
-    for ($currentSize = $num; $currentSize > 1; $currentSize--)  //start with whole array as input and reduces size by 1 on every iteration
+    //start with whole array as input and reduces size by 1 on every iteration
+    for ($currentSize = $num; $currentSize > 1; $currentSize--)  
     { 
-        $maxIndex = findMaxIndex($arr, $currentSize);  //finds the index of the maximum element in the array
-        if ($maxIndex != $currentSize-1)      //if the maximum index is not at the end of the current array then move the element to the end 
+        //finds the index of the maximum element in the array
+        $maxIndex = findMaxIndex($arr, $currentSize);  
+         //if the maximum index is not at the end of the current array then move the element to the end 
+        if ($maxIndex != $currentSize-1)     
         { 
-            reverseArray($arr, $maxIndex);    //moves maximum number to the beginning
-            reverseArray($arr, $currentSize-1);  //moves maximum number to the end by reversing the array
+            //moves maximum number to the beginning
+            reverseArray($arr, $maxIndex);
+            //moves maximum number to the end by reversing the array    
+            reverseArray($arr, $currentSize-1);  
         } 
     } 
 } 
 
-function reverseArray(&$arr, $index)  //reverses the array from index 0 to index 
+//reverses the array from index 0 to index 
+function reverseArray(&$arr, $index)  
 { 
     $startIndex = 0; 
-    while ($startIndex < $index)   //reverses till the startindex is not greater than index provided
+    //reverses till the startindex is not greater than index provided
+    while ($startIndex < $index)   
     {  
-        $temp = $arr[$startIndex];        //swapping of elements
+        //swapping of elements
+        $temp = $arr[$startIndex];        
         $arr[$startIndex] = $arr[$index]; 
         $arr[$index] = $temp; 
-        $startIndex++;      //increasing starting Index of an array
-        $index--;           //decreasing ending index of an array
+        //increasing starting Index of an array
+        $startIndex++;      
+        //decreasing ending index of an array
+        $index--;           
     } 
 } 
 
-function findMaxIndex($arr, $num)   //Find the index of the maximum element in an array
+//Find the index of the maximum element in an array
+function findMaxIndex($arr, $num)   
 { 
     $maxIndex = 0; 
     for ($i = 0; $i < $num; $i++) 
@@ -37,16 +48,17 @@ function findMaxIndex($arr, $num)   //Find the index of the maximum element in a
         }
     }              
     return $maxIndex; 
-} 
-
+}
   
 $arr = array(112,65,12,56,100,93,20); 
-$num = count($arr);    //Counts the number of elements in the array
+//Counts the number of elements in the array
+$num = count($arr);    
   
 pancakeSort($arr, $num); 
   
 echo("Sorted Array is:\n"); 
-for($i = 0;$i < $num; $i++)    //Prints the sorted array
+//Prints the sorted array
+for($i = 0;$i < $num; $i++)    
 {
     print($arr[$i]." "); 
 }
