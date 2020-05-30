@@ -44,3 +44,5 @@ The array is divided into three parts and then we determine in which part the el
  * [Coffee Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Ternary_Search/Ternary_Search.coffee)
  * [Python Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Ternary_Search/Ternary_Search.py)
  * [JS Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Ternary_Search/Ternary_Search.js)
+ * [C# Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Ternary_Search/Ternary_Search.cs)
+ * [Kotlin Code](https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Ternary_Search/Ternary_Search.kt)
