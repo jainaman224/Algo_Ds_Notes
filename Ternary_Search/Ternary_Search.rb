@@ -1,3 +1,15 @@
+=begin
+        Ternary Search
+-------------------------------
+Ternary search is a searching technique that is used to search the position of a specific value in an array.
+Ternary search is a divide-and-conquer algorithm.
+It is mandatory for the array to be sorted (in which you will search for an element).
+The array is divided into three parts and then we determine in which part the element exists.
+In this search, after each iteration it neglects ⅓ part of the array and repeats the same operations on the remaining ⅔.
+Time Complexity: O(log3 n)
+Space Complexity: O(1)
+=end
+
 def ternarySearch(l, r, key, ar) #function to perform ternary search
 
     if (r >= l)
