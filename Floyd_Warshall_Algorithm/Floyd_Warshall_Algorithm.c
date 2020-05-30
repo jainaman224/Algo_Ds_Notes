@@ -18,7 +18,7 @@
    {
      for(j=0;j<n;j++)
       {
-	   if(adj[i][j] == 0)
+       if(adj[i][j] == 0)
        Q[i][j] = INFINITY;
        else
        Q[i][j] = adj[i][j];
@@ -44,7 +44,7 @@
           printf("\n\n");
           display(Q);
     }
-	     return 0;
+      return 0;
  }
         void display(int mat[n][n])
   {
