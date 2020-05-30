@@ -1,153 +1,84 @@
-// Kruskal Algorithm in C
-#include <stdio.h>
-#define NUM 20
-
-// Creating the edge
-typedef struct edge 
+#include<stdio.h>                                                   
+#define MAX 10
+int adj[MAX][MAX], tree[MAX][MAX], n;         // Array for weights in the graph
+void readmatrix()
 {
-    int p;    // Variable to contain all the first node of the edge
-    int q;    // Variable to contain all the second node of the edge  
-    int weight;    // Variable to contain the weight of the edge
-} edge;
- 
-// Creating the Edgelist
-typedef struct edgelist 
-{
-    edge data[NUM];
-    int n;
-} edgelist;
- 
-edgelist list;
-int weights[NUM][NUM];    // Array for weights in the graph
-int n;
-edgelist listSpan;
- 
-void kruskal_algo();
-void print();
-int find(int contain[], int vertexno);
-void union1(int contain[], int c1, int c2);
-void sort();
-
-// Driver Program
-int main() 
-{
-    int total_cost;
-    printf("\nEnter number of vertices : ");
-    scanf("%d", &n);    // Number of Vertices
-	
-    printf("\nEnter the adjacency matrix : \n");
-	
-    for(int i = 0; i < n; i++)    // Enter the Adjacency Matrix
-    for(int j = 0; j < n; j++)
-    scanf("%d", &weights[i][j]);
-			
-    kruskal_algo();
-    print();
-    return 0;
+int i, j;
+printf( "\n Enter the number of nodes in the Graph : " );
+scanf("%d", &n);
+printf(" \n Enter the adjacency matrix of the Graph");   
+for (i = 1; i <= n; i++)                        // Enter the Adjacency Matrix
+ for (j = 1; j <= n; j++)
+ scanf("%d", &adj[i][j]);
 }
-
-// Function performing Kruskal's algorithm
-void kruskal_algo() 
+int spanningtree(int src)
 {
-    int contain[NUM], x, y;
-    list.n = 0;
- 
-    for(int i = 1; i < n; i++)
-    for(int j = 0; j < i; j++) 
-    {
-        if(weights[i][j] != 0) 
-        {
-            // Containing all the first node of the edges
-            list.data[list.n].p = i;
-            // Containing all the second node of the edges
-            list.data[list.n].q = j;
-            // Containing the weight of the edges
-            list.data[list.n].weight = weights[i][j];
-            list.n++;
-        }
-    }
-
-    // Sorting the edges according to their weight.
-    sort();
-	
-    for(int i = 0; i < n; i++)
-    contain[i] = i;    // Intializing the array with first node
-	
-    listSpan.n = 0;
-	
-    for(int i = 0; i < list.n; i++) 
-    {
-        x = find(contain, list.data[i].p);     // x is the first node of the edge
-        y = find(contain, list.data[i].q);     // y is the second node of the edge
-        if(x != y) 
-        {
-            listSpan.data[listSpan.n] = list.data[i];
-            listSpan.n = listSpan.n+1;
-            union1(contain, x, y);
-        }
-    }
+	 int visited[MAX], d[MAX], parent[MAX];
+int i, j, k, min, u, v, cost;
+for (i = 1; i <= n; i++)
+{
+ d[i] = adj[src][i];
+	 	 visited[i] = 0;
+ parent[i] = src;
 }
- 
-// Returns the value present at k[vertex_number]
-int find(int contain[], int vertex_number) 
+visited[src] = 1;
+	 cost = 0;
+k = 1;
+for (i = 1; i < n; i++)
 {
-    return(contain[vertex_number]);
+ min = 9999;
+ for (j = 1; j <= n; j++)
+ {
+	 	 	 if (visited[j]==0 && d[j] < min)
+ {
+ min = d[j];
+u = j;
+cost += d[u];
+ }
+ }
+ visited[u] = 1;
+ //cost = cost + d[u];
+ tree[k][1] = parent[u];
+ tree[k++][2] = u;
+ for (v = 1; v <= n; v++)
+	 	 	 if (visited[v]==0 && (adj[u][v] < d[v]))
+ {
+ d[v] = adj[u][v];
+parent[v] = u;
+ }
 }
- 
-void union1(int contain[], int c1, int c2) 
-{
-    for(int i = 0; i < n; i++)
-    if(contain[i] == c2)
-        contain[i] = c1;
+return cost;
 }
- 
-// Sorting all the edges in increasing order
-// according to their weight.
-void sort() 
+void display(int cost)       // Printing the Output
 {
-    edge temp;
-    for(int i = 1; i < list.n; i++) 
-    {
-        for(int j = 0; j < list.n-1; j++) 
-        {
-            if(list.data[j].weight > list.data[j+1].weight) 
-            {
-                temp = list.data[j];
-                list.data[j] = list.data[j+1];
-                list.data[j+1] = temp;
-            }
-        }
-    }
+int i;
+printf(" \n The Edges of the Mininum Spanning Tree are");
+for (i = 1; i < n; i++)
+ printf("  %d %d \n", tree[i][1], tree[i][2]);
+printf(" \n The Total cost of the Minimum Spanning Tree is : %d", cost);
 }
-
-// Printing the Output
-void print() 
+main()    // Driver Program
 {
-    int cost = 0;
-    for(int i = 0; i < listSpan.n; i++) 
-    {
-        printf("\n%d\t%d\t%d", listSpan.data[i].p, listSpan.data[i].q, listSpan.data[i].weight);
-        cost = cost + listSpan.data[i].weight;
-    }
-    printf("\nCost of the spanning tree = %d\n", cost);
+int source, treecost;
+readmatrix();
+printf(" \n Enter the Source :  ");
+scanf("%d", &source);
+treecost = spanningtree(source);
+display(treecost);
+return 0;
 }
 
 /*
-INPUT :
-Enter number of vertices : 6
-Enter the Adjacency Matrix :
-    0  3  0  0  6  5    
-    3  0  1  0  0  4 
-    0  1  0  6  0  4
-    0  0  6  0  8  5 
-    6  0  0  8  0  2 
-    5  4  4  5  2  0 
-
 OUTPUT :
+Enter the number of nodes in the Graph : 4
+Enter the adjacency matrix : 	0	 1	 1	 0
+				0	 0	 0	 1
+				0	 1	 0	 0
+				1	 0	 1	 0
+Enter the source : 1
+The edges of the Minimum Spanning Tree are 1 4
+4 2
+2 3
+The total cost of the Minimum Spanning Tree is : 1
 
-    2     1     1
-    5     4     2
-    1     0     3
-    5     1     4
-Cost of the spanning tree = 15
 */
