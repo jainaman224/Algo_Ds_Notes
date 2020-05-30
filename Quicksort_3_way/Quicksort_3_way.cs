@@ -1,4 +1,3 @@
-// C# program for 3-way quick sort 
 using System; 
 	
 class quick
