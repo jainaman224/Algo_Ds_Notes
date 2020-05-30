@@ -1,16 +1,16 @@
 <?php
 function insertionSort(&$arr,$left,$right)
 {
-  for($i=$left+1;$i<=$right;$i++)
+  for($i = $left+1 ; $i <= $right ; $i++)
   {
         $temp = $arr[$i]; 
-        $j = $i-1; 
-        while ($j>=$left && $arr[$j] > $temp) 
+        $j = $i - 1; 
+        while ($j >= $left && $arr[$j] > $temp) 
         { 
-            $arr[$j+1] = $arr[$j]; 
+            $arr[$j + 1] = $arr[$j]; 
             $j--; 
         } 
-        $arr[$j+1] = $temp; 
+        $arr[$j + 1] = $temp; 
     } 
 }
 // merge function merges the sorted runs 
@@ -68,22 +68,22 @@ function timSort(&$arr)
 { 
   $run=32;
     // Sort individual subarrays of size RUN 
-    for ($i = 0; $i < count($arr); $i+=$run) 
-        insertionSort($arr, $i,min(($i+31), (count($arr)-1))); 
+    for ($i = 0; $i < count($arr); $i += $run) 
+        insertionSort($arr, $i,min(($i + 31), (count($arr) - 1))); 
     // start merging from size RUN (or 32). It will merge 
     // to form size 64, then 128, 256 and so on .... 
-    for ($size = $run; $size < count($arr); $size = 2*$size) 
+    for ($size = $run; $size < count($arr); $size = 2 * $size) 
     { 
         // pick starting point of left sub array. We 
         // are going to merge arr[left..left+size-1] 
         // and arr[left+size, left+2*size-1] 
         // After every merge, we increase left by 2*size 
-        for ($left = 0; $left < count($arr); $left += 2*$size) 
+        for ($left = 0; $left < count($arr); $left += 2 * $size) 
         { 
             // find ending point of left sub array 
             // mid+1 is starting point of right sub array 
             $mid = $left + $size - 1; 
-            $right = min(($left + 2*$size - 1), (count($arr)-1)); 
+            $right = min(($left + 2 * $size - 1), (count($arr)-1)); 
   
             // merge sub array arr[left.....mid] & 
             // arr[mid+1....right] 
@@ -98,7 +98,7 @@ function printArray($arr)
     $output = "[";
     for ($i = 0; $i < count($arr); $i++){
         $output .= " ".$arr[$i]." "; 
-        if ($i<count($arr)-1) {
+        if ($i < count($arr)-1) {
             $output .=",";
         }
     }
@@ -107,7 +107,7 @@ function printArray($arr)
 } 
 
 
-$arr = array(9,65,0,2,-4,12,-18); 
+$arr = array(9, 65, 0, 2, -4, 12, -18); 
 print("\nGiven Array is\n"); 
 printArray($arr); 
 timSort($arr); 
