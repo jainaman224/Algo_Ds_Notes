@@ -3,7 +3,7 @@
 class PancakeSorting
 {   
     // This functions reverses the array upto index n
-    fun reverseArray ( int:a [] , int:n ):void
+    fun reverseArray ( int:a [], int:n ):void
     {
         int temp[] = new int [n+1] ;   
         for (i in 0 until n)
@@ -17,7 +17,7 @@ class PancakeSorting
     }
     
      // Function to find index of max element upto index n
-     fun findMax (int:a[] , int:n ):int
+     fun findMax (int:a[], int:n ):int
      {
          int max = a[0] ; int j = 0;
          for (i in 1 until n)
@@ -31,7 +31,7 @@ class PancakeSorting
          return j; 
       }
     
-    fun pancakeSort (int:a [] , int:n):void
+    fun pancakeSort (int:a [], int:n):void
     {  
         int currentLength;
         for (currentLength in n until 0)
@@ -39,7 +39,7 @@ class PancakeSorting
             int j = findmax (a , currentLength-1);
             if (j != currentLength)
             {
-                reverseArray (a , j);
+                reverseArray (a,j);
                 reverseArray (a , currentLength-1);
             }
         }
