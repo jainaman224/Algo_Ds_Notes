@@ -28,7 +28,7 @@ static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
      // Recur two halves
     qsort3way_aux(array_begin, lower, size, cmp, swap);
     qsort3way_aux(greater, array_end, size, cmp, swap);
-  }
+   }
 }
 
 static void qsort3way(void *array_begin, void *array_end, size_t size,
