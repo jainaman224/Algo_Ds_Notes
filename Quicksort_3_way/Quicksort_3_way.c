@@ -25,7 +25,7 @@ static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
         i += size;
       }
     }
-      // Recur two halves
+     // Recur two halves
     qsort3way_aux(array_begin, lower, size, cmp, swap);
     qsort3way_aux(greater, array_end, size, cmp, swap);
   }
