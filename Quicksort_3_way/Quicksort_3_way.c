@@ -6,26 +6,34 @@ typedef void qsort3way_swap(void *a, void *b);
 typedef int qsort3way_cmp(void const *a, void const *b);
 
 static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
-                          qsort3way_cmp *cmp, qsort3way_swap *swap) {
-  if (array_begin < array_end) {
+                          qsort3way_cmp *cmp, qsort3way_swap *swap) 
+{
+  if (array_begin < array_end)
+  {
     char *i = array_begin + size;
     char *lower = array_begin;
     char *greater = array_end;
       // 3-way partition based quick sort 
-    while (i < greater) {
+    while (i < greater) 
+    {
       int ret = cmp(lower, i);
-      if (ret < 0) {
+      if (ret < 0) 
+      {
         swap(i, lower);
         i += size;
         lower += size;
-      } else if (ret > 0) {
+      } 
+        else if (ret > 0) 
+      {
         greater -= size;
         swap(i, greater);
-      } else {
+      } 
+        else 
+        {
         i += size;
-      }
+        }
     }
-     // Recur two halves
+    // Recur two halves
     qsort3way_aux(array_begin, lower, size, cmp, swap);
     qsort3way_aux(greater, array_end, size, cmp, swap);
    }
@@ -36,7 +44,8 @@ static void qsort3way(void *array_begin, void *array_end, size_t size,
   qsort3way_aux(array_begin, array_end, size, cmp, swap);
 }
  // A utility function to perform swapping operations 
-static void swap_int_aux(int *a, int *b) {
+static void swap_int_aux(int *a, int *b) 
+{
   int tmp = *a;
   *a = *b;
   *b = tmp;
@@ -44,21 +53,29 @@ static void swap_int_aux(int *a, int *b) {
 
 static void swap_int(void *a, void *b) { swap_int_aux(a, b); }
 
-static int cmp_int_aux(int const *a, int const *b) {
-  if (*a < *b) {
+static int cmp_int_aux(int const *a, int const *b) 
+{
+  if (*a < *b)
+  {
     return 1;
-  } else if (*a > *b) {
+  } 
+    else if (*a > *b) 
+    {
     return -1;
-  } else {
+    } 
+    else 
+    {
     return 0;
-  }
+    }
 }
 
 static int cmp_int(void const *a, void const *b) { return cmp_int_aux(a, b); }
 
-static void print_int(char const *intro, int const *array, size_t const size) {
+static void print_int(char const *intro, int const *array, size_t const size) 
+{
   printf("%s:", intro);
-  for (size_t i = 0; i < size; i++) {
+  for (size_t i = 0; i < size; i++)
+  {
     printf(" %d", array[i]);
   }
   printf("\n");
@@ -66,11 +83,13 @@ static void print_int(char const *intro, int const *array, size_t const size) {
 
 #define SIZE 42
 
-int main(void) {
+int main(void)
+{
   int array[SIZE];
 
   srand((unsigned int)time(NULL));
-  for (size_t i = 0; i < SIZE; i++) {
+  for (size_t i = 0; i < SIZE; i++) 
+  {
     array[i] = rand() % SIZE - SIZE / 2;
   }
 
