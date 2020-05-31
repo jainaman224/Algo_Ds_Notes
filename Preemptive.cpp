@@ -80,10 +80,10 @@ Process extractminimum(Process Heap[], int* heapsize,int* currentTime)
 // Compares two intervals according to staring times.
 int compare(Process p1, Process p2)
 {
-     if (p1.arrivalTime < p2.arrivalTime)
-         return 1;
-     else
-         return 0;
+    if (p1.arrivalTime < p2.arrivalTime)
+        return 1;
+    else
+        return 0;
 }
 
 // This function is responsible for executing
@@ -96,8 +96,7 @@ void scheduling(Process Heap[], Process array[], int n,int* heapsize, int* curre
     Process min = extractminimum(Heap, heapsize, currentTime);
     min.outtime = *currentTime + 1;
     --min.burstTime;
-    printf("process id = %d\tcurrent_time = %d\n",
-           min.processID, *currentTime);
+    printf("process id = %d\tcurrent_time = %d\n",min.processID, *currentTime);
 
     // If the process is not yet finished
     // insert it back into the Heap*/
@@ -160,12 +159,9 @@ void priority(Process array[], int n)
                                          array[i].tempburstTime);
         totalbursttime += array[i].burstTime;
     }
-    printf("\n\nAverage waiting time = %f\n",
-           ((float)totalwaitingtime / (float)n));
-    printf("\nAverage response time =%f\n",
-           ((float)totalresponsetime / (float)n));
-    printf("\nAverage turn around time = %f\n",
-           ((float)(totalwaitingtime + totalbursttime) / (float)n));
+    printf("\n\nAverage waiting time = %f\n",((float)totalwaitingtime / (float)n));
+    printf("\nAverage response time =%f\n",((float)totalresponsetime / (float)n));
+    printf("\nAverage turn around time = %f\n",((float)(totalwaitingtime + totalbursttime) / (float)n));
 }
 
 // Driver code
