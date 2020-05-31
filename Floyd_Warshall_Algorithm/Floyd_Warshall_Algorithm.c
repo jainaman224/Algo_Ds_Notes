@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define n 4  // Number of vertices in the graph 
-#define INFINITY 9999    // Define Infinite as a large enough value. This value will be used for vertices not connected to each other 
-void display(int mat[n][n]);  // A function to print the solution matrix 
-int main()         // driver program to test above function 
+   #include <stdio.h>
+   #include <stdlib.h>
+   #define n 4  // Number of vertices in the graph 
+   #define INFINITY 9999    // Define Infinite as a large enough value. This value will be used for vertices not connected to each other 
+   void display(int mat[n][n]);  // A function to print the solution matrix 
+   int main()         // driver program to test above function 
   {
       int adj[n][n] =  { {0,   5,  INFINITY, 10},
                         {INFINITY, 0,   3, INFINITY},
