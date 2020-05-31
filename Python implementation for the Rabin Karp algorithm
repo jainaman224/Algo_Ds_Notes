@@ -1,0 +1,40 @@
+
+# Extended Euclidean Algorithm
+The Euclidean algorithm is based on the principle that the greatest common divisor of two numbers does not change if the larger number is replaced by its difference with the smaller number.
+
+
+For example, 21 is the GCD of 252 and 105 (as 252 = 21 × 12 and 105 = 21 × 5), and the same number 21 is also the GCD of 105 and 252 − 105 = 147. Since this replacement reduces the larger of the two numbers, repeating this process gives successively smaller pairs of numbers until the two numbers become equal. When that occurs, they are the GCD of the original two numbers. 
+
+By reversing the steps, the GCD can be expressed as a sum of the two original numbers each multiplied by a positive or negative integer, e.g., 21 = 5 × 105 + (−2) × 252. The fact that the GCD can always be expressed in this way is known as Bézout's identity.
+# Example:
+ **Input:** a = 30, b = 20
+
+ **Output:** gcd = 10
+
+   x = 1, y = -1 (Note that 30*(1) + 20*(-1) = 10)
+
+
+# Extended Euclidean Algorithm implementation in Python 
+
+    def gcdFunction(a, b, x, y):
+      if a == 0:
+        x = 0
+        y = 1
+        return b
+      x1 = 0; y1 = 0
+      gcd = gcdFunction(b % a, a, x1, y1)
+      x = y1 - int(b / a) * x1
+      y = x1
+      return gcd
+
+    a = 98; b = 21
+    x = 0; y = 0
+    print("GCD of numbers " + str(a) + " and " + str(b) + " is " + str(gcdFunction(a, b, x, y)))
+
+    ''' Output
+    GCD of numbers 98 and 21 is 7
+    '''
+
+[Reference: Wikipedia](https://en.wikipedia.org/wiki/Euclidean_algorithm)
+
+[Reference: Geeksforgeeks](https://www.geeksforgeeks.org/euclidean-algorithms-basic-and-extended/)
