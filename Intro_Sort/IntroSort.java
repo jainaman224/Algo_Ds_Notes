@@ -37,9 +37,9 @@ public class IntroSort
         n = sc.nextInt();
         ar = new int[n];
         System.out.println("Enter the data elements");
-        for (int i=0; i<n; i++)
+        for (int i = 0; i < n; i++)
         {
-            ar[i]=sc.nextInt();
+            ar[i] = sc.nextInt();
         }
         System.out.println();
         sc.close();
@@ -49,19 +49,19 @@ public class IntroSort
     void introSort(int start, int end, int depthLimit)
     {
     	//checking if the dataset is large enough (i.e. >16 elements)
-        if (end-start>16)
+        if (end - start > 16)
         {
             // if recursion limit (i.e. depth limit) is reached, perform Heap Sort
             if (depthLimit == 0)
             {
                this.heapSort();
-                return;
+               return;
             } 
             depthLimit = depthLimit - 1;
             
             // implementing Quick Sort (whilst depth limit is not reached)
-            quickSort(0, n-1);
-            } 
+            quickSort(0, n - 1);
+        } 
 
         else
         { 
@@ -78,7 +78,7 @@ public class IntroSort
              heapify(i); 
    
          // extracts the array elements one at a time 
-         for (int i = n-1; i>=0; i--) 
+         for (int i = n - 1; i >= 0; i--) 
          { 
              // swaps the current root with the element at the end 
              int temp = ar[0]; 
@@ -94,8 +94,8 @@ public class IntroSort
     void heapify(int i) 
     { 
         int largest = i;  // initialize the largest element as root 
-        int left_child = 2*i + 1;  
-        int right_child = 2*i + 2; 
+        int left_child = 2 * i + 1;  
+        int right_child = 2 * i + 2; 
   
         // If left child is larger than root 
         if (left_child < n && ar[left_child] > ar[largest]) 
@@ -121,7 +121,7 @@ public class IntroSort
     // Quick Sort: driver function
     void quickSort(int low, int high) 
     { 
-        if (low<high) 
+        if (low < high) 
         { 
             //p: partitioning index
             int p = partition(low, high); 
@@ -155,7 +155,7 @@ public class IntroSort
             } 
         } 
         // swapping ar[i+1] and ar[high] 
-        int temp = ar[i+1]; 
+        int temp = ar[i + 1]; 
         ar[i+1] = ar[high]; 
         ar[high] = temp;  
         return (i+1); 
@@ -169,26 +169,24 @@ public class IntroSort
         { 
             int key = ar[i]; 
             int j = i; 
-            // if ar[i]>key, move ahead by 1 position
-            while (j>left && ar[j-1]>key) 
+            // if ar[i] > key, move ahead by 1 position
+            while (j > left && ar[j - 1] > key) 
             { 
-                ar[j] = ar[j-1];
+                ar[j] = ar[j - 1];
                 j--;
             }
             ar[j] = key;
         }
     } 
 
-
     // function to display the sorted data
     void displayData()
     {
-    	System.out.println("The sorted data is given below");
+        System.out.println("The sorted data is given below");
         for (int i = 0; i < n; i++)
             System.out.print(ar[i] + " ");
     } 
 } 
-
 
 /*
 
