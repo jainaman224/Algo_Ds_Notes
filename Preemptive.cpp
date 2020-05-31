@@ -1,4 +1,7 @@
-About:In priority scheduling, a number is assigned to each process that indicates its priority level. Lower the number, higher is the priority. In this type of scheduling algorithm, if a newer process arrives, that is having a higher priority than the currently running process, then the currently running process is preempted.
+About:In priority scheduling, a number is assigned to each process that indicates its priority level. 
+Lower the number, higher is the priority. In this type of scheduling algorithm, if a newer process arrives, that is having a higher 
+priority than the currently running process, then the currently running process is preempted.
+
 Program for preemptive priority
 #include <bits/stdc++.h>
 using namespace std;
@@ -19,8 +22,7 @@ struct Process {
 // the number of processes in execution depending on
 // the current time currentTime keeps a record of
 // the current CPU time.
-void insert(Process Heap[], Process value, int* heapsize,
-            int* currentTime)
+void insert(Process Heap[], Process value, int* heapsize,int* currentTime)
 {
     int start = *heapsize, i;
     Heap[*heapsize] = value;
@@ -29,8 +31,7 @@ void insert(Process Heap[], Process value, int* heapsize,
     ++(*heapsize);
 
     // Ordering the Heap
-    while (start != 0 && Heap[(start - 1) / 2].priority >
-                                  Heap[start].priority) {
+    while (start != 0 && Heap[(start - 1) / 2].priority > Heap[start].priority) {
         Process temp = Heap[(start - 1) / 2];
         Heap[(start - 1) / 2] = Heap[start];
         Heap[start] = temp;
@@ -46,11 +47,9 @@ void order(Process Heap[], int* heapsize, int start)
     int smallest = start;
     int left = 2 * start + 1;
     int right = 2 * start + 2;
-    if (left < *heapsize && Heap[left].priority <
-                            Heap[smallest].priority)
+    if (left < *heapsize && Heap[left].priority <Heap[smallest].priority)
         smallest = left;
-     if (right < *heapsize && Heap[right].priority <
-                           Heap[smallest].priority)
+     if (right < *heapsize && Heap[right].priority <Heap[smallest].priority)
         smallest = right;
 
     // Ordering the Heap
@@ -65,8 +64,7 @@ void order(Process Heap[], int* heapsize, int start)
 // This function is used to find the process with
 // highest priority from the heap. It also reorders
 // the heap after extracting the highest priority process.
-Process extractminimum(Process Heap[], int* heapsize,
-                       int* currentTime)
+Process extractminimum(Process Heap[], int* heapsize,int* currentTime)
 {
     Process min = Heap[0];
     if (min.responsetime == -1)
@@ -83,15 +81,14 @@ Process extractminimum(Process Heap[], int* heapsize,
 int compare(Process p1, Process p2)
 {
      if (p1.arrivalTime < p2.arrivalTime)
-        return 1;
+         return 1;
      else
-        return 0;
+         return 0;
 }
 
 // This function is responsible for executing
 // the highest priority extracted from Heap[].
-void scheduling(Process Heap[], Process array[], int n,
-                int* heapsize, int* currentTime)
+void scheduling(Process Heap[], Process array[], int n,int* heapsize, int* currentTime)
 {
     if (heapsize == 0)
         return;
