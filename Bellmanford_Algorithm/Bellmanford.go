@@ -4,13 +4,6 @@ import (
 )
 
 func main(){
-        /*
-        var times =[][]int{ {1,2,1},{2,3,1},{3,4,1}}
-        var N, K,g int
-        N = 4
-        K = 1 
-        V :=3
-        E :=3*/
         var N,K,g,V,E int
         fmt.Scanf("%d%d",&V,&E)
         //var times[V][E] int
@@ -74,4 +67,15 @@ func BellmanFord(times [][]int, N int, K int, V int, E int) int {
     }
     
 }
+/*
+
+Vertex 		 Distance from Source
+1 		 0
+2 		 1
+3 		 2
+4 		 3
+
+3
+There was no cycle detected
+*/
 
