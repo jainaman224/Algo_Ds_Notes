@@ -14,21 +14,21 @@ void InsertionSort(int arr[], int *begin, int *end)
 { 
       // Get the left and the right index of the subarray 
       // to be sorted 
-      int left = begin - arr; 
-      int right = end - arr; 
+      int left  =  begin  -  arr; 
+      int right  =  end  -  arr; 
      for (int i = left+1; i <= right; i++) 
       { 
-      int key = arr[i]; 
-         int j = i-1; 
+      int key  =  arr[i]; 
+         int j  =  i - 1; 
          /* Move elements of arr[0..i-1], that are 
        greater than key, to one position ahead 
        of their current position */
           while (j >= left && arr[j] > key) 
      { 
-       arr[j+1] = arr[j]; 
-       j = j-1; 
+       arr[j+1]  =  arr[j]; 
+       j  =  j - 1; 
       } 
-           arr[j+1] = key; 
+           arr[j+1]  =  key; 
 } 
   return; 
 } 
@@ -37,7 +37,7 @@ void InsertionSort(int arr[], int *begin, int *end)
    int* Partition(int arr[], int low, int high) 
 { 
      int pivot = arr[high];  // pivot         
-     int i = (low - 1); // Index of smaller element 
+     int i  =  (low - 1); // Index of smaller element 
 
     for (int j = low; j <= high- 1; j++) 
       { 
@@ -127,9 +127,8 @@ for (int i=0; i < n; i++)
 int main() 
 { 
        int arr[] = {3, 1, 23, -9, 233, 23, -313, 32, -9}; //  INPUT
-       int n = sizeof(arr) / sizeof(arr[0]); 
-
-       // Pass the array, the pointer to the first element and 
+       int n  =  sizeof(arr) / sizeof(arr[0]); 	      
+       // Pass the array, the pointer to the first element and 	
        // the pointer to the last element 
        Introsort(arr, arr, arr+n-1); 
        printArray(arr, n); 
