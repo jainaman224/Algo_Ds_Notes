@@ -3,7 +3,7 @@
 class PancakeSorting
 {   
     // This functions reverses the array upto index n
-    fun reverseArray ( int:a [], int:n ):void
+    fun reverseArray (int:a[], int:n):void
     {
         int temp[] = new int [n+1];   
         for (i in 0 until n)
@@ -12,7 +12,7 @@ class PancakeSorting
         }
         for (i in 0 until n)
         {
-        	a[i] = temp[i];
+            a[i] = temp[i];
         }
     }
     
@@ -53,12 +53,12 @@ class PancakeSorting
         int array [] = new int [n];
         for(i in 0 until n)
         {
-       	    array[i] = read.nextLine().toInt()
+            array[i] = read.nextLine().toInt()
         }
         pancakesort (array, n);
         for (i in 0 until n)
         {
-            println(array[i] + " ");	
+            println(array[i] + " ");    
         }
     }
 }
