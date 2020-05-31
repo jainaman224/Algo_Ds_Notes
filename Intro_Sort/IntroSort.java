@@ -54,8 +54,8 @@ public class IntroSort
             // if recursion limit (i.e. depth limit) is reached, perform Heap Sort
             if (depthLimit == 0)
             {
-               this.heapSort();
-               return;
+	        this.heapSort();
+                return;
             } 
             depthLimit = depthLimit - 1;
             
@@ -187,9 +187,7 @@ public class IntroSort
             System.out.print(ar[i] + " ");
     } 
 } 
-
 /*
-
 INPUT 
 
 Enter the number of data elements
