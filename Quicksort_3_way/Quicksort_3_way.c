@@ -44,9 +44,9 @@ static void qsort3way(void *array_begin, void *array_end, size_t size,
 // A utility function to perform swapping operations 
 static void swap_int_aux(int *a, int *b) 
 {  
-   int tmp = *a;
-   *a = *b;
-   *b = tmp;
+  int tmp = *a;
+  *a = *b;
+  *b = tmp;
  }
 static void swap_int(void *a, void *b) { swap_int_aux(a, b); }
 
