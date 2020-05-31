@@ -17,9 +17,9 @@ static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
              int ret = cmp(lower, i);
              if (ret < 0) 
              {
-                  swap(i, lower);
-                  i += size;
-                  lower += size;
+                 swap(i, lower);
+                 i += size;
+                 lower += size;
              } 
              else if (ret > 0) 
              {
