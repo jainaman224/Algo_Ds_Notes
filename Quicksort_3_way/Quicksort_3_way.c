@@ -52,18 +52,18 @@ static void swap_int(void *a, void *b) { swap_int_aux(a, b); }
 
 static int cmp_int_aux(int const *a, int const *b) 
 {
-    if (*a < *b)
-    {
-       return 1;
-    } 
-    else if (*a > *b) 
-    {
-       return -1;
-    } 
-    else 
-    {
-        return 0;
-    }
+   if (*a < *b)
+   {
+      return 1;
+   } 
+   else if (*a > *b) 
+   {
+      return -1;
+   } 
+   else 
+   {
+      return 0;
+   }
 }
 
 static int cmp_int(void const *a, void const *b) { return cmp_int_aux(a, b); }
@@ -71,10 +71,10 @@ static void print_int(char const *intro, int const *array, size_t const size)
 {
     printf("%s:", intro);
     for (size_t i = 0; i < size; i++)
-      {
-         printf(" %d", array[i]);
-      }
-      printf("\n");
+    {
+        printf(" %d", array[i]);
+    }
+    printf("\n");
 }
 
 #define SIZE 42
