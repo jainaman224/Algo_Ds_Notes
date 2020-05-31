@@ -105,54 +105,53 @@ void IntrosortUtil(int arr[], int * begin,
         if (depthLimit == 0) 
     { 
               make_heap(begin, end+1); 
-	  sort_heap(begin, end+1); 
+       sort_heap(begin, end+1); 
          return; 
     } 
 
-	   // Else use a median-of-three concept to 
-	   // find a good pivot 
-	   int * pivot = MedianOfThree(begin, begin+size/2, end); 
+    // Else use a median-of-three concept to 
+       // find a good pivot 
+       int * pivot = MedianOfThree(begin, begin+size/2, end); 
 
-	   // Swap the values pointed by the two pointers 
-	  swapValue(pivot, end); 
+        // Swap the values pointed by the two pointers 
+      swapValue(pivot, end); 
 
      // Perform Quick Sort 
-	  int * partitionPoint = Partition(arr, begin-arr, end-arr); 
-	  IntrosortUtil(arr, begin, partitionPoint-1, depthLimit - 1); 
-	  IntrosortUtil(arr, partitionPoint + 1, end, depthLimit - 1); 
+     int * partitionPoint = Partition(arr, begin-arr, end-arr); 
+     IntrosortUtil(arr, begin, partitionPoint-1, depthLimit - 1); 
+     IntrosortUtil(arr, partitionPoint + 1, end, depthLimit - 1); 
 
-	  return; 
+      return; 
 } 
 
 /* Implementation of introsort*/
 void Introsort(int arr[], int *begin, int *end) 
 { 
-	  int depthLimit = 2 * log(end-begin); 
+   int depthLimit = 2 * log(end-begin); 
+   // Perform a recursive Introsort 
+    IntrosortUtil(arr, begin, end, depthLimit); 
 
-	  // Perform a recursive Introsort 
-	   IntrosortUtil(arr, begin, end, depthLimit); 
-
-	  return; 
+    return; 
 } 
 
 // A utility function ot print an array of size n 
 void printArray(int arr[], int n) 
 { 
 for (int i=0; i < n; i++) 
-	printf("%d ", arr[i]); 
+    printf("%d ", arr[i]); 
      printf("\n"); 
 } 
 
 // Driver program to test Introsort 
 int main() 
 { 
-	  int arr[] = {3, 1, 23, -9, 233, 23, -313, 32, -9}; //  INPUT
-	  int n = sizeof(arr) / sizeof(arr[0]); 
+       int arr[] = {3, 1, 23, -9, 233, 23, -313, 32, -9}; //  INPUT
+       int n = sizeof(arr) / sizeof(arr[0]); 
 
-	  // Pass the array, the pointer to the first element and 
-	   // the pointer to the last element 
-	   Introsort(arr, arr, arr+n-1); 
-	   printArray(arr, n); 
+       // Pass the array, the pointer to the first element and 
+       // the pointer to the last element 
+       Introsort(arr, arr, arr+n-1); 
+       printArray(arr, n); 
 
            return(0); 
 } 
