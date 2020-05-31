@@ -5,7 +5,7 @@ typedef void qsort3way_swap(void *a, void *b);
 typedef int qsort3way_cmp(void const *a, void const *b);
 static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
                               qsort3way_cmp *cmp, qsort3way_swap *swap) 
- {
+  {
     if (array_begin < array_end)
     {
        char *i = array_begin + size;
@@ -46,7 +46,7 @@ static void swap_int_aux(int *a, int *b)
     int tmp = *a;
     *a = *b;
     *b = tmp;
-}
+ }
 static void swap_int(void *a, void *b) { swap_int_aux(a, b); }
 
 static int cmp_int_aux(int const *a, int const *b) 
