@@ -1,4 +1,3 @@
-
 #include<bits/stdc++.h> 
 using namespace std; 
 
@@ -43,7 +42,7 @@ void InsertionSort(int arr[], int *begin, int *end)
     // the partition point 
    int* Partition(int arr[], int low, int high) 
 { 
-     	        
+     int pivot = arr[high];  // pivot         
      int i = (low - 1); // Index of smaller element 
 
     for (int j = low; j <= high- 1; j++) 
