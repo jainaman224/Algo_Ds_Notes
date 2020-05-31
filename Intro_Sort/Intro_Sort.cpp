@@ -44,7 +44,7 @@ void InsertionSort(int arr[], int *begin, int *end)
    int* Partition(int arr[], int low, int high) 
 { 
      	int pivot = arr[high]; // pivot 
-	int i = (low - 1); // Index of smaller element 
+    int i = (low - 1); // Index of smaller element 
 
     for (int j = low; j <= high- 1; j++) 
       { 
@@ -53,12 +53,12 @@ void InsertionSort(int arr[], int *begin, int *end)
          if (arr[j] <= pivot) 
          {
           // increment index of smaller element 
-	  i++; 
+   i++; 
 
        	    swap(arr[i], arr[j]); 
-	} 
-	} 
-	   swap(arr[i + 1], arr[high]); 
+    } 
+    } 
+     swap(arr[i + 1], arr[high]); 
        return (arr + i + 1); 
 } 
 
@@ -89,25 +89,25 @@ int *MedianOfThree(int * a, int * b, int * c)
 
 // A Utility function to perform intro sort 
 void IntrosortUtil(int arr[], int * begin, 
-		     int * end, int depthLimit) 
-{ 
+ int * end, int depthLimit) 
+  { 
     // Count the number of elements 
     int size = end - begin; 
 
-	// If partition size is low then do insertion sort 
+    // If partition size is low then do insertion sort 
         if (size < 16) 
          { 
-	     InsertionSort(arr, begin, end); 
-	       return; 
-	} 
+    InsertionSort(arr, begin, end); 
+    return; 
+     } 
 
-	   // If the depth is zero use heapsort 
-	if (depthLimit == 0) 
-	{ 
+    // If the depth is zero use heapsort 
+        if (depthLimit == 0) 
+    { 
               make_heap(begin, end+1); 
-	      sort_heap(begin, end+1); 
-	      return; 
-	} 
+	  sort_heap(begin, end+1); 
+         return; 
+    } 
 
 	   // Else use a median-of-three concept to 
 	   // find a good pivot 
