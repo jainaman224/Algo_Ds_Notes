@@ -44,7 +44,6 @@ As the number of elements > 16,the pivot element is calculated based on the quic
  8. 2, 2, 4, 2, 4, 8, 0, 3, 8, /8/, 28, 16, 9, 11, 28, 10, 13, 24, 22, 28, 27, 13, 27, 13, 24, 23, 18, 22, 10, 10
 
 
-
 **Step 2:** From the previous step, 
 
 begin = 0, 	end = 29, 	a[pivot] = 8 
@@ -62,7 +61,6 @@ Hence sortDataUtil(10,29) that calculates the pivot and a[partition] = 27.
 Hence insertionSort (0,8)
 
 0, 2, 2, 2, 3, 4, 4, 8, 8, 8, 16, 9, 11, 10, 13, 24, 22, 10, 13,  27, 13, 24, 23, 18, 22, 10, 27, 28, 28, 28
-
 
 
 **Step 3:** From the previous step, 
@@ -90,7 +88,6 @@ As the number of element < 16, insertionSort(27,29)
 Hence, no further recursion hence no further recursion hence no further recursion.
 
 
-
 **Step 4:** 
 
 Output: 0, 2, 2, 2, 3, 4, 4, 8, 8, 8, 9, 10, 10, 11, 13, 13, 13, 16, 18, 22, 22, 23, 24, 24, 27, 27, 28, 28, 28 
@@ -100,16 +97,15 @@ In the above example, the depthLimit came until 6, and for bigger datasets the d
 Output: 0, 2, 2, 2, 3, 4, 4, 8, 8, 8, 9, 10, 10, 10, 11, 13, 13, 13, 16, 18, 22, 22, 23, 24, 24, 27, 27, 28, 28, 28
 
 
-
-**Time Complexity**
+## Time Complexity
 
 Average performance O(n log n) Optimal worst performance O(n log n) where, n = number of elements to be sorted.
 
-**SEE ALSO :**
+## SEE ALSO :
 
 https://github.com/jainaman224/Algo_Ds_Notes/blob/master/Intro_Sort/introsort.py
 
-**REFERENCES** :
+## REFERENCES :
 
 1. https://en.wikipedia.org/wiki/Introsort
 2. https://www.geeksforgeeks.org/introsort-or-introspective-sort/
