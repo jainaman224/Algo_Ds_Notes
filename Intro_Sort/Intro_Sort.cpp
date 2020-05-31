@@ -9,30 +9,30 @@ void swapValue(int *a, int *b)
        int *temp = a; 
        a = b; 
        b = temp; 
-	 return; 
+   return; 
 } 
 
 /* Function to sort an array using insertion sort*/
 void InsertionSort(int arr[], int *begin, int *end) 
 { 
-	 // Get the left and the right index of the subarray 
-	 // to be sorted 
-	 int left = begin - arr; 
-	 int right = end - arr; 
+      // Get the left and the right index of the subarray 
+      // to be sorted 
+      int left = begin - arr; 
+      int right = end - arr; 
 
      for (int i = left+1; i <= right; i++) 
-	 { 
-	    int key = arr[i]; 
-	     int j = i-1; 
+      { 
+      int key = arr[i]; 
+         int j = i-1; 
 
-	  /* Move elements of arr[0..i-1], that are 
-	   	greater than key, to one position ahead 
-		  of their current position */
-        while (j >= left && arr[j] > key) 
-          { 
-	   arr[j+1] = arr[j]; 
-	   j = j-1; 
-          } 
+         /* Move elements of arr[0..i-1], that are 
+       greater than key, to one position ahead 
+       of their current position */
+          while (j >= left && arr[j] > key) 
+     { 
+       arr[j+1] = arr[j]; 
+       j = j-1; 
+      } 
            arr[j+1] = key; 
 } 
 
@@ -44,22 +44,22 @@ void InsertionSort(int arr[], int *begin, int *end)
    int* Partition(int arr[], int low, int high) 
 { 
      	int pivot = arr[high]; // pivot 
-	    int i = (low - 1); // Index of smaller element 
+	int i = (low - 1); // Index of smaller element 
 
-	for (int j = low; j <= high- 1; j++) 
+    for (int j = low; j <= high- 1; j++) 
       { 
-		  // If current element is smaller than or 
-		   // equal to pivot 
-	 if (arr[j] <= pivot) 
+         // If current element is smaller than or 
+        // equal to pivot 
+         if (arr[j] <= pivot) 
          {
-             // increment index of smaller element 
-	    i++; 
+          // increment index of smaller element 
+	  i++; 
 
-       	   swap(arr[i], arr[j]); 
-		} 
+       	    swap(arr[i], arr[j]); 
+	} 
 	} 
 	   swap(arr[i + 1], arr[high]); 
-	   return (arr + i + 1); 
+       return (arr + i + 1); 
 } 
 
 
@@ -69,30 +69,30 @@ void InsertionSort(int arr[], int *begin, int *end)
 int *MedianOfThree(int * a, int * b, int * c) 
 { 
      if (*a < *b && *b < *c) 
-		 return (b); 
+        return (b); 
 
     if (*a < *c && *c <= *b) 
-		return (c); 
+       return (c); 
         
      if (*b <= *a && *a < *c) 
-		return (a); 
+        return (a); 
 
      if (*b < *c && *c <= *a) 
-		return (c); 
+        return (c); 
 
      if (*c <= *a && *a < *b) 
-		return (a); 
+        return (a); 
 
      if (*c <= *b && *b <= *a) 
-		return (b); 
+      return (b); 
 } 
 
 // A Utility function to perform intro sort 
 void IntrosortUtil(int arr[], int * begin, 
-				int * end, int depthLimit) 
+		     int * end, int depthLimit) 
 { 
-	// Count the number of elements 
-	 int size = end - begin; 
+    // Count the number of elements 
+    int size = end - begin; 
 
 	// If partition size is low then do insertion sort 
         if (size < 16) 
