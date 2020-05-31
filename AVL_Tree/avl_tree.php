@@ -26,7 +26,7 @@ class AVLTree
                 : 0;
                
                
-        if( $ldepth > $rdepth+1 ) 
+        if( $ldepth > $rdepth + 1 ) 
         { // LR or LL rotation
             $lldepth = $this->left->left !== NULL
                      ? $this->left->left->depth
@@ -43,7 +43,7 @@ class AVLTree
 
             $this->rotateLL();
         } 
-        else if( $ldepth+1 < $rdepth ) 
+        else if( $ldepth + 1 < $rdepth ) 
         { // RR or RL rorarion
             $rrdepth = $this->right->right !== NULL
                      ? $this->right->right->depth
@@ -114,7 +114,7 @@ class AVLTree
     function toString() 
     {
         $s = "<table border><tr>\n".$this->toTD(0)."</tr>\n";
-        $depth = $this->depth-1;
+        $depth = $this->depth - 1;
         for( $d = 0; $d < $depth; ++$d ) 
         {
             $s .= "<tr>";
@@ -180,7 +180,7 @@ class AVLTree
         else 
         {
             if( $this->right !== NULL )
-                $nleafs = $this->right->getNLeafs()+1; // plus one for the left "stump"
+                $nleafs = $this->right->getNLeafs() + 1; // plus one for the left "stump"
             else
                 $nleafs = 1; // this node is a leaf
         }
