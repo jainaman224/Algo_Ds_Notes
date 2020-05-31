@@ -6,13 +6,13 @@ typedef int qsort3way_cmp(void const *a, void const *b);
 static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
                               qsort3way_cmp *cmp, qsort3way_swap *swap) 
  {
-         if (array_begin < array_end)
-       {
-          char *i = array_begin + size;
-          char *lower = array_begin;
-           char *greater = array_end;
-         // 3-way partition based quick sort 
-        while (i < greater) 
+    if (array_begin < array_end)
+    {
+     char *i = array_begin + size;
+     char *lower = array_begin;
+     char *greater = array_end;
+     // 3-way partition based quick sort 
+     while (i < greater) 
        {
          int ret = cmp(lower, i);
           if (ret < 0) 
