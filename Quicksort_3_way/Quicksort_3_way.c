@@ -11,7 +11,7 @@ static void qsort3way_aux(char *array_begin, char *array_end, size_t size,
         char *i = array_begin + size;
         char *lower = array_begin;
         char *greater = array_end;
-         // 3-way partition based quick sort 
+        // 3-way partition based quick sort 
         while (i < greater) 
         {
              int ret = cmp(lower, i);
