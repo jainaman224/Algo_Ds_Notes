@@ -2,48 +2,58 @@
 // Expected Output: returns the sorted array
 
 // Helper function to get the Pivoting Element Index
-function partition(array: number[], left: number = 0, right: number = array.length - 1) {
-  const pivot = array[Math.floor((right + left) / 2)];
-  let i = left;
-  let j = right;
+function partition(array: number[], left: number = 0, right: number = array.length - 1) 
+{
+    const pivot = array[Math.floor((right + left) / 2)];
+    let i = left;
+    let j = right;
 
-  while (i <= j) {
-    while (array[i] < pivot) {
-      i++;
+    while (i <= j) 
+    {
+        while (array[i] < pivot) 
+        {
+            i++;
+        }
+
+        while (array[j] > pivot)
+        {
+            j--;
+        }
+
+        // Swap values based on indices
+        if (i <= j) 
+        {
+            [array[i], array[j]] = [array[j], array[i]];
+            i++;
+            j--;
+        }
     }
 
-    while (array[j] > pivot) {
-      j--;
-    }
-// Swap values based on indices
-    if (i <= j) {
-      [array[i], array[j]] = [array[j], array[i]];
-      i++;
-      j--;
-    }
-  }
-
-  return i;
+    return i;
 }
 
 
 // Function that uses recursive definition for quick sort implementation
-function quickSort(array: number[], left: number = 0, right: number = array.length - 1) {
-  let index;
+function quickSort(array: number[], left: number = 0, right: number = array.length - 1) 
+{
+    let index;
 
-  if (array.length > 1) {
-    index = partition(array, left, right);
+    if (array.length > 1)
+    {
+        index = partition(array, left, right);
 
-    if (left < index - 1) {
-      quickSort(array, left, index - 1);
+        if (left < index - 1) 
+        {
+            quickSort(array, left, index - 1);
+        }
+
+        if (index < right) 
+        {
+            quickSort(array, index, right);
+        }
     }
 
-    if (index < right) {
-      quickSort(array, index, right);
-    }
-  }
-
-  return array;
+    return array;
 }
 
 // I/P
