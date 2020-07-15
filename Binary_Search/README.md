@@ -13,6 +13,8 @@ Let us understand this algorithm with a example. We are finding 22 in a sorted l
 3. Now mid is 11, that means it right of 11 or left of 23.
 4. Finally found.
 
+## Example 2
+![binarysearch](https://www.geeksforgeeks.org/wp-content/uploads/Binary-Search.png)
 ## Algorithm
 
 Given an array A of n elements with values or records A0 ... An−1 and target value T, the following subroutine uses binary search to find the index of T in A.[6]
