@@ -54,7 +54,7 @@ void KMPSearch(string pattern, string text)
 
         if(j == sizePattern)
         {
-            cout << "Pattern found at " <<  i - j + 1 << endl;
+            cout << "Pattern found at " <<  i - j  << endl;
             j = lps[j - 1];
         }
         else if (i < sizeText && pattern[j] != text[i])
@@ -79,8 +79,8 @@ int main()
 
 /* Output
 
-Pattern found at 2
-Pattern found at 8
-Pattern found at 17
+Pattern found at 1
+Pattern found at 7
+Pattern found at 16
 
 */
