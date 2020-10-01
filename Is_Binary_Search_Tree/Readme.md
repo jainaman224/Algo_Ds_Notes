@@ -4,6 +4,10 @@
 A Binary Tree is a data structure which is a collection of nodes beginning at the root node. <br />
 Each node can have a maximum of two child nodes.<br />
 The child node is usually termed as either a left node or right node. <br />
+*Example:*  <br />
+![BinaryTree](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/1200px-Binary_tree.svg.png)
+
+>Image Reference: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/1200px-Binary_tree.svg.png
 
 ## Binary Search Tree
 A Binary Search Tree has the following properties:
@@ -11,4 +15,5 @@ A Binary Search Tree has the following properties:
 - [x] Every right node is greater than its parent node
 - [x] No duplicate values in the tree
 
+![BinarySearchTree](http://url/to/img.png)
 
