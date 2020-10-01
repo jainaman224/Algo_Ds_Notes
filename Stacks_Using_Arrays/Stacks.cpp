@@ -62,21 +62,30 @@ public:
 
 int main()
 {
-    stack st(5);
-
-    for(int i = 0; i < 6; i++)
-    {
-        st.push(i);
+    stack st(20);
+    int x = 0;
+    cout << "Enter the choice number\n";
+    cout << "1.Push\n2.Pop\n3.Traverse\n4.Exit";
+    cin >> x;
+    while(x != 4){
+        switch(x){
+            case 1:
+                int temp;
+                cout << "Enter element to push\n';
+                cin >> temp;
+                s.push(temp);
+                break;
+            case 2:
+                s.pop();
+                break;
+            case 3:
+                s.traverse();
+                break;
+            default:
+                cout << "Enter 1 to push\nEnter 2 to pop\nEnter 3 to traverse\nEnter 4 to exit\n";
+        }
     }
-
-    st.traverse();
-
-    for(int i = 0; i < 6; i++)
-    {
-        st.pop();
-    }
-
-    return 0;
+return 0;
 }
 
 /* Output
