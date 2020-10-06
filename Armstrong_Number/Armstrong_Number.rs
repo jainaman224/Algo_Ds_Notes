@@ -1,3 +1,8 @@
+// Armstrong number in Rust
+// 'N' is an armstrong number of 'l' digits if it is of the form
+// N = N1^l + N2^l + N3^l + ... + Nl^l
+// where Nk is the kth digit in N.
+
 use std::io;
 
 fn main(){
@@ -32,3 +37,12 @@ fn main(){
         println!("{} is not an Armstrong number.", num);
     }
 }
+// [Sample input 1] 
+// Enter a number: 153
+// [Sample output 1] 
+// 153 is an Armstrong number.
+
+// [Sample input 1] 
+// Enter a number: 58
+// [Sample output 1] 
+// 58 is an Armstrong number.
