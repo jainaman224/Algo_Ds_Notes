@@ -1,0 +1,78 @@
+//if you are given a string and a pattern and need to find out whether that pattern exits there or not
+//eg:pattern:abc,
+//string:abcde
+//result :true
+
+
+#include <iostream>
+using namespace std;
+int* getlps(string pattern)
+{
+    int n=pattern.length();
+    int *lps=new int[n]();
+    int j=0;
+    int i=1;
+    while(i<n)
+    {
+        if(pattern[i]==pattern[j])
+        {
+            lps[i]=j+1;
+            i++;
+            j++;
+        }
+        else
+        {
+            if(j==0)
+            {
+                lps[i]++;
+                i++;
+            }
+            else
+            {
+                j=lps[j-1];
+            }
+        }
+    }
+    return lps;
+    
+}
+bool kmp(string text,string pattern)
+{
+    int n=text.length();
+    int m=pattern.length();
+    int *lps=getlps(pattern);
+    int i=0,j=0;
+    while(i<n && j<m)
+    {
+        if(text[i]==pattern[j])
+        {
+            i++;j++;
+        }
+        else
+        {
+            if(j!=0)
+            {
+                j=lps[j-1];
+            }
+            else
+            {
+                i++;
+            }
+        }
+    }
+    if(j==m)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
+}
+
+int main()
+{
+  string text="abcde";
+  string pattern="efg";
+  cout<<k
