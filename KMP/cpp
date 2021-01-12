@@ -73,6 +73,9 @@ bool kmp(string text,string pattern)
 
 int main()
 {
-  string text="abcde";
-  string pattern="efg";
-  cout<<k
+  string text;
+  cin>>text;
+  string pattern;
+  cin>>pattern;
+  cout<<kmp(text,pattern)<<endl;
+}
