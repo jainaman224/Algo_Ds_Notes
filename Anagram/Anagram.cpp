@@ -38,7 +38,7 @@ int main()
           flag = 1;
     }
 
-    if(flag == 0)
+    if(!flag)
         cout << "Given strings are anagrams " << endl;
     else
         cout << "Given strings are not anagrams" << endl;
