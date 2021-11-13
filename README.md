@@ -26,7 +26,7 @@ $ git clone https://github.com/Your_Username/Algo_Ds_Notes.git
 
 > This makes a local copy of repository in your machine.
 
-Once you have cloned the `Algo_Ds_Notes` repository in Github, move to that folder first using change directory command on linux and Mac.
+Once you have cloned the `Algo_Ds_Notes` repository in Github, move to that folder first using change directory command on Linux/Mac/Windows.
 
 ```sh
 # This will change directory to a folder Algo_Ds_Notes
