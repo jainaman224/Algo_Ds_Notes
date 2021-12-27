@@ -7,21 +7,19 @@ using namespace std;
 
 void sort_zero_one_two(int a[],int n)
 {
-    int zero = 0; //counter to store number of 0's
-    int one = 0;  //counter to store number of 1's
-    for(int i = 0 ;i < n; i++)
-    {
-        if(a[i] == 0)
-            zero++;
-        else if(a[i] == 1)
-            one++;
+    int count = 0;
+    for(int i=0;i<n;i++){
+        if(a[i]==0){
+            swap(a[i],a[count]);
+            count++;
+        }
     }
-    for(int i = 0;i < zero;i++)
-        a[i] = 0;
-    for(int i = zero;i< zero+one;i++)
-        a[i] = 1;
-    for(int i = one+zero;i < n;i++) //filling rest of the array with 2
-        a[i] = 2;
+    for(int i=count;i<n;i++){
+        if(a[i]==1){
+            swap(a[i],a[count]);
+            count++;
+        }
+    }
 }
 
 int main()
