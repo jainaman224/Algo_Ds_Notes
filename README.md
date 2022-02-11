@@ -188,6 +188,11 @@ Please discuss it with us first by creating new issue.
 | [tnarkiv](https://github.com/tnarkiv) |
 | --- |
 
+**Go**
+
+| [tech-geek29](https://github.com/tech-geek29) |
+| --- |
+
 ## References :clipboard: :scroll:
 
 - Books :book: :books:
@@ -197,10 +202,12 @@ Please discuss it with us first by creating new issue.
     - Introduction To Algorithms By Thomas H. Cormen
     - Java: The Complete Reference By Herbert Schildt
     - Object Oriented Programming with C++ by E Balaguruswamy
-    - Computer Oriented Numerical Methods By V. Rajaraman 
+    - Computer Oriented Numerical Methods By V. Rajaraman
+    - Go in Action By William Kennedy WITH Brian Ketelsen and Erik St. Martin 
 - Websites :computer:
     - [GeeksforGeeks](http://www.geeksforgeeks.org)
     - [hackerearth](https://www.hackerearth.com/notes)
     - [topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials)
     - [tutorialspoint](http://www.tutorialspoint.com)
     - [Wikipedia](https://en.wikipedia.org)
+    - [golang](https://golang.org/doc/)
