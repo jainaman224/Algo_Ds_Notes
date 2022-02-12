@@ -6,7 +6,7 @@ class Binary_Search
     public static int binarySearch(int[] array, int size, int desired)
     {
         int left = 0, right = size - 1, middle;
-
+        // While loop for Searching Middle
         while (left <= right)
         {
             middle = left + (right - left) / 2;
