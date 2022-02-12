@@ -15,6 +15,23 @@ int linearSearch(int array[], int size, int desired)
     return -1;
 }
 
+
+/* The following is a Better Linear Search(Sentinel Linear Search) Algorithm which only performs
+    just one test in each loop iteration thereby reducing time complexity
+*/
+int BetterLinearSearch(int array[], int size, int desired) {
+    int last = array[size-1];
+    array[size-1] = desired;
+    int i=0;
+	while(array[i] != desired)
+        i++;
+    array[size-1] = last;
+    if(i < size-1 || array[size-1] == desired)
+        return i;
+	return -1;
+}
+
+
 // Driver Function
 int main()
 {
@@ -26,10 +43,18 @@ int main()
 	}
 	int desired;
 	cin >> desired;
-    if(linearSearch(array, num, desired) != -1)
+	cout << "Linear Search: ";
+    if(linearSearch(arr, num, desired) != -1)
         cout << "Found" << endl;
     else
         cout << "Number not found" << endl;
+
+    cout << "Better Linear Search: ";
+    if(BetterLinearSearch(arr, num, desired) != -1) // Sentinel Linear Search
+        cout << "Found" << endl;
+    else
+        cout << "Number not found" << endl;
+
     return 0;
 }
 
@@ -38,7 +63,8 @@ Input :
 num = 5
 arr = [1,4,5,6,3]
 desired = 3
-
 Output :
 Number not found
 */
+
+
