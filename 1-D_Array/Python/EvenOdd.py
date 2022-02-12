@@ -29,8 +29,8 @@ for i in range(0, n):
     lst.append(elem) # adding the element 
 
 num = no_of_even_elem(lst)
-print "Number of odd elements in array", len(lst) - num
-print "Number of even elements in array", num
+print (f"Number of odd elements in array {len(lst) - num}")
+print (f"Number of even elements in array {num}")
 
 '''
 Sample Testcase
