@@ -12,13 +12,14 @@ import java.util.Scanner;
 
 class Arithmetic_Progression {    
     static int SumOfAP(int a, int d, int n) { 
-        int sum = 0; 
-        for (int i = 0; i < n; i++) 
-        { 
-            sum = sum + a; 
-            a = a + d; 
-        } 
-        return sum; 
+        // int sum = 0; 
+        // for (int i = 0; i < n; i++) 
+        // { 
+        //     sum = sum + a; 
+        //     a = a + d; 
+        // } 
+        // return sum; 
+        return (n/2)*(2*a+((n-1)*d));
     } 
     
     public static void main(String args[]) {
