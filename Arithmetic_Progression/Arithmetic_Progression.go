@@ -14,12 +14,13 @@ import (
 )
 
 func SumOfAP(a int, d int, n int) int {
-    var sum = 0
-    for i := 0; i < n; i++ { 
-        sum = sum + a
-        a = a + d
-    } 
-    return sum    
+    // var sum = 0
+    // for i := 0; i < n; i++ { 
+    //     sum = sum + a
+    //     a = a + d
+    // } 
+    // return sum    
+    return (n/2)*(2*a+((n-1)*d));
 }
 
 func main() {
