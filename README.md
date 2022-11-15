@@ -204,3 +204,4 @@ Please discuss it with us first by creating new issue.
     - [topcoder](https://www.topcoder.com/community/data-science/data-science-tutorials)
     - [tutorialspoint](http://www.tutorialspoint.com)
     - [Wikipedia](https://en.wikipedia.org)
+    - [Scaler Topics](https://www.scaler.com/topics/data-structures/)
