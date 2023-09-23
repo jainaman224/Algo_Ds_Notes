@@ -8,19 +8,19 @@ number.
 #include <iostream>
 
 constexpr int getDigits(int n) {
-  int ans{};
-  while (n) {
-    ++ans;
-    n /= 10;
-  }
-  return ans;
+    int ans{};
+    while (n) {
+        ++ans;
+        n /= 10;
+    }
+    return ans;
 }
 
 int main() {
-  std::cout << "Enter N: ";
-  int n{};
-  std::cin >> n;
-  std::cout << "Number of digits is : " << getDigits(n);
+    std::cout << "Enter N: ";
+    int n{};
+    std::cin >> n;
+    std::cout << "Number of digits is : " << getDigits(n);
 }
 
 /*

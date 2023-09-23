@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-main() 
+int main() 
 {
     int t, n, a[200000], i, j, k, l, m;
     cout << "ENTER THE NUMBER\n";
