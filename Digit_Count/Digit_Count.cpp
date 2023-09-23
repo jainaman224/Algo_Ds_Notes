@@ -5,23 +5,22 @@ The task is to count the number of digits present in the given
 number.
 */
 
-#include<bits/stdc++.h>
-using namespace std;
+#include <iostream>
 
-int getDigits(int n) {
-    int ans = 0;
-    while (n) {
-        ans ++;
-        n /= 10;
-    }
-    return ans;
+constexpr int getDigits(int n) {
+  int ans{};
+  while (n) {
+    ++ans;
+    n /= 10;
+  }
+  return ans;
 }
 
 int main() {
-    cout<<"Enter N: ";
-    int n;
-    cin>>n;
-    cout<<"Number of digits is : "<<getDigits(n);
+  std::cout << "Enter N: ";
+  int n{};
+  std::cin >> n;
+  std::cout << "Number of digits is : " << getDigits(n);
 }
 
 /*
