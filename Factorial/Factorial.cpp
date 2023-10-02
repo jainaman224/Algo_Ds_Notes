@@ -1,42 +1,18 @@
-//This Code is used to find factorial.
+// This Code is used to find factorial.
 
 #include <iostream>
 
-using namespace std;
-main() 
-{
-    int t, n, a[200000], i, j, k, l, m;
-    cout << "ENTER THE NUMBER\n";
-    cin >> n;
-    m = 1;
-    a[0] = 1;
-
-    // Code to find the factorial
-    for (j = 2; j <= n; j++) 
-    {
-        l = 0;
-        for (k = 0; k < m; k++) 
-        {
-            a[k] = a[k] * j + l;
-            l = a[k] / 10;
-            a[k] = a[k] % 10;
-        }
-
-        // Code to break a number having more than one digit into array of single
-        // digits
-        while (l) 
-        {
-            a[k] = l % 10;
-            k++;
-            m++;
-            l = l / 10;
-        }
+/// @brief give the factorial of a number
+/// @param val that number
+/// @return Ty
+[[nodiscard]] constexpr auto factorial(std::size_t val) -> std::size_t {
+    if (val <= 1) {
+        return 1;
     }
-    printf("Answer is : ");
-    for (i = m - 1; i >= 0; i--)
-        cout << a[i];
-    return 0;
+    return val * factorial(val - 1);
 }
+
+int main() { std::cout << factorial(5) << '\n'; }
 
 /*ENTER THE NUMBER
 5
